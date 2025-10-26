@@ -1,0 +1,73 @@
+{
+    "name": "umazing-musumengine",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "description": "Umamusume tools rewritten in TypeScript: decrypt/encrypt (AES-256-CBC, msgpack)",
+    "engines": {
+        "node": ">=18"
+    },
+    "bin": {
+        "umazing": "dist/cli.bundle.js"
+    },
+    "homepage": "https://github.com/davinidae/umazing-musumengine#readme",
+    "bugs": {
+        "url": "https://github.com/davinidae/umazing-musumengine/issues"
+    },
+    "repository": {
+        "url": "https://github.com/davinidae/umazing-musumengine"
+    },
+    "keywords": [
+        "Uma",
+        "Musume",
+        "UmaMusume",
+        "decrypt",
+        "encrypt"
+    ],
+    "license": "MIT",
+    "funding": "https://github.com/davinidae/umazing-musumengine",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "main": "src/cli.ts",
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json --noEmit && npm run bundle",
+        "bundle": "esbuild src/cli.ts --bundle --platform=node --target=node18 --format=esm --outfile=dist/cli.bundle.js --sourcemap --external:@msgpack/msgpack --external:commander --external:fast-glob --external:fs-extra --external:node:* --tsconfig=tsconfig.build.json",
+        "typecheck": "tsc -p tsconfig.build.json --noEmit && tsc -p tsconfig.json --noEmit",
+        "cli": "tsx src/cli.ts",
+        "test": "vitest run",
+        "test:unit": "vitest run --config vite.config.unit.ts",
+        "test:integration": "vitest run --config vite.config.integration.ts",
+        "test:coverage": "vitest run --coverage",
+        "test:unit:coverage": "vitest run --config vite.config.unit.ts --coverage",
+        "test:integration:coverage": "vitest run --config vite.config.integration.ts --coverage",
+        "test:watch": "vitest",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "dependencies": {
+        "@msgpack/msgpack": "^3.0.0",
+        "commander": "^12.1.0",
+        "fast-glob": "^3.3.2",
+        "fs-extra": "^11.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.7.5",
+        "@typescript-eslint/eslint-plugin": "^8.8.0",
+        "@typescript-eslint/parser": "^8.8.0",
+        "@vitest/coverage-v8": "^2.1.9",
+        "esbuild": "^0.24.0",
+        "eslint": "^9.11.1",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.30.0",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.19.1",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.10",
+        "vitest": "^2.1.3"
+    }
+}

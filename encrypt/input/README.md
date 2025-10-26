@@ -9,7 +9,7 @@ Example
 
 ```powershell
 # process all decoded.json under encrypt/input and mirror results under encrypt/output
-python umamusume_cli.py encrypt build
+npx tsx src/cli.ts encrypt build
 ```
 
 Notes

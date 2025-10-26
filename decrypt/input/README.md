@@ -11,4 +11,3 @@ Notes
 - Do not include quotes, `0x`, or JSON; only the Base64 string.
 - The tools scan all subfolders and process any request.txt/response.txt found. Responses derive the UDID from their sibling request.txt.
 - The examples included in this directory are for demonstration only.
-
