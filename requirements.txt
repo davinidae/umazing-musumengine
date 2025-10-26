@@ -1,0 +1,4 @@
+msgpack>=1.0.7
+lz4>=4.3.3
+pycryptodome>=3.20.0
+
