@@ -46,7 +46,8 @@
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "precommit": "npm run lint && npm run format && npm run typecheck"
     },
     "dependencies": {
         "@msgpack/msgpack": "^3.0.0",
