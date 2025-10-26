@@ -5,7 +5,7 @@ Overview: Viewing in-app purchase item lists.
 ## Actions
 
 - Show items: `payment/item_list`  
-   See: [endpoints/payment/item_list](../../endpoints/payment/item_list/README.md)
+   See: [endpoints/payment/item_list](../endpoints/payment/item_list/README.md)
 
 ## Notes
 
