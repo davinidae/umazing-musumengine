@@ -24,11 +24,14 @@ Tools to decrypt and build game requests/responses (AES-256-CBC, msgpack) with a
 ## Structure
 
 - `src/`
-  - `common/protocol.ts`: shared helpers for decrypt and encrypt (Base64, blob parsing, UDID/IV)
-  - `decrypt/common.ts`: decrypt utilities (AES-CBC decryption, msgpack unpack, JSON conversion)
-  - `decrypt/request.ts`: decrypts all packs' `request.txt` under `decrypt/input` (recursive)
-  - `decrypt/response.ts`: decrypts all packs' `response.txt` under `decrypt/input` (recursive, uses sibling `request.txt` to derive UDID/IV)
-  - `encrypt/build.ts`: builds requests from all `decoded.json` under `encrypt/input` (recursive)
+  - `common`
+    - `protocol.ts`: shared helpers for decrypt and encrypt (Base64, blob parsing, UDID/IV)
+  - `decrypt`
+    - `common.ts`: decrypt utilities (AES-CBC decryption, msgpack unpack, JSON conversion)
+    - `request.ts`: decrypts all packs' `request.txt` under `decrypt/input` (recursive)
+    - `response.ts`: decrypts all packs' `response.txt` under `decrypt/input` (recursive, uses sibling `request.txt` to derive UDID/IV)
+  - `encrypt`
+    - `build.ts`: builds requests from all `decoded.json` under `encrypt/input` (recursive)
   - `cli.ts`: unified CLI with `decrypt` and `encrypt` subcommands
   - `variables.ts`: central constants; includes `DETERMINISTIC_ENC_SECRET`
 - `tests/`
@@ -39,7 +42,9 @@ Tools to decrypt and build game requests/responses (AES-256-CBC, msgpack) with a
   - `tsconfig.base.json`, `tsconfig.build.json`, `tsconfig.json`: base, build, repo configs
   - `eslint.config.js`, `prettier` config via package.json
 
-Requirements: Node.js 18+ and npm.
+## Requirements
+
+Node.js 18+ and npm.
 
 ## Quick start
 
