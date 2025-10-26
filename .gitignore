@@ -137,3 +137,17 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Python caches
+__pycache__/
+
+# Project data files
+# Ignore all files inside input/output folders except README.md placeholders
+decrypt/input/*
+!decrypt/input/README.md
+decrypt/output/*
+!decrypt/output/README.md
+encrypt/input/*
+!encrypt/input/README.md
+encrypt/output/*
+!encrypt/output/README.md
