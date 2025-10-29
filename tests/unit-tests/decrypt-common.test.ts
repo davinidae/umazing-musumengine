@@ -3,10 +3,12 @@ import { encode } from '@msgpack/msgpack';
 import {
   decryptBlob2,
   encryptAes256Cbc,
+  LengthPrefixedStrategy,
   pkcs7Pad,
   toJsonCompatible,
-  unpackLengthPrefixedMsgpack,
-} from '../../src/decrypt/common';
+} from '../../src';
+
+const strategy = new LengthPrefixedStrategy();
 
 describe('decrypt/common exports', () => {
   test('pkcs7Pad pads to full block when already aligned', () => {
@@ -14,7 +16,11 @@ describe('decrypt/common exports', () => {
     const padded = pkcs7Pad(data, 16);
     expect(padded.length).toBe(32);
     // last 16 bytes should be 0x10
-    expect(Array.from(padded.subarray(16)).every((b) => b === 0x10)).toBe(true);
+    expect(
+      Array.from(padded.subarray(16)).every((b) => {
+        return b === 0x10;
+      }),
+    ).toBe(true);
   });
 
   test('encryptAes256Cbc + decryptBlob2 roundtrips with chosen key/iv', () => {
@@ -33,28 +39,34 @@ describe('decrypt/common exports', () => {
   });
 
   test('unpackLengthPrefixedMsgpack decodes payload and throws on malformed inputs', () => {
-    const obj = { a: 1, s: 'ok' };
+    const obj = {
+      a: 1,
+      s: 'ok',
+    };
     const enc = Buffer.from(encode(obj));
     const ok = Buffer.concat([Buffer.alloc(4), enc]);
     ok.writeUInt32LE(enc.length, 0);
-    expect(unpackLengthPrefixedMsgpack(ok)).toEqual(obj);
-
+    expect(strategy.execute(ok)).toEqual(obj);
     // too short
-    expect(() => unpackLengthPrefixedMsgpack(Buffer.alloc(3))).toThrow();
-
+    expect(() => {
+      return strategy.execute(Buffer.alloc(3));
+    }).toThrow();
     // inconsistent length
     const bad = Buffer.concat([Buffer.alloc(4), enc.subarray(0, enc.length - 1)]);
     bad.writeUInt32LE(enc.length, 0);
-    expect(() => unpackLengthPrefixedMsgpack(bad)).toThrow();
+    expect(() => {
+      return strategy.execute(bad);
+    }).toThrow();
   });
 
   test('toJsonCompatible converts Buffers and nested structures', () => {
     const buf = Buffer.from('abc', 'utf-8');
     expect(toJsonCompatible(buf)).toBe('abc');
-
     const nested = {
       key: Buffer.from('xyz'),
-      inner: { arr: [Buffer.from('qq'), 2] },
+      inner: {
+        arr: [Buffer.from('qq'), 2],
+      },
       // buffer key becomes a string key
       [Buffer.from('kk') as unknown as any]: 5,
     } as any;

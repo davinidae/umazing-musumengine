@@ -1,9 +1,14 @@
 import { describe, test, expect } from 'vitest';
-import { deriveIvFromUdidString, udidRawToCanonicalString } from '../../src/common/protocol';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { readBase64File, parseRequest, parseHeaderBlob1 } from '../../src/common/protocol';
+import {
+  readBase64File,
+  parseRequest,
+  parseHeaderBlob1,
+  deriveIvFromUdidString,
+  udidRawToCanonicalString,
+} from '../../src';
 
 describe('protocol helpers', () => {
   test('deriveIvFromUdidString uses first 16 hex chars (ascii)', () => {
@@ -64,7 +69,9 @@ describe('protocol helpers', () => {
 
   test('parseRequest throws when blob2 too short', () => {
     const raw = Buffer.concat([Buffer.from([0, 0, 0, 0])]);
-    expect(() => parseRequest(raw)).toThrow();
+    expect(() => {
+      return parseRequest(raw);
+    }).toThrow();
   });
 
   test('parseRequest allows minimal blob2 (exact 32B key, no ciphertext)', () => {
@@ -82,15 +89,21 @@ describe('protocol helpers', () => {
     // header claims 3 bytes, but only provide 2 after prefix
     const raw = Buffer.concat([Buffer.alloc(4), blob1.subarray(0, 2)]);
     raw.writeUInt32LE(blob1.length, 0);
-    expect(() => parseRequest(raw)).toThrow();
+    expect(() => {
+      return parseRequest(raw);
+    }).toThrow();
   });
 
   test('parseHeaderBlob1 throws when blob1 too short', () => {
     const tooShort = Buffer.alloc(111, 0); // must be >= 112
-    expect(() => parseHeaderBlob1(tooShort)).toThrow();
+    expect(() => {
+      return parseHeaderBlob1(tooShort);
+    }).toThrow();
   });
 
   test('deriveIvFromUdidString throws on short UDID', () => {
-    expect(() => deriveIvFromUdidString('abcd')).toThrow();
+    expect(() => {
+      return deriveIvFromUdidString('abcd');
+    }).toThrow();
   });
 });

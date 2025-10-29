@@ -1,6 +1,6 @@
 {
     "name": "umazing-musumengine",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "description": "Umamusume tools rewritten in TypeScript: decrypt/encrypt (AES-256-CBC, msgpack)",
@@ -36,6 +36,7 @@
         "bundle": "esbuild src/cli.ts --bundle --platform=node --target=node18 --format=esm --outfile=dist/cli.bundle.js --sourcemap --external:@msgpack/msgpack --external:commander --external:fast-glob --external:fs-extra --external:node:* --tsconfig=tsconfig.build.json",
         "typecheck": "tsc -p tsconfig.build.json --noEmit && tsc -p tsconfig.json --noEmit",
         "cli": "tsx src/cli.ts",
+        "seed:example": "tsx scripts/seed-example.ts",
         "test": "vitest run",
         "test:unit": "vitest run --config vite.config.unit.ts",
         "test:integration": "vitest run --config vite.config.integration.ts",
@@ -47,7 +48,8 @@
         "lint:fix": "eslint . --ext .ts --fix",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "precommit": "npm run lint && npm run format && npm run typecheck"
+        "precommit": "npm run lint && npm run format && npm run typecheck",
+        "docs": "typedoc"
     },
     "dependencies": {
         "@msgpack/msgpack": "^3.0.0",
@@ -68,6 +70,8 @@
         "ts-node": "^10.9.2",
         "tsx": "^4.19.1",
         "typescript": "^5.6.3",
+        "typedoc": "^0.28.0",
+        "typedoc-plugin-markdown": "^4.9.0",
         "vite": "^5.4.10",
         "vitest": "^2.1.3"
     }
