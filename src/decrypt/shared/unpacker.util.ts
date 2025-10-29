@@ -294,7 +294,7 @@ export class Unpacker {
     //
   }
 
-  run(buf: Buffer): unknown {
+  execute(buf: Buffer): unknown {
     for (const s of this.strategies) {
       try {
         const v = s.execute(buf);
@@ -311,9 +311,5 @@ export class Unpacker {
         'Could not parse payload as length-prefixed or raw msgpack. Dumping hex for manual inspection.',
       _raw_hex: buf.toString('hex'),
     };
-  }
-
-  execute(buf: Buffer) {
-    return this.run(buf);
   }
 }

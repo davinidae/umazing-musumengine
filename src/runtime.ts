@@ -168,7 +168,7 @@ export class RuntimeClient {
     const { plaintext } = decryptBlob2(resp, iv);
     // Unpack
     const unpacker = new Unpacker();
-    const payload = unpacker.run(plaintext);
+    const payload = unpacker.execute(plaintext);
     this.logger.debug?.('[runtime] decodeResponse unpacked');
     return { payload };
   }
