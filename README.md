@@ -52,7 +52,9 @@ and formatting (Prettier)
   - `tsconfig.base.json`, `tsconfig.build.json`, `tsconfig.json`: base, build, repo configs
   - `eslint.config.js`, `prettier` config via package.json
 
-Requirements: Node.js 18+ and npm.
+## Requirements
+
+Node.js 18+ and npm.
 
 ## Quick start
 
