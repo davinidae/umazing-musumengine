@@ -1,0 +1,15 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts", "src/cli.ts"],
+  "tsconfig": "tsconfig.json",
+  "out": "docs/code",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "readme": "README.md",
+  "cleanOutputDir": true,
+  "plugin": ["typedoc-plugin-markdown"],
+  "theme": "markdown",
+  "hideBreadcrumbs": true,
+  "hidePageTitle": false
+}

@@ -1,17 +1,22 @@
 import { describe, test, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
-import { run as buildRun } from '../../src/encrypt/build';
+import { EncryptPayloadService } from '../../src';
 
 const inRoot = path.join('encrypt', 'input', '__itest__', 'skip');
 const outRoot = path.join('encrypt', 'output', '__itest__', 'skip');
 
 function rmrf(p: string) {
-  fs.rmSync(p, { recursive: true, force: true });
+  fs.rmSync(p, {
+    recursive: true,
+    force: true,
+  });
 }
 
 function writeJson(p: string, obj: any) {
-  fs.mkdirSync(path.dirname(p), { recursive: true });
+  fs.mkdirSync(path.dirname(p), {
+    recursive: true,
+  });
   fs.writeFileSync(p, JSON.stringify(obj, null, 2), 'utf-8');
 }
 
@@ -35,11 +40,12 @@ describe('encrypt build skip cases', () => {
         response_key_hex: '22'.repeat(32),
         auth_key_hex: '33'.repeat(48),
       },
-      blob2: { x: 1 },
+      blob2: {
+        x: 1,
+      },
     });
-
-    await buildRun();
-
+    const buildRun = new EncryptPayloadService();
+    await buildRun.execute();
     const outPath = path.join(outRoot, 'a', 'built.b64');
     expect(fs.existsSync(outPath)).toBe(false);
   });
@@ -53,11 +59,12 @@ describe('encrypt build skip cases', () => {
         response_key_hex: '22'.repeat(31), // 31 bytes only
         auth_key_hex: '33'.repeat(48),
       },
-      blob2: { y: 2 },
+      blob2: {
+        y: 2,
+      },
     });
-
-    await buildRun();
-
+    const buildRun = new EncryptPayloadService();
+    await buildRun.execute();
     const outPath = path.join(outRoot, 'b', 'built.b64');
     expect(fs.existsSync(outPath)).toBe(false);
   });
@@ -72,7 +79,9 @@ describe('encrypt build skip cases', () => {
         response_key_hex: '22'.repeat(32),
         auth_key_hex: '33'.repeat(48),
       },
-      blob2: { ok: true },
+      blob2: {
+        ok: true,
+      },
     });
     // invalid: missing session_id
     writeJson(path.join(inRoot, 'bad1', 'decoded.json'), {
@@ -82,11 +91,12 @@ describe('encrypt build skip cases', () => {
         response_key_hex: '22'.repeat(32),
         auth_key_hex: '33'.repeat(48),
       },
-      blob2: { ok: false },
+      blob2: {
+        ok: false,
+      },
     });
-
-    await buildRun();
-
+    const buildRun = new EncryptPayloadService();
+    await buildRun.execute();
     expect(fs.existsSync(path.join(outRoot, 'ok1', 'built.b64'))).toBe(true);
     expect(fs.existsSync(path.join(outRoot, 'bad1', 'built.b64'))).toBe(false);
   });

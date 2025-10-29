@@ -1,0 +1,49 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build-test:
+        name: Lint, Typecheck, Test (Node ${{ matrix.node }})
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                node: [18, 20, 22]
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node }}
+                  cache: "npm"
+
+            - name: Install
+              run: npm ci
+
+            - name: Typecheck
+              run: npm run typecheck
+
+            - name: Lint
+              run: npm run lint
+
+            - name: Test
+              run: npm test
+
+            - name: Coverage (Node 20 only)
+              if: matrix.node == '20'
+              run: npm run test:coverage
+
+            - name: Upload coverage to Codecov
+              if: matrix.node == '20'
+              uses: codecov/codecov-action@v4
+              with:
+                  files: ./coverage/lcov.info
+                  fail_ci_if_error: false
+                  verbose: true

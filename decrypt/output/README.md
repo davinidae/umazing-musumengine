@@ -3,7 +3,8 @@
 This folder will contain per-input subfolders with automatic outputs (from batch decrypt), mirrored by pack and file:
 
 - `decrypt/output/<pack>/<file>/decoded.bin` — raw decrypted bytes
-- `decrypt/output/<pack>/<file>/decoded.json` — combined JSON: `{ blob1: {...}, blob2: <payload> }`
+- `decrypt/output/<pack>/<file>/decoded.json` — combined JSON: `{ blob1: {
+...}, blob2: <payload> }`
 
 Notes
 
