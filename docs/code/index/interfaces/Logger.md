@@ -4,7 +4,7 @@
 
 # Interface: Logger
 
-Defined in: [models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L4)
+Defined in: [models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L4)
 
 Minimal logger interface for dependency injection.
 
@@ -14,7 +14,7 @@ Minimal logger interface for dependency injection.
 
 > **debug**: (...`args`) => `void`
 
-Defined in: [models/client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L5)
+Defined in: [models/client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L5)
 
 #### Parameters
 
@@ -32,7 +32,7 @@ Defined in: [models/client.model.ts:5](https://github.com/davinidae/umazing-musu
 
 > **error**: (...`args`) => `void`
 
-Defined in: [models/client.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L8)
+Defined in: [models/client.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L8)
 
 #### Parameters
 
@@ -50,7 +50,7 @@ Defined in: [models/client.model.ts:8](https://github.com/davinidae/umazing-musu
 
 > **info**: (...`args`) => `void`
 
-Defined in: [models/client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L6)
+Defined in: [models/client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L6)
 
 #### Parameters
 
@@ -68,7 +68,7 @@ Defined in: [models/client.model.ts:6](https://github.com/davinidae/umazing-musu
 
 > `optional` **log**: (...`args`) => `void`
 
-Defined in: [models/client.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L9)
+Defined in: [models/client.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L9)
 
 #### Parameters
 
@@ -86,7 +86,7 @@ Defined in: [models/client.model.ts:9](https://github.com/davinidae/umazing-musu
 
 > **warn**: (...`args`) => `void`
 
-Defined in: [models/client.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L7)
+Defined in: [models/client.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L7)
 
 #### Parameters
 

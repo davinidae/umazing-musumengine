@@ -4,7 +4,7 @@
 
 # Class: EncryptPayloadService
 
-Defined in: [encrypt/payload.service.ts:30](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/encrypt/payload.service.ts#L30)
+Defined in: [encrypt/payload.service.ts:30](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/encrypt/payload.service.ts#L30)
 
 Builds Base64 requests from all decoded.json files under encrypt/input (recursive).
 
@@ -18,7 +18,7 @@ Framing modes:
 
 > **new EncryptPayloadService**(`inRoot`, `options`): `EncryptPayloadService`
 
-Defined in: [encrypt/payload.service.ts:32](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/encrypt/payload.service.ts#L32)
+Defined in: [encrypt/payload.service.ts:32](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/encrypt/payload.service.ts#L32)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Defined in: [encrypt/payload.service.ts:32](https://github.com/davinidae/umazing
 
 > **execute**(): `Promise`\<`number`\>
 
-Defined in: [encrypt/payload.service.ts:43](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/encrypt/payload.service.ts#L43)
+Defined in: [encrypt/payload.service.ts:43](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/encrypt/payload.service.ts#L43)
 
 Scan encrypt/input for decoded.json files and build request.b64 outputs.
 

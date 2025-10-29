@@ -4,7 +4,7 @@
 
 # Class: LengthPrefixedStrategy
 
-Defined in: [decrypt/shared/unpacker.util.ts:15](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L15)
+Defined in: [decrypt/shared/unpacker.util.ts:15](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L15)
 
 First try: classic length-prefixed msgpack [4B LE len][msgpack].
 This strategy intentionally throws on malformed inputs so unit tests can assert
@@ -34,7 +34,7 @@ error conditions. The Unpacker will catch and try other strategies afterwards.
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [decrypt/shared/unpacker.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L21)
+Defined in: [decrypt/shared/unpacker.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L21)
 
 #### Parameters
 
@@ -64,7 +64,7 @@ If the buffer is too short or the declared length is inconsistent with data.
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L8)
+Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.

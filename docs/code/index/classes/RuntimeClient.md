@@ -4,7 +4,7 @@
 
 # Class: RuntimeClient
 
-Defined in: [runtime.ts:39](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/runtime.ts#L39)
+Defined in: [runtime.ts:39](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/runtime.ts#L39)
 
 ## Constructors
 
@@ -12,7 +12,7 @@ Defined in: [runtime.ts:39](https://github.com/davinidae/umazing-musumengine/blo
 
 > **new RuntimeClient**(`opts`): `RuntimeClient`
 
-Defined in: [runtime.ts:41](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/runtime.ts#L41)
+Defined in: [runtime.ts:41](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/runtime.ts#L41)
 
 Thin OO wrapper so consumers can inject options later (e.g., logger).
 
@@ -32,7 +32,7 @@ Thin OO wrapper so consumers can inject options later (e.g., logger).
 
 > **decodeResponse**(`input`): [`DecodeResponseOutput`](../interfaces/DecodeResponseOutput.md)
 
-Defined in: [runtime.ts:140](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/runtime.ts#L140)
+Defined in: [runtime.ts:140](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/runtime.ts#L140)
 
 Decode a Base64 response using the matching request for UDID/IV.
 Extracts UDID from blob1, derives IV, decrypts blob2, and uses
@@ -62,7 +62,7 @@ If the request blob1 is malformed and UDID cannot be extracted.
 
 > **encodeRequest**(`input`): [`EncodeRequestOutput`](../interfaces/EncodeRequestOutput.md)
 
-Defined in: [runtime.ts:53](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/runtime.ts#L53)
+Defined in: [runtime.ts:53](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/runtime.ts#L53)
 
 Encode a request from header fields (blob1) and a JS payload.
 

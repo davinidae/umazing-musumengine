@@ -6,7 +6,7 @@
 
 > **parseHeaderBlob1**(`blob1`): `object`
 
-Defined in: [shared/protocol.util.ts:49](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/shared/protocol.util.ts#L49)
+Defined in: [shared/protocol.util.ts:49](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/shared/protocol.util.ts#L49)
 
 Parse the blob1 header into its constituent fields.
 

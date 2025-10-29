@@ -4,7 +4,7 @@
 
 # Interface: ServiceOptions
 
-Defined in: [models/client.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L18)
+Defined in: [models/client.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L18)
 
 Common options for long-running services (decrypt/encrypt).
 
@@ -14,4 +14,4 @@ Common options for long-running services (decrypt/encrypt).
 
 > `optional` **logger**: [`Logger`](Logger.md)
 
-Defined in: [models/client.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/client.model.ts#L19)
+Defined in: [models/client.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/client.model.ts#L19)

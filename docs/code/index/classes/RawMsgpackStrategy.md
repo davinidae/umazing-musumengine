@@ -4,7 +4,7 @@
 
 # Class: RawMsgpackStrategy
 
-Defined in: [decrypt/shared/unpacker.util.ts:38](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L38)
+Defined in: [decrypt/shared/unpacker.util.ts:38](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L38)
 
 Second try: treat the entire buffer as a single msgpack document.
 Useful when the server omits the length prefix for small payloads.
@@ -33,7 +33,7 @@ Useful when the server omits the length prefix for small payloads.
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [decrypt/shared/unpacker.util.ts:43](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L43)
+Defined in: [decrypt/shared/unpacker.util.ts:43](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L43)
 
 #### Parameters
 
@@ -59,7 +59,7 @@ Decoded single msgpack value, or undefined if not decodable.
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L8)
+Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.

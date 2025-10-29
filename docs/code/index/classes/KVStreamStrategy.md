@@ -4,7 +4,7 @@
 
 # Class: KVStreamStrategy
 
-Defined in: [decrypt/shared/unpacker.util.ts:90](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L90)
+Defined in: [decrypt/shared/unpacker.util.ts:90](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L90)
 
 Heuristic: decode a concatenated (key, value, ...) msgpack stream into an object.
 This matches some tool endpoints that stream key/value pairs without a surrounding map.
@@ -33,7 +33,7 @@ This matches some tool endpoints that stream key/value pairs without a surroundi
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [decrypt/shared/unpacker.util.ts:95](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L95)
+Defined in: [decrypt/shared/unpacker.util.ts:95](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L95)
 
 #### Parameters
 
@@ -59,7 +59,7 @@ Object reconstructed from (key, value, ...) stream, or undefined.
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L8)
+Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.

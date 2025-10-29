@@ -4,7 +4,7 @@
 
 # Class: MultiArrayStrategy
 
-Defined in: [decrypt/shared/unpacker.util.ts:195](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L195)
+Defined in: [decrypt/shared/unpacker.util.ts:195](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L195)
 
 Fallback: decode as a sequence of msgpack documents into an array.
 Keeps some visibility into odd payloads when object reconstruction is ambiguous.
@@ -33,7 +33,7 @@ Keeps some visibility into odd payloads when object reconstruction is ambiguous.
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [decrypt/shared/unpacker.util.ts:200](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/decrypt/shared/unpacker.util.ts#L200)
+Defined in: [decrypt/shared/unpacker.util.ts:200](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/decrypt/shared/unpacker.util.ts#L200)
 
 #### Parameters
 
@@ -59,7 +59,7 @@ Array of decoded values via decodeMulti, or undefined.
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L8)
+Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.

@@ -4,7 +4,7 @@
 
 # Abstract Class: UnpackStrategy
 
-Defined in: [models/decrypt.model.ts:1](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L1)
+Defined in: [models/decrypt.model.ts:1](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L1)
 
 ## Extended by
 
@@ -32,7 +32,7 @@ Defined in: [models/decrypt.model.ts:1](https://github.com/davinidae/umazing-mus
 
 > `abstract` **execute**(`buf`): `unknown`
 
-Defined in: [models/decrypt.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L2)
+Defined in: [models/decrypt.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L2)
 
 #### Parameters
 
@@ -50,7 +50,7 @@ Defined in: [models/decrypt.model.ts:2](https://github.com/davinidae/umazing-mus
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/51f61211084dfe767110f78265e0aa27a13c00d0/src/models/decrypt.model.ts#L8)
+Defined in: [models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e099ae72d04c46726039e2dd238802d266be3d5f/src/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.
