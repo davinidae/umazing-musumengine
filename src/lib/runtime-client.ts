@@ -22,9 +22,9 @@ import {
   fromJsonFriendly,
   encryptAes256Cbc,
   pkcs7Pad,
+  defaultLogger,
 } from './shared';
 import { decryptBlob2, Unpacker } from './decrypt';
-import { DETERMINISTIC_ENC_SECRET } from './variables';
 import {
   FramingMode,
   EncodeRequestInput,
@@ -34,11 +34,10 @@ import {
   RuntimeClientOptions,
   Logger,
 } from './models';
-import { defaultLogger } from './shared';
 
 export class RuntimeClient {
   /** Thin OO wrapper so consumers can inject options later (e.g., logger). */
-  constructor(private readonly opts: RuntimeClientOptions = {}) {}
+  constructor(private readonly opts: RuntimeClientOptions) {}
   private get logger(): Logger {
     return this.opts.logger ?? defaultLogger;
   }
@@ -106,7 +105,9 @@ export class RuntimeClient {
       plaintext = Buffer.concat(parts);
     }
     // Deterministic encryption key (helps reproducible tests)
-    const encryptionKey = createHash('sha256').update(DETERMINISTIC_ENC_SECRET, 'utf8').digest();
+    const encryptionKey = createHash('sha256')
+      .update(this.opts.DETERMINISTIC_ENC_SECRET, 'utf8')
+      .digest();
     const padded = pkcs7Pad(plaintext, 16);
     const ciphertext = encryptAes256Cbc(padded, encryptionKey, iv);
     const blob2 = Buffer.concat([ciphertext, encryptionKey]);

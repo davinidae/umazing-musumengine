@@ -11,6 +11,7 @@ export interface Logger {
 
 /** Options for RuntimeClient construction. */
 export interface RuntimeClientOptions {
+  DETERMINISTIC_ENC_SECRET: string;
   logger?: Logger;
 }
 

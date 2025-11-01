@@ -12,9 +12,13 @@
  *   to avoid Commander parsing argv during unit tests when consumers import from src.
  */
 import { Command } from 'commander';
-import { DecryptRequestService, DecryptResponseService } from './decrypt';
-import { EncryptPayloadService } from './encrypt';
-import { RuntimeClient } from './runtime';
+import {
+  DecryptRequestService,
+  DecryptResponseService,
+  RuntimeClient,
+  EncryptPayloadService,
+} from '../lib';
+import { DETERMINISTIC_ENC_SECRET } from '../variables';
 
 const program = new Command();
 program
@@ -104,7 +108,9 @@ runtime
     try {
       const text = await readAllStdin();
       const input = JSON.parse(text || '{}');
-      const runtimeClient = new RuntimeClient();
+      const runtimeClient = new RuntimeClient({
+        DETERMINISTIC_ENC_SECRET,
+      });
       const out = runtimeClient.encodeRequest({ blob1: input.blob1, payload: input.payload });
       process.stdout.write(JSON.stringify(out));
       process.exitCode = 0;
@@ -121,7 +127,9 @@ runtime
     try {
       const text = await readAllStdin();
       const input = JSON.parse(text || '{}');
-      const runtimeClient = new RuntimeClient();
+      const runtimeClient = new RuntimeClient({
+        DETERMINISTIC_ENC_SECRET,
+      });
       const out = runtimeClient.decodeResponse({
         requestB64: input.requestB64,
         responseB64: input.responseB64,

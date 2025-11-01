@@ -49,15 +49,19 @@
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "precommit": "npm run lint && npm run format && npm run typecheck",
-        "docs": "typedoc"
+        "docs": "typedoc",
+        "api": "tsx src/api/index.ts",
+        "api:dev": "nodemon --exec tsx src/api/index.ts"
     },
     "dependencies": {
         "@msgpack/msgpack": "^3.0.0",
         "commander": "^12.1.0",
+        "express": "^4.19.2",
         "fast-glob": "^3.3.2",
         "fs-extra": "^11.2.0"
     },
     "devDependencies": {
+        "@types/express": "^4.17.21",
         "@types/node": "^22.7.5",
         "@typescript-eslint/eslint-plugin": "^8.8.0",
         "@typescript-eslint/parser": "^8.8.0",
@@ -66,12 +70,13 @@
         "eslint": "^9.11.1",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-import": "^2.30.0",
+        "nodemon": "^3.1.10",
         "prettier": "^3.3.3",
         "ts-node": "^10.9.2",
         "tsx": "^4.19.1",
-        "typescript": "^5.6.3",
         "typedoc": "^0.28.0",
         "typedoc-plugin-markdown": "^4.9.0",
+        "typescript": "^5.6.3",
         "vite": "^5.4.10",
         "vitest": "^2.1.3"
     }
