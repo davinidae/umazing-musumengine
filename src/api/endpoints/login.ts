@@ -2,11 +2,13 @@ import { Router, Request, Response } from 'express';
 import { createHash } from 'node:crypto';
 import { RuntimeClient } from '../../lib';
 import { DETERMINISTIC_ENC_SECRET } from '../../variables';
-import { runPipeline } from '../pipeline/run';
-import { PreSignupService } from '../pipeline/services/pre_signup.service';
-import { SignupService } from '../pipeline/services/signup.service';
-import { StartSessionService } from '../pipeline/services/start_session.service';
-import { LoadIndexService } from '../pipeline/services/load_index.service';
+import {
+  PreSignupService,
+  SignupService,
+  StartSessionService,
+  LoadIndexService,
+} from '../pipelines';
+import { sessionManager } from '../session/session-manager';
 
 const router = Router();
 
@@ -23,6 +25,8 @@ router.post('/login', async (req: Request, res: Response) => {
         error: 'steam_id (string) is required',
       });
     }
+    // Create a server-side session and attach context there
+
     const ctx = {
       runtime: new RuntimeClient({
         DETERMINISTIC_ENC_SECRET,
@@ -75,15 +79,25 @@ router.post('/login', async (req: Request, res: Response) => {
         steam_session_ticket,
       },
     };
-    const results = await runPipeline([
-      new PreSignupService(ctx),
-      new SignupService(ctx),
-      new StartSessionService(ctx),
-      new LoadIndexService(ctx),
+    const session = sessionManager.create(ctx, {
+      steam_id,
+    });
+    session.setContext(ctx);
+
+    const results = await session.runPipeline([
+      PreSignupService,
+      SignupService,
+      StartSessionService,
+      LoadIndexService,
     ]);
-    console.log('results:', results);
+
+    // Minimal response: only return a session identifier
+    const failed = results.find((r) => r.error);
     res.json({
-      timestamp: new Date().toISOString(),
+      session_id: session.id,
+      ok: !failed,
+      error: failed?.error ?? null,
+      created_at: new Date(session.createdAt).toISOString(),
     });
   } catch (e: any) {
     res.status(500).json({

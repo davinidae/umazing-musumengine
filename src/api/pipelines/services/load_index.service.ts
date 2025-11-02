@@ -1,4 +1,5 @@
-import { StepService, StepPrevResult, StepResultBase } from '../types';
+import { StepPrevResult, StepResultBase } from '../../models';
+import { StepService } from './step.service';
 
 export class LoadIndexService extends StepService {
   readonly name = 'load_index';

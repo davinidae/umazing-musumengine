@@ -1,4 +1,5 @@
-import { StepService, StepPrevResult, StepResultBase } from '../types';
+import { StepPrevResult, StepResultBase } from '../../models';
+import { StepService } from './step.service';
 
 export class PreSignupService extends StepService {
   readonly name = 'pre_signup';
