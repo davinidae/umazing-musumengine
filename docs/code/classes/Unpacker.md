@@ -4,7 +4,7 @@
 
 # Class: Unpacker
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:272](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/decrypt/shared/unpacker.util.ts#L272)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:254](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/decrypt/shared/unpacker.util.ts#L254)
 
 Pipeline that tries multiple strategies in a safe order. If none succeed,
 returns a diagnostic object containing a hex dump to aid manual inspection.
@@ -15,7 +15,7 @@ returns a diagnostic object containing a hex dump to aid manual inspection.
 
 > **new Unpacker**(`strategies`): `Unpacker`
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:283](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/decrypt/shared/unpacker.util.ts#L283)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:265](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/decrypt/shared/unpacker.util.ts#L265)
 
 Heuristic unpacker for payloads that may not be length-prefixed. It tries, in order:
 1) Standard length-prefixed msgpack
@@ -42,7 +42,7 @@ If none succeed, returns a small diagnostic object with hex dump.
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:297](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/decrypt/shared/unpacker.util.ts#L297)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:279](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/decrypt/shared/unpacker.util.ts#L279)
 
 #### Parameters
 

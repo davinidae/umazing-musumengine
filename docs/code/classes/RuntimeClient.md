@@ -4,7 +4,7 @@
 
 # Class: RuntimeClient
 
-Defined in: [lib/runtime-client.ts:29](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/runtime-client.ts#L29)
+Defined in: [lib/runtime-client.ts:29](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/runtime-client.ts#L29)
 
 ## Constructors
 
@@ -12,7 +12,7 @@ Defined in: [lib/runtime-client.ts:29](https://github.com/davinidae/umazing-musu
 
 > **new RuntimeClient**(`opts`): `RuntimeClient`
 
-Defined in: [lib/runtime-client.ts:33](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/runtime-client.ts#L33)
+Defined in: [lib/runtime-client.ts:33](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/runtime-client.ts#L33)
 
 Thin OO wrapper so consumers can inject options later (e.g., logger).
 
@@ -34,7 +34,7 @@ Runtime options including the deterministic secret and optional logger.
 
 > **decodeResponse**(`input`): [`DecodeResponseOutput`](../interfaces/DecodeResponseOutput.md)
 
-Defined in: [lib/runtime-client.ts:69](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/runtime-client.ts#L69)
+Defined in: [lib/runtime-client.ts:69](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/runtime-client.ts#L69)
 
 Decode a Base64 response using the matching request for UDID/IV.
 Extracts UDID from blob1, derives IV, decrypts blob2, and uses the heuristic Unpacker to parse the plaintext.
@@ -63,7 +63,7 @@ If the request blob1 is malformed and UDID cannot be extracted.
 
 > **encodeRequest**(`input`): [`EncodeRequestOutput`](../interfaces/EncodeRequestOutput.md)
 
-Defined in: [lib/runtime-client.ts:50](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/runtime-client.ts#L50)
+Defined in: [lib/runtime-client.ts:50](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/runtime-client.ts#L50)
 
 Encode a request from header fields (blob1) and a JS payload.
 

@@ -4,7 +4,7 @@
 
 # Interface: ServiceOptions
 
-Defined in: [lib/models/client.model.ts:16](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/client.model.ts#L16)
+Defined in: [lib/models/client.model.ts:16](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/client.model.ts#L16)
 
 Common options for long-running services (decrypt/encrypt).
 
@@ -14,7 +14,7 @@ Common options for long-running services (decrypt/encrypt).
 
 > **DETERMINISTIC\_ENC\_SECRET**: `string`
 
-Defined in: [lib/models/client.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/client.model.ts#L18)
+Defined in: [lib/models/client.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/client.model.ts#L18)
 
 ***
 
@@ -22,4 +22,4 @@ Defined in: [lib/models/client.model.ts:18](https://github.com/davinidae/umazing
 
 > `optional` **logger**: [`Logger`](Logger.md)
 
-Defined in: [lib/models/client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/client.model.ts#L17)
+Defined in: [lib/models/client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/client.model.ts#L17)
