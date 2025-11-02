@@ -2,7 +2,7 @@
 
 > **udidRawToCanonicalString**(`udidRaw`): `string`
 
-Defined in: [lib/shared/protocol.util.ts:73](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/lib/shared/protocol.util.ts#L73)
+Defined in: [lib/shared/protocol.util.ts:73](https://github.com/davinidae/umazing-musumengine/blob/69d230954e98bd77e6d1fa5d5d78630166c21f43/src/lib/shared/protocol.util.ts#L73)
 
 Convert a 16-byte raw UDID into canonical dashed string form.
 

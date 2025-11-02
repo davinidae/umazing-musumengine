@@ -1,6 +1,6 @@
 # Class: StartSessionService
 
-Defined in: [api/pipelines/services/start\_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/api/pipelines/services/start_session.service.ts#L8)
+Defined in: [api/pipelines/services/start\_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/69d230954e98bd77e6d1fa5d5d78630166c21f43/src/api/pipelines/services/start_session.service.ts#L8)
 
 tool/start_session: Establishes a server session for the viewer.
 Skips execution if a valid viewer_id is not available.
@@ -15,7 +15,7 @@ Skips execution if a valid viewer_id is not available.
 
 > **new StartSessionService**(`ctx`): `StartSessionService`
 
-Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/api/pipelines/services/step.service.ts#L17)
+Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/69d230954e98bd77e6d1fa5d5d78630166c21f43/src/api/pipelines/services/step.service.ts#L17)
 
 Construct a step with the provided execution context.
 
@@ -41,7 +41,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines/interfaces/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/start\_session.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/api/pipelines/services/start_session.service.ts#L12)
+Defined in: [api/pipelines/services/start\_session.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/69d230954e98bd77e6d1fa5d5d78630166c21f43/src/api/pipelines/services/start_session.service.ts#L12)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.

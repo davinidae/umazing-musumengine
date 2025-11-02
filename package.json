@@ -35,7 +35,7 @@
     "build": "tsc -p tsconfig.build.json --noEmit && npm run bundle",
     "bundle": "esbuild src/cli.ts --bundle --platform=node --target=node18 --format=esm --outfile=dist/cli.bundle.js --sourcemap --external:@msgpack/msgpack --external:commander --external:fast-glob --external:fs-extra --external:node:* --tsconfig=tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit && tsc -p tsconfig.json --noEmit",
-    "cli": "tsx src/cli.ts",
+    "cli": "tsx src/cli/index.ts",
     "seed:example": "tsx scripts/seed-example.ts",
     "test": "vitest run",
     "test:unit": "vitest run --config vite.config.unit.ts",
