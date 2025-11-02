@@ -8,7 +8,7 @@
   "excludePrivateClassFields": true,
   "excludeProtected": true,
   "excludeNotDocumented": true,
-  "readme": "README.md",
+  "readme": "none",
   "pretty": true,
   "cleanOutputDir": true,
   "plugin": ["typedoc-plugin-markdown"],
