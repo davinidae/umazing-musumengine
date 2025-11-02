@@ -13,11 +13,14 @@
  */
 import { Command } from 'commander';
 import {
+  RuntimeClient,
   DecryptRequestService,
   DecryptResponseService,
-  RuntimeClient,
   EncryptPayloadService,
 } from '../lib';
+import path from 'node:path';
+import fs from 'node:fs';
+import fastGlob from 'fast-glob';
 import { DETERMINISTIC_ENC_SECRET } from '../variables';
 
 const program = new Command();
@@ -41,25 +44,100 @@ decrypt
   .command('request')
   .description("Decrypt all packs' request.txt under decrypt/input (recursive)")
   .action(async () => {
-    const decReq = new DecryptRequestService();
-    process.exitCode = await decReq.execute();
+    const inRoot = 'decrypt/input';
+    const entries = await fastGlob('**/request.txt', { cwd: inRoot, dot: false });
+    if (entries.length === 0) {
+      console.log('No request.txt files found under decrypt/input');
+      process.exitCode = 0;
+      return;
+    }
+    let processed = 0;
+    const reqSvc = new DecryptRequestService();
+    for (const relPath of entries.sort()) {
+      const fullPath = path.join(inRoot, relPath);
+      try {
+        const requestB64 = fs.readFileSync(fullPath, 'utf-8').trim();
+        const out = reqSvc.decodeFromBase64(requestB64);
+        const outDir = path.join(
+          'decrypt/output',
+          path.dirname(relPath),
+          path.parse(fullPath).name,
+        );
+        fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, 'decoded.bin'), out.plaintext);
+        const combined = { blob1: out.blob1, blob2: out.blob2 };
+        fs.writeFileSync(
+          path.join(outDir, 'decoded.json'),
+          JSON.stringify(combined, null, 2),
+          'utf-8',
+        );
+        processed += 1;
+      } catch (e: any) {
+        const msg = e && e.message ? e.message : String(e);
+        console.log(`Skip (invalid request format): ${fullPath} -> ${msg}`);
+      }
+    }
+    if (processed === 0) {
+      console.log('No valid request.txt files detected under decrypt/input');
+    }
+    process.exitCode = 0;
   });
 decrypt
   .command('response')
   .description("Decrypt all packs' response.txt under decrypt/input (recursive)")
   .action(async () => {
-    const decResp = new DecryptResponseService();
-    process.exitCode = await decResp.execute();
+    const inRoot = 'decrypt/input';
+    const entries = await fastGlob('**/response.txt', { cwd: inRoot, dot: false });
+    if (entries.length === 0) {
+      console.log('No response.txt files found under decrypt/input');
+      process.exitCode = 0;
+      return;
+    }
+    let processed = 0;
+    const respSvc = new DecryptResponseService();
+    for (const relPath of entries.sort()) {
+      const fullPath = path.join(inRoot, relPath);
+      const reqPath = path.join(path.dirname(fullPath), 'request.txt');
+      if (!fs.existsSync(reqPath)) {
+        console.log(`Skip (no matching request.txt in same folder): ${fullPath}`);
+        continue;
+      }
+      try {
+        const requestB64 = fs.readFileSync(reqPath, 'utf-8').trim();
+        const responseB64 = fs.readFileSync(fullPath, 'utf-8').trim();
+        const out = respSvc.decodeFromBase64(requestB64, responseB64);
+        const outDir = path.join(
+          'decrypt/output',
+          path.dirname(relPath),
+          path.parse(fullPath).name,
+        );
+        fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, 'decoded.bin'), out.plaintext);
+        const combined = { blob1: out.blob1, blob2: out.blob2 };
+        fs.writeFileSync(
+          path.join(outDir, 'decoded.json'),
+          JSON.stringify(combined, null, 2),
+          'utf-8',
+        );
+        processed += 1;
+      } catch (e: any) {
+        const msg = e && e.message ? e.message : String(e);
+        console.log(`Skip (invalid response format): ${fullPath} -> ${msg}`);
+      }
+    }
+    if (processed === 0) {
+      console.log('No valid response.txt files detected under decrypt/input');
+    }
+    process.exitCode = 0;
   });
 decrypt
   .command('all')
   .description('Decrypt packs (request + response) under decrypt/input (recursive)')
   .action(async () => {
-    const decReq = new DecryptRequestService();
-    const r1 = await decReq.execute();
-    const decResp = new DecryptResponseService();
-    const r2 = await decResp.execute();
-    process.exitCode = r1 === 0 && r2 === 0 ? 0 : 1;
+    // Reuse the two commands above sequentially
+    await program.parseAsync(['node', 'umazing', 'decrypt', 'request']);
+    await program.parseAsync(['node', 'umazing', 'decrypt', 'response']);
+    process.exitCode = 0;
   });
 
 const encrypt = program.command('encrypt').description('Build/encrypt operations');
@@ -69,8 +147,42 @@ encrypt
     'Build Base64 requests from all decoded.json under encrypt/input (recursive). Uses session_id_hex and response_key_hex from blob1; encryption key is deterministic.',
   )
   .action(async () => {
-    const encBuild = new EncryptPayloadService();
-    process.exitCode = await encBuild.execute();
+    const inRoot = 'encrypt/input';
+    const entries = await fastGlob('**/decoded.json', { cwd: inRoot, dot: false });
+    if (entries.length === 0) {
+      console.log('No decoded.json files found under encrypt/input');
+      process.exitCode = 0;
+      return;
+    }
+    let total = 0;
+    const encSvc = new EncryptPayloadService();
+    for (const rel of entries.sort()) {
+      const full = path.join(inRoot, rel);
+      try {
+        const root = JSON.parse(fs.readFileSync(full, 'utf-8'));
+        if (!root || typeof root !== 'object' || !('blob1' in root) || !('blob2' in root)) {
+          console.log(`Skip (invalid decoded.json structure): ${full}`);
+          continue;
+        }
+        const { requestB64 } = encSvc.buildFromParts({
+          blob1: (root as any).blob1,
+          payload: (root as any).blob2,
+          DETERMINISTIC_ENC_SECRET,
+        });
+        const outDir = path.join('encrypt/output', path.dirname(rel));
+        fs.mkdirSync(outDir, { recursive: true });
+        const outPath = path.join(outDir, 'built.b64');
+        fs.writeFileSync(outPath, requestB64, 'utf-8');
+        total += 1;
+      } catch (e: any) {
+        const msg = e && e.message ? e.message : String(e);
+        console.log(`Skip (error processing encryption): ${full} -> ${msg}`);
+      }
+    }
+    if (total === 0) {
+      console.log('No requests were built (check inputs and parameters)');
+    }
+    process.exitCode = 0;
   });
 
 /**

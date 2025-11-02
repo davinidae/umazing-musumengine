@@ -41,7 +41,7 @@ and formatting (Prettier)
   - `decrypt/request.ts`: decrypts all packs' `request.txt` under `decrypt/input` (recursive)
   - `decrypt/response.ts`: decrypts all packs' `response.txt` under `decrypt/input` (recursive, uses sibling `request.txt` to derive UDID/IV)
   - `encrypt/build.ts`: builds requests from all `decoded.json` under `encrypt/input` (recursive)
-  - `runtime.ts`: programmatic API to encode requests and decode responses in-process
+  - `lib/runtime-client.ts`: programmatic API to encode requests and decode responses in-process
   - `cli.ts`: unified CLI with `decrypt`, `encrypt`, and `runtime` subcommands
   - `variables.ts`: central constants; includes `DETERMINISTIC_ENC_SECRET`
 - `tests/`
@@ -303,7 +303,7 @@ node dist/cli.bundle.js decrypt all
 
 ## Runtime API (programmatic and piping)
 
-When integrating with live API calls, you can either pipe JSON through the CLI or import `runtime.ts` in-process.
+When integrating with live API calls, you can either pipe JSON through the CLI or use the RuntimeClient in-process.
 
 - CLI piping (stdin → stdout):
   - `runtime encode-request` expects on stdin:
@@ -322,7 +322,7 @@ When integrating with live API calls, you can either pipe JSON through the CLI o
 For a small OO wrapper, use `RuntimeClient`:
 
 ```ts
-import { RuntimeClient } from './src/runtime';
+import { RuntimeClient } from './src';
 
 const client = new RuntimeClient();
 

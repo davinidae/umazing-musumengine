@@ -10,12 +10,10 @@ export interface Logger {
 }
 
 /** Options for RuntimeClient construction. */
-export interface RuntimeClientOptions {
-  DETERMINISTIC_ENC_SECRET: string;
-  logger?: Logger;
-}
+export type RuntimeClientOptions = ServiceOptions;
 
 /** Common options for long-running services (decrypt/encrypt). */
 export interface ServiceOptions {
   logger?: Logger;
+  DETERMINISTIC_ENC_SECRET: string;
 }

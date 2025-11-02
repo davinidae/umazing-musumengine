@@ -3,9 +3,6 @@
  * Provides HTTP endpoints for encode/decode operations and strategy analysis.
  */
 import express, { Request, Response, NextFunction } from 'express';
-import { RuntimeClient } from '../lib/runtime-client';
-import type { EncodeRequestInput, DecodeResponseInput } from '../lib/models/runtime.model';
-import { DETERMINISTIC_ENC_SECRET } from '../variables';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -24,10 +21,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   } else {
     next();
   }
-});
-
-const runtimeClient = new RuntimeClient({
-  DETERMINISTIC_ENC_SECRET: DETERMINISTIC_ENC_SECRET,
 });
 
 // Health check
