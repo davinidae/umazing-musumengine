@@ -4,7 +4,7 @@
 
 # Class: ParsedRequest
 
-Defined in: [lib/models/protocol.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L69)
+Defined in: [lib/models/protocol.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L69)
 
 Represents a parsed full request with blob1 and blob2 sections.
 
@@ -14,7 +14,7 @@ Represents a parsed full request with blob1 and blob2 sections.
 
 > `readonly` **blob1**: [`Blob1Header`](Blob1Header.md)
 
-Defined in: [lib/models/protocol.model.ts:72](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L72)
+Defined in: [lib/models/protocol.model.ts:72](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L72)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [lib/models/protocol.model.ts:72](https://github.com/davinidae/umazi
 
 > `readonly` **blob1Buffer**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:70](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L70)
+Defined in: [lib/models/protocol.model.ts:70](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L70)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [lib/models/protocol.model.ts:70](https://github.com/davinidae/umazi
 
 > `readonly` **blob2**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:71](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L71)
+Defined in: [lib/models/protocol.model.ts:71](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L71)
 
 ## Methods
 
@@ -38,7 +38,7 @@ Defined in: [lib/models/protocol.model.ts:71](https://github.com/davinidae/umazi
 
 > `static` **parse**(`raw`): `ParsedRequest`
 
-Defined in: [lib/models/protocol.model.ts:86](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L86)
+Defined in: [lib/models/protocol.model.ts:86](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L86)
 
 Parse a full request buffer into a ParsedRequest.
 

@@ -4,7 +4,7 @@
 
 # Interface: EncodeRequestInput
 
-Defined in: [lib/models/runtime.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/runtime.model.ts#L9)
+Defined in: [lib/models/runtime.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/runtime.model.ts#L9)
 
 Input parameters for building a request.
 
@@ -14,7 +14,7 @@ Input parameters for building a request.
 
 > **blob1**: `object`
 
-Defined in: [lib/models/runtime.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/runtime.model.ts#L10)
+Defined in: [lib/models/runtime.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/runtime.model.ts#L10)
 
 #### auth\_key\_hex
 
@@ -64,4 +64,4 @@ Raw 16-byte UDID in hex; alternative to udid_canonical.
 
 > **payload**: `any`
 
-Defined in: [lib/models/runtime.model.ts:26](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/runtime.model.ts#L26)
+Defined in: [lib/models/runtime.model.ts:26](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/runtime.model.ts#L26)

@@ -4,7 +4,7 @@
 
 # Class: Blob1Header
 
-Defined in: [lib/models/protocol.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L5)
+Defined in: [lib/models/protocol.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L5)
 
 Represents the parsed blob1 header fields.
 Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
@@ -15,7 +15,7 @@ Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
 
 > `readonly` **auth\_key**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L10)
+Defined in: [lib/models/protocol.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L10)
 
 ***
 
@@ -23,7 +23,7 @@ Defined in: [lib/models/protocol.model.ts:10](https://github.com/davinidae/umazi
 
 > `readonly` **prefix**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L6)
+Defined in: [lib/models/protocol.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L6)
 
 ***
 
@@ -31,7 +31,7 @@ Defined in: [lib/models/protocol.model.ts:6](https://github.com/davinidae/umazin
 
 > `readonly` **response\_key**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L9)
+Defined in: [lib/models/protocol.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L9)
 
 ***
 
@@ -39,7 +39,7 @@ Defined in: [lib/models/protocol.model.ts:9](https://github.com/davinidae/umazin
 
 > `readonly` **session\_id**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L7)
+Defined in: [lib/models/protocol.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L7)
 
 ***
 
@@ -47,7 +47,7 @@ Defined in: [lib/models/protocol.model.ts:7](https://github.com/davinidae/umazin
 
 > `readonly` **udid\_raw**: `Buffer`
 
-Defined in: [lib/models/protocol.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L8)
+Defined in: [lib/models/protocol.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L8)
 
 ## Methods
 
@@ -55,7 +55,7 @@ Defined in: [lib/models/protocol.model.ts:8](https://github.com/davinidae/umazin
 
 > **udidCanonical**(): `string`
 
-Defined in: [lib/models/protocol.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L60)
+Defined in: [lib/models/protocol.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L60)
 
 UDID canonical dashed-format string derived from udid_raw.
 
@@ -71,7 +71,7 @@ Canonical UDID string (8-4-4-4-12).
 
 > `static` **fromBuffer**(`blob1`): `Blob1Header`
 
-Defined in: [lib/models/protocol.model.ts:32](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/protocol.model.ts#L32)
+Defined in: [lib/models/protocol.model.ts:32](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/protocol.model.ts#L32)
 
 Parse a blob1 Buffer into a Blob1Header instance.
 

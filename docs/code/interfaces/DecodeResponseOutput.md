@@ -4,7 +4,7 @@
 
 # Interface: DecodeResponseOutput
 
-Defined in: [lib/models/runtime.model.ts:39](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/runtime.model.ts#L39)
+Defined in: [lib/models/runtime.model.ts:39](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/runtime.model.ts#L39)
 
 ## Properties
 
@@ -12,4 +12,4 @@ Defined in: [lib/models/runtime.model.ts:39](https://github.com/davinidae/umazin
 
 > **payload**: `any`
 
-Defined in: [lib/models/runtime.model.ts:40](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/models/runtime.model.ts#L40)
+Defined in: [lib/models/runtime.model.ts:40](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/models/runtime.model.ts#L40)

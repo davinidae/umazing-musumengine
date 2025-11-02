@@ -6,7 +6,7 @@
 
 > **fromJsonFriendly**(`value`): `any`
 
-Defined in: [lib/shared/json.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/d4855d0689c920b326ed58c418dab42de4b3c061/src/lib/shared/json.util.ts#L8)
+Defined in: [lib/shared/json.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/4ef7fa4bd68ff11c74b5fbedfdd84a758352a918/src/lib/shared/json.util.ts#L8)
 
 Convert JSON-friendly representations into runtime shapes.
 - Recognizes strings prefixed with "base64:" and converts them to Buffers.
