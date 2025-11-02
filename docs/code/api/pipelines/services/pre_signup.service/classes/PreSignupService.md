@@ -1,6 +1,6 @@
 # Class: PreSignupService
 
-Defined in: [api/pipelines/services/pre\_signup.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/api/pipelines/services/pre_signup.service.ts#L8)
+Defined in: [api/pipelines/services/pre\_signup.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/api/pipelines/services/pre_signup.service.ts#L8)
 
 tool/pre_signup: Send initial client device/environment data.
 Uses kv-stream framing to build a (key,value,...) sequence.
@@ -15,7 +15,7 @@ Uses kv-stream framing to build a (key,value,...) sequence.
 
 > **new PreSignupService**(`ctx`): `PreSignupService`
 
-Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/api/pipelines/services/step.service.ts#L17)
+Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/api/pipelines/services/step.service.ts#L17)
 
 Construct a step with the provided execution context.
 
@@ -41,7 +41,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`_prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines/interfaces/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/pre\_signup.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/api/pipelines/services/pre_signup.service.ts#L12)
+Defined in: [api/pipelines/services/pre\_signup.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/api/pipelines/services/pre_signup.service.ts#L12)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.

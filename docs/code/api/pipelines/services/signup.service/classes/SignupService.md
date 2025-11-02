@@ -1,6 +1,6 @@
 # Class: SignupService
 
-Defined in: [api/pipelines/services/signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/api/pipelines/services/signup.service.ts#L9)
+Defined in: [api/pipelines/services/signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/api/pipelines/services/signup.service.ts#L9)
 
 tool/signup: Registers or fetches a viewer account based on device info.
 Carries viewer_id forward when available from previous step.
@@ -16,7 +16,7 @@ Uses kv-stream framing.
 
 > **new SignupService**(`ctx`): `SignupService`
 
-Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/api/pipelines/services/step.service.ts#L17)
+Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/api/pipelines/services/step.service.ts#L17)
 
 Construct a step with the provided execution context.
 
@@ -42,7 +42,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines/interfaces/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/signup.service.ts:13](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/api/pipelines/services/signup.service.ts#L13)
+Defined in: [api/pipelines/services/signup.service.ts:13](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/api/pipelines/services/signup.service.ts#L13)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.

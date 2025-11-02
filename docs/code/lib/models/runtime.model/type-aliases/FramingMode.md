@@ -2,7 +2,7 @@
 
 > **FramingMode** = `"length-prefixed"` \| `"kv-stream"`
 
-Defined in: [lib/models/runtime.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/ef7abbeb2f0a0bbb0762686b42f68cdafb94656e/src/lib/models/runtime.model.ts#L6)
+Defined in: [lib/models/runtime.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/e297eba6a8f7fc24343fc263108a30476ed20d1c/src/lib/models/runtime.model.ts#L6)
 
 Payload framing modes supported by the wire protocol.
 - length-prefixed: [4B LE len][msgpack]

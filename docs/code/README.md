@@ -366,7 +366,12 @@ Content-Type: application/json
 Response:
 
 ```json
-{ "session_id": "<uuid>", "ok": true, "error": null, "created_at": "2025-01-01T00:00:00.000Z" }
+{
+  "session_id": "<uuid>",
+  "ok": true,
+  "error": null,
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
 ```
 
 Subsequent endpoints can accept `session_id` to continue pipelines using the server-stored context and last step.
