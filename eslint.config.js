@@ -7,17 +7,13 @@ import importPlugin from 'eslint-plugin-import';
 
 export default [
   {
-
     ignores: ['dist/**', 'node_modules/**'],
   },
   js.configs.recommended,
   {
-
     files: ['**/*.{ts,js}'],
     languageOptions: {
-
       globals: {
-
         console: 'readonly',
         process: 'readonly',
         Buffer: 'readonly',
@@ -25,28 +21,26 @@ export default [
     },
   },
   {
-
     files: ['**/*.ts'],
     languageOptions: {
-
       parser: tsParser,
       sourceType: 'module',
       ecmaVersion: 'latest',
     },
     plugins: {
-
       '@typescript-eslint': tsPlugin,
       import: importPlugin,
     },
     rules: {
-
       ...tsPlugin.configs.recommended.rules,
       'import/no-unresolved': 'off',
+      // Prefer readability over golfed one-liners
+      curly: ['error', 'all'],
+      'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 2 }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': [
         'warn',
         {
-
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
@@ -55,12 +49,9 @@ export default [
     },
   },
   {
-
     files: ['tests/**/*.ts'],
     languageOptions: {
-
       globals: {
-
         describe: 'readonly',
         test: 'readonly',
         expect: 'readonly',

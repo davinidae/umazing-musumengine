@@ -43,7 +43,9 @@ export class EncryptPayloadService {
     };
     payload: unknown;
     DETERMINISTIC_ENC_SECRET: string;
-  }): { requestB64: string } {
+  }): {
+    requestB64: string;
+  } {
     const { blob1, payload, DETERMINISTIC_ENC_SECRET } = input;
     // Resolve UDID string
     let udidString: string | null = null;
@@ -59,14 +61,24 @@ export class EncryptPayloadService {
 
     const sidHex = blob1.session_id_hex;
     const respKeyHex = blob1.response_key_hex;
-    if (!sidHex) throw new Error('Missing session_id_hex');
-    if (!respKeyHex) throw new Error('Missing response_key_hex');
+    if (!sidHex) {
+      throw new Error('Missing session_id_hex');
+    }
+    if (!respKeyHex) {
+      throw new Error('Missing response_key_hex');
+    }
     const sessionId = Buffer.from(sidHex, 'hex');
-    if (sessionId.length !== 16) throw new Error('session_id_hex must be 16B');
+    if (sessionId.length !== 16) {
+      throw new Error('session_id_hex must be 16B');
+    }
     const responseKey = Buffer.from(respKeyHex, 'hex');
-    if (responseKey.length !== 32) throw new Error('response_key_hex must be 32B');
+    if (responseKey.length !== 32) {
+      throw new Error('response_key_hex must be 32B');
+    }
     const authKey = Buffer.from(blob1.auth_key_hex, 'hex');
-    if (authKey.length !== 48) throw new Error('auth_key_hex must be 48B');
+    if (authKey.length !== 48) {
+      throw new Error('auth_key_hex must be 48B');
+    }
 
     // Build plaintext
     const hintFraming = blob1.framing ?? 'length-prefixed';
@@ -92,7 +104,9 @@ export class EncryptPayloadService {
     }
 
     // Encrypt
-    const encryptionKey = createHash('sha256').update(DETERMINISTIC_ENC_SECRET, 'utf8').digest();
+    const keyHash = createHash('sha256');
+    keyHash.update(DETERMINISTIC_ENC_SECRET, 'utf8');
+    const encryptionKey = keyHash.digest();
     const padded = pkcs7Pad(plaintext, 16);
     const ciphertext = encryptAes256Cbc(padded, encryptionKey, iv);
 
@@ -110,6 +124,8 @@ export class EncryptPayloadService {
       Buffer.concat([ciphertext, encryptionKey]),
     ]);
     full.writeUInt32LE(newBlob1.length, 0);
-    return { requestB64: full.toString('base64') };
+    return {
+      requestB64: full.toString('base64'),
+    };
   }
 }

@@ -3,13 +3,21 @@
  * Provides HTTP endpoints for encode/decode operations and strategy analysis.
  */
 import express, { Request, Response, NextFunction } from 'express';
-
+import endpoints from './endpoints';
 const app = express();
 const port = process.env.PORT || 4000;
 
 // Middleware
-app.use(express.json({ limit: '10mb' }));
-app.use(express.urlencoded({ extended: true }));
+app.use(
+  express.json({
+    limit: '10mb',
+  }),
+);
+app.use(
+  express.urlencoded({
+    extended: true,
+  }),
+);
 
 // CORS for development
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -23,33 +31,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-// Health check
-app.get('/health', (req: Request, res: Response) => {
-  res.json({
-    status: 'ok',
-    timestamp: new Date().toISOString(),
-    env: process.env.NODE_ENV || 'production',
-  });
-});
-
-// API info
-app.get('/', (req: Request, res: Response) => {
-  res.json({
-    name: 'umazing-musumengine API',
-    version: '1.0.0',
-    endpoints: {
-      'GET /health': 'Health check',
-      'POST /login': 'Start a session',
-    },
-  });
-});
-
-app.post('/login', (req: Request, res: Response) => {
-  res.json({
-    message: 'Login endpoint - implementation pending',
-    timestamp: new Date().toISOString(),
-  });
-});
+// Mount API endpoints (keeps handlers out of this file)
+app.use(endpoints);
 
 // Error handling middleware
 app.use((error: any, req: Request, res: Response, _next: NextFunction) => {
@@ -60,9 +43,11 @@ app.use((error: any, req: Request, res: Response, _next: NextFunction) => {
   });
 });
 
-// 404 handler
+// 404 handler (after all endpoints)
 app.use((req: Request, res: Response) => {
-  res.status(404).json({ error: 'Endpoint not found' });
+  res.status(404).json({
+    error: 'Endpoint not found',
+  });
 });
 
 // Start server

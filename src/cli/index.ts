@@ -45,7 +45,10 @@ decrypt
   .description("Decrypt all packs' request.txt under decrypt/input (recursive)")
   .action(async () => {
     const inRoot = 'decrypt/input';
-    const entries = await fastGlob('**/request.txt', { cwd: inRoot, dot: false });
+    const entries = await fastGlob('**/request.txt', {
+      cwd: inRoot,
+      dot: false,
+    });
     if (entries.length === 0) {
       console.log('No request.txt files found under decrypt/input');
       process.exitCode = 0;
@@ -63,9 +66,14 @@ decrypt
           path.dirname(relPath),
           path.parse(fullPath).name,
         );
-        fs.mkdirSync(outDir, { recursive: true });
+        fs.mkdirSync(outDir, {
+          recursive: true,
+        });
         fs.writeFileSync(path.join(outDir, 'decoded.bin'), out.plaintext);
-        const combined = { blob1: out.blob1, blob2: out.blob2 };
+        const combined = {
+          blob1: out.blob1,
+          blob2: out.blob2,
+        };
         fs.writeFileSync(
           path.join(outDir, 'decoded.json'),
           JSON.stringify(combined, null, 2),
@@ -87,7 +95,10 @@ decrypt
   .description("Decrypt all packs' response.txt under decrypt/input (recursive)")
   .action(async () => {
     const inRoot = 'decrypt/input';
-    const entries = await fastGlob('**/response.txt', { cwd: inRoot, dot: false });
+    const entries = await fastGlob('**/response.txt', {
+      cwd: inRoot,
+      dot: false,
+    });
     if (entries.length === 0) {
       console.log('No response.txt files found under decrypt/input');
       process.exitCode = 0;
@@ -111,9 +122,14 @@ decrypt
           path.dirname(relPath),
           path.parse(fullPath).name,
         );
-        fs.mkdirSync(outDir, { recursive: true });
+        fs.mkdirSync(outDir, {
+          recursive: true,
+        });
         fs.writeFileSync(path.join(outDir, 'decoded.bin'), out.plaintext);
-        const combined = { blob1: out.blob1, blob2: out.blob2 };
+        const combined = {
+          blob1: out.blob1,
+          blob2: out.blob2,
+        };
         fs.writeFileSync(
           path.join(outDir, 'decoded.json'),
           JSON.stringify(combined, null, 2),
@@ -148,7 +164,10 @@ encrypt
   )
   .action(async () => {
     const inRoot = 'encrypt/input';
-    const entries = await fastGlob('**/decoded.json', { cwd: inRoot, dot: false });
+    const entries = await fastGlob('**/decoded.json', {
+      cwd: inRoot,
+      dot: false,
+    });
     if (entries.length === 0) {
       console.log('No decoded.json files found under encrypt/input');
       process.exitCode = 0;
@@ -170,7 +189,9 @@ encrypt
           DETERMINISTIC_ENC_SECRET,
         });
         const outDir = path.join('encrypt/output', path.dirname(rel));
-        fs.mkdirSync(outDir, { recursive: true });
+        fs.mkdirSync(outDir, {
+          recursive: true,
+        });
         const outPath = path.join(outDir, 'built.b64');
         fs.writeFileSync(outPath, requestB64, 'utf-8');
         total += 1;
@@ -197,7 +218,9 @@ async function readAllStdin(): Promise<string> {
       chunks.push(buf);
     });
     process.stdin.on('end', () => {
-      const all = Buffer.concat(chunks).toString('utf-8').trim();
+      const allBuf = Buffer.concat(chunks);
+      const allStr = allBuf.toString('utf-8');
+      const all = allStr.trim();
       resolve(all);
     });
     process.stdin.on('error', (err) => {
@@ -223,7 +246,10 @@ runtime
       const runtimeClient = new RuntimeClient({
         DETERMINISTIC_ENC_SECRET,
       });
-      const out = runtimeClient.encodeRequest({ blob1: input.blob1, payload: input.payload });
+      const out = runtimeClient.encodeRequest({
+        blob1: input.blob1,
+        payload: input.payload,
+      });
       process.stdout.write(JSON.stringify(out));
       process.exitCode = 0;
     } catch (e: any) {

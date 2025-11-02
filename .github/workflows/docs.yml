@@ -4,10 +4,10 @@ on:
   push:
     branches: [main, master]
     paths:
-      - "src/**"
-      - "typedoc.json"
-      - "package.json"
-      - "tsconfig.json"
+      - 'src/**'
+      - 'typedoc.json'
+      - 'package.json'
+      - 'tsconfig.json'
   workflow_dispatch:
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: 'npm'
 
       - name: Install
         run: npm ci

@@ -1,17 +1,17 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { encodeRequest } from '../src/runtime';
+import { RuntimeClient } from '../src';
 import {
   parseRequest,
   parseHeaderBlob1,
   udidRawToCanonicalString,
   deriveIvFromUdidString,
-} from '../src/shared/protocol';
+} from '../src';
 import { encode as mpEncode } from '@msgpack/msgpack';
 import { createHash } from 'node:crypto';
-import { pkcs7Pad } from '../src/decrypt/shared';
+import { pkcs7Pad } from '../src';
 import { DETERMINISTIC_ENC_SECRET } from '../src/variables';
-import { encryptAes256Cbc } from '../src/shared';
+import { encryptAes256Cbc } from '../src';
 
 async function main() {
   const outDir = path.join(process.cwd(), 'decrypt', 'input', 'example');
@@ -29,7 +29,8 @@ async function main() {
   const payload = { hello: 'world', n: 42 };
 
   // Build request
-  const { requestB64 } = encodeRequest({ blob1, payload });
+  const runtime = new RuntimeClient();
+  const { requestB64 } = runtime.encodeRequest({ blob1, payload });
   fs.writeFileSync(path.join(outDir, 'request.txt'), requestB64 + '\n', 'utf-8');
 
   // Build response using same deterministic key and IV derived from request UDID
@@ -38,7 +39,9 @@ async function main() {
   const h = parseHeaderBlob1(reqBlob1);
   const udidCanon = udidRawToCanonicalString(h.udid_raw);
   const iv = deriveIvFromUdidString(udidCanon);
-  const encryptionKey = createHash('sha256').update(DETERMINISTIC_ENC_SECRET, 'utf8').digest();
+  const sha = createHash('sha256');
+  sha.update(DETERMINISTIC_ENC_SECRET, 'utf8');
+  const encryptionKey = sha.digest();
   const packed = Buffer.from(mpEncode(payload));
   const prefixed = Buffer.concat([Buffer.alloc(4), packed]);
   prefixed.writeUInt32LE(packed.length, 0);

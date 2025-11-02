@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run linters and formatters on staged files
+npx lint-staged
+
+# Optional: run a full typecheck before commit
+npm run typecheck

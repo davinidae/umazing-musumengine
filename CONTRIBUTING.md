@@ -13,9 +13,9 @@ Thanks for contributing! This project prioritizes clarity and maintainability ov
 
 ```typescript
 try {
-    /* code */
+  /* code */
 } catch (_e) {
-    /* ignore: heuristic probe */
+  /* ignore: heuristic probe */
 }
 ```
 

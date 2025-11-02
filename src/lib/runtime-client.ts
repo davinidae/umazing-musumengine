@@ -55,7 +55,9 @@ export class RuntimeClient {
       payload,
       DETERMINISTIC_ENC_SECRET: this.opts.DETERMINISTIC_ENC_SECRET,
     });
-    return { requestB64 };
+    return {
+      requestB64,
+    };
   }
 
   /**
@@ -74,6 +76,8 @@ export class RuntimeClient {
     }
     const result = new DecryptResponseService().decodeFromBase64(requestB64, responseB64);
     this.logger.debug?.('[runtime] decodeResponse unpacked');
-    return { payload: result.blob2 };
+    return {
+      payload: result.blob2,
+    };
   }
 }

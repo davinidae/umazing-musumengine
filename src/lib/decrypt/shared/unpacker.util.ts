@@ -228,11 +228,15 @@ export class HeuristicStreamToObjectStrategy extends UnpackStrategy {
     try {
       const seq = [...decodeMulti(buf)];
       for (let start = 0; start < Math.min(seq.length, 64); start++) {
-        if (typeof seq[start] !== 'string') continue;
+        if (typeof seq[start] !== 'string') {
+          continue;
+        }
         const obj: Record<string, unknown> = {};
         let okPairs = 0;
         for (let i = start; i + 1 < seq.length; i += 2) {
-          if (typeof seq[i] !== 'string') break;
+          if (typeof seq[i] !== 'string') {
+            break;
+          }
           obj[seq[i] as string] = seq[i + 1];
           okPairs++;
         }

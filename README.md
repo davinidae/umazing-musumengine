@@ -31,7 +31,7 @@ See CONTRIBUTING.md for style guidelines (multi-line control flow, concise comme
 - Commander-based CLI with `decrypt`, `encrypt`, and `runtime` subcommands
 - Split test suites (Vitest): unit and integration, with coverage and thresholds
 - Linting (ESLint flat config)
-and formatting (Prettier)
+  and formatting (Prettier)
 
 ## Structure
 
@@ -158,7 +158,7 @@ if any required field is missing/invalid (e.g., `session_id_hex` not 16 bytes, `
 ## Common usage (end-to-end)
 
 1. Capture request/response Base64 bodies from the game API (e.g., with Fiddler or a proxy)
-and save them as packs under `decrypt/input/<pack>/request.txt` and `decrypt/input/<pack>/response.txt`.
+   and save them as packs under `decrypt/input/<pack>/request.txt` and `decrypt/input/<pack>/response.txt`.
 
 1. Decrypt them (batch):
 
@@ -169,10 +169,10 @@ npm run cli -- decrypt all
 This writes `decrypt/output/<pack>/<file>/{decoded.bin, decoded.json}`. The `decoded.json` contains both `blob1` and the JSON-friendly payload as `blob2`.
 
 1. Edit `decrypt/output/<pack>/<file>/decoded.json` (only `blob2` typically)
-to make your changes.
+   to make your changes.
 
 1. Copy edited `decoded.json` files to `encrypt/input/<pack>/` (keep any subfolder layout you prefer)
-and rebuild:
+   and rebuild:
 
 ```powershell
 npm run cli -- encrypt build
@@ -186,9 +186,9 @@ Compatibility Python files have been removed. Use the TypeScript CLI and modules
 
 - Decrypted binaries include a 4-byte little-endian length prefix for msgpack. The CLIs handle packing/unpacking automatically.
 - IV derivation: computed from the canonical UDID string (hex with dashes)
-via `deriveIvFromUdidString`.
+  via `deriveIvFromUdidString`.
 - Request format on disk: `[4-byte LE blob1_len][blob1][blob2_encrypted || 32B-enc-key]` where `blob2_encrypted` is PKCS#7 padded and AES-256-CBC encrypted; the 32-byte key (SHA-256 of the deterministic secret)
-is appended to blob2.
+  is appended to blob2.
 - `blob1` layout: `prefix | session_id(16B)
 | udid_raw(16B)
 | response_key(32B)
@@ -236,7 +236,7 @@ What’s covered today:
 
 - Unit: protocol helpers, crypto helpers, msgpack packing/unpacking
 - Integration: decrypt example pack, decrypt run()
-end-to-end (request + response), builder e2e (can decrypt back), builder skip cases, roundtrip from a previously decrypted `decoded.json`
+  end-to-end (request + response), builder e2e (can decrypt back), builder skip cases, roundtrip from a previously decrypted `decoded.json`
 
 Unit coverage thresholds are enforced via `vite.config.unit.ts`.
 
@@ -339,7 +339,10 @@ const { requestB64 } = client.encodeRequest({
 });
 
 // Later, decode a response (Base64 of blob2)
-const { payload } = client.decodeResponse({ requestB64, responseB64: '<blob2 base64>' });
+const { payload } = client.decodeResponse({
+  requestB64,
+  responseB64: '<blob2 base64>',
+});
 ```
 
 Response normalization note: For certain responses that arrive as noisy or flattened key/value streams, the decoder reconstructs `{ data_headers, data }` where both are message-packed maps.

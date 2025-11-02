@@ -18,7 +18,10 @@ export abstract class UnpackStrategy {
         Object.prototype.hasOwnProperty.call(o, 'servertime');
       if (hasData && !hasHeaders && looksLikeHeaders) {
         const { data, ...rest } = o;
-        return { data_headers: rest, data };
+        return {
+          data_headers: rest,
+          data,
+        };
       }
     }
     return v;
