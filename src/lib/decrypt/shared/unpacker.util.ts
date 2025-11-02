@@ -4,7 +4,7 @@
  * value or throws/returns undefined. The Unpacker catches errors and falls through
  * until one succeeds. This keeps the core decoding resilient to real-world quirks.
  */
-import { decode, decodeMulti, encode } from '@msgpack/msgpack';
+import { decode, decodeMulti } from '@msgpack/msgpack';
 import { UnpackStrategy } from '../../models';
 
 /**
@@ -201,7 +201,11 @@ export class MultiArrayStrategy extends UnpackStrategy {
     try {
       const arr = [...decodeMulti(buf)];
       if (arr.length > 0) {
-        return arr;
+        // Be conservative: if it looks like a trivial stream of numbers, don't treat it as a parse.
+        const allNumbers = arr.every((v) => typeof v === 'number');
+        if (!allNumbers) {
+          return arr;
+        }
       }
     } catch (_e) {
       /* ignore: not a multi-doc payload */
@@ -222,44 +226,22 @@ export class HeuristicStreamToObjectStrategy extends UnpackStrategy {
    */
   execute(buf: Buffer): unknown | undefined {
     try {
-      const values: unknown[] = [];
-      let pos = 0;
-      const maxBytes = Math.min(buf.length, 8192);
-      while (pos < maxBytes) {
-        try {
-          const v = decode(buf.subarray(pos));
-          values.push(v);
-          const enc = encode(v);
-          pos += enc.length;
-          if (enc.length === 0) {
-            break;
-          }
-        } catch {
-          break;
-        }
-      }
-      const isStr = (x: unknown) => typeof x === 'string';
-      for (let start = 0; start < Math.min(values.length, 32); start++) {
-        if (!isStr(values[start])) {
-          continue;
-        }
+      const seq = [...decodeMulti(buf)];
+      for (let start = 0; start < Math.min(seq.length, 64); start++) {
+        if (typeof seq[start] !== 'string') continue;
         const obj: Record<string, unknown> = {};
         let okPairs = 0;
-        for (let i = start; i + 1 < values.length; i += 2) {
-          if (!isStr(values[i])) {
-            break;
-          }
-          const k = values[i] as string;
-          const val = values[i + 1];
-          obj[k] = val;
+        for (let i = start; i + 1 < seq.length; i += 2) {
+          if (typeof seq[i] !== 'string') break;
+          obj[seq[i] as string] = seq[i + 1];
           okPairs++;
         }
-        if (okPairs >= 4) {
+        if (okPairs >= 2) {
           return obj;
         }
       }
     } catch (_e) {
-      /* ignore: heuristic to object failed */
+      /* ignore: not a multi-doc stream */
     }
     return undefined;
   }

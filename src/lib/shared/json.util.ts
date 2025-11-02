@@ -43,11 +43,13 @@ export function toJsonCompatible(value: any): any {
   }
   if (Buffer.isBuffer(value) || value instanceof Uint8Array) {
     const b = Buffer.from(value as Uint8Array);
-    try {
-      return b.toString('utf-8');
-    } catch {
-      return 'base64:' + b.toString('base64');
+    // Decode to UTF-8 string and verify round-trip fidelity; if bytes change, it's not safe text.
+    const s = b.toString('utf-8');
+    const roundtrip = Buffer.from(s, 'utf-8');
+    if (roundtrip.equals(b)) {
+      return s;
     }
+    return 'base64:' + b.toString('base64');
   }
   return value;
 }
