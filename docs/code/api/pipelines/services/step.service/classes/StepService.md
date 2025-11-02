@@ -1,6 +1,6 @@
 # Abstract Class: StepService
 
-Defined in: [api/pipelines/services/step.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/e31f12912bf088e7e67f5379b1fed36ba4f17894/src/api/pipelines/services/step.service.ts#L12)
+Defined in: [api/pipelines/services/step.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/api/pipelines/services/step.service.ts#L12)
 
 Base class for a pipeline service step.
 
@@ -22,7 +22,7 @@ Responsibilities
 
 > **new StepService**(`ctx`): `StepService`
 
-Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/e31f12912bf088e7e67f5379b1fed36ba4f17894/src/api/pipelines/services/step.service.ts#L17)
+Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/api/pipelines/services/step.service.ts#L17)
 
 Construct a step with the provided execution context.
 
@@ -44,7 +44,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > `abstract` **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines/interfaces/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/step.service.ts:65](https://github.com/davinidae/umazing-musumengine/blob/e31f12912bf088e7e67f5379b1fed36ba4f17894/src/api/pipelines/services/step.service.ts#L65)
+Defined in: [api/pipelines/services/step.service.ts:65](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/api/pipelines/services/step.service.ts#L65)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.

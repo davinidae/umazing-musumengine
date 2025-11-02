@@ -2,7 +2,7 @@
 
 > **deriveIvFromUdidString**(`udidString`): `Buffer`
 
-Defined in: [lib/shared/protocol.util.ts:87](https://github.com/davinidae/umazing-musumengine/blob/e31f12912bf088e7e67f5379b1fed36ba4f17894/src/lib/shared/protocol.util.ts#L87)
+Defined in: [lib/shared/protocol.util.ts:87](https://github.com/davinidae/umazing-musumengine/blob/3699b0b316713adaa61e62c11a4220687bdb55bc/src/lib/shared/protocol.util.ts#L87)
 
 Derive a 16-byte IV from a canonical UDID string (first 16 ASCII chars, hyphens stripped).
 

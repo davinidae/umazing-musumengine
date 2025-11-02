@@ -13,6 +13,7 @@ If you or someone you know is affected by these tools, please write me a ticket 
 Thanks to user [racsonaht](https://www.unknowncheats.me/forum/members/7040191.html)
 at [UnknownCheats](https://www.unknowncheats.me/forum/4473299-post1.html)
 for their initial work from which this tool started.
+Their original post is copied at [docs/umamusume_api_info](./docs/umamusume_api_info/ORIGINAL.md)
 
 ## What this repository is about
 
