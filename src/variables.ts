@@ -1,4 +1,10 @@
-// Centralized constants used across the project
+/**
+ * Centralized constants used across the project.
+ * @public
+ */
 
-// Secret used to derive the deterministic 32-byte AES-256 key for blob2
+/**
+ * ASCII secret used to deterministically derive the 32-byte AES-256 key for blob2
+ * during development and tests. In production, use a secure runtime secret.
+ */
 export const DETERMINISTIC_ENC_SECRET = 'co!=Y;(UQCGxJ_n82';

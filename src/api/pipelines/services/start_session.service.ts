@@ -1,6 +1,10 @@
 import { StepPrevResult, StepResultBase } from '../../models';
 import { StepService } from './step.service';
 
+/**
+ * tool/start_session: Establishes a server session for the viewer.
+ * Skips execution if a valid viewer_id is not available.
+ */
 export class StartSessionService extends StepService {
   readonly name = 'start_session';
   readonly endpoint = 'tool/start_session';

@@ -4,5 +4,8 @@
 # Run linters and formatters on staged files
 npx lint-staged
 
-# Optional: run a full typecheck before commit
+# Run a full typecheck before commit
 npm run typecheck
+
+# Generate documentation before commit
+npm run docs

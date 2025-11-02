@@ -2,7 +2,10 @@ import { Router, Request, Response } from 'express';
 
 const router = Router();
 
-// Health check
+/**
+ * GET /health
+ * Lightweight health probe for uptime checks.
+ */
 router.get('/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
@@ -11,7 +14,10 @@ router.get('/health', (req: Request, res: Response) => {
   });
 });
 
-// API info root
+/**
+ * GET /
+ * Discovery endpoint listing minimal API metadata.
+ */
 router.get('/', (req: Request, res: Response) => {
   res.json({
     name: 'umazing-musumengine API',

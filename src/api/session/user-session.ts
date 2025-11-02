@@ -1,6 +1,14 @@
 import type { PipelineContext, StepPrevResult, StepResult, StepResultBase } from '../models';
 import { StepServiceCtor } from '../pipelines';
 
+/**
+ * Represents a per-user server-side session owned by the API.
+ *
+ * Responsibilities
+ * - Hold server-only state: PipelineContext (crypto/runtime + upstream config) and the last pipeline step result.
+ * - Provide helpers to run a sequence of pipeline services and persist the last step.
+ * - Do NOT expose sensitive state to API consumers; only share the opaque `id`.
+ */
 export class UserSession {
   private lastStep?: StepPrevResult;
 
@@ -13,22 +21,33 @@ export class UserSession {
     //
   }
 
+  /** Replace or initialize the pipeline context for this session. */
   setContext(ctx: PipelineContext): void {
     this.ctx = ctx;
   }
 
+  /** Access the pipeline context, if any. */
   getContext(): PipelineContext | undefined {
     return this.ctx;
   }
 
+  /** Persist the last successful or terminal step of the pipeline. */
   setLastStep(step: StepPrevResult | undefined): void {
     this.lastStep = step;
   }
 
+  /** Retrieve the last step result, used as input for chained pipelines. */
   getLastStep(): StepPrevResult | undefined {
     return this.lastStep;
   }
 
+  /**
+   * Execute a set of services sequentially, instantiating each with the current context.
+   * On error, pushes an error result and stops execution.
+   *
+   * @param steps Constructors for services to run, in order.
+   * @returns Ordered list of StepResult items, including the error entry if an error occurred.
+   */
   async executePipeline(steps: StepServiceCtor[]): Promise<StepResult[]> {
     const results: StepResult[] = [];
     let prev: StepPrevResult | undefined = undefined;
@@ -65,6 +84,10 @@ export class UserSession {
     return results;
   }
 
+  /**
+   * Convenience wrapper around executePipeline that also saves the last step for chaining.
+   * @param services Constructors for services to run, in order.
+   */
   async runPipeline(services: StepServiceCtor[]): Promise<StepResult[]> {
     const results = await this.executePipeline(services);
     if (results.length > 0) {

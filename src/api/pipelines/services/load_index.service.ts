@@ -1,6 +1,10 @@
 import { StepPrevResult, StepResultBase } from '../../models';
 import { StepService } from './step.service';
 
+/**
+ * load/index: Retrieves the main screen data for the session.
+ * Requires a valid viewer_id; skips otherwise.
+ */
 export class LoadIndexService extends StepService {
   readonly name = 'load_index';
   readonly endpoint = 'load/index';

@@ -14,8 +14,16 @@ const router = Router();
 
 /**
  * POST /login
- * Orchestrates the Main Screen Start Up Bootstrap sequence (pre_signup -> signup -> start_session -> load/index)
- * See: docs/umamusume_api_info/behavior/MAIN_SCREEN.md and INTERACTION.md
+ *
+ * Orchestrates the Main Screen Start Up Bootstrap sequence
+ * (pre_signup -> signup -> start_session -> load/index).
+ * Creates a server-only user session and returns an opaque session_id for subsequent calls.
+ *
+ * @route POST /login
+ * @param req.body.steam_id string Steam identifier (required)
+ * @param req.body.steam_session_ticket string Steam session ticket (optional)
+ * @returns 200 JSON { session_id, ok, error, created_at }
+ * @remarks The server stores PipelineContext and last step internally; no sensitive data is returned.
  */
 router.post('/login', async (req: Request, res: Response) => {
   try {

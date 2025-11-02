@@ -1,15 +1,22 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": ["src/index.ts", "src/cli.ts"],
+  "entryPoints": ["src/**/*.ts"],
   "tsconfig": "tsconfig.json",
   "out": "docs/code",
   "excludeExternals": true,
   "excludePrivate": true,
+  "excludePrivateClassFields": true,
   "excludeProtected": true,
+  "excludeNotDocumented": true,
   "readme": "README.md",
+  "pretty": true,
   "cleanOutputDir": true,
   "plugin": ["typedoc-plugin-markdown"],
   "theme": "markdown",
   "hideBreadcrumbs": true,
+  "hidePageHeader": true,
+  "hideGenerator": true,
+  "jsDocCompatibility": true,
+  "darkHighlightTheme": "dark-plus",
   "hidePageTitle": false
 }

@@ -36,13 +36,18 @@ See CONTRIBUTING.md for style guidelines (multi-line control flow, concise comme
 ## Structure
 
 - `src/`
-  - `common/protocol.ts`: shared helpers for decrypt and encrypt (Base64, blob parsing, UDID/IV)
-  - `decrypt/common.ts`: decrypt utilities (AES-CBC decryption, msgpack unpack, JSON conversion)
-  - `decrypt/request.ts`: decrypts all packs' `request.txt` under `decrypt/input` (recursive)
-  - `decrypt/response.ts`: decrypts all packs' `response.txt` under `decrypt/input` (recursive, uses sibling `request.txt` to derive UDID/IV)
-  - `encrypt/build.ts`: builds requests from all `decoded.json` under `encrypt/input` (recursive)
-  - `lib/runtime-client.ts`: programmatic API to encode requests and decode responses in-process
-  - `cli.ts`: unified CLI with `decrypt`, `encrypt`, and `runtime` subcommands
+  - `lib/`: core crypto, encoding/decoding, and shared utilities
+    - `runtime-client.ts`: programmatic API to encode requests and decode responses in-process
+    - `decrypt/`, `encrypt/`, `shared/`, `models/`: internal helpers and types
+  - `cli/`
+    - `index.ts`: unified CLI with `decrypt`, `encrypt`, and `runtime` subcommands
+  - `api/`
+    - `endpoints/`: Express routers (e.g., `login.ts`)
+    - `pipelines/`: pipeline runner and services for upstream calls
+      - `run.ts`: sequential runner with early-stop on error
+      - `services/`: `pre_signup`, `signup`, `start_session`, `load_index`, etc.
+    - `session/`: in-memory session manager and server-owned `UserSession`
+    - `models/`: API-level types used by pipelines and sessions
   - `variables.ts`: central constants; includes `DETERMINISTIC_ENC_SECRET`
 - `tests/`
   - `unit-tests/**`: focused unit specs for helpers
@@ -314,8 +319,8 @@ When integrating with live API calls, you can either pipe JSON through the CLI o
     - Writes `{ payload }` to stdout (auto-unpacked and normalized).
 
 - Programmatic API:
-  - `encodeRequest({ blob1, payload }): string` → returns `requestB64`.
-  - `decodeResponse({ requestB64, responseB64 }): any` → returns decoded payload (auto framing detection and normalization for responses).
+  - `encodeRequest({ blob1, payload }): { requestB64: string }` → builds request Base64.
+  - `decodeResponse({ requestB64, responseB64 }): { payload: any }` → returns decoded payload (auto framing detection and normalization for responses).
 
 ### RuntimeClient wrapper
 
@@ -345,4 +350,28 @@ const { payload } = client.decodeResponse({
 });
 ```
 
-Response normalization note: For certain responses that arrive as noisy or flattened key/value streams, the decoder reconstructs `{ data_headers, data }` where both are message-packed maps.
+Response normalization note: For certain responses that arrive as key/value streams, the decoder reconstructs `{ data_headers, data }` where both are message-packed maps.
+
+## Minimal API example
+
+The API exposes a `POST /login` endpoint that orchestrates the bootstrap pipeline and creates a server-owned session:
+
+```http
+POST /login
+Content-Type: application/json
+
+{ "steam_id": "...", "steam_session_ticket": "..." }
+```
+
+Response:
+
+```json
+{
+  "session_id": "<uuid>",
+  "ok": true,
+  "error": null,
+  "created_at": "2025-01-01T00:00:00.000Z"
+}
+```
+
+Subsequent endpoints can accept `session_id` to continue pipelines using the server-stored context and last step.
