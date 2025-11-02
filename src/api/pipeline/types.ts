@@ -20,6 +20,8 @@ export interface StepResultBase {
   decoded?: unknown;
   skipped?: boolean;
   note?: string;
+  error?: string;
+  errorStack?: string;
 }
 
 export interface StepResult extends StepResultBase {
