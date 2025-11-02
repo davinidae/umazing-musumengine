@@ -153,3 +153,4 @@ encrypt/output/*
 !encrypt/output/README.md
 api/**/request.txt
 api/**/response.txt
+docs/code
