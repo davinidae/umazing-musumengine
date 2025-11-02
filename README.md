@@ -1,7 +1,6 @@
 # Umazing Musumengine
 
 [![CI](https://github.com/davinidae/umazing-musumengine/actions/workflows/ci.yml/badge.svg)](https://github.com/davinidae/umazing-musumengine/actions/workflows/ci.yml)
-[![Docs](https://github.com/davinidae/umazing-musumengine/actions/workflows/docs.yml/badge.svg)](https://github.com/davinidae/umazing-musumengine/actions/workflows/docs.yml)
 [![Coverage](https://codecov.io/gh/davinidae/umazing-musumengine/branch/main/graph/badge.svg)](https://app.codecov.io/gh/davinidae/umazing-musumengine)
 
 ## :warning::warning: Before you continue :warning::warning:
