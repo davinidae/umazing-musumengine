@@ -34,19 +34,19 @@ jobs:
       - name: Generate Markdown docs
         run: npm run docs
 
-      - name: Commit docs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          if git diff --quiet -- docs/code; then
-            echo "No documentation changes to commit"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/code
-          git commit -m "docs: update API markdown [skip ci]"
-          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}
+  #    - name: Commit docs
+  #      env:
+  #        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #      run: |
+  #        if git diff --quiet -- docs/code; then
+  #          echo "No documentation changes to commit"
+  #          exit 0
+  #        fi
+  #        git config user.name "github-actions[bot]"
+  #        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+  #        git add docs/code
+  #        git commit -m "docs: update API markdown [skip ci]"
+  #        git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref_name }}
 
   # Optional: Publish Pages using docs folder
   # You can enable GitHub Pages for this repo and set Source: Branch=main, Folder=/docs
