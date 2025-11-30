@@ -144,12 +144,12 @@ __pycache__/
 # Project data files
 # Ignore all files inside input/output folders except README.md placeholders
 decrypt/input/*
-!decrypt/input/README.md
+!decrypt/input/**/README.md
 decrypt/output/*
-!decrypt/output/README.md
+!decrypt/output/**/README.md
 encrypt/input/*
-!encrypt/input/README.md
+!encrypt/input/**/README.md
 encrypt/output/*
-!encrypt/output/README.md
+!encrypt/output/**/README.md
 api/**/request.txt
 api/**/response.txt
