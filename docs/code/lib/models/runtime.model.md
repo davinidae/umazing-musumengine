@@ -4,7 +4,7 @@
 
 ### FramingMode
 
-Defined in: [lib/models/runtime.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/lib/models/runtime.model.ts#L6)
+Defined in: [lib/models/runtime.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/lib/models/runtime.model.ts#L6)
 
 Payload framing modes supported by the wire protocol.
 - length-prefixed: [4B LE len][msgpack]
@@ -16,13 +16,13 @@ Payload framing modes supported by the wire protocol.
 
 > **KvStream**: `"kv-stream"`
 
-Defined in: [lib/models/runtime.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/lib/models/runtime.model.ts#L8)
+Defined in: [lib/models/runtime.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/lib/models/runtime.model.ts#L8)
 
 ##### LengthPrefixed
 
 > **LengthPrefixed**: `"length-prefixed"`
 
-Defined in: [lib/models/runtime.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/lib/models/runtime.model.ts#L7)
+Defined in: [lib/models/runtime.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/lib/models/runtime.model.ts#L7)
 
 ## Type Aliases
 
@@ -30,6 +30,6 @@ Defined in: [lib/models/runtime.model.ts:7](https://github.com/davinidae/umazing
 
 > **EncodeRequestInput** = `object`
 
-Defined in: [lib/models/runtime.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/lib/models/runtime.model.ts#L12)
+Defined in: [lib/models/runtime.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/lib/models/runtime.model.ts#L12)
 
 Input parameters for building a request.

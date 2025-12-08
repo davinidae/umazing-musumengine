@@ -4,7 +4,7 @@
 
 ### `abstract` StepService
 
-Defined in: [api/pipelines/services/step.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/api/pipelines/services/step.service.ts#L19)
+Defined in: [api/pipelines/services/step.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L19)
 
 Base class for a pipeline service step.
 
@@ -26,7 +26,7 @@ Responsibilities
 
 > **new StepService**(`ctx`): [`StepService`](#stepservice)
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/api/pipelines/services/step.service.ts#L28)
+Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -48,7 +48,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
-Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/api/pipelines/services/step.service.ts#L110)
+Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
 
@@ -70,7 +70,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 
 > `abstract` **getPayload**(`viewer_id`): `Record`\<`string`, `unknown`\>
 
-Defined in: [api/pipelines/services/step.service.ts:92](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/api/pipelines/services/step.service.ts#L92)
+Defined in: [api/pipelines/services/step.service.ts:92](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L92)
 
 Build the request payload for this step.
 
@@ -94,6 +94,6 @@ Plain object serialized by the runtime encoder.
 
 > **StepServiceCtor** = `Object`
 
-Defined in: [api/pipelines/services/step.service.ts:163](https://github.com/davinidae/umazing-musumengine/blob/c9c338bd9c89fbba10782f52f772a51af66db58d/src/api/pipelines/services/step.service.ts#L163)
+Defined in: [api/pipelines/services/step.service.ts:163](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L163)
 
 Constructor type for StepService implementations. Used to instantiate steps with a PipelineContext at runtime.

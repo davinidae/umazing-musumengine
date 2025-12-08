@@ -56,10 +56,14 @@ jobs:
           git config --global user.name "github-actions[bot]" >/dev/null 2>&1
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" >/dev/null 2>&1
           git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki >/dev/null 2>&1
-          echo "Syncing docs to wiki root"
-          rsync -a --delete --exclude 'Home.md' --exclude '_Sidebar.md' docs/ wiki/ >/dev/null 2>&1
-          if [ -f docs/README.md ]; then cp docs/README.md wiki/Home.md >/dev/null 2>&1; fi
-          if [ -f docs/_Sidebar.md ]; then cp docs/_Sidebar.md wiki/_Sidebar.md >/dev/null 2>&1; fi
+          echo "Syncing docs to wiki root (force overwrite)"
+          # Remove existing Home and Sidebar to avoid merge artifacts
+          rm -f wiki/Home.md wiki/_Sidebar.md >/dev/null 2>&1 || true
+          # Mirror docs entirely to root
+          rsync -a --delete docs/ wiki/ >/dev/null 2>&1
+          # Ensure canonical wiki filenames
+          if [ -f docs/README.md ]; then mv -f wiki/README.md wiki/Home.md >/dev/null 2>&1 || cp docs/README.md wiki/Home.md >/dev/null 2>&1; fi
+          if [ -f docs/_Sidebar.md ]; then cp -f docs/_Sidebar.md wiki/_Sidebar.md >/dev/null 2>&1; fi
           cd wiki
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1
           echo "Ensuring branch up-to-date"
