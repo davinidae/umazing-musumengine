@@ -3,10 +3,6 @@ name: Publish Docs to Wiki
 on:
   push:
     branches: [master]
-    paths:
-      - 'docs/**'
-      - 'package.json'
-  workflow_dispatch: {}
 
 jobs:
   publish:
