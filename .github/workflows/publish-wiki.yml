@@ -1,0 +1,37 @@
+name: Publish Docs to Wiki
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'docs/**'
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare wiki repository
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone "https://x-access-token:${PERSONAL_ACCESS_TOKEN}@github.com/${REPO}.wiki.git" wiki
+          rm -rf wiki/*
+          cp -r docs/* wiki/
+          # Optional: root README to Home.md for wiki landing
+          if [ -f docs/README.md ]; then cp docs/README.md wiki/Home.md; fi
+          cd wiki
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: sync docs/ to wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git push origin HEAD:master
+          fi
