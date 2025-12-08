@@ -1,6 +1,6 @@
 # Class: Unpacker
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:258](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/lib/decrypt/shared/unpacker.util.ts#L258)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:258](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/decrypt/shared/unpacker.util.ts#L258)
 
 Pipeline that tries multiple strategies in a safe order. If none succeed,
 returns a diagnostic object containing a hex dump to aid manual inspection.
@@ -11,7 +11,7 @@ returns a diagnostic object containing a hex dump to aid manual inspection.
 
 > **new Unpacker**(`strategies`): `Unpacker`
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:269](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/lib/decrypt/shared/unpacker.util.ts#L269)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:269](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/decrypt/shared/unpacker.util.ts#L269)
 
 Heuristic unpacker for payloads that may not be length-prefixed. It tries, in order:
 1) Standard length-prefixed msgpack

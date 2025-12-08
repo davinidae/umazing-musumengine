@@ -1,4 +1,4 @@
-# api/models/pipelines
+# api/models/pipelines.model
 
 ## Interfaces
 

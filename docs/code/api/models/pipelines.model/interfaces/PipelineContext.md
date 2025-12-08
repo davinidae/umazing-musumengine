@@ -1,6 +1,6 @@
 # Interface: PipelineContext
 
-Defined in: [api/models/pipelines.ts:58](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/models/pipelines.ts#L58)
+Defined in: [api/models/pipelines.model.ts:58](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/models/pipelines.model.ts#L58)
 
 Execution context for pipeline services. Lives in server-side session state.
 - runtime: encoder/decoder utilities

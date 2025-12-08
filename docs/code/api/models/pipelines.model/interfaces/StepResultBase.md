@@ -1,6 +1,6 @@
 # Interface: StepResultBase
 
-Defined in: [api/models/pipelines.ts:31](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/models/pipelines.ts#L31)
+Defined in: [api/models/pipelines.model.ts:31](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/models/pipelines.model.ts#L31)
 
 Common fields every pipeline step should return.
 - name: logical step/service identifier

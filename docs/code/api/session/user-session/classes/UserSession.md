@@ -1,6 +1,6 @@
 # Class: UserSession
 
-Defined in: [api/session/user-session.ts:12](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L12)
+Defined in: [api/session/user-session.ts:12](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L12)
 
 Represents a per-user server-side session owned by the API.
 
@@ -13,9 +13,9 @@ Responsibilities
 
 ### executePipeline()
 
-> **executePipeline**(`steps`): `Promise`\<[`StepResult`](../../../models/pipelines/interfaces/StepResult.md)[]\>
+> **executePipeline**(`steps`): `Promise`\<[`StepResult`](../../../models/pipelines.model/interfaces/StepResult.md)[]\>
 
-Defined in: [api/session/user-session.ts:51](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L51)
+Defined in: [api/session/user-session.ts:51](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L51)
 
 Execute a set of services sequentially, instantiating each with the current context.
 On error, pushes an error result and stops execution.
@@ -30,7 +30,7 @@ Constructors for services to run, in order.
 
 #### Returns
 
-`Promise`\<[`StepResult`](../../../models/pipelines/interfaces/StepResult.md)[]\>
+`Promise`\<[`StepResult`](../../../models/pipelines.model/interfaces/StepResult.md)[]\>
 
 Ordered list of StepResult items, including the error entry if an error occurred.
 
@@ -38,37 +38,37 @@ Ordered list of StepResult items, including the error entry if an error occurred
 
 ### getContext()
 
-> **getContext**(): [`PipelineContext`](../../../models/pipelines/interfaces/PipelineContext.md) \| `undefined`
+> **getContext**(): [`PipelineContext`](../../../models/pipelines.model/interfaces/PipelineContext.md) \| `undefined`
 
-Defined in: [api/session/user-session.ts:30](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L30)
+Defined in: [api/session/user-session.ts:30](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L30)
 
 Access the pipeline context, if any.
 
 #### Returns
 
-[`PipelineContext`](../../../models/pipelines/interfaces/PipelineContext.md) \| `undefined`
+[`PipelineContext`](../../../models/pipelines.model/interfaces/PipelineContext.md) \| `undefined`
 
 ***
 
 ### getLastStep()
 
-> **getLastStep**(): [`StepPrevResult`](../../../models/pipelines/interfaces/StepPrevResult.md) \| `undefined`
+> **getLastStep**(): [`StepPrevResult`](../../../models/pipelines.model/interfaces/StepPrevResult.md) \| `undefined`
 
-Defined in: [api/session/user-session.ts:40](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L40)
+Defined in: [api/session/user-session.ts:40](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L40)
 
 Retrieve the last step result, used as input for chained pipelines.
 
 #### Returns
 
-[`StepPrevResult`](../../../models/pipelines/interfaces/StepPrevResult.md) \| `undefined`
+[`StepPrevResult`](../../../models/pipelines.model/interfaces/StepPrevResult.md) \| `undefined`
 
 ***
 
 ### runPipeline()
 
-> **runPipeline**(`services`): `Promise`\<[`StepResult`](../../../models/pipelines/interfaces/StepResult.md)[]\>
+> **runPipeline**(`services`): `Promise`\<[`StepResult`](../../../models/pipelines.model/interfaces/StepResult.md)[]\>
 
-Defined in: [api/session/user-session.ts:91](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L91)
+Defined in: [api/session/user-session.ts:91](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L91)
 
 Convenience wrapper around executePipeline that also saves the last step for chaining.
 
@@ -82,7 +82,7 @@ Constructors for services to run, in order.
 
 #### Returns
 
-`Promise`\<[`StepResult`](../../../models/pipelines/interfaces/StepResult.md)[]\>
+`Promise`\<[`StepResult`](../../../models/pipelines.model/interfaces/StepResult.md)[]\>
 
 ***
 
@@ -90,7 +90,7 @@ Constructors for services to run, in order.
 
 > **setContext**(`ctx`): `void`
 
-Defined in: [api/session/user-session.ts:25](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L25)
+Defined in: [api/session/user-session.ts:25](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L25)
 
 Replace or initialize the pipeline context for this session.
 
@@ -98,7 +98,7 @@ Replace or initialize the pipeline context for this session.
 
 ##### ctx
 
-[`PipelineContext`](../../../models/pipelines/interfaces/PipelineContext.md)
+[`PipelineContext`](../../../models/pipelines.model/interfaces/PipelineContext.md)
 
 #### Returns
 
@@ -110,7 +110,7 @@ Replace or initialize the pipeline context for this session.
 
 > **setLastStep**(`step`): `void`
 
-Defined in: [api/session/user-session.ts:35](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/session/user-session.ts#L35)
+Defined in: [api/session/user-session.ts:35](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/session/user-session.ts#L35)
 
 Persist the last successful or terminal step of the pipeline.
 
@@ -118,7 +118,7 @@ Persist the last successful or terminal step of the pipeline.
 
 ##### step
 
-[`StepPrevResult`](../../../models/pipelines/interfaces/StepPrevResult.md) | `undefined`
+[`StepPrevResult`](../../../models/pipelines.model/interfaces/StepPrevResult.md) | `undefined`
 
 #### Returns
 

@@ -2,7 +2,7 @@
 
 ## Modules
 
-- [api/models/pipelines](api/models/pipelines/README.md)
+- [api/models/pipelines.model](api/models/pipelines.model/README.md)
 - [api/pipelines/services/load\_index.service](api/pipelines/services/load_index.service/README.md)
 - [api/pipelines/services/pre\_signup.service](api/pipelines/services/pre_signup.service/README.md)
 - [api/pipelines/services/signup.service](api/pipelines/services/signup.service/README.md)

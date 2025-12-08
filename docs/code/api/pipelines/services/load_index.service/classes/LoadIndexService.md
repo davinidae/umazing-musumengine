@@ -1,6 +1,6 @@
 # Class: LoadIndexService
 
-Defined in: [api/pipelines/services/load\_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/pipelines/services/load_index.service.ts#L8)
+Defined in: [api/pipelines/services/load\_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/pipelines/services/load_index.service.ts#L8)
 
 load/index: Retrieves the main screen data for the session.
 Requires a valid viewer_id; skips otherwise.
@@ -15,7 +15,7 @@ Requires a valid viewer_id; skips otherwise.
 
 > **new LoadIndexService**(`ctx`): `LoadIndexService`
 
-Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/pipelines/services/step.service.ts#L17)
+Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/pipelines/services/step.service.ts#L17)
 
 Construct a step with the provided execution context.
 
@@ -23,7 +23,7 @@ Construct a step with the provided execution context.
 
 ##### ctx
 
-[`PipelineContext`](../../../../models/pipelines/interfaces/PipelineContext.md)
+[`PipelineContext`](../../../../models/pipelines.model/interfaces/PipelineContext.md)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -39,9 +39,9 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ### execute()
 
-> **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines/interfaces/StepResultBase.md)\>
+> **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines.model/interfaces/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/load\_index.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/cf87bd67fdf2e5f0d9b1c7ee0046a9e9ec258452/src/api/pipelines/services/load_index.service.ts#L12)
+Defined in: [api/pipelines/services/load\_index.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/pipelines/services/load_index.service.ts#L12)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.
@@ -52,11 +52,11 @@ Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, t
 
 Previous step result, if any.
 
-[`StepPrevResult`](../../../../models/pipelines/interfaces/StepPrevResult.md) | `undefined`
+[`StepPrevResult`](../../../../models/pipelines.model/interfaces/StepPrevResult.md) | `undefined`
 
 #### Returns
 
-`Promise`\<[`StepResultBase`](../../../../models/pipelines/interfaces/StepResultBase.md)\>
+`Promise`\<[`StepResultBase`](../../../../models/pipelines.model/interfaces/StepResultBase.md)\>
 
 StepResultBase without the order field (runner/session will add it).
 
