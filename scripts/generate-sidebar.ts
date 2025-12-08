@@ -3,6 +3,8 @@ import path from 'path';
 
 const DOCS_ROOT = path.resolve(process.cwd(), 'docs');
 const SIDEBAR_PATH = path.join(DOCS_ROOT, '_Sidebar.md');
+const HOME_PATH = path.join(DOCS_ROOT, 'README.md');
+const PKG_PATH = path.resolve(process.cwd(), 'package.json');
 
 interface Entry {
   name: string;
@@ -77,6 +79,30 @@ function generateSidebar() {
   if (!fs.existsSync(DOCS_ROOT)) {
     console.error(`docs folder not found at ${DOCS_ROOT}`);
     process.exit(1);
+  }
+  // Update Home title with version (from package.json) if available
+  try {
+    if (fs.existsSync(PKG_PATH) && fs.existsSync(HOME_PATH)) {
+      const pkgRaw = fs.readFileSync(PKG_PATH, 'utf-8');
+      const pkg = JSON.parse(pkgRaw || '{}');
+      const version: string | undefined = pkg.version;
+      if (version) {
+        const homeRaw = fs.readFileSync(HOME_PATH, 'utf-8');
+        const lines = homeRaw.split(/\r?\n/);
+        if (lines.length > 0) {
+          // Replace first markdown H1 with version suffix, keeping existing title base
+          const h1 = lines[0];
+          if (/^#\s+/.test(h1)) {
+            const baseTitle = h1.replace(/^#\s+/, '').replace(/\s+v\d+\.\d+\.\d+$/i, '');
+            lines[0] = `# ${baseTitle} v${version}`;
+            fs.writeFileSync(HOME_PATH, lines.join('\n'), 'utf-8');
+            console.log(`Updated Home title with version v${version}`);
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Could not update Home title with version:', e);
   }
   const tree = readTree(DOCS_ROOT);
   const lines: string[] = [];

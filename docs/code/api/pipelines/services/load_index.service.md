@@ -4,7 +4,7 @@
 
 ### LoadIndexService
 
-Defined in: [api/pipelines/services/load\_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/load_index.service.ts#L8)
+Defined in: [api/pipelines/services/load\_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/pipelines/services/load_index.service.ts#L8)
 
 load/index: Retrieves the main screen data for the session.
 Requires a valid viewer_id; skips otherwise.
@@ -19,7 +19,7 @@ Requires a valid viewer_id; skips otherwise.
 
 > **new LoadIndexService**(`ctx`): [`LoadIndexService`](#loadindexservice)
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L28)
+Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -45,7 +45,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
-Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/step.service.ts#L110)
+Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
 
@@ -71,7 +71,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 
 > **getPayload**(`viewer_id`): `object`
 
-Defined in: [api/pipelines/services/load\_index.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/dd995319a0c5fcb447911030e2054da8a1c0945e/src/api/pipelines/services/load_index.service.ts#L16)
+Defined in: [api/pipelines/services/load\_index.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/pipelines/services/load_index.service.ts#L16)
 
 Build payload for `load/index` using `viewer_id` and client metadata.
 

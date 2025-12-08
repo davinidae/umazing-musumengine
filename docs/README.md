@@ -1,4 +1,4 @@
-# Umazing Musumengine Wiki Home
+# Umazing Musumengine Wiki Home v1.0.2
 
 Welcome to the Umazing Musumengine wiki. This project provides TypeScript tools for working with
 UmaMusume data, including AES-256-CBC decrypt/encrypt helpers, a runtime client, and CLI utilities.
