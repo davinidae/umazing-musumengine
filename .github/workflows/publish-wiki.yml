@@ -92,7 +92,8 @@ jobs:
           if [ -z "$CHANGES" ]; then
             echo "No changes to commit"
           else
-            VERSION=$(node -p "require('./package.json').version" 2>/dev/null || echo "unknown")
+            # Read version from repository root (not present inside wiki)
+            VERSION=$(node -p "require('../package.json').version" 2>/dev/null || echo "unknown")
             TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
             MSG="docs: wiki sync v${VERSION} @ ${TS}"
             git commit -m "$MSG" >/dev/null 2>&1 || true

@@ -4,7 +4,7 @@
 
 ### DecryptRequestService
 
-Defined in: [lib/decrypt/request.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/b84741da54b8ded6224241d236101065f6c264d7/src/lib/decrypt/request.service.ts#L11)
+Defined in: [lib/decrypt/request.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/55af289200011bec94c06bda35867acecb08e9ac/src/lib/decrypt/request.service.ts#L11)
 
 Decode request Base64 buffers into header fields and a printable payload.
 No filesystem access; suitable for programmatic use and tests.
@@ -15,7 +15,7 @@ No filesystem access; suitable for programmatic use and tests.
 
 > **decodeFromBase64**(`requestB64`): `object`
 
-Defined in: [lib/decrypt/request.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/b84741da54b8ded6224241d236101065f6c264d7/src/lib/decrypt/request.service.ts#L18)
+Defined in: [lib/decrypt/request.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/55af289200011bec94c06bda35867acecb08e9ac/src/lib/decrypt/request.service.ts#L18)
 
 Decode a single request provided as a Base64 string.
 
