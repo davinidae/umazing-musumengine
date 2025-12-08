@@ -5,7 +5,7 @@
 ### Pipeline
 
 Defined in:
-[api/session/pipeline.ts:15](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/session/pipeline.ts#L15)
+[api/session/pipeline.ts:15](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/session/pipeline.ts#L15)
 
 Executes a sequence of pipeline services within a session context.
 
@@ -16,7 +16,7 @@ Executes a sequence of pipeline services within a session context.
 > **execute**(`steps`): `Promise`\<[`StepResult`](../models/pipelines.model.md#stepresult)[]\>
 
 Defined in:
-[api/session/pipeline.ts:54](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/session/pipeline.ts#L54)
+[api/session/pipeline.ts:54](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/session/pipeline.ts#L54)
 
 Execute services sequentially, instantiating each with the current context. On error, pushes an
 error result and stops execution.
@@ -40,7 +40,7 @@ Ordered list of `StepResult` items, including an error entry if an error occurre
 > **getContext**(): [`PipelineContext`](../models/pipelines.model.md#pipelinecontext) \| `undefined`
 
 Defined in:
-[api/session/pipeline.ts:37](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/session/pipeline.ts#L37)
+[api/session/pipeline.ts:37](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/session/pipeline.ts#L37)
 
 Access the pipeline context, if any.
 
@@ -55,7 +55,7 @@ Current `PipelineContext` or `undefined`.
 > **setContext**(`ctx`): `void`
 
 Defined in:
-[api/session/pipeline.ts:29](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/session/pipeline.ts#L29)
+[api/session/pipeline.ts:29](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/session/pipeline.ts#L29)
 
 Replace or initialize the pipeline context for this session.
 

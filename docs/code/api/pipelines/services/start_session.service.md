@@ -5,7 +5,7 @@
 ### StartSessionService
 
 Defined in:
-[api/pipelines/services/start_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/start_session.service.ts#L8)
+[api/pipelines/services/start_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/pipelines/services/start_session.service.ts#L8)
 
 tool/start_session: Establishes a server session for the viewer. Skips execution if a valid
 viewer_id is not available.
@@ -21,7 +21,7 @@ viewer_id is not available.
 > **new StartSessionService**(`ctx`): [`StartSessionService`](#startsessionservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/step.service.ts#L28)
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -49,7 +49,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/step.service.ts#L110)
+[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -78,7 +78,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > **getPayload**(`viewer_id`): `object`
 
 Defined in:
-[api/pipelines/services/start_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/start_session.service.ts#L16)
+[api/pipelines/services/start_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/922c0baa165da9bc6377e61ef01c6518769a8a12/src/api/pipelines/services/start_session.service.ts#L16)
 
 Build payload required by `tool/start_session` including device and platform metadata.
 

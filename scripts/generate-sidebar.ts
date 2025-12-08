@@ -76,7 +76,8 @@ function render(nodes: Node[], depth = 0): string[] {
     } else {
       const item = `- ${link(n.rel, n.name)}`;
       // Slight left margin for nested file items using non-breaking spaces
-      lines.push(top ? item : `&nbsp;&nbsp;${item}`);
+      lines.push(item);
+      lines.push('');
     }
   }
   return lines;
@@ -92,7 +93,7 @@ function generate() {
   out.push('<!-- Auto-generated from /docs by scripts/generate-sidebar.ts -->');
   out.push('');
   out.push(...render(tree));
-  fs.writeFileSync(SIDEBAR_PATH, out.join('\n') + '\n', 'utf-8');
+  fs.writeFileSync(SIDEBAR_PATH, out.join('\n').replace(/\n\n\n/g, '\n\n') + '\n', 'utf-8');
   console.log(`Generated ${SIDEBAR_PATH}`);
 }
 
