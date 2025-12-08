@@ -6,7 +6,7 @@
 
 > **deriveIvFromUdidString**(`udidString`): `Buffer`
 
-Defined in: [lib/shared/protocol.util.ts:87](https://github.com/davinidae/umazing-musumengine/blob/43c4069b21078ca452252a641b643b57076f4155/src/lib/shared/protocol.util.ts#L87)
+Defined in: [lib/shared/protocol.util.ts:87](https://github.com/davinidae/umazing-musumengine/blob/38a3b0fa3b503b11dd4c0cabc5b05ca7ff17a0d6/src/lib/shared/protocol.util.ts#L87)
 
 Derive a 16-byte IV from a canonical UDID string (first 16 ASCII chars, hyphens stripped).
 
@@ -34,7 +34,7 @@ If the UDID does not yield 16 characters after stripping hyphens.
 
 > **parseHeaderBlob1**(`blob1`): `object`
 
-Defined in: [lib/shared/protocol.util.ts:49](https://github.com/davinidae/umazing-musumengine/blob/43c4069b21078ca452252a641b643b57076f4155/src/lib/shared/protocol.util.ts#L49)
+Defined in: [lib/shared/protocol.util.ts:49](https://github.com/davinidae/umazing-musumengine/blob/38a3b0fa3b503b11dd4c0cabc5b05ca7ff17a0d6/src/lib/shared/protocol.util.ts#L49)
 
 Parse the blob1 header into its constituent fields.
 
@@ -82,7 +82,7 @@ If blob1 is too short to contain required fields.
 
 > **parseRequest**(`raw`): \[`Buffer`\<`ArrayBufferLike`\>, `Buffer`\<`ArrayBufferLike`\>\]
 
-Defined in: [lib/shared/protocol.util.ts:27](https://github.com/davinidae/umazing-musumengine/blob/43c4069b21078ca452252a641b643b57076f4155/src/lib/shared/protocol.util.ts#L27)
+Defined in: [lib/shared/protocol.util.ts:27](https://github.com/davinidae/umazing-musumengine/blob/38a3b0fa3b503b11dd4c0cabc5b05ca7ff17a0d6/src/lib/shared/protocol.util.ts#L27)
 
 Parse a request buffer into (blob1, blob2) parts.
 
@@ -110,7 +110,7 @@ If the buffer is too short or sizes are inconsistent.
 
 > **readBase64File**(`path`): `Buffer`
 
-Defined in: [lib/shared/protocol.util.ts:11](https://github.com/davinidae/umazing-musumengine/blob/43c4069b21078ca452252a641b643b57076f4155/src/lib/shared/protocol.util.ts#L11)
+Defined in: [lib/shared/protocol.util.ts:11](https://github.com/davinidae/umazing-musumengine/blob/38a3b0fa3b503b11dd4c0cabc5b05ca7ff17a0d6/src/lib/shared/protocol.util.ts#L11)
 
 Read a text file containing Base64 (possibly with whitespace) and return its bytes.
 
@@ -134,7 +134,7 @@ Buffer with decoded bytes.
 
 > **udidRawToCanonicalString**(`udidRaw`): `string`
 
-Defined in: [lib/shared/protocol.util.ts:73](https://github.com/davinidae/umazing-musumengine/blob/43c4069b21078ca452252a641b643b57076f4155/src/lib/shared/protocol.util.ts#L73)
+Defined in: [lib/shared/protocol.util.ts:73](https://github.com/davinidae/umazing-musumengine/blob/38a3b0fa3b503b11dd4c0cabc5b05ca7ff17a0d6/src/lib/shared/protocol.util.ts#L73)
 
 Convert a 16-byte raw UDID into canonical dashed string form.
 
