@@ -58,6 +58,10 @@ jobs:
           if [ -f docs/_Sidebar.md ]; then cp docs/_Sidebar.md wiki/_Sidebar.md; fi
           cd wiki
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git"
+          # Ensure up-to-date with remote to avoid non-fast-forward errors
+          git fetch origin master || true
+          git checkout -B master origin/master || git checkout master
+          git pull --rebase origin master || true
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"

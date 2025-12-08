@@ -4,7 +4,7 @@
 
 ### UserSession
 
-Defined in: [api/session/user-session.ts:14](https://github.com/davinidae/umazing-musumengine/blob/3c20ec1ff845c8d9d54e7282da44929024eb86b1/src/api/session/user-session.ts#L14)
+Defined in: [api/session/user-session.ts:14](https://github.com/davinidae/umazing-musumengine/blob/c28a783ee04aa6fdee98717826e9ea85b6607e3e/src/api/session/user-session.ts#L14)
 
 Represents a per-user server-side session owned by the API.
 
@@ -19,7 +19,7 @@ Responsibilities
 
 > **getLastStep**(): `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
 
-Defined in: [api/session/user-session.ts:47](https://github.com/davinidae/umazing-musumengine/blob/3c20ec1ff845c8d9d54e7282da44929024eb86b1/src/api/session/user-session.ts#L47)
+Defined in: [api/session/user-session.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c28a783ee04aa6fdee98717826e9ea85b6607e3e/src/api/session/user-session.ts#L47)
 
 Retrieve the last step result, used as input for chained pipelines.
 
@@ -33,7 +33,7 @@ Retrieve the last step result, used as input for chained pipelines.
 
 > **getPipeline**(): [`Pipeline`](pipeline.md#pipeline)
 
-Defined in: [api/session/user-session.ts:31](https://github.com/davinidae/umazing-musumengine/blob/3c20ec1ff845c8d9d54e7282da44929024eb86b1/src/api/session/user-session.ts#L31)
+Defined in: [api/session/user-session.ts:31](https://github.com/davinidae/umazing-musumengine/blob/c28a783ee04aa6fdee98717826e9ea85b6607e3e/src/api/session/user-session.ts#L31)
 
 Access the underlying `Pipeline` instance.
 
@@ -47,7 +47,7 @@ Pipeline instance.
 
 > **runPipeline**(`services`): `Promise`\<[`StepResult`](../models/pipelines.model.md#stepresult)[]\>
 
-Defined in: [api/session/user-session.ts:56](https://github.com/davinidae/umazing-musumengine/blob/3c20ec1ff845c8d9d54e7282da44929024eb86b1/src/api/session/user-session.ts#L56)
+Defined in: [api/session/user-session.ts:56](https://github.com/davinidae/umazing-musumengine/blob/c28a783ee04aa6fdee98717826e9ea85b6607e3e/src/api/session/user-session.ts#L56)
 
 Convenience wrapper around executePipeline that also saves the last step for chaining.
 
@@ -69,7 +69,7 @@ Ordered list of `StepResult` items for the executed pipeline.
 
 > **setLastStep**(`step`): `void`
 
-Defined in: [api/session/user-session.ts:39](https://github.com/davinidae/umazing-musumengine/blob/3c20ec1ff845c8d9d54e7282da44929024eb86b1/src/api/session/user-session.ts#L39)
+Defined in: [api/session/user-session.ts:39](https://github.com/davinidae/umazing-musumengine/blob/c28a783ee04aa6fdee98717826e9ea85b6607e3e/src/api/session/user-session.ts#L39)
 
 Persist the last successful or terminal step of the pipeline.
 
