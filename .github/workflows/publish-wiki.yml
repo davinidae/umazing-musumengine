@@ -56,6 +56,9 @@ jobs:
           git config --global user.name "github-actions[bot]" >/dev/null 2>&1
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" >/dev/null 2>&1
           git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki >/dev/null 2>&1
+          echo "Validating docs sources"
+          if [ ! -f docs/README.md ]; then echo "Missing docs/README.md (Home)"; exit 1; fi
+          if [ ! -f docs/_Sidebar.md ]; then echo "Missing docs/_Sidebar.md (Sidebar)"; exit 1; fi
           echo "Syncing docs to wiki root (force overwrite)"
           # Remove existing Home and Sidebar to avoid merge artifacts
           rm -f wiki/Home.md wiki/_Sidebar.md >/dev/null 2>&1 || true
@@ -79,10 +82,13 @@ jobs:
             git reset --hard "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
           fi
           git add -A >/dev/null 2>&1
-          if git diff --cached --quiet; then
+          CHANGES=$(git status --porcelain)
+          COUNT=$(echo "$CHANGES" | sed '/^$/d' | wc -l)
+          echo "Change summary: $COUNT files modified"
+          if [ -z "$CHANGES" ]; then
             echo "No changes to commit"
           else
-            git commit -m "docs: sync docs/ to wiki" >/dev/null 2>&1
+            git commit -m "docs: sync docs/ to wiki" >/dev/null 2>&1 || true
             git push origin HEAD:"$DEFAULT_BRANCH" >/dev/null 2>&1
             echo "Wiki updated"
           fi

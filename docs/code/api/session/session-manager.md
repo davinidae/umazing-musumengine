@@ -4,7 +4,7 @@
 
 ### SessionManager
 
-Defined in: [api/session/session-manager.ts:12](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L12)
+Defined in: [api/session/session-manager.ts:12](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L12)
 
 Simple in-memory session manager to keep server-only data between endpoint calls.
 Not for production multi-process use without an external store.
@@ -15,7 +15,7 @@ Not for production multi-process use without an external store.
 
 > **createSession**(`steam_id`, `steam_session_ticket`, `meta`): [`UserSession`](user-session.md#usersession)
 
-Defined in: [api/session/session-manager.ts:94](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L94)
+Defined in: [api/session/session-manager.ts:94](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L94)
 
 Create a new server-side session and store it in memory.
 
@@ -49,7 +49,7 @@ Created `UserSession`.
 
 > **delete**(`id`): `void`
 
-Defined in: [api/session/session-manager.ts:173](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L173)
+Defined in: [api/session/session-manager.ts:173](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L173)
 
 Delete a session by id.
 
@@ -69,7 +69,7 @@ Session id.
 
 > **generateCtx**(`steam_id`, `steam_session_ticket`): [`PipelineContext`](../models/pipelines.model.md#pipelinecontext)
 
-Defined in: [api/session/session-manager.ts:32](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L32)
+Defined in: [api/session/session-manager.ts:32](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L32)
 
 Generate a default `PipelineContext` for a user based on Steam identifiers.
 Uses deterministic derivations for development/testing.
@@ -98,7 +98,7 @@ Initialized `PipelineContext`.
 
 > **getContext**(`id`): [`PipelineContext`](../models/pipelines.model.md#pipelinecontext) \| `undefined`
 
-Defined in: [api/session/session-manager.ts:143](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L143)
+Defined in: [api/session/session-manager.ts:143](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L143)
 
 Access the current pipeline context for a session.
 
@@ -120,7 +120,7 @@ Session id.
 
 > **getLastStep**(`id`): `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
 
-Defined in: [api/session/session-manager.ts:165](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L165)
+Defined in: [api/session/session-manager.ts:165](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L165)
 
 Read the last step result for a session.
 
@@ -142,7 +142,7 @@ Session id.
 
 > **getSession**(`id`): [`UserSession`](user-session.md#usersession) \| `undefined`
 
-Defined in: [api/session/session-manager.ts:112](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L112)
+Defined in: [api/session/session-manager.ts:112](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L112)
 
 Retrieve a session by id. Applies TTL lazily and prunes expired entries.
 
@@ -164,7 +164,7 @@ Session identifier.
 
 > **setContext**(`id`, `ctx`): `void`
 
-Defined in: [api/session/session-manager.ts:130](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L130)
+Defined in: [api/session/session-manager.ts:130](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L130)
 
 Update the session's pipeline context.
 
@@ -190,7 +190,7 @@ New `PipelineContext`.
 
 > **setLastStep**(`id`, `step`): `void`
 
-Defined in: [api/session/session-manager.ts:152](https://github.com/davinidae/umazing-musumengine/blob/a7949c1bc11f5baba0833a4b69f6c0482909bf8e/src/api/session/session-manager.ts#L152)
+Defined in: [api/session/session-manager.ts:152](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/session/session-manager.ts#L152)
 
 Persist the last step result for a session.
 
