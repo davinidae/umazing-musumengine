@@ -60,8 +60,15 @@ jobs:
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git"
           # Ensure up-to-date with remote to avoid non-fast-forward errors
           git fetch origin master || true
-          git checkout -B master origin/master || git checkout master
-          git pull --rebase origin master || true
+          # If local has diverged, align hard to remote before applying changes
+          if ! git merge-base --is-ancestor origin/master master 2>/dev/null; then
+            echo "Local master diverged from origin/master; resetting to remote before sync"
+            git checkout master || git checkout -B master
+            git reset --hard origin/master || true
+          else
+            git checkout -B master origin/master || git checkout master
+            git pull --rebase origin master || true
+          fi
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
