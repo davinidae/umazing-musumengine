@@ -85,7 +85,7 @@ describe('CLI runtime (integration)', () => {
     // 1) Encode a request to obtain the exact blob1 used for IV derivation
     const encIn = JSON.stringify({ blob1: baseBlob1, payload: { seed: 'iv-source' } });
     const encRes = await runCli(['runtime', 'encode-request'], encIn);
-    expect(encRes.code).toBe(0);
+    expect(encRes.code).toEqual(0);
     const { requestB64 } = parseJsonFromStdout(encRes.stdout);
 
     // 2) Prepare a synthetic response: length-prefixed msgpack, AES-256-CBC with our own 32B key, IV from UDID

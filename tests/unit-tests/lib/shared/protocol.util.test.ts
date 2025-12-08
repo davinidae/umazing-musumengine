@@ -25,11 +25,11 @@ describe('protocol.util', () => {
     const raw = buildRequest('aabb');
     const [blob1, blob2] = parseRequest(raw);
     const h = parseHeaderBlob1(blob1);
-    expect(h.session_id.length).toBe(16);
-    expect(h.udid_raw.length).toBe(16);
-    expect(h.response_key.length).toBe(32);
-    expect(h.auth_key.length).toBe(48);
-    expect(blob2.length).toBe(32); // only key appended
+    expect(h.session_id.length).toEqual(16);
+    expect(h.udid_raw.length).toEqual(16);
+    expect(h.response_key.length).toEqual(32);
+    expect(h.auth_key.length).toEqual(48);
+    expect(blob2.length).toEqual(32); // only key appended
   });
 
   test('udidRawToCanonicalString and deriveIvFromUdidString', () => {
@@ -37,7 +37,7 @@ describe('protocol.util', () => {
     const canon = udidRawToCanonicalString(raw);
     expect(canon).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
     const iv = deriveIvFromUdidString(canon);
-    expect(iv.length).toBe(16);
+    expect(iv.length).toEqual(16);
   });
 
   test('deriveIvFromUdidString throws on too-short UDID', () => {

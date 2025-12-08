@@ -2,7 +2,7 @@
 
 > **StepResultBase** = `object` & `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `error`: `string`; `errorStack`: `string`; `note`: `string`; `requestB64`: [`EncodedBase64`](EncodedBase64.md); `responseB64`: [`EncodedBase64`](EncodedBase64.md); `skipped`: `boolean`; \}\>
 
-Defined in: [api/models/pipelines.model.ts:32](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/models/pipelines.model.ts#L32)
+Defined in: [api/models/pipelines.model.ts:32](https://github.com/davinidae/umazing-musumengine/blob/18c3ff3260c8ab431287937bbbd69b2ff72846ba/src/api/models/pipelines.model.ts#L32)
 
 Common fields every pipeline step should return.
 - name: logical step/service identifier

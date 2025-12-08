@@ -1,6 +1,6 @@
 # Class: LoadIndexService
 
-Defined in: [api/pipelines/services/load\_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/pipelines/services/load_index.service.ts#L8)
+Defined in: [api/pipelines/services/load\_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/18c3ff3260c8ab431287937bbbd69b2ff72846ba/src/api/pipelines/services/load_index.service.ts#L8)
 
 load/index: Retrieves the main screen data for the session.
 Requires a valid viewer_id; skips otherwise.
@@ -15,7 +15,7 @@ Requires a valid viewer_id; skips otherwise.
 
 > **new LoadIndexService**(`ctx`): `LoadIndexService`
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/pipelines/services/step.service.ts#L28)
+Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/18c3ff3260c8ab431287937bbbd69b2ff72846ba/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -41,7 +41,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines.model/type-aliases/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/step.service.ts:91](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/pipelines/services/step.service.ts#L91)
+Defined in: [api/pipelines/services/step.service.ts:91](https://github.com/davinidae/umazing-musumengine/blob/18c3ff3260c8ab431287937bbbd69b2ff72846ba/src/api/pipelines/services/step.service.ts#L91)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.

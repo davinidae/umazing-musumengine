@@ -43,7 +43,7 @@ describe('Unpacker strategies (unit)', () => {
       Buffer.from(encode('b')),
     ]);
     const out = strat.execute(stream) as unknown[] | undefined;
-    expect(Array.isArray(out)).toBe(true);
+    expect(Array.isArray(out)).toEqual(true);
     expect((out as unknown[]).length).toBeGreaterThan(0);
   });
 

@@ -1,6 +1,6 @@
 # Class: ParsedRequest
 
-Defined in: [lib/models/protocol.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/models/protocol.model.ts#L69)
+Defined in: [lib/models/protocol.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/18c3ff3260c8ab431287937bbbd69b2ff72846ba/src/lib/models/protocol.model.ts#L69)
 
 Represents a parsed full request with blob1 and blob2 sections.
 
@@ -10,7 +10,7 @@ Represents a parsed full request with blob1 and blob2 sections.
 
 > `static` **parse**(`raw`): `ParsedRequest`
 
-Defined in: [lib/models/protocol.model.ts:86](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/models/protocol.model.ts#L86)
+Defined in: [lib/models/protocol.model.ts:86](https://github.com/davinidae/umazing-musumengine/blob/18c3ff3260c8ab431287937bbbd69b2ff72846ba/src/lib/models/protocol.model.ts#L86)
 
 Parse a full request buffer into a ParsedRequest.
 
