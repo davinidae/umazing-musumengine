@@ -4,7 +4,7 @@
 
 ### PreSignupService
 
-Defined in: [api/pipelines/services/pre\_signup.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f90871c2774a33fc6c73d65ac0e07fdfb1f46e20/src/api/pipelines/services/pre_signup.service.ts#L8)
+Defined in: [api/pipelines/services/pre\_signup.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/d465c141fa5c39728b70f5c7724cb67db8e16b35/src/api/pipelines/services/pre_signup.service.ts#L8)
 
 tool/pre_signup: Send initial client device/environment data.
 Uses kv-stream framing to build a (key,value,...) sequence.
@@ -19,7 +19,7 @@ Uses kv-stream framing to build a (key,value,...) sequence.
 
 > **new PreSignupService**(`ctx`): [`PreSignupService`](#presignupservice)
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/f90871c2774a33fc6c73d65ac0e07fdfb1f46e20/src/api/pipelines/services/step.service.ts#L28)
+Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/d465c141fa5c39728b70f5c7724cb67db8e16b35/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -45,7 +45,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
-Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/f90871c2774a33fc6c73d65ac0e07fdfb1f46e20/src/api/pipelines/services/step.service.ts#L110)
+Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/d465c141fa5c39728b70f5c7724cb67db8e16b35/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
 
@@ -71,7 +71,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 
 > **getPayload**(): `Record`\<`string`, `unknown`\>
 
-Defined in: [api/pipelines/services/pre\_signup.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/f90871c2774a33fc6c73d65ac0e07fdfb1f46e20/src/api/pipelines/services/pre_signup.service.ts#L18)
+Defined in: [api/pipelines/services/pre\_signup.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/d465c141fa5c39728b70f5c7724cb67db8e16b35/src/api/pipelines/services/pre_signup.service.ts#L18)
 
 Build payload from base client data; no viewer_id required for pre-signup.
 
