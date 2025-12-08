@@ -62,13 +62,15 @@ jobs:
           echo "Syncing docs to wiki root (force overwrite)"
           # Remove existing Home and Sidebar to avoid merge artifacts
           rm -f wiki/Home.md wiki/_Sidebar.md >/dev/null 2>&1 || true
-          # Mirror docs entirely to root
-          rsync -a --delete docs/ wiki/ >/dev/null 2>&1
+          # Mirror docs entirely to root, avoid accidental nested wiki or VCS metadata
+          rsync -a --delete --exclude '.git' --exclude '.github' --exclude 'wiki' docs/ wiki/ >/dev/null 2>&1
           # Ensure canonical wiki filenames
           if [ -f docs/README.md ]; then mv -f wiki/README.md wiki/Home.md >/dev/null 2>&1 || cp docs/README.md wiki/Home.md >/dev/null 2>&1; fi
           if [ -f docs/_Sidebar.md ]; then cp -f docs/_Sidebar.md wiki/_Sidebar.md >/dev/null 2>&1; fi
-          # Write a sync marker to ensure a commit reflects this run
-          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > .sync-marker
+          # Clean up any accidental nested wiki directory from previous runs
+          rm -rf wiki/wiki >/dev/null 2>&1 || true
+          # Write a sync marker inside the wiki repo to ensure a commit reflects this run
+          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > wiki/.sync-marker
           cd wiki
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1
           echo "Ensuring branch up-to-date"
