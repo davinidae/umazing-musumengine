@@ -10,13 +10,13 @@ interface Entry {
   name: string;
   relativePath: string;
   isDir: boolean;
+  ext?: string;
   children?: Entry[];
 }
 
 function isHidden(name: string) {
-  return (
-    name.startsWith('.') || name === '_Sidebar.md' || name === 'README.md' || name === '_Sidebar'
-  );
+  // Hide dotfiles and sidebar control files; allow README.md in subfolders as index pages
+  return name.startsWith('.') || name === '_Sidebar.md' || name === '_Sidebar';
 }
 
 function readTree(dir: string, base: string = ''): Entry[] {
@@ -27,21 +27,26 @@ function readTree(dir: string, base: string = ''): Entry[] {
     if (isHidden(name)) {
       continue;
     }
-    const full = path.join(dir, name);
+    const fullPath = path.join(dir, name);
     const rel = path.join(base, name);
     if (item.isDirectory()) {
-      const children = readTree(full, rel);
+      const children = readTree(fullPath, rel);
       entries.push({ name, relativePath: rel, isDir: true, children });
-    } else if (name.toLowerCase().endsWith('.md')) {
-      entries.push({ name, relativePath: rel, isDir: false });
+    } else {
+      entries.push({
+        name,
+        relativePath: rel,
+        isDir: false,
+        ext: path.extname(name).toLowerCase(),
+      });
     }
   }
-  // Sort: folders first alphabetically, then files alphabetically
+  // Sort: dirs first, then files; alphabetical
   entries.sort((a, b) => {
     if (a.isDir !== b.isDir) {
       return a.isDir ? -1 : 1;
     }
-    return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
+    return a.name.localeCompare(b.name);
   });
   return entries;
 }
@@ -52,8 +57,9 @@ function titleFromName(name: string) {
 
 function toWikiLink(relPath: string, name: string) {
   // GitHub Wiki links prefer spaces; encode nested paths with '/'
-  const display = titleFromName(name);
-  const withoutExt = relPath.replace(/\.md$/i, '');
+  const isMd = /\.md$/i.test(name);
+  const display = isMd ? titleFromName(name) : name;
+  const withoutExt = isMd ? relPath.replace(/\.md$/i, '') : relPath;
   // Replace backslashes on Windows
   const wikiTarget = withoutExt.split(path.sep).join('/');
   return `[${display}](${wikiTarget})`;
@@ -62,14 +68,46 @@ function toWikiLink(relPath: string, name: string) {
 function renderEntries(entries: Entry[], depth = 0): string[] {
   const lines: string[] = [];
   for (const e of entries) {
-    const indent = '  '.repeat(depth);
+    const isTopLevel = depth === 0;
     if (e.isDir) {
-      lines.push(`${indent}- ${titleFromName(e.name)}`);
-      if (e.children && e.children.length) {
-        lines.push(...renderEntries(e.children, depth + 1));
+      // Ensure directory has an index README.md to link from summary
+      try {
+        const dirFullPath = path.join(DOCS_ROOT, e.relativePath);
+        const indexPath = path.join(dirFullPath, 'README.md');
+        if (!fs.existsSync(indexPath)) {
+          const title = titleFromName(e.name);
+          const childLinks = (e.children || [])
+            .filter((c) => !c.isDir && c.name.toLowerCase().endsWith('.md'))
+            .map((c) => `- ${toWikiLink(c.relativePath, c.name)}`);
+          const indexLines = [`# ${title}`, '', '---', '', 'Contents:', ''];
+          if (childLinks.length) {
+            indexLines.push(...childLinks);
+          } else {
+            indexLines.push('- (no markdown pages yet)');
+          }
+          fs.writeFileSync(indexPath, indexLines.join('\n') + '\n', 'utf-8');
+          console.log(`Created index README.md for ${e.relativePath}`);
+        }
+      } catch {
+        //
       }
+
+      const dirTitle = titleFromName(e.name);
+      const readme = e.children?.find((c) => !c.isDir && c.name.toLowerCase() === 'readme.md');
+      const summaryLabel = readme ? toWikiLink(readme.relativePath, dirTitle) : dirTitle;
+      const openAttr = isTopLevel ? ' open' : '';
+      lines.push(`<details${openAttr}><summary>${summaryLabel}</summary>`);
+      const childEntries = (e.children || []).filter(
+        (c) => !(readme && !c.isDir && c.name.toLowerCase() === 'readme.md'),
+      );
+      if (childEntries.length) {
+        const childLines = renderEntries(childEntries, depth + 1);
+        // Indent nested list items slightly for readability; preserve nested <details>
+        lines.push(...childLines.map((l) => (l.startsWith('<') ? l : `  ${l}`)));
+      }
+      lines.push(`</details>`);
     } else {
-      lines.push(`${indent}- ${toWikiLink(e.relativePath, e.name)}`);
+      lines.push(`- ${toWikiLink(e.relativePath, e.name)}`);
     }
   }
   return lines;

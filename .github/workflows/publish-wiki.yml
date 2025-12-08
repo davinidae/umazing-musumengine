@@ -92,7 +92,10 @@ jobs:
           if [ -z "$CHANGES" ]; then
             echo "No changes to commit"
           else
-            git commit -m "docs: sync docs/ to wiki" >/dev/null 2>&1 || true
+            VERSION=$(node -p "require('./package.json').version" 2>/dev/null || echo "unknown")
+            TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+            MSG="docs: wiki sync v${VERSION} @ ${TS}"
+            git commit -m "$MSG" >/dev/null 2>&1 || true
             git push origin HEAD:"$DEFAULT_BRANCH" >/dev/null 2>&1
-            echo "Wiki updated"
+            echo "Wiki updated: $MSG"
           fi
