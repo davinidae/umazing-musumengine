@@ -11,7 +11,7 @@
 > [`LoadIndexService`](services/load_index.service.md#loadindexservice))[]
 
 Defined in:
-[api/pipelines/pipeline_groups.ts:13](https://github.com/davinidae/umazing-musumengine/blob/3cc198efe37a04206371563dec0203f3801b1b85/src/api/pipelines/pipeline_groups.ts#L13)
+[api/pipelines/pipeline_groups.ts:13](https://github.com/davinidae/umazing-musumengine/blob/7c5042da9efbc0ab8e59a0df16029c0f6ee3a2cc/src/api/pipelines/pipeline_groups.ts#L13)
 
 Bootstrap pipeline used by `/login` to start a user session. Order:
 
