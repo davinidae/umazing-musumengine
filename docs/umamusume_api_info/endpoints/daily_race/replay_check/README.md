@@ -6,9 +6,7 @@ Submits race results and receives rewards based on race performance.
 
 ```typescript
 type DailyRaceReplayCheckRequest = {
-
   race_result_array: {
-
     viewer_id: number; // Participant's viewer ID (0 for NPCs, actual ID for player)
     finish_order: number; // Final position in the race (1 = first place)
     finish_time: number; // Total race time including modifiers
@@ -29,43 +27,36 @@ type DailyRaceReplayCheckRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type DailyRaceReplayCheckResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     rank: number; // Player's final ranking in the race
     first_clear_reward_array: unknown[]; // Special rewards for first-time completion
     normal_reward_array: {
-
       item_type: number; // Type/category of reward item
       item_id: number; // Specific item identifier
       item_num: number; // Quantity awarded
     }[];
     rare_reward_array: {
-
       item_type: number; // Type/category of rare reward item
       item_id: number; // Specific rare item identifier
       item_num: number; // Quantity of rare reward
     }[];
     bonus_reward_array: unknown[]; // Additional bonus rewards
     reward_summary_info: {
-
       add_item_list: {
-
         item_id: number; // Item identifier
         number: number; // Quantity received
       }[];
@@ -87,7 +78,6 @@ type DailyRaceReplayCheckResponse = {
     };
     state: number; // Race completion state
     limited_shop_info: {
-
       limited_exchange_id: number; // Shop identifier
       open_flag: number; // Whether shop is open (1=open, 0=closed)
       appear_flag: number; // Whether shop appears in UI
@@ -95,5 +85,5 @@ type DailyRaceReplayCheckResponse = {
       open_count: number; // Number of times shop has opened
     };
   };
-}
+};
 ```

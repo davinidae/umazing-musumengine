@@ -6,9 +6,7 @@ Get user profile statistics and achievements.
 
 ```typescript
 type GetProfileInfoRequest = {
-
   add_voice_data_array: {
-
     chara_id: number; // Character identifier
     data_id: number; // Voice data identifier
   }[];
@@ -26,26 +24,22 @@ type GetProfileInfoRequest = {
   dmm_onetime_token: string | null; // DMM one-time token
   steam_id: string; // Steam user ID
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type GetProfileInfoResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     user_info: {
-
       viewer_id: number; // Player identifier
       name: string; // Player display name
       comment: string; // Player profile comment/message
@@ -55,5 +49,5 @@ type GetProfileInfoResponse = {
       total_fan_count: number; // Total accumulated fan count
     };
   };
-}
+};
 ```

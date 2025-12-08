@@ -11,6 +11,9 @@ export class SignupService extends StepService {
   readonly endpoint = 'tool/signup';
   readonly framing = FramingMode.KvStream;
 
+  /**
+   * Build payload including `viewer_id` (if available) along with client data.
+   */
   getPayload(viewer_id: number): Record<string, unknown> {
     return {
       ...this.ctx.clientData,

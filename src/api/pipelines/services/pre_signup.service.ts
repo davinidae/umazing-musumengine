@@ -12,6 +12,9 @@ export class PreSignupService extends StepService {
 
   protected override omitViewerId = true;
 
+  /**
+   * Build payload from base client data; no viewer_id required for pre-signup.
+   */
   getPayload(): Record<string, unknown> {
     return {
       ...this.ctx.clientData,

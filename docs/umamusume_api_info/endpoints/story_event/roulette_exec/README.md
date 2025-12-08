@@ -6,7 +6,6 @@ Executes a story event roulette spin using roulette coins.
 
 ```typescript
 type StoryEventRouletteExecRequest = {
-
   roulette_coin_num: number; // Number of roulette coins to spend
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
@@ -22,29 +21,24 @@ type StoryEventRouletteExecRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type StoryEventRouletteExecResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     order: number; // Position number on the roulette that was hit
     reward_summary_info: {
-
       add_item_list: {
-
         item_id: number; // ID of the item received
         number: number; // Quantity received
       }[];
@@ -65,7 +59,6 @@ type StoryEventRouletteExecResponse = {
       force_update_honor_id: number; // Honor ID requiring update
     };
     roulette_reward: {
-
       item_type: number; // Type/category of the item
       item_id: number; // Specific item ID
       item_num: number; // Quantity obtained
@@ -76,5 +69,5 @@ type StoryEventRouletteExecResponse = {
     change_roulette_reward_list: null; // New reward list if changed
     roulette_exec_count: number; // Total number of roulette executions
   };
-}
+};
 ```

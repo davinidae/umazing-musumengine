@@ -1,12 +1,12 @@
 # Payment Item List API
 
-Retrieves the list of purchasable items in the in-game store, including prices, currency amounts, and purchase limits.
+Retrieves the list of purchasable items in the in-game store, including prices, currency amounts,
+and purchase limits.
 
 ## Request Body
 
 ```typescript
 type PaymentItemListRequest = {
-
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
   device_id: string; // Unique device identifier
@@ -21,26 +21,22 @@ type PaymentItemListRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type PaymentItemListResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     data: {
-
       id: number; // Payment item identifier
       store_product_id: string; // Platform store product ID
       disp_order: number; // Display order in shop
@@ -57,7 +53,6 @@ type PaymentItemListResponse = {
       number_of_product_purchased: number; // Times player has purchased this item
     }[];
     season_pack_info: {
-
       product_master_id: number; // Season pack product ID
       season_end_time: number; // Season pack expiration
       repurchase_time: number; // When season pack can be repurchased
@@ -65,5 +60,5 @@ type PaymentItemListResponse = {
     };
     last_checked_time: number; // Last time shop was checked
   };
-}
+};
 ```

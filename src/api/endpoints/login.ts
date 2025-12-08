@@ -5,17 +5,17 @@ import { sessionManager } from '../session/session-manager';
 const router = Router();
 
 /**
- * POST /login
+ * POST `/login`
  *
- * Orchestrates the Main Screen Start Up Bootstrap sequence
- * (pre_signup -> signup -> start_session -> load/index).
- * Creates a server-only user session and returns an opaque session_id for subsequent calls.
+ * Starts a server-side session and runs the login bootstrap pipeline:
+ * `pre_signup → signup → start_session → load/index`.
+ * Returns an opaque `session_id` and a success flag.
  *
- * @route POST /login
- * @param req.body.steam_id string Steam identifier (required)
- * @param req.body.steam_session_ticket string Steam session ticket (optional)
- * @returns 200 JSON { session_id, ok, error, created_at }
- * @remarks The server stores PipelineContext and last step internally; no sensitive data is returned.
+ * @param req - Express `Request` with JSON body
+ * @param req.body.steam_id - Steam identifier (required)
+ * @param req.body.steam_session_ticket - Steam session ticket (optional)
+ * @returns Express `Response` with status 200 and body `{ session_id, ok, error, created_at }`
+ * @remarks The server persists `PipelineContext` and the last step internally; only the `session_id` is exposed.
  */
 router.post('/login', async (req: Request, res: Response) => {
   try {
@@ -25,12 +25,10 @@ router.post('/login', async (req: Request, res: Response) => {
         error: 'steam_id (string) is required',
       });
     }
-    // Create a server-side session and attach context there
     const session = sessionManager.createSession(steam_id, steam_session_ticket, {
       steam_id,
     });
     const results = await session.runPipeline(loginPipeline);
-    // Minimal response: only return a session identifier
     const failed = results.find((r) => r.error);
     res.json({
       session_id: session.id,

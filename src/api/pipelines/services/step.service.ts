@@ -38,15 +38,21 @@ export abstract class StepService {
    * @returns Base64-encoded response buffer.
    * @throws If upstream base is missing or the response shape is invalid.
    */
+  /**
+   * POST a Base64 request to the upstream API and return the Base64 response string with a result code.
+   *
+   * @param requestB64 Base64-encoded request buffer.
+   * @returns `{ responseB64, responseCode }` where `responseCode` is the HTTP status or synthesized.
+   * @throws If upstream base is missing or the response shape is invalid.
+   */
   protected async callUpstream(
-    endpoint: string,
     requestB64: string,
   ): Promise<{ responseB64: string; responseCode: GallopResultCode }> {
     const base = this.ctx.upstreamBase;
     if (!base) {
       throw new Error('Missing UMAZING_UPSTREAM_BASE (remote API base URL)');
     }
-    const url = `${String(base).replace(/\/+$/, '')}/${endpoint.replace(/^\/+/, '')}`;
+    const url = `${String(base).replace(/\/+$/, '')}/${this.endpoint.replace(/^\/+/, '')}`;
     const resp = await axios.post(
       url,
       {
@@ -78,8 +84,16 @@ export abstract class StepService {
     throw new Error('Invalid upstream response');
   }
 
+  /**
+   * Build the request payload for this step.
+   * @param viewer_id Viewer identifier propagated from previous step or context.
+   * @returns Plain object serialized by the runtime encoder.
+   */
   abstract getPayload(viewer_id: number): Record<string, unknown>;
 
+  /**
+   * Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
+   */
   protected omitViewerId = false;
 
   /**
@@ -87,6 +101,11 @@ export abstract class StepService {
    * Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.
    * @param prev Previous step result, if any.
    * @returns StepResultBase without the order field (runner/session will add it).
+   */
+  /**
+   * Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
+   * @param prev Previous step result, if any.
+   * @returns StepResultBase without the `order` field (assigned by the pipeline runner).
    */
   public async execute(prev: StepPrevResult | undefined): Promise<StepResultBase> {
     let viewer_id = this.ctx.clientData.viewer_id ?? 0;
@@ -106,7 +125,7 @@ export abstract class StepService {
           endpoint: this.endpoint,
           framing: this.framing,
           skipped: true,
-          note: 'viewer_id not available; skipping load/index',
+          note: 'viewer_id not available; skipping step',
           responseCode: GallopResultCode.MissingViewerId,
           responseCodeName: asResultCodeName(GallopResultCode.MissingViewerId),
         };
@@ -120,7 +139,7 @@ export abstract class StepService {
       payload: this.getPayload(viewer_id),
     });
     const requestB64 = encoded.requestB64;
-    const { responseB64, responseCode } = await this.callUpstream(this.endpoint, requestB64);
+    const { responseB64, responseCode } = await this.callUpstream(requestB64);
     const decodedResponse = this.ctx.runtime.decodeResponse({
       requestB64,
       responseB64,

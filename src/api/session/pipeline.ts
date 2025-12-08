@@ -8,6 +8,10 @@ import {
 } from '../models';
 import { StepServiceCtor } from '../pipelines';
 
+/**
+ * Executes a sequence of pipeline services within a session context.
+ * @public
+ */
 export class Pipeline {
   constructor(
     public readonly id: string,
@@ -18,12 +22,18 @@ export class Pipeline {
     //
   }
 
-  /** Replace or initialize the pipeline context for this session. */
+  /**
+   * Replace or initialize the pipeline context for this session.
+   * @param ctx New `PipelineContext` to set.
+   */
   setContext(ctx: PipelineContext): void {
     this.ctx = ctx;
   }
 
-  /** Access the pipeline context, if any. */
+  /**
+   * Access the pipeline context, if any.
+   * @returns Current `PipelineContext` or `undefined`.
+   */
   getContext(): PipelineContext | undefined {
     return this.ctx;
   }
@@ -34,6 +44,12 @@ export class Pipeline {
    *
    * @param steps Constructors for services to run, in order.
    * @returns Ordered list of StepResult items, including the error entry if an error occurred.
+   */
+  /**
+   * Execute services sequentially, instantiating each with the current context.
+   * On error, pushes an error result and stops execution.
+   * @param steps Constructors for services to run, in order.
+   * @returns Ordered list of `StepResult` items, including an error entry if an error occurred.
    */
   async execute(steps: StepServiceCtor[]): Promise<StepResult[]> {
     const results: StepResult[] = [];

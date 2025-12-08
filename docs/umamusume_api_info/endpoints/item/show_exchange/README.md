@@ -1,12 +1,12 @@
 # Item Show Exchange API
 
-Displays the item exchange shop with available trades, exchange limits, and player's exchange history.
+Displays the item exchange shop with available trades, exchange limits, and player's exchange
+history.
 
 ## Request Body
 
 ```typescript
 type ItemShowExchangeRequest = {
-
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
   device_id: string; // Unique device identifier
@@ -21,26 +21,22 @@ type ItemShowExchangeRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type ItemShowExchangeResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     limit_list: {
-
       item_exchange_id: number; // Exchange option identifier
       exchange_count: number; // Number of times player has used this exchange
       update_time: string; // Last time this exchange was used
@@ -48,7 +44,6 @@ type ItemShowExchangeResponse = {
     disabled_id_array: number[]; // Exchange IDs that are currently disabled
     release_id_array: number[]; // Exchange IDs that have been newly released
     limited_shop_info: {
-
       limited_exchange_id: number; // Limited shop identifier
       open_flag: number; // Whether limited shop is open (0=closed, 1=open)
       appear_flag: number; // Whether limited shop should appear in UI
@@ -57,5 +52,5 @@ type ItemShowExchangeResponse = {
     };
     limited_goods_info_array: unknown[]; // Limited-time items available
   };
-}
+};
 ```

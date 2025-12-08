@@ -1,7 +1,6 @@
 dist/
 node_modules/
 coverage/
-docs/
 *.log
 dist/
 node_modules/

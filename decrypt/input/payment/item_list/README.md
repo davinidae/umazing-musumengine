@@ -1,6 +1,7 @@
 # Payment Item List API
 
-Retrieves the list of purchasable items in the in-game store, including prices, currency amounts, and purchase limits.
+Retrieves the list of purchasable items in the in-game store, including prices, currency amounts,
+and purchase limits.
 
 ## Request Body
 

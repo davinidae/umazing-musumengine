@@ -1,6 +1,7 @@
 # Mission Receive API
 
-Claims rewards from completed missions. Allows claiming single missions or multiple missions in one request.
+Claims rewards from completed missions. Allows claiming single missions or multiple missions in one
+request.
 
 ## Request Body
 

@@ -3,8 +3,11 @@ import { Router, Request, Response } from 'express';
 const router = Router();
 
 /**
- * GET /health
+ * GET `/health`
+ *
  * Lightweight health probe for uptime checks.
+ *
+ * @returns `{ status, timestamp, env }`
  */
 router.get('/health', (req: Request, res: Response) => {
   res.json({
@@ -15,8 +18,11 @@ router.get('/health', (req: Request, res: Response) => {
 });
 
 /**
- * GET /
+ * GET `/`
+ *
  * Discovery endpoint listing minimal API metadata.
+ *
+ * @returns `{ name, version, endpoints }`
  */
 router.get('/', (req: Request, res: Response) => {
   res.json({

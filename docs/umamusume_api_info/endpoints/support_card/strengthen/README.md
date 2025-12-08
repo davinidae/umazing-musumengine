@@ -6,7 +6,6 @@ Strengthens a support card by spending experience points and money to increase i
 
 ```typescript
 type SupportCardStrengthenRequest = {
-
   support_card_id: number; // ID of the support card to strengthen
   use_global_exp: number; // Amount of global experience points to spend
   current_global_exp: number; // Current global experience before strengthening
@@ -26,30 +25,25 @@ type SupportCardStrengthenRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type SupportCardStrengthenResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
     notifications: {
-
       room_match_race_result_num: number; // Room match notifications
     };
   };
   data: {
-
     support_card_data: {
-
       viewer_id: number; // Player identifier
       support_card_id: number; // Support card identifier
       exp: number; // New experience level after strengthening
@@ -60,10 +54,9 @@ type SupportCardStrengthenResponse = {
       create_time: string; // When the card was first created
     };
     item_data_array: {
-
       item_id: number; // Item type identifier (110=coin, 59=training item, etc.)
       number: number; // New quantity after spending
     }[];
   };
-}
+};
 ```

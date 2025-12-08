@@ -9,7 +9,8 @@ Overview: Entering daily races, selecting benefits, starting, and post-race chec
 - Start race (entry): `daily_race/race_entry`  
    See: [endpoints/daily_race/race_entry](../endpoints/daily_race/race_entry/README.md)
 - Select benefits: `daily_race/reflect_item_effect`  
-   See: [endpoints/daily_race/reflect_item_effect](../endpoints/daily_race/reflect_item_effect/README.md)
+   See:
+  [endpoints/daily_race/reflect_item_effect](../endpoints/daily_race/reflect_item_effect/README.md)
 - View results / race: `daily_race/race_start`  
    See: [endpoints/daily_race/race_start](../endpoints/daily_race/race_start/README.md)
 - Race end (replay/validation): `daily_race/replay_check`  
@@ -18,7 +19,5 @@ Overview: Entering daily races, selecting benefits, starting, and post-race chec
 
 ## Notes
 
-- The Daily Race Type (Monies vs Support Points)
-probably appears in the payload of `race_entry`.
-- The Racing Mode (View Results vs View Race)
-probably appears in the payload of `race_start`.
+- The Daily Race Type (Monies vs Support Points) probably appears in the payload of `race_entry`.
+- The Racing Mode (View Results vs View Race) probably appears in the payload of `race_start`.

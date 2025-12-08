@@ -5,33 +5,33 @@
 
 ## :warning::warning: Before you continue :warning::warning:
 
-This repository was not made to cause harm to [Cygames](https://www.cygames.co.jp/en/), their products or their players. I love [Uma Musume](https://umamusume.com/)
-!!
+This repository was not made to cause harm to [Cygames](https://www.cygames.co.jp/en/), their
+products or their players. I love [Uma Musume](https://umamusume.com/) !!
 
-If you or someone you know is affected by these tools, please write me a ticket so i will privatize it.
+If you or someone you know is affected by these tools, please write me a ticket so i will privatize
+it.
 
-Thanks to user [racsonaht](https://www.unknowncheats.me/forum/members/7040191.html)
-at [UnknownCheats](https://www.unknowncheats.me/forum/4473299-post1.html)
-for their initial work from which this tool started.
-Their original post is copied at [docs/umamusume_api_info](./docs/umamusume_api_info/ORIGINAL.md)
+Thanks to user [racsonaht](https://www.unknowncheats.me/forum/members/7040191.html) at
+[UnknownCheats](https://www.unknowncheats.me/forum/4473299-post1.html) for their initial work from
+which this tool started. Their original post is copied at
+[docs/umamusume_api_info](./docs/umamusume_api_info/ORIGINAL.md)
 
 ## What this repository is about
 
-Tools to decrypt and build game requests/responses (AES-256-CBC, msgpack)
-with a modular structure. This repository is now fully TypeScript-based and ships a bundled CLI.
+Tools to decrypt and build game requests/responses (AES-256-CBC, msgpack) with a modular structure.
+This repository is now fully TypeScript-based and ships a bundled CLI.
 
-See CONTRIBUTING.md for style guidelines (multi-line control flow, concise comments) and project conventions.
+See CONTRIBUTING.md for style guidelines (multi-line control flow, concise comments) and project
+conventions.
 
 ## Features
 
 - Decrypt request/response Base64 blobs from packs on disk
 - Build requests from `decoded.json` inputs with a deterministic AES-256 key
 - Clean TypeScript ESM codebase (Node 18+), bundled with esbuild for distribution
-- Commander-based CLI with `decrypt` and `encrypt` subcommands
 - Commander-based CLI with `decrypt`, `encrypt`, and `runtime` subcommands
 - Split test suites (Vitest): unit and integration, with coverage and thresholds
-- Linting (ESLint flat config)
-  and formatting (Prettier)
+- Linting (ESLint flat config) and formatting (Prettier)
 
 ## Structure
 
@@ -122,16 +122,21 @@ The decrypt commands automatically produce the following files under `decrypt/ou
 - `decoded.bin` (raw decrypted bytes)
 - `decoded.json` (combined JSON with `blob1` and `blob2`)
 
-Where `<rel>` mirrors the pack's subfolder path under `decrypt/input`, and `<file>` is the input filename stem (`request` or `response`). For example, for `decrypt/input/example/request.txt`, outputs go to `decrypt/output/example/request/`.
+Where `<rel>` mirrors the pack's subfolder path under `decrypt/input`, and `<file>` is the input
+filename stem (`request` or `response`). For example, for `decrypt/input/example/request.txt`,
+outputs go to `decrypt/output/example/request/`.
 
 Notes:
 
-- `request.txt`/`response.txt` should contain the raw Base64 string. Whitespace and missing padding are normalized automatically.
+- `request.txt`/`response.txt` should contain the raw Base64 string. Whitespace and missing padding
+  are normalized automatically.
 - `response` decryption derives the IV from the UDID present in the sibling `request.txt`.
 
 ## Usage – Build requests (encrypt batch)
 
-Place one or more `decoded.json` files under `encrypt/input` (you can copy them from `decrypt/output/<pack>/<file>/decoded.json` and edit `blob2`). Build will process them recursively and mirror the structure under `encrypt/output`.
+Place one or more `decoded.json` files under `encrypt/input` (you can copy them from
+`decrypt/output/<pack>/<file>/decoded.json` and edit `blob2`). Build will process them recursively
+and mirror the structure under `encrypt/output`.
 
 ```powershell
 npm run cli -- encrypt build
@@ -139,8 +144,11 @@ npm run cli -- encrypt build
 
 Encryption key note:
 
-- The `encrypt build` command uses a deterministic AES-256 encryption key derived from the ASCII string `co!=Y;(UQCGxJ_n82` (via SHA-256). This value is appended to blob2 and shown in logs, ensuring reproducible builds.
-- The secret is defined in `src/variables.ts` as `DETERMINISTIC_ENC_SECRET`. There are no CLI flags to override this.
+- The `encrypt build` command uses a deterministic AES-256 encryption key derived from the ASCII
+  string `co!=Y;(UQCGxJ_n82` (via SHA-256). This value is appended to blob2 and shown in logs,
+  ensuring reproducible builds.
+- The secret is defined in `src/variables.ts` as `DETERMINISTIC_ENC_SECRET`. There are no CLI flags
+  to override this.
 
 Required fields inside `blob1` (used to derive IV and rebuild blob1):
 
@@ -155,15 +163,18 @@ The `decrypt` step already produces `blob1` with all these fields.
 Framing selection:
 
 - By default, requests are built as a single length-prefixed msgpack document.
-- To build special key/value streams used by some endpoints (like tool/pre_signup and tool/signup), set `blob1.framing` to `"kv-stream"` inside your `decoded.json`. The builder only honors this explicit hint; there is no path-based auto-detection.
+- To build special key/value streams used by some endpoints (like tool/pre_signup and tool/signup),
+  set `blob1.framing` to `"kv-stream"` inside your `decoded.json`. The builder only honors this
+  explicit hint; there is no path-based auto-detection.
 
-Skip behavior: the builder scans `encrypt/input/**/decoded.json` and will skip a file (logging the reason)
-if any required field is missing/invalid (e.g., `session_id_hex` not 16 bytes, `response_key_hex` not 32 bytes, missing `prefix_hex`, UDID not present, etc.).
+Skip behavior: the builder scans `encrypt/input/**/decoded.json` and will skip a file (logging the
+reason) if any required field is missing/invalid (e.g., `session_id_hex` not 16 bytes,
+`response_key_hex` not 32 bytes, missing `prefix_hex`, UDID not present, etc.).
 
 ## Common usage (end-to-end)
 
-1. Capture request/response Base64 bodies from the game API (e.g., with Fiddler or a proxy)
-   and save them as packs under `decrypt/input/<pack>/request.txt` and `decrypt/input/<pack>/response.txt`.
+1. Capture request/response Base64 bodies from the game API (e.g., with Fiddler or a proxy) and save
+   them as packs under `decrypt/input/<pack>/request.txt` and `decrypt/input/<pack>/response.txt`.
 
 1. Decrypt them (batch):
 
@@ -171,13 +182,13 @@ if any required field is missing/invalid (e.g., `session_id_hex` not 16 bytes, `
 npm run cli -- decrypt all
 ```
 
-This writes `decrypt/output/<pack>/<file>/{decoded.bin, decoded.json}`. The `decoded.json` contains both `blob1` and the JSON-friendly payload as `blob2`.
+This writes `decrypt/output/<pack>/<file>/{decoded.bin, decoded.json}`. The `decoded.json` contains
+both `blob1` and the JSON-friendly payload as `blob2`.
 
-1. Edit `decrypt/output/<pack>/<file>/decoded.json` (only `blob2` typically)
-   to make your changes.
+1. Edit `decrypt/output/<pack>/<file>/decoded.json` (only `blob2` typically) to make your changes.
 
-1. Copy edited `decoded.json` files to `encrypt/input/<pack>/` (keep any subfolder layout you prefer)
-   and rebuild:
+1. Copy edited `decoded.json` files to `encrypt/input/<pack>/` (keep any subfolder layout you
+   prefer) and rebuild:
 
 ```powershell
 npm run cli -- encrypt build
@@ -189,17 +200,18 @@ Compatibility Python files have been removed. Use the TypeScript CLI and modules
 
 ## Notes
 
-- Decrypted binaries include a 4-byte little-endian length prefix for msgpack. The CLIs handle packing/unpacking automatically.
-- IV derivation: computed from the canonical UDID string (hex with dashes)
-  via `deriveIvFromUdidString`.
-- Request format on disk: `[4-byte LE blob1_len][blob1][blob2_encrypted || 32B-enc-key]` where `blob2_encrypted` is PKCS#7 padded and AES-256-CBC encrypted; the 32-byte key (SHA-256 of the deterministic secret)
-  is appended to blob2.
-- `blob1` layout: `prefix | session_id(16B)
-| udid_raw(16B)
-| response_key(32B)
-| auth_key(48B)`.
-- JSON roundtripping: binary fields in payloads can be represented as strings with `base64:<...>` and are preserved by the builder (`fromJsonFriendly`/`toJsonCompatible`).
-- If you need extensions or automation, import `decrypt/common` and `encrypt/build` directly in your own script.
+- Decrypted binaries include a 4-byte little-endian length prefix for msgpack. The CLIs handle
+  packing/unpacking automatically.
+- IV derivation: computed from the canonical UDID string (hex with dashes) via
+  `deriveIvFromUdidString`.
+- Request format on disk: `[4-byte LE blob1_len][blob1][blob2_encrypted || 32B-enc-key]` where
+  `blob2_encrypted` is PKCS#7 padded and AES-256-CBC encrypted; the 32-byte key (SHA-256 of the
+  deterministic secret) is appended to blob2.
+- `blob1` layout: `prefix | session_id(16B) | udid_raw(16B) | response_key(32B) | auth_key(48B)`.
+- JSON roundtripping: binary fields in payloads can be represented as strings with `base64:<...>`
+  and are preserved by the builder (`fromJsonFriendly`/`toJsonCompatible`).
+- If you need extensions or automation, import `decrypt/common` and `encrypt/build` directly in your
+  own script.
 
 ## Testing and coverage
 
@@ -221,8 +233,7 @@ npm run test:integration
 npm run test
 ```
 
-Coverage (v8)
-with text and lcov reports:
+Coverage (v8) with text and lcov reports:
 
 ```powershell
 # Unit coverage with targeted thresholds (via vite.config.unit.ts)
@@ -240,8 +251,8 @@ LCOV output is written to `coverage/lcov.info`.
 What’s covered today:
 
 - Unit: protocol helpers, crypto helpers, msgpack packing/unpacking
-- Integration: decrypt example pack, decrypt run()
-  end-to-end (request + response), builder e2e (can decrypt back), builder skip cases, roundtrip from a previously decrypted `decoded.json`
+- Integration: decrypt example pack, decrypt run() end-to-end (request + response), builder e2e (can
+  decrypt back), builder skip cases, roundtrip from a previously decrypted `decoded.json`
 
 Unit coverage thresholds are enforced via `vite.config.unit.ts`.
 
@@ -270,7 +281,8 @@ npm run lint; npm run format
 ## Contributing and style
 
 - Please read `CONTRIBUTING.md` for coding style and project conventions.
-  - Highlights: avoid one-liners, keep comments concise, add rationale to heuristic catches, and prefer small named helpers.
+  - Highlights: avoid one-liners, keep comments concise, add rationale to heuristic catches, and
+    prefer small named helpers.
 
 ## CLI reference
 
@@ -288,7 +300,8 @@ under decrypt/input (recursive)
   runtime decode-response Read JSON from stdin { requestB64, responseB64 } and write { payload } to stdout
 ```
 
-Flags like `--enc-key-hex`, `--sid`, `--session-id-hex`, and `--response-key-hex` are intentionally not supported; the builder reads required values from `blob1` in each `decoded.json`.
+Flags like `--enc-key-hex`, `--sid`, `--session-id-hex`, and `--response-key-hex` are intentionally
+not supported; the builder reads required values from `blob1` in each `decoded.json`.
 
 ```powershell
 # Development (TS sources)
@@ -308,11 +321,13 @@ node dist/cli.bundle.js decrypt all
 
 ## Runtime API (programmatic and piping)
 
-When integrating with live API calls, you can either pipe JSON through the CLI or use the RuntimeClient in-process.
+When integrating with live API calls, you can either pipe JSON through the CLI or use the
+RuntimeClient in-process.
 
 - CLI piping (stdin → stdout):
   - `runtime encode-request` expects on stdin:
-    - `{ blob1, payload }` where `blob1` includes required hex fields and optional `framing` (`"kv-stream"` or omitted for default).
+    - `{ blob1, payload }` where `blob1` includes required hex fields and optional `framing`
+      (`"kv-stream"` or omitted for default).
     - Writes `{ requestB64 }` to stdout.
   - `runtime decode-response` expects on stdin:
     - `{ requestB64, responseB64 }` where `responseB64` is the Base64 body returned by the server.
@@ -320,7 +335,8 @@ When integrating with live API calls, you can either pipe JSON through the CLI o
 
 - Programmatic API:
   - `encodeRequest({ blob1, payload }): { requestB64: string }` → builds request Base64.
-  - `decodeResponse({ requestB64, responseB64 }): { payload: any }` → returns decoded payload (auto framing detection and normalization for responses).
+  - `decodeResponse({ requestB64, responseB64 }): { payload: any }` → returns decoded payload (auto
+    framing detection and normalization for responses).
 
 ### RuntimeClient wrapper
 
@@ -350,11 +366,13 @@ const { payload } = client.decodeResponse({
 });
 ```
 
-Response normalization note: For certain responses that arrive as key/value streams, the decoder reconstructs `{ data_headers, data }` where both are message-packed maps.
+Response normalization note: For certain responses that arrive as key/value streams, the decoder
+reconstructs `{ data_headers, data }` where both are message-packed maps.
 
 ## Minimal API example
 
-The API exposes a `POST /login` endpoint that orchestrates the bootstrap pipeline and creates a server-owned session:
+The API exposes a `POST /login` endpoint that orchestrates the bootstrap pipeline and creates a
+server-owned session:
 
 ```http
 POST /login
@@ -374,4 +392,5 @@ Response:
 }
 ```
 
-Subsequent endpoints can accept `session_id` to continue pipelines using the server-stored context and last step.
+Subsequent endpoints can accept `session_id` to continue pipelines using the server-stored context
+and last step.

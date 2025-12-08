@@ -6,7 +6,6 @@ Applies item effects during daily race gameplay.
 
 ```typescript
 type DailyRaceReflectItemEffectRequest = {
-
   item_id_array: number[]; // Array of item IDs to apply effects for (can be empty)
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
@@ -22,33 +21,29 @@ type DailyRaceReflectItemEffectRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type DailyRaceReflectItemEffectResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     weather: null; // Weather conditions for the race (null if unchanged)
     ground_condition: null; // Track condition (null if unchanged)
     race_horse_data_array: null; // Horse performance data (null if unchanged)
     item_info_array: {
-
       item_id: number; // Item identifier
       number: number; // Quantity available
     }[]; // Items available or consumed
     state: number; // Current race state
   };
-}
+};
 ```

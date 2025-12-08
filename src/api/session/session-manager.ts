@@ -7,6 +7,7 @@ import { RuntimeClient } from '../../lib';
 /**
  * Simple in-memory session manager to keep server-only data between endpoint calls.
  * Not for production multi-process use without an external store.
+ * @public
  */
 export class SessionManager {
   private readonly sessions = new Map<string, UserSession>();
@@ -21,6 +22,13 @@ export class SessionManager {
     this.ttlMs = opts?.ttlMs ?? 30 * 60 * 1000; // 30 minutes
   }
 
+  /**
+   * Generate a default `PipelineContext` for a user based on Steam identifiers.
+   * Uses deterministic derivations for development/testing.
+   * @param steam_id Steam identifier.
+   * @param steam_session_ticket Steam session ticket.
+   * @returns Initialized `PipelineContext`.
+   */
   generateCtx(steam_id: string, steam_session_ticket: string): PipelineContext {
     return {
       runtime: new RuntimeClient({
@@ -76,6 +84,13 @@ export class SessionManager {
     };
   }
 
+  /**
+   * Create a new server-side session and store it in memory.
+   * @param steam_id Steam identifier.
+   * @param steam_session_ticket Steam session ticket.
+   * @param meta Arbitrary metadata associated with the session.
+   * @returns Created `UserSession`.
+   */
   createSession(
     steam_id: string,
     steam_session_ticket: string,
@@ -89,6 +104,11 @@ export class SessionManager {
     return session;
   }
 
+  /**
+   * Retrieve a session by id. Applies TTL lazily and prunes expired entries.
+   * @param id Session identifier.
+   * @returns `UserSession` or `undefined` if not found/expired.
+   */
   getSession(id: string): UserSession | undefined {
     const s = this.sessions.get(id);
     if (!s) {
@@ -102,6 +122,11 @@ export class SessionManager {
     return s;
   }
 
+  /**
+   * Update the session's pipeline context.
+   * @param id Session id.
+   * @param ctx New `PipelineContext`.
+   */
   setContext(id: string, ctx: PipelineContext): void {
     const s = this.getSession(id);
     if (!s) {
@@ -110,10 +135,20 @@ export class SessionManager {
     s.getPipeline().setContext(ctx);
   }
 
+  /**
+   * Access the current pipeline context for a session.
+   * @param id Session id.
+   * @returns `PipelineContext` or `undefined`.
+   */
   getContext(id: string): PipelineContext | undefined {
     return this.getSession(id)?.getPipeline().getContext();
   }
 
+  /**
+   * Persist the last step result for a session.
+   * @param id Session id.
+   * @param step Last step or `undefined`.
+   */
   setLastStep(id: string, step: StepPrevResult | undefined): void {
     const s = this.getSession(id);
     if (!s) {
@@ -122,10 +157,19 @@ export class SessionManager {
     s.setLastStep(step);
   }
 
+  /**
+   * Read the last step result for a session.
+   * @param id Session id.
+   * @returns `StepPrevResult` or `undefined`.
+   */
   getLastStep(id: string): StepPrevResult | undefined {
     return this.getSession(id)?.getLastStep();
   }
 
+  /**
+   * Delete a session by id.
+   * @param id Session id.
+   */
   delete(id: string): void {
     this.sessions.delete(id);
   }

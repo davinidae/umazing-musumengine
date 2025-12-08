@@ -1,6 +1,7 @@
 # Mission Index API
 
-Retrieves the complete list of missions for the user, including their progress and completion status.
+Retrieves the complete list of missions for the user, including their progress and completion
+status.
 
 ## Request Body
 

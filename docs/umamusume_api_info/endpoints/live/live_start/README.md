@@ -6,10 +6,8 @@ Initiates a live performance/concert with selected characters, music, and theate
 
 ```typescript
 type LiveStartRequest = {
-
   music_id: number; // ID of the music track to perform
   member_info_array: {
-
     chara_id: number; // Character identifier
     mob_id: number; // Mob/background character ID (0 for main characters)
     dress_id: number; // Primary outfit/dress ID
@@ -18,7 +16,6 @@ type LiveStartRequest = {
     color_id2: number; // Secondary color variation (0 if none)
   }[];
   live_theater_setting_info: {
-
     sound_live_music: number; // Music volume level (0-10)
     display_lyrics: number; // Show lyrics during performance (1=yes, 0=no)
     play_se: number; // Play sound effects (1=yes, 0=no)
@@ -39,21 +36,19 @@ type LiveStartRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type LiveStartResponse = {
-
   response_code: number; // Success indicator
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session identifier
     servertime: number; // Server timestamp
     result_code: number; // Operation result
   };
-}
+};
 ```

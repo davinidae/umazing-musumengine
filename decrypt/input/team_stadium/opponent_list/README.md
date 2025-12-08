@@ -1,6 +1,7 @@
 # Team Stadium Opponent List API
 
-Retrieves a list of potential opponents for Team Stadium battles, including their team compositions and player information.
+Retrieves a list of potential opponents for Team Stadium battles, including their team compositions
+and player information.
 
 ## Request Body
 

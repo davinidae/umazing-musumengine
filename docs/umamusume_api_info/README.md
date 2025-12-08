@@ -1,6 +1,7 @@
 # API notes and documentation
 
-This folder is a living reference for the UmaMusume API as understood from captured traffic and reverse engineering. It complements the tools under `src/` that decrypt and (re)build requests.
+This folder is a living reference for the UmaMusume API as understood from captured traffic and
+reverse engineering. It complements the tools under `src/` that decrypt and (re)build requests.
 
 Use this as a central place to document:
 
@@ -11,7 +12,8 @@ Use this as a central place to document:
 - Error codes and meanings
 - Sanitized examples (Base64 bodies and decoded JSON)
 
-> Important: Always redact or replace personal data, device IDs, tokens, or secrets before committing examples.
+> Important: Always redact or replace personal data, device IDs, tokens, or secrets before
+> committing examples.
 
 ## Wire format (on the network)
 
@@ -46,12 +48,13 @@ When decrypted by the CLI, `blob1` appears in JSON as:
 
 ### IV derivation (for AES‑CBC)
 
-The IV is derived from `udid_canonical` (the hyphenated form of `udid_raw_hex`)
-via the helper `deriveIvFromUdidString`. The decrypt tools compute this automatically.
+The IV is derived from `udid_canonical` (the hyphenated form of `udid_raw_hex`) via the helper
+`deriveIvFromUdidString`. The decrypt tools compute this automatically.
 
 ## Builder behavior (tools in this repo)
 
-The `encrypt build` command expects a `decoded.json` with `blob1` and `blob2` fields. It rebuilds a Base64 request as described above.
+The `encrypt build` command expects a `decoded.json` with `blob1` and `blob2` fields. It rebuilds a
+Base64 request as described above.
 
 Required fields in `blob1`:
 
@@ -61,20 +64,24 @@ Required fields in `blob1`:
 - `session_id_hex` (16 bytes)
 - `response_key_hex` (32 bytes)
 
-Skip behavior: if any required field is missing/invalid (wrong lengths, malformed hex, etc.), the builder will skip that file and log the reason.
+Skip behavior: if any required field is missing/invalid (wrong lengths, malformed hex, etc.), the
+builder will skip that file and log the reason.
 
-Deterministic encryption: For reproducibility within this repository, the builder uses a deterministic AES‑256 key derived as SHA‑256 of the ASCII string `co!=Y;(UQCGxJ_n82` (see `src/variables.ts`). That derived key is appended to `blob2` and visible in decrypted outputs. There are no CLI flags to override this.
+Deterministic encryption: For reproducibility within this repository, the builder uses a
+deterministic AES‑256 key derived as SHA‑256 of the ASCII string `co!=Y;(UQCGxJ_n82` (see
+`src/variables.ts`). That derived key is appended to `blob2` and visible in decrypted outputs. There
+are no CLI flags to override this.
 
 ## Documenting endpoints
 
-Use the following template to add endpoint documentation in `api/endpoints/{area}/{name}.md` (create folders as needed):
+Use the following template to add endpoint documentation in `api/endpoints/{area}/{name}.md` (create
+folders as needed):
 
 ### {Endpoint name}
 
 - Path: `/{path}`
 - Method: `GET` | `POST`
-- Purpose: {
-short description}
+- Purpose: { short description}
 
 ## Request (decoded blob2)
 
@@ -105,7 +112,8 @@ Example (sanitized):
 {
   "status": 0,
   "data": {
- "...": "..." }
+    "...": "..."
+  }
 }
 ```
 
@@ -122,8 +130,7 @@ Example (sanitized):
 
 ## How to produce examples
 
-1. Capture Base64 bodies from the game (e.g., with a proxy)
-and save as packs:
+1. Capture Base64 bodies from the game (e.g., with a proxy) and save as packs:
    - `decrypt/input/<pack>/request.txt`
    - `decrypt/input/<pack>/response.txt`
 2. Run the decrypt tools:
@@ -138,13 +145,13 @@ and save as packs:
 4. Copy sanitized examples into `api/examples/{area}/{endpoint}/`:
    - `request.decoded.json`
    - `response.decoded.json`
-   - Optionally the original Base64 (redacted)
-as `request.txt`/`response.txt`
+   - Optionally the original Base64 (redacted) as `request.txt`/`response.txt`
 
 ## Tips and conventions
 
 - Use lowercase hex without `0x` and ensure even length.
 - All lengths in this repo are bytes unless noted.
-- The msgpack payload starts after a 4‑byte little‑endian length prefix; CLIs handle packing/unpacking.
+- The msgpack payload starts after a 4‑byte little‑endian length prefix; CLIs handle
+  packing/unpacking.
 - Binary payload fields can be represented in JSON as `"base64:<...>"` strings when needed.
 - Keep examples minimal while preserving the structure that matters for the endpoint.

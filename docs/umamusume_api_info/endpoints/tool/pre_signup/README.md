@@ -6,7 +6,6 @@ Initial authentication endpoint called before user registration/signup process.
 
 ```typescript
 type ToolPreSignupRequest = {
-
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
   device_id: string; // Unique device identifier
@@ -21,22 +20,20 @@ type ToolPreSignupRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type ToolPreSignupResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: unknown; // Pre-signup specific response data
-}
+};
 ```

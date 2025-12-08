@@ -6,7 +6,6 @@ Start a client session and obtain session identifiers and server configuration.
 
 ```typescript
 type ToolStartSessionRequest = {
-
   attestation_type: number; // Attestation method (0 = none)
   device_token: string | null; // Push notification token
   viewer_id: number; // Unique user identifier
@@ -23,17 +22,15 @@ type ToolStartSessionRequest = {
   dmm_onetime_token: string | null; // DMM one-time token
   steam_id: string; // Steam user ID
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type ToolStartSessionResponse = {
-
   response_code: number; // 1 on success
   data_headers: {
-
     viewer_id: number; // Confirmed user ID
     sid: string; // Session identifier
     servertime: number; // Server timestamp
@@ -41,12 +38,11 @@ type ToolStartSessionResponse = {
     server_list?: unknown; // Resource server URLs
   };
   data: {
-
     attest: boolean; // Attestation required flag
     nonce: string; // Challenge nonce
     terms_updated: boolean; // Terms of service update flag
     is_tutorial: boolean; // Tutorial state
     resource_version: string; // Current resource version
   };
-}
+};
 ```

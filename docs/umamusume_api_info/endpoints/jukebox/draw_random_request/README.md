@@ -1,12 +1,12 @@
 # Jukebox Draw Random Request API
 
-Draws a random music request from the jukebox system, allowing players to discover new songs or get specific song requests.
+Draws a random music request from the jukebox system, allowing players to discover new songs or get
+specific song requests.
 
 ## Request Body
 
 ```typescript
 type JukeboxDrawRandomRequest = {
-
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
   device_id: string; // Unique device identifier
@@ -21,26 +21,22 @@ type JukeboxDrawRandomRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type JukeboxDrawRandomRequestResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session identifier
     servertime: number; // Server timestamp
     result_code: number; // Operation result
   };
   data: {
-
     request_history: {
-
       request_type: number; // Type of music request (1=character, 2=random, 3=event)
       request_value: number; // Additional request parameters
       music_id: number; // ID of the requested music track
@@ -51,5 +47,5 @@ type JukeboxDrawRandomRequestResponse = {
     next_random_request_time: string; // When the next random request will be available
     add_music_array: unknown[]; // New music tracks unlocked (empty if none)
   };
-}
+};
 ```

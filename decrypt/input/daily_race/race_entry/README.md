@@ -1,6 +1,7 @@
 # Daily Race Entry API
 
-Enters a daily race with a selected character and retrieves race setup information including all participating horses.
+Enters a daily race with a selected character and retrieves race setup information including all
+participating horses.
 
 ## Request Body
 

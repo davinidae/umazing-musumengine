@@ -1,12 +1,12 @@
 # Mission Index API
 
-Retrieves the complete list of missions for the user, including their progress and completion status.
+Retrieves the complete list of missions for the user, including their progress and completion
+status.
 
 ## Request Body
 
 ```typescript
 type MissionIndexRequest = {
-
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
   device_id: string; // Unique device identifier
@@ -21,26 +21,22 @@ type MissionIndexRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type MissionIndexResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     mission_list: {
-
       mission_id: number; // Unique mission identifier
       exec_count: number; // Current progress count
       mission_status: number; // Mission completion status (1=available, 2=completed, 3=claimed)
@@ -48,5 +44,5 @@ type MissionIndexResponse = {
       event_id: number; // Associated event ID (0 for regular missions)
     }[];
   };
-}
+};
 ```

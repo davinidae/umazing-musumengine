@@ -1,13 +1,12 @@
 # API behavior maps
 
-This section maps in-game flows (screens, actions)
-to the API endpoints they touch. It complements the endpoint docs under `api/endpoints/**`.
+This section maps in-game flows (screens, actions) to the API endpoints they touch. It complements
+the endpoint docs under `api/endpoints/**`.
 
 How to contribute:
 
 - Keep entries short and action-oriented (Open, Start, Confirm, Collect, etc.)
-- Use endpoint paths as code (`area/name`)
-and add relative links when an endpoint doc exists
+- Use endpoint paths as code (`area/name`) and add relative links when an endpoint doc exists
 - Avoid personal or sensitive data in examples; link to sanitized examples instead
 
 Index:

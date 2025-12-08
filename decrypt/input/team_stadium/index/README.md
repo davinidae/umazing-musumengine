@@ -1,6 +1,7 @@
 # Team Stadium Index API
 
-Retrieves the player's team stadium status, including ranking information, class standing, and border lines for promotion/demotion.
+Retrieves the player's team stadium status, including ranking information, class standing, and
+border lines for promotion/demotion.
 
 ## Request Body
 

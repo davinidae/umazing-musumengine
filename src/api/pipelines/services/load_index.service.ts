@@ -10,6 +10,9 @@ export class LoadIndexService extends StepService {
   readonly endpoint = 'load/index';
   readonly framing = FramingMode.LengthPrefixed;
 
+  /**
+   * Build payload for `load/index` using `viewer_id` and client metadata.
+   */
   getPayload(viewer_id: number) {
     return {
       viewer_id,

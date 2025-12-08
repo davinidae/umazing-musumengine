@@ -1,3 +1,9 @@
+/**
+ * Result codes used across pipeline responses.
+ * Combines upstream HTTP-like status codes with domain-specific enums
+ * and a few synthetic codes for pipeline control/diagnostics.
+ * @public
+ */
 export enum GallopResultCode {
   RESULT_CODE_OK = 1,
   ITEM_EXCHANGE_LIMITED_EXCHANGE_EXPIRED = 1602,
@@ -210,12 +216,18 @@ export enum GallopResultCode {
   MAINTENANCE_TASK_ACCOUNT_CHAIN = 903,
   RC_KWS_ONE_TIME_PASSWORD_EXPIRED = 358,
   STORY_EVENT_NOT_DATA = 100001,
-  // Added for code completeness
+  // Added for code completeness / pipeline control
   CantFindResultCode = -1,
   PipelineError = -2,
   MissingViewerId = -3,
 }
 
+/**
+ * Convert a numeric result code to its enum key name.
+ * Falls back to `CantFindResultCode` if the value is not present.
+ * @param v Numeric value from `GallopResultCode`.
+ * @returns Enum key name as a string.
+ */
 export function asResultCodeName(v: GallopResultCode): keyof typeof GallopResultCode {
   const o = Object.entries(GallopResultCode).find(([_key, value]) => {
     return value === v;

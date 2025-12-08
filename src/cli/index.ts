@@ -150,7 +150,6 @@ decrypt
   .command('all')
   .description('Decrypt packs (request + response) under decrypt/input (recursive)')
   .action(async () => {
-    // Reuse the two commands above sequentially
     await program.parseAsync(['node', 'umazing', 'decrypt', 'request']);
     await program.parseAsync(['node', 'umazing', 'decrypt', 'response']);
     process.exitCode = 0;

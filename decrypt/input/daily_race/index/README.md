@@ -1,6 +1,7 @@
 # Daily Race Index API
 
-Retrieves the player's daily race records and purchase status. Shows which daily races have been played and cleared.
+Retrieves the player's daily race records and purchase status. Shows which daily races have been
+played and cleared.
 
 ## Request Body
 

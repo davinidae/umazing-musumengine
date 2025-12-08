@@ -1,12 +1,12 @@
 # Team Stadium Opponent List API
 
-Retrieves a list of potential opponents for Team Stadium battles, including their team compositions and player information.
+Retrieves a list of potential opponents for Team Stadium battles, including their team compositions
+and player information.
 
 ## Request Body
 
 ```typescript
 type TeamStadiumOpponentListRequest = {
-
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
   device_id: string; // Unique device identifier
@@ -21,31 +21,26 @@ type TeamStadiumOpponentListRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type TeamStadiumOpponentListResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     opponent_info_array: {
-
       strength: number; // Opponent difficulty level (1=easy, higher=harder)
       opponent_viewer_id: number; // Opponent's player identifier
       evaluation_point: number; // Opponent's team evaluation score
       user_info: {
-
         viewer_id: number; // Player identifier
         honor_id: number; // Current honor/title ID
         sex: number; // Player character gender
@@ -79,7 +74,6 @@ type TeamStadiumOpponentListResponse = {
         last_login_time: string; // Last login timestamp
       };
       team_data_array: {
-
         distance_type: number; // Race distance category (1=short, 2=mile, 3=intermediate, 4=long, 5=extra_long)
         member_id: number; // Team position (1-3)
         trained_chara_id: number; // Character used in this position
@@ -87,5 +81,5 @@ type TeamStadiumOpponentListResponse = {
       }[];
     }[];
   };
-}
+};
 ```

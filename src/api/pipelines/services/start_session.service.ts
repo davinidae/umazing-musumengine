@@ -10,6 +10,9 @@ export class StartSessionService extends StepService {
   readonly endpoint = 'tool/start_session';
   readonly framing = FramingMode.LengthPrefixed;
 
+  /**
+   * Build payload required by `tool/start_session` including device and platform metadata.
+   */
   getPayload(viewer_id: number) {
     return {
       attestation_type: 0,

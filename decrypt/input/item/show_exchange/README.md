@@ -1,6 +1,7 @@
 # Item Show Exchange API
 
-Displays the item exchange shop with available trades, exchange limits, and player's exchange history.
+Displays the item exchange shop with available trades, exchange limits, and player's exchange
+history.
 
 ## Request Body
 

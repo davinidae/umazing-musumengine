@@ -6,7 +6,6 @@ Initiates a daily race with specified running style and distance settings.
 
 ```typescript
 type DailyRaceStartRequest = {
-
   running_style: number; // Running style preference (1=escape, 2=leading, 3=stalker, 4=chaser)
   is_short: number; // Race distance type (1=short distance, 0=other distances)
   viewer_id: number; // Player identifier
@@ -23,25 +22,21 @@ type DailyRaceStartRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type DailyRaceStartResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
     notifications: {
-
       mission: {
-
         mission_id: number; // Mission identifier
         exec_count: number; // Current execution count
         mission_status: number; // Mission status (1=in progress)
@@ -49,10 +44,9 @@ type DailyRaceStartResponse = {
     };
   };
   data: {
-
     race_scenario: string; // Compressed race scenario data (base64 encoded)
     state: number; // Race state identifier
     running_style: number; // Confirmed running style for the race
   };
-}
+};
 ```

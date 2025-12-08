@@ -6,7 +6,6 @@ Allows players to claim rewards for completed story event missions.
 
 ```typescript
 type StoryEventReceiveMissionRequest = {
-
   mission_id_array: number[]; // Array of mission IDs to claim rewards for
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
@@ -22,26 +21,22 @@ type StoryEventReceiveMissionRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type StoryEventReceiveMissionResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     reward_summary_info: {
-
       add_item_list: unknown[]; // Items received
       add_piece_list: unknown[]; // Character pieces received
       add_card_list: unknown[]; // Cards received
@@ -60,7 +55,6 @@ type StoryEventReceiveMissionResponse = {
       force_update_honor_id: number; // Honor ID requiring update
     };
     updated_mission_array: {
-
       mission_id: number; // Mission identifier
       exec_count: number; // Number of times mission was executed
       mission_status: number; // Mission completion status (2=completed)
@@ -69,5 +63,5 @@ type StoryEventReceiveMissionResponse = {
     add_roulette_coin_num: number; // Roulette coins received
     new_story_id_list: unknown[]; // New story IDs unlocked
   };
-}
+};
 ```

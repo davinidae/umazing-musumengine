@@ -1,12 +1,12 @@
 # Mission Receive API
 
-Claims rewards from completed missions. Allows claiming single missions or multiple missions in one request.
+Claims rewards from completed missions. Allows claiming single missions or multiple missions in one
+request.
 
 ## Request Body
 
 ```typescript
 type MissionReceiveRequest = {
-
   mission_id_array: number[]; // Array of mission IDs to claim rewards from
   viewer_id: number; // Player identifier
   device: number; // Device type identifier
@@ -22,28 +22,23 @@ type MissionReceiveRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type MissionReceiveResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player identifier
     sid: string; // Session identifier
     servertime: number; // Server timestamp
     result_code: number; // Operation result
   };
   data: {
-
     reward_summary_info: {
-
       add_item_list: {
-
         item_id: number; // Item type identifier
         number: number; // Quantity received
       }[];
@@ -64,11 +59,10 @@ type MissionReceiveResponse = {
       force_update_honor_id: number; // Honor requiring immediate update
     };
     updated_mission_array: {
-
       mission_id: number; // Mission that was updated
       exec_count: number; // Updated progress count
       mission_status: number; // New mission status (1=available, 2=completed, 3=claimed)
     }[];
   };
-}
+};
 ```

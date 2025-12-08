@@ -1,12 +1,12 @@
 # Daily Race Entry API
 
-Enters a daily race with a selected character and retrieves race setup information including all participating horses.
+Enters a daily race with a selected character and retrieves race setup information including all
+participating horses.
 
 ## Request Body
 
 ```typescript
 type DailyRaceEntryRequest = {
-
   daily_race_id: number; // Daily race identifier
   trained_chara_id: number; // Player's trained character ID to enter in the race
   viewer_id: number; // Player identifier
@@ -23,26 +23,22 @@ type DailyRaceEntryRequest = {
   dmm_onetime_token: null; // DMM authentication token (null for Steam)
   steam_id: string; // Steam user identifier
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type DailyRaceEntryResponse = {
-
   response_code: number;
   data_headers: {
-
     viewer_id: number; // Player's viewer ID
     sid: string; // Session ID
     servertime: number; // Server timestamp
     result_code: number; // Operation result code
   };
   data: {
-
     race_horse_data_array: {
-
       frame_order: number; // Starting gate position
       viewer_id: number; // Owner's viewer ID (0 for NPCs)
       trainer_name: string | null; // Owner's trainer name
@@ -57,7 +53,6 @@ type DailyRaceEntryResponse = {
       rarity: number; // Character rarity (1-3)
       talent_level: number; // Talent awakening level
       skill_array: {
-
         skill_id: number; // Skill identifier
         level: number; // Skill level
       }[];
@@ -85,7 +80,6 @@ type DailyRaceEntryResponse = {
       motivation: number; // Current motivation level (1-5)
       win_saddle_id_array: number[]; // Won race/saddle IDs
       race_result_array: {
-
         turn: number; // Training turn when race occurred
         program_id: number; // Race program identifier
         weather: number; // Weather condition
@@ -111,5 +105,5 @@ type DailyRaceEntryResponse = {
     state: number; // Race state
     trained_chara_id: number; // Player's entered character ID
   };
-}
+};
 ```

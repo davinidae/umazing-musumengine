@@ -7,8 +7,10 @@ import { GallopResultCode } from './result_codes.model';
  */
 export type EncodedBase64 = string;
 /**
- * Minimal shape passed between pipeline steps. May be undefined for the first step.
- * Implementations may carry forward useful decoded headers (e.g., viewer_id).
+ * Minimal shape passed between pipeline steps.
+ * May be `undefined` for the first step. Implementations can carry forward useful
+ * decoded headers (e.g., `viewer_id`) via the `decoded` field.
+ * @public
  */
 export type StepPrevResult = Partial<{
   name: string;
@@ -20,14 +22,17 @@ export type StepPrevResult = Partial<{
 
 /**
  * Common fields every pipeline step should return.
- * - name: logical step/service identifier
- * - endpoint: upstream HTTP endpoint path used by the step
- * - framing: payload framing used for the request ('kv-stream' or 'length-prefixed')
- * - requestB64/responseB64: raw Base64 buffers for reproducibility/debugging
- * - decoded: best-effort decoded payload
- * - skipped: mark steps that intentionally didn’t run (preconditions not met)
- * - note: human-friendly explanation for skipped/edge cases
- * - error/errorStack: populated when a step throws; pipeline stops at first error
+ *
+ * - `name`: logical step/service identifier
+ * - `endpoint`: upstream HTTP endpoint path used by the step
+ * - `framing`: payload framing used for the request (`kv-stream` or `length-prefixed`)
+ * - `requestB64`/`responseB64`: raw Base64 buffers for reproducibility/debugging
+ * - `decoded`: best-effort decoded payload (headers + body)
+ * - `skipped`: mark steps that intentionally didn’t run (preconditions not met)
+ * - `note`: human-friendly explanation for skipped/edge cases
+ * - `error`/`errorStack`: populated when a step throws; pipeline stops at first error
+ * - `responseCode`/`responseCodeName`: upstream HTTP status or synthetic code and its enum name
+ * @public
  */
 export type StepResultBase = {
   name: string;
@@ -47,6 +52,7 @@ export type StepResultBase = {
 
 /**
  * A step result augmented with execution order (1-based).
+ * @public
  */
 export type StepResult = StepResultBase & {
   order: number;
@@ -79,18 +85,31 @@ export type PipelineContext = {
   clientData: {
     /** Set by upstream after signup/start_session. */
     viewer_id: number;
+    /** Platform/device id enum value. */
     device: number;
+    /** Device identifier string. */
     device_id: string;
+    /** Human-readable device name. */
     device_name: string;
+    /** GPU/graphics device name. */
     graphics_device_name: string;
+    /** Client IP address (string). */
     ip_address: string;
+    /** OS version string. */
     platform_os_version: string;
+    /** Carrier name (if applicable). */
     carrier: string;
+    /** Keychain flag (numeric). */
     keychain: number;
+    /** Locale code (e.g., 'en'). */
     locale: string;
+    /** DMM viewer id (nullable). */
     dmm_viewer_id: number | null;
+    /** One-time DMM token (nullable). */
     dmm_onetime_token: string | null;
+    /** Steam identifier. */
     steam_id: string;
+    /** Steam session ticket. */
     steam_session_ticket: string;
   };
 };

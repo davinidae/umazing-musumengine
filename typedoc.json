@@ -13,6 +13,7 @@
   "cleanOutputDir": true,
   "plugin": ["typedoc-plugin-markdown"],
   "theme": "markdown",
+  "outputFileStrategy": "modules",
   "hideBreadcrumbs": true,
   "hidePageHeader": true,
   "hideGenerator": true,

@@ -6,7 +6,6 @@ Collect all available presents from the inbox.
 
 ```typescript
 type PresentReceiveAllRequest = {
-
   time_filter_type: number; // Time filter option (0=all)
   category_filter_type: number[]; // Category filters (0=all)
   is_asc: boolean; // Sort order (true=ascending)
@@ -24,28 +23,23 @@ type PresentReceiveAllRequest = {
   dmm_onetime_token: string | null; // DMM one-time token
   steam_id: string; // Steam user ID
   steam_session_ticket: string; // Steam authentication ticket
-}
+};
 ```
 
 ## Response Body
 
 ```typescript
 type PresentReceiveAllResponse = {
-
   response_code: number; // 1 on success
   data_headers: {
-
     viewer_id: number; // Confirmed user ID
     sid: string; // Session identifier
     servertime: number; // Server timestamp
     result_code: number; // Operation result
   };
   data: {
-
     reward_summary_info: {
-
       add_item_list: {
-
         item_id: number; // Item identifier
         number: number; // Quantity received
       }[];
@@ -61,5 +55,5 @@ type PresentReceiveAllResponse = {
     no_receive_support_card_count: number; // Uncollected support cards
     no_receive_item_flg: boolean; // Has uncollected items
   };
-}
+};
 ```

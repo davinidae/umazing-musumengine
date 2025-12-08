@@ -1,6 +1,7 @@
 # Jukebox Draw Random Request API
 
-Draws a random music request from the jukebox system, allowing players to discover new songs or get specific song requests.
+Draws a random music request from the jukebox system, allowing players to discover new songs or get
+specific song requests.
 
 ## Request Body
 
