@@ -50,10 +50,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki
-          rm -rf wiki/*
-          cp -r docs/* wiki/
-          # Optional: root README to Home.md for wiki landing
+          # Sync docs to wiki ROOT while preserving Home and Sidebar
+          rsync -a --delete --exclude 'Home.md' --exclude '_Sidebar.md' docs/ wiki/
+          # Optional: update Home.md from docs/README.md
           if [ -f docs/README.md ]; then cp docs/README.md wiki/Home.md; fi
+          # Optional: if docs/_Sidebar.md exists, update wiki _Sidebar.md
+          if [ -f docs/_Sidebar.md ]; then cp docs/_Sidebar.md wiki/_Sidebar.md; fi
           cd wiki
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git"
           git add -A
