@@ -71,6 +71,7 @@
 </details>
 
 </details>
+- [README](code/README)
 - [variables](code/variables)
 
 </details>
@@ -86,6 +87,7 @@
 - [MAIN SCREEN](umamusume_api_info/behavior/MAIN_SCREEN)
 - [MISSIONS](umamusume_api_info/behavior/MISSIONS)
 - [PRESENTS](umamusume_api_info/behavior/PRESENTS)
+- [README](umamusume_api_info/behavior/README)
 - [SCOUT](umamusume_api_info/behavior/SCOUT)
 - [SHOPS](umamusume_api_info/behavior/SHOPS)
 - [SUPPORT CARDS](umamusume_api_info/behavior/SUPPORT_CARDS)
@@ -99,132 +101,198 @@
 
 <details><summary>index</summary>
 
+- [README](umamusume_api_info/endpoints/daily_race/index/README)
+
 </details>
 <details><summary>race entry</summary>
+
+- [README](umamusume_api_info/endpoints/daily_race/race_entry/README)
 
 </details>
 <details><summary>race start</summary>
 
+- [README](umamusume_api_info/endpoints/daily_race/race_start/README)
+
 </details>
 <details><summary>reflect item effect</summary>
+
+- [README](umamusume_api_info/endpoints/daily_race/reflect_item_effect/README)
 
 </details>
 <details><summary>replay check</summary>
 
+- [README](umamusume_api_info/endpoints/daily_race/replay_check/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/daily_race/README)
 
 </details>
 <details><summary>item</summary>
 
 <details><summary>show exchange</summary>
 
+- [README](umamusume_api_info/endpoints/item/show_exchange/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/item/README)
 
 </details>
 <details><summary>jukebox</summary>
 
 <details><summary>draw random request</summary>
 
+- [README](umamusume_api_info/endpoints/jukebox/draw_random_request/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/jukebox/README)
 
 </details>
 <details><summary>live</summary>
 
 <details><summary>live start</summary>
 
+- [README](umamusume_api_info/endpoints/live/live_start/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/live/README)
 
 </details>
 <details><summary>load</summary>
 
 <details><summary>index</summary>
 
+- [README](umamusume_api_info/endpoints/load/index/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/load/README)
 
 </details>
 <details><summary>mission</summary>
 
 <details><summary>index</summary>
 
+- [README](umamusume_api_info/endpoints/mission/index/README)
+
 </details>
 <details><summary>receive</summary>
 
+- [README](umamusume_api_info/endpoints/mission/receive/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/mission/README)
 
 </details>
 <details><summary>payment</summary>
 
 <details><summary>item list</summary>
 
+- [README](umamusume_api_info/endpoints/payment/item_list/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/payment/README)
 
 </details>
 <details><summary>present</summary>
 
 <details><summary>index</summary>
 
+- [README](umamusume_api_info/endpoints/present/index/README)
+
 </details>
 <details><summary>receive all</summary>
 
+- [README](umamusume_api_info/endpoints/present/receive_all/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/present/README)
 
 </details>
 <details><summary>story event</summary>
 
 <details><summary>index</summary>
 
+- [README](umamusume_api_info/endpoints/story_event/index/README)
+
 </details>
 <details><summary>receive mission</summary>
+
+- [README](umamusume_api_info/endpoints/story_event/receive_mission/README)
 
 </details>
 <details><summary>roulette</summary>
 
+- [README](umamusume_api_info/endpoints/story_event/roulette/README)
+
 </details>
 <details><summary>roulette exec</summary>
 
+- [README](umamusume_api_info/endpoints/story_event/roulette_exec/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/story_event/README)
 
 </details>
 <details><summary>support card</summary>
 
 <details><summary>strengthen</summary>
 
+- [README](umamusume_api_info/endpoints/support_card/strengthen/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/support_card/README)
 
 </details>
 <details><summary>team stadium</summary>
 
 <details><summary>index</summary>
 
+- [README](umamusume_api_info/endpoints/team_stadium/index/README)
+
 </details>
 <details><summary>opponent list</summary>
 
+- [README](umamusume_api_info/endpoints/team_stadium/opponent_list/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/team_stadium/README)
 
 </details>
 <details><summary>tool</summary>
 
 <details><summary>pre signup</summary>
 
+- [README](umamusume_api_info/endpoints/tool/pre_signup/README)
+
 </details>
 <details><summary>signup</summary>
+
+- [README](umamusume_api_info/endpoints/tool/signup/README)
 
 </details>
 <details><summary>start session</summary>
 
+- [README](umamusume_api_info/endpoints/tool/start_session/README)
+
 </details>
+- [README](umamusume_api_info/endpoints/tool/README)
 
 </details>
 <details><summary>user</summary>
 
 <details><summary>change favorite character</summary>
 
+- [README](umamusume_api_info/endpoints/user/change_favorite_character/README)
+
 </details>
 <details><summary>get profile info</summary>
 
-</details>
+- [README](umamusume_api_info/endpoints/user/get_profile_info/README)
 
 </details>
+- [README](umamusume_api_info/endpoints/user/README)
+
+</details>
+- [README](umamusume_api_info/endpoints/README)
 
 </details>
 <details><summary>umamusume.Http</summary>
@@ -1057,6 +1125,7 @@
 - [ReadInfoRequestFormatter_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/ReadInfoRequestFormatter_methods.txt)
 - [ReadInfoResponse_CommonResponseFormatter_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/ReadInfoResponse_CommonResponseFormatter_methods.txt)
 - [ReadInfoResponseFormatter_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/ReadInfoResponseFormatter_methods.txt)
+- [README](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/README)
 - [RecoveryRacePointRequestFormatter_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/RecoveryRacePointRequestFormatter_methods.txt)
 - [RecoveryRacePointResponse_CommonResponseFormatter_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/RecoveryRacePointResponse_CommonResponseFormatter_methods.txt)
 - [RecoveryRacePointResponseFormatter_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/RecoveryRacePointResponseFormatter_methods.txt)
@@ -1773,8 +1842,10 @@
 - [CuteGeneratedResolver_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/CuteGeneratedResolver_methods.txt)
 - [CuteGeneratedResolver--NestedType--FormatterCache`1_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/CuteGeneratedResolver--NestedType--FormatterCache`1_methods.txt)
 - [CuteGeneratedResolverGetFormatterHelper_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/CuteGeneratedResolverGetFormatterHelper_methods.txt)
+- [README](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/README)
 
 </details>
+- [README](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/README)
 
 </details>
 - [AccountChainDisconnectRequest_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/AccountChainDisconnectRequest_methods.txt)
@@ -2822,6 +2893,7 @@
 - [ReadInfoResponse_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/ReadInfoResponse_methods.txt)
 - [ReadInfoResponse--NestedType--CommonResponse_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/ReadInfoResponse--NestedType--CommonResponse_methods.txt)
 - [ReadInfoTask_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/ReadInfoTask_methods.txt)
+- [README](umamusume_api_info/umamusume.Http/method_dumps/Gallop/README)
 - [RecoveryRacePointRequest_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/RecoveryRacePointRequest_methods.txt)
 - [RecoveryRacePointResponse_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/RecoveryRacePointResponse_methods.txt)
 - [RecoveryRacePointResponse--NestedType--CommonResponse_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/Gallop/RecoveryRacePointResponse--NestedType--CommonResponse_methods.txt)
@@ -3715,6 +3787,7 @@
 - [_PrivateImplementationDetails__methods.txt](umamusume_api_info/umamusume.Http/method_dumps/_PrivateImplementationDetails__methods.txt)
 - [_PrivateImplementationDetails_--NestedType--__StaticArrayInitTypeSize=181695_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/_PrivateImplementationDetails_--NestedType--__StaticArrayInitTypeSize=181695_methods.txt)
 - [_PrivateImplementationDetails_--NestedType--__StaticArrayInitTypeSize=187469_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/_PrivateImplementationDetails_--NestedType--__StaticArrayInitTypeSize=187469_methods.txt)
+- [README](umamusume_api_info/umamusume.Http/method_dumps/README)
 - [UnitySourceGeneratedAssemblyMonoScriptTypes_v1_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/UnitySourceGeneratedAssemblyMonoScriptTypes_v1_methods.txt)
 - [UnitySourceGeneratedAssemblyMonoScriptTypes_v1--NestedType--MonoScriptData_methods.txt](umamusume_api_info/umamusume.Http/method_dumps/UnitySourceGeneratedAssemblyMonoScriptTypes_v1--NestedType--MonoScriptData_methods.txt)
 
@@ -4098,6 +4171,7 @@
 - [RaceSimulateResult_metadata.txt](umamusume_api_info/umamusume.Http/RaceSimulateResult_metadata.txt)
 - [RaceSkipReward_metadata.txt](umamusume_api_info/umamusume.Http/RaceSkipReward_metadata.txt)
 - [ReadInfoResponse_metadata.txt](umamusume_api_info/umamusume.Http/ReadInfoResponse_metadata.txt)
+- [README](umamusume_api_info/umamusume.Http/README)
 - [RecoveryRacePointResponse_metadata.txt](umamusume_api_info/umamusume.Http/RecoveryRacePointResponse_metadata.txt)
 - [RecoveryTrainerPointResponse_metadata.txt](umamusume_api_info/umamusume.Http/RecoveryTrainerPointResponse_metadata.txt)
 - [ReleasedEpisodeDataForDisplay_metadata.txt](umamusume_api_info/umamusume.Http/ReleasedEpisodeDataForDisplay_metadata.txt)
@@ -4462,6 +4536,7 @@
 - [INTERACTION](umamusume_api_info/INTERACTION)
 - [ORIGINAL](umamusume_api_info/ORIGINAL)
 - [packet-structure-diagram.png](umamusume_api_info/packet-structure-diagram.png)
+- [README](umamusume_api_info/README)
 
 </details>
 - [DEVELOPING DOCS](DEVELOPING_DOCS)

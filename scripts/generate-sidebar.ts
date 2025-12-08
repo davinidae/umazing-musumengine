@@ -93,16 +93,13 @@ function renderEntries(entries: Entry[], depth = 0): string[] {
       }
 
       const dirTitle = titleFromName(e.name);
-      const readme = e.children?.find((c) => !c.isDir && c.name.toLowerCase() === 'readme.md');
       // Section summaries should be plain text (no links)
       const summaryLabel = dirTitle;
       const openAttr = isTopLevel ? ' open' : '';
       // Insert a blank line after summary so markdown lists render correctly in GitHub Wiki
       lines.push(`<details${openAttr}><summary>${summaryLabel}</summary>`);
       lines.push('');
-      const childEntries = (e.children || []).filter(
-        (c) => !(readme && !c.isDir && c.name.toLowerCase() === 'readme.md'),
-      );
+      const childEntries = e.children || [];
       if (childEntries.length) {
         const childLines = renderEntries(childEntries, depth + 1);
         // Do not over-indent markdown lists, to ensure links render in Wiki UI
