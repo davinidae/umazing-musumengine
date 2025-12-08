@@ -24,7 +24,9 @@ jobs:
           set +x
           echo "Diagnostics: starting"
           echo ">> WIKI_USERNAME set: ${WIKI_USERNAME:+yes}"
-          if [ -n "$WIKI_TOKEN" ]; then echo ">> WIKI_TOKEN set: yes"; else echo ">> WIKI_TOKEN set: no"; fi
+          if [ -n "$WIKI_TOKEN" ]; then
+            echo ">> WIKI_TOKEN set: yes"; else echo ">> WIKI_TOKEN set: no";
+          fi
           echo ">> Target wiki remote: https://${WIKI_USERNAME}:<masked>@github.com/davinidae/umazing-musumengine.wiki.git"
           echo "Diagnostics: done"
 
@@ -49,44 +51,27 @@ jobs:
         run: |
           set -e
           set +x
-          echo "Cloning wiki"
+          # Configure git author
           git config --global user.name "github-actions[bot]" >/dev/null 2>&1
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" >/dev/null 2>&1
+          # Clone wiki
           git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki >/dev/null 2>&1
-          echo "Validating docs sources"
-          if [ ! -f docs/README.md ]; then echo "Missing docs/README.md (Home)"; exit 1; fi
-          if [ ! -f docs/_Sidebar.md ]; then echo "Missing docs/_Sidebar.md (Sidebar)"; exit 1; fi
-          echo "Syncing docs to wiki root (force overwrite)"
-          # Remove existing Home and Sidebar to avoid merge artifacts
-          rm -f wiki/Home.md wiki/_Sidebar.md >/dev/null 2>&1 || true
-          # Mirror docs entirely to root, avoid accidental nested wiki or VCS metadata
+          # Validate sources
+          [ -f docs/README.md ] && [ -f docs/_Sidebar.md ] || { echo "Missing docs/README.md or docs/_Sidebar.md"; exit 1; }
+          # Sync docs to wiki root
           rsync -a --delete --exclude '.git' --exclude '.github' --exclude 'wiki' docs/ wiki/ >/dev/null 2>&1
-          # Ensure canonical wiki filenames
-          if [ -f docs/README.md ]; then mv -f wiki/README.md wiki/Home.md >/dev/null 2>&1 || cp docs/README.md wiki/Home.md >/dev/null 2>&1; fi
-          if [ -f docs/_Sidebar.md ]; then cp -f docs/_Sidebar.md wiki/_Sidebar.md >/dev/null 2>&1; fi
-          # Clean up any accidental nested wiki directory from previous runs
-          rm -rf wiki/wiki >/dev/null 2>&1 || true
-          # Write a sync marker inside the wiki repo to ensure a commit reflects this run
-          echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > wiki/.sync-marker
+          # Ensure canonical filenames
+          mv -f wiki/README.md wiki/Home.md >/dev/null 2>&1 || cp docs/README.md wiki/Home.md >/dev/null 2>&1
+          cp -f docs/_Sidebar.md wiki/_Sidebar.md >/dev/null 2>&1 || true
+          # Enter wiki repo
           cd wiki
-          git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1
-          echo "Ensuring branch up-to-date"
-          # Detect remote default branch (master or main)
+          # Detect default branch (fallback to master)
           DEFAULT_BRANCH="$(git remote show origin | sed -n 's/.*HEAD branch: \(.*\)/\1/p')"
-          if [ -z "$DEFAULT_BRANCH" ]; then DEFAULT_BRANCH="master"; fi
+          [ -n "$DEFAULT_BRANCH" ] || DEFAULT_BRANCH="master"
           git fetch origin "$DEFAULT_BRANCH" >/dev/null 2>&1 || true
-          # If the local branch doesn't exist, create it tracking origin
-          git rev-parse --verify "$DEFAULT_BRANCH" >/dev/null 2>&1 || git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
-          # Try to checkout and rebase; if divergence causes issues, hard reset to remote
-          git checkout "$DEFAULT_BRANCH" >/dev/null 2>&1 || git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
-          if ! git pull --rebase origin "$DEFAULT_BRANCH" >/dev/null 2>&1; then
-            git reset --hard "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
-          fi
+          git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || git checkout "$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          # Stage, commit, and push (always commit)
           git add -A >/dev/null 2>&1
-          CHANGES=$(git status --porcelain)
-          COUNT=$(echo "$CHANGES" | sed '/^$/d' | wc -l)
-          echo "Change summary: $COUNT files modified"
-          # Always commit to reflect the run, even if files are identical
           VERSION=$(node -p "require('../package.json').version" 2>/dev/null || echo "unknown")
           TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
           MSG="docs: wiki sync v${VERSION} @ ${TS}"
