@@ -4,11 +4,11 @@
 
 ### SignupService
 
-Defined in: [api/pipelines/services/signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/signup.service.ts#L9)
+Defined in:
+[api/pipelines/services/signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/signup.service.ts#L9)
 
-tool/signup: Registers or fetches a viewer account based on device info.
-Carries viewer_id forward when available from previous step.
-Uses kv-stream framing.
+tool/signup: Registers or fetches a viewer account based on device info. Carries viewer_id forward
+when available from previous step. Uses kv-stream framing.
 
 #### Extends
 
@@ -20,7 +20,8 @@ Uses kv-stream framing.
 
 > **new SignupService**(`ctx`): [`SignupService`](#signupservice)
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/step.service.ts#L28)
+Defined in:
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -44,11 +45,14 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ##### execute()
 
-> **execute**(`prev`): `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
+> **execute**(`prev`):
+> `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
-Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/step.service.ts#L110)
+Defined in:
+[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/step.service.ts#L110)
 
-Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
+Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
+response.
 
 ###### Parameters
 
@@ -56,7 +60,8 @@ Execute the step end-to-end: obtain preconditions, encode request, call upstream
 
 Previous step result, if any.
 
-`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
+`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`;
+`requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
 
 ###### Returns
 
@@ -72,13 +77,14 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 
 > **getPayload**(`viewer_id`): `Record`\<`string`, `unknown`\>
 
-Defined in: [api/pipelines/services/signup.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/signup.service.ts#L17)
+Defined in:
+[api/pipelines/services/signup.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/signup.service.ts#L17)
 
 Build payload including `viewer_id` (if available) along with client data.
 
 ###### Parameters
 
-###### viewer\_id
+###### viewer_id
 
 `number`
 

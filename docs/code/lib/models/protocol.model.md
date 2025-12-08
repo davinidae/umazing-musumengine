@@ -4,10 +4,11 @@
 
 ### Blob1Header
 
-Defined in: [lib/models/protocol.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/models/protocol.model.ts#L5)
+Defined in:
+[lib/models/protocol.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/models/protocol.model.ts#L5)
 
-Represents the parsed blob1 header fields.
-Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
+Represents the parsed blob1 header fields. Layout:
+[prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
 
 #### Methods
 
@@ -15,7 +16,8 @@ Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
 
 > **udidCanonical**(): `string`
 
-Defined in: [lib/models/protocol.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/models/protocol.model.ts#L60)
+Defined in:
+[lib/models/protocol.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/models/protocol.model.ts#L60)
 
 UDID canonical dashed-format string derived from udid_raw.
 
@@ -29,7 +31,8 @@ Canonical UDID string (8-4-4-4-12).
 
 > `static` **fromBuffer**(`blob1`): [`Blob1Header`](#blob1header)
 
-Defined in: [lib/models/protocol.model.ts:32](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/models/protocol.model.ts#L32)
+Defined in:
+[lib/models/protocol.model.ts:32](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/models/protocol.model.ts#L32)
 
 Parse a blob1 Buffer into a Blob1Header instance.
 
@@ -51,11 +54,12 @@ Parsed Blob1Header.
 
 If required field sizes are not present.
 
-***
+---
 
 ### ParsedRequest
 
-Defined in: [lib/models/protocol.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/models/protocol.model.ts#L69)
+Defined in:
+[lib/models/protocol.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/models/protocol.model.ts#L69)
 
 Represents a parsed full request with blob1 and blob2 sections.
 
@@ -65,7 +69,8 @@ Represents a parsed full request with blob1 and blob2 sections.
 
 > `static` **parse**(`raw`): [`ParsedRequest`](#parsedrequest)
 
-Defined in: [lib/models/protocol.model.ts:86](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/models/protocol.model.ts#L86)
+Defined in:
+[lib/models/protocol.model.ts:86](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/models/protocol.model.ts#L86)
 
 Parse a full request buffer into a ParsedRequest.
 

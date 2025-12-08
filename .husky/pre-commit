@@ -1,13 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Generate documentation before commit
+npm run docs
+git add .
+
 # Run linters and formatters on staged files
 npx lint-staged
 
 # Run a full typecheck before commit
 npm run typecheck
-
-# Generate documentation before commit
-npm run docs
-
-git add .

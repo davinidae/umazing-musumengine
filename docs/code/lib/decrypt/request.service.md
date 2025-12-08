@@ -4,10 +4,11 @@
 
 ### DecryptRequestService
 
-Defined in: [lib/decrypt/request.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/decrypt/request.service.ts#L11)
+Defined in:
+[lib/decrypt/request.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/decrypt/request.service.ts#L11)
 
-Decode request Base64 buffers into header fields and a printable payload.
-No filesystem access; suitable for programmatic use and tests.
+Decode request Base64 buffers into header fields and a printable payload. No filesystem access;
+suitable for programmatic use and tests.
 
 #### Methods
 
@@ -15,7 +16,8 @@ No filesystem access; suitable for programmatic use and tests.
 
 > **decodeFromBase64**(`requestB64`): `object`
 
-Defined in: [lib/decrypt/request.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/lib/decrypt/request.service.ts#L18)
+Defined in:
+[lib/decrypt/request.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/decrypt/request.service.ts#L18)
 
 Decode a single request provided as a Base64 string.
 
@@ -31,43 +33,44 @@ Base64-encoded request buffer: [4B LE blob1_len][blob1][blob2].
 
 `object`
 
-`{ blob1, blob2, plaintext }` where `blob1` has hex strings, `blob2` is JSON-compatible, and `plaintext` is the decrypted payload bytes.
+`{ blob1, blob2, plaintext }` where `blob1` has hex strings, `blob2` is JSON-compatible, and
+`plaintext` is the decrypted payload bytes.
 
 ###### blob1
 
 > **blob1**: `object` = `headerJson`
 
-###### blob1.auth\_key\_hex
+###### blob1.auth_key_hex
 
-> **auth\_key\_hex**: `string`
+> **auth_key_hex**: `string`
 
-###### blob1.encryption\_key\_hex
+###### blob1.encryption_key_hex
 
-> **encryption\_key\_hex**: `string`
+> **encryption_key_hex**: `string`
 
-###### blob1.prefix\_hex
+###### blob1.prefix_hex
 
-> **prefix\_hex**: `string`
+> **prefix_hex**: `string`
 
-###### blob1.prefix\_len
+###### blob1.prefix_len
 
-> **prefix\_len**: `number` = `header.prefix.length`
+> **prefix_len**: `number` = `header.prefix.length`
 
-###### blob1.response\_key\_hex
+###### blob1.response_key_hex
 
-> **response\_key\_hex**: `string`
+> **response_key_hex**: `string`
 
-###### blob1.session\_id\_hex
+###### blob1.session_id_hex
 
-> **session\_id\_hex**: `string`
+> **session_id_hex**: `string`
 
-###### blob1.udid\_canonical
+###### blob1.udid_canonical
 
-> **udid\_canonical**: `string` = `udidStr`
+> **udid_canonical**: `string` = `udidStr`
 
-###### blob1.udid\_raw\_hex
+###### blob1.udid_raw_hex
 
-> **udid\_raw\_hex**: `string`
+> **udid_raw_hex**: `string`
 
 ###### blob2
 

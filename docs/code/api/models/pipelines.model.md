@@ -6,43 +6,49 @@
 
 > **EncodedBase64** = `string`
 
-Defined in: [api/models/pipelines.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/models/pipelines.model.ts#L8)
+Defined in:
+[api/models/pipelines.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L8)
 
 Base64-encoded buffer string. Used for request and response payloads over the wire.
 
-***
+---
 
 ### PipelineContext
 
 > **PipelineContext** = `object`
 
-Defined in: [api/models/pipelines.model.ts:68](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/models/pipelines.model.ts#L68)
+Defined in:
+[api/models/pipelines.model.ts:68](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L68)
 
 Execution context for pipeline services. Lives in server-side session state.
+
 - runtime: encoder/decoder utilities
 - upstreamBase: base URL for remote UmaMusume API
 - blob1: header fields used when constructing requests
 - clientData: device/environment fields included in payloads
 
-***
+---
 
 ### StepPrevResult
 
-> **StepPrevResult** = `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`; `requestB64`: [`EncodedBase64`](#encodedbase64); `responseB64`: [`EncodedBase64`](#encodedbase64); \}\>
+> **StepPrevResult** = `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`;
+> `name`: `string`; `requestB64`: [`EncodedBase64`](#encodedbase64); `responseB64`:
+> [`EncodedBase64`](#encodedbase64); \}\>
 
-Defined in: [api/models/pipelines.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/models/pipelines.model.ts#L15)
+Defined in:
+[api/models/pipelines.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L15)
 
-Minimal shape passed between pipeline steps.
-May be `undefined` for the first step. Implementations can carry forward useful
-decoded headers (e.g., `viewer_id`) via the `decoded` field.
+Minimal shape passed between pipeline steps. May be `undefined` for the first step. Implementations
+can carry forward useful decoded headers (e.g., `viewer_id`) via the `decoded` field.
 
-***
+---
 
 ### StepResult
 
 > **StepResult** = [`StepResultBase`](#stepresultbase) & `object`
 
-Defined in: [api/models/pipelines.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/models/pipelines.model.ts#L57)
+Defined in:
+[api/models/pipelines.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L57)
 
 A step result augmented with execution order (1-based).
 
@@ -52,13 +58,17 @@ A step result augmented with execution order (1-based).
 
 > **order**: `number`
 
-***
+---
 
 ### StepResultBase
 
-> **StepResultBase** = `object` & `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `error`: `string`; `errorStack`: `string`; `note`: `string`; `requestB64`: [`EncodedBase64`](#encodedbase64); `responseB64`: [`EncodedBase64`](#encodedbase64); `skipped`: `boolean`; \}\>
+> **StepResultBase** = `object` & `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `error`:
+> `string`; `errorStack`: `string`; `note`: `string`; `requestB64`:
+> [`EncodedBase64`](#encodedbase64); `responseB64`: [`EncodedBase64`](#encodedbase64); `skipped`:
+> `boolean`; \}\>
 
-Defined in: [api/models/pipelines.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/models/pipelines.model.ts#L37)
+Defined in:
+[api/models/pipelines.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L37)
 
 Common fields every pipeline step should return.
 
@@ -92,4 +102,4 @@ Common fields every pipeline step should return.
 
 ##### responseCodeName
 
-> **responseCodeName**: keyof *typeof* [`GallopResultCode`](result_codes.model.md#gallopresultcode)
+> **responseCodeName**: keyof _typeof_ [`GallopResultCode`](result_codes.model.md#gallopresultcode)

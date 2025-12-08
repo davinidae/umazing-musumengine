@@ -1,13 +1,14 @@
-# api/pipelines/services/start\_session.service
+# api/pipelines/services/start_session.service
 
 ## Classes
 
 ### StartSessionService
 
-Defined in: [api/pipelines/services/start\_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/start_session.service.ts#L8)
+Defined in:
+[api/pipelines/services/start_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/start_session.service.ts#L8)
 
-tool/start_session: Establishes a server session for the viewer.
-Skips execution if a valid viewer_id is not available.
+tool/start_session: Establishes a server session for the viewer. Skips execution if a valid
+viewer_id is not available.
 
 #### Extends
 
@@ -19,7 +20,8 @@ Skips execution if a valid viewer_id is not available.
 
 > **new StartSessionService**(`ctx`): [`StartSessionService`](#startsessionservice)
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/step.service.ts#L28)
+Defined in:
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -43,11 +45,14 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ##### execute()
 
-> **execute**(`prev`): `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
+> **execute**(`prev`):
+> `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
-Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/step.service.ts#L110)
+Defined in:
+[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/step.service.ts#L110)
 
-Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
+Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
+response.
 
 ###### Parameters
 
@@ -55,7 +60,8 @@ Execute the step end-to-end: obtain preconditions, encode request, call upstream
 
 Previous step result, if any.
 
-`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
+`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`;
+`requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
 
 ###### Returns
 
@@ -71,13 +77,14 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 
 > **getPayload**(`viewer_id`): `object`
 
-Defined in: [api/pipelines/services/start\_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/cca389d036249d1f75ba70d4fc7f7e8dc180ca29/src/api/pipelines/services/start_session.service.ts#L16)
+Defined in:
+[api/pipelines/services/start_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/pipelines/services/start_session.service.ts#L16)
 
 Build payload required by `tool/start_session` including device and platform metadata.
 
 ###### Parameters
 
-###### viewer\_id
+###### viewer_id
 
 `number`
 
@@ -85,9 +92,9 @@ Build payload required by `tool/start_session` including device and platform met
 
 `object`
 
-###### attestation\_type
+###### attestation_type
 
-> **attestation\_type**: `number` = `0`
+> **attestation_type**: `number` = `0`
 
 ###### carrier
 
@@ -97,33 +104,33 @@ Build payload required by `tool/start_session` including device and platform met
 
 > **device**: `number`
 
-###### device\_id
+###### device_id
 
-> **device\_id**: `string`
+> **device_id**: `string`
 
-###### device\_name
+###### device_name
 
-> **device\_name**: `string`
+> **device_name**: `string`
 
-###### device\_token
+###### device_token
 
-> **device\_token**: `null` = `null`
+> **device_token**: `null` = `null`
 
-###### dmm\_onetime\_token
+###### dmm_onetime_token
 
-> **dmm\_onetime\_token**: `string` \| `null`
+> **dmm_onetime_token**: `string` \| `null`
 
-###### dmm\_viewer\_id
+###### dmm_viewer_id
 
-> **dmm\_viewer\_id**: `number` \| `null`
+> **dmm_viewer_id**: `number` \| `null`
 
-###### graphics\_device\_name
+###### graphics_device_name
 
-> **graphics\_device\_name**: `string`
+> **graphics_device_name**: `string`
 
-###### ip\_address
+###### ip_address
 
-> **ip\_address**: `string`
+> **ip_address**: `string`
 
 ###### keychain
 
@@ -133,21 +140,21 @@ Build payload required by `tool/start_session` including device and platform met
 
 > **locale**: `string`
 
-###### platform\_os\_version
+###### platform_os_version
 
-> **platform\_os\_version**: `string`
+> **platform_os_version**: `string`
 
-###### steam\_id
+###### steam_id
 
-> **steam\_id**: `string`
+> **steam_id**: `string`
 
-###### steam\_session\_ticket
+###### steam_session_ticket
 
-> **steam\_session\_ticket**: `string`
+> **steam_session_ticket**: `string`
 
-###### viewer\_id
+###### viewer_id
 
-> **viewer\_id**: `number`
+> **viewer_id**: `number`
 
 ###### Overrides
 
