@@ -17,14 +17,17 @@ jobs:
           persist-credentials: false
 
       - name: Prepare wiki repository
+        env:
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         run: |
           set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Guard: exit gracefully if wiki repo does not exist or is inaccessible
           if ! git ls-remote "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1; then
-            echo "Wiki repository not found or inaccessible. Enable Wiki in settings and authorize PAT."
-            exit 0
+              echo "Wiki repository not found or inaccessible. Enable Wiki in settings and authorize PAT."
+              exit 0
           fi
           git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki
           rm -rf wiki/*
@@ -35,8 +38,8 @@ jobs:
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git"
           git add -A
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+              echo "No changes to commit"
           else
-            git commit -m "docs: sync docs/ to wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-            git push origin HEAD:master
+              git commit -m "docs: sync docs/ to wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+              git push origin HEAD:master
           fi
