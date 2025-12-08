@@ -13,21 +13,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Prepare wiki repository
         env:
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
           set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git clone "https://x-access-token:${PERSONAL_ACCESS_TOKEN}@github.com/${REPO}.wiki.git" wiki
+          # Use PAT and disable credential helper conflicts
+          git clone "https://x-access-token:${WIKI_TOKEN}@github.com/${REPO}.wiki.git" wiki
           rm -rf wiki/*
           cp -r docs/* wiki/
           # Optional: root README to Home.md for wiki landing
           if [ -f docs/README.md ]; then cp docs/README.md wiki/Home.md; fi
           cd wiki
+          git remote set-url origin "https://x-access-token:${WIKI_TOKEN}@github.com/${REPO}.wiki.git"
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit"
