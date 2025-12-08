@@ -10,4 +10,4 @@ npm run typecheck
 # Generate documentation before commit
 npm run docs
 
-git add docs/code
+git add .
