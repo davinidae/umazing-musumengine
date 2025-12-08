@@ -6,7 +6,7 @@
 
 > `const` **loginPipeline**: (*typeof* [`PreSignupService`](services/pre_signup.service.md#presignupservice) \| *typeof* [`SignupService`](services/signup.service.md#signupservice) \| *typeof* [`StartSessionService`](services/start_session.service.md#startsessionservice) \| *typeof* [`LoadIndexService`](services/load_index.service.md#loadindexservice))[]
 
-Defined in: [api/pipelines/pipeline\_groups.ts:13](https://github.com/davinidae/umazing-musumengine/blob/ea13205c1ee681a9ed7d5ff07531503a02fab5c1/src/api/pipelines/pipeline_groups.ts#L13)
+Defined in: [api/pipelines/pipeline\_groups.ts:13](https://github.com/davinidae/umazing-musumengine/blob/e7b5cdd5884830a450ab6cca1ed8b6a0b5ca89be/src/api/pipelines/pipeline_groups.ts#L13)
 
 Bootstrap pipeline used by `/login` to start a user session.
 Order:
