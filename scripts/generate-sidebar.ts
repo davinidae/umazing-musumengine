@@ -8,10 +8,17 @@ function isHidden(name: string) {
   return name.startsWith('.') || name === '_Sidebar.md' || name === '_Sidebar';
 }
 
-type Node = { name: string; rel: string; dir: boolean; children?: Node[] };
+type Node = {
+  name: string;
+  rel: string;
+  dir: boolean;
+  children?: Node[];
+};
 
 function read(dirAbs: string, relBase = ''): Node[] {
-  const items = fs.readdirSync(dirAbs, { withFileTypes: true });
+  const items = fs.readdirSync(dirAbs, {
+    withFileTypes: true,
+  });
   const out: Node[] = [];
   for (const it of items) {
     const name = it.name;
@@ -21,18 +28,34 @@ function read(dirAbs: string, relBase = ''): Node[] {
     const childAbs = path.join(dirAbs, name);
     const childRel = path.join(relBase, name);
     if (it.isDirectory()) {
-      out.push({ name, rel: childRel, dir: true, children: read(childAbs, childRel) });
+      out.push({
+        name,
+        rel: childRel,
+        dir: true,
+        children: read(childAbs, childRel),
+      });
     } else {
-      out.push({ name, rel: childRel, dir: false });
+      out.push({
+        name,
+        rel: childRel,
+        dir: false,
+      });
     }
   }
-  out.sort((a, b) => (a.dir === b.dir ? a.name.localeCompare(b.name) : a.dir ? -1 : 1));
-  return out;
+  return out.sort((a, b) => {
+    return a.dir === b.dir ? a.name.localeCompare(b.name) : a.dir ? -1 : 1;
+  });
 }
 
 function link(rel: string, name: string) {
+  const isMd = /\.md$/i.test(name);
   const target = rel.split(path.sep).join('/');
-  return `[${name}](${target})`;
+  // For wiki pages (Markdown), strip extension and replace spaces with hyphens for stable routing
+  // For non-Markdown files, percent-encode spaces and reserved characters
+  const pageTarget = isMd
+    ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
+    : encodeURI(target).replace(/#/g, '%23');
+  return `[${name}](${pageTarget})`;
 }
 
 function render(nodes: Node[], depth = 0): string[] {
@@ -51,7 +74,9 @@ function render(nodes: Node[], depth = 0): string[] {
       lines.push(`</details>`);
       lines.push('');
     } else {
-      lines.push(`- ${link(n.rel, n.name)}`);
+      const item = `- ${link(n.rel, n.name)}`;
+      // Slight left margin for nested file items using non-breaking spaces
+      lines.push(top ? item : `&nbsp;&nbsp;${item}`);
     }
   }
   return lines;

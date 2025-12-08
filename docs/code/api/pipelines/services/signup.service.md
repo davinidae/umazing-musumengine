@@ -5,7 +5,7 @@
 ### SignupService
 
 Defined in:
-[api/pipelines/services/signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/e759aa394810589f6208f335dc4629eba0e9130b/src/api/pipelines/services/signup.service.ts#L9)
+[api/pipelines/services/signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/signup.service.ts#L9)
 
 tool/signup: Registers or fetches a viewer account based on device info. Carries viewer_id forward
 when available from previous step. Uses kv-stream framing.
@@ -21,7 +21,7 @@ when available from previous step. Uses kv-stream framing.
 > **new SignupService**(`ctx`): [`SignupService`](#signupservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/e759aa394810589f6208f335dc4629eba0e9130b/src/api/pipelines/services/step.service.ts#L28)
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -49,7 +49,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/e759aa394810589f6208f335dc4629eba0e9130b/src/api/pipelines/services/step.service.ts#L110)
+[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -78,7 +78,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > **getPayload**(`viewer_id`): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/pipelines/services/signup.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/e759aa394810589f6208f335dc4629eba0e9130b/src/api/pipelines/services/signup.service.ts#L17)
+[api/pipelines/services/signup.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/cf867af431b0af2ec01d608a903765631479ba09/src/api/pipelines/services/signup.service.ts#L17)
 
 Build payload including `viewer_id` (if available) along with client data.
 
