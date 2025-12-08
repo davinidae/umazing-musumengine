@@ -18,9 +18,9 @@ export class UserSession {
     public readonly id: string,
     public readonly createdAt: number,
     public readonly meta: Record<string, unknown>,
-    private ctx: PipelineContext,
+    private readonly ctx: PipelineContext,
   ) {
-    this.pipeline = new Pipeline(id, createdAt, meta, ctx);
+    this.pipeline = new Pipeline(this.id, this.createdAt, this.meta, this.ctx);
   }
 
   getPipeline(): Pipeline {
