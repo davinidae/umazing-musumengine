@@ -1,0 +1,2 @@
+Type: SingleModeMinigameEndResponse_CommonResponseFormatter
+

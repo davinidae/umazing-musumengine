@@ -1,0 +1,15 @@
+Type: Gallop.LegendRaceRaceStartResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.LegendRaceRaceStartResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x01FACE50
+		Ram Offset 0x7ff890e3ce50
+		Virtual Method Slot: 65535

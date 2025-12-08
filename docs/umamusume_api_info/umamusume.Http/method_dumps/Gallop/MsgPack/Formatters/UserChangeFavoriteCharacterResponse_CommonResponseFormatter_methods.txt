@@ -1,0 +1,2 @@
+Type: UserChangeFavoriteCharacterResponse_CommonResponseFormatter
+

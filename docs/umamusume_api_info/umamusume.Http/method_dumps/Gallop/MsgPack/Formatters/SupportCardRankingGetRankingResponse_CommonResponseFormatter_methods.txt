@@ -1,0 +1,2 @@
+Type: SupportCardRankingGetRankingResponse_CommonResponseFormatter
+

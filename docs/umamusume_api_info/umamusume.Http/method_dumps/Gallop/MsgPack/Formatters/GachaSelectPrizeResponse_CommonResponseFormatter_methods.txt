@@ -1,0 +1,2 @@
+Type: GachaSelectPrizeResponse_CommonResponseFormatter
+

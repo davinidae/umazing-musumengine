@@ -1,0 +1,92 @@
+Type: Gallop.UserProfileCardInfo:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: dress_id
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: bg_id
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: card_bg_id
+		Type: System.Int32
+		Offset in Defining Type: 0x1C
+		Has Default: False
+
+	Field: theme_id
+		Type: System.Int32
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Field: support_card_id
+		Type: System.Int32
+		Offset in Defining Type: 0x24
+		Has Default: False
+
+	Field: illustration_type
+		Type: System.Int32
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Field: comment
+		Type: System.String
+		Offset in Defining Type: 0x30
+		Has Default: False
+
+	Field: is_trainer_info_aligned_right
+		Type: System.Boolean
+		Offset in Defining Type: 0x38
+		Has Default: False
+
+	Field: show_back_side
+		Type: System.Boolean
+		Offset in Defining Type: 0x39
+		Has Default: False
+
+	Field: show_trainer_id
+		Type: System.Boolean
+		Offset in Defining Type: 0x3A
+		Has Default: False
+
+	Field: image_offset_x
+		Type: System.Int32
+		Offset in Defining Type: 0x3C
+		Has Default: False
+
+	Field: image_offset_y
+		Type: System.Int32
+		Offset in Defining Type: 0x40
+		Has Default: False
+
+	Field: image_rotate
+		Type: System.Int32
+		Offset in Defining Type: 0x44
+		Has Default: False
+
+	Field: image_scale
+		Type: System.Int32
+		Offset in Defining Type: 0x48
+		Has Default: False
+
+	Field: image_file_hash
+		Type: System.String
+		Offset in Defining Type: 0x50
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

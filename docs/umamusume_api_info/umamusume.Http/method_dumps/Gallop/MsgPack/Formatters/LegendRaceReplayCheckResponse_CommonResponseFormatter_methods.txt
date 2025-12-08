@@ -1,0 +1,2 @@
+Type: LegendRaceReplayCheckResponse_CommonResponseFormatter
+

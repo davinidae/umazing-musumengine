@@ -1,0 +1,2 @@
+Type: PracticeRaceGetPartnerInfoResponse_CommonResponseFormatter
+

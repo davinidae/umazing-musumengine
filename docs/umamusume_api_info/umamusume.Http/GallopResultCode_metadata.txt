@@ -1,0 +1,1550 @@
+Type: Gallop.GallopResultCode:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.GallopResultCode/OpenErrorPopupType
+
+	Static Field: RESULT_CODE_OK
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1
+
+	Static Field: GACHA_FREE_CAMPAIGN_NOT_AVAILABLE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1807
+
+	Static Field: GACHA_FREE_CAMPAIGN_UNINTENTIONAL_EXIST
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1808
+
+	Static Field: RACE_SIMULATOR_RESPONSE_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2000
+
+	Static Field: RACE_SIMULATOR_CONNECT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2001
+
+	Static Field: RACE_SIMULATOR_CLIENT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2002
+
+	Static Field: RACE_SIMULATOR_PREFORKD_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2003
+
+	Static Field: RACE_SIMULATOR_UNSUPPORTED_VERSION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2004
+
+	Static Field: LEGEND_RACE_NOT_RACE_TIME
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2101
+
+	Static Field: RACE_SIMULATE_VERSION_TOO_NEW
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2105
+
+	Static Field: RACE_SIMULATE_VERSION_TOO_OLD
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2106
+
+	Static Field: RACE_SINGLE_MODE_UNDEFINED_COMMAND_TYPE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2501
+
+	Static Field: RACE_SINGLE_MODE_UNCHECKED_EVENT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2502
+
+	Static Field: SINGLE_MODE_SUCCESSION_RENTAL_NOT_SAME_CIRCLE_MEMBER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2503
+
+	Static Field: GACHA_FIRST_TIME_ONLY_DRAW_END
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1806
+
+	Static Field: SINGLE_MODE_SUCCESSION_RENTAL_NUM_LIMIT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2504
+
+	Static Field: SINGLE_MODE_RENTAL_MONEY_NOT_ENOUGH
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2506
+
+	Static Field: SINGLE_MODE_DIFFICULTY_NOT_OPEN_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2508
+
+	Static Field: SINGLE_MODE_USE_TP_NOT_OPEN_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2509
+
+	Static Field: SINGLE_MODE_BOOST_STORY_EVENT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2510
+
+	Static Field: SINGLE_MODE_REQUEST_FORCE_FINISH
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2512
+
+	Static Field: TEAM_STADIUM_NOT_RACE_TIME
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2800
+
+	Static Field: TEAM_STADIUM_NOT_FOUND_TEAM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2801
+
+	Static Field: CIRCLE_PENALTY_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5001
+
+	Static Field: CIRCLE_MEMBER_NUM_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5002
+
+	Static Field: CIRCLE_USER_REQUEST_COUNT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5003
+
+	Static Field: CIRCLE_REQUEST_COUNT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5004
+
+	Static Field: CIRCLE_SCOUT_COUNT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5005
+
+	Static Field: CIRCLE_CHAT_NO_JOIN_USER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5006
+
+	Static Field: SINGLE_MODE_SCENARIO_OUT_OF_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 2505
+
+	Static Field: CIRCLE_ALREADY_JOIN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5007
+
+	Static Field: GACHA_DAILY_DRAW_END
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1805
+
+	Static Field: GACHA_UNSELECTABLE_CARD_SELECTED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1803
+
+	Static Field: CARD_MAX_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1005
+
+	Static Field: USE_COIN_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1051
+
+	Static Field: USE_TRAINER_POINT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1052
+
+	Static Field: NOT_ENOUGH_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1053
+
+	Static Field: USE_MONEY_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1054
+
+	Static Field: NOT_MATCH_VIEWER_ID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1055
+
+	Static Field: SEARCH_USER_NOT_FOUND
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1056
+
+	Static Field: TUTORIAL_STEP_MISMATCH_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1101
+
+	Static Field: TUTORIAL_OTHER_ACCESS_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1102
+
+	Static Field: LOGIN_ON_ACCOUNT_DELETE_PENDING
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1203
+
+	Static Field: LOGIN_ON_ACCOUNT_DELETE_AFTER_CANCELLATION_PERIOD
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1204
+
+	Static Field: LOGIN_ON_ACCOUNT_DELETE_COMPLETE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1205
+
+	Static Field: LOGIN_ON_ACCOUNT_DELETE_DMM_DISCONNECT_DONE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1206
+
+	Static Field: GACHA_LIMIT_ITEM_CEILING
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1804
+
+	Static Field: ACCOUNT_DELETE_USER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1207
+
+	Static Field: FRIEND_FOLLOW_USER_FOLLOW_COUNT_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1452
+
+	Static Field: FRIEND_RENTAL_SUCCESSION
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1453
+
+	Static Field: MISSION_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1501
+
+	Static Field: MISSION_ROTATION_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1502
+
+	Static Field: MISSION_DAILY_NOT_PUSHED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1503
+
+	Static Field: PRESENT_NOT_RECEIVE_PRESENT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1551
+
+	Static Field: PRESENT_NOT_RECEIVE_OVERDUE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1552
+
+	Static Field: ITEM_EXCHANGE_ITEM_NOT_ENOUGH
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1601
+
+	Static Field: ITEM_EXCHANGE_LIMITED_EXCHANGE_EXPIRED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1602
+
+	Static Field: ITEM_EXCHANGE_ITEM_LIST_UPDATE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1603
+
+	Static Field: CHARACTER_STORY_NOT_CAMPAIGN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1701
+
+	Static Field: GACHA_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1801
+
+	Static Field: GACHA_LIMIT_ITEM_NOT_ENOUGH
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1802
+
+	Static Field: FRIEND_FOLLOW_COUNT_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1451
+
+	Static Field: CIRCLE_NOT_EXIST
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5008
+
+	Static Field: CIRCLE_NOT_BELONG
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5009
+
+	Static Field: CIRCLE_REQUEST_NOT_PERMITTED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5011
+
+	Static Field: PRACTICE_RACE_START_NO_TRAINED_CHARA_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5207
+
+	Static Field: SAFETYNET_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 7001
+
+	Static Field: SAFETYNET_RETRY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 7002
+
+	Static Field: DEVICECHECK_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8001
+
+	Static Field: CHAMPIONS_MATCHING_EMPTY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8501
+
+	Static Field: CHAMPIONS_RESET_ENTRY_NUM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8502
+
+	Static Field: CHAMPIONS_SCHEDULE_CHANGED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8503
+
+	Static Field: CHAMPIONS_LEAGUE_SELECT_END
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8504
+
+	Static Field: CHAMPIONS_LEAGUE_CHANGE_END
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8505
+
+	Static Field: CHAMPIONS_SCHEDULE_CHANGED_ENTRY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8506
+
+	Static Field: CHAMPIONS_RACE_ENTRY_END
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8507
+
+	Static Field: CHALLENGE_MATCH_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8600
+
+	Static Field: CHALLENGE_MATCH_COMPLETELY_CLOSED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8601
+
+	Static Field: PRACTICE_RACE_SAVE_PARTNER_NO_TRAINED_CHARA_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5206
+
+	Static Field: CHALLENGE_MATCH_CHALLENGE_RACE_TIME_OUT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8602
+
+	Static Field: TEAM_BUILDING_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8701
+
+	Static Field: TEAM_BUILDING_TICKET_AUTO_RECOVERY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8702
+
+	Static Field: TEAM_BUILDING_FREE_CONTINUE_AUTO_RECOVERY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8703
+
+	Static Field: STORY_EVENT_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9001
+
+	Static Field: TRANSFER_EVENT_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9051
+
+	Static Field: TRANSFER_EVENT_UPDATE_DETAIL
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9052
+
+	Static Field: TRAINING_CHALLENGE_NOT_IN_TERM_SINGLE_MODE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9101
+
+	Static Field: TRAINING_CHALLENGE_RANKING_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9102
+
+	Static Field: TRAINING_CHALLENGE_EVENT_RENTAL_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9103
+
+	Static Field: TRAINING_CHALLENGE_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9104
+
+	Static Field: FAN_RAID_NOT_IN_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 9151
+
+	Static Field: NEED_PARENT_AGREE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 90001
+
+	Static Field: NOT_AVAILABLE_AGE_LIMIT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 90002
+
+	Static Field: TEAM_BUILDING_COMPLETELY_CLOSED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 8700
+
+	Static Field: PRACTICE_RACE_DAILY_CREATE_LIMIT_PARTNER_ID_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5205
+
+	Static Field: PRACTICE_RACE_SIMULATOR_VERSION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5204
+
+	Static Field: PRACTICE_RACE_TRANSFER_ALREADY_PARTNER_ID_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5203
+
+	Static Field: CIRCLE_ALREADY_SCOUT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5012
+
+	Static Field: CIRCLE_NOT_MEMBER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5014
+
+	Static Field: CIRCLE_NOT_OPERATE_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5015
+
+	Static Field: CIRCLE_NOT_REMOVE_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5016
+
+	Static Field: CIRCLE_NOT_SCOUT_TERM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5017
+
+	Static Field: CIRCLE_ITEM_REQUEST_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5020
+
+	Static Field: CIRCLE_DONATE_FAILED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5021
+
+	Static Field: CIRCLE_ITEM_RECEIVE_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5022
+
+	Static Field: CIRCLE_NO_OPERATION_AUTHORITY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5023
+
+	Static Field: CIRCLE_SCOUT_MEMBER_MAX
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5024
+
+	Static Field: CIRCLE_NO_SCOUT_CIRCLE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5025
+
+	Static Field: CIRCLE_NO_ITEM_REQUEST
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5026
+
+	Static Field: CIRCLE_OVER_DAILY_POST_PARTNER_COUNT_LIMIT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5027
+
+	Static Field: CIRCLE_PARTNER_LIST_COUNT_ZERO
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5028
+
+	Static Field: ROOM_MATCH_ENTRY_NUM_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5100
+
+	Static Field: ROOM_MATCH_ENTRY_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5101
+
+	Static Field: ROOM_MATCH_CANCLE_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5102
+
+	Static Field: ROOM_MATCH_EDIT_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5103
+
+	Static Field: ROOM_MATCH_RESULT_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5104
+
+	Static Field: ROOM_MATCH_DELETE_ROOM_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5105
+
+	Static Field: ROOM_MATCH_NO_ROOM_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5106
+
+	Static Field: ROOM_MATCH_FORCE_START_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5107
+
+	Static Field: ROOM_MATCH_AUDIENCE_NUM_OVER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5108
+
+	Static Field: ROOM_MATCH_SHARE_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5109
+
+	Static Field: ROOM_MATCH_WATCH_RACE_START_TIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5110
+
+	Static Field: ROOM_MATCH_SAVE_ROOM_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5111
+
+	Static Field: PRACTICE_RACE_INVALID_PARTNER_ID_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5200
+
+	Static Field: PRACTICE_RACE_OVERTIME_PARTNER_ID_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5201
+
+	Static Field: PRACTICE_RACE_LAST_TIME_PARTNER_ID_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 5202
+
+	Static Field: ITEM_MAX_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1004
+
+	Static Field: USER_NOT_FOUND_ON_LOGIN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 99999
+
+	Static Field: COIN_MAX_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1003
+
+	Static Field: MONEY_MAX_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1001
+
+	Static Field: PAYMENT_AGE_OUT_RANGE_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 309
+
+	Static Field: PAYMENT_INVALID_BIRTH_DAY_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 310
+
+	Static Field: PAYMENT_PURCHASED_TIMES_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 311
+
+	Static Field: PAYMENT_PURCHASE_OVERTIME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 312
+
+	Static Field: PAYMENT_PURCHASE_ALERT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 329
+
+	Static Field: SERIAL_CODE_NOT_RELEASE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 330
+
+	Static Field: SERIAL_CODE_INCOMPATIBLE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 331
+
+	Static Field: SERIAL_CODE_RESTRICTING
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 332
+
+	Static Field: SERIAL_CODE_INVALID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 333
+
+	Static Field: SERIAL_CODE_LIMIT_OVER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 334
+
+	Static Field: SERIAL_CODE_TIME_LIMIT_OVER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 335
+
+	Static Field: SERIAL_CODE_CSV_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 336
+
+	Static Field: PAYMENT_PURCHASE_REFUND_ALERT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 337
+
+	Static Field: PAYMENT_VALIDATION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 308
+
+	Static Field: PAYMENT_PURCHASE_REFUND_BAN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 338
+
+	Static Field: RC_KWS_EMAIL_NOT_REGISTERED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 354
+
+	Static Field: RC_KWS_EMAIL_ALREADY_REGISTERED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 355
+
+	Static Field: RC_EMAIL_ADDRESS_NOT_VALID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 356
+
+	Static Field: RC_KWS_ONE_TIME_PASSWORD_WRONG
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 357
+
+	Static Field: RC_KWS_ONE_TIME_PASSWORD_EXPIRED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 358
+
+	Static Field: DATA_NOT_FOUND_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 500
+
+	Static Field: DATA_VALIDATION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 501
+
+	Static Field: TRANSITION_OLD_ACCESS_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 516
+
+	Static Field: TRANSITION_COMPLETED_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 517
+
+	Static Field: INQUIRY_EMPTY_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 518
+
+	Static Field: INQUIRY_LENGTH_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 519
+
+	Static Field: USER_EXIST_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 520
+
+	Static Field: RECORD_EXIST_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 521
+
+	Static Field: RC_KWS_ONE_TIME_PASSWORD_RESTRICTED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 353
+
+	Static Field: DATA_REGISTER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 522
+
+	Static Field: PAYMENT_AGE_GROUP_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 307
+
+	Static Field: PAYMENT_TIMEOUT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 305
+
+	Static Field: DB_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 100
+
+	Static Field: MAINTENANCE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 101
+
+	Static Field: SERVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 102
+
+	Static Field: DB_CONNECT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 103
+
+	Static Field: SITE_DISABLE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 104
+
+	Static Field: MEMCACHE_CONNECT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 105
+
+	Static Field: REDIS_CONNECT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 106
+
+	Static Field: ACCESS_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 200
+
+	Static Field: SESSION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 201
+
+	Static Field: AUTH_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 202
+
+	Static Field: ACCOUNT_BLOCK_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 203
+
+	Static Field: VERSION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 204
+
+	Static Field: PARAM_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 205
+
+	Static Field: PAYMENT_RESPONSE_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 306
+
+	Static Field: POST_DATA_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 206
+
+	Static Field: DOUBLE_CLICK_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 208
+
+	Static Field: HASH_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 209
+
+	Static Field: DEVICE_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 210
+
+	Static Field: DEVICE_NAME_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 211
+
+	Static Field: BOT_ACCESS_ATTACK_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 212
+
+	Static Field: CLIENT_OWN_NUM_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 213
+
+	Static Field: RESOURCE_VERSION_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 214
+
+	Static Field: NOTIFY_PREPARATION_SERVICE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 215
+
+	Static Field: PAYMENT_HISTORY_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 300
+
+	Static Field: PAYMENT_ALREADY_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 301
+
+	Static Field: PRODUCT_DATA_CSV_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 302
+
+	Static Field: PAYMENT_RECEIPT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 303
+
+	Static Field: PAYMENT_LIMIT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 304
+
+	Static Field: NG_WORD_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 207
+
+	Static Field: INVALID_PARAMETER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 523
+
+	Static Field: USER_NOT_FOUND
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 524
+
+	Static Field: CSV_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 525
+
+	Static Field: MAINTENANCE_TASK_CARD_RARITY_UPGRADE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 925
+
+	Static Field: MAINTENANCE_TASK_CARD_UNLOCK
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 926
+
+	Static Field: MAINTENANCE_TASK_SUPPORT_CARD_STRENGTHEN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 927
+
+	Static Field: MAINTENANCE_TASK_SUPPORT_CARD_LIMIT_BREAK
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 928
+
+	Static Field: MAINTENANCE_TASK_SUPPORT_CARD_SELL
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 929
+
+	Static Field: MAINTENANCE_TASK_TRAINED_CHARA_LOAD
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 930
+
+	Static Field: MAINTENANCE_TASK_MISSION
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 932
+
+	Static Field: MAINTENANCE_TASK_TEAM_EDIT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 933
+
+	Static Field: MAINTENANCE_TASK_TUTORIAL_TEAM_EDIT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 934
+
+	Static Field: MAINTENANCE_TASK_PAYMENT_DMM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 935
+
+	Static Field: MAINTENANCE_TASK_STORY_EVENT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 936
+
+	Static Field: MAINTENANCE_TASK_ROOM_MATCH
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 939
+
+	Static Field: MAINTENANCE_TASK_ITEM_TRADE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 941
+
+	Static Field: MAINTENANCE_TASK_CARD_TALENT_STRENGTHEN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 924
+
+	Static Field: MAINTENANCE_TASK_STORY_EXTRA
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 942
+
+	Static Field: MAINTENANCE_TASK_PRACTICE_PARTNER
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 945
+
+	Static Field: MAINTENANCE_TASK_PRACTICE_PARTNER_CIRCLE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 946
+
+	Static Field: MAINTENANCE_TASK_PRACTICE_PARTNER_SNS
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 947
+
+	Static Field: MAINTENANCE_TASK_JUKEBOX
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 948
+
+	Static Field: MAINTENANCE_TRAINING_CHALLNGE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 949
+
+	Static Field: MAINTENANCE_TRAINING_CHALLNGE_LEADING
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 950
+
+	Static Field: MAINTENANCE_TRAINING_CHALLNGE_SUPPORT_CARD
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 951
+
+	Static Field: MAINTENANCE_TRAINING_CHALLNGE_COIN_EXCHANGE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 952
+
+	Static Field: MAINTENANCE_PROFILE_CARD
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 956
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_ANNIV_SHOP
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 957
+
+	Static Field: MAINTENANCE_TASK_DAILY_LEGEND_RACE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 958
+
+	Static Field: MAINTENANCE_TASK_FAN_RAID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 959
+
+	Static Field: MAINTENANCE_TASK_TEAM_BUILDING
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 960
+
+	Static Field: MAINTENANCE_TASK_PRACTICE_RACE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 944
+
+	Static Field: MAINTENANCE_TASK_CHARACTER_STORY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 923
+
+	Static Field: MAINTENANCE_TASK_MAIN_STORY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 922
+
+	Static Field: MAINTENANCE_TASK_LEGEND_RACE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 921
+
+	Static Field: TRANSITION_USER_NOT_EXIST
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 526
+
+	Static Field: TRANSITIONPASSWORD_INVALID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 700
+
+	Static Field: TRANSITION_USERID_INVALID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 701
+
+	Static Field: ACCOUNT_UDID_CONFLICT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 703
+
+	Static Field: PC_ACCOUNT_LIMIT_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 704
+
+	Static Field: NO_PLATFORM_USER_ID_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 705
+
+	Static Field: DMM_ONETIME_TOKEN_INVALID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 706
+
+	Static Field: STEAM_ACCOUNT_REMOVE_CHAINED
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 709
+
+	Static Field: MAINTENANCE_TASK_ACCOUNT_SIGN_UP
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 900
+
+	Static Field: MAINTENANCE_TASK_PRESENT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 901
+
+	Static Field: MAINTENANCE_TASK_DATA_LINKAGE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 902
+
+	Static Field: MAINTENANCE_TASK_ACCOUNT_CHAIN
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 903
+
+	Static Field: MAINTENANCE_TASK_PAYMENT_ALL
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 904
+
+	Static Field: MAINTENANCE_TASK_PAYMENT_IOS
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 905
+
+	Static Field: MAINTENANCE_TASK_PAYMENT_ANDROID
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 906
+
+	Static Field: MAINTENANCE_TASK_GACHA
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 907
+
+	Static Field: MAINTENANCE_TASK_SHOP_ITEM_EXCHANGE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 908
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_TICKET
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 909
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_MONEY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 910
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_FRIEND_PT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 911
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_COMMON_PIECE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 912
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_GACHA_EXCHANGE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 913
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_CIRCLE_PT
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 914
+
+	Static Field: MAINTENANCE_TASK_EXCHANGE_BY_EXCHANGE_CURRENCY
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 915
+
+	Static Field: MAINTENANCE_TASK_LIMITED_EXCHANGE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 916
+
+	Static Field: MAINTENANCE_TASK_SINGLE_MODE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 917
+
+	Static Field: MAINTENANCE_TASK_CIRCLE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 918
+
+	Static Field: MAINTENANCE_TASK_TEAM_STADIUM
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 919
+
+	Static Field: MAINTENANCE_TASK_DAILY_RACE
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 920
+
+	Static Field: FRIENDPOINT_MAX_OVER_ERROR
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 1002
+
+	Static Field: STORY_EVENT_NOT_DATA
+		Type: System.Int32
+		Offset in Defining Type: 0x0
+		Has Default: True
+		Default Value: 100001

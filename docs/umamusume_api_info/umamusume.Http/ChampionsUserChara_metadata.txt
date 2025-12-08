@@ -1,0 +1,32 @@
+Type: Gallop.ChampionsUserChara:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: race_cloth_id
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: nick_name_id
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: team_member_id
+		Type: System.Int32
+		Offset in Defining Type: 0x1C
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

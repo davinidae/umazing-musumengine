@@ -1,0 +1,9 @@
+Type: <PrivateImplementationDetails>:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Nested Types:
+		<PrivateImplementationDetails>/__StaticArrayInitTypeSize=181695
+		<PrivateImplementationDetails>/__StaticArrayInitTypeSize=187469

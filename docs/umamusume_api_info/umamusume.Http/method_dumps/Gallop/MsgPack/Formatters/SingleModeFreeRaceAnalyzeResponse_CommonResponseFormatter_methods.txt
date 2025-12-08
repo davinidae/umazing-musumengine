@@ -1,0 +1,2 @@
+Type: SingleModeFreeRaceAnalyzeResponse_CommonResponseFormatter
+

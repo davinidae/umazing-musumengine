@@ -1,0 +1,856 @@
+Type: CommonResponse
+
+Method: System.Void Gallop.JukeboxIndexResponse/CommonResponse::.ctor():	Method Body (x86 ASM):
+		0x7FF89102BBA0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x7FF89102BBA5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BBA6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x7FF89102BBAA cmp byte ptr [7FF893FF45BEh],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611597246 | None ||| N/A | 0
+		0x7FF89102BBB1 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BBB4 jne near ptr 00007FF89102BC8Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BBBA lea rcx,[7FF893C4C4A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607763104 | None ||| N/A | N/A
+		0x7FF89102BBC1 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BBC6 lea rcx,[7FF893CC4088h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608253576 | None ||| N/A | N/A
+		0x7FF89102BBCD call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BBD2 lea rcx,[7FF893BF52B0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607406256 | None ||| N/A | N/A
+		0x7FF89102BBD9 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BBDE lea rcx,[7FF893C51800h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607784448 | None ||| N/A | N/A
+		0x7FF89102BBE5 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BBEA lea rcx,[7FF893BF3AF8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607400184 | None ||| N/A | N/A
+		0x7FF89102BBF1 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BBF6 lea rcx,[7FF893BF9D18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607425304 | None ||| N/A | N/A
+		0x7FF89102BBFD call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC02 lea rcx,[7FF893C9FC50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608105040 | None ||| N/A | N/A
+		0x7FF89102BC09 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC0E lea rcx,[7FF893BF3990h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607399824 | None ||| N/A | N/A
+		0x7FF89102BC15 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC1A lea rcx,[7FF893C75718h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607931672 | None ||| N/A | N/A
+		0x7FF89102BC21 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC26 lea rcx,[7FF893BF9A40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607424576 | None ||| N/A | N/A
+		0x7FF89102BC2D call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC32 lea rcx,[7FF893C98BD0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608076240 | None ||| N/A | N/A
+		0x7FF89102BC39 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC3E lea rcx,[7FF893C894D8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608013016 | None ||| N/A | N/A
+		0x7FF89102BC45 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC4A lea rcx,[7FF893C39E38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607687736 | None ||| N/A | N/A
+		0x7FF89102BC51 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC56 lea rcx,[7FF893BF5420h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607406624 | None ||| N/A | N/A
+		0x7FF89102BC5D call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC62 lea rcx,[7FF893CA14B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608111288 | None ||| N/A | N/A
+		0x7FF89102BC69 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC6E lea rcx,[7FF893CBD0B0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608224944 | None ||| N/A | N/A
+		0x7FF89102BC75 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC7A lea rcx,[7FF893BF2B58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607396184 | None ||| N/A | N/A
+		0x7FF89102BC81 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC86 mov byte ptr [7FF893FF45BEh],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611597246 | None ||| N/A | 1
+		0x7FF89102BC8D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BC8F mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BC92 call 00007FF88F295780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BC97 mov rcx,[7FF893C4C4A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607763104 | None ||| N/A | N/A
+		0x7FF89102BC9E call 00007FF88F1A63E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BCA3 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCA5 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCA8 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCAB call 00007FF8903E9740h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BCB0 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCB3 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BCB9 mov rdx,[7FF893C75718h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607931672 | None ||| N/A | N/A
+		0x7FF89102BCC0 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCC3 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCC6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCC9 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BCCE mov rdx,[7FF893BF2B58h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607396184 | None ||| N/A | N/A
+		0x7FF89102BCD5 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCD8 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCDB lea r8d,[r9+1]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 1 | None ||| N/A | N/A
+		0x7FF89102BCDF call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BCE4 mov rdx,[7FF893BF3990h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607399824 | None ||| N/A | N/A
+		0x7FF89102BCEB xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCEE mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BCF1 lea r8d,[r9+2]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 2 | None ||| N/A | N/A
+		0x7FF89102BCF5 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BCFA mov rdx,[7FF893BF3AF8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607400184 | None ||| N/A | N/A
+		0x7FF89102BD01 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD04 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD07 lea r8d,[r9+3]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 3 | None ||| N/A | N/A
+		0x7FF89102BD0B call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD10 mov rdx,[7FF893C51800h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607784448 | None ||| N/A | N/A
+		0x7FF89102BD17 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD1A mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD1D lea r8d,[r9+4]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 4 | None ||| N/A | N/A
+		0x7FF89102BD21 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD26 mov rdx,[7FF893C894D8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608013016 | None ||| N/A | N/A
+		0x7FF89102BD2D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD30 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD33 lea r8d,[r9+5]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 5 | None ||| N/A | N/A
+		0x7FF89102BD37 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD3C mov rdx,[7FF893C39E38h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607687736 | None ||| N/A | N/A
+		0x7FF89102BD43 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD46 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD49 lea r8d,[r9+6]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 6 | None ||| N/A | N/A
+		0x7FF89102BD4D call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD52 mov rdx,[7FF893C9FC50h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608105040 | None ||| N/A | N/A
+		0x7FF89102BD59 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD5C mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD5F lea r8d,[r9+7]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 7 | None ||| N/A | N/A
+		0x7FF89102BD63 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD68 mov rdx,[7FF893CA14B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608111288 | None ||| N/A | N/A
+		0x7FF89102BD6F xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD72 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD75 lea r8d,[r9+8]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 8 | None ||| N/A | N/A
+		0x7FF89102BD79 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD7E mov rdx,[7FF893CBD0B0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608224944 | None ||| N/A | N/A
+		0x7FF89102BD85 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD88 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD8B lea r8d,[r9+9]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 9 | None ||| N/A | N/A
+		0x7FF89102BD8F call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BD94 mov rdx,[7FF893C98BD0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608076240 | None ||| N/A | N/A
+		0x7FF89102BD9B xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BD9E mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDA1 lea r8d,[r9+0Ah]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 10 | None ||| N/A | N/A
+		0x7FF89102BDA5 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BDAA mov rdx,[7FF893BF9D18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607425304 | None ||| N/A | N/A
+		0x7FF89102BDB1 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDB4 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDB7 lea r8d,[r9+0Bh]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 11 | None ||| N/A | N/A
+		0x7FF89102BDBB call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BDC0 mov rdx,[7FF893BF9A40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607424576 | None ||| N/A | N/A
+		0x7FF89102BDC7 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDCA mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDCD lea r8d,[r9+0Ch]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 12 | None ||| N/A | N/A
+		0x7FF89102BDD1 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BDD6 mov rdx,[7FF893BF52B0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607406256 | None ||| N/A | N/A
+		0x7FF89102BDDD xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDE0 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDE3 lea r8d,[r9+0Dh]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 13 | None ||| N/A | N/A
+		0x7FF89102BDE7 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BDEC mov rdx,[7FF893BF5420h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607406624 | None ||| N/A | N/A
+		0x7FF89102BDF3 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDF6 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BDF9 lea r8d,[r9+0Eh]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 14 | None ||| N/A | N/A
+		0x7FF89102BDFD call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE02 lea rcx,[rdi+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 16 | None ||| N/A | N/A
+		0x7FF89102BE06 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE09 mov [rcx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BE0C call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE11 mov rcx,[7FF893CC4088h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608253576 | None ||| N/A | N/A
+		0x7FF89102BE18 mov edx,0Fh		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 15
+		0x7FF89102BE1D call 00007FF88F1A5420h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE22 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE24 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE27 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE2C test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE2F je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE35 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BE38 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE3B mov rdx,[7FF893C75718h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607931672 | None ||| N/A | N/A
+		0x7FF89102BE42 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BE49 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102BE50 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE53 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE56 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE5C cmp dword ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 0
+		0x7FF89102BE60 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE66 lea rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x7FF89102BE6A mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE6D mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BE70 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE75 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE77 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE7C test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE7F je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BE85 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BE88 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BE8B mov rdx,[7FF893BF2B58h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607396184 | None ||| N/A | N/A
+		0x7FF89102BE92 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BE99 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102BEA0 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BEA3 cmp dword ptr [rbx+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 1
+		0x7FF89102BEA7 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BEAD lea rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x7FF89102BEB1 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BEB4 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BEB7 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BEBC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BEBE call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BEC3 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BEC6 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BECC mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BECF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BED2 mov rdx,[7FF893BF3990h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607399824 | None ||| N/A | N/A
+		0x7FF89102BED9 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BEE0 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102BEE7 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BEEA cmp dword ptr [rbx+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 2
+		0x7FF89102BEEE jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BEF4 lea rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x7FF89102BEF8 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BEFB mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BEFE call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF03 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF05 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF0A test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF0D je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF13 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BF16 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF19 mov rdx,[7FF893BF3AF8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607400184 | None ||| N/A | N/A
+		0x7FF89102BF20 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BF27 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102BF2E call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF31 cmp dword ptr [rbx+18h],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 3
+		0x7FF89102BF35 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF3B lea rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x7FF89102BF3F mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF42 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BF45 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF4A xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF4C call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF51 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF54 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF5A mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BF5D mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF60 mov rdx,[7FF893C51800h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607784448 | None ||| N/A | N/A
+		0x7FF89102BF67 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BF6E mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102BF75 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF78 cmp dword ptr [rbx+18h],4		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 4
+		0x7FF89102BF7C jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF82 lea rcx,[rbx+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 64 | None ||| N/A | N/A
+		0x7FF89102BF86 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF89 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BF8C call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF91 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF93 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BF98 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BF9B je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BFA1 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BFA4 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BFA7 mov rdx,[7FF893C894D8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608013016 | None ||| N/A | N/A
+		0x7FF89102BFAE mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BFB5 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102BFBC call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BFBF cmp dword ptr [rbx+18h],5		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 5
+		0x7FF89102BFC3 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BFC9 lea rcx,[rbx+48h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x7FF89102BFCD mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BFD0 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102BFD3 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BFD8 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BFDA call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BFDF test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BFE2 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102BFE8 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102BFEB mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102BFEE mov rdx,[7FF893C39E38h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607687736 | None ||| N/A | N/A
+		0x7FF89102BFF5 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102BFFC mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C003 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C006 cmp dword ptr [rbx+18h],6		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 6
+		0x7FF89102C00A jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C010 lea rcx,[rbx+50h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 80 | None ||| N/A | N/A
+		0x7FF89102C014 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C017 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C01A call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C01F xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C021 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C026 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C029 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C02F mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C032 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C035 mov rdx,[7FF893C9FC50h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608105040 | None ||| N/A | N/A
+		0x7FF89102C03C mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C043 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C04A call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C04D cmp dword ptr [rbx+18h],7		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 7
+		0x7FF89102C051 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C057 lea rcx,[rbx+58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 88 | None ||| N/A | N/A
+		0x7FF89102C05B mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C05E mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C061 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C066 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C068 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C06D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C070 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C076 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C079 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C07C mov rdx,[7FF893CA14B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608111288 | None ||| N/A | N/A
+		0x7FF89102C083 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C08A mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C091 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C094 cmp dword ptr [rbx+18h],8		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 8
+		0x7FF89102C098 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C09E lea rcx,[rbx+60h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 96 | None ||| N/A | N/A
+		0x7FF89102C0A2 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0A5 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C0A8 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C0AD xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0AF call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C0B4 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0B7 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C0BD mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C0C0 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0C3 mov rdx,[7FF893CBD0B0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608224944 | None ||| N/A | N/A
+		0x7FF89102C0CA mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C0D1 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C0D8 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0DB cmp dword ptr [rbx+18h],9		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 9
+		0x7FF89102C0DF jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C0E5 lea rcx,[rbx+68h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 104 | None ||| N/A | N/A
+		0x7FF89102C0E9 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0EC mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C0EF call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C0F4 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0F6 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C0FB test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C0FE je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C104 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C107 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C10A mov rdx,[7FF893C98BD0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608076240 | None ||| N/A | N/A
+		0x7FF89102C111 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C118 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C11F call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C122 cmp dword ptr [rbx+18h],0Ah		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 10
+		0x7FF89102C126 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C12C lea rcx,[rbx+70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 112 | None ||| N/A | N/A
+		0x7FF89102C130 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C133 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C136 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C13B xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C13D call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C142 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C145 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C14B mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C14E mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C151 mov rdx,[7FF893BF9D18h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607425304 | None ||| N/A | N/A
+		0x7FF89102C158 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C15F mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C166 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C169 cmp dword ptr [rbx+18h],0Bh		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 11
+		0x7FF89102C16D jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C173 lea rcx,[rbx+78h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 120 | None ||| N/A | N/A
+		0x7FF89102C177 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C17A mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C17D call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C182 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C184 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C189 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C18C je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C192 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C195 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C198 mov rdx,[7FF893BF9A40h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607424576 | None ||| N/A | N/A
+		0x7FF89102C19F mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C1A6 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C1AD call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C1B0 cmp dword ptr [rbx+18h],0Ch		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 12
+		0x7FF89102C1B4 jbe near ptr 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C1BA lea rcx,[rbx+80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 128 | None ||| N/A | N/A
+		0x7FF89102C1C1 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C1C4 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C1C7 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C1CC xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C1CE call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C1D3 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C1D6 je near ptr 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C1DC mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C1DF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C1E2 mov rdx,[7FF893BF52B0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607406256 | None ||| N/A | N/A
+		0x7FF89102C1E9 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C1F0 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C1F7 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C1FA cmp dword ptr [rbx+18h],0Dh		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 13
+		0x7FF89102C1FE jbe short 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C200 lea rcx,[rbx+88h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 136 | None ||| N/A | N/A
+		0x7FF89102C207 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C20A mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C20D call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C212 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C214 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C219 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C21C je short 00007FF89102C26Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C21E mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF89102C221 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C224 mov rdx,[7FF893BF5420h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607406624 | None ||| N/A | N/A
+		0x7FF89102C22B mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF89102C232 mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF89102C239 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C23C cmp dword ptr [rbx+18h],0Eh		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 14
+		0x7FF89102C240 jbe short 00007FF89102C273h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C242 lea rcx,[rbx+90h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 144 | None ||| N/A | N/A
+		0x7FF89102C249 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C24C mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C24F call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C254 lea rcx,[rdi+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x7FF89102C258 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C25B mov [rcx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF89102C25E mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF89102C263 add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x7FF89102C267 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF89102C268 jmp near ptr 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C26D call 00007FF88F1A6440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF89102C272 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Gallop.JukeboxIndexResponse/CommonResponse::.ctor():
+		End of function at 0x7FF89102C273
+		Absolute End is at 0x7FF89102C273
+		Identified Jump Destination addresses:
+
+		0x7FF89102BBA5: Saves the content of rdi to the stack
+		0x7FF89102BBAA: Compares {Unknown Global at 0x7FF893FF45BE, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x7FF89102BBB1: Copies {'this' (function parameter, type Gallop.JukeboxIndexResponse/CommonResponse)} from rcx into rdi
+		0x7FF89102BBB4: Jumps to 0x7FF89102BC8D if {Unknown Global at 0x7FF893FF45BE, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x7FF89102BBBA: Loads string "ÑÇ" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF89102BBC6: Loads the type definition for managed type System.Byte[][] as a constant "Byte[][]" in rcx
+		0x7FF89102BBD2: Loads the string literal "steam_id" as a constant "constant5" in rcx
+		0x7FF89102BBDE: Loads the string literal "graphics_device_name" as a constant "constant6" in rcx
+		0x7FF89102BBEA: Loads the string literal "device_name" as a constant "constant7" in rcx
+		0x7FF89102BBF6: Loads the string literal "dmm_viewer_id" as a constant "constant8" in rcx
+		0x7FF89102BC02: Loads the string literal "carrier" as a constant "constant9" in rcx
+		0x7FF89102BC0E: Loads the string literal "device_id" as a constant "constant10" in rcx
+		0x7FF89102BC1A: Loads the string literal "viewer_id" as a constant "constant11" in rcx
+		0x7FF89102BC26: Loads the string literal "dmm_onetime_token" as a constant "constant12" in rcx
+		0x7FF89102BC32: Loads the string literal "button_info" as a constant "constant13" in rcx
+		0x7FF89102BC3E: Loads the string literal "ip_address" as a constant "constant14" in rcx
+		0x7FF89102BC4A: Loads the string literal "platform_os_version" as a constant "constant15" in rcx
+		0x7FF89102BC56: Loads the string literal "steam_session_ticket" as a constant "constant16" in rcx
+		0x7FF89102BC62: Loads the string literal "keychain" as a constant "constant17" in rcx
+		0x7FF89102BC6E: Loads the string literal "locale" as a constant "constant18" in rcx
+		0x7FF89102BC7A: Loads string "" into register rcx as constant {'constant19' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF89102BC8F: Copies {'this' (function parameter, type Gallop.JukeboxIndexResponse/CommonResponse)} from rdi into rcx
+		0x7FF89102BC92: [!] Calls managed method System.Void Gallop.MasterCharacterSystemText::_SelectWithCharacterId() on instance {'this' (function parameter, type Gallop.JukeboxIndexResponse/CommonResponse)}
+
+		0x7FF89102BC97: Loads string "ÑÇ" into register rcx as constant {'constant20' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF89102BC9E: [!] Allocates an instance of type  and stores it as  in rax.
+
+		0x7FF89102BCB0: [!] Compares  and 0
+		0x7FF89102BCB3: Jumps to 0x7FF89102C26D (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BCB9: Loads the string literal "viewer_id" as a constant "constant22" in rdx
+		0x7FF89102BCCE: Loads string "" into register rdx as constant {'constant23' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF89102BCDB: [!] Loads the constant value 1 into the register r8 as constant constant24 using an LEA instruction
+		0x7FF89102BCE4: Loads the string literal "device_id" as a constant "constant25" in rdx
+		0x7FF89102BCF1: [!] Loads the constant value 2 into the register r8 as constant constant26 using an LEA instruction
+		0x7FF89102BCFA: Loads the string literal "device_name" as a constant "constant27" in rdx
+		0x7FF89102BD07: [!] Loads the constant value 3 into the register r8 as constant constant28 using an LEA instruction
+		0x7FF89102BD10: Loads the string literal "graphics_device_name" as a constant "constant29" in rdx
+		0x7FF89102BD1D: [!] Loads the constant value 4 into the register r8 as constant constant30 using an LEA instruction
+		0x7FF89102BD26: Loads the string literal "ip_address" as a constant "constant31" in rdx
+		0x7FF89102BD33: [!] Loads the constant value 5 into the register r8 as constant constant32 using an LEA instruction
+		0x7FF89102BD3C: Loads the string literal "platform_os_version" as a constant "constant33" in rdx
+		0x7FF89102BD49: [!] Loads the constant value 6 into the register r8 as constant constant34 using an LEA instruction
+		0x7FF89102BD52: Loads the string literal "carrier" as a constant "constant35" in rdx
+		0x7FF89102BD5F: [!] Loads the constant value 7 into the register r8 as constant constant36 using an LEA instruction
+		0x7FF89102BD68: Loads the string literal "keychain" as a constant "constant37" in rdx
+		0x7FF89102BD75: [!] Loads the constant value 8 into the register r8 as constant constant38 using an LEA instruction
+		0x7FF89102BD7E: Loads the string literal "locale" as a constant "constant39" in rdx
+		0x7FF89102BD8B: [!] Loads the constant value 9 into the register r8 as constant constant40 using an LEA instruction
+		0x7FF89102BD94: Loads the string literal "button_info" as a constant "constant41" in rdx
+		0x7FF89102BDA1: [!] Loads the constant value 10 into the register r8 as constant constant42 using an LEA instruction
+		0x7FF89102BDAA: Loads the string literal "dmm_viewer_id" as a constant "constant43" in rdx
+		0x7FF89102BDB7: [!] Loads the constant value 11 into the register r8 as constant constant44 using an LEA instruction
+		0x7FF89102BDC0: Loads the string literal "dmm_onetime_token" as a constant "constant45" in rdx
+		0x7FF89102BDCD: [!] Loads the constant value 12 into the register r8 as constant constant46 using an LEA instruction
+		0x7FF89102BDD6: Loads the string literal "steam_id" as a constant "constant47" in rdx
+		0x7FF89102BDE3: [!] Loads the constant value 13 into the register r8 as constant constant48 using an LEA instruction
+		0x7FF89102BDEC: Loads the string literal "steam_session_ticket" as a constant "constant49" in rdx
+		0x7FF89102BDF9: [!] Loads the constant value 14 into the register r8 as constant constant50 using an LEA instruction
+		0x7FF89102BE02: Loads the pointer to the field  on {'this' (function parameter, type Gallop.JukeboxIndexResponse/CommonResponse)} into register rcx
+		0x7FF89102BE11: Loads the type definition for managed type System.Byte[][] as a constant "Byte[][]" in rcx
+		0x7FF89102BE18: [!] Writes the constant 0xF into operand 15 (type UInt64) in register rdx
+		0x7FF89102BE1D: [!] Allocates an array of type System.Byte[][] of size 15 and stores the result as local19 in register rax
+
+		0x7FF89102BE24: Copies {'local19' (type System.Byte[][])} from rax into rbx
+		0x7FF89102BE2C: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BE2F: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BE35: Loads the class pointer from local19 into a constant constant54 in register r8
+		0x7FF89102BE38: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BE3B: Loads the string literal "viewer_id" as a constant "constant55" in rdx
+		0x7FF89102BE42: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant56
+		0x7FF89102BE49: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant57
+		0x7FF89102BE50: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102BE53: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BE56: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BE5C: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 0
+		0x7FF89102BE60: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BE66: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 0, into a new constant {'constant60' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102BE6A: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102BE6D: Sets the value at offset 0 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102BE7C: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BE7F: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BE85: Loads the class pointer from local19 into a constant constant62 in register r8
+		0x7FF89102BE88: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BE8B: Loads string "" into register rdx as constant {'constant63' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF89102BE92: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant64
+		0x7FF89102BE99: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant65
+		0x7FF89102BEA0: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102BEA3: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 1
+		0x7FF89102BEA7: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x7FF89102BEAD: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 1, into a new constant {'constant67' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102BEB1: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102BEB4: Sets the value at offset 1 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102BEC3: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BEC6: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BECC: Loads the class pointer from local19 into a constant constant69 in register r8
+		0x7FF89102BECF: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BED2: Loads the string literal "device_id" as a constant "constant70" in rdx
+		0x7FF89102BED9: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant71
+		0x7FF89102BEE0: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant72
+		0x7FF89102BEE7: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102BEEA: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 2
+		0x7FF89102BEEE: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 2. Implicitly present in managed code, so ignored here.
+		0x7FF89102BEF4: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 2, into a new constant {'constant74' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102BEF8: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102BEFB: Sets the value at offset 2 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102BF0A: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BF0D: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BF13: Loads the class pointer from local19 into a constant constant76 in register r8
+		0x7FF89102BF16: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BF19: Loads the string literal "device_name" as a constant "constant77" in rdx
+		0x7FF89102BF20: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant78
+		0x7FF89102BF27: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant79
+		0x7FF89102BF2E: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102BF31: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 3
+		0x7FF89102BF35: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 3. Implicitly present in managed code, so ignored here.
+		0x7FF89102BF3B: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 3, into a new constant {'constant81' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102BF3F: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102BF42: Sets the value at offset 3 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102BF51: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BF54: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BF5A: Loads the class pointer from local19 into a constant constant83 in register r8
+		0x7FF89102BF5D: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BF60: Loads the string literal "graphics_device_name" as a constant "constant84" in rdx
+		0x7FF89102BF67: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant85
+		0x7FF89102BF6E: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant86
+		0x7FF89102BF75: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102BF78: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 4
+		0x7FF89102BF7C: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 4. Implicitly present in managed code, so ignored here.
+		0x7FF89102BF82: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 4, into a new constant {'constant88' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102BF86: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102BF89: Sets the value at offset 4 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102BF98: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BF9B: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BFA1: Loads the class pointer from local19 into a constant constant90 in register r8
+		0x7FF89102BFA4: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BFA7: Loads the string literal "ip_address" as a constant "constant91" in rdx
+		0x7FF89102BFAE: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant92
+		0x7FF89102BFB5: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant93
+		0x7FF89102BFBC: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102BFBF: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 5
+		0x7FF89102BFC3: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 5. Implicitly present in managed code, so ignored here.
+		0x7FF89102BFC9: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 5, into a new constant {'constant95' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102BFCD: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102BFD0: Sets the value at offset 5 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102BFDF: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102BFE2: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102BFE8: Loads the class pointer from local19 into a constant constant97 in register r8
+		0x7FF89102BFEB: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102BFEE: Loads the string literal "platform_os_version" as a constant "constant98" in rdx
+		0x7FF89102BFF5: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant99
+		0x7FF89102BFFC: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant100
+		0x7FF89102C003: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C006: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 6
+		0x7FF89102C00A: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 6. Implicitly present in managed code, so ignored here.
+		0x7FF89102C010: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 6, into a new constant {'constant102' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C014: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C017: Sets the value at offset 6 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C026: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C029: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C02F: Loads the class pointer from local19 into a constant constant104 in register r8
+		0x7FF89102C032: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C035: Loads the string literal "carrier" as a constant "constant105" in rdx
+		0x7FF89102C03C: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant106
+		0x7FF89102C043: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant107
+		0x7FF89102C04A: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C04D: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 7
+		0x7FF89102C051: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 7. Implicitly present in managed code, so ignored here.
+		0x7FF89102C057: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 7, into a new constant {'constant109' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C05B: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C05E: Sets the value at offset 7 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C06D: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C070: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C076: Loads the class pointer from local19 into a constant constant111 in register r8
+		0x7FF89102C079: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C07C: Loads the string literal "keychain" as a constant "constant112" in rdx
+		0x7FF89102C083: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant113
+		0x7FF89102C08A: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant114
+		0x7FF89102C091: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C094: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 8
+		0x7FF89102C098: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 8. Implicitly present in managed code, so ignored here.
+		0x7FF89102C09E: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 8, into a new constant {'constant116' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C0A2: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C0A5: Sets the value at offset 8 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C0B4: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C0B7: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C0BD: Loads the class pointer from local19 into a constant constant118 in register r8
+		0x7FF89102C0C0: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C0C3: Loads the string literal "locale" as a constant "constant119" in rdx
+		0x7FF89102C0CA: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant120
+		0x7FF89102C0D1: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant121
+		0x7FF89102C0D8: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C0DB: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 9
+		0x7FF89102C0DF: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 9. Implicitly present in managed code, so ignored here.
+		0x7FF89102C0E5: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 9, into a new constant {'constant123' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C0E9: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C0EC: Sets the value at offset 9 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C0FB: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C0FE: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C104: Loads the class pointer from local19 into a constant constant125 in register r8
+		0x7FF89102C107: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C10A: Loads the string literal "button_info" as a constant "constant126" in rdx
+		0x7FF89102C111: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant127
+		0x7FF89102C118: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant128
+		0x7FF89102C11F: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C122: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 10
+		0x7FF89102C126: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 10. Implicitly present in managed code, so ignored here.
+		0x7FF89102C12C: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 10, into a new constant {'constant130' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C130: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C133: Sets the value at offset 10 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C142: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C145: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C14B: Loads the class pointer from local19 into a constant constant132 in register r8
+		0x7FF89102C14E: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C151: Loads the string literal "dmm_viewer_id" as a constant "constant133" in rdx
+		0x7FF89102C158: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant134
+		0x7FF89102C15F: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant135
+		0x7FF89102C166: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C169: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 11
+		0x7FF89102C16D: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 11. Implicitly present in managed code, so ignored here.
+		0x7FF89102C173: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 11, into a new constant {'constant137' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C177: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C17A: Sets the value at offset 11 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C189: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C18C: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C192: Loads the class pointer from local19 into a constant constant139 in register r8
+		0x7FF89102C195: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C198: Loads the string literal "dmm_onetime_token" as a constant "constant140" in rdx
+		0x7FF89102C19F: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant141
+		0x7FF89102C1A6: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant142
+		0x7FF89102C1AD: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C1B0: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 12
+		0x7FF89102C1B4: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 12. Implicitly present in managed code, so ignored here.
+		0x7FF89102C1BA: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 12, into a new constant {'constant144' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C1C1: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C1C4: Sets the value at offset 12 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C1D3: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C1D6: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C1DC: Loads the class pointer from local19 into a constant constant146 in register r8
+		0x7FF89102C1DF: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C1E2: Loads the string literal "steam_id" as a constant "constant147" in rdx
+		0x7FF89102C1E9: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant148
+		0x7FF89102C1F0: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant149
+		0x7FF89102C1F7: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C1FA: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 13
+		0x7FF89102C1FE: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 13. Implicitly present in managed code, so ignored here.
+		0x7FF89102C200: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 13, into a new constant {'constant151' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C207: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C20A: Sets the value at offset 13 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C219: [!] Compares {'local19' (type System.Byte[][])} and 0
+		0x7FF89102C21C: Jumps to 0x7FF89102C26D (which throws a NRE) if local19 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF89102C21E: Loads the class pointer from local19 into a constant constant153 in register r8
+		0x7FF89102C221: Copies {'local19' (type System.Byte[][])} from rax into rcx
+		0x7FF89102C224: Loads the string literal "steam_session_ticket" as a constant "constant154" in rdx
+		0x7FF89102C22B: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 616) and stores in constant constant155
+		0x7FF89102C232: Loads the pointer to the implementation of virtual function System.Void System.Byte::System.IConvertible.ToDateTime() specific to System.Byte from the class pointer in r8, slot 19 (from memory offset 624) and stores in constant constant156
+		0x7FF89102C239: [!] Calls managed method System.Void System.Byte::System.IConvertible.ToDateTime() on instance {'local19' (type System.Byte[][])}
+
+		0x7FF89102C23C: [!] Compares {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} and 14
+		0x7FF89102C240: Jumps to 0x7FF89102C273 (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'local19' (type System.Byte[][])}} is less than or equal to 14. Implicitly present in managed code, so ignored here.
+		0x7FF89102C242: Reads the pointer to the value in the array {'local19' (type System.Byte[][])} at index 14, into a new constant {'constant158' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppArrayOffsetPointer`1[[Iced.Intel.Instruction, Iced, Version=1.11.1.0, Culture=neutral, PublicKeyToken=5baba79f4264913b]])} in rcx
+		0x7FF89102C249: Copies {'local19' (type System.Byte[][])} from rax into rdx
+		0x7FF89102C24C: Sets the value at offset 14 in array local19 to {'local19' (type System.Byte[][])}
+		0x7FF89102C254: Loads the pointer to the field like_count on {'this' (function parameter, type Gallop.JukeboxIndexResponse/CommonResponse)} into register rcx
+		0x7FF89102C258: Copies {'local19' (type System.Byte[][])} from rbx into rdx
+		0x7FF89102C25B: [!] Sets the field like_count (Type System.Int32) on local {'this' (function parameter, type Gallop.JukeboxIndexResponse/CommonResponse)} to the value stored in {'local19' (type System.Byte[][])}
+		0x7FF89102C25E: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register rbx as new constant constant160
+		0x7FF89102C26D: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.JukeboxIndexResponse/CommonResponse
+	System.Void .ctor()
+
+		base._SelectWithCharacterId()
+		  = new ()
+		System.Int32 1 = 1
+		System.Int32 2 = 2
+		System.Int32 3 = 3
+		System.Int32 4 = 4
+		System.Int32 5 = 5
+		System.Int32 6 = 6
+		System.Int32 7 = 7
+		System.Int32 8 = 8
+		System.Int32 9 = 9
+		System.Int32 10 = 10
+		System.Int32 11 = 11
+		System.Int32 12 = 12
+		System.Int32 13 = 13
+		System.Int32 14 = 14
+		System.Byte[][] local19 = new System.Byte[][15]
+
+		local19.System.IConvertible.ToDateTime()
+		local19[0] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[1] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[2] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[3] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[4] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[5] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[6] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[7] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[8] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[9] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[10] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[11] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[12] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[13] = local19
+
+		local19.System.IConvertible.ToDateTime()
+		local19[14] = local19
+		this.like_count = local19
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AllocateInstanceAction at (0x7FF89102BC9E) is corrupt (Local being returned, or type being allocated, couldn't be determined.) and cannot be created as IL.
+	IL_0000: ldarg.0
+	IL_0001: call System.Void Gallop.MasterCharacterSystemText::_SelectWithCharacterId()
+	IL_0006: ldc.i4.s 15
+	IL_0008: newarr System.Byte[]
+	IL_000d: stloc.0
+	IL_000e: ldloc.0
+	IL_000f: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0014: ldloc.0
+	IL_0015: ldc.i4.0
+	IL_0016: ldloc.0
+	IL_0017: stelem.any System.Byte
+	IL_001c: ldloc.0
+	IL_001d: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0022: ldloc.0
+	IL_0023: ldc.i4.1
+	IL_0024: ldloc.0
+	IL_0025: stelem.any System.Byte
+	IL_002a: ldloc.0
+	IL_002b: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0030: ldloc.0
+	IL_0031: ldc.i4.2
+	IL_0032: ldloc.0
+	IL_0033: stelem.any System.Byte
+	IL_0038: ldloc.0
+	IL_0039: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_003e: ldloc.0
+	IL_003f: ldc.i4.3
+	IL_0040: ldloc.0
+	IL_0041: stelem.any System.Byte
+	IL_0046: ldloc.0
+	IL_0047: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_004c: ldloc.0
+	IL_004d: ldc.i4.4
+	IL_004e: ldloc.0
+	IL_004f: stelem.any System.Byte
+	IL_0054: ldloc.0
+	IL_0055: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_005a: ldloc.0
+	IL_005b: ldc.i4.5
+	IL_005c: ldloc.0
+	IL_005d: stelem.any System.Byte
+	IL_0062: ldloc.0
+	IL_0063: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0068: ldloc.0
+	IL_0069: ldc.i4.6
+	IL_006a: ldloc.0
+	IL_006b: stelem.any System.Byte
+	IL_0070: ldloc.0
+	IL_0071: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0076: ldloc.0
+	IL_0077: ldc.i4.7
+	IL_0078: ldloc.0
+	IL_0079: stelem.any System.Byte
+	IL_007e: ldloc.0
+	IL_007f: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0084: ldloc.0
+	IL_0085: ldc.i4.8
+	IL_0086: ldloc.0
+	IL_0087: stelem.any System.Byte
+	IL_008c: ldloc.0
+	IL_008d: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_0092: ldloc.0
+	IL_0093: ldc.i4.s 9
+	IL_0095: ldloc.0
+	IL_0096: stelem.any System.Byte
+	IL_009b: ldloc.0
+	IL_009c: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_00a1: ldloc.0
+	IL_00a2: ldc.i4.s 10
+	IL_00a4: ldloc.0
+	IL_00a5: stelem.any System.Byte
+	IL_00aa: ldloc.0
+	IL_00ab: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_00b0: ldloc.0
+	IL_00b1: ldc.i4.s 11
+	IL_00b3: ldloc.0
+	IL_00b4: stelem.any System.Byte
+	IL_00b9: ldloc.0
+	IL_00ba: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_00bf: ldloc.0
+	IL_00c0: ldc.i4.s 12
+	IL_00c2: ldloc.0
+	IL_00c3: stelem.any System.Byte
+	IL_00c8: ldloc.0
+	IL_00c9: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_00ce: ldloc.0
+	IL_00cf: ldc.i4.s 13
+	IL_00d1: ldloc.0
+	IL_00d2: stelem.any System.Byte
+	IL_00d7: ldloc.0
+	IL_00d8: call System.Void System.Byte::System.IConvertible.ToDateTime()
+	IL_00dd: ldloc.0
+	IL_00de: ldc.i4.s 14
+	IL_00e0: ldloc.0
+	IL_00e1: stelem.any System.Byte
+	IL_00e6: ldarg.0
+	IL_00e7: ldloc.0
+	IL_00e8: stfld System.Int32 Gallop.JukeboxIndexResponse/CommonResponse::like_count
+	IL_00ed: newobj System.Void System.NullReferenceException::.ctor()
+	IL_00f2: throw
+	
+

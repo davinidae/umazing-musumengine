@@ -1,0 +1,2 @@
+Type: SingleModeTeamTeamRaceStartResponse_CommonResponseFormatter
+

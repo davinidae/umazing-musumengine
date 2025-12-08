@@ -1,0 +1,1523 @@
+Type: FriendUnFollowerResponseFormatter
+
+Method: System.Void Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::.ctor():	Method Body (x86 ASM):
+		0x7FF890EB61E0 mov [rsp+8],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 8 | None ||| N/A | N/A
+		0x7FF890EB61E5 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB61E6 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x7FF890EB61EA cmp byte ptr [7FF893FF3DE4h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611595236 | None ||| N/A | 0
+		0x7FF890EB61F1 mov rdi,rcx		; DEBUG: {Register}/RDI {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB61F4 jne short 00007FF890EB622Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB61F6 lea rcx,[7FF893C4C4A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607763104 | None ||| N/A | N/A
+		0x7FF890EB61FD call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6202 lea rcx,[7FF893CC4088h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608253576 | None ||| N/A | N/A
+		0x7FF890EB6209 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB620E lea rcx,[7FF893CD9578h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608340856 | None ||| N/A | N/A
+		0x7FF890EB6215 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB621A lea rcx,[7FF893CDA248h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608344136 | None ||| N/A | N/A
+		0x7FF890EB6221 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6226 mov byte ptr [7FF893FF3DE4h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611595236 | None ||| N/A | 1
+		0x7FF890EB622D xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB622F mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6232 call 00007FF88F295780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6237 mov rcx,[7FF893C4C4A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607763104 | None ||| N/A | N/A
+		0x7FF890EB623E call 00007FF88F1A63E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6243 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6245 mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6248 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB624B call 00007FF8903E9740h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6250 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6253 je near ptr 00007FF890EB6347h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6259 mov rdx,[7FF893CDA248h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608344136 | None ||| N/A | N/A
+		0x7FF890EB6260 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6263 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6266 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6269 call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB626E mov rdx,[7FF893CD9578h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608340856 | None ||| N/A | N/A
+		0x7FF890EB6275 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6278 mov rcx,rbx		; DEBUG: {Register}/RCX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB627B lea r8d,[r9+1]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 1 | None ||| N/A | N/A
+		0x7FF890EB627F call 00007FF8903E8F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6284 lea rcx,[rdi+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 16 | None ||| N/A | N/A
+		0x7FF890EB6288 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB628B mov [rcx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EB628E call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6293 mov rcx,[7FF893CC4088h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608253576 | None ||| N/A | N/A
+		0x7FF890EB629A mov edx,2		; DEBUG: {Register}/EDX {Immediate32}/None ||| None | 0 | None ||| N/A | 2
+		0x7FF890EB629F call 00007FF88F1A5420h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62A4 xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62A6 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62A9 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62AE test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62B1 je near ptr 00007FF890EB6347h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62B7 mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF890EB62BA mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62BD mov rdx,[7FF893CDA248h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608344136 | None ||| N/A | N/A
+		0x7FF890EB62C4 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF890EB62CB mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF890EB62D2 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62D5 test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62D8 je short 00007FF890EB6347h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62DA cmp dword ptr [rbx+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 0
+		0x7FF890EB62DE jbe short 00007FF890EB634Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62E0 lea rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x7FF890EB62E4 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62E7 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EB62EA call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62EF xor ecx,ecx		; DEBUG: {Register}/ECX {Register}/ECX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62F1 call 00007FF8904B81E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62F6 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB62F9 je short 00007FF890EB6347h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB62FB mov r8,[rax]		; DEBUG: {Register}/R8 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF890EB62FE mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6301 mov rdx,[7FF893CD9578h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608340856 | None ||| N/A | N/A
+		0x7FF890EB6308 mov r9,[r8+268h]		; DEBUG: {Register}/R9 {Memory}/None ||| R8 | 616 | None ||| N/A | N/A
+		0x7FF890EB630F mov r8,[r8+270h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 624 | None ||| N/A | N/A
+		0x7FF890EB6316 call r9		; DEBUG: {Register}/R9 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6319 cmp dword ptr [rbx+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RBX | 24 | None ||| N/A | 1
+		0x7FF890EB631D jbe short 00007FF890EB634Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB631F lea rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x7FF890EB6323 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6326 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EB6329 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB632E lea rcx,[rdi+18h]		; DEBUG: {Register}/RCX {Memory}/None ||| RDI | 24 | None ||| N/A | N/A
+		0x7FF890EB6332 mov rdx,rbx		; DEBUG: {Register}/RDX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6335 mov [rcx],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EB6338 mov rbx,[rsp+30h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EB633D add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x7FF890EB6341 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EB6342 jmp near ptr 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB6347 call 00007FF88F1A6440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EB634C int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::.ctor():
+		End of function at 0x7FF890EB634D
+		Absolute End is at 0x7FF890EB634D
+		Identified Jump Destination addresses:
+
+		0x7FF890EB61E5: Saves the content of rdi to the stack
+		0x7FF890EB61EA: Compares {Unknown Global at 0x7FF893FF3DE4, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x7FF890EB61F1: Copies {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} from rcx into rdi
+		0x7FF890EB61F4: Jumps to 0x7FF890EB622D if {Unknown Global at 0x7FF893FF3DE4, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x7FF890EB61F6: Loads string "ÑÇ" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EB6202: Loads the type definition for managed type System.Byte[][] as a constant "Byte[][]" in rcx
+		0x7FF890EB620E: Loads the string literal "data" as a constant "constant5" in rcx
+		0x7FF890EB621A: Loads the string literal "data_headers" as a constant "constant6" in rcx
+		0x7FF890EB622D: Clears register rdx, yielding zero-local {'local1' (type System.Int32)}
+		0x7FF890EB622F: Copies {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} from rdi into rcx
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter
+	System.Void .ctor()
+		ulong local1 = 0
+
+
+Generated IL:
+	
+
+Method: System.Int32 Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::Serialize():	Method Body (x86 ASM):
+		0x7FF890EBC110 push rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC112 push rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC113 push rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC114 push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC115 push r13		; DEBUG: {Register}/R13 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC117 push r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC119 sub rsp,0F8h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 248
+		0x7FF890EBC120 cmp byte ptr [7FF893FF3E04h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611595268 | None ||| N/A | 0
+		0x7FF890EBC127 mov rbp,r9		; DEBUG: {Register}/RBP {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC12A movsxd rbx,r8d		; DEBUG: {Register}/RBX {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC12D mov rsi,rdx		; DEBUG: {Register}/RSI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC130 mov r13,rcx		; DEBUG: {Register}/R13 {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC133 jne short 00007FF890EBC1B4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC135 lea rcx,[7FF893C15608h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607538184 | None ||| N/A | N/A
+		0x7FF890EBC13C call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC141 lea rcx,[7FF893C162D0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607541456 | None ||| N/A | N/A
+		0x7FF890EBC148 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC14D lea rcx,[7FF893C27910h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607612688 | None ||| N/A | N/A
+		0x7FF890EBC154 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC159 lea rcx,[7FF893C2C850h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC160 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC165 lea rcx,[7FF893C969A8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608067496 | None ||| N/A | N/A
+		0x7FF890EBC16C call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC171 lea rcx,[7FF893CA80E8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608138984 | None ||| N/A | N/A
+		0x7FF890EBC178 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC17D lea rcx,[7FF893C95D00h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608064256 | None ||| N/A | N/A
+		0x7FF890EBC184 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC189 lea rcx,[7FF893CAD2B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC190 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC195 lea rcx,[7FF893CCC5B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608287672 | None ||| N/A | N/A
+		0x7FF890EBC19C call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC1A1 lea rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC1A8 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC1AD mov byte ptr [7FF893FF3E04h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611595268 | None ||| N/A | 1
+		0x7FF890EBC1B4 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC1BB xor r14d,r14d		; DEBUG: {Register}/R14D {Register}/R14D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC1BE mov [rsp+140h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RSP | 320 | None ||| N/A | N/A
+		0x7FF890EBC1C6 cmp [rcx+0E0h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RCX | 224 | None ||| N/A | N/A
+		0x7FF890EBC1CD jne short 00007FF890EBC1D4h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC1CF call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC1D4 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC1D7 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC1D9 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC1DC call 00007FF8903D1050h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC1E1 mov rdi,[rsp+150h]		; DEBUG: {Register}/RDI {Memory}/None ||| RSP | 336 | None ||| N/A | N/A
+		0x7FF890EBC1E9 mov dword ptr [rdi],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RDI | 0 | None ||| N/A | 1
+		0x7FF890EBC1EF test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC1F1 jne near ptr 00007FF890EBCA9Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC1F7 mov [rsp+130h],r12		; DEBUG: {Memory}/None {Register}/R12 ||| RSP | 304 | None ||| N/A | N/A
+		0x7FF890EBC1FF mov [rsp+0F0h],r15		; DEBUG: {Memory}/None {Register}/R15 ||| RSP | 240 | None ||| N/A | N/A
+		0x7FF890EBC207 mov r12d,ebx		; DEBUG: {Register}/R12D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC20A mov r15d,r14d		; DEBUG: {Register}/R15D {Register}/R14D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC20D test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC210 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC216 cmp ebx,[rsi+18h]		; DEBUG: {Register}/EBX {Memory}/None ||| RSI | 24 | None ||| N/A | N/A
+		0x7FF890EBC219 jae near ptr 00007FF890EBCAAFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC21F cmp byte ptr [rbx+rsi+20h],90h		; DEBUG: {Memory}/None {Immediate8}/None ||| RBX | 32 | RSI ||| N/A | 144
+		0x7FF890EBC224 je short 00007FF890EBC24Eh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC226 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC22D cmp [rcx+0E0h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RCX | 224 | None ||| N/A | N/A
+		0x7FF890EBC234 jne short 00007FF890EBC23Bh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC236 call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC23B xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC23E mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC241 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC243 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC246 call 00007FF8903D2B80h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC24B mov r15d,eax		; DEBUG: {Register}/R15D {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC24E add ebx,[rdi]		; DEBUG: {Register}/EBX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x7FF890EBC250 mov [rsp+138h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RSP | 312 | None ||| N/A | N/A
+		0x7FF890EBC258 mov [rsp+48h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 72 | None ||| N/A | N/A
+		0x7FF890EBC25D mov [rsp+50h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 80 | None ||| N/A | N/A
+		0x7FF890EBC262 mov [rsp+58h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 88 | None ||| N/A | N/A
+		0x7FF890EBC267 mov [rsp+60h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 96 | None ||| N/A | N/A
+		0x7FF890EBC26C mov [rsp+40h],r14d		; DEBUG: {Memory}/None {Register}/R14D ||| RSP | 64 | None ||| N/A | N/A
+		0x7FF890EBC271 mov [rsp+68h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 104 | None ||| N/A | N/A
+		0x7FF890EBC276 mov [rsp+70h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 112 | None ||| N/A | N/A
+		0x7FF890EBC27B mov [rsp+78h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 120 | None ||| N/A | N/A
+		0x7FF890EBC280 mov [rsp+80h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 128 | None ||| N/A | N/A
+		0x7FF890EBC288 mov [rsp+88h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 136 | None ||| N/A | N/A
+		0x7FF890EBC290 mov [rsp+90h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 144 | None ||| N/A | N/A
+		0x7FF890EBC298 mov [rsp+98h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 152 | None ||| N/A | N/A
+		0x7FF890EBC2A0 mov [rsp+0A0h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 160 | None ||| N/A | N/A
+		0x7FF890EBC2A8 mov [rsp+0A8h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 168 | None ||| N/A | N/A
+		0x7FF890EBC2B0 mov [rsp+0B0h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 176 | None ||| N/A | N/A
+		0x7FF890EBC2B8 mov [rsp+0B8h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 184 | None ||| N/A | N/A
+		0x7FF890EBC2C0 mov [rsp+0C0h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 192 | None ||| N/A | N/A
+		0x7FF890EBC2C8 mov [rsp+0C8h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 200 | None ||| N/A | N/A
+		0x7FF890EBC2D0 test r15d,r15d		; DEBUG: {Register}/R15D {Register}/R15D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC2D3 jle near ptr 00007FF890EBC8CCh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC2D9 nop dword ptr [rax]		; DEBUG: {Memory}/None {Register}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF890EBC2E0 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC2E7 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC2EE jne short 00007FF890EBC2F5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC2F0 call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC2F5 mov r9,rdi		; DEBUG: {Register}/R9 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC2F8 mov qword ptr [rsp+20h],0		; DEBUG: {Memory}/None {Immediate32to64}/None ||| RSP | 32 | None ||| N/A | 0
+		0x7FF890EBC301 mov r8d,ebx		; DEBUG: {Register}/R8D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC304 lea rcx,[rsp+0E0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RSP | 224 | None ||| N/A | N/A
+		0x7FF890EBC30C mov rdx,rsi		; DEBUG: {Register}/RDX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC30F call 00007FF8903D49F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC314 mov rcx,[r13+10h]		; DEBUG: {Register}/RCX {Memory}/None ||| R13 | 16 | None ||| N/A | N/A
+		0x7FF890EBC318 add ebx,[rdi]		; DEBUG: {Register}/EBX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x7FF890EBC31A test rcx,rcx		; DEBUG: {Register}/RCX {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC31D je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC323 movups xmm0,[rax]		; DEBUG: {Register}/XMM0 {Memory}/None ||| RAX | 0 | None ||| N/A | N/A
+		0x7FF890EBC326 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC329 lea r8,[rsp+140h]		; DEBUG: {Register}/R8 {Memory}/None ||| RSP | 320 | None ||| N/A | N/A
+		0x7FF890EBC331 lea rdx,[rsp+0D0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RSP | 208 | None ||| N/A | N/A
+		0x7FF890EBC339 movaps [rsp+0D0h],xmm0		; DEBUG: {Memory}/None {Register}/XMM0 ||| RSP | 208 | None ||| N/A | N/A
+		0x7FF890EBC341 call 00007FF8903E95F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC346 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC34D test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC34F je near ptr 00007FF890EBC8A1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC355 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC35C jne short 00007FF890EBC363h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC35E call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC363 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC366 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC368 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC36B call 00007FF8903D1050h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC370 test al,al		; DEBUG: {Register}/AL {Register}/AL ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC372 jne near ptr 00007FF890EBCA92h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC378 movsxd rax,dword ptr [rsp+140h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 320 | None ||| N/A | N/A
+		0x7FF890EBC380 cmp eax,12h		; DEBUG: {Register}/EAX {Immediate8to32}/None ||| None | 0 | None ||| N/A | 18
+		0x7FF890EBC383 ja near ptr 00007FF890EBC89Ah		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC389 lea rdx,[7FF88EE90000h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705526251520 | None ||| N/A | N/A
+		0x7FF890EBC390 mov ecx,[rdx+rax*4+202CABCh]		; DEBUG: {Register}/ECX {Memory}/None ||| RDX | 33737404 | RAX ||| N/A | N/A
+		0x7FF890EBC397 add rcx,rdx		; DEBUG: {Register}/RCX {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC39A jmp rcx		; DEBUG: {Register}/RCX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC39C mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC3A3 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC3AA jne short 00007FF890EBC3B1h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC3AC call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC3B1 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3B4 mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3B7 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3B9 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3BC call 00007FF8903D2610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC3C1 mov [rsp+138h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 312 | None ||| N/A | N/A
+		0x7FF890EBC3C8 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC3CD mov rdx,[7FF893C162D0h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607541456 | None ||| N/A | N/A
+		0x7FF890EBC3D4 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3D7 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC3DC test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3DF je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC3E5 mov rdx,[7FF893C969A8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608067496 | None ||| N/A | N/A
+		0x7FF890EBC3EC mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC3F1 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC3F6 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC3F9 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC3FE mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC401 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC405 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC40A mov [rsp+48h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 72 | None ||| N/A | N/A
+		0x7FF890EBC40F jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC414 mov rdx,[7FF893C27910h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607612688 | None ||| N/A | N/A
+		0x7FF890EBC41B mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC41E call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC423 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC426 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC42C mov rdx,[7FF893CA80E8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608138984 | None ||| N/A | N/A
+		0x7FF890EBC433 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC438 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC43D mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC440 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC445 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC448 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC44C call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC451 mov [rsp+50h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 80 | None ||| N/A | N/A
+		0x7FF890EBC456 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC45B mov rdx,[7FF893C15608h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607538184 | None ||| N/A | N/A
+		0x7FF890EBC462 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC465 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC46A test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC46D je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC473 mov rdx,[7FF893C95D00h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608064256 | None ||| N/A | N/A
+		0x7FF890EBC47A mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC47F mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC484 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC487 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC48C mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC48F mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC493 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC498 mov [rsp+58h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 88 | None ||| N/A | N/A
+		0x7FF890EBC49D jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4A2 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC4A9 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC4B0 jne short 00007FF890EBC4B7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4B2 call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4B7 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4BA mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4BD mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4BF mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4C2 call 00007FF8903D2840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4C7 mov [rsp+60h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 96 | None ||| N/A | N/A
+		0x7FF890EBC4CC jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4D1 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC4D8 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC4DF jne short 00007FF890EBC4E6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4E1 call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4E6 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4E9 mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4EC mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4EE mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC4F1 call 00007FF8903D2610h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4F6 mov [rsp+40h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RSP | 64 | None ||| N/A | N/A
+		0x7FF890EBC4FA jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC4FF mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC506 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC509 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC50E test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC511 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC517 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC51E mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC523 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC528 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC52B mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC530 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC533 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC537 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC53C mov [rsp+68h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 104 | None ||| N/A | N/A
+		0x7FF890EBC541 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC546 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC54D mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC550 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC555 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC558 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC55E mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC565 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC56A mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC56F mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC572 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC577 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC57A mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC57E call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC583 mov [rsp+70h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 112 | None ||| N/A | N/A
+		0x7FF890EBC588 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC58D mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC594 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC597 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC59C test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC59F je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC5A5 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC5AC mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC5B1 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC5B6 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC5B9 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC5BE mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC5C1 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC5C5 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC5CA mov [rsp+78h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 120 | None ||| N/A | N/A
+		0x7FF890EBC5CF jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC5D4 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC5DB mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC5DE call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC5E3 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC5E6 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC5EC mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC5F3 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC5F8 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC5FD mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC600 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC605 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC608 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC60C call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC611 mov [rsp+80h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 128 | None ||| N/A | N/A
+		0x7FF890EBC619 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC61E mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC625 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC628 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC62D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC630 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC636 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC63D mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC642 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC647 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC64A mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC64F mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC652 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC656 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC65B mov [rsp+88h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 136 | None ||| N/A | N/A
+		0x7FF890EBC663 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC668 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC66F mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC672 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC677 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC67A je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC680 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC687 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC68C mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC691 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC694 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC699 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC69C mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC6A0 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6A5 mov [rsp+90h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 144 | None ||| N/A | N/A
+		0x7FF890EBC6AD jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6B2 mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC6B9 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC6C0 jne short 00007FF890EBC6C7h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6C2 call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6C7 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC6CA mov r8,rdi		; DEBUG: {Register}/R8 {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC6CD mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC6CF mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC6D2 call 00007FF8903D2840h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6D7 mov [rsp+98h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 152 | None ||| N/A | N/A
+		0x7FF890EBC6DF jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6E4 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC6EB mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC6EE call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6F3 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC6F6 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC6FC mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC703 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC708 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC70D mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC710 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC715 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC718 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC71C call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC721 mov [rsp+0A0h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 160 | None ||| N/A | N/A
+		0x7FF890EBC729 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC72E mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC735 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC738 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC73D test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC740 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC746 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC74D mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC752 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC757 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC75A mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC75F mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC762 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC766 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC76B mov [rsp+0A8h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 168 | None ||| N/A | N/A
+		0x7FF890EBC773 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC778 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC77F mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC782 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC787 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC78A je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC790 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC797 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC79C mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC7A1 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC7A4 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC7A9 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC7AC mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC7B0 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC7B5 mov [rsp+0B0h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 176 | None ||| N/A | N/A
+		0x7FF890EBC7BD jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC7C2 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC7C9 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC7CC call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC7D1 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC7D4 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC7DA mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC7E1 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC7E6 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC7EB mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC7EE mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC7F3 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC7F6 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC7FA call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC7FF mov [rsp+0B8h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 184 | None ||| N/A | N/A
+		0x7FF890EBC807 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC80C mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC813 mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC816 call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC81B test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC81E je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC824 mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC82B mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC830 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC835 mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC838 mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC83D mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC840 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC844 call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC849 mov [rsp+0C0h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 192 | None ||| N/A | N/A
+		0x7FF890EBC851 jmp short 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC853 mov rdx,[7FF893C2C850h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705607632976 | None ||| N/A | N/A
+		0x7FF890EBC85A mov rcx,rbp		; DEBUG: {Register}/RCX {Register}/RBP ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC85D call 00007FF88F5FF210h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC862 test rax,rax		; DEBUG: {Register}/RAX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC865 je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC86B mov rdx,[7FF893CAD2B8h]		; DEBUG: {Register}/RDX {Memory}/None ||| RIP | 140705608159928 | None ||| N/A | N/A
+		0x7FF890EBC872 mov ecx,1		; DEBUG: {Register}/ECX {Immediate32}/None ||| None | 0 | None ||| N/A | 1
+		0x7FF890EBC877 mov [rsp+30h],rdi		; DEBUG: {Memory}/None {Register}/RDI ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EBC87C mov r9,rsi		; DEBUG: {Register}/R9 {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC87F mov [rsp+28h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 40 | None ||| N/A | N/A
+		0x7FF890EBC884 mov r8,rax		; DEBUG: {Register}/R8 {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC887 mov [rsp+20h],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EBC88B call 00007FF88EEDBDD0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC890 mov [rsp+0C8h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 200 | None ||| N/A | N/A
+		0x7FF890EBC898 jmp short 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC89A mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EBC8A1 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EBC8A8 jne short 00007FF890EBC8AFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8AA call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8AF xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8B2 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8B4 mov rcx,rsi		; DEBUG: {Register}/RCX {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8B7 call 00007FF8903D3EA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8BC mov [rdi],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RDI | 0 | None ||| N/A | N/A
+		0x7FF890EBC8BE add ebx,[rdi]		; DEBUG: {Register}/EBX {Memory}/None ||| RDI | 0 | None ||| N/A | N/A
+		0x7FF890EBC8C0 inc r14d		; DEBUG: {Register}/R14D {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8C3 cmp r14d,r15d		; DEBUG: {Register}/R14D {Register}/R15D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8C6 jl near ptr 00007FF890EBC2E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8CC sub ebx,r12d		; DEBUG: {Register}/EBX {Register}/R12D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8CF mov [rdi],ebx		; DEBUG: {Memory}/None {Register}/EBX ||| RDI | 0 | None ||| N/A | N/A
+		0x7FF890EBC8D1 mov rcx,[7FF893CCC5B8h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705608287672 | None ||| N/A | N/A
+		0x7FF890EBC8D8 call 00007FF88F1A63E0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8DD xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8DF mov rcx,rax		; DEBUG: {Register}/RCX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8E2 mov rbx,rax		; DEBUG: {Register}/RBX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8E5 call 00007FF890DECBB0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8EA test rbx,rbx		; DEBUG: {Register}/RBX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC8ED je near ptr 00007FF890EBCAB5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC8F3 mov eax,[rsp+138h]		; DEBUG: {Register}/EAX {Memory}/None ||| RSP | 312 | None ||| N/A | N/A
+		0x7FF890EBC8FA lea rcx,[rbx+90h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 144 | None ||| N/A | N/A
+		0x7FF890EBC901 mov [rbx+88h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 136 | None ||| N/A | N/A
+		0x7FF890EBC907 mov rax,[rsp+48h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x7FF890EBC90C mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC90F mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC912 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC917 mov rax,[rsp+50h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 80 | None ||| N/A | N/A
+		0x7FF890EBC91C lea rcx,[rbx+98h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 152 | None ||| N/A | N/A
+		0x7FF890EBC923 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC926 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC929 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC92E mov rax,[rsp+58h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 88 | None ||| N/A | N/A
+		0x7FF890EBC933 lea rcx,[rbx+0A0h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 160 | None ||| N/A | N/A
+		0x7FF890EBC93A mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC93D mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC940 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC945 mov rax,[rsp+60h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 96 | None ||| N/A | N/A
+		0x7FF890EBC94A lea rcx,[rbx+20h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 32 | None ||| N/A | N/A
+		0x7FF890EBC94E mov [rbx+10h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 16 | None ||| N/A | N/A
+		0x7FF890EBC952 mov eax,[rsp+40h]		; DEBUG: {Register}/EAX {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x7FF890EBC956 mov [rbx+18h],eax		; DEBUG: {Memory}/None {Register}/EAX ||| RBX | 24 | None ||| N/A | N/A
+		0x7FF890EBC959 mov rax,[rsp+68h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 104 | None ||| N/A | N/A
+		0x7FF890EBC95E mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC961 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC964 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC969 mov rax,[rsp+70h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 112 | None ||| N/A | N/A
+		0x7FF890EBC96E lea rcx,[rbx+28h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 40 | None ||| N/A | N/A
+		0x7FF890EBC972 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC975 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC978 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC97D mov rax,[rsp+78h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 120 | None ||| N/A | N/A
+		0x7FF890EBC982 lea rcx,[rbx+30h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 48 | None ||| N/A | N/A
+		0x7FF890EBC986 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC989 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC98C call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC991 mov rax,[rsp+80h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 128 | None ||| N/A | N/A
+		0x7FF890EBC999 lea rcx,[rbx+38h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 56 | None ||| N/A | N/A
+		0x7FF890EBC99D mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC9A0 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC9A3 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC9A8 mov rax,[rsp+88h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 136 | None ||| N/A | N/A
+		0x7FF890EBC9B0 lea rcx,[rbx+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 64 | None ||| N/A | N/A
+		0x7FF890EBC9B4 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC9B7 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC9BA call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC9BF mov rax,[rsp+90h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 144 | None ||| N/A | N/A
+		0x7FF890EBC9C7 lea rcx,[rbx+48h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 72 | None ||| N/A | N/A
+		0x7FF890EBC9CB mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC9CE mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC9D1 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC9D6 mov rax,[rsp+98h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 152 | None ||| N/A | N/A
+		0x7FF890EBC9DE lea rcx,[rbx+58h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 88 | None ||| N/A | N/A
+		0x7FF890EBC9E2 mov [rbx+50h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RBX | 80 | None ||| N/A | N/A
+		0x7FF890EBC9E6 mov rax,[rsp+0A0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 160 | None ||| N/A | N/A
+		0x7FF890EBC9EE mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBC9F1 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBC9F4 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBC9F9 mov rax,[rsp+0A8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 168 | None ||| N/A | N/A
+		0x7FF890EBCA01 lea rcx,[rbx+60h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 96 | None ||| N/A | N/A
+		0x7FF890EBCA05 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA08 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBCA0B call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCA10 mov rax,[rsp+0B0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 176 | None ||| N/A | N/A
+		0x7FF890EBCA18 lea rcx,[rbx+68h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 104 | None ||| N/A | N/A
+		0x7FF890EBCA1C mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA1F mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBCA22 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCA27 mov rax,[rsp+0B8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 184 | None ||| N/A | N/A
+		0x7FF890EBCA2F lea rcx,[rbx+70h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 112 | None ||| N/A | N/A
+		0x7FF890EBCA33 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA36 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBCA39 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCA3E mov rax,[rsp+0C0h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 192 | None ||| N/A | N/A
+		0x7FF890EBCA46 lea rcx,[rbx+78h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 120 | None ||| N/A | N/A
+		0x7FF890EBCA4A mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA4D mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBCA50 call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCA55 mov rax,[rsp+0C8h]		; DEBUG: {Register}/RAX {Memory}/None ||| RSP | 200 | None ||| N/A | N/A
+		0x7FF890EBCA5D lea rcx,[rbx+80h]		; DEBUG: {Register}/RCX {Memory}/None ||| RBX | 128 | None ||| N/A | N/A
+		0x7FF890EBCA64 mov [rcx],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RCX | 0 | None ||| N/A | N/A
+		0x7FF890EBCA67 mov rdx,rax		; DEBUG: {Register}/RDX {Register}/RAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA6A call 00007FF88F1A5390h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCA6F mov r12,[rsp+130h]		; DEBUG: {Register}/R12 {Memory}/None ||| RSP | 304 | None ||| N/A | N/A
+		0x7FF890EBCA77 mov rax,rbx		; DEBUG: {Register}/RAX {Register}/RBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA7A mov r15,[rsp+0F0h]		; DEBUG: {Register}/R15 {Memory}/None ||| RSP | 240 | None ||| N/A | N/A
+		0x7FF890EBCA82 add rsp,0F8h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 248
+		0x7FF890EBCA89 pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA8B pop r13		; DEBUG: {Register}/R13 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA8D pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA8E pop rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA8F pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA90 pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA91 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA92 mov dword ptr [rdi],1		; DEBUG: {Memory}/None {Immediate32}/None ||| RDI | 0 | None ||| N/A | 1
+		0x7FF890EBCA98 jmp near ptr 00007FF890EBC8BEh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCA9D xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCA9F add rsp,0F8h		; DEBUG: {Register}/RSP {Immediate32to64}/None ||| None | 0 | None ||| N/A | 248
+		0x7FF890EBCAA6 pop r14		; DEBUG: {Register}/R14 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAA8 pop r13		; DEBUG: {Register}/R13 {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAAA pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAAB pop rsi		; DEBUG: {Register}/RSI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAAC pop rbp		; DEBUG: {Register}/RBP {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAAD pop rbx		; DEBUG: {Register}/RBX {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAAE ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EBCAAF call 00007FF88F1A6430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EBCAB4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Int32 Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::Serialize():
+		End of function at 0x7FF890EBCAB5
+		Absolute End is at 0x7FF890EBCAB5
+		Identified Jump Destination addresses:
+			0x7FF890EBC8BE
+		0x7FF890EBC110: Saves the content of rbx to the stack
+		0x7FF890EBC112: Saves the content of rbp to the stack
+		0x7FF890EBC113: Saves the content of rsi to the stack
+		0x7FF890EBC114: Saves the content of rdi to the stack
+		0x7FF890EBC115: Saves the content of r13 to the stack
+		0x7FF890EBC117: Saves the content of r14 to the stack
+		0x7FF890EBC120: Compares {Unknown Global at 0x7FF893FF3E04, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x7FF890EBC12D: Copies {'il2cppMethodInfo' (type )} from rdx into rsi
+		0x7FF890EBC130: Copies {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} from rcx into r13
+		0x7FF890EBC133: Jumps to 0x7FF890EBC1B4 if {Unknown Global at 0x7FF893FF3E04, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x7FF890EBC135: Loads string "-?À" into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC141: Loads string "??À" into register rcx as constant {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC14D: Loads string "Ç@À" into register rcx as constant {'constant5' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC159: Loads string "7AÀ" into register rcx as constant {'constant6' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC165: Loads string "µl " into register rcx as constant {'constant7' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC171: Loads string "û_" into register rcx as constant {'constant8' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC17D: Loads string "C\" into register rcx as constant {'constant9' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC189: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rcx as a constant constant10
+		0x7FF890EBC195: Loads string "=" " into register rcx as constant {'constant11' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC1A1: Loads string "O1 " into register rcx as constant {'constant12' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC1B4: Loads string "O1 " into register rcx as constant {'constant13' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC1BB: Clears register r14, yielding zero-local {'local1' (type System.Int32)}
+		0x7FF890EBC1BE: Moves local1 (type System.Int32) from register r14 to the stack at offset 320 (0x140)
+		0x7FF890EBC1C6: Compares "{il2cpp field on {'constant13' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and {'local1' (type System.Int32)}
+		0x7FF890EBC1CD: Jumps to 0x7FF890EBC1D4 if "{il2cpp field on {'constant13' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != {'local1' (type System.Int32)}
+
+		0x7FF890EBC1CF: Calls the il2cpp cctor for the type 
+		0x7FF890EBC1D9: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC1DC: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x7FF890EBC1E1: Reads unknown value in stack, offset 336 (0x150) and stores the pointer in register rdi as new constant constant15
+		0x7FF890EBC1EF: [!] Compares {'local3' (type System.NullReferenceException)} and 0
+		0x7FF890EBC1F1: Jumps to 0x7FF890EBCA9D (which is an if statement's body) if {'local3' (type System.NullReferenceException)} != 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x7FF890EBC20A: Copies {'local1' (type System.Int32)} from r14 into r15
+		0x7FF890EBC20D: [!] Compares {'il2cppMethodInfo' (type )} and 0
+		0x7FF890EBC210: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if il2cppMethodInfo equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC216: [!] Compares  and {Property System.Int32 System.Array::Length() on {'il2cppMethodInfo' (type )}}
+		0x7FF890EBC219: Jumps to 0x7FF890EBCAAF (which throws a NRE) if  is greater than or equal to {Property System.Int32 System.Array::Length() on {'il2cppMethodInfo' (type )}}. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC21F: [!] Compares  and 144
+		0x7FF890EBC224: Jumps to 0x7FF890EBC24E (which is an if statement's body) if  equals 144 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x7FF890EBC226: Loads string "O1 " into register rcx as constant {'constant19' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC22D: Compares "{il2cpp field on {'constant19' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and {'local1' (type System.Int32)}
+		0x7FF890EBC234: Jumps to 0x7FF890EBC23B if "{il2cpp field on {'constant19' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != {'local1' (type System.Int32)}
+
+		0x7FF890EBC236: Calls the il2cpp cctor for the type 
+		0x7FF890EBC23E: Copies {'constant15' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into r8
+		0x7FF890EBC243: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC24B: Copies {'local3' (type System.NullReferenceException)} from rax into r15
+		0x7FF890EBC250: Moves local1 (type System.Int32) from register r14 to the stack at offset 312 (0x138)
+		0x7FF890EBC258: Moves local1 (type System.Int32) from register r14 to the stack at offset 72 (0x48)
+		0x7FF890EBC25D: Moves local1 (type System.Int32) from register r14 to the stack at offset 80 (0x50)
+		0x7FF890EBC262: Moves local1 (type System.Int32) from register r14 to the stack at offset 88 (0x58)
+		0x7FF890EBC267: Moves local1 (type System.Int32) from register r14 to the stack at offset 96 (0x60)
+		0x7FF890EBC26C: Moves local1 (type System.Int32) from register r14 to the stack at offset 64 (0x40)
+		0x7FF890EBC271: Moves local1 (type System.Int32) from register r14 to the stack at offset 104 (0x68)
+		0x7FF890EBC276: Moves local1 (type System.Int32) from register r14 to the stack at offset 112 (0x70)
+		0x7FF890EBC27B: Moves local1 (type System.Int32) from register r14 to the stack at offset 120 (0x78)
+		0x7FF890EBC280: Moves local1 (type System.Int32) from register r14 to the stack at offset 128 (0x80)
+		0x7FF890EBC288: Moves local1 (type System.Int32) from register r14 to the stack at offset 136 (0x88)
+		0x7FF890EBC290: Moves local1 (type System.Int32) from register r14 to the stack at offset 144 (0x90)
+		0x7FF890EBC298: Moves local1 (type System.Int32) from register r14 to the stack at offset 152 (0x98)
+		0x7FF890EBC2A0: Moves local1 (type System.Int32) from register r14 to the stack at offset 160 (0xA0)
+		0x7FF890EBC2A8: Moves local1 (type System.Int32) from register r14 to the stack at offset 168 (0xA8)
+		0x7FF890EBC2B0: Moves local1 (type System.Int32) from register r14 to the stack at offset 176 (0xB0)
+		0x7FF890EBC2B8: Moves local1 (type System.Int32) from register r14 to the stack at offset 184 (0xB8)
+		0x7FF890EBC2C0: Moves local1 (type System.Int32) from register r14 to the stack at offset 192 (0xC0)
+		0x7FF890EBC2C8: Moves local1 (type System.Int32) from register r14 to the stack at offset 200 (0xC8)
+		0x7FF890EBC2D0: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC2D3: Jumps to 0x7FF890EBC8CC if {'local1' (type System.Int32)} is less than or equal to 0 ;  - This is probably a goto, jumping to 0x7FF890EBC8CC which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC2E0: Loads string "O1 " into register rcx as constant {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC2E7: Compares "{il2cpp field on {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC2EE: Jumps to 0x7FF890EBC2F5 if "{il2cpp field on {'constant22' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC2F5 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC2F0: Calls the il2cpp cctor for the type 
+		0x7FF890EBC2F5: Copies {'constant15' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into r9
+		0x7FF890EBC2F8: Moves 0 (immediate ulong value) to the stack at offset 32 as a new local local5
+		0x7FF890EBC304: Loads a pointer to stack offset 0xE0 into register rcx as new constant constant25
+		0x7FF890EBC30C: Copies {'il2cppMethodInfo' (type )} from rsi into rdx
+		0x7FF890EBC314: [!] Reads field  from {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} and stores in a new local 
+
+		0x7FF890EBC31A: [!] Compares {'constant25' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} and 0
+		0x7FF890EBC31D: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if constant25 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC323: Loads the class pointer from local3 into a constant constant27 in register xmm0
+		0x7FF890EBC329: Loads a pointer to stack offset 0x140 into register r8 as new constant constant28
+		0x7FF890EBC331: Loads a pointer to stack offset 0xD0 into register rdx as new constant constant29
+		0x7FF890EBC339: Moves constant27 (type Cpp2IL.Core.Analysis.Il2CppClassIdentifier) from register xmm0 to the stack at offset 208 (0xD0) as a new local local7
+		0x7FF890EBC346: Loads string "O1 " into register rcx as constant {'constant30' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC34D: [!] Compares {'local3' (type System.NullReferenceException)} and 0
+		0x7FF890EBC34F: Jumps to 0x7FF890EBC8A1 if local3 equals 0 ;  - This is probably a goto, jumping to 0x7FF890EBC8A1 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC355: Compares "{il2cpp field on {'constant30' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC35C: Jumps to 0x7FF890EBC363 if "{il2cpp field on {'constant30' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC363 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC35E: Calls the il2cpp cctor for the type 
+		0x7FF890EBC368: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC36B: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+		0x7FF890EBC370: [!] Compares {'local9' (type System.NullReferenceException)} and 0
+		0x7FF890EBC372: Jumps to 0x7FF890EBCA92 if {'local9' (type System.NullReferenceException)} != 0 ;  - This is probably a goto, jumping to 0x7FF890EBCA92 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC378: Reads local {'local1' (type System.Int32)} from stack offset 320 (0x140) into register rax
+		0x7FF890EBC380: [!] Compares {'local1' (type System.Int32)} and 18
+		0x7FF890EBC383: Jumps to 0x7FF890EBC89A if {'local1' (type System.Int32)} is greater than 18 ;  - This is probably a goto, jumping to 0x7FF890EBC89A which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC389: Loads string "MZ" into register rdx as constant {'constant36' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC397: [!] Adds {'il2cppMethodInfo' (type )} and {'constant36' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)} and stores the result in {'il2cppMethodInfo' (type )}
+		0x7FF890EBC39C: Loads string "O1 " into register rcx as constant {'constant37' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC3A3: Compares "{il2cpp field on {'constant37' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC3AA: Jumps to 0x7FF890EBC3B1 if "{il2cpp field on {'constant37' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC3B1 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC3AC: Calls the il2cpp cctor for the type 
+		0x7FF890EBC3B4: Copies {'constant15' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into r8
+		0x7FF890EBC3B9: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC3C1: Moves local1 (type System.Int32) from register rax to the stack at offset 312 (0x138)
+		0x7FF890EBC3C8: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC3CD: Loads string "??À" into register rdx as constant {'constant40' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC3D7: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC3DC: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC3DF: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC3E5: Loads string "µl " into register rdx as constant {'constant42' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC3EC: [!] Writes the constant 0x1 into operand {'local11' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC3F1: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local12
+		0x7FF890EBC3F6: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC3FE: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC40A: Moves local1 (type System.Int32) from register rax to the stack at offset 72 (0x48)
+		0x7FF890EBC40F: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC414: Loads string "Ç@À" into register rdx as constant {'constant43' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC41E: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC423: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC426: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC42C: Loads string "û_" into register rdx as constant {'constant45' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC433: [!] Writes the constant 0x1 into operand {'local13' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC438: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local14
+		0x7FF890EBC43D: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC445: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC451: Moves local1 (type System.Int32) from register rax to the stack at offset 80 (0x50)
+		0x7FF890EBC456: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC45B: Loads string "-?À" into register rdx as constant {'constant46' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC465: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC46A: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC46D: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC473: Loads string "C\" into register rdx as constant {'constant48' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC47F: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local16
+		0x7FF890EBC484: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC48C: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC498: Moves local1 (type System.Int32) from register rax to the stack at offset 88 (0x58)
+		0x7FF890EBC49D: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC4A2: Loads string "O1 " into register rcx as constant {'constant49' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC4A9: Compares "{il2cpp field on {'constant49' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC4B0: Jumps to 0x7FF890EBC4B7 if "{il2cpp field on {'constant49' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC4B7 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC4B2: Calls the il2cpp cctor for the type 
+		0x7FF890EBC4BA: Copies {'constant15' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into r8
+		0x7FF890EBC4BF: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC4C7: Moves local1 (type System.Int32) from register rax to the stack at offset 96 (0x60)
+		0x7FF890EBC4CC: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC4D1: Loads string "O1 " into register rcx as constant {'constant52' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC4D8: Compares "{il2cpp field on {'constant52' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC4DF: Jumps to 0x7FF890EBC4E6 if "{il2cpp field on {'constant52' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC4E6 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC4E1: Calls the il2cpp cctor for the type 
+		0x7FF890EBC4E9: Copies {'constant15' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into r8
+		0x7FF890EBC4EE: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC4F6: Moves local1 (type System.Int32) from register rax to the stack at offset 64 (0x40)
+		0x7FF890EBC4FA: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC4FF: Loads string "7AÀ" into register rdx as constant {'constant55' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC509: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC50E: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC511: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC517: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant57
+		0x7FF890EBC51E: [!] Writes the constant 0x1 into operand {'local19' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC523: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local20
+		0x7FF890EBC528: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC530: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC53C: Moves local1 (type System.Int32) from register rax to the stack at offset 104 (0x68)
+		0x7FF890EBC541: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC546: Loads string "7AÀ" into register rdx as constant {'constant58' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC550: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC555: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC558: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC55E: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant60
+		0x7FF890EBC565: [!] Writes the constant 0x1 into operand {'local21' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC56A: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local22
+		0x7FF890EBC56F: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC577: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC583: Moves local1 (type System.Int32) from register rax to the stack at offset 112 (0x70)
+		0x7FF890EBC588: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC58D: Loads string "7AÀ" into register rdx as constant {'constant61' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC597: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC59C: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC59F: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC5A5: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant63
+		0x7FF890EBC5AC: [!] Writes the constant 0x1 into operand {'local23' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC5B1: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local24
+		0x7FF890EBC5B6: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC5BE: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC5CA: Moves local1 (type System.Int32) from register rax to the stack at offset 120 (0x78)
+		0x7FF890EBC5CF: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC5D4: Loads string "7AÀ" into register rdx as constant {'constant64' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC5DE: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC5E3: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC5E6: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC5EC: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant66
+		0x7FF890EBC5F3: [!] Writes the constant 0x1 into operand {'local25' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC5F8: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local26
+		0x7FF890EBC5FD: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC605: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC611: Moves local1 (type System.Int32) from register rax to the stack at offset 128 (0x80)
+		0x7FF890EBC619: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC61E: Loads string "7AÀ" into register rdx as constant {'constant67' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC628: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC62D: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC630: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC636: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant69
+		0x7FF890EBC63D: [!] Writes the constant 0x1 into operand {'local27' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC642: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local28
+		0x7FF890EBC647: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC64F: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC65B: Moves local1 (type System.Int32) from register rax to the stack at offset 136 (0x88)
+		0x7FF890EBC663: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC668: Loads string "7AÀ" into register rdx as constant {'constant70' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC672: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC677: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC67A: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC680: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant72
+		0x7FF890EBC68C: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local30
+		0x7FF890EBC691: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC699: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC6A5: Moves local1 (type System.Int32) from register rax to the stack at offset 144 (0x90)
+		0x7FF890EBC6AD: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC6B2: Loads string "O1 " into register rcx as constant {'constant73' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC6B9: Compares "{il2cpp field on {'constant73' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC6C0: Jumps to 0x7FF890EBC6C7 if "{il2cpp field on {'constant73' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC6C7 which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC6C2: Calls the il2cpp cctor for the type 
+		0x7FF890EBC6CA: Copies {'constant15' (constant value of type Cpp2IL.Core.Analysis.ResultModels.StackPointer)} from rdi into r8
+		0x7FF890EBC6CF: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+		0x7FF890EBC6D7: Moves local1 (type System.Int32) from register rax to the stack at offset 152 (0x98)
+		0x7FF890EBC6DF: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC6E4: Loads string "7AÀ" into register rdx as constant {'constant76' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC6EE: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC6F3: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC6F6: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC6FC: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant78
+		0x7FF890EBC703: [!] Writes the constant 0x1 into operand {'local32' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC708: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local33
+		0x7FF890EBC70D: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC715: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC721: Moves local1 (type System.Int32) from register rax to the stack at offset 160 (0xA0)
+		0x7FF890EBC729: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC72E: Loads string "7AÀ" into register rdx as constant {'constant79' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC738: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC73D: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC740: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC746: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant81
+		0x7FF890EBC74D: [!] Writes the constant 0x1 into operand {'local34' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC752: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local35
+		0x7FF890EBC757: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC75F: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC76B: Moves local1 (type System.Int32) from register rax to the stack at offset 168 (0xA8)
+		0x7FF890EBC773: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC778: Loads string "7AÀ" into register rdx as constant {'constant82' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC782: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC787: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC78A: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC790: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant84
+		0x7FF890EBC797: [!] Writes the constant 0x1 into operand {'local36' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC79C: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local37
+		0x7FF890EBC7A1: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC7A9: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC7B5: Moves local1 (type System.Int32) from register rax to the stack at offset 176 (0xB0)
+		0x7FF890EBC7BD: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC7C2: Loads string "7AÀ" into register rdx as constant {'constant85' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC7CC: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC7D1: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC7D4: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC7DA: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant87
+		0x7FF890EBC7E1: [!] Writes the constant 0x1 into operand {'local38' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC7E6: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local39
+		0x7FF890EBC7EB: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC7F3: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC7FF: Moves local1 (type System.Int32) from register rax to the stack at offset 184 (0xB8)
+		0x7FF890EBC807: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC80C: Loads string "7AÀ" into register rdx as constant {'constant88' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC816: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC81B: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC81E: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC824: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant90
+		0x7FF890EBC82B: [!] Writes the constant 0x1 into operand {'local40' (type System.UInt32)} (type UInt64) in register rcx
+		0x7FF890EBC830: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local41
+		0x7FF890EBC835: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC83D: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC849: Moves local1 (type System.Int32) from register rax to the stack at offset 192 (0xC0)
+		0x7FF890EBC851: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC853: Loads string "7AÀ" into register rdx as constant {'constant91' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC85D: [!] Calls static managed method System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+
+		0x7FF890EBC862: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC865: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC86B: Reads {Unknown Global at 0x7FF893CAD2B8, first ten bytes are [189 99 0 32 0 0 0 0 125 27], or as chars "½c      }"} into register rdx as a constant constant93
+		0x7FF890EBC877: Moves constant15 (type Cpp2IL.Core.Analysis.ResultModels.StackPointer) from register rdi to the stack at offset 48 (0x30) as a new local local43
+		0x7FF890EBC87C: Copies {'il2cppMethodInfo' (type )} from rsi into r9
+		0x7FF890EBC884: Copies {'local1' (type System.Int32)} from rax into r8
+		0x7FF890EBC890: Moves local1 (type System.Int32) from register rax to the stack at offset 200 (0xC8)
+		0x7FF890EBC898: Jumps to 0x7FF890EBC8BE (which is an function-local jump destination)
+
+		0x7FF890EBC89A: Loads string "O1 " into register rcx as constant {'constant94' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC8A1: Compares "{il2cpp field on {'constant94' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EBC8A8: Jumps to 0x7FF890EBC8AF if "{il2cpp field on {'constant94' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EBC8AF which is after end of current block @ 0x7FF890EBC24E (started at 0x7FF890EBC226)
+
+		0x7FF890EBC8AA: Calls the il2cpp cctor for the type 
+		0x7FF890EBC8B4: Copies {'il2cppMethodInfo' (type )} from rsi into rcx
+
+		Jump Destination (0x7FF890EBC8BE):
+		0x7FF890EBC8C0: [!] Adds 1 to the value {'local1' (type System.Int32)}, stored in r14
+		0x7FF890EBC8C3: [!] Compares {'local1' (type System.Int32)} against itself
+		0x7FF890EBC8CC: [!] Subtracts  from  and stores the result in 
+		0x7FF890EBC8D1: Loads string "=" " into register rcx as constant {'constant97' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EBC8D8: [!] Allocates an instance of type  and stores it as  in rax.
+
+		0x7FF890EBC8DF: Copies {'local1' (type System.Int32)} from rax into rcx
+		0x7FF890EBC8E2: Copies {'local1' (type System.Int32)} from rax into rbx
+		0x7FF890EBC8EA: [!] Compares {'local1' (type System.Int32)} and 0
+		0x7FF890EBC8ED: Jumps to 0x7FF890EBCAB5 (which throws a NRE) if local1 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EBC8F3: Reads local {'local1' (type System.Int32)} from stack offset 312 (0x138) into register rax
+		0x7FF890EBC8FA: [!] Loads the constant value 144 into the register rcx as constant constant99 using an LEA instruction
+		0x7FF890EBC901: [!] Sets the field  (Type ) on local {'local1' (type System.Int32)} to the value stored in {'local1' (type System.Int32)}
+		0x7FF890EBC907: Reads local {'local1' (type System.Int32)} from stack offset 72 (0x48) into register rax
+		0x7FF890EBC90C: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC917: Reads local {'local1' (type System.Int32)} from stack offset 80 (0x50) into register rax
+		0x7FF890EBC91C: [!] Loads the constant value 152 into the register rcx as constant constant100 using an LEA instruction
+		0x7FF890EBC923: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC92E: Reads local {'local1' (type System.Int32)} from stack offset 88 (0x58) into register rax
+		0x7FF890EBC933: [!] Loads the constant value 160 into the register rcx as constant constant101 using an LEA instruction
+		0x7FF890EBC93A: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC945: Reads local {'local1' (type System.Int32)} from stack offset 96 (0x60) into register rax
+		0x7FF890EBC94A: [!] Loads the constant value 32 into the register rcx as constant constant102 using an LEA instruction
+		0x7FF890EBC94E: [!] Sets the field m_value (Type System.Int32) on local {'local1' (type System.Int32)} to the value stored in {'local1' (type System.Int32)}
+		0x7FF890EBC952: Reads local {'local1' (type System.Int32)} from stack offset 64 (0x40) into register rax
+		0x7FF890EBC956: [!] Sets the field  (Type ) on local {'local1' (type System.Int32)} to the value stored in {'local1' (type System.Int32)}
+		0x7FF890EBC959: Reads local {'local1' (type System.Int32)} from stack offset 104 (0x68) into register rax
+		0x7FF890EBC95E: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC969: Reads local {'local1' (type System.Int32)} from stack offset 112 (0x70) into register rax
+		0x7FF890EBC96E: [!] Loads the constant value 40 into the register rcx as constant constant103 using an LEA instruction
+		0x7FF890EBC972: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC97D: Reads local {'local1' (type System.Int32)} from stack offset 120 (0x78) into register rax
+		0x7FF890EBC982: [!] Loads the constant value 48 into the register rcx as constant constant104 using an LEA instruction
+		0x7FF890EBC986: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC991: Reads local {'local1' (type System.Int32)} from stack offset 128 (0x80) into register rax
+		0x7FF890EBC999: [!] Loads the constant value 56 into the register rcx as constant constant105 using an LEA instruction
+		0x7FF890EBC99D: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC9A8: Reads local {'local1' (type System.Int32)} from stack offset 136 (0x88) into register rax
+		0x7FF890EBC9B0: [!] Loads the constant value 64 into the register rcx as constant constant106 using an LEA instruction
+		0x7FF890EBC9B4: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC9BF: Reads local {'local1' (type System.Int32)} from stack offset 144 (0x90) into register rax
+		0x7FF890EBC9C7: [!] Loads the constant value 72 into the register rcx as constant constant107 using an LEA instruction
+		0x7FF890EBC9CB: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC9D6: Reads local {'local1' (type System.Int32)} from stack offset 152 (0x98) into register rax
+		0x7FF890EBC9DE: [!] Loads the constant value 88 into the register rcx as constant constant108 using an LEA instruction
+		0x7FF890EBC9E2: [!] Sets the field  (Type ) on local {'local1' (type System.Int32)} to the value stored in {'local1' (type System.Int32)}
+		0x7FF890EBC9E6: Reads local {'local1' (type System.Int32)} from stack offset 160 (0xA0) into register rax
+		0x7FF890EBC9EE: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBC9F9: Reads local {'local1' (type System.Int32)} from stack offset 168 (0xA8) into register rax
+		0x7FF890EBCA01: [!] Loads the constant value 96 into the register rcx as constant constant109 using an LEA instruction
+		0x7FF890EBCA05: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBCA10: Reads local {'local1' (type System.Int32)} from stack offset 176 (0xB0) into register rax
+		0x7FF890EBCA18: [!] Loads the constant value 104 into the register rcx as constant constant110 using an LEA instruction
+		0x7FF890EBCA1C: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBCA27: Reads local {'local1' (type System.Int32)} from stack offset 184 (0xB8) into register rax
+		0x7FF890EBCA2F: [!] Loads the constant value 112 into the register rcx as constant constant111 using an LEA instruction
+		0x7FF890EBCA33: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBCA3E: Reads local {'local1' (type System.Int32)} from stack offset 192 (0xC0) into register rax
+		0x7FF890EBCA46: [!] Loads the constant value 120 into the register rcx as constant constant112 using an LEA instruction
+		0x7FF890EBCA4A: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBCA55: Reads local {'local1' (type System.Int32)} from stack offset 200 (0xC8) into register rax
+		0x7FF890EBCA5D: [!] Loads the constant value 128 into the register rcx as constant constant113 using an LEA instruction
+		0x7FF890EBCA67: Copies {'local1' (type System.Int32)} from rax into rdx
+		0x7FF890EBCA6F: Reads unknown value in stack, offset 304 (0x130) and stores the pointer in register r12 as new constant constant114
+		0x7FF890EBCA77: Copies {'local1' (type System.Int32)} from rbx into rax
+		0x7FF890EBCA7A: Reads unknown value in stack, offset 240 (0xF0) and stores the pointer in register r15 as new constant constant115
+		0x7FF890EBCA91: [!] Returns {'local1' (type System.Int32)} from the function
+
+		0x7FF890EBCA98: Jumps to 0x7FF890EBC8BE - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x7FF890EBCA9D: Clears register rax, yielding zero-local {'local46' (type System.Int32)}
+		0x7FF890EBCAAE: [!] Returns {'local46' (type System.Int32)} from the function
+
+		0x7FF890EBCAAF: [!] Constructs and throws an exception of kind System.IndexOutOfRangeException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter
+	System.Int32 Serialize()
+		ulong local1 = 0
+		throw new System.NullReferenceException()
+
+		if (local3 == 0)
+
+		    if ( != 144)
+		    endif
+            
+
+		    if (local1 <= 0)
+                goto INSN_7FF890EBC8CC
+            endif
+		      = this.
+
+		    if (local3 == 0)
+                goto INSN_7FF890EBC8A1
+            endif
+		    throw new System.NullReferenceException()
+
+		    if (local9 != 0)
+                goto INSN_7FF890EBCA92
+            endif
+
+		    if (local1 > 18)
+                goto INSN_7FF890EBC89A
+            endif
+		    il2cppMethodInfo += constant36
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local11 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local13 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local19 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local21 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local23 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local25 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local27 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local32 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local34 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local36 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local38 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+		    System.Int64 local40 = 1
+
+		    MessagePack.FormatterResolverExtensions.GetFormatterWithVerify()
+
+		    INSN_7FF890EBC89A:
+
+		    INSN_7FF890EBC8A1:
+		    local1 += 1
+
+		    INSN_7FF890EBC8CC:
+		     -= 
+		      = new ()
+		    System.Int32 144 = 144
+		    local1. = local1
+		    System.Int32 152 = 152
+		    System.Int32 160 = 160
+		    System.Int32 32 = 32
+		    local1.m_value = local1
+		    local1. = local1
+		    System.Int32 40 = 40
+		    System.Int32 48 = 48
+		    System.Int32 56 = 56
+		    System.Int32 64 = 64
+		    System.Int32 72 = 72
+		    System.Int32 88 = 88
+		    local1. = local1
+		    System.Int32 96 = 96
+		    System.Int32 104 = 104
+		    System.Int32 112 = 112
+		    System.Int32 120 = 120
+		    System.Int32 128 = 128
+		    return local1
+
+		    INSN_7FF890EBCA92:
+		endif
+        
+		ulong local46 = 0
+		return local46
+		throw new System.IndexOutOfRangeException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.JumpIfZeroOrNullAction at (0x7FF890EBC224) is corrupt (One of the arguments is null) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.FieldToLocalAction at (0x7FF890EBC314) is corrupt (No further info) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EBC397) is corrupt (AddR2R: First operand, {'il2cppMethodInfo' (type )}, has been stripped or has no variable) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.SubtractRegFromRegAction at (0x7FF890EBC8CC) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AllocateInstanceAction at (0x7FF890EBC8D8) is corrupt (Local being returned, or type being allocated, couldn't be determined.) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x7FF890EBC901) is corrupt (Instance or field is null) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x7FF890EBC956) is corrupt (Instance or field is null) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.RegToFieldAction at (0x7FF890EBC9E2) is corrupt (Instance or field is null) and cannot be created as IL.
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0007: throw
+	IL_0008: ldloc.1
+	IL_0009: ldc.i4.0
+	IL_000a: bne.un.s IL_007d
+	IL_000c: ldloc.0
+	IL_000d: ldc.i4.0
+	IL_000e: ble.s IL_0074
+	IL_0010: ldloc.1
+	IL_0011: ldc.i4.0
+	IL_0012: beq.s IL_0070
+	IL_0014: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0019: throw
+	IL_001a: ldloc.3
+	IL_001b: ldc.i4.0
+	IL_001c: bne.un.s IL_007d
+	IL_001e: ldloc.0
+	IL_001f: ldc.i4.s 18
+	IL_0021: conv.i8
+	IL_0022: conv.u8
+	IL_0023: bgt.s IL_0070
+	IL_0025: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_002a: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_002f: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0034: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0039: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_003e: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0043: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0048: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_004d: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0052: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0057: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_005c: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0061: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0066: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_006b: call System.Void MessagePack.FormatterResolverExtensions::GetFormatterWithVerify()
+	IL_0070: ldloc.0
+	IL_0071: ldc.i4.1
+	IL_0072: add
+	IL_0073: stloc.0
+	IL_0074: ldloc.0
+	IL_0075: ldloc.0
+	IL_0076: stfld System.Int32 System.Int32::m_value
+	IL_007b: ldloc.0
+	IL_007c: ret
+	IL_007d: ldc.i4.0
+	IL_007e: ret
+	IL_007f: newobj System.Void System.IndexOutOfRangeException::.ctor()
+	IL_0084: throw
+	
+
+Method: System.Void Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::Deserialize():	Method Body (x86 ASM):
+		0x7FF890EC4230 mov [rsp+10h],rbx		; DEBUG: {Memory}/None {Register}/RBX ||| RSP | 16 | None ||| N/A | N/A
+		0x7FF890EC4235 mov [rsp+18h],rbp		; DEBUG: {Memory}/None {Register}/RBP ||| RSP | 24 | None ||| N/A | N/A
+		0x7FF890EC423A mov [rsp+20h],rsi		; DEBUG: {Memory}/None {Register}/RSI ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890EC423F push rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4240 sub rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x7FF890EC4244 cmp byte ptr [7FF893FF3E24h],0		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611595300 | None ||| N/A | 0
+		0x7FF890EC424B mov rsi,r9		; DEBUG: {Register}/RSI {Register}/R9 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC424E mov ebx,r8d		; DEBUG: {Register}/EBX {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4251 mov rdi,rdx		; DEBUG: {Register}/RDI {Register}/RDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4254 mov rbp,rcx		; DEBUG: {Register}/RBP {Register}/RCX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4257 jne short 00007FF890EC426Ch		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4259 lea rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EC4260 call 00007FF88F1A6160h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4265 mov byte ptr [7FF893FF3E24h],1		; DEBUG: {Memory}/None {Immediate8}/None ||| RIP | 140705611595300 | None ||| N/A | 1
+		0x7FF890EC426C mov rcx,[7FF893C26A10h]		; DEBUG: {Register}/RCX {Memory}/None ||| RIP | 140705607608848 | None ||| N/A | N/A
+		0x7FF890EC4273 test rsi,rsi		; DEBUG: {Register}/RSI {Register}/RSI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4276 je near ptr 00007FF890EC43B2h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC427C mov [rsp+30h],r14		; DEBUG: {Memory}/None {Register}/R14 ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EC4281 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EC4288 mov r14d,ebx		; DEBUG: {Register}/R14D {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC428B jne short 00007FF890EC4292h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC428D call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4292 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4295 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4297 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC429A lea r8d,[r9+4]		; DEBUG: {Register}/R8D {Memory}/None ||| R9 | 4 | None ||| N/A | N/A
+		0x7FF890EC429E call 00007FF8903D7F90h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42A3 mov r8,[rbp+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 24 | None ||| N/A | N/A
+		0x7FF890EC42A7 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42A9 test r8,r8		; DEBUG: {Register}/R8 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42AC je near ptr 00007FF890EC43D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42B2 cmp dword ptr [r8+18h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| R8 | 24 | None ||| N/A | 0
+		0x7FF890EC42B7 jbe near ptr 00007FF890EC43CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42BD mov r8,[r8+20h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 32 | None ||| N/A | N/A
+		0x7FF890EC42C1 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42C4 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42C6 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42C9 call 00007FF8903DA820h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42CE mov r8d,[rsi+10h]		; DEBUG: {Register}/R8D {Memory}/None ||| RSI | 16 | None ||| N/A | N/A
+		0x7FF890EC42D2 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42D4 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42D6 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42D9 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42DC call 00007FF8903D89F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42E1 mov r8,[rbp+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 24 | None ||| N/A | N/A
+		0x7FF890EC42E5 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42E7 test r8,r8		; DEBUG: {Register}/R8 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC42EA je near ptr 00007FF890EC43D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42F0 cmp dword ptr [r8+18h],1		; DEBUG: {Memory}/None {Immediate8to32}/None ||| R8 | 24 | None ||| N/A | 1
+		0x7FF890EC42F5 jbe near ptr 00007FF890EC43CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC42FB mov r8,[r8+28h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 40 | None ||| N/A | N/A
+		0x7FF890EC42FF xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4302 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4304 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4307 call 00007FF8903DA820h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC430C mov r8d,[rsi+14h]		; DEBUG: {Register}/R8D {Memory}/None ||| RSI | 20 | None ||| N/A | N/A
+		0x7FF890EC4310 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4312 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4314 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4317 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC431A call 00007FF8903D89F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC431F mov r8,[rbp+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 24 | None ||| N/A | N/A
+		0x7FF890EC4323 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4325 test r8,r8		; DEBUG: {Register}/R8 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4328 je near ptr 00007FF890EC43D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC432E cmp dword ptr [r8+18h],2		; DEBUG: {Memory}/None {Immediate8to32}/None ||| R8 | 24 | None ||| N/A | 2
+		0x7FF890EC4333 jbe near ptr 00007FF890EC43CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4339 mov r8,[r8+30h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 48 | None ||| N/A | N/A
+		0x7FF890EC433D xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4340 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4342 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4345 call 00007FF8903DA820h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC434A mov r8d,[rsi+18h]		; DEBUG: {Register}/R8D {Memory}/None ||| RSI | 24 | None ||| N/A | N/A
+		0x7FF890EC434E add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4350 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4352 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4355 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4358 call 00007FF8903D89F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC435D mov r8,[rbp+18h]		; DEBUG: {Register}/R8 {Memory}/None ||| RBP | 24 | None ||| N/A | N/A
+		0x7FF890EC4361 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4363 test r8,r8		; DEBUG: {Register}/R8 {Register}/R8 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4366 je short 00007FF890EC43D5h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4368 cmp dword ptr [r8+18h],3		; DEBUG: {Memory}/None {Immediate8to32}/None ||| R8 | 24 | None ||| N/A | 3
+		0x7FF890EC436D jbe short 00007FF890EC43CFh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC436F mov r8,[r8+38h]		; DEBUG: {Register}/R8 {Memory}/None ||| R8 | 56 | None ||| N/A | N/A
+		0x7FF890EC4373 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4376 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4378 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC437B call 00007FF8903DA820h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4380 mov r8d,[rsi+1Ch]		; DEBUG: {Register}/R8D {Memory}/None ||| RSI | 28 | None ||| N/A | N/A
+		0x7FF890EC4384 add ebx,eax		; DEBUG: {Register}/EBX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4386 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4388 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC438B mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC438E call 00007FF8903D89F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC4393 sub ebx,r14d		; DEBUG: {Register}/EBX {Register}/R14D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC4396 mov r14,[rsp+30h]		; DEBUG: {Register}/R14 {Memory}/None ||| RSP | 48 | None ||| N/A | N/A
+		0x7FF890EC439B add eax,ebx		; DEBUG: {Register}/EAX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC439D mov rbx,[rsp+38h]		; DEBUG: {Register}/RBX {Memory}/None ||| RSP | 56 | None ||| N/A | N/A
+		0x7FF890EC43A2 mov rbp,[rsp+40h]		; DEBUG: {Register}/RBP {Memory}/None ||| RSP | 64 | None ||| N/A | N/A
+		0x7FF890EC43A7 mov rsi,[rsp+48h]		; DEBUG: {Register}/RSI {Memory}/None ||| RSP | 72 | None ||| N/A | N/A
+		0x7FF890EC43AC add rsp,20h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 32
+		0x7FF890EC43B0 pop rdi		; DEBUG: {Register}/RDI {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC43B1 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC43B2 cmp dword ptr [rcx+0E0h],0		; DEBUG: {Memory}/None {Immediate8to32}/None ||| RCX | 224 | None ||| N/A | 0
+		0x7FF890EC43B9 jne short 00007FF890EC43C0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC43BB call 00007FF88F1A64F0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC43C0 xor r8d,r8d		; DEBUG: {Register}/R8D {Register}/R8D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC43C3 mov edx,ebx		; DEBUG: {Register}/EDX {Register}/EBX ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC43C5 mov rcx,rdi		; DEBUG: {Register}/RCX {Register}/RDI ||| None | 0 | None ||| N/A | N/A
+		0x7FF890EC43C8 call 00007FF8903D9FA0h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC43CD jmp short 00007FF890EC439Dh		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC43CF call 00007FF88F1A6430h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890EC43D4 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::Deserialize():
+		End of function at 0x7FF890EC43D5
+		Absolute End is at 0x7FF890EC43D5
+		Identified Jump Destination addresses:
+
+		0x7FF890EC423F: Saves the content of rdi to the stack
+		0x7FF890EC4244: Compares {Unknown Global at 0x7FF893FF3E24, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} and 0
+		0x7FF890EC4251: Copies {'il2cppMethodInfo' (type )} from rdx into rdi
+		0x7FF890EC4254: Copies {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} from rcx into rbp
+		0x7FF890EC4257: Jumps to 0x7FF890EC426C if {Unknown Global at 0x7FF893FF3E24, first ten bytes are [0 0 0 0 0 0 0 0 0 0], or as chars "          "} != 0
+
+		0x7FF890EC4259: Loads string "O1 " into register rcx as constant {'constant3' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EC426C: Loads string "O1 " into register rcx as constant {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}
+		0x7FF890EC4273: [!] Compares  and 0
+		0x7FF890EC4276: Jumps to 0x7FF890EC43B2 (which is an if statement's body) if  equals 0 ;  - Increasing indentation - is standard if, unimportant is False
+
+		0x7FF890EC4281: Compares "{il2cpp field on {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EC428B: Jumps to 0x7FF890EC4292 if "{il2cpp field on {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0
+
+		0x7FF890EC428D: Calls the il2cpp cctor for the type 
+		0x7FF890EC4297: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC429A: [!] Loads the constant value 4 into the register r8 as constant constant8 using an LEA instruction
+		0x7FF890EC42A3: [!] Reads field ____stringByteKeys from {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} and stores in a new local {'____stringByteKeys' (type System.Byte[][])}
+
+		0x7FF890EC42A7: [!] Adds  and  and stores the result in 
+		0x7FF890EC42A9: [!] Compares {'____stringByteKeys' (type System.Byte[][])} and 0
+		0x7FF890EC42AC: Jumps to 0x7FF890EC43D5 (which throws a NRE) if ____stringByteKeys equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EC42B2: [!] Compares {Property System.Int32 System.Array::Length() on {'____stringByteKeys' (type System.Byte[][])}} and 0
+		0x7FF890EC42B7: Jumps to 0x7FF890EC43CF (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'____stringByteKeys' (type System.Byte[][])}} is less than or equal to 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EC42BD: [!] Reads a value from the array {'____stringByteKeys' (type System.Byte[][])} at index 0, into a new local {'local3' (type System.Byte[])}
+
+		0x7FF890EC42C6: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC42D2: [!] Adds  and  and stores the result in 
+		0x7FF890EC42D9: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC42E1: [!] Reads field ____stringByteKeys from {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} and stores in a new local {'____stringByteKeys2' (type System.Byte[][])}
+
+		0x7FF890EC42E5: [!] Adds  and  and stores the result in 
+		0x7FF890EC42E7: [!] Compares {'____stringByteKeys2' (type System.Byte[][])} and 0
+		0x7FF890EC42EA: Jumps to 0x7FF890EC43D5 (which throws a NRE) if ____stringByteKeys2 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EC42F0: [!] Compares {Property System.Int32 System.Array::Length() on {'____stringByteKeys2' (type System.Byte[][])}} and 1
+		0x7FF890EC42F5: Jumps to 0x7FF890EC43CF (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'____stringByteKeys2' (type System.Byte[][])}} is less than or equal to 1. Implicitly present in managed code, so ignored here.
+		0x7FF890EC42FB: [!] Reads a value from the array {'____stringByteKeys2' (type System.Byte[][])} at index 1, into a new local {'local7' (type System.Byte[])}
+
+		0x7FF890EC4304: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC4310: [!] Adds  and  and stores the result in 
+		0x7FF890EC4317: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC431F: [!] Reads field ____stringByteKeys from {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} and stores in a new local {'____stringByteKeys3' (type System.Byte[][])}
+
+		0x7FF890EC4323: [!] Adds  and  and stores the result in 
+		0x7FF890EC4325: [!] Compares {'____stringByteKeys3' (type System.Byte[][])} and 0
+		0x7FF890EC4328: Jumps to 0x7FF890EC43D5 (which throws a NRE) if ____stringByteKeys3 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EC432E: [!] Compares {Property System.Int32 System.Array::Length() on {'____stringByteKeys3' (type System.Byte[][])}} and 2
+		0x7FF890EC4333: Jumps to 0x7FF890EC43CF (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'____stringByteKeys3' (type System.Byte[][])}} is less than or equal to 2. Implicitly present in managed code, so ignored here.
+		0x7FF890EC4339: [!] Reads a value from the array {'____stringByteKeys3' (type System.Byte[][])} at index 2, into a new local {'local11' (type System.Byte[])}
+
+		0x7FF890EC4342: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC434E: [!] Adds  and  and stores the result in 
+		0x7FF890EC4355: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC435D: [!] Reads field ____stringByteKeys from {'this' (function parameter, type Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter)} and stores in a new local {'____stringByteKeys4' (type System.Byte[][])}
+
+		0x7FF890EC4361: [!] Adds  and  and stores the result in 
+		0x7FF890EC4363: [!] Compares {'____stringByteKeys4' (type System.Byte[][])} and 0
+		0x7FF890EC4366: Jumps to 0x7FF890EC43D5 (which throws a NRE) if ____stringByteKeys4 equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890EC4368: [!] Compares {Property System.Int32 System.Array::Length() on {'____stringByteKeys4' (type System.Byte[][])}} and 3
+		0x7FF890EC436D: Jumps to 0x7FF890EC43CF (which throws a NRE) if {Property System.Int32 System.Array::Length() on {'____stringByteKeys4' (type System.Byte[][])}} is less than or equal to 3. Implicitly present in managed code, so ignored here.
+		0x7FF890EC436F: [!] Reads a value from the array {'____stringByteKeys4' (type System.Byte[][])} at index 3, into a new local {'local15' (type System.Byte[])}
+
+		0x7FF890EC4378: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC4384: [!] Adds  and  and stores the result in 
+		0x7FF890EC438B: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC4393: [!] Subtracts  from  and stores the result in 
+		0x7FF890EC4396: Reads unknown value in stack, offset 48 (0x30) and stores the pointer in register r14 as new constant constant17
+		0x7FF890EC439B: [!] Adds  and  and stores the result in 
+
+		Potential Loop Start (0x7FF890EC439D):
+		0x7FF890EC439D: Reads unknown value in stack, offset 56 (0x38) and stores the pointer in register rbx as new constant constant18
+		0x7FF890EC43A2: Reads unknown value in stack, offset 64 (0x40) and stores the pointer in register rbp as new constant constant19
+		0x7FF890EC43A7: Reads unknown value in stack, offset 72 (0x48) and stores the pointer in register rsi as new constant constant20
+		0x7FF890EC43B1: [!] Returns from the function
+
+		0x7FF890EC43B2: Compares "{il2cpp field on {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" and 0
+		0x7FF890EC43B9: Jumps to 0x7FF890EC43C0 if "{il2cpp field on {'constant4' (constant value of type Cpp2IL.Core.Analysis.ResultModels.Il2CppString)}, offset 0xE0}" != 0 ;  - This is probably a goto, jumping to 0x7FF890EC43C0 which is after end of current block @ 0x7FF890EC43B2 (started at 0x7FF890EC427C)
+
+		0x7FF890EC43BB: Calls the il2cpp cctor for the type 
+		0x7FF890EC43C5: Copies {'il2cppMethodInfo' (type )} from rdi into rcx
+		0x7FF890EC43CD: Jumps to 0x7FF890EC439D - which is still in this function, but further up. Probably indicative that this is a loop.
+		0x7FF890EC43CF: [!] Constructs and throws an exception of kind System.IndexOutOfRangeException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter
+	System.Void Deserialize()
+
+		if ( != 0)
+		    System.Int32 4 = 4
+		    System.Byte[][] ____stringByteKeys = this.____stringByteKeys
+		     += 
+		    System.Byte[] local3 = ____stringByteKeys[0]
+		     += 
+		    System.Byte[][] ____stringByteKeys2 = this.____stringByteKeys
+		     += 
+		    System.Byte[] local7 = ____stringByteKeys2[1]
+		     += 
+		    System.Byte[][] ____stringByteKeys3 = this.____stringByteKeys
+		     += 
+		    System.Byte[] local11 = ____stringByteKeys3[2]
+		     += 
+		    System.Byte[][] ____stringByteKeys4 = this.____stringByteKeys
+		     += 
+		    System.Byte[] local15 = ____stringByteKeys4[3]
+		     += 
+		     -= 
+		     += 
+		    return
+		endif
+        
+		throw new System.IndexOutOfRangeException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.JumpIfZeroOrNullAction at (0x7FF890EC4276) is corrupt (One of the arguments is null) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC42A7) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC42D2) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC42E5) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC4310) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC4323) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC434E) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC4361) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC4384) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.SubtractRegFromRegAction at (0x7FF890EC4393) is corrupt (Missing an argument) and cannot be created as IL.
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.AddRegToRegAction at (0x7FF890EC439B) is corrupt (Missing an argument) and cannot be created as IL.
+	IL_0000: ldarg.0
+	IL_0001: ldfld System.Byte[][] Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::____stringByteKeys
+	IL_0006: stloc.0
+	IL_0007: ldarg.0
+	IL_0008: ldfld System.Byte[][] Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::____stringByteKeys
+	IL_000d: stloc.1
+	IL_000e: ldarg.0
+	IL_000f: ldfld System.Byte[][] Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::____stringByteKeys
+	IL_0014: stloc.2
+	IL_0015: ldarg.0
+	IL_0016: ldfld System.Byte[][] Gallop.MsgPack.Formatters.FriendUnFollowerResponseFormatter::____stringByteKeys
+	IL_001b: stloc.3
+	IL_001c: ret
+	IL_001d: newobj System.Void System.IndexOutOfRangeException::.ctor()
+	IL_0022: throw
+	
+

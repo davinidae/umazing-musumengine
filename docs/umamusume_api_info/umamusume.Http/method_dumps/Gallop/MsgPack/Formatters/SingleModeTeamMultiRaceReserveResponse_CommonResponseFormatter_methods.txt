@@ -1,0 +1,2 @@
+Type: SingleModeTeamMultiRaceReserveResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: RoomMatchRaceGetPresetArrayResponse_CommonResponseFormatter
+

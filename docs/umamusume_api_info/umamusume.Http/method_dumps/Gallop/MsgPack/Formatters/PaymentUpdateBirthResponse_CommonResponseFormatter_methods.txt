@@ -1,0 +1,2 @@
+Type: PaymentUpdateBirthResponse_CommonResponseFormatter
+

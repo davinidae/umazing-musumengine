@@ -1,0 +1,2 @@
+Type: RoomMatchEnterWaitingRoomResponse_CommonResponseFormatter
+

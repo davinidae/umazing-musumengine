@@ -1,0 +1,2 @@
+Type: ChampionsRaceEntryResponse_CommonResponseFormatter
+

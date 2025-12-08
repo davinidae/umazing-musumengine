@@ -1,0 +1,2 @@
+Type: NoteSaveCharaDataResponse_CommonResponseFormatter
+

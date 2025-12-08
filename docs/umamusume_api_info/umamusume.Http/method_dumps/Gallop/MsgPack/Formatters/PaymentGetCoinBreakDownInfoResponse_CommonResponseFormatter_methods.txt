@@ -1,0 +1,2 @@
+Type: PaymentGetCoinBreakDownInfoResponse_CommonResponseFormatter
+

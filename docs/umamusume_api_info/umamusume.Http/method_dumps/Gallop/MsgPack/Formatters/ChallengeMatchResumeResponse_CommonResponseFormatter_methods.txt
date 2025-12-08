@@ -1,0 +1,2 @@
+Type: ChallengeMatchResumeResponse_CommonResponseFormatter
+

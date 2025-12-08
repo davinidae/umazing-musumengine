@@ -1,0 +1,2 @@
+Type: SingleModeFreeRaceStartResponse_CommonResponseFormatter
+

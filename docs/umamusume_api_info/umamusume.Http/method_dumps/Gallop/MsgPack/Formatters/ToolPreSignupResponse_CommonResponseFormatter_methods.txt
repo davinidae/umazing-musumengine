@@ -1,0 +1,2 @@
+Type: ToolPreSignupResponse_CommonResponseFormatter
+

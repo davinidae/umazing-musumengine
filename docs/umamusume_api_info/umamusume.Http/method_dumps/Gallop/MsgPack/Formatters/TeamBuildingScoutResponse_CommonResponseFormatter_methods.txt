@@ -1,0 +1,2 @@
+Type: TeamBuildingScoutResponse_CommonResponseFormatter
+

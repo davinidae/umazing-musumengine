@@ -1,0 +1,2 @@
+Type: UserResetCardDressResponse_CommonResponseFormatter
+

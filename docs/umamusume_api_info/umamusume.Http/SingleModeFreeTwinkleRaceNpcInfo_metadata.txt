@@ -1,0 +1,112 @@
+Type: Gallop.SingleModeFreeTwinkleRaceNpcInfo:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: npc_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: dress_id
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: talent_level
+		Type: System.Int32
+		Offset in Defining Type: 0x1C
+		Has Default: False
+
+	Field: win_points
+		Type: System.Int32
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Field: speed
+		Type: System.Int32
+		Offset in Defining Type: 0x24
+		Has Default: False
+
+	Field: stamina
+		Type: System.Int32
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Field: power
+		Type: System.Int32
+		Offset in Defining Type: 0x2C
+		Has Default: False
+
+	Field: guts
+		Type: System.Int32
+		Offset in Defining Type: 0x30
+		Has Default: False
+
+	Field: wiz
+		Type: System.Int32
+		Offset in Defining Type: 0x34
+		Has Default: False
+
+	Field: proper_distance_short
+		Type: System.Int32
+		Offset in Defining Type: 0x38
+		Has Default: False
+
+	Field: proper_distance_mile
+		Type: System.Int32
+		Offset in Defining Type: 0x3C
+		Has Default: False
+
+	Field: proper_distance_middle
+		Type: System.Int32
+		Offset in Defining Type: 0x40
+		Has Default: False
+
+	Field: proper_distance_long
+		Type: System.Int32
+		Offset in Defining Type: 0x44
+		Has Default: False
+
+	Field: proper_running_style_nige
+		Type: System.Int32
+		Offset in Defining Type: 0x48
+		Has Default: False
+
+	Field: proper_running_style_senko
+		Type: System.Int32
+		Offset in Defining Type: 0x4C
+		Has Default: False
+
+	Field: proper_running_style_sashi
+		Type: System.Int32
+		Offset in Defining Type: 0x50
+		Has Default: False
+
+	Field: proper_running_style_oikomi
+		Type: System.Int32
+		Offset in Defining Type: 0x54
+		Has Default: False
+
+	Field: proper_ground_turf
+		Type: System.Int32
+		Offset in Defining Type: 0x58
+		Has Default: False
+
+	Field: proper_ground_dirt
+		Type: System.Int32
+		Offset in Defining Type: 0x5C
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

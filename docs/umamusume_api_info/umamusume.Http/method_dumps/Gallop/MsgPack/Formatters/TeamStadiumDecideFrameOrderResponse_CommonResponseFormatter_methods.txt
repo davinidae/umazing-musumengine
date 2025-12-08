@@ -1,0 +1,2 @@
+Type: TeamStadiumDecideFrameOrderResponse_CommonResponseFormatter
+

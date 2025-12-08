@@ -1,0 +1,2 @@
+Type: SingleModeRaceEntryResponse_CommonResponseFormatter
+

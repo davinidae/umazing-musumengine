@@ -1,0 +1,15 @@
+Type: Gallop.PracticeRaceDeleteRaceResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.PracticeRaceDeleteRaceResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x021207A0
+		Ram Offset 0x7ff890fb07a0
+		Virtual Method Slot: 65535

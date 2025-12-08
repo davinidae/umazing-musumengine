@@ -1,0 +1,2 @@
+Type: SingleModeFreeChoiceRewardResponse_CommonResponseFormatter
+

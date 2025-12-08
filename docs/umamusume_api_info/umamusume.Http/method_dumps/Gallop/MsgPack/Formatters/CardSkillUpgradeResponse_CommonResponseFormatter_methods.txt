@@ -1,0 +1,2 @@
+Type: CardSkillUpgradeResponse_CommonResponseFormatter
+

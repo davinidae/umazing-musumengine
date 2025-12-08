@@ -1,0 +1,2 @@
+Type: PresentHistoryResponse_CommonResponseFormatter
+

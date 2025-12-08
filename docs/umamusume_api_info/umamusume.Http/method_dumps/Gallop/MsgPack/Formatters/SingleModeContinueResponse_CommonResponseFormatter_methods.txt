@@ -1,0 +1,2 @@
+Type: SingleModeContinueResponse_CommonResponseFormatter
+

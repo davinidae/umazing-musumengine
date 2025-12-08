@@ -1,0 +1,2 @@
+Type: LegendRaceReflectItemEffectResponse_CommonResponseFormatter
+

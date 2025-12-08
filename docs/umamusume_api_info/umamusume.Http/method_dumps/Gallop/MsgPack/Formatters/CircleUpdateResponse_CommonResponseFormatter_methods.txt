@@ -1,0 +1,2 @@
+Type: CircleUpdateResponse_CommonResponseFormatter
+

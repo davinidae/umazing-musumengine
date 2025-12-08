@@ -1,0 +1,37 @@
+Type: Gallop.StoryEventSingleModeResult:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: event_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: point_reward_id_list
+		Type: System.Int32[]
+		Offset in Defining Type: 0x38
+		Has Default: False
+
+	Field: get_all_point_reward
+		Type: System.Boolean
+		Offset in Defining Type: 0x40
+		Has Default: False
+
+	Field: new_story_id_list
+		Type: System.Int32[]
+		Offset in Defining Type: 0x58
+		Has Default: False
+
+	Field: is_boost
+		Type: System.Int32
+		Offset in Defining Type: 0x68
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

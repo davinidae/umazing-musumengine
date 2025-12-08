@@ -1,0 +1,15 @@
+Type: Gallop.MissionLoadResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.MissionLoadResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x01E55750
+		Ram Offset 0x7ff890ce5750
+		Virtual Method Slot: 65535

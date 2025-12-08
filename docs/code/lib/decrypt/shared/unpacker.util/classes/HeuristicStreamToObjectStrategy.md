@@ -1,6 +1,6 @@
 # Class: HeuristicStreamToObjectStrategy
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:222](https://github.com/davinidae/umazing-musumengine/blob/44f6e784adc57f5b49586071f4bdcb81060753f5/src/lib/decrypt/shared/unpacker.util.ts#L222)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:222](https://github.com/davinidae/umazing-musumengine/blob/6df8e3e1b8dfb16b24d04befbfa6d32c969e2756/src/lib/decrypt/shared/unpacker.util.ts#L222)
 
 Last-resort heuristic: decode a short prefix of values and attempt to fold them
 into an object starting at the first run of string keys. This is conservative
@@ -12,7 +12,7 @@ and only accepts outputs with enough (>=4) key/value pairs.
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:227](https://github.com/davinidae/umazing-musumengine/blob/44f6e784adc57f5b49586071f4bdcb81060753f5/src/lib/decrypt/shared/unpacker.util.ts#L227)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:227](https://github.com/davinidae/umazing-musumengine/blob/6df8e3e1b8dfb16b24d04befbfa6d32c969e2756/src/lib/decrypt/shared/unpacker.util.ts#L227)
 
 #### Parameters
 
@@ -38,7 +38,7 @@ Conservatively reconstructed object from a stream, or undefined.
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/44f6e784adc57f5b49586071f4bdcb81060753f5/src/lib/models/decrypt.model.ts#L8)
+Defined in: [lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/6df8e3e1b8dfb16b24d04befbfa6d32c969e2756/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.

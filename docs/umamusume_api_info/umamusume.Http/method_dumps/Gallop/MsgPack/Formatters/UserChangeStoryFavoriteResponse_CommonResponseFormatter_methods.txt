@@ -1,0 +1,2 @@
+Type: UserChangeStoryFavoriteResponse_CommonResponseFormatter
+

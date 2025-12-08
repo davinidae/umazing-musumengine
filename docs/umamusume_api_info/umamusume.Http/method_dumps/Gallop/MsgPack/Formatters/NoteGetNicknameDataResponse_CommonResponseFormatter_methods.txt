@@ -1,0 +1,2 @@
+Type: NoteGetNicknameDataResponse_CommonResponseFormatter
+

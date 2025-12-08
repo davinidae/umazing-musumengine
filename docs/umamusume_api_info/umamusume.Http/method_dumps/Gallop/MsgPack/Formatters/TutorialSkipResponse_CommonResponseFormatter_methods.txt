@@ -1,0 +1,2 @@
+Type: TutorialSkipResponse_CommonResponseFormatter
+

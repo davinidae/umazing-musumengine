@@ -1,0 +1,2 @@
+Type: SingleModeTeamOpponentListResponse_CommonResponseFormatter
+

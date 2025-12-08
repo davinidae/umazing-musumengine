@@ -2,7 +2,7 @@
 
 > **Logger** = `object` & `Partial`\<\{ `log`: (...`args`) => `void`; \}\>
 
-Defined in: [lib/models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/44f6e784adc57f5b49586071f4bdcb81060753f5/src/lib/models/client.model.ts#L4)
+Defined in: [lib/models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/6df8e3e1b8dfb16b24d04befbfa6d32c969e2756/src/lib/models/client.model.ts#L4)
 
 Minimal logger interface for dependency injection.
 

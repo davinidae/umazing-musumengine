@@ -1,0 +1,2 @@
+Type: JukeboxIndexResponse_CommonResponseFormatter
+

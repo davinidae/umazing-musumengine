@@ -1,0 +1,2 @@
+Type: CabinedAccountGetMailInfoResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: SingleModeFreeRaceOutResponse_CommonResponseFormatter
+

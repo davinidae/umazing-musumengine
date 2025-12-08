@@ -1,0 +1,2 @@
+Type: TeamStadiumUserDetailResponse_CommonResponseFormatter
+

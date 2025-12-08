@@ -1,0 +1,2 @@
+Type: SafetyNetAttestationGetNonceResponse_CommonResponseFormatter
+

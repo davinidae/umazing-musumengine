@@ -1,0 +1,15 @@
+Type: Gallop.PaymentFinishResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.PaymentFinishResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x021365D0
+		Ram Offset 0x7ff890fc65d0
+		Virtual Method Slot: 65535
