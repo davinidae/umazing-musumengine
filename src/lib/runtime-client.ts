@@ -14,7 +14,7 @@
  * @public
  */
 import { defaultLogger } from './shared';
-import { DETERMINISTIC_ENC_SECRET as DEFAULT_SECRET } from '../variables';
+import { DETERMINISTIC_ENC_SECRET } from '../variables';
 import { DecryptResponseService } from './decrypt';
 import { EncryptPayloadService } from './encrypt';
 import {
@@ -24,6 +24,7 @@ import {
   DecodeResponseOutput,
   RuntimeClientOptions,
   Logger,
+  FramingMode,
 } from './models';
 
 export class RuntimeClient {
@@ -32,7 +33,7 @@ export class RuntimeClient {
    */
   constructor(
     private readonly opts: RuntimeClientOptions = {
-      DETERMINISTIC_ENC_SECRET: DEFAULT_SECRET,
+      DETERMINISTIC_ENC_SECRET: DETERMINISTIC_ENC_SECRET,
       logger: defaultLogger,
     },
   ) {}
@@ -49,7 +50,10 @@ export class RuntimeClient {
    */
   encodeRequest(input: EncodeRequestInput): EncodeRequestOutput {
     const { blob1, payload } = input;
-    this.logger.debug?.('[runtime] encodeRequest framing=%s', blob1.framing ?? 'length-prefixed');
+    this.logger.debug?.(
+      '[runtime] encodeRequest framing=%s',
+      blob1.framing ?? FramingMode.LengthPrefixed,
+    );
     const { requestB64 } = new EncryptPayloadService().buildFromParts({
       blob1,
       payload,
@@ -77,6 +81,7 @@ export class RuntimeClient {
     const result = new DecryptResponseService().decodeFromBase64(requestB64, responseB64);
     this.logger.debug?.('[runtime] decodeResponse unpacked');
     return {
+      data_headers: result.blob1,
       payload: result.blob2,
     };
   }

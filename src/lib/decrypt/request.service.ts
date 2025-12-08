@@ -40,6 +40,6 @@ export class DecryptRequestService {
       blob1: headerJson,
       blob2: printable,
       plaintext,
-    } as const;
+    };
   }
 }

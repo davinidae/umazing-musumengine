@@ -90,7 +90,7 @@ router.post('/login', async (req: Request, res: Response) => {
     const session = sessionManager.create(ctx, {
       steam_id,
     });
-    session.setContext(ctx);
+    session.getPipeline().setContext(ctx);
 
     const results = await session.runPipeline([
       PreSignupService,
@@ -107,10 +107,10 @@ router.post('/login', async (req: Request, res: Response) => {
       error: failed?.error ?? null,
       created_at: new Date(session.createdAt).toISOString(),
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
     res.status(500).json({
       error: 'login_failed',
-      message: e?.message || String(e),
+      message: (e as Error).message || String(e),
     });
   }
 });

@@ -210,4 +210,15 @@ export enum GallopResultCode {
   MAINTENANCE_TASK_ACCOUNT_CHAIN = 903,
   RC_KWS_ONE_TIME_PASSWORD_EXPIRED = 358,
   STORY_EVENT_NOT_DATA = 100001,
+  // Added for code completeness
+  CantFindResultCode = -1,
+  PipelineError = -2,
+  MissingViewerId = -3,
+}
+
+export function asResultCodeName(v: GallopResultCode): keyof typeof GallopResultCode {
+  const o = Object.entries(GallopResultCode).find(([_key, value]) => {
+    return value === v;
+  }) || ['CantFindResultCode', GallopResultCode.CantFindResultCode];
+  return o[0] as keyof typeof GallopResultCode;
 }

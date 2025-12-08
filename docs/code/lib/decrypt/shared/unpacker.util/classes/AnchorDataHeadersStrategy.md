@@ -1,6 +1,6 @@
 # Class: AnchorDataHeadersStrategy
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:130](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/decrypt/shared/unpacker.util.ts#L130)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:130](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/decrypt/shared/unpacker.util.ts#L130)
 
 Targeted heuristic: anchor on the 'data_headers' key often present in tool responses
 and reconstruct a map from the surrounding key/value sequence.
@@ -11,7 +11,7 @@ and reconstruct a map from the surrounding key/value sequence.
 
 > **execute**(`buf`): `unknown`
 
-Defined in: [lib/decrypt/shared/unpacker.util.ts:135](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/decrypt/shared/unpacker.util.ts#L135)
+Defined in: [lib/decrypt/shared/unpacker.util.ts:135](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/decrypt/shared/unpacker.util.ts#L135)
 
 #### Parameters
 
@@ -37,7 +37,7 @@ Object reconstructed when 'data_headers' anchor is present; otherwise undefined.
 
 > **normalizeResponseShape**(`v`): `unknown`
 
-Defined in: [lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/models/decrypt.model.ts#L8)
+Defined in: [lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys,
 wrap the headers under data_headers.

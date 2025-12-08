@@ -7,6 +7,7 @@ import {
   fromJsonFriendly,
   pkcs7Pad,
 } from '../shared';
+import { EncodeRequestInput, FramingMode } from '../models';
 
 /**
  * Build Base64 requests from in-memory parts (no filesystem access).
@@ -31,19 +32,11 @@ export class EncryptPayloadService {
    * @returns An object containing the Base64-encoded request buffer as `requestB64`.
    * @throws If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, response_key != 32B).
    */
-  buildFromParts(input: {
-    blob1: {
-      prefix_hex: string;
-      session_id_hex: string;
-      udid_canonical?: string;
-      udid_raw_hex?: string;
-      response_key_hex: string;
-      auth_key_hex: string;
-      framing?: 'length-prefixed' | 'kv-stream';
-    };
-    payload: unknown;
-    DETERMINISTIC_ENC_SECRET: string;
-  }): {
+  buildFromParts(
+    input: EncodeRequestInput & {
+      DETERMINISTIC_ENC_SECRET: string;
+    },
+  ): {
     requestB64: string;
   } {
     const { blob1, payload, DETERMINISTIC_ENC_SECRET } = input;
@@ -81,12 +74,10 @@ export class EncryptPayloadService {
     }
 
     // Build plaintext
-    const hintFraming = blob1.framing ?? 'length-prefixed';
-    const framing: 'length-prefixed' | 'kv-stream' =
-      hintFraming === 'kv-stream' ? 'kv-stream' : 'length-prefixed';
+    const framing = blob1.framing ?? FramingMode.LengthPrefixed;
     const payloadObj = fromJsonFriendly(payload);
     let plaintext: Buffer;
-    if (framing === 'length-prefixed') {
+    if (framing === FramingMode.LengthPrefixed) {
       const packed = Buffer.from(encode(payloadObj));
       const prefixed = Buffer.concat([Buffer.alloc(4), packed]);
       prefixed.writeUInt32LE(packed.length, 0);
@@ -96,9 +87,9 @@ export class EncryptPayloadService {
         throw new Error('kv-stream framing requires object payload');
       }
       const parts: Buffer[] = [];
-      for (const [k, v] of Object.entries(payloadObj as Record<string, unknown>)) {
+      for (const [k, v] of Object.entries(payloadObj)) {
         parts.push(Buffer.from(encode(String(k))));
-        parts.push(Buffer.from(encode(v as any)));
+        parts.push(Buffer.from(encode(v)));
       }
       plaintext = Buffer.concat(parts);
     }

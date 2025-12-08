@@ -1,4 +1,4 @@
-import { StepPrevResult, StepResultBase } from '../../models';
+import { FramingMode } from '../../../lib';
 import { StepService } from './step.service';
 
 /**
@@ -8,30 +8,10 @@ import { StepService } from './step.service';
 export class LoadIndexService extends StepService {
   readonly name = 'load_index';
   readonly endpoint = 'load/index';
+  readonly framing = FramingMode.LengthPrefixed;
 
-  async execute(prev: StepPrevResult | undefined): Promise<StepResultBase> {
-    // Extract viewer_id from previous result if present
-    let viewer_id = this.ctx.clientData.viewer_id ?? 0;
-    try {
-      const prevHeaders: any = (prev as any)?.decoded?.data_headers ?? {};
-      if (typeof prevHeaders.viewer_id === 'number') {
-        viewer_id = prevHeaders.viewer_id;
-      }
-    } catch {
-      // ignore
-    }
-
-    if (!(typeof viewer_id === 'number' && Number.isFinite(viewer_id) && viewer_id > 0)) {
-      return {
-        name: this.name,
-        endpoint: this.endpoint,
-        framing: 'length-prefixed',
-        skipped: true,
-        note: 'viewer_id not available; skipping load/index',
-      } as StepResultBase;
-    }
-
-    const payload = {
+  getPayload(viewer_id: number) {
+    return {
       viewer_id,
       device: this.ctx.clientData.device,
       device_id: this.ctx.clientData.device_id,
@@ -46,31 +26,6 @@ export class LoadIndexService extends StepService {
       dmm_onetime_token: this.ctx.clientData.dmm_onetime_token,
       steam_id: this.ctx.clientData.steam_id,
       steam_session_ticket: this.ctx.clientData.steam_session_ticket,
-    };
-
-    const encoded = this.ctx.runtime.encodeRequest({
-      blob1: {
-        ...this.ctx.blob1,
-      },
-      payload,
-    });
-    const requestB64 = encoded.requestB64;
-
-    const responseB64 = await this.callUpstream(this.endpoint, requestB64);
-
-    const decodedResponse = this.ctx.runtime.decodeResponse({
-      requestB64,
-      responseB64,
-    });
-    const decoded = decodedResponse.payload;
-
-    return {
-      name: this.name,
-      endpoint: this.endpoint,
-      framing: 'length-prefixed',
-      requestB64,
-      responseB64,
-      decoded,
     };
   }
 }

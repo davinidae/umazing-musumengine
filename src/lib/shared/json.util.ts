@@ -5,12 +5,12 @@
  * @param value Any JSON-like value.
  * @returns Value with Buffers reconstructed where applicable.
  */
-export function fromJsonFriendly(value: any): any {
+export function fromJsonFriendly(value: unknown): unknown {
   if (Array.isArray(value)) {
     return value.map(fromJsonFriendly);
   }
   if (value && typeof value === 'object') {
-    const out: Record<string, any> = {};
+    const out: Record<string, unknown> = {};
     for (const [k, v] of Object.entries(value)) {
       out[k] = fromJsonFriendly(v);
     }
@@ -28,21 +28,21 @@ export function fromJsonFriendly(value: any): any {
  * @param value Arbitrary value possibly containing Buffers.
  * @returns JSON-compatible representation.
  */
-export function toJsonCompatible(value: any): any {
+export function toJsonCompatible(value: unknown): unknown {
   if (value && typeof value === 'object' && !Buffer.isBuffer(value)) {
     if (Array.isArray(value)) {
       return value.map((v) => {
         return toJsonCompatible(v);
       });
     }
-    const out: Record<string, any> = {};
+    const out: Record<string, unknown> = {};
     for (const [k, v] of Object.entries(value)) {
       out[String(toJsonCompatible(k))] = toJsonCompatible(v);
     }
     return out;
   }
   if (Buffer.isBuffer(value) || value instanceof Uint8Array) {
-    const b = Buffer.from(value as Uint8Array);
+    const b = Buffer.from(value);
     // Decode to UTF-8 string and verify round-trip fidelity; if bytes change, it's not safe text.
     const s = b.toString('utf-8');
     const roundtrip = Buffer.from(s, 'utf-8');

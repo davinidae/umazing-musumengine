@@ -1,5 +1,12 @@
 import axios from 'axios';
-import { PipelineContext, StepPrevResult, StepResultBase } from '../../models';
+import {
+  asResultCodeName,
+  GallopResultCode,
+  PipelineContext,
+  StepPrevResult,
+  StepResultBase,
+} from '../../models';
+import { FramingMode } from '../../../lib';
 
 /**
  * Base class for a pipeline service step.
@@ -10,6 +17,10 @@ import { PipelineContext, StepPrevResult, StepResultBase } from '../../models';
  * - Provides callUpstream() helper to POST Base64 requests to the configured upstream base.
  */
 export abstract class StepService {
+  abstract readonly name: string;
+  abstract readonly endpoint: string;
+  abstract readonly framing: FramingMode;
+
   /**
    * Construct a step with the provided execution context.
    * @param ctx PipelineContext holding runtime, upstreamBase, blob1 and clientData.
@@ -17,6 +28,7 @@ export abstract class StepService {
   constructor(protected readonly ctx: PipelineContext) {
     //
   }
+
   /**
    * POST a Base64 request to the upstream API and return the Base64 response string.
    * Builds the absolute URL from ctx.upstreamBase and the step-specific endpoint path.
@@ -26,7 +38,10 @@ export abstract class StepService {
    * @returns Base64-encoded response buffer.
    * @throws If upstream base is missing or the response shape is invalid.
    */
-  protected async callUpstream(endpoint: string, requestB64: string): Promise<string> {
+  protected async callUpstream(
+    endpoint: string,
+    requestB64: string,
+  ): Promise<{ responseB64: string; responseCode: GallopResultCode }> {
     const base = this.ctx.upstreamBase;
     if (!base) {
       throw new Error('Missing UMAZING_UPSTREAM_BASE (remote API base URL)');
@@ -45,24 +60,82 @@ export abstract class StepService {
     );
     const data = resp.data;
     if (typeof data === 'string') {
-      return data.trim();
+      return {
+        responseB64: data.trim(),
+        responseCode: resp.status as GallopResultCode,
+      };
     }
     if (data && typeof data === 'object') {
-      const b64 = (data as any).response || (data as any).responseB64 || (data as any).data || '';
+      const b64 = data.response || data.responseB64 || data.data || '';
       if (!b64 || typeof b64 !== 'string') {
         throw new Error('Upstream JSON missing response field');
       }
-      return b64.trim();
+      return {
+        responseB64: b64.trim(),
+        responseCode: resp.status as GallopResultCode,
+      };
     }
     throw new Error('Invalid upstream response');
   }
+
+  abstract getPayload(viewer_id: number): Record<string, unknown>;
+
+  protected omitViewerId = false;
+
   /**
    * Implement the step's business logic.
    * Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.
    * @param prev Previous step result, if any.
    * @returns StepResultBase without the order field (runner/session will add it).
    */
-  abstract execute(prev: StepPrevResult | undefined): Promise<StepResultBase>;
+  public async execute(prev: StepPrevResult | undefined): Promise<StepResultBase> {
+    let viewer_id = this.ctx.clientData.viewer_id ?? 0;
+    if (!this.omitViewerId) {
+      // Extract viewer_id from previous result if present
+      try {
+        const prevHeaders = prev?.decoded?.data_headers ?? {};
+        if (typeof prevHeaders.viewer_id === 'number') {
+          viewer_id = prevHeaders.viewer_id;
+        }
+      } catch {
+        // ignore, fallback to default viewer_id
+      }
+      if (!(typeof viewer_id === 'number' && Number.isFinite(viewer_id) && viewer_id > 0)) {
+        return {
+          name: this.name,
+          endpoint: this.endpoint,
+          framing: this.framing,
+          skipped: true,
+          note: 'viewer_id not available; skipping load/index',
+          responseCode: GallopResultCode.MissingViewerId,
+          responseCodeName: asResultCodeName(GallopResultCode.MissingViewerId),
+        };
+      }
+    }
+    const encoded = this.ctx.runtime.encodeRequest({
+      blob1: {
+        ...this.ctx.blob1,
+        framing: this.framing,
+      },
+      payload: this.getPayload(viewer_id),
+    });
+    const requestB64 = encoded.requestB64;
+    const { responseB64, responseCode } = await this.callUpstream(this.endpoint, requestB64);
+    const decodedResponse = this.ctx.runtime.decodeResponse({
+      requestB64,
+      responseB64,
+    });
+    return {
+      name: this.name,
+      endpoint: this.endpoint,
+      framing: this.framing,
+      requestB64,
+      responseB64,
+      decoded: decodedResponse,
+      responseCode: responseCode,
+      responseCodeName: asResultCodeName(responseCode),
+    };
+  }
 }
 
 /**

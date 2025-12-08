@@ -11,7 +11,11 @@ export class SessionManager {
   // TTL in ms; sessions older than this will be purged lazily
   private readonly ttlMs: number;
 
-  constructor(opts?: { ttlMs?: number }) {
+  constructor(
+    opts?: Partial<{
+      ttlMs: number;
+    }>,
+  ) {
     this.ttlMs = opts?.ttlMs ?? 30 * 60 * 1000; // 30 minutes
   }
 
@@ -19,11 +23,11 @@ export class SessionManager {
     const id = randomUUID();
     const session = new UserSession(id, Date.now(), meta, ctx);
     this.sessions.set(id, session);
-    this.gc();
+    this.deleteInactiveSessions();
     return session;
   }
 
-  get(id: string): UserSession | undefined {
+  getSession(id: string): UserSession | undefined {
     const s = this.sessions.get(id);
     if (!s) {
       return undefined;
@@ -37,19 +41,19 @@ export class SessionManager {
   }
 
   setContext(id: string, ctx: PipelineContext): void {
-    const s = this.get(id);
+    const s = this.getSession(id);
     if (!s) {
       throw new Error('session_not_found');
     }
-    s.setContext(ctx);
+    s.getPipeline().setContext(ctx);
   }
 
   getContext(id: string): PipelineContext | undefined {
-    return this.get(id)?.getContext();
+    return this.getSession(id)?.getPipeline().getContext();
   }
 
   setLastStep(id: string, step: StepPrevResult | undefined): void {
-    const s = this.get(id);
+    const s = this.getSession(id);
     if (!s) {
       throw new Error('session_not_found');
     }
@@ -57,14 +61,14 @@ export class SessionManager {
   }
 
   getLastStep(id: string): StepPrevResult | undefined {
-    return this.get(id)?.getLastStep();
+    return this.getSession(id)?.getLastStep();
   }
 
   delete(id: string): void {
     this.sessions.delete(id);
   }
 
-  private gc(): void {
+  private deleteInactiveSessions(): void {
     const now = Date.now();
     for (const [id, s] of this.sessions) {
       if (now - s.createdAt > this.ttlMs) {

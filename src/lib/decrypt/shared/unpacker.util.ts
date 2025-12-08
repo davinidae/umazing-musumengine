@@ -67,7 +67,7 @@ export class MapHeaderScanStrategy extends UnpackStrategy {
         try {
           const obj = decode(buf.subarray(i));
           if (obj && typeof obj === 'object' && !Array.isArray(obj)) {
-            const keys = Object.keys(obj as Record<string, unknown>);
+            const keys = Object.keys(obj);
             const hasKnown = likelyKeys.some((k) => keys.includes(k));
             const stringKeyCount = keys.filter((k) => typeof k === 'string').length;
             if (hasKnown || stringKeyCount >= 3) {

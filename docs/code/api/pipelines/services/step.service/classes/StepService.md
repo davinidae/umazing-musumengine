@@ -1,6 +1,6 @@
 # Abstract Class: StepService
 
-Defined in: [api/pipelines/services/step.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/pipelines/services/step.service.ts#L12)
+Defined in: [api/pipelines/services/step.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/pipelines/services/step.service.ts#L19)
 
 Base class for a pipeline service step.
 
@@ -22,7 +22,7 @@ Responsibilities
 
 > **new StepService**(`ctx`): `StepService`
 
-Defined in: [api/pipelines/services/step.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/pipelines/services/step.service.ts#L17)
+Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -30,7 +30,7 @@ Construct a step with the provided execution context.
 
 ##### ctx
 
-[`PipelineContext`](../../../../models/pipelines.model/interfaces/PipelineContext.md)
+[`PipelineContext`](../../../../models/pipelines.model/type-aliases/PipelineContext.md)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -42,9 +42,9 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ### execute()
 
-> `abstract` **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines.model/interfaces/StepResultBase.md)\>
+> **execute**(`prev`): `Promise`\<[`StepResultBase`](../../../../models/pipelines.model/type-aliases/StepResultBase.md)\>
 
-Defined in: [api/pipelines/services/step.service.ts:65](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/api/pipelines/services/step.service.ts#L65)
+Defined in: [api/pipelines/services/step.service.ts:91](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/api/pipelines/services/step.service.ts#L91)
 
 Implement the step's business logic.
 Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, then decode with ctx.runtime.decodeResponse.
@@ -55,10 +55,10 @@ Build request using ctx.runtime.encodeRequest, call upstream via callUpstream, t
 
 Previous step result, if any.
 
-[`StepPrevResult`](../../../../models/pipelines.model/interfaces/StepPrevResult.md) | `undefined`
+`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
 
 #### Returns
 
-`Promise`\<[`StepResultBase`](../../../../models/pipelines.model/interfaces/StepResultBase.md)\>
+`Promise`\<[`StepResultBase`](../../../../models/pipelines.model/type-aliases/StepResultBase.md)\>
 
 StepResultBase without the order field (runner/session will add it).

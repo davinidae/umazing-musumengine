@@ -1,4 +1,4 @@
-import { StepPrevResult, StepResultBase } from '../../models';
+import { FramingMode } from '../../../lib';
 import { StepService } from './step.service';
 
 /**
@@ -8,36 +8,13 @@ import { StepService } from './step.service';
 export class PreSignupService extends StepService {
   readonly name = 'pre_signup';
   readonly endpoint = 'tool/pre_signup';
+  readonly framing = FramingMode.KvStream;
 
-  async execute(_prev: StepPrevResult | undefined): Promise<StepResultBase> {
-    const payload = {
-      ...this.ctx.clientData,
-    };
+  protected override omitViewerId = true;
 
-    const encoded = this.ctx.runtime.encodeRequest({
-      blob1: {
-        ...this.ctx.blob1,
-        framing: 'kv-stream',
-      },
-      payload,
-    });
-    const requestB64 = encoded.requestB64;
-
-    const responseB64 = await this.callUpstream(this.endpoint, requestB64);
-
-    const decodedResponse = this.ctx.runtime.decodeResponse({
-      requestB64,
-      responseB64,
-    });
-    const decoded = decodedResponse.payload;
-
+  getPayload(): Record<string, unknown> {
     return {
-      name: this.name,
-      endpoint: this.endpoint,
-      framing: 'kv-stream',
-      requestB64,
-      responseB64,
-      decoded,
+      ...this.ctx.clientData,
     };
   }
 }

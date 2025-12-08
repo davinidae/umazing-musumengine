@@ -41,6 +41,6 @@ export class DecryptResponseService {
       blob1: headerJson,
       blob2: printable,
       plaintext,
-    } as const;
+    };
   }
 }

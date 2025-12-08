@@ -6,6 +6,7 @@ import {
   parseHeaderBlob1,
   udidRawToCanonicalString,
   deriveIvFromUdidString,
+  FramingMode,
 } from '../../../../src';
 import { decryptBlob2, LengthPrefixedStrategy } from '../../../../src/lib/decrypt/shared';
 
@@ -105,7 +106,7 @@ describe('EncryptPayloadService (unit)', () => {
           session_id_hex: '11'.repeat(16),
           response_key_hex: '22'.repeat(32),
           auth_key_hex: '33'.repeat(48),
-          framing: 'kv-stream',
+          framing: FramingMode.KvStream,
         },
         payload: [1, 2, 3],
         DETERMINISTIC_ENC_SECRET,

@@ -1,10 +1,7 @@
 # lib/models/client.model
 
-## Interfaces
-
-- [Logger](interfaces/Logger.md)
-- [ServiceOptions](interfaces/ServiceOptions.md)
-
 ## Type Aliases
 
+- [Logger](type-aliases/Logger.md)
 - [RuntimeClientOptions](type-aliases/RuntimeClientOptions.md)
+- [ServiceOptions](type-aliases/ServiceOptions.md)

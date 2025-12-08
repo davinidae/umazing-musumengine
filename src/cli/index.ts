@@ -80,8 +80,8 @@ decrypt
           'utf-8',
         );
         processed += 1;
-      } catch (e: any) {
-        const msg = e && e.message ? e.message : String(e);
+      } catch (e: unknown) {
+        const msg = (e as Error).message || String(e);
         console.log(`Skip (invalid request format): ${fullPath} -> ${msg}`);
       }
     }
@@ -136,8 +136,8 @@ decrypt
           'utf-8',
         );
         processed += 1;
-      } catch (e: any) {
-        const msg = e && e.message ? e.message : String(e);
+      } catch (e: unknown) {
+        const msg = (e as Error).message || String(e);
         console.log(`Skip (invalid response format): ${fullPath} -> ${msg}`);
       }
     }
@@ -184,8 +184,8 @@ encrypt
           continue;
         }
         const { requestB64 } = encSvc.buildFromParts({
-          blob1: (root as any).blob1,
-          payload: (root as any).blob2,
+          blob1: root.blob1,
+          payload: root.blob2,
           DETERMINISTIC_ENC_SECRET,
         });
         const outDir = path.join('encrypt/output', path.dirname(rel));
@@ -195,8 +195,8 @@ encrypt
         const outPath = path.join(outDir, 'built.b64');
         fs.writeFileSync(outPath, requestB64, 'utf-8');
         total += 1;
-      } catch (e: any) {
-        const msg = e && e.message ? e.message : String(e);
+      } catch (e: unknown) {
+        const msg = (e as Error).message || String(e);
         console.log(`Skip (error processing encryption): ${full} -> ${msg}`);
       }
     }
@@ -214,7 +214,7 @@ async function readAllStdin(): Promise<string> {
   const chunks: Buffer[] = [];
   return await new Promise((resolve, reject) => {
     process.stdin.on('data', (chunk) => {
-      const buf = Buffer.from(chunk as any);
+      const buf = Buffer.from(chunk);
       chunks.push(buf);
     });
     process.stdin.on('end', () => {
@@ -252,8 +252,8 @@ runtime
       });
       process.stdout.write(JSON.stringify(out));
       process.exitCode = 0;
-    } catch (e: any) {
-      const msg = e && e.message ? e.message : String(e);
+    } catch (e: unknown) {
+      const msg = (e as Error).message || String(e);
       console.error(msg);
       process.exitCode = 1;
     }
@@ -274,8 +274,8 @@ runtime
       });
       process.stdout.write(JSON.stringify(out));
       process.exitCode = 0;
-    } catch (e: any) {
-      const msg = e && e.message ? e.message : String(e);
+    } catch (e: unknown) {
+      const msg = (e as Error).message || String(e);
       console.error(msg);
       process.exitCode = 1;
     }

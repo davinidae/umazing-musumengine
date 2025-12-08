@@ -1,6 +1,6 @@
 # Class: EncryptPayloadService
 
-Defined in: [lib/encrypt/payload.service.ts:20](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/encrypt/payload.service.ts#L20)
+Defined in: [lib/encrypt/payload.service.ts:21](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/encrypt/payload.service.ts#L21)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -14,7 +14,7 @@ Framing modes:
 
 > **buildFromParts**(`input`): `object`
 
-Defined in: [lib/encrypt/payload.service.ts:34](https://github.com/davinidae/umazing-musumengine/blob/18fb9920f0c1134675a2221f55ba500b4715772f/src/lib/encrypt/payload.service.ts#L34)
+Defined in: [lib/encrypt/payload.service.ts:35](https://github.com/davinidae/umazing-musumengine/blob/f0aa00e05dacca920f40c0772577d56aeee15536/src/lib/encrypt/payload.service.ts#L35)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -22,51 +22,7 @@ Build a single request as Base64 from header fields (blob1) and a JS payload.
 
 ##### input
 
-###### blob1
-
-\{ `auth_key_hex`: `string`; `framing?`: `"length-prefixed"` \| `"kv-stream"`; `prefix_hex`: `string`; `response_key_hex`: `string`; `session_id_hex`: `string`; `udid_canonical?`: `string`; `udid_raw_hex?`: `string`; \}
-
-Header fields in hex (prefix, session_id, udid_raw or udid_canonical, response_key, auth_key). Optional framing hint.
-
-###### blob1.auth_key_hex
-
-`string`
-
-###### blob1.framing?
-
-`"length-prefixed"` \| `"kv-stream"`
-
-###### blob1.prefix_hex
-
-`string`
-
-###### blob1.response_key_hex
-
-`string`
-
-###### blob1.session_id_hex
-
-`string`
-
-###### blob1.udid_canonical?
-
-`string`
-
-###### blob1.udid_raw_hex?
-
-`string`
-
-###### DETERMINISTIC_ENC_SECRET
-
-`string`
-
-ASCII secret used to derive the 32-byte AES-256 key (SHA-256).
-
-###### payload
-
-`unknown`
-
-Arbitrary payload value; Buffers can be provided via `fromJsonFriendly` encoding.
+[`EncodeRequestInput`](../../../models/runtime.model/type-aliases/EncodeRequestInput.md) & `object`
 
 #### Returns
 

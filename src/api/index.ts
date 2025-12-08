@@ -35,11 +35,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use(endpoints);
 
 // Error handling middleware
-app.use((error: any, req: Request, res: Response, _next: NextFunction) => {
+app.use((error: unknown, req: Request, res: Response, _next: NextFunction) => {
   console.error('API Error:', error);
   res.status(500).json({
     error: 'Internal server error',
-    message: error.message,
+    message: (error as Error).message,
   });
 });
 

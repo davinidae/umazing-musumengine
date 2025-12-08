@@ -1,9 +1,9 @@
 # lib/models/runtime.model
 
-## Interfaces
+## Enumerations
 
-- [EncodeRequestInput](interfaces/EncodeRequestInput.md)
+- [FramingMode](enumerations/FramingMode.md)
 
 ## Type Aliases
 
-- [FramingMode](type-aliases/FramingMode.md)
+- [EncodeRequestInput](type-aliases/EncodeRequestInput.md)

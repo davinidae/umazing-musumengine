@@ -1,4 +1,5 @@
-import { RuntimeClient } from '../../lib';
+import { DecodeResponseOutput, FramingMode, RuntimeClient } from '../../lib';
+import { GallopResultCode } from './result_codes.model';
 
 /**
  * Base64-encoded buffer string. Used for request and response payloads over the wire.
@@ -9,13 +10,13 @@ export type EncodedBase64 = string;
  * Minimal shape passed between pipeline steps. May be undefined for the first step.
  * Implementations may carry forward useful decoded headers (e.g., viewer_id).
  */
-export interface StepPrevResult {
-  name?: string;
-  endpoint?: string;
-  requestB64?: EncodedBase64;
-  responseB64?: EncodedBase64;
-  decoded?: unknown;
-}
+export type StepPrevResult = Partial<{
+  name: string;
+  endpoint: string;
+  requestB64: EncodedBase64;
+  responseB64: EncodedBase64;
+  decoded: DecodeResponseOutput;
+}>;
 
 /**
  * Common fields every pipeline step should return.
@@ -28,25 +29,28 @@ export interface StepPrevResult {
  * - note: human-friendly explanation for skipped/edge cases
  * - error/errorStack: populated when a step throws; pipeline stops at first error
  */
-export interface StepResultBase {
+export type StepResultBase = {
   name: string;
   endpoint: string;
-  framing: 'kv-stream' | 'length-prefixed';
-  requestB64?: EncodedBase64;
-  responseB64?: EncodedBase64;
-  decoded?: unknown;
-  skipped?: boolean;
-  note?: string;
-  error?: string;
-  errorStack?: string;
-}
+  framing: FramingMode;
+  responseCode: GallopResultCode;
+  responseCodeName: keyof typeof GallopResultCode;
+} & Partial<{
+  requestB64: EncodedBase64;
+  responseB64: EncodedBase64;
+  decoded: DecodeResponseOutput;
+  skipped: boolean;
+  note: string;
+  error: string;
+  errorStack: string;
+}>;
 
 /**
  * A step result augmented with execution order (1-based).
  */
-export interface StepResult extends StepResultBase {
+export type StepResult = StepResultBase & {
   order: number;
-}
+};
 
 /**
  * Execution context for pipeline services. Lives in server-side session state.
@@ -55,7 +59,7 @@ export interface StepResult extends StepResultBase {
  * - blob1: header fields used when constructing requests
  * - clientData: device/environment fields included in payloads
  */
-export interface PipelineContext {
+export type PipelineContext = {
   runtime: RuntimeClient;
   upstreamBase: string;
   // Common header pieces
@@ -89,4 +93,4 @@ export interface PipelineContext {
     steam_id: string;
     steam_session_ticket: string;
   };
-}
+};
