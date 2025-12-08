@@ -16,7 +16,30 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Prepare wiki repository
+      - name: Diagnostics
+        env:
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        run: |
+          set -e
+          git --version
+          git config -l || true
+          echo "WIKI_USERNAME set: ${WIKI_USERNAME:+yes}"
+          if [ -n "$WIKI_TOKEN" ]; then echo "WIKI_TOKEN set: yes"; else echo "WIKI_TOKEN set: no"; fi
+          echo "Target wiki remote: https://${WIKI_USERNAME}:<masked>@github.com/davinidae/umazing-musumengine.wiki.git"
+
+      - name: Check wiki availability
+        env:
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        run: |
+          set -e
+          if ! git ls-remote "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1; then
+            echo "Wiki repository not found or inaccessible. Enable Wiki and authorize PAT (SSO if applicable)."
+            exit 1
+          fi
+
+      - name: Clone and sync wiki
         env:
           WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
           WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
@@ -24,11 +47,6 @@ jobs:
           set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Guard: exit gracefully if wiki repo does not exist or is inaccessible
-          if ! git ls-remote "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1; then
-              echo "Wiki repository not found or inaccessible. Enable Wiki in settings and authorize PAT."
-              exit 0
-          fi
           git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki
           rm -rf wiki/*
           cp -r docs/* wiki/
@@ -38,8 +56,9 @@ jobs:
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git"
           git add -A
           if git diff --cached --quiet; then
-              echo "No changes to commit"
+            echo "No changes to commit"
           else
-              git commit -m "docs: sync docs/ to wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-              git push origin HEAD:master
+            git commit -m "docs: sync docs/ to wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            # Default to master; change to main if your wiki uses main
+            git push origin HEAD:master
           fi
