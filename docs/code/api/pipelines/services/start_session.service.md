@@ -4,7 +4,7 @@
 
 ### StartSessionService
 
-Defined in: [api/pipelines/services/start\_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/pipelines/services/start_session.service.ts#L8)
+Defined in: [api/pipelines/services/start\_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f925cc44580437204daf55f6632a534c57bf2e91/src/api/pipelines/services/start_session.service.ts#L8)
 
 tool/start_session: Establishes a server session for the viewer.
 Skips execution if a valid viewer_id is not available.
@@ -19,7 +19,7 @@ Skips execution if a valid viewer_id is not available.
 
 > **new StartSessionService**(`ctx`): [`StartSessionService`](#startsessionservice)
 
-Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/pipelines/services/step.service.ts#L28)
+Defined in: [api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/f925cc44580437204daf55f6632a534c57bf2e91/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -45,7 +45,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 > **execute**(`prev`): `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
-Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/pipelines/services/step.service.ts#L110)
+Defined in: [api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/f925cc44580437204daf55f6632a534c57bf2e91/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode response.
 
@@ -71,7 +71,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 
 > **getPayload**(`viewer_id`): `object`
 
-Defined in: [api/pipelines/services/start\_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/7c6796e9b41672cc368883ed62957202f48e4b85/src/api/pipelines/services/start_session.service.ts#L16)
+Defined in: [api/pipelines/services/start\_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/f925cc44580437204daf55f6632a534c57bf2e91/src/api/pipelines/services/start_session.service.ts#L16)
 
 Build payload required by `tool/start_session` including device and platform metadata.
 

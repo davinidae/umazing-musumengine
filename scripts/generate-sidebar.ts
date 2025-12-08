@@ -86,6 +86,15 @@ function generateSidebar() {
       const pkgRaw = fs.readFileSync(PKG_PATH, 'utf-8');
       const pkg = JSON.parse(pkgRaw || '{}');
       const version: string | undefined = pkg.version;
+      // Build a human-friendly UTC timestamp
+      const now = new Date();
+      const yyyy = now.getUTCFullYear();
+      const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+      const dd = String(now.getUTCDate()).padStart(2, '0');
+      const hh = String(now.getUTCHours()).padStart(2, '0');
+      const mi = String(now.getUTCMinutes()).padStart(2, '0');
+      const ss = String(now.getUTCSeconds()).padStart(2, '0');
+      const ts = `${yyyy}-${mm}-${dd} ${hh}:${mi}:${ss} UTC`;
       if (version) {
         const homeRaw = fs.readFileSync(HOME_PATH, 'utf-8');
         const lines = homeRaw.split(/\r?\n/);
@@ -93,10 +102,10 @@ function generateSidebar() {
           // Replace first markdown H1 with version suffix, keeping existing title base
           const h1 = lines[0];
           if (/^#\s+/.test(h1)) {
-            const baseTitle = h1.replace(/^#\s+/, '').replace(/\s+v\d+\.\d+\.\d+$/i, '');
-            lines[0] = `# ${baseTitle} v${version}`;
+            const baseTitle = h1.replace(/^#\s+/, '').replace(/\s+v\d+\.\d+\.\d+.*$/i, '');
+            lines[0] = `# ${baseTitle} v${version} — ${ts}`;
             fs.writeFileSync(HOME_PATH, lines.join('\n'), 'utf-8');
-            console.log(`Updated Home title with version v${version}`);
+            console.log(`Updated Home title with version v${version} at ${ts}`);
           }
         }
       }
