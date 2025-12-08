@@ -1,0 +1,104 @@
+<!-- Auto-generated from /docs by scripts/generate-sidebar.ts -->
+
+- code
+  - api
+    - models
+      - [pipelines.model](code/api/models/pipelines.model)
+      - [result codes.model](code/api/models/result_codes.model)
+    - pipelines
+      - services
+        - [load index.service](code/api/pipelines/services/load_index.service)
+        - [pre signup.service](code/api/pipelines/services/pre_signup.service)
+        - [signup.service](code/api/pipelines/services/signup.service)
+        - [start session.service](code/api/pipelines/services/start_session.service)
+        - [step.service](code/api/pipelines/services/step.service)
+      - [pipeline groups](code/api/pipelines/pipeline_groups)
+    - session
+      - [pipeline](code/api/session/pipeline)
+      - [session manager](code/api/session/session-manager)
+      - [user session](code/api/session/user-session)
+    - [endpoints](code/api/endpoints)
+  - lib
+    - decrypt
+      - shared
+        - [blob.util](code/lib/decrypt/shared/blob.util)
+        - [unpacker.util](code/lib/decrypt/shared/unpacker.util)
+      - [request.service](code/lib/decrypt/request.service)
+      - [response.service](code/lib/decrypt/response.service)
+    - encrypt
+      - [payload.service](code/lib/encrypt/payload.service)
+    - models
+      - [client.model](code/lib/models/client.model)
+      - [protocol.model](code/lib/models/protocol.model)
+      - [runtime.model](code/lib/models/runtime.model)
+    - shared
+      - [decrypt.util](code/lib/shared/decrypt.util)
+      - [encrypt.util](code/lib/shared/encrypt.util)
+      - [json.util](code/lib/shared/json.util)
+      - [logger.util](code/lib/shared/logger.util)
+      - [protocol.util](code/lib/shared/protocol.util)
+  - [variables](code/variables)
+- umamusume api info
+  - behavior
+    - [CARATS](umamusume_api_info/behavior/CARATS)
+    - [CONCERTS](umamusume_api_info/behavior/CONCERTS)
+    - [DAILY RACES](umamusume_api_info/behavior/DAILY_RACES)
+    - [EVENT MISSION](umamusume_api_info/behavior/EVENT_MISSION)
+    - [FAVORITE CHARACTER](umamusume_api_info/behavior/FAVORITE_CHARACTER)
+    - [MAIN SCREEN](umamusume_api_info/behavior/MAIN_SCREEN)
+    - [MISSIONS](umamusume_api_info/behavior/MISSIONS)
+    - [PRESENTS](umamusume_api_info/behavior/PRESENTS)
+    - [SCOUT](umamusume_api_info/behavior/SCOUT)
+    - [SHOPS](umamusume_api_info/behavior/SHOPS)
+    - [SUPPORT CARDS](umamusume_api_info/behavior/SUPPORT_CARDS)
+    - [TEAM TRIALS](umamusume_api_info/behavior/TEAM_TRIALS)
+    - [USER](umamusume_api_info/behavior/USER)
+  - endpoints
+    - daily race
+      - index
+      - race entry
+      - race start
+      - reflect item effect
+      - replay check
+    - item
+      - show exchange
+    - jukebox
+      - draw random request
+    - live
+      - live start
+    - load
+      - index
+    - mission
+      - index
+      - receive
+    - payment
+      - item list
+    - present
+      - index
+      - receive all
+    - story event
+      - index
+      - receive mission
+      - roulette
+      - roulette exec
+    - support card
+      - strengthen
+    - team stadium
+      - index
+      - opponent list
+    - tool
+      - pre signup
+      - signup
+      - start session
+    - user
+      - change favorite character
+      - get profile info
+  - umamusume.Http
+    - method dumps
+      - Gallop
+        - MsgPack
+          - Formatters
+          - Resolvers
+  - [INTERACTION](umamusume_api_info/INTERACTION)
+  - [ORIGINAL](umamusume_api_info/ORIGINAL)
+- [DEVELOPING DOCS](DEVELOPING_DOCS)
