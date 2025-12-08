@@ -63,14 +63,22 @@ jobs:
           cd wiki
           git remote set-url origin "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1
           echo "Ensuring branch up-to-date"
-          git fetch origin master >/dev/null 2>&1 || true
-          git checkout -B master origin/master >/dev/null 2>&1 || git checkout master >/dev/null 2>&1
-          git pull --rebase origin master >/dev/null 2>&1 || true
+          # Detect remote default branch (master or main)
+          DEFAULT_BRANCH="$(git remote show origin | sed -n 's/.*HEAD branch: \(.*\)/\1/p')"
+          if [ -z "$DEFAULT_BRANCH" ]; then DEFAULT_BRANCH="master"; fi
+          git fetch origin "$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          # If the local branch doesn't exist, create it tracking origin
+          git rev-parse --verify "$DEFAULT_BRANCH" >/dev/null 2>&1 || git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          # Try to checkout and rebase; if divergence causes issues, hard reset to remote
+          git checkout "$DEFAULT_BRANCH" >/dev/null 2>&1 || git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          if ! git pull --rebase origin "$DEFAULT_BRANCH" >/dev/null 2>&1; then
+            git reset --hard "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          fi
           git add -A >/dev/null 2>&1
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "docs: sync docs/ to wiki" >/dev/null 2>&1
-            git push origin HEAD:master >/dev/null 2>&1
+            git push origin HEAD:"$DEFAULT_BRANCH" >/dev/null 2>&1
             echo "Wiki updated"
           fi
