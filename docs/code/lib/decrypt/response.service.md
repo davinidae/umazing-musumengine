@@ -5,7 +5,7 @@
 ### DecryptResponseService
 
 Defined in:
-[lib/decrypt/response.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/decrypt/response.service.ts#L11)
+[lib/decrypt/response.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/lib/decrypt/response.service.ts#L11)
 
 Decode response Base64 buffers using the matching request for UDID/IV. The request blob1 provides
 UDID to derive the IV; the response is a raw blob2 buffer in Base64.
@@ -17,7 +17,7 @@ UDID to derive the IV; the response is a raw blob2 buffer in Base64.
 > **decodeFromBase64**(`requestB64`, `responseB64`): `object`
 
 Defined in:
-[lib/decrypt/response.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/lib/decrypt/response.service.ts#L19)
+[lib/decrypt/response.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/lib/decrypt/response.service.ts#L19)
 
 Decode a single response provided as a Base64 string, using its matching request.
 

@@ -86,14 +86,10 @@ jobs:
           CHANGES=$(git status --porcelain)
           COUNT=$(echo "$CHANGES" | sed '/^$/d' | wc -l)
           echo "Change summary: $COUNT files modified"
-          if [ -z "$CHANGES" ]; then
-            echo "No changes to commit"
-          else
-            # Read version from repository root (not present inside wiki)
-            VERSION=$(node -p "require('../package.json').version" 2>/dev/null || echo "unknown")
-            TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-            MSG="docs: wiki sync v${VERSION} @ ${TS}"
-            git commit -m "$MSG" >/dev/null 2>&1 || true
-            git push origin HEAD:"$DEFAULT_BRANCH" >/dev/null 2>&1
-            echo "Wiki updated: $MSG"
-          fi
+          # Always commit to reflect the run, even if files are identical
+          VERSION=$(node -p "require('../package.json').version" 2>/dev/null || echo "unknown")
+          TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          MSG="docs: wiki sync v${VERSION} @ ${TS}"
+          git commit -m "$MSG" --allow-empty >/dev/null 2>&1 || true
+          git push origin HEAD:"$DEFAULT_BRANCH" >/dev/null 2>&1
+          echo "Wiki updated: $MSG"

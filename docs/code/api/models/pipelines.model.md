@@ -7,7 +7,7 @@
 > **EncodedBase64** = `string`
 
 Defined in:
-[api/models/pipelines.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L8)
+[api/models/pipelines.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/api/models/pipelines.model.ts#L8)
 
 Base64-encoded buffer string. Used for request and response payloads over the wire.
 
@@ -18,7 +18,7 @@ Base64-encoded buffer string. Used for request and response payloads over the wi
 > **PipelineContext** = `object`
 
 Defined in:
-[api/models/pipelines.model.ts:68](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L68)
+[api/models/pipelines.model.ts:68](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/api/models/pipelines.model.ts#L68)
 
 Execution context for pipeline services. Lives in server-side session state.
 
@@ -36,7 +36,7 @@ Execution context for pipeline services. Lives in server-side session state.
 > [`EncodedBase64`](#encodedbase64); \}\>
 
 Defined in:
-[api/models/pipelines.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L15)
+[api/models/pipelines.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/api/models/pipelines.model.ts#L15)
 
 Minimal shape passed between pipeline steps. May be `undefined` for the first step. Implementations
 can carry forward useful decoded headers (e.g., `viewer_id`) via the `decoded` field.
@@ -48,7 +48,7 @@ can carry forward useful decoded headers (e.g., `viewer_id`) via the `decoded` f
 > **StepResult** = [`StepResultBase`](#stepresultbase) & `object`
 
 Defined in:
-[api/models/pipelines.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L57)
+[api/models/pipelines.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/api/models/pipelines.model.ts#L57)
 
 A step result augmented with execution order (1-based).
 
@@ -68,7 +68,7 @@ A step result augmented with execution order (1-based).
 > `boolean`; \}\>
 
 Defined in:
-[api/models/pipelines.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/6034ce7cffc40ff1b03119a721642a9ccffdd019/src/api/models/pipelines.model.ts#L37)
+[api/models/pipelines.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/3967f9f64e7e7864bf222e033197758a8cd227e4/src/api/models/pipelines.model.ts#L37)
 
 Common fields every pipeline step should return.
 
