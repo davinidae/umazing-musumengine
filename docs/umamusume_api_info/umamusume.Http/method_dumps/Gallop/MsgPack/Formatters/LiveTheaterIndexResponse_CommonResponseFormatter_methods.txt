@@ -1,2 +1,0 @@
-Type: LiveTheaterIndexResponse_CommonResponseFormatter
-

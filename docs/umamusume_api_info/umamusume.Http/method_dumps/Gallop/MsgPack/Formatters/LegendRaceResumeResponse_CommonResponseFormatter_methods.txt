@@ -1,2 +1,0 @@
-Type: LegendRaceResumeResponse_CommonResponseFormatter
-

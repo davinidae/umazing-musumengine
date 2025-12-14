@@ -1,2 +1,0 @@
-Type: PracticeRaceDeleteRaceResponse_CommonResponseFormatter
-

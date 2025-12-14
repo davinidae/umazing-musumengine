@@ -1,2 +1,0 @@
-Type: HonorChangeHonorResponse_CommonResponseFormatter
-

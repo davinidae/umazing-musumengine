@@ -1,2 +1,0 @@
-Type: CardTalentStrengthenResponse_CommonResponseFormatter
-

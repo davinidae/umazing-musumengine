@@ -1,2 +1,0 @@
-Type: SupportCardGetSupportCardEventSkillResponse_CommonResponseFormatter
-

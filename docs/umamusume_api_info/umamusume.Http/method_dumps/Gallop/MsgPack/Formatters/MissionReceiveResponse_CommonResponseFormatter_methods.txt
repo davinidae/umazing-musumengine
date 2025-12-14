@@ -1,2 +1,0 @@
-Type: MissionReceiveResponse_CommonResponseFormatter
-

@@ -1,5 +1,0 @@
-Type: <Module>:
-	Base Class: 
-		
-
-	Interfaces:

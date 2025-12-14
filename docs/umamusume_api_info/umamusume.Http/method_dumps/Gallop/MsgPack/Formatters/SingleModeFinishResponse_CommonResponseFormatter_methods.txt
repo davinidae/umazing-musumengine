@@ -1,2 +1,0 @@
-Type: SingleModeFinishResponse_CommonResponseFormatter
-

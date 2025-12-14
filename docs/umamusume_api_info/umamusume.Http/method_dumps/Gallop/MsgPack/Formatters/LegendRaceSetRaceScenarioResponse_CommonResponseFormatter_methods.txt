@@ -1,2 +1,0 @@
-Type: LegendRaceSetRaceScenarioResponse_CommonResponseFormatter
-

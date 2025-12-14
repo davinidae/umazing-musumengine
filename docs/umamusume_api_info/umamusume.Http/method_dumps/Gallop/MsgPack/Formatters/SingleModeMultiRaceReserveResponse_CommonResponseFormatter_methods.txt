@@ -1,2 +1,0 @@
-Type: SingleModeMultiRaceReserveResponse_CommonResponseFormatter
-

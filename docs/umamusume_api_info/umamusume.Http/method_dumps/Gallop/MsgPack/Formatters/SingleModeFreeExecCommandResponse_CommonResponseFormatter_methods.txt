@@ -1,2 +1,0 @@
-Type: SingleModeFreeExecCommandResponse_CommonResponseFormatter
-

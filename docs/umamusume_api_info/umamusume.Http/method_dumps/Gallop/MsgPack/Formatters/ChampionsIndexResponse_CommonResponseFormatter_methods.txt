@@ -1,2 +1,0 @@
-Type: ChampionsIndexResponse_CommonResponseFormatter
-

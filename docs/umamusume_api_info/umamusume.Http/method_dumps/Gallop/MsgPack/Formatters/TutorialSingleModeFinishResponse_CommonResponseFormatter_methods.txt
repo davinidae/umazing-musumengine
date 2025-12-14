@@ -1,2 +1,0 @@
-Type: TutorialSingleModeFinishResponse_CommonResponseFormatter
-

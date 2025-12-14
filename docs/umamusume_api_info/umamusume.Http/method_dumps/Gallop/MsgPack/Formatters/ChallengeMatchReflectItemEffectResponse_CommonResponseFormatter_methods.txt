@@ -1,2 +1,0 @@
-Type: ChallengeMatchReflectItemEffectResponse_CommonResponseFormatter
-

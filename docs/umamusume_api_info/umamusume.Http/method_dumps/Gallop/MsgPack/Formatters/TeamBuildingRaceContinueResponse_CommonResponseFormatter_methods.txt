@@ -1,2 +1,0 @@
-Type: TeamBuildingRaceContinueResponse_CommonResponseFormatter
-

@@ -1,2 +1,0 @@
-Type: CircleGetPostPartnerDataResponse_CommonResponseFormatter
-

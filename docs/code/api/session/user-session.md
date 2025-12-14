@@ -5,7 +5,7 @@
 ### UserSession
 
 Defined in:
-[api/session/user-session.ts:14](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/session/user-session.ts#L14)
+[api/session/user-session.ts:14](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L14)
 
 Represents a per-user server-side session owned by the API.
 
@@ -16,22 +16,101 @@ Responsibilities
 - Provide helpers to run a sequence of pipeline services and persist the last step.
 - Do NOT expose sensitive state to API consumers; only share the opaque `id`.
 
+#### Constructors
+
+##### Constructor
+
+> **new UserSession**(`id`, `createdAt`, `meta`, `ctx`): [`UserSession`](#usersession)
+
+Defined in:
+[api/session/user-session.ts:18](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L18)
+
+###### Parameters
+
+###### id
+
+`string`
+
+###### createdAt
+
+`number`
+
+###### meta
+
+`Record`\<`string`, `unknown`\>
+
+###### ctx
+
+[`PipelineContext`](../models/pipelines.model.md#pipelinecontext)
+
+###### Returns
+
+[`UserSession`](#usersession)
+
+#### Properties
+
+##### createdAt
+
+> `readonly` **createdAt**: `number`
+
+Defined in:
+[api/session/user-session.ts:20](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L20)
+
+##### ctx
+
+> `private` `readonly` **ctx**: [`PipelineContext`](../models/pipelines.model.md#pipelinecontext)
+
+Defined in:
+[api/session/user-session.ts:22](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L22)
+
+##### id
+
+> `readonly` **id**: `string`
+
+Defined in:
+[api/session/user-session.ts:19](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L19)
+
+##### lastStep?
+
+> `private` `optional` **lastStep**: `Partial`\<\{ `decoded`:
+> [`DecodeResponseOutput`](../../lib/models/runtime.model.md#decoderesponseoutput); `endpoint`:
+> `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\>
+
+Defined in:
+[api/session/user-session.ts:15](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L15)
+
+##### meta
+
+> `readonly` **meta**: `Record`\<`string`, `unknown`\>
+
+Defined in:
+[api/session/user-session.ts:21](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L21)
+
+##### pipeline
+
+> `private` **pipeline**: [`Pipeline`](pipeline.md#pipeline)
+
+Defined in:
+[api/session/user-session.ts:16](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L16)
+
 #### Methods
 
 ##### getLastStep()
 
-> **getLastStep**(): `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`:
-> `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
+> **getLastStep**(): `Partial`\<\{ `decoded`:
+> [`DecodeResponseOutput`](../../lib/models/runtime.model.md#decoderesponseoutput); `endpoint`:
+> `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
 
 Defined in:
-[api/session/user-session.ts:47](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/session/user-session.ts#L47)
+[api/session/user-session.ts:47](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L47)
 
 Retrieve the last step result, used as input for chained pipelines.
 
 ###### Returns
 
-`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`;
-`requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
+`Partial`\<\{ `decoded`:
+[`DecodeResponseOutput`](../../lib/models/runtime.model.md#decoderesponseoutput); `endpoint`:
+`string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
 
 `StepPrevResult` or `undefined`.
 
@@ -40,7 +119,7 @@ Retrieve the last step result, used as input for chained pipelines.
 > **getPipeline**(): [`Pipeline`](pipeline.md#pipeline)
 
 Defined in:
-[api/session/user-session.ts:31](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/session/user-session.ts#L31)
+[api/session/user-session.ts:31](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L31)
 
 Access the underlying `Pipeline` instance.
 
@@ -56,7 +135,7 @@ Pipeline instance.
 > `Promise`\<[`StepResult`](../models/pipelines.model.md#stepresult)[]\>
 
 Defined in:
-[api/session/user-session.ts:56](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/session/user-session.ts#L56)
+[api/session/user-session.ts:56](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L56)
 
 Convenience wrapper around executePipeline that also saves the last step for chaining.
 
@@ -79,7 +158,7 @@ Ordered list of `StepResult` items for the executed pipeline.
 > **setLastStep**(`step`): `void`
 
 Defined in:
-[api/session/user-session.ts:39](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/session/user-session.ts#L39)
+[api/session/user-session.ts:39](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/session/user-session.ts#L39)
 
 Persist the last successful or terminal step of the pipeline.
 
@@ -89,8 +168,9 @@ Persist the last successful or terminal step of the pipeline.
 
 Last step or `undefined`.
 
-`Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`; `name`: `string`;
-`requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
+`Partial`\<\{ `decoded`:
+[`DecodeResponseOutput`](../../lib/models/runtime.model.md#decoderesponseoutput); `endpoint`:
+`string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> | `undefined`
 
 ###### Returns
 

@@ -2,12 +2,12 @@
 
 ## Variables
 
-### default
+### router
 
-> `const` **default**: `Router`
+> `const` **router**: `Router`
 
 Defined in:
-[api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/endpoints/index.ts#L14)
+[api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/endpoints/index.ts#L14)
 
 Root API router.
 
@@ -19,3 +19,9 @@ Mounts sub-routers for public endpoints.
 #### Remarks
 
 This router is consumed by `src/api/index.ts`.
+
+## References
+
+### default
+
+Renames and re-exports [router](#router)

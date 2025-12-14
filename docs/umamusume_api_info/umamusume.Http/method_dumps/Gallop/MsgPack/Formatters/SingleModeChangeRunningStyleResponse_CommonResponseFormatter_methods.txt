@@ -1,2 +1,0 @@
-Type: SingleModeChangeRunningStyleResponse_CommonResponseFormatter
-

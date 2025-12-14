@@ -1,2 +1,0 @@
-Type: MainStoryFirstClearResponse_CommonResponseFormatter
-

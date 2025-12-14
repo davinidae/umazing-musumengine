@@ -1,10 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 
-const DOCS_ROOT = path.resolve(process.cwd(), 'docs');
-const SIDEBAR_PATH = path.join(DOCS_ROOT, '_Sidebar.md');
+export const DOCS_ROOT = path.resolve(process.cwd(), 'docs');
+export const SIDEBAR_PATH = path.join(DOCS_ROOT, '_Sidebar.md');
 
-function isHidden(name: string) {
+/**
+ * Returns whether a docs entry should be hidden from the sidebar.
+ *
+ * @param name Filename or directory name
+ */
+export function isHidden(name: string) {
   return name.startsWith('.') || name === '_Sidebar.md' || name === '_Sidebar';
 }
 
@@ -15,7 +20,13 @@ type Node = {
   children?: Node[];
 };
 
-function read(dirAbs: string, relBase = ''): Node[] {
+/**
+ * Recursively reads the docs directory into a tree of nodes.
+ *
+ * @param dirAbs Absolute path to the directory to read
+ * @param relBase Relative path base used to compute links
+ */
+export function read(dirAbs: string, relBase = ''): Node[] {
   const items = fs.readdirSync(dirAbs, {
     withFileTypes: true,
   });
@@ -47,7 +58,16 @@ function read(dirAbs: string, relBase = ''): Node[] {
   });
 }
 
-function link(rel: string, name: string) {
+/**
+ * Create a GitHub Wiki compatible Markdown link for a file.
+ *
+ * - For Markdown: strip extension and replace spaces with hyphens
+ * - For others: URL-encode reserved characters
+ *
+ * @param rel Relative path from docs root
+ * @param name Display name
+ */
+export function link(rel: string, name: string) {
   const isMd = /\.md$/i.test(name);
   const target = rel.split(path.sep).join('/');
   // For wiki pages (Markdown), strip extension and replace spaces with hyphens for stable routing
@@ -58,7 +78,13 @@ function link(rel: string, name: string) {
   return `[${name}](${pageTarget})`;
 }
 
-function render(nodes: Node[], depth = 0): string[] {
+/**
+ * Render the sidebar tree into Markdown with collapsible sections.
+ *
+ * @param nodes Tree nodes to render
+ * @param depth Current recursion depth (top-level opens by default)
+ */
+export function render(nodes: Node[], depth = 0): string[] {
   const lines: string[] = [];
   for (const n of nodes) {
     const top = depth === 0;
@@ -83,7 +109,10 @@ function render(nodes: Node[], depth = 0): string[] {
   return lines;
 }
 
-function generate() {
+/**
+ * Entrypoint: generates `docs/_Sidebar.md` from the contents of `docs/`.
+ */
+export function generate() {
   if (!fs.existsSync(DOCS_ROOT)) {
     console.error('docs folder not found');
     process.exit(1);

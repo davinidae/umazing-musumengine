@@ -1,2 +1,0 @@
-Type: PaymentItemListResponse_CommonResponseFormatter
-

@@ -50,7 +50,9 @@
     "format:check": "prettier --check .",
     "prepare": "husky install",
     "precommit": "npm run lint && npm run format && npm run typecheck",
-    "docs": "typedoc && tsx scripts/generate-sidebar.ts",
+    "docs:code": "typedoc --options typedoc.code.json",
+    "docs:scripts": "typedoc --options typedoc.scripts.json",
+    "docs": "npm run docs:code && npm run docs:scripts && tsx scripts/generate-sidebar.ts",
     "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format",
     "api": "tsx src/api/index.ts",
     "api:dev": "nodemon --exec tsx src/api/index.ts"

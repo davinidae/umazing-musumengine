@@ -1,2 +1,0 @@
-Type: RoomMatchRaceEndResultResponse_CommonResponseFormatter
-

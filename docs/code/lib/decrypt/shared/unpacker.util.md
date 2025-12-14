@@ -5,10 +5,28 @@
 ### AnchorDataHeadersStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:130](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L130)
+[lib/decrypt/shared/unpacker.util.ts:130](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L130)
 
 Targeted heuristic: anchor on the 'data_headers' key often present in tool responses and reconstruct
 a map from the surrounding key/value sequence.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new AnchorDataHeadersStrategy**(): [`AnchorDataHeadersStrategy`](#anchordataheadersstrategy)
+
+###### Returns
+
+[`AnchorDataHeadersStrategy`](#anchordataheadersstrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -17,7 +35,7 @@ a map from the surrounding key/value sequence.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:135](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L135)
+[lib/decrypt/shared/unpacker.util.ts:135](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L135)
 
 ###### Parameters
 
@@ -35,14 +53,14 @@ Object reconstructed when 'data_headers' anchor is present; otherwise undefined.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -59,18 +77,37 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### HeuristicStreamToObjectStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:222](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L222)
+[lib/decrypt/shared/unpacker.util.ts:222](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L222)
 
 Last-resort heuristic: decode a short prefix of values and attempt to fold them into an object
 starting at the first run of string keys. This is conservative and only accepts outputs with enough
 (>=4) key/value pairs.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new HeuristicStreamToObjectStrategy**():
+> [`HeuristicStreamToObjectStrategy`](#heuristicstreamtoobjectstrategy)
+
+###### Returns
+
+[`HeuristicStreamToObjectStrategy`](#heuristicstreamtoobjectstrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -79,7 +116,7 @@ starting at the first run of string keys. This is conservative and only accepts 
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:227](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L227)
+[lib/decrypt/shared/unpacker.util.ts:227](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L227)
 
 ###### Parameters
 
@@ -97,14 +134,14 @@ Conservatively reconstructed object from a stream, or undefined.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -121,17 +158,35 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### KVStreamStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:90](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L90)
+[lib/decrypt/shared/unpacker.util.ts:90](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L90)
 
 Heuristic: decode a concatenated (key, value, ...) msgpack stream into an object. This matches some
 tool endpoints that stream key/value pairs without a surrounding map.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new KVStreamStrategy**(): [`KVStreamStrategy`](#kvstreamstrategy)
+
+###### Returns
+
+[`KVStreamStrategy`](#kvstreamstrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -140,7 +195,7 @@ tool endpoints that stream key/value pairs without a surrounding map.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:95](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L95)
+[lib/decrypt/shared/unpacker.util.ts:95](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L95)
 
 ###### Parameters
 
@@ -158,14 +213,14 @@ Object reconstructed from (key, value, ...) stream, or undefined.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -182,18 +237,36 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### LengthPrefixedStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:15](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L15)
+[lib/decrypt/shared/unpacker.util.ts:15](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L15)
 
 First try: classic length-prefixed msgpack [4B LE len][msgpack]. This strategy intentionally throws
 on malformed inputs so unit tests can assert error conditions. The Unpacker will catch and try other
 strategies afterwards.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new LengthPrefixedStrategy**(): [`LengthPrefixedStrategy`](#lengthprefixedstrategy)
+
+###### Returns
+
+[`LengthPrefixedStrategy`](#lengthprefixedstrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -202,7 +275,7 @@ strategies afterwards.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L21)
+[lib/decrypt/shared/unpacker.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L21)
 
 ###### Parameters
 
@@ -224,14 +297,14 @@ If the buffer is too short or the declared length is inconsistent with data.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -248,17 +321,35 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### MapHeaderScanStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:56](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L56)
+[lib/decrypt/shared/unpacker.util.ts:56](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L56)
 
 Heuristic: scan for a plausible map header inside the buffer and decode from there. Looks for likely
 keys (viewer_id, device, ...) or sufficient string key density.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new MapHeaderScanStrategy**(): [`MapHeaderScanStrategy`](#mapheaderscanstrategy)
+
+###### Returns
+
+[`MapHeaderScanStrategy`](#mapheaderscanstrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -267,7 +358,7 @@ keys (viewer_id, device, ...) or sufficient string key density.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:61](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L61)
+[lib/decrypt/shared/unpacker.util.ts:61](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L61)
 
 ###### Parameters
 
@@ -285,14 +376,14 @@ Decoded object if a plausible map header is found; otherwise undefined.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -309,17 +400,35 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### MultiArrayStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:195](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L195)
+[lib/decrypt/shared/unpacker.util.ts:195](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L195)
 
 Fallback: decode as a sequence of msgpack documents into an array. Keeps some visibility into odd
 payloads when object reconstruction is ambiguous.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new MultiArrayStrategy**(): [`MultiArrayStrategy`](#multiarraystrategy)
+
+###### Returns
+
+[`MultiArrayStrategy`](#multiarraystrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -328,7 +437,7 @@ payloads when object reconstruction is ambiguous.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:200](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L200)
+[lib/decrypt/shared/unpacker.util.ts:200](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L200)
 
 ###### Parameters
 
@@ -346,14 +455,14 @@ Array of decoded values via decodeMulti, or undefined.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -370,17 +479,35 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### RawMsgpackStrategy
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:38](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L38)
+[lib/decrypt/shared/unpacker.util.ts:38](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L38)
 
 Second try: treat the entire buffer as a single msgpack document. Useful when the server omits the
 length prefix for small payloads.
+
+#### Extends
+
+- [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)
+
+#### Constructors
+
+##### Constructor
+
+> **new RawMsgpackStrategy**(): [`RawMsgpackStrategy`](#rawmsgpackstrategy)
+
+###### Returns
+
+[`RawMsgpackStrategy`](#rawmsgpackstrategy)
+
+###### Inherited from
+
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`constructor`](../../models/decrypt.model.md#constructor)
 
 #### Methods
 
@@ -389,7 +516,7 @@ length prefix for small payloads.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:43](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L43)
+[lib/decrypt/shared/unpacker.util.ts:43](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L43)
 
 ###### Parameters
 
@@ -407,14 +534,14 @@ Decoded single msgpack value, or undefined if not decodable.
 
 ###### Overrides
 
-`UnpackStrategy.execute`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`execute`](../../models/decrypt.model.md#execute)
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/models/decrypt.model.ts#L8)
+[lib/models/decrypt.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/models/decrypt.model.ts#L8)
 
 Normalize common response shape: if an object has data and flattened header-like keys, wrap the
 headers under data_headers.
@@ -431,14 +558,14 @@ headers under data_headers.
 
 ###### Inherited from
 
-`UnpackStrategy.normalizeResponseShape`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy).[`normalizeResponseShape`](../../models/decrypt.model.md#normalizeresponseshape)
 
 ---
 
 ### Unpacker
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:258](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L258)
+[lib/decrypt/shared/unpacker.util.ts:258](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L258)
 
 Pipeline that tries multiple strategies in a safe order. If none succeed, returns a diagnostic
 object containing a hex dump to aid manual inspection.
@@ -450,7 +577,7 @@ object containing a hex dump to aid manual inspection.
 > **new Unpacker**(`strategies`): [`Unpacker`](#unpacker)
 
 Defined in:
-[lib/decrypt/shared/unpacker.util.ts:269](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/lib/decrypt/shared/unpacker.util.ts#L269)
+[lib/decrypt/shared/unpacker.util.ts:269](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L269)
 
 Heuristic unpacker for payloads that may not be length-prefixed. It tries, in order:
 
@@ -466,8 +593,37 @@ Heuristic unpacker for payloads that may not be length-prefixed. It tries, in or
 
 ###### strategies
 
-`UnpackStrategy`[] = `...`
+[`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)[] = `...`
 
 ###### Returns
 
 [`Unpacker`](#unpacker)
+
+#### Properties
+
+##### strategies
+
+> `private` `readonly` **strategies**:
+> [`UnpackStrategy`](../../models/decrypt.model.md#unpackstrategy)[]
+
+Defined in:
+[lib/decrypt/shared/unpacker.util.ts:270](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L270)
+
+#### Methods
+
+##### execute()
+
+> **execute**(`buf`): `unknown`
+
+Defined in:
+[lib/decrypt/shared/unpacker.util.ts:283](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/lib/decrypt/shared/unpacker.util.ts#L283)
+
+###### Parameters
+
+###### buf
+
+`Buffer`
+
+###### Returns
+
+`unknown`

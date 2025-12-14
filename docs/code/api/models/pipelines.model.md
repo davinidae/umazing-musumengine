@@ -7,7 +7,7 @@
 > **EncodedBase64** = `string`
 
 Defined in:
-[api/models/pipelines.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/models/pipelines.model.ts#L8)
+[api/models/pipelines.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L8)
 
 Base64-encoded buffer string. Used for request and response payloads over the wire.
 
@@ -18,7 +18,7 @@ Base64-encoded buffer string. Used for request and response payloads over the wi
 > **PipelineContext** = `object`
 
 Defined in:
-[api/models/pipelines.model.ts:68](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/models/pipelines.model.ts#L68)
+[api/models/pipelines.model.ts:68](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L68)
 
 Execution context for pipeline services. Lives in server-side session state.
 
@@ -27,16 +27,161 @@ Execution context for pipeline services. Lives in server-side session state.
 - blob1: header fields used when constructing requests
 - clientData: device/environment fields included in payloads
 
+#### Properties
+
+##### blob1
+
+> **blob1**: `object`
+
+Defined in:
+[api/models/pipelines.model.ts:72](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L72)
+
+###### auth_key_hex
+
+> **auth_key_hex**: `string`
+
+48-byte auth key (hex).
+
+###### prefix_hex
+
+> **prefix_hex**: `string`
+
+Free-form prefix echoed back by server (hex).
+
+###### response_key_hex
+
+> **response_key_hex**: `string`
+
+32-byte response key (hex).
+
+###### session_id_hex
+
+> **session_id_hex**: `string`
+
+16-byte session identifier (hex).
+
+###### udid_raw_hex
+
+> **udid_raw_hex**: `string`
+
+16-byte device UDID (hex).
+
+##### clientData
+
+> **clientData**: `object`
+
+Defined in:
+[api/models/pipelines.model.ts:85](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L85)
+
+###### carrier
+
+> **carrier**: `string`
+
+Carrier name (if applicable).
+
+###### device
+
+> **device**: `number`
+
+Platform/device id enum value.
+
+###### device_id
+
+> **device_id**: `string`
+
+Device identifier string.
+
+###### device_name
+
+> **device_name**: `string`
+
+Human-readable device name.
+
+###### dmm_onetime_token
+
+> **dmm_onetime_token**: `string` \| `null`
+
+One-time DMM token (nullable).
+
+###### dmm_viewer_id
+
+> **dmm_viewer_id**: `number` \| `null`
+
+DMM viewer id (nullable).
+
+###### graphics_device_name
+
+> **graphics_device_name**: `string`
+
+GPU/graphics device name.
+
+###### ip_address
+
+> **ip_address**: `string`
+
+Client IP address (string).
+
+###### keychain
+
+> **keychain**: `number`
+
+Keychain flag (numeric).
+
+###### locale
+
+> **locale**: `string`
+
+Locale code (e.g., 'en').
+
+###### platform_os_version
+
+> **platform_os_version**: `string`
+
+OS version string.
+
+###### steam_id
+
+> **steam_id**: `string`
+
+Steam identifier.
+
+###### steam_session_ticket
+
+> **steam_session_ticket**: `string`
+
+Steam session ticket.
+
+###### viewer_id
+
+> **viewer_id**: `number`
+
+Set by upstream after signup/start_session.
+
+##### runtime
+
+> **runtime**: [`RuntimeClient`](../../lib/runtime-client.md#runtimeclient)
+
+Defined in:
+[api/models/pipelines.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L69)
+
+##### upstreamBase
+
+> **upstreamBase**: `string`
+
+Defined in:
+[api/models/pipelines.model.ts:70](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L70)
+
 ---
 
 ### StepPrevResult
 
-> **StepPrevResult** = `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `endpoint`: `string`;
-> `name`: `string`; `requestB64`: [`EncodedBase64`](#encodedbase64); `responseB64`:
+> **StepPrevResult** = `Partial`\<\{ `decoded`:
+> [`DecodeResponseOutput`](../../lib/models/runtime.model.md#decoderesponseoutput); `endpoint`:
+> `string`; `name`: `string`; `requestB64`: [`EncodedBase64`](#encodedbase64); `responseB64`:
 > [`EncodedBase64`](#encodedbase64); \}\>
 
 Defined in:
-[api/models/pipelines.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/models/pipelines.model.ts#L15)
+[api/models/pipelines.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L15)
 
 Minimal shape passed between pipeline steps. May be `undefined` for the first step. Implementations
 can carry forward useful decoded headers (e.g., `viewer_id`) via the `decoded` field.
@@ -48,7 +193,7 @@ can carry forward useful decoded headers (e.g., `viewer_id`) via the `decoded` f
 > **StepResult** = [`StepResultBase`](#stepresultbase) & `object`
 
 Defined in:
-[api/models/pipelines.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/models/pipelines.model.ts#L57)
+[api/models/pipelines.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L57)
 
 A step result augmented with execution order (1-based).
 
@@ -62,13 +207,14 @@ A step result augmented with execution order (1-based).
 
 ### StepResultBase
 
-> **StepResultBase** = `object` & `Partial`\<\{ `decoded`: `DecodeResponseOutput`; `error`:
+> **StepResultBase** = `object` & `Partial`\<\{ `decoded`:
+> [`DecodeResponseOutput`](../../lib/models/runtime.model.md#decoderesponseoutput); `error`:
 > `string`; `errorStack`: `string`; `note`: `string`; `requestB64`:
 > [`EncodedBase64`](#encodedbase64); `responseB64`: [`EncodedBase64`](#encodedbase64); `skipped`:
 > `boolean`; \}\>
 
 Defined in:
-[api/models/pipelines.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/a728188998ea5378763bd12e9d4edbeabf875343/src/api/models/pipelines.model.ts#L37)
+[api/models/pipelines.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/src/api/models/pipelines.model.ts#L37)
 
 Common fields every pipeline step should return.
 

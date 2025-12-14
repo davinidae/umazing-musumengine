@@ -1,2 +1,0 @@
-Type: PracticeRaceUsedHistoryResponse_CommonResponseFormatter
-

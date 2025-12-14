@@ -1,2 +1,0 @@
-Type: TrainedCharaChangeLockMultiResponse_CommonResponseFormatter
-

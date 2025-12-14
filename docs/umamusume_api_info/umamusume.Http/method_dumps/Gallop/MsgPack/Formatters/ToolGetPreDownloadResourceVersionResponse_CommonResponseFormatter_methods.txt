@@ -1,2 +1,0 @@
-Type: ToolGetPreDownloadResourceVersionResponse_CommonResponseFormatter
-

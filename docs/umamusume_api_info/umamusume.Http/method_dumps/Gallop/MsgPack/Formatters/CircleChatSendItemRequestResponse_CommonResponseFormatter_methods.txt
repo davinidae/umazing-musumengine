@@ -1,2 +1,0 @@
-Type: CircleChatSendItemRequestResponse_CommonResponseFormatter
-

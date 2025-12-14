@@ -1,2 +1,0 @@
-Type: LiveLiveStartResponse_CommonResponseFormatter
-

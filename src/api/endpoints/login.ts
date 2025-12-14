@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { loginPipeline } from '../pipelines';
 import { sessionManager } from '../session/session-manager';
 
-const router = Router();
+export const router = Router();
 
 /**
  * POST `/login`

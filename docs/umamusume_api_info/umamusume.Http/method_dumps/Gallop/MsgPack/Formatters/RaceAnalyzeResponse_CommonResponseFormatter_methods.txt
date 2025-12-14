@@ -1,2 +1,0 @@
-Type: RaceAnalyzeResponse_CommonResponseFormatter
-

@@ -1,2 +1,0 @@
-Type: PracticeRaceRaceReplayResponse_CommonResponseFormatter
-

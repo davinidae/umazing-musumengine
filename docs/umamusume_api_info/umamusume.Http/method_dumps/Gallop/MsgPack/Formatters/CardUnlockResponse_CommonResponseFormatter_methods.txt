@@ -1,2 +1,0 @@
-Type: CardUnlockResponse_CommonResponseFormatter
-

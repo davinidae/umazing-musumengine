@@ -1,2 +1,0 @@
-Type: ItemExchangeAddFrameResponse_CommonResponseFormatter
-

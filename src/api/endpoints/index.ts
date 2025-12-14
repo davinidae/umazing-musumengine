@@ -11,7 +11,7 @@ import miscRouter from './misc';
  *
  * @remarks This router is consumed by `src/api/index.ts`.
  */
-const router = Router();
+export const router = Router();
 router.use(miscRouter);
 router.use(loginRouter);
 

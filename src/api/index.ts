@@ -5,8 +5,8 @@
  */
 import express, { Request, Response, NextFunction } from 'express';
 import endpoints from './endpoints';
-const app = express();
-const port = process.env.PORT || 4000;
+export const app = express();
+export const port = process.env.PORT || 4000;
 
 app.use(
   express.json({

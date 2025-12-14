@@ -1,2 +1,0 @@
-Type: ChampionsStampSendStampResponse_CommonResponseFormatter
-

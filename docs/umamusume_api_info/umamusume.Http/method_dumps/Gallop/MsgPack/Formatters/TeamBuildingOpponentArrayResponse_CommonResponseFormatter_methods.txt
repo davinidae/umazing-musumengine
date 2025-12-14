@@ -1,2 +1,0 @@
-Type: TeamBuildingOpponentArrayResponse_CommonResponseFormatter
-

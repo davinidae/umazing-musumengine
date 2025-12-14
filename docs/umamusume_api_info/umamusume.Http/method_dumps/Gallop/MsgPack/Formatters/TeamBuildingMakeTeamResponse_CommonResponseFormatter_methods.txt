@@ -1,2 +1,0 @@
-Type: TeamBuildingMakeTeamResponse_CommonResponseFormatter
-

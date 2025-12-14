@@ -6,7 +6,7 @@ import {
   deriveIvFromUdidString,
 } from '../../../../src';
 
-function buildRequest(prefixHex: string): Buffer {
+export function buildRequest(prefixHex: string): Buffer {
   const prefix = Buffer.from(prefixHex, 'hex');
   const session = Buffer.from('11'.repeat(16), 'hex');
   const udid = Buffer.from('22'.repeat(16), 'hex');

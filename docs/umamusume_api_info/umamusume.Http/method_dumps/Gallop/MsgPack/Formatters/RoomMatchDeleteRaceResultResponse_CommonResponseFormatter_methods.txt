@@ -1,2 +1,0 @@
-Type: RoomMatchDeleteRaceResultResponse_CommonResponseFormatter
-

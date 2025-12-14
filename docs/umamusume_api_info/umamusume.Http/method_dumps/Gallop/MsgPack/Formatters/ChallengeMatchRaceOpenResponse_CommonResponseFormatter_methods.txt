@@ -1,2 +1,0 @@
-Type: ChallengeMatchRaceOpenResponse_CommonResponseFormatter
-

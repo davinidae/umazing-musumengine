@@ -1,2 +1,0 @@
-Type: ChampionsSetEntryCharaResponse_CommonResponseFormatter
-

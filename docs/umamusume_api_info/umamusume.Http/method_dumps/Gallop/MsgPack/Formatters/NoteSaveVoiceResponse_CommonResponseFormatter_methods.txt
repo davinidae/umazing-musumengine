@@ -1,2 +1,0 @@
-Type: NoteSaveVoiceResponse_CommonResponseFormatter
-

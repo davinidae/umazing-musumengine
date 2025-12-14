@@ -1,2 +1,0 @@
-Type: ChampionsFinalRoundEndResponse_CommonResponseFormatter
-
