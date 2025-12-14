@@ -2,6 +2,14 @@
 
 declare global {
   namespace Umatypes {
+    type AccountChainDisconnectResponseMetadata = unknown;
+
+    type AccountDeletionCancelResponseMetadata = unknown;
+
+    type AccountDeletionRequestResponseMetadata = unknown;
+
+    type AccountSteamChainDisconnectResponseMetadata = unknown;
+
     type AddedGachaStockInfoMetadata = {
       gacha_stock_id: number;
       remain_stock_count: number;
@@ -24,10 +32,36 @@ declare global {
       announce4_date: string;
     };
 
+    type BannerUrlResponseMetadata = unknown;
+
     type BestRankInfoMetadata = {
       race_instance_id: number;
       best_rank: number;
     };
+
+    type CabinedAccountGetMailInfoResponseMetadata = unknown;
+
+    type CabinedAccountRegisterEmailAddressResponseMetadata = unknown;
+
+    type CabinedAccountSendAuthCodeResponseMetadata = unknown;
+
+    type CabinedAccountSendVerificationUrlResponseMetadata = unknown;
+
+    type CardGetCardEventSkillResponseMetadata = unknown;
+
+    type CardGetReleaseCardResponseMetadata = unknown;
+
+    type CardRarityUpgradeResponseMetadata = unknown;
+
+    type CardSellPieceResponseMetadata = unknown;
+
+    type CardSkillUpgradeResponseMetadata = unknown;
+
+    type CardTalentStrengthenResponseMetadata = unknown;
+
+    type CardUnlockResponseMetadata = unknown;
+
+    type ChallengeMatchIndexResponseMetadata = unknown;
 
     type ChallengeMatchLoadInfoMetadata = {
       challenge_match_id: number;
@@ -41,6 +75,12 @@ declare global {
       is_cleared: number;
     };
 
+    type ChallengeMatchRaceEndResponseMetadata = unknown;
+
+    type ChallengeMatchRaceEntryResponseMetadata = unknown;
+
+    type ChallengeMatchRaceOpenResponseMetadata = unknown;
+
     type ChallengeMatchRaceRewardLimitMetadata = {
       item_category: number;
       item_id: number;
@@ -49,6 +89,12 @@ declare global {
       limit_count: number;
     };
 
+    type ChallengeMatchRaceStartResponseMetadata = unknown;
+
+    type ChallengeMatchReflectItemEffectResponseMetadata = unknown;
+
+    type ChallengeMatchResetResponseMetadata = unknown;
+
     type ChallengeMatchResultPointMetadata = {
       raw_point_id: number;
       num: number;
@@ -56,11 +102,39 @@ declare global {
       point_bonus: number;
     };
 
+    type ChallengeMatchResumeResponseMetadata = unknown;
+
+    type ChampionsCancelResponseMetadata = unknown;
+
     type ChampionsEntryCharaMetadata = {
       trained_chara_id: number;
       running_style: number;
       team_member_id: number;
     };
+
+    type ChampionsEntryResponseMetadata = unknown;
+
+    type ChampionsFinalRaceEndResponseMetadata = unknown;
+
+    type ChampionsFinalRaceRankingResponseMetadata = unknown;
+
+    type ChampionsFinalRaceStartResponseMetadata = unknown;
+
+    type ChampionsFinalRoundEndResponseMetadata = unknown;
+
+    type ChampionsGetNewsInfoResponseMetadata = unknown;
+
+    type ChampionsGetNewsWinInfoResponseMetadata = unknown;
+
+    type ChampionsGetRaceHistoryInfoResponseMetadata = unknown;
+
+    type ChampionsGetRaceResultChartResponseMetadata = unknown;
+
+    type ChampionsGetRankingCharaInfoResponseMetadata = unknown;
+
+    type ChampionsGetRewardArrayResponseMetadata = unknown;
+
+    type ChampionsIndexResponseMetadata = unknown;
 
     type ChampionsInfoMetadata = {
       champions_id: number;
@@ -72,6 +146,8 @@ declare global {
       state: number;
       entry_trained_chara_id_array: number;
     };
+
+    type ChampionsLobbyResponseMetadata = unknown;
 
     type ChampionsNewsCharaInfoMetadata = {
       viewer_id: number;
@@ -125,6 +201,14 @@ declare global {
       news_win_id_array: number;
     };
 
+    type ChampionsPaddockIndexResponseMetadata = unknown;
+
+    type ChampionsPollResponseMetadata = unknown;
+
+    type ChampionsRaceEndResponseMetadata = unknown;
+
+    type ChampionsRaceEntryResponseMetadata = unknown;
+
     type ChampionsRaceHistoryCharaResultInfoMetadata = {
       viewer_id: number;
       team_id: number;
@@ -146,6 +230,8 @@ declare global {
       result: number;
       user_rank: number;
     };
+
+    type ChampionsRaceStartResponseMetadata = unknown;
 
     type ChampionsRankingEntryCharaInfoMetadata = {
       viewer_id: number;
@@ -201,11 +287,21 @@ declare global {
       team_id: number;
     };
 
+    type ChampionsRoundEndResponseMetadata = unknown;
+
+    type ChampionsSelectLeagueResponseMetadata = unknown;
+
+    type ChampionsSetEntryCharaResponseMetadata = unknown;
+
     type ChampionsStampInfoMetadata = {
       viewer_id: number;
       stamp_id: number;
       send_time: number;
     };
+
+    type ChampionsStampPollResponseMetadata = unknown;
+
+    type ChampionsStampSendStampResponseMetadata = unknown;
 
     type ChampionsUserCharaTopMetadata = {
       card_id: number;
@@ -222,10 +318,20 @@ declare global {
       team_member_id: number;
     };
 
+    type ChangeCommentResponseMetadata = unknown;
+
+    type ChangeLeaderCardResponseMetadata = unknown;
+
+    type ChangeNameResponseMetadata = unknown;
+
+    type ChangePracticePartnerResponseMetadata = unknown;
+
     type CharacterStoryDataMetadata = {
       episode_id: number;
       state: number;
     };
+
+    type CharacterStoryFirstClearResponseMetadata = unknown;
 
     type CharaProfileDataMetadata = {
       chara_id: number;
@@ -246,6 +352,12 @@ declare global {
       target_race_id: number;
     };
 
+    type CircleAtLoadMetadata = unknown;
+
+    type CircleBreakUpResponseMetadata = unknown;
+
+    type CircleChatInviteRoomMatchResponseMetadata = unknown;
+
     type CircleChatMessageMetadata = {
       post_id: number;
       viewer_id: number;
@@ -255,12 +367,34 @@ declare global {
       create_time: string;
     };
 
+    type CircleChatPollingResponseMetadata = unknown;
+
+    type CircleChatPostPartnerResponseMetadata = unknown;
+
+    type CircleChatSendItemRequestResponseMetadata = unknown;
+
+    type CircleChatSendMessageResponseMetadata = unknown;
+
+    type CircleChatSendStampResponseMetadata = unknown;
+
     type CircleChatUserMetadata = {
       viewer_id: number;
       name: string;
       leader_chara_id: number;
       leader_chara_dress_id: number;
     };
+
+    type CircleCheckJoinResponseMetadata = unknown;
+
+    type CircleConditionalSearchResponseMetadata = unknown;
+
+    type CircleDetailResponseMetadata = unknown;
+
+    type CircleDirectResponseMetadata = unknown;
+
+    type CircleGetPostPartnerDataResponseMetadata = unknown;
+
+    type CircleGetRankingTopResponseMetadata = unknown;
 
     type CircleInfoAtFriendMetadata = {
       circle_id: number;
@@ -288,6 +422,14 @@ declare global {
       create_time: string;
     };
 
+    type CircleItemRequestDonateMultipleResponseMetadata = unknown;
+
+    type CircleItemRequestDonateResponseMetadata = unknown;
+
+    type CircleItemRequestGetRequestDataResponseMetadata = unknown;
+
+    type CircleItemRequestReceiveResponseMetadata = unknown;
+
     type CircleItemRequestMetadata = {
       request_id: number;
       viewer_id: number;
@@ -295,6 +437,10 @@ declare global {
       end_time: string;
       state: number;
     };
+
+    type CircleListResponseMetadata = unknown;
+
+    type CircleMakeResponseMetadata = unknown;
 
     type CirclePostPartnerMetadata = {
       post_comment_id: number;
@@ -314,10 +460,46 @@ declare global {
       update_time: string;
     };
 
+    type CircleRoomEnterResponseMetadata = unknown;
+
     type CircleScoutMetadata = {
       circle_id: number;
       viewer_id: number;
     };
+
+    type CircleUpdateResponseMetadata = unknown;
+
+    type CircleUserApproveJoinRequestResponseMetadata = unknown;
+
+    type CircleUserApproveScoutResponseMetadata = unknown;
+
+    type CircleUserCancelJoinRequestResponseMetadata = unknown;
+
+    type CircleUserCancelScoutResponseMetadata = unknown;
+
+    type CircleUserChangeLeaderResponseMetadata = unknown;
+
+    type CircleUserChangeSubLeaderResponseMetadata = unknown;
+
+    type CircleUserCheckedRequestResponseMetadata = unknown;
+
+    type CircleUserDeclineJoinRequestResponseMetadata = unknown;
+
+    type CircleUserGetProfileCardInfoResponseMetadata = unknown;
+
+    type CircleUserGetProfileResponseMetadata = unknown;
+
+    type CircleUserKickResponseMetadata = unknown;
+
+    type CircleUserLeaveResponseMetadata = unknown;
+
+    type CircleUserScoutResponseMetadata = unknown;
+
+    type CircleUserSetProfileCardInfoResponseMetadata = unknown;
+
+    type CircleUserSetProfileResponseMetadata = unknown;
+
+    type CircleUserUserJoinRequestResponseMetadata = unknown;
 
     type CircleUserMetadata = {
       viewer_id: number;
@@ -432,11 +614,27 @@ declare global {
       is_played: number;
     };
 
+    type DailyLegendRaceGetRewardListResponseMetadata = unknown;
+
+    type DailyLegendRaceIndexResponseMetadata = unknown;
+
     type DailyLegendRacePlayingInfoMetadata = {
       state: number;
       trained_chara_id: number;
       new_flag: number;
     };
+
+    type DailyLegendRaceRaceEntryResponseMetadata = unknown;
+
+    type DailyLegendRaceRaceStartResponseMetadata = unknown;
+
+    type DailyLegendRaceReflectItemEffectResponseMetadata = unknown;
+
+    type DailyLegendRaceReplayCheckResponseMetadata = unknown;
+
+    type DailyLegendRaceResetResponseMetadata = unknown;
+
+    type DailyLegendRaceResumeResponseMetadata = unknown;
 
     type DailyRaceDataMetadata = {
       daily_race_id: number;
@@ -444,10 +642,34 @@ declare global {
       is_played: number;
     };
 
+    type DailyRaceGetRewardListResponseMetadata = unknown;
+
+    type DailyRaceIndexResponseMetadata = unknown;
+
     type DailyRacePlayingInfoMetadata = {
       state: number;
       trained_chara_id: number;
     };
+
+    type DailyRacePreReplayCheckResponseMetadata = unknown;
+
+    type DailyRaceRaceEntryResponseMetadata = unknown;
+
+    type DailyRaceRaceStartResponseMetadata = unknown;
+
+    type DailyRaceRecoveryTicketResponseMetadata = unknown;
+
+    type DailyRaceReflectItemEffectResponseMetadata = unknown;
+
+    type DailyRaceReplayCheckResponseMetadata = unknown;
+
+    type DailyRaceResetResponseMetadata = unknown;
+
+    type DailyRaceResumeResponseMetadata = unknown;
+
+    type DailyRaceSetRaceScenarioResponseMetadata = unknown;
+
+    type DailyRaceSkipResponseMetadata = unknown;
 
     type DataHeaderMetadata = {
       viewer_id: number;
@@ -461,6 +683,28 @@ declare global {
       nonce: string;
       account_deletion_cancellation_period: string;
     };
+
+    type DataLinkChainBySocialAccountResponseMetadata = unknown;
+
+    type DataLinkChainByTransitionCodeResponseMetadata = unknown;
+
+    type DataLinkCreateFacebookNonceResponseMetadata = unknown;
+
+    type DataLinkGetByTransitionCodeResponseMetadata = unknown;
+
+    type DataLinkGetGameDataBySocialAccountResponseMetadata = unknown;
+
+    type DataLinkPublishTransitionCodeResponseMetadata = unknown;
+
+    type DebugRaceInfoLoadResponseMetadata = unknown;
+
+    type DebugRaceSimulateDirectResponseMetadata = unknown;
+
+    type DebugRaceSimulateResponseMetadata = unknown;
+
+    type DebugSingleModeStoryDirectResponseMetadata = unknown;
+
+    type DebugTutorialSkipResponseMetadata = unknown;
 
     type DirectoryCardMetadata = {
       card_id: number;
@@ -520,6 +764,10 @@ declare global {
       skill_id_array: number;
     };
 
+    type ExtraStoryDataMetadata = unknown;
+
+    type ExtraStoryFirstClearResponseMetadata = unknown;
+
     type FactorInfoMetadata = {
       factor_id: number;
       level: number;
@@ -530,6 +778,10 @@ declare global {
       individual_gained_fans: number;
     };
 
+    type FanRaidIndexResponseMetadata = unknown;
+
+    type FanRaidPollingResponseMetadata = unknown;
+
     type FanRaidSingleModeResultMetadata = {
       fan_raid_id: number;
       gain_fans: number;
@@ -538,6 +790,20 @@ declare global {
       get_all_individual_reward: boolean;
       individual_reward_id_list: number;
     };
+
+    type FriendFollowResponseMetadata = unknown;
+
+    type FriendGetTeamStadiumTeamDataResponseMetadata = unknown;
+
+    type FriendLoadResponseMetadata = unknown;
+
+    type FriendRenewRecommendListResponseMetadata = unknown;
+
+    type FriendSearchResponseMetadata = unknown;
+
+    type FriendUnFollowerResponseMetadata = unknown;
+
+    type FriendUnFollowResponseMetadata = unknown;
 
     type GachaBannerInfoMetadata = {
       id: number;
@@ -560,6 +826,12 @@ declare global {
       create_time: string;
     };
 
+    type GachaExecResponseMetadata = unknown;
+
+    type GachaGetHistoryResponseMetadata = unknown;
+
+    type GachaGetPrizeHistoryResponseMetadata = unknown;
+
     type GachaInfoListMetadata = {
       id: number;
       is_daily_draw_end: number;
@@ -572,11 +844,17 @@ declare global {
       web_text: string;
     };
 
+    type GachaLimitExchangeResponseMetadata = unknown;
+
+    type GachaLimitInfoMetadata = unknown;
+
     type GachaLimitItemInfoMetadata = {
       gacha_id: number;
       num: number;
       converted_item_num: number;
     };
+
+    type GachaLoadResponseMetadata = unknown;
 
     type GachaPrizeHistoryMetadata = {
       exec_time: string;
@@ -613,6 +891,8 @@ declare global {
       additional_piece_num: number;
     };
 
+    type GachaSelectPrizeResponseMetadata = unknown;
+
     type GainSkillInfoMetadata = {
       skill_id: number;
       level: number;
@@ -623,6 +903,16 @@ declare global {
       month: number;
       race_id: number;
     };
+
+    type GalleryPlayEventResponseMetadata = unknown;
+
+    type GallerySaveGalleryDataResponseMetadata = unknown;
+
+    type GallopResultCodeMetadata = unknown;
+
+    type GetTrophyDetailResponseMetadata = unknown;
+
+    type GetTrophyInfoResponseMetadata = unknown;
 
     type GroupOutingInfoMetadata = {
       chara_id: number;
@@ -662,6 +952,8 @@ declare global {
       id: number;
     };
 
+    type HonorChangeHonorResponseMetadata = unknown;
+
     type HonorDataMetadata = {
       honor_id: number;
       create_time: string;
@@ -671,6 +963,8 @@ declare global {
       last_checked_time: number;
     };
 
+    type HonorListResponseMetadata = unknown;
+
     type InviteHistoryMetadata = {
       circle_id: number;
       room_id: number;
@@ -679,10 +973,38 @@ declare global {
       create_time: string;
     };
 
+    type ItemCheckAnivShopResponseMetadata = unknown;
+
+    type ItemExchangeAddFrameResponseMetadata = unknown;
+
     type ItemExchangeLimitMetadata = {
       item_exchange_id: number;
       exchange_count: number;
     };
+
+    type ItemExchangeResponseMetadata = unknown;
+
+    type ItemManualCloseResponseMetadata = unknown;
+
+    type ItemSellResponseMetadata = unknown;
+
+    type ItemShowExchangeResponseMetadata = unknown;
+
+    type ItemUseRecoveryItemResponseMetadata = unknown;
+
+    type JukeboxChangePlayMusicResponseMetadata = unknown;
+
+    type JukeboxChangeRandomRequestResponseMetadata = unknown;
+
+    type JukeboxChangeUserRequestResponseMetadata = unknown;
+
+    type JukeboxDrawRandomRequestResponseMetadata = unknown;
+
+    type JukeboxExecLikeResponseMetadata = unknown;
+
+    type JukeboxHistoryResponseMetadata = unknown;
+
+    type JukeboxIndexResponseMetadata = unknown;
 
     type JukeboxInfoMetadata = {
       play_music_flag: number;
@@ -698,6 +1020,8 @@ declare global {
       like_chara_id: number;
       like_viewer_id: number;
     };
+
+    type JukeboxPlayUserRequestResponseMetadata = unknown;
 
     type JukeboxRequestMetadata = {
       request_id: number;
@@ -719,12 +1043,32 @@ declare global {
       is_played: number;
     };
 
+    type LegendRaceGetRewardListResponseMetadata = unknown;
+
+    type LegendRaceIndexResponseMetadata = unknown;
+
     type LegendRacePlayingInfoMetadata = {
       state: number;
       group_id: number;
       next_group_id: number;
       trained_chara_id: number;
     };
+
+    type LegendRaceRaceEntryResponseMetadata = unknown;
+
+    type LegendRaceRaceStartResponseMetadata = unknown;
+
+    type LegendRaceRecoveryTicketResponseMetadata = unknown;
+
+    type LegendRaceReflectItemEffectResponseMetadata = unknown;
+
+    type LegendRaceReplayCheckResponseMetadata = unknown;
+
+    type LegendRaceResetResponseMetadata = unknown;
+
+    type LegendRaceResumeResponseMetadata = unknown;
+
+    type LegendRaceSetRaceScenarioResponseMetadata = unknown;
 
     type LimitedGoodsInfoMetadata = {
       disp_order: number;
@@ -738,6 +1082,12 @@ declare global {
       close_time: number;
       open_count: number;
     };
+
+    type LiveLiveStartResponseMetadata = unknown;
+
+    type LiveTheaterIndexResponseMetadata = unknown;
+
+    type LiveTheaterLiveStartResponseMetadata = unknown;
 
     type LiveTheaterMemberInfoMetadata = {
       chara_id: number;
@@ -765,6 +1115,8 @@ declare global {
       total_count: number;
     };
 
+    type LoginResponseMetadata = unknown;
+
     type LoginUserTrophyInfoMetadata = {
       trophy_id: number;
       chara_id_array: number;
@@ -791,6 +1143,8 @@ declare global {
       state: number;
     };
 
+    type MainStoryFirstClearResponseMetadata = unknown;
+
     type MainStoryRaceEntryCharaMetadata = {
       frame_order: number;
       chara_id: number;
@@ -800,6 +1154,14 @@ declare global {
       chara_color_type: number;
       is_player: number;
     };
+
+    type MainStoryRaceGetEntryListResponseMetadata = unknown;
+
+    type MainStoryRaceGetRaceTableResponseMetadata = unknown;
+
+    type MainStoryRaceRaceEndResponseMetadata = unknown;
+
+    type MainStoryRaceRaceStartResponseMetadata = unknown;
 
     type MenuBadgeInfoMetadata = {
       present_num: number;
@@ -824,6 +1186,10 @@ declare global {
       result_state: number;
       result_value: number;
     };
+
+    type MissionLoadResponseMetadata = unknown;
+
+    type MissionReceiveResponseMetadata = unknown;
 
     type MonthlyFanInfoMetadata = {
       ranking_year_month: number;
@@ -850,6 +1216,18 @@ declare global {
       chara_id: number;
       data_id: number;
     };
+
+    type NoteGetCharaDataResponseMetadata = unknown;
+
+    type NoteGetNicknameDataResponseMetadata = unknown;
+
+    type NoteLoadResponseMetadata = unknown;
+
+    type NoteSaveCharaDataResponseMetadata = unknown;
+
+    type NoteSaveNoteDataResponseMetadata = unknown;
+
+    type NoteSaveVoiceResponseMetadata = unknown;
 
     type NotGainCharaEffectMetadata = {
       effected_chara_effect_id: number;
@@ -880,6 +1258,8 @@ declare global {
       unsupported_evaluation_chara_id_array: number;
     };
 
+    type NotUpTeamParameterInfoMetadata = unknown;
+
     type OptionSupportCardFavoriteFlagMetadata = {
       rarity: number;
       status: number;
@@ -889,6 +1269,8 @@ declare global {
       card_id: number;
       level: number;
     };
+
+    type PaymentCancelResponseMetadata = unknown;
 
     type PaymentCoinBreakDownInfoMetadata = {
       user_coin_id: number;
@@ -907,6 +1289,8 @@ declare global {
       purchase_id: string;
     };
 
+    type PaymentDummyResponseMetadata = unknown;
+
     type PaymentFinishParamMetadata = {
       agegroup: number;
       signature: string;
@@ -917,6 +1301,12 @@ declare global {
       product_id: string;
       dmm_point_balance: number;
     };
+
+    type PaymentFinishResponseMetadata = unknown;
+
+    type PaymentGetCoinBreakDownInfoResponseMetadata = unknown;
+
+    type PaymentItemListResponseMetadata = unknown;
 
     type PaymentPurchasedTimesMetadata = {
       product_id: string;
@@ -957,6 +1347,8 @@ declare global {
       notice_status: number;
     };
 
+    type PaymentSendLogResponseMetadata = unknown;
+
     type PaymentStartParamMetadata = {
       product_id: string;
       price: string;
@@ -964,9 +1356,17 @@ declare global {
       error_message: string;
     };
 
+    type PaymentStartResponseMetadata = unknown;
+
+    type PaymentSteamMicroTxnInitResponseMetadata = unknown;
+
     type PaymentTotalInfoMetadata = {
       paymentTotal: number;
     };
+
+    type PaymentUpdateBirthResponseMetadata = unknown;
+
+    type PhotoSetActivityResponseMetadata = unknown;
 
     type PieceDataMetadata = {
       piece_id: number;
@@ -990,6 +1390,16 @@ declare global {
       use_time: string;
     };
 
+    type PracticeRaceChangeFavoriteRaceResponseMetadata = unknown;
+
+    type PracticeRaceChangePresetNameResponseMetadata = unknown;
+
+    type PracticeRaceCreatePartnerIdResponseMetadata = unknown;
+
+    type PracticeRaceDeletePartnerResponseMetadata = unknown;
+
+    type PracticeRaceDeleteRaceResponseMetadata = unknown;
+
     type PracticeRaceEntryCharaMetadata = {
       viewer_id: number;
       trained_chara_id: number;
@@ -1002,6 +1412,18 @@ declare global {
       frame_order: number;
     };
 
+    type PracticeRaceGetFollowUserDataResponseMetadata = unknown;
+
+    type PracticeRaceGetPartnerIdResponseMetadata = unknown;
+
+    type PracticeRaceGetPartnerInfoResponseMetadata = unknown;
+
+    type PracticeRaceGetPresetArrayResponseMetadata = unknown;
+
+    type PracticeRaceGetSavedRaceListResponseMetadata = unknown;
+
+    type PracticeRaceIndexResponseMetadata = unknown;
+
     type PracticeRacePresetInfoForSaveMetadata = {
       preset_id: number;
     };
@@ -1011,6 +1433,12 @@ declare global {
       name: string;
     };
 
+    type PracticeRaceRaceEndResponseMetadata = unknown;
+
+    type PracticeRaceRaceReplayResponseMetadata = unknown;
+
+    type PracticeRaceRaceStartResponseMetadata = unknown;
+
     type PracticeRaceSavedRaceInfoMetadata = {
       practice_race_id: number;
       race_instance_id: number;
@@ -1019,6 +1447,16 @@ declare global {
       is_favorite: number;
       save_time: string;
     };
+
+    type PracticeRaceSavePartnerResponseMetadata = unknown;
+
+    type PracticeRaceSavePresetResponseMetadata = unknown;
+
+    type PracticeRaceSearchPartnerResponseMetadata = unknown;
+
+    type PracticeRaceSetRaceScenarioResponseMetadata = unknown;
+
+    type PracticeRaceUsedHistoryResponseMetadata = unknown;
 
     type PresentDataMetadata = {
       present_id: number;
@@ -1037,6 +1475,16 @@ declare global {
       free_message: string;
     };
 
+    type PresentHistoryResponseMetadata = unknown;
+
+    type PresentIndexResponseMetadata = unknown;
+
+    type PresentReceiveAllResponseMetadata = unknown;
+
+    type PresentReceiveOptionMetadata = unknown;
+
+    type PresentReceiveResponseMetadata = unknown;
+
     type PresetEntryCharaMetadata = {
       viewer_id: number;
       entry_id: number;
@@ -1048,6 +1496,12 @@ declare global {
       preset_id: number;
       name: string;
     };
+
+    type PreSingleModeFriendSupportCardReloadResponseMetadata = unknown;
+
+    type PreSingleModeIndexResponseMetadata = unknown;
+
+    type RaceAnalyzeResponseMetadata = unknown;
 
     type RaceCharaResultMetadata = {
       frame_order: number;
@@ -1166,6 +1620,12 @@ declare global {
       rank: number;
     };
 
+    type ReadInfoResponseMetadata = unknown;
+
+    type RecoveryRacePointResponseMetadata = unknown;
+
+    type RecoveryTrainerPointResponseMetadata = unknown;
+
     type ReleasedEpisodeDataForDisplayMetadata = {
       id: number;
     };
@@ -1207,6 +1667,8 @@ declare global {
       steam_session_ticket: string;
     };
 
+    type ResponseCommonMetadata = unknown;
+
     type ResponseItemMetadata = {
       item_type: number;
       item_id: number;
@@ -1226,16 +1688,64 @@ declare global {
       force_update_honor_id: number;
     };
 
+    type RoomMatchChangeAllowDisplayResponseMetadata = unknown;
+
+    type RoomMatchChangeLockRaceResultResponseMetadata = unknown;
+
+    type RoomMatchCreateRoomResponseMetadata = unknown;
+
+    type RoomMatchCreateRoomSimpleResponseMetadata = unknown;
+
+    type RoomMatchDeleteRaceResultResponseMetadata = unknown;
+
+    type RoomMatchDestroyRoomResponseMetadata = unknown;
+
+    type RoomMatchEditRoomResponseMetadata = unknown;
+
+    type RoomMatchEnterWaitingRoomResponseMetadata = unknown;
+
     type RoomMatchEntryCharaMetadata = {
       trained_chara_id: number;
       running_style: number;
       member_id: number;
     };
 
+    type RoomMatchEntryRoomResponseMetadata = unknown;
+
+    type RoomMatchForceRaceStartResponseMetadata = unknown;
+
+    type RoomMatchGetEntryRoomListResponseMetadata = unknown;
+
+    type RoomMatchGetFriendListResponseMetadata = unknown;
+
+    type RoomMatchGetSavedRaceResultListResponseMetadata = unknown;
+
+    type RoomMatchGetSavedRaceResultResponseMetadata = unknown;
+
+    type RoomMatchIndexResponseMetadata = unknown;
+
+    type RoomMatchLeaveRoomResponseMetadata = unknown;
+
+    type RoomMatchLeaveWatchingResponseMetadata = unknown;
+
+    type RoomMatchPollingResponseMetadata = unknown;
+
+    type RoomMatchRaceChangePresetNameResponseMetadata = unknown;
+
+    type RoomMatchRaceEndResultResponseMetadata = unknown;
+
+    type RoomMatchRaceGetPresetArrayResponseMetadata = unknown;
+
+    type RoomMatchRaceSavePresetResponseMetadata = unknown;
+
+    type RoomMatchRaceStartResponseMetadata = unknown;
+
     type RoomMatchRestrictCharaInfoMetadata = {
       chara_id: number;
       dress_id_array: number;
     };
+
+    type RoomMatchRoomDetailResponseMetadata = unknown;
 
     type RoomMatchRoomInfoMetadata = {
       room_id: number;
@@ -1260,6 +1770,10 @@ declare global {
       is_allow_display: number;
       private_entry_status: number;
     };
+
+    type RoomMatchRoomListResponseMetadata = unknown;
+
+    type RoomMatchRoomSearchResponseMetadata = unknown;
 
     type RoomMatchSavedRoomInfoMetadata = {
       saved_room_id: number;
@@ -1350,11 +1864,17 @@ declare global {
       join_type: number;
     };
 
+    type RoomMatchWatchRoomResponseMetadata = unknown;
+
     type RpInfoMetadata = {
       current_rp: number;
       max_rp: number;
       max_recovery_time: number;
     };
+
+    type SafetyNetAttestationGetNonceResponseMetadata = unknown;
+
+    type SafetyNetAttestationValidateJwsResponseMetadata = unknown;
 
     type ScenarioRecordMetadata = {
       scenario_id: number;
@@ -1373,6 +1893,8 @@ declare global {
       stock: number;
       client_own_stock: number;
     };
+
+    type SerialCodeRegisterResponseMetadata = unknown;
 
     type ServerListMetadata = {
       resource_server: string;
@@ -1394,6 +1916,10 @@ declare global {
       min: number;
       max: number;
     };
+
+    type SingleModeChangeRunningStyleResponseMetadata = unknown;
+
+    type SingleModeChangeShortCutResponseMetadata = unknown;
 
     type SingleModeCharaEditMetadata = {
       trained_chara_id: number;
@@ -1505,6 +2031,8 @@ declare global {
       route_race_id_array: number;
     };
 
+    type SingleModeCheckEventResponseMetadata = unknown;
+
     type SingleModeCommandInfoMetadata = {
       command_type: number;
       command_id: number;
@@ -1519,6 +2047,8 @@ declare global {
       sub_id: number;
       result_state: number;
     };
+
+    type SingleModeContinueResponseMetadata = unknown;
 
     type SingleModeDifficultyBoxInfoMetadata = {
       box_id: number;
@@ -1545,6 +2075,8 @@ declare global {
       play_timing: number;
     };
 
+    type SingleModeExecCommandResponseMetadata = unknown;
+
     type SingleModeExecCommandMetadata = {
       command_type: number;
       command_id: number;
@@ -1560,10 +2092,22 @@ declare global {
       campaign_id_array: number;
     };
 
+    type SingleModeFinishResponseMetadata = unknown;
+
+    type SingleModeFreeChangeRunningStyleResponseMetadata = unknown;
+
+    type SingleModeFreeChangeShortCutResponseMetadata = unknown;
+
+    type SingleModeFreeCheckEventResponseMetadata = unknown;
+
+    type SingleModeFreeChoiceRewardResponseMetadata = unknown;
+
     type SingleModeFreeCommandInfoMetadata = {
       command_type: number;
       command_id: number;
     };
+
+    type SingleModeFreeContinueResponseMetadata = unknown;
 
     type SingleModeFreeDataSetMetadata = {
       shop_id: number;
@@ -1580,6 +2124,12 @@ declare global {
       current_num: number;
     };
 
+    type SingleModeFreeExecCommandResponseMetadata = unknown;
+
+    type SingleModeFreeFinishResponseMetadata = unknown;
+
+    type SingleModeFreeGainSkillsResponseMetadata = unknown;
+
     type SingleModeFreeItemEffectMetadata = {
       use_id: number;
       item_id: number;
@@ -1592,6 +2142,18 @@ declare global {
       end_turn: number;
     };
 
+    type SingleModeFreeLoadResponseMetadata = unknown;
+
+    type SingleModeFreeMinigameEndResponseMetadata = unknown;
+
+    type SingleModeFreeMultiItemExchange2ResponseMetadata = unknown;
+
+    type SingleModeFreeMultiItemExchangeResponseMetadata = unknown;
+
+    type SingleModeFreeMultiItemUseResponseMetadata = unknown;
+
+    type SingleModeFreeMultiRaceReserveResponseMetadata = unknown;
+
     type SingleModeFreePickUpItemMetadata = {
       shop_item_id: number;
       item_id: number;
@@ -1601,6 +2163,22 @@ declare global {
       limit_buy_count: number;
       limit_turn: number;
     };
+
+    type SingleModeFreeRaceAnalyzeResponseMetadata = unknown;
+
+    type SingleModeFreeRaceEndResponseMetadata = unknown;
+
+    type SingleModeFreeRaceEntryResponseMetadata = unknown;
+
+    type SingleModeFreeRaceOutResponseMetadata = unknown;
+
+    type SingleModeFreeRaceReserveResponseMetadata = unknown;
+
+    type SingleModeFreeRaceStartResponseMetadata = unknown;
+
+    type SingleModeFreeSaveRaceResultResponseMetadata = unknown;
+
+    type SingleModeFreeStartResponseMetadata = unknown;
 
     type SingleModeFreeTwinkleRaceNpcInfoMetadata = {
       npc_id: number;
@@ -1641,6 +2219,12 @@ declare global {
       support_card_id: number;
     };
 
+    type SingleModeFriendSupportCardMetadata = unknown;
+
+    type SingleModeGainSkillsResponseMetadata = unknown;
+
+    type SingleModeGetChoiceRewardResponseMetadata = unknown;
+
     type SingleModeHomeInfoMetadata = {
       race_entry_restriction: number;
       disable_command_id_array: number;
@@ -1656,6 +2240,12 @@ declare global {
       total_turn: number;
       room_num: number;
     };
+
+    type SingleModeLoadResponseMetadata = unknown;
+
+    type SingleModeMinigameEndResponseMetadata = unknown;
+
+    type SingleModeMultiRaceReserveResponseMetadata = unknown;
 
     type SingleModeNpcResultMetadata = {
       npc_id: number;
@@ -1702,6 +2292,10 @@ declare global {
       ground_condition: number;
     };
 
+    type SingleModeRaceEndResponseMetadata = unknown;
+
+    type SingleModeRaceEntryResponseMetadata = unknown;
+
     type SingleModeRaceMobNpcResultMetadata = {
       mob_id: number;
       result_rank: number;
@@ -1711,6 +2305,10 @@ declare global {
       frame_order: number;
     };
 
+    type SingleModeRaceOutResponseMetadata = unknown;
+
+    type SingleModeRaceReserveResponseMetadata = unknown;
+
     type SingleModeRaceResultMetadata = {
       program_id: number;
       race_instance_id: number;
@@ -1718,6 +2316,8 @@ declare global {
       ground_condition: number;
       start_dash_state: number;
     };
+
+    type SingleModeRaceStartResponseMetadata = unknown;
 
     type SingleModeRaceUniqueNpcResultMetadata = {
       chara_id: number;
@@ -1763,6 +2363,8 @@ declare global {
       chara_id: number;
     };
 
+    type SingleModeSaveRaceResultResponseMetadata = unknown;
+
     type SingleModeSelectedDifficultyInfoMetadata = {
       difficulty_id: number;
       difficulty: number;
@@ -1790,6 +2392,8 @@ declare global {
       single_mode_chara_dress_id: number;
     };
 
+    type SingleModeStartResponseMetadata = unknown;
+
     type SingleModeSuccessionDressInfoMetadata = {
       trained_chara_id: number;
       dress_id: number;
@@ -1798,6 +2402,8 @@ declare global {
     type SingleModeSuccessionEventInfoMetadata = {
       effect_type: number;
     };
+
+    type SingleModeSuccessionTrainedCharaMetadata = unknown;
 
     type SingleModeSupportCardMetadata = {
       position: number;
@@ -1819,6 +2425,10 @@ declare global {
       mark_type: number;
     };
 
+    type SingleModeTeamChangeRunningStyleResponseMetadata = unknown;
+
+    type SingleModeTeamChangeShortCutResponseMetadata = unknown;
+
     type SingleModeTeamCharaInfoMetadata = {
       training_partner_id: number;
       speed: number;
@@ -1839,12 +2449,18 @@ declare global {
       rank_score: number;
     };
 
+    type SingleModeTeamCheckEventResponseMetadata = unknown;
+
     type SingleModeTeamCommandInfoMetadata = {
       command_type: number;
       command_id: number;
       guide_event_partner_array: number;
       soul_event_partner_array: number;
     };
+
+    type SingleModeTeamCommandResultMetadata = unknown;
+
+    type SingleModeTeamContinueResponseMetadata = unknown;
 
     type SingleModeTeamDataSetMetadata = {
       scenario_progress: number;
@@ -1867,10 +2483,18 @@ declare global {
       gain_wiz: number;
     };
 
+    type SingleModeTeamExecCommandResponseMetadata = unknown;
+
+    type SingleModeTeamFinishResponseMetadata = unknown;
+
     type SingleModeTeamFrameOrderMetadata = {
       distance_type: number;
       race_order: number;
     };
+
+    type SingleModeTeamGainSkillsResponseMetadata = unknown;
+
+    type SingleModeTeamGetChoiceRewardResponseMetadata = unknown;
 
     type SingleModeTeamInfoMetadata = {
       team_name_id: number;
@@ -1888,12 +2512,22 @@ declare global {
       team_edit_flag: number;
     };
 
+    type SingleModeTeamLoadResponseMetadata = unknown;
+
+    type SingleModeTeamMinigameEndResponseMetadata = unknown;
+
+    type SingleModeTeamMultiRaceReserveResponseMetadata = unknown;
+
+    type SingleModeTeamOpponentListResponseMetadata = unknown;
+
     type SingleModeTeamOpponentListMetadata = {
       team_race_set_id: number;
       team_power: number;
       team_rank: number;
       win_up_rank: number;
     };
+
+    type SingleModeTeamRaceAnalyzeResponseMetadata = unknown;
 
     type SingleModeTeamRaceCharaResultMetadata = {
       frame_order: number;
@@ -1905,12 +2539,20 @@ declare global {
       popularity: number;
     };
 
+    type SingleModeTeamRaceEndResponseMetadata = unknown;
+
+    type SingleModeTeamRaceEntryResponseMetadata = unknown;
+
     type SingleModeTeamRaceHistoryMetadata = {
       race_num: number;
       turn: number;
       team_race_set_id: number;
       result_state: number;
     };
+
+    type SingleModeTeamRaceOutResponseMetadata = unknown;
+
+    type SingleModeTeamRaceReserveResponseMetadata = unknown;
 
     type SingleModeTeamRaceResultMetadata = {
       distance_type: number;
@@ -1923,6 +2565,8 @@ declare global {
       round: number;
       win_type: number;
     };
+
+    type SingleModeTeamRaceStartResponseMetadata = unknown;
 
     type SingleModeTeamRandomInfoMetadata = {
       team_race_set_id: number;
@@ -1938,6 +2582,22 @@ declare global {
       guts: number;
       wiz: number;
     };
+
+    type SingleModeTeamSaveRaceResultResponseMetadata = unknown;
+
+    type SingleModeTeamSaveTeamEditFlagResponseMetadata = unknown;
+
+    type SingleModeTeamStartResponseMetadata = unknown;
+
+    type SingleModeTeamTeamEditResponseMetadata = unknown;
+
+    type SingleModeTeamTeamRaceAnalyzeResponseMetadata = unknown;
+
+    type SingleModeTeamTeamRaceEndResponseMetadata = unknown;
+
+    type SingleModeTeamTeamRaceOutResponseMetadata = unknown;
+
+    type SingleModeTeamTeamRaceStartResponseMetadata = unknown;
 
     type SingleModeTwikleRaceNpcResultMetadata = {
       turn: number;
@@ -1999,6 +2659,8 @@ declare global {
       win_num_bonus: number;
     };
 
+    type StoryEventAnnounceResponseMetadata = unknown;
+
     type StoryEventBingoDataMetadata = {
       sheet_num: number;
       line_num: number;
@@ -2011,6 +2673,16 @@ declare global {
       bonus: number;
       is_rental: boolean;
     };
+
+    type StoryEventIndexResponseMetadata = unknown;
+
+    type StoryEventReceiveMissionResponseMetadata = unknown;
+
+    type StoryEventRouletteChangeSheetResponseMetadata = unknown;
+
+    type StoryEventRouletteExecResponseMetadata = unknown;
+
+    type StoryEventRouletteResponseMetadata = unknown;
 
     type StoryEventRouletteRewardMetadata = {
       reward_order: number;
@@ -2026,6 +2698,8 @@ declare global {
       new_story_id_list: number;
       is_boost: number;
     };
+
+    type StoryEventStoryClearResponseMetadata = unknown;
 
     type StoryEventStoryDataMetadata = {
       episode_id: number;
@@ -2076,6 +2750,20 @@ declare global {
       circle_name: string;
     };
 
+    type SupportCardChangeLockResponseMetadata = unknown;
+
+    type SupportCardDeckChangeNameResponseMetadata = unknown;
+
+    type SupportCardDeckChangePartyResponseMetadata = unknown;
+
+    type SupportCardGetSupportCardEventSkillResponseMetadata = unknown;
+
+    type SupportCardLimitBreakItemResponseMetadata = unknown;
+
+    type SupportCardLimitBreakResponseMetadata = unknown;
+
+    type SupportCardRankingGetRankingResponseMetadata = unknown;
+
     type SupportCardRankingGroupMetadata = {
       exam_index: number;
     };
@@ -2086,10 +2774,16 @@ declare global {
       rank: number;
     };
 
+    type SupportCardSellResponseMetadata = unknown;
+
+    type SupportCardStrengthenResponseMetadata = unknown;
+
     type TalkDataMetadata = {
       story_id: number;
       is_open: boolean;
     };
+
+    type TalkGalleryIndexResponseMetadata = unknown;
 
     type TalkGalleryListMetadata = {
       home_story_trigger_id: number;
@@ -2105,6 +2799,12 @@ declare global {
       team_score: number;
     };
 
+    type TeamBuildingChangeCaptainResponseMetadata = unknown;
+
+    type TeamBuildingChangeRunningStyleResponseMetadata = unknown;
+
+    type TeamBuildingChangeTeamNameResponseMetadata = unknown;
+
     type TeamBuildingCollectionCharaMetadata = {
       chara_id: number;
       used_flag: number;
@@ -2115,16 +2815,36 @@ declare global {
       member_id: number;
     };
 
+    type TeamBuildingIndexResponseMetadata = unknown;
+
     type TeamBuildingLoadInfoMetadata = {
       team_building_id: number;
       state: number;
       captain_id: number;
     };
 
+    type TeamBuildingMakeTeamResponseMetadata = unknown;
+
+    type TeamBuildingOpponentArrayResponseMetadata = unknown;
+
+    type TeamBuildingRaceContinueResponseMetadata = unknown;
+
+    type TeamBuildingRaceEntryResponseMetadata = unknown;
+
+    type TeamBuildingRaceResultResponseMetadata = unknown;
+
+    type TeamBuildingRaceStartResponseMetadata = unknown;
+
+    type TeamBuildingRecoveryTicketResponseMetadata = unknown;
+
+    type TeamBuildingResumeResponseMetadata = unknown;
+
     type TeamBuildingRunningStyleInfoMetadata = {
       member_id: number;
       running_style: number;
     };
+
+    type TeamBuildingSaveCollectionResponseMetadata = unknown;
 
     type TeamBuildingScoutPointInfoMetadata = {
       item_id: number;
@@ -2132,6 +2852,10 @@ declare global {
       total_num: number;
       straight_win_count: number;
     };
+
+    type TeamBuildingScoutResponseMetadata = unknown;
+
+    type TeamBuildingUseRecoveryItemResponseMetadata = unknown;
 
     type TeamEvaluationInfoMetadata = {
       target_id: number;
@@ -2155,6 +2879,8 @@ declare global {
       add_fan: number;
     };
 
+    type TeamStadiumAllRaceEndResponseMetadata = unknown;
+
     type TeamStadiumBonusDataMetadata = {
       score_bonus_id: number;
       bonus_score: number;
@@ -2169,10 +2895,16 @@ declare global {
       keep_point: number;
     };
 
+    type TeamStadiumDecideFrameOrderResponseMetadata = unknown;
+
     type TeamStadiumFrameOrderMetadata = {
       distance_type: number;
       race_order: number;
     };
+
+    type TeamStadiumIndexResponseMetadata = unknown;
+
+    type TeamStadiumOpponentListResponseMetadata = unknown;
 
     type TeamStadiumOpponentMetadata = {
       strength: number;
@@ -2233,6 +2965,8 @@ declare global {
       motivation: number;
     };
 
+    type TeamStadiumRankingResponseMetadata = unknown;
+
     type TeamStadiumRankingMetadata = {
       term_id: number;
       viewer_id: number;
@@ -2240,6 +2974,8 @@ declare global {
       best_point: number;
       rank: number;
     };
+
+    type TeamStadiumReplayCheckResponseMetadata = unknown;
 
     type TeamStadiumResultBonusDataMetadata = {
       score_bonus_id: number;
@@ -2249,6 +2985,8 @@ declare global {
       condition_value_2: number;
       score_rate: number;
     };
+
+    type TeamStadiumResultHorseScoreMetadata = unknown;
 
     type TeamStadiumResultScoreDataMetadata = {
       raw_score_id: number;
@@ -2261,11 +2999,15 @@ declare global {
       team_total_score: number;
     };
 
+    type TeamStadiumSaveRaceResultResponseMetadata = unknown;
+
     type TeamStadiumScoreDataMetadata = {
       raw_score_id: number;
       num: number;
       score: number;
     };
+
+    type TeamStadiumStartResponseMetadata = unknown;
 
     type TeamStadiumTeamDataAtFriendMetadata = {
       distance_type: number;
@@ -2280,10 +3022,14 @@ declare global {
       running_style: number;
     };
 
+    type TeamStadiumTeamEditResponseMetadata = unknown;
+
     type TeamStadiumTotalScoreInfoMetadata = {
       final_total_score: number;
       all_race_result_score_bonus: number;
     };
+
+    type TeamStadiumUserDetailResponseMetadata = unknown;
 
     type TeamStadiumUserMetadata = {
       team_class: number;
@@ -2304,17 +3050,39 @@ declare global {
       box_color_type: number;
     };
 
+    type ToolDeviceAttestResponseMetadata = unknown;
+
+    type ToolGetPreDownloadResourceVersionResponseMetadata = unknown;
+
+    type ToolGetVerifyTokenResponseMetadata = unknown;
+
+    type ToolPreSignupResponseMetadata = unknown;
+
+    type ToolSendLogResponseMetadata = unknown;
+
+    type ToolSignupResponseMetadata = unknown;
+
+    type ToolStartSessionResponseMetadata = unknown;
+
     type TpInfoMetadata = {
       current_tp: number;
       max_tp: number;
       max_recovery_time: number;
     };
 
+    type TrainedCharaChangeLockMultiResponseMetadata = unknown;
+
+    type TrainedCharaChangeMemoResponseMetadata = unknown;
+
+    type TrainedCharaChangeNicknameResponseMetadata = unknown;
+
     type TrainedCharaFavoriteMetadata = {
       trained_chara_id: number;
       icon_type: number;
       memo: string;
     };
+
+    type TrainedCharaLoadResponseMetadata = unknown;
 
     type TrainedCharaParamMetadata = {
       skill: number;
@@ -2333,6 +3101,8 @@ declare global {
       running_style: number;
       result_rank: number;
     };
+
+    type TrainedCharaRemoveResponseMetadata = unknown;
 
     type TrainedCharaSupportCardListMetadata = {
       position: number;
@@ -2389,6 +3159,12 @@ declare global {
       is_challenged: boolean;
     };
 
+    type TrainingChallengeExamSelectResponseMetadata = unknown;
+
+    type TrainingChallengeGetRankingResponseMetadata = unknown;
+
+    type TrainingChallengeIndexResponseMetadata = unknown;
+
     type TrainingChallengeRankUserMetadata = {
       viewer_id: number;
       name: string;
@@ -2419,6 +3195,8 @@ declare global {
       level: number;
     };
 
+    type TransferDetailResponseMetadata = unknown;
+
     type TransferEventDetailInfoMetadata = {
       transfer_detail_id: number;
       exists_trained_chara: boolean;
@@ -2432,6 +3210,10 @@ declare global {
     type TransferEventRewardInfoMetadata = {
       trained_chara_id: number;
     };
+
+    type TransferExecMultiResponseMetadata = unknown;
+
+    type TransferIndexResponseMetadata = unknown;
 
     type TrophyCharaInfoMetadata = {
       chara_id: number;
@@ -2453,6 +3235,16 @@ declare global {
       id: number;
     };
 
+    type TutorialResponseMetadata = unknown;
+
+    type TutorialSingleModeFinishResponseMetadata = unknown;
+
+    type TutorialSkipResponseMetadata = unknown;
+
+    type TutorialTeamEditResponseMetadata = unknown;
+
+    type UpdateForceDisplayStatusResponseMetadata = unknown;
+
     type UseItemDataMetadata = {
       item_id: number;
       item_num: number;
@@ -2469,6 +3261,18 @@ declare global {
       talent_level: number;
       create_time: string;
     };
+
+    type UserChangeCardDressResponseMetadata = unknown;
+
+    type UserChangeDmaStateResponseMetadata = unknown;
+
+    type UserChangeFavoriteCharacterResponseMetadata = unknown;
+
+    type UserChangeSexResponseMetadata = unknown;
+
+    type UserChangeStoryFavoriteResponseMetadata = unknown;
+
+    type UserChangeSupportCardResponseMetadata = unknown;
 
     type UserCharaMetadata = {
       chara_id: number;
@@ -2487,6 +3291,10 @@ declare global {
       follow_time: string;
       follower_time: string;
     };
+
+    type UserGetProfileCardInfoResponseMetadata = unknown;
+
+    type UserGetProfileInfoResponseMetadata = unknown;
 
     type UserInfoAtFollowerMetadata = {
       viewer_id: number;
@@ -2579,6 +3387,14 @@ declare global {
       image_file_hash: string;
     };
 
+    type UserResetAllCardDressResponseMetadata = unknown;
+
+    type UserResetCardDressResponseMetadata = unknown;
+
+    type UserSetBirthDayResponseMetadata = unknown;
+
+    type UserSetProfileCardInfoResponseMetadata = unknown;
+
     type UserSupportCardAtFriendMetadata = {
       support_card_id: number;
       exp: number;
@@ -2635,10 +3451,16 @@ declare global {
       create_time: string;
     };
 
+    type ValentineIndexResponseMetadata = unknown;
+
     type ValentineReceivedDataMetadata = {
       last_received_time: string;
       card_id_list: number;
     };
+
+    type ModuleMetadata = unknown;
+
+    type PrivateImplementationDetailsMetadata = unknown;
   }
 }
 

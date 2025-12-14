@@ -109,9 +109,8 @@ export function writeTypeAliasFromMetadataToString(
     }
   }
   if (fields.length === 0) {
-    // Omit generating empty object types for cleaner output
-    console.log(`Skipped empty type ${typeName}`);
-    return null;
+    const content = [`type ${typeName} = unknown;`, ''].join('\n');
+    return content;
   }
   const content = [
     `type ${typeName} = {`,
