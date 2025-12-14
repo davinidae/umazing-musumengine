@@ -7,7 +7,7 @@
 > **Logger** = `object` & `Partial`\<\{ `log`: (...`args`) => `void`; \}\>
 
 Defined in:
-[lib/models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/0a4517f700b1d4392d2bd0ea30ae1a4f619717ab/src/lib/models/client.model.ts#L4)
+[lib/models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/126524ae090ffc71880c35ff08f17d4361e00acd/src/lib/models/client.model.ts#L4)
 
 Minimal logger interface for dependency injection.
 
@@ -76,7 +76,7 @@ Minimal logger interface for dependency injection.
 > **RuntimeClientOptions** = [`ServiceOptions`](#serviceoptions)
 
 Defined in:
-[lib/models/client.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/0a4517f700b1d4392d2bd0ea30ae1a4f619717ab/src/lib/models/client.model.ts#L14)
+[lib/models/client.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/126524ae090ffc71880c35ff08f17d4361e00acd/src/lib/models/client.model.ts#L14)
 
 Options for RuntimeClient construction.
 
@@ -87,7 +87,7 @@ Options for RuntimeClient construction.
 > **ServiceOptions** = `object` & `Partial`\<\{ `logger`: [`Logger`](#logger); \}\>
 
 Defined in:
-[lib/models/client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/0a4517f700b1d4392d2bd0ea30ae1a4f619717ab/src/lib/models/client.model.ts#L17)
+[lib/models/client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/126524ae090ffc71880c35ff08f17d4361e00acd/src/lib/models/client.model.ts#L17)
 
 Common options for long-running services (decrypt/encrypt).
 

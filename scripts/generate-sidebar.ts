@@ -75,7 +75,8 @@ export function link(rel: string, name: string) {
   const pageTarget = isMd
     ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
     : encodeURI(target).replace(/#/g, '%23');
-  return `[${name}](${pageTarget})`;
+  const prefixed = pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
+  return `[${name}](${prefixed})`;
 }
 
 /**
