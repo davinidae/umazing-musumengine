@@ -75,8 +75,10 @@ export function link(rel: string, name: string) {
   const pageTarget = isMd
     ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
     : encodeURI(target).replace(/#/g, '%23');
-  const prefixed = pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
-  return `[${name}](${prefixed})`;
+  // GitHub Wiki expects wiki page links without './' and without extensions.
+  // Prefix './' only for non-Markdown assets to keep them relative.
+  const href = isMd ? pageTarget : pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
+  return `[${name}](${href})`;
 }
 
 /**

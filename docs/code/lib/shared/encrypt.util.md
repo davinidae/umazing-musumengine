@@ -7,7 +7,7 @@
 > **encryptAes256Cbc**(`dataPadded`, `key`, `iv`): `Buffer`
 
 Defined in:
-[lib/shared/encrypt.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/126524ae090ffc71880c35ff08f17d4361e00acd/src/lib/shared/encrypt.util.ts#L13)
+[lib/shared/encrypt.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/6d93a9d181bc10f7bca06b31a7a5ef63bcfb6c64/src/lib/shared/encrypt.util.ts#L13)
 
 AES-256-CBC encrypt without auto-PKCS#7 padding (data must already be padded).
 

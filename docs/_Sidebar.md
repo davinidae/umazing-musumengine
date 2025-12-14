@@ -6,17 +6,17 @@
 
 <details><summary>endpoints</summary>
 
-- [login.md](./code/api/endpoints/login)
+- [login.md](code/api/endpoints/login)
 
-- [misc.md](./code/api/endpoints/misc)
+- [misc.md](code/api/endpoints/misc)
 
 </details>
 
 <details><summary>models</summary>
 
-- [pipelines.model.md](./code/api/models/pipelines.model)
+- [pipelines.model.md](code/api/models/pipelines.model)
 
-- [result_codes.model.md](./code/api/models/result_codes.model)
+- [result_codes.model.md](code/api/models/result_codes.model)
 
 </details>
 
@@ -24,39 +24,39 @@
 
 <details><summary>services</summary>
 
-- [load_index.service.md](./code/api/pipelines/services/load_index.service)
+- [load_index.service.md](code/api/pipelines/services/load_index.service)
 
-- [pre_signup.service.md](./code/api/pipelines/services/pre_signup.service)
+- [pre_signup.service.md](code/api/pipelines/services/pre_signup.service)
 
-- [signup.service.md](./code/api/pipelines/services/signup.service)
+- [signup.service.md](code/api/pipelines/services/signup.service)
 
-- [start_session.service.md](./code/api/pipelines/services/start_session.service)
+- [start_session.service.md](code/api/pipelines/services/start_session.service)
 
-- [step.service.md](./code/api/pipelines/services/step.service)
+- [step.service.md](code/api/pipelines/services/step.service)
 
 </details>
 
-- [pipeline_groups.md](./code/api/pipelines/pipeline_groups)
+- [pipeline_groups.md](code/api/pipelines/pipeline_groups)
 
-- [services.md](./code/api/pipelines/services)
+- [services.md](code/api/pipelines/services)
 
 </details>
 
 <details><summary>session</summary>
 
-- [pipeline.md](./code/api/session/pipeline)
+- [pipeline.md](code/api/session/pipeline)
 
-- [session-manager.md](./code/api/session/session-manager)
+- [session-manager.md](code/api/session/session-manager)
 
-- [user-session.md](./code/api/session/user-session)
+- [user-session.md](code/api/session/user-session)
 
 </details>
 
-- [endpoints.md](./code/api/endpoints)
+- [endpoints.md](code/api/endpoints)
 
-- [models.md](./code/api/models)
+- [models.md](code/api/models)
 
-- [pipelines.md](./code/api/pipelines)
+- [pipelines.md](code/api/pipelines)
 
 </details>
 
@@ -66,61 +66,61 @@
 
 <details><summary>shared</summary>
 
-- [blob.util.md](./code/lib/decrypt/shared/blob.util)
+- [blob.util.md](code/lib/decrypt/shared/blob.util)
 
-- [unpacker.util.md](./code/lib/decrypt/shared/unpacker.util)
+- [unpacker.util.md](code/lib/decrypt/shared/unpacker.util)
 
 </details>
 
-- [request.service.md](./code/lib/decrypt/request.service)
+- [request.service.md](code/lib/decrypt/request.service)
 
-- [response.service.md](./code/lib/decrypt/response.service)
+- [response.service.md](code/lib/decrypt/response.service)
 
-- [shared.md](./code/lib/decrypt/shared)
+- [shared.md](code/lib/decrypt/shared)
 
 </details>
 
 <details><summary>encrypt</summary>
 
-- [payload.service.md](./code/lib/encrypt/payload.service)
+- [payload.service.md](code/lib/encrypt/payload.service)
 
 </details>
 
 <details><summary>models</summary>
 
-- [client.model.md](./code/lib/models/client.model)
+- [client.model.md](code/lib/models/client.model)
 
-- [decrypt.model.md](./code/lib/models/decrypt.model)
+- [decrypt.model.md](code/lib/models/decrypt.model)
 
-- [protocol.model.md](./code/lib/models/protocol.model)
+- [protocol.model.md](code/lib/models/protocol.model)
 
-- [runtime.model.md](./code/lib/models/runtime.model)
+- [runtime.model.md](code/lib/models/runtime.model)
 
 </details>
 
 <details><summary>shared</summary>
 
-- [decrypt.util.md](./code/lib/shared/decrypt.util)
+- [decrypt.util.md](code/lib/shared/decrypt.util)
 
-- [encrypt.util.md](./code/lib/shared/encrypt.util)
+- [encrypt.util.md](code/lib/shared/encrypt.util)
 
-- [json.util.md](./code/lib/shared/json.util)
+- [json.util.md](code/lib/shared/json.util)
 
-- [logger.util.md](./code/lib/shared/logger.util)
+- [logger.util.md](code/lib/shared/logger.util)
 
-- [protocol.util.md](./code/lib/shared/protocol.util)
+- [protocol.util.md](code/lib/shared/protocol.util)
 
 </details>
 
-- [decrypt.md](./code/lib/decrypt)
+- [decrypt.md](code/lib/decrypt)
 
-- [encrypt.md](./code/lib/encrypt)
+- [encrypt.md](code/lib/encrypt)
 
-- [models.md](./code/lib/models)
+- [models.md](code/lib/models)
 
-- [runtime-client.md](./code/lib/runtime-client)
+- [runtime-client.md](code/lib/runtime-client)
 
-- [shared.md](./code/lib/shared)
+- [shared.md](code/lib/shared)
 
 </details>
 
@@ -128,39 +128,39 @@
 
 <details><summary>namespaces</summary>
 
-- [Umatypes.md](./code/umatypes/namespaces/Umatypes)
+- [Umatypes.md](code/umatypes/namespaces/Umatypes)
 
 </details>
 
-- [README.md](./code/umatypes/README)
+- [README.md](code/umatypes/README)
 
 </details>
 
-- [api.md](./code/api)
+- [api.md](code/api)
 
-- [cli.md](./code/cli)
+- [cli.md](code/cli)
 
-- [index.md](./code/index)
+- [index.md](code/index)
 
-- [lib.md](./code/lib)
+- [lib.md](code/lib)
 
-- [README.md](./code/README)
+- [README.md](code/README)
 
-- [variables.md](./code/variables)
+- [variables.md](code/variables)
 
 </details>
 
 <details open><summary>scripts</summary>
 
-- [generate-sidebar.md](./scripts/generate-sidebar)
+- [generate-sidebar.md](scripts/generate-sidebar)
 
-- [generate-umatypes.md](./scripts/generate-umatypes)
+- [generate-umatypes.md](scripts/generate-umatypes)
 
-- [README.md](./scripts/README)
+- [README.md](scripts/README)
 
-- [seed-example.md](./scripts/seed-example)
+- [seed-example.md](scripts/seed-example)
 
-- [which-strategy.md](./scripts/which-strategy)
+- [which-strategy.md](scripts/which-strategy)
 
 </details>
 
@@ -168,33 +168,33 @@
 
 <details><summary>behavior</summary>
 
-- [CARATS.md](./umamusume_api_info/behavior/CARATS)
+- [CARATS.md](umamusume_api_info/behavior/CARATS)
 
-- [CONCERTS.md](./umamusume_api_info/behavior/CONCERTS)
+- [CONCERTS.md](umamusume_api_info/behavior/CONCERTS)
 
-- [DAILY_RACES.md](./umamusume_api_info/behavior/DAILY_RACES)
+- [DAILY_RACES.md](umamusume_api_info/behavior/DAILY_RACES)
 
-- [EVENT_MISSION.md](./umamusume_api_info/behavior/EVENT_MISSION)
+- [EVENT_MISSION.md](umamusume_api_info/behavior/EVENT_MISSION)
 
-- [FAVORITE_CHARACTER.md](./umamusume_api_info/behavior/FAVORITE_CHARACTER)
+- [FAVORITE_CHARACTER.md](umamusume_api_info/behavior/FAVORITE_CHARACTER)
 
-- [MAIN_SCREEN.md](./umamusume_api_info/behavior/MAIN_SCREEN)
+- [MAIN_SCREEN.md](umamusume_api_info/behavior/MAIN_SCREEN)
 
-- [MISSIONS.md](./umamusume_api_info/behavior/MISSIONS)
+- [MISSIONS.md](umamusume_api_info/behavior/MISSIONS)
 
-- [PRESENTS.md](./umamusume_api_info/behavior/PRESENTS)
+- [PRESENTS.md](umamusume_api_info/behavior/PRESENTS)
 
-- [README.md](./umamusume_api_info/behavior/README)
+- [README.md](umamusume_api_info/behavior/README)
 
-- [SCOUT.md](./umamusume_api_info/behavior/SCOUT)
+- [SCOUT.md](umamusume_api_info/behavior/SCOUT)
 
-- [SHOPS.md](./umamusume_api_info/behavior/SHOPS)
+- [SHOPS.md](umamusume_api_info/behavior/SHOPS)
 
-- [SUPPORT_CARDS.md](./umamusume_api_info/behavior/SUPPORT_CARDS)
+- [SUPPORT_CARDS.md](umamusume_api_info/behavior/SUPPORT_CARDS)
 
-- [TEAM_TRIALS.md](./umamusume_api_info/behavior/TEAM_TRIALS)
+- [TEAM_TRIALS.md](umamusume_api_info/behavior/TEAM_TRIALS)
 
-- [USER.md](./umamusume_api_info/behavior/USER)
+- [USER.md](umamusume_api_info/behavior/USER)
 
 </details>
 
@@ -204,35 +204,35 @@
 
 <details><summary>index</summary>
 
-- [README.md](./umamusume_api_info/endpoints/daily_race/index/README)
+- [README.md](umamusume_api_info/endpoints/daily_race/index/README)
 
 </details>
 
 <details><summary>race_entry</summary>
 
-- [README.md](./umamusume_api_info/endpoints/daily_race/race_entry/README)
+- [README.md](umamusume_api_info/endpoints/daily_race/race_entry/README)
 
 </details>
 
 <details><summary>race_start</summary>
 
-- [README.md](./umamusume_api_info/endpoints/daily_race/race_start/README)
+- [README.md](umamusume_api_info/endpoints/daily_race/race_start/README)
 
 </details>
 
 <details><summary>reflect_item_effect</summary>
 
-- [README.md](./umamusume_api_info/endpoints/daily_race/reflect_item_effect/README)
+- [README.md](umamusume_api_info/endpoints/daily_race/reflect_item_effect/README)
 
 </details>
 
 <details><summary>replay_check</summary>
 
-- [README.md](./umamusume_api_info/endpoints/daily_race/replay_check/README)
+- [README.md](umamusume_api_info/endpoints/daily_race/replay_check/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/daily_race/README)
+- [README.md](umamusume_api_info/endpoints/daily_race/README)
 
 </details>
 
@@ -240,11 +240,11 @@
 
 <details><summary>show_exchange</summary>
 
-- [README.md](./umamusume_api_info/endpoints/item/show_exchange/README)
+- [README.md](umamusume_api_info/endpoints/item/show_exchange/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/item/README)
+- [README.md](umamusume_api_info/endpoints/item/README)
 
 </details>
 
@@ -252,11 +252,11 @@
 
 <details><summary>draw_random_request</summary>
 
-- [README.md](./umamusume_api_info/endpoints/jukebox/draw_random_request/README)
+- [README.md](umamusume_api_info/endpoints/jukebox/draw_random_request/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/jukebox/README)
+- [README.md](umamusume_api_info/endpoints/jukebox/README)
 
 </details>
 
@@ -264,11 +264,11 @@
 
 <details><summary>live_start</summary>
 
-- [README.md](./umamusume_api_info/endpoints/live/live_start/README)
+- [README.md](umamusume_api_info/endpoints/live/live_start/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/live/README)
+- [README.md](umamusume_api_info/endpoints/live/README)
 
 </details>
 
@@ -276,11 +276,11 @@
 
 <details><summary>index</summary>
 
-- [README.md](./umamusume_api_info/endpoints/load/index/README)
+- [README.md](umamusume_api_info/endpoints/load/index/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/load/README)
+- [README.md](umamusume_api_info/endpoints/load/README)
 
 </details>
 
@@ -288,17 +288,17 @@
 
 <details><summary>index</summary>
 
-- [README.md](./umamusume_api_info/endpoints/mission/index/README)
+- [README.md](umamusume_api_info/endpoints/mission/index/README)
 
 </details>
 
 <details><summary>receive</summary>
 
-- [README.md](./umamusume_api_info/endpoints/mission/receive/README)
+- [README.md](umamusume_api_info/endpoints/mission/receive/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/mission/README)
+- [README.md](umamusume_api_info/endpoints/mission/README)
 
 </details>
 
@@ -306,11 +306,11 @@
 
 <details><summary>item_list</summary>
 
-- [README.md](./umamusume_api_info/endpoints/payment/item_list/README)
+- [README.md](umamusume_api_info/endpoints/payment/item_list/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/payment/README)
+- [README.md](umamusume_api_info/endpoints/payment/README)
 
 </details>
 
@@ -318,17 +318,17 @@
 
 <details><summary>index</summary>
 
-- [README.md](./umamusume_api_info/endpoints/present/index/README)
+- [README.md](umamusume_api_info/endpoints/present/index/README)
 
 </details>
 
 <details><summary>receive_all</summary>
 
-- [README.md](./umamusume_api_info/endpoints/present/receive_all/README)
+- [README.md](umamusume_api_info/endpoints/present/receive_all/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/present/README)
+- [README.md](umamusume_api_info/endpoints/present/README)
 
 </details>
 
@@ -336,29 +336,29 @@
 
 <details><summary>index</summary>
 
-- [README.md](./umamusume_api_info/endpoints/story_event/index/README)
+- [README.md](umamusume_api_info/endpoints/story_event/index/README)
 
 </details>
 
 <details><summary>receive_mission</summary>
 
-- [README.md](./umamusume_api_info/endpoints/story_event/receive_mission/README)
+- [README.md](umamusume_api_info/endpoints/story_event/receive_mission/README)
 
 </details>
 
 <details><summary>roulette</summary>
 
-- [README.md](./umamusume_api_info/endpoints/story_event/roulette/README)
+- [README.md](umamusume_api_info/endpoints/story_event/roulette/README)
 
 </details>
 
 <details><summary>roulette_exec</summary>
 
-- [README.md](./umamusume_api_info/endpoints/story_event/roulette_exec/README)
+- [README.md](umamusume_api_info/endpoints/story_event/roulette_exec/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/story_event/README)
+- [README.md](umamusume_api_info/endpoints/story_event/README)
 
 </details>
 
@@ -366,11 +366,11 @@
 
 <details><summary>strengthen</summary>
 
-- [README.md](./umamusume_api_info/endpoints/support_card/strengthen/README)
+- [README.md](umamusume_api_info/endpoints/support_card/strengthen/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/support_card/README)
+- [README.md](umamusume_api_info/endpoints/support_card/README)
 
 </details>
 
@@ -378,17 +378,17 @@
 
 <details><summary>index</summary>
 
-- [README.md](./umamusume_api_info/endpoints/team_stadium/index/README)
+- [README.md](umamusume_api_info/endpoints/team_stadium/index/README)
 
 </details>
 
 <details><summary>opponent_list</summary>
 
-- [README.md](./umamusume_api_info/endpoints/team_stadium/opponent_list/README)
+- [README.md](umamusume_api_info/endpoints/team_stadium/opponent_list/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/team_stadium/README)
+- [README.md](umamusume_api_info/endpoints/team_stadium/README)
 
 </details>
 
@@ -396,23 +396,23 @@
 
 <details><summary>pre_signup</summary>
 
-- [README.md](./umamusume_api_info/endpoints/tool/pre_signup/README)
+- [README.md](umamusume_api_info/endpoints/tool/pre_signup/README)
 
 </details>
 
 <details><summary>signup</summary>
 
-- [README.md](./umamusume_api_info/endpoints/tool/signup/README)
+- [README.md](umamusume_api_info/endpoints/tool/signup/README)
 
 </details>
 
 <details><summary>start_session</summary>
 
-- [README.md](./umamusume_api_info/endpoints/tool/start_session/README)
+- [README.md](umamusume_api_info/endpoints/tool/start_session/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/tool/README)
+- [README.md](umamusume_api_info/endpoints/tool/README)
 
 </details>
 
@@ -420,21 +420,21 @@
 
 <details><summary>change_favorite_character</summary>
 
-- [README.md](./umamusume_api_info/endpoints/user/change_favorite_character/README)
+- [README.md](umamusume_api_info/endpoints/user/change_favorite_character/README)
 
 </details>
 
 <details><summary>get_profile_info</summary>
 
-- [README.md](./umamusume_api_info/endpoints/user/get_profile_info/README)
+- [README.md](umamusume_api_info/endpoints/user/get_profile_info/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/user/README)
+- [README.md](umamusume_api_info/endpoints/user/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/endpoints/README)
+- [README.md](umamusume_api_info/endpoints/README)
 
 </details>
 
@@ -2088,7 +2088,7 @@
 
 - [ReadInfoResponseFormatter_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/ReadInfoResponseFormatter_methods.txt)
 
-- [README.md](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/README)
+- [README.md](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/README)
 
 - [RecoveryRacePointRequestFormatter_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Formatters/RecoveryRacePointRequestFormatter_methods.txt)
 
@@ -3518,11 +3518,11 @@
 
 - [CuteGeneratedResolverGetFormatterHelper_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/CuteGeneratedResolverGetFormatterHelper_methods.txt)
 
-- [README.md](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/README)
+- [README.md](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/Resolvers/README)
 
 </details>
 
-- [README.md](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/README)
+- [README.md](umamusume_api_info/umamusume.Http/method_dumps/Gallop/MsgPack/README)
 
 </details>
 
@@ -5616,7 +5616,7 @@
 
 - [ReadInfoTask_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/ReadInfoTask_methods.txt)
 
-- [README.md](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/README)
+- [README.md](umamusume_api_info/umamusume.Http/method_dumps/Gallop/README)
 
 - [RecoveryRacePointRequest_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/Gallop/RecoveryRacePointRequest_methods.txt)
 
@@ -7402,7 +7402,7 @@
 
 - [_PrivateImplementationDetails_--NestedType--\_\_StaticArrayInitTypeSize=187469_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/_PrivateImplementationDetails_--NestedType--__StaticArrayInitTypeSize=187469_methods.txt)
 
-- [README.md](./umamusume_api_info/umamusume.Http/method_dumps/README)
+- [README.md](umamusume_api_info/umamusume.Http/method_dumps/README)
 
 - [UnitySourceGeneratedAssemblyMonoScriptTypes_v1_methods.txt](./umamusume_api_info/umamusume.Http/method_dumps/UnitySourceGeneratedAssemblyMonoScriptTypes_v1_methods.txt)
 
@@ -8168,7 +8168,7 @@
 
 - [ReadInfoResponse_metadata.txt](./umamusume_api_info/umamusume.Http/ReadInfoResponse_metadata.txt)
 
-- [README.md](./umamusume_api_info/umamusume.Http/README)
+- [README.md](umamusume_api_info/umamusume.Http/README)
 
 - [RecoveryRacePointResponse_metadata.txt](./umamusume_api_info/umamusume.Http/RecoveryRacePointResponse_metadata.txt)
 
@@ -8890,14 +8890,14 @@
 
 - [headers.png](./umamusume_api_info/headers.png)
 
-- [INTERACTION.md](./umamusume_api_info/INTERACTION)
+- [INTERACTION.md](umamusume_api_info/INTERACTION)
 
-- [ORIGINAL.md](./umamusume_api_info/ORIGINAL)
+- [ORIGINAL.md](umamusume_api_info/ORIGINAL)
 
 - [packet-structure-diagram.png](./umamusume_api_info/packet-structure-diagram.png)
 
-- [README.md](./umamusume_api_info/README)
+- [README.md](umamusume_api_info/README)
 
 </details>
 
-- [README.md](./README)
+- [README.md](README)
