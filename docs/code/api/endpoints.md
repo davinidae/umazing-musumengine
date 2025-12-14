@@ -7,7 +7,7 @@
 > `const` **router**: `Router`
 
 Defined in:
-[api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/endpoints/index.ts#L14)
+[api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/321fd0b0cc12338ca5fd03434b7e49a484bb9190/src/api/endpoints/index.ts#L14)
 
 Root API router.
 

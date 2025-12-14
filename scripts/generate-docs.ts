@@ -82,6 +82,21 @@ export function link(rel: string, name: string) {
 }
 
 /**
+ * Create an HTML anchor tag for a docs entry.
+ * Matches GitHub Wiki routing rules for Markdown pages.
+ */
+export function anchor(rel: string, name: string) {
+  const isMd = /\.md$/i.test(name);
+  const title = name.replace(/\.md$/i, '');
+  const target = rel.split(path.sep).join('/');
+  const pageTarget = isMd
+    ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
+    : encodeURI(target).replace(/#/g, '%23');
+  const href = isMd ? pageTarget : pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
+  return `<a href="${href}">${title}</a>`;
+}
+
+/**
  * Render the sidebar tree into Markdown with collapsible sections.
  *
  * @param nodes Tree nodes to render
@@ -89,26 +104,26 @@ export function link(rel: string, name: string) {
  */
 export function render(nodes: Node[], depth = 0): string[] {
   const lines: string[] = [];
+  const marginLeft = depth * 16; // px margin per depth level
+  lines.push(`<ul style="list-style-type: disc; margin-left: ${marginLeft}px; padding-left: 0;">`);
   for (const n of nodes) {
-    const top = depth === 0;
     if (n.dir) {
-      const open = top ? ' open' : '';
-      lines.push(`<details${open}><summary>${n.name}</summary>`);
-      lines.push('');
+      const open = depth === 0 ? ' open' : '';
+      lines.push(
+        `<li style="margin: 4px 0;">` +
+          `<details${open} style="margin-left: 8px;">` +
+          `<summary>${n.name}</summary>`,
+      );
       if (n.children && n.children.length) {
         lines.push(...render(n.children, depth + 1));
       }
-      // Close details, then add two blank lines to ensure Markdown list links render correctly
-      lines.push('');
       lines.push(`</details>`);
-      lines.push('');
+      lines.push(`</li>`);
       continue;
     }
-    const item = `- ${link(n.rel, n.name)}`;
-    // Slight left margin for nested file items using non-breaking spaces
-    lines.push(item);
-    lines.push('');
+    lines.push(`<li style="margin: 4px 0;">${anchor(n.rel, n.name)}</li>`);
   }
+  lines.push(`</ul>`);
   return lines;
 }
 
