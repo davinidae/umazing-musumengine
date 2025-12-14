@@ -51,6 +51,7 @@
     "prepare": "husky install",
     "precommit": "npm run lint && npm run format && npm run typecheck",
     "docs": "typedoc && tsx scripts/generate-sidebar.ts",
+    "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format",
     "api": "tsx src/api/index.ts",
     "api:dev": "nodemon --exec tsx src/api/index.ts"
   },
