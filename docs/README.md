@@ -1,8 +1,9 @@
-# umazing-musumengine
+# Umazing Musumengine
 
-## Modules
+Version 1.0.4
 
-- [scripts/generate-sidebar](scripts/generate-sidebar.md)
-- [scripts/generate-umatypes](scripts/generate-umatypes.md)
-- [scripts/seed-example](scripts/seed-example.md)
-- [scripts/which-strategy](scripts/which-strategy.md)
+Generated: 2025-12-14 15:53:02
+
+This wiki contains documentation generated from the Umamusume API information.
+
+See the [Sidebar](./_Sidebar) for available topics.

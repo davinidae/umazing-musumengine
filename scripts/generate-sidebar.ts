@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import packageJson from '../package.json';
 
 export const DOCS_ROOT = path.resolve(process.cwd(), 'docs');
 export const SIDEBAR_PATH = path.join(DOCS_ROOT, '_Sidebar.md');
+export const HOME_PATH = path.join(DOCS_ROOT, 'README.md');
 
 /**
  * Returns whether a docs entry should be hidden from the sidebar.
@@ -127,6 +129,24 @@ export function generate() {
   out.push(...render(tree));
   fs.writeFileSync(SIDEBAR_PATH, out.join('\n').replace(/\n\n\n/g, '\n\n') + '\n', 'utf-8');
   console.log(`Generated ${SIDEBAR_PATH}`);
+  const date = new Date().toISOString().replace('T', ' ').replace('Z', '').replace(/\.\d+/, '');
+  fs.writeFileSync(
+    HOME_PATH,
+    [
+      `# Umazing Musumengine`,
+      '',
+      `Version ${packageJson.version}`,
+      '',
+      `Generated: ${date}`,
+      '',
+      'This wiki contains documentation generated from the Umamusume API information.',
+      '',
+      'See the [Sidebar](./_Sidebar) for available topics.',
+      '',
+    ].join('\n'),
+    'utf-8',
+  );
+  console.log(`Generated ${HOME_PATH}`);
 }
 
 generate();
