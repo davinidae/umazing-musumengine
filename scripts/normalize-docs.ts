@@ -2,11 +2,6 @@ import fs from 'fs';
 import path from 'path';
 
 const DOCS_ROOT = path.resolve(process.cwd(), 'docs');
-const TARGET_DIRS = [
-  path.join(DOCS_ROOT, 'code'),
-  path.join(DOCS_ROOT, 'scripts'),
-  path.join(DOCS_ROOT, 'umamusume_api_info'),
-];
 
 type RenameMap = Map<string, string>; // oldAbs -> newAbs
 
@@ -43,17 +38,15 @@ function walk(dir: string): string[] {
 
 function buildRenameMap(): RenameMap {
   const map: RenameMap = new Map();
-  for (const target of TARGET_DIRS) {
-    for (const file of walk(target)) {
-      const dir = path.dirname(file);
-      const base = path.basename(file);
-      const next = normalizeBaseName(base);
-      if (next === base) {
-        continue;
-      }
-      const newAbs = path.join(dir, next);
-      map.set(file, newAbs);
+  for (const file of walk(DOCS_ROOT)) {
+    const dir = path.dirname(file);
+    const base = path.basename(file);
+    const next = normalizeBaseName(base);
+    if (next === base) {
+      continue;
     }
+    const newAbs = path.join(dir, next);
+    map.set(file, newAbs);
   }
   return map;
 }
