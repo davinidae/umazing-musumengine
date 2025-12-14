@@ -7,7 +7,7 @@
 > `const` **router**: `Router`
 
 Defined in:
-[api/endpoints/login.ts:5](https://github.com/davinidae/umazing-musumengine/blob/1003449b1f6810e8bebb1a1895d923aead233e40/src/api/endpoints/login.ts#L5)
+[api/endpoints/login.ts:5](https://github.com/davinidae/umazing-musumengine/blob/92508e018818c5fb68a0c2fe2b0ebc322fd78ba3/src/api/endpoints/login.ts#L5)
 
 ## References
 

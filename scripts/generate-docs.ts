@@ -70,30 +70,9 @@ export function read(dirAbs: string, relBase = ''): Node[] {
  * @param name Display name
  */
 export function link(rel: string, name: string) {
-  const isMd = /\.md$/i.test(name);
-  const title = name.replace(/\.md$/i, '');
-  const target = rel.split(path.sep).join('/');
-  // Wiki pages: no extension, spaces → hyphens; assets: keep relative ./
-  const pageTarget = isMd
-    ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
-    : encodeURI(target).replace(/#/g, '%23');
-  const href = isMd ? pageTarget : pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
-  return `[${title}](${href})`;
-}
-
-/**
- * Create an HTML anchor tag for a docs entry.
- * Matches GitHub Wiki routing rules for Markdown pages.
- */
-export function anchor(rel: string, name: string) {
-  const isMd = /\.md$/i.test(name);
-  const title = name.replace(/\.md$/i, '');
-  const target = rel.split(path.sep).join('/');
-  const pageTarget = isMd
-    ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
-    : encodeURI(target).replace(/#/g, '%23');
-  const href = isMd ? pageTarget : pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
-  return `<a href="${href}">${title}</a>`;
+  const title = name.replace(/\\/g, '/');
+  const ref = rel.replace(/\\/g, '/');
+  return `[[${ref}|${title}]]`;
 }
 
 /**
@@ -121,7 +100,9 @@ export function render(nodes: Node[], depth = 0): string[] {
       lines.push(`</li>`);
       continue;
     }
-    lines.push(`<li style="margin: 4px 0;">${anchor(n.rel, n.name)}</li>`);
+    lines.push('');
+    lines.push(`- ${link(n.rel, n.name)}`);
+    lines.push('');
   }
   lines.push(`</ul>`);
   return lines;
