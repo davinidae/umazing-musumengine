@@ -7,6 +7,6 @@
 > `const` **defaultLogger**: [`Logger`](../models/client.model.md#logger)
 
 Defined in:
-[lib/shared/logger.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/184f85efa94986df9e451e85e9833fe9d4ccbc57/src/lib/shared/logger.util.ts#L9)
+[lib/shared/logger.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/lib/shared/logger.util.ts#L9)
 
 Default logger that writes to console. Preserves existing console output behavior.

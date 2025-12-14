@@ -106,21 +106,20 @@ export function render(nodes: Node[], depth = 0): string[] {
   return lines;
 }
 
-/**
- * Entrypoint: generates `docs/_Sidebar.md` from the contents of `docs/`.
- */
-export function generate() {
-  if (!fs.existsSync(DOCS_ROOT)) {
-    console.error('docs folder not found');
-    process.exit(1);
-  }
+function generateSidebar() {
   const tree = read(DOCS_ROOT);
-  const out: string[] = [];
-  out.push('<!-- Auto-generated from /docs by scripts/generate-sidebar.ts -->');
-  out.push('');
-  out.push(...render(tree));
-  fs.writeFileSync(SIDEBAR_PATH, out.join('\n').replace(/\n\n\n/g, '\n\n') + '\n', 'utf-8');
+  const renders = render(tree);
+  fs.writeFileSync(
+    SIDEBAR_PATH,
+    ['<!-- Auto-generated from /docs by scripts/generate-sidebar.ts -->', '', ...renders]
+      .join('\n')
+      .replace(/\n\n\n/g, '\n\n') + '\n',
+    'utf-8',
+  );
   console.log(`Generated ${SIDEBAR_PATH}`);
+}
+
+function generateHome() {
   const date = new Date().toISOString().replace('T', ' ').replace('Z', '').replace(/\.\d+/, '');
   fs.writeFileSync(
     HOME_PATH,
@@ -139,6 +138,31 @@ export function generate() {
     'utf-8',
   );
   console.log(`Generated ${HOME_PATH}`);
+}
+
+function generateFooter() {
+  const footerPath = path.join(DOCS_ROOT, '_Footer.md');
+  fs.writeFileSync(
+    footerPath,
+    [`---`, ``, `*This documentation is auto-generated from the Umamusume API information`].join(
+      '\n',
+    ),
+    'utf-8',
+  );
+  console.log(`Generated ${footerPath}`);
+}
+
+/**
+ * Entrypoint: generates `docs/_Sidebar.md` from the contents of `docs/`.
+ */
+export function generate() {
+  if (!fs.existsSync(DOCS_ROOT)) {
+    console.error('docs folder not found');
+    process.exit(1);
+  }
+  generateSidebar();
+  generateHome();
+  generateFooter();
 }
 
 generate();
