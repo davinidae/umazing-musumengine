@@ -13,6 +13,13 @@ import { pkcs7Pad } from '../src';
 import { DETERMINISTIC_ENC_SECRET } from '../src/variables';
 import { encryptAes256Cbc } from '../src';
 
+/**
+ * Seeds a minimal example pack under `decrypt/input/example`.
+ *
+ * Produces:
+ * - `request.txt`: a base64-encoded request with deterministic header fields
+ * - `response.txt`: a base64-encoded response using AES-256-CBC and MsgPack
+ */
 async function main() {
   const outDir = path.join(process.cwd(), 'decrypt', 'input', 'example');
   fs.mkdirSync(outDir, { recursive: true });

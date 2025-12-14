@@ -4,13 +4,25 @@
 
 ### EncryptPayloadService
 
-Defined in: [lib/encrypt/payload.service.ts:21](https://github.com/davinidae/umazing-musumengine/blob/c68a73a1f9fb9bbc643590478b70f489021a8c96/src/lib/encrypt/payload.service.ts#L21)
+Defined in:
+[lib/encrypt/payload.service.ts:21](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/src/lib/encrypt/payload.service.ts#L21)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
 Framing modes:
+
 - Default 'length-prefixed': a single msgpack document with a 4-byte little-endian length prefix.
 - 'kv-stream' when blob1.framing === 'kv-stream': concatenated msgpack(key)+msgpack(value) pairs.
+
+#### Constructors
+
+##### Constructor
+
+> **new EncryptPayloadService**(): [`EncryptPayloadService`](#encryptpayloadservice)
+
+###### Returns
+
+[`EncryptPayloadService`](#encryptpayloadservice)
 
 #### Methods
 
@@ -18,7 +30,8 @@ Framing modes:
 
 > **buildFromParts**(`input`): `object`
 
-Defined in: [lib/encrypt/payload.service.ts:35](https://github.com/davinidae/umazing-musumengine/blob/c68a73a1f9fb9bbc643590478b70f489021a8c96/src/lib/encrypt/payload.service.ts#L35)
+Defined in:
+[lib/encrypt/payload.service.ts:35](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/src/lib/encrypt/payload.service.ts#L35)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -40,4 +53,5 @@ An object containing the Base64-encoded request buffer as `requestB64`.
 
 ###### Throws
 
-If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, response_key != 32B).
+If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, response_key !=
+32B).

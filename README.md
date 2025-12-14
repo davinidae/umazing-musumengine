@@ -345,10 +345,10 @@ For a small OO wrapper, use `RuntimeClient`:
 ```ts
 import { RuntimeClient } from './src';
 
-const client = new RuntimeClient();
+export const client = new RuntimeClient();
 
 // Encode a request
-const { requestB64 } = client.encodeRequest({
+export const { requestB64 } = client.encodeRequest({
   blob1: {
     prefix_hex: 'aabbcc',
     udid_raw_hex: '00'.repeat(16),
@@ -360,7 +360,7 @@ const { requestB64 } = client.encodeRequest({
 });
 
 // Later, decode a response (Base64 of blob2)
-const { payload } = client.decodeResponse({
+export const { payload } = client.decodeResponse({
   requestB64,
   responseB64: '<blob2 base64>',
 });

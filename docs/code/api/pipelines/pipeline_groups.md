@@ -1,15 +1,20 @@
-# api/pipelines/pipeline\_groups
+# api/pipelines/pipeline_groups
 
 ## Variables
 
 ### loginPipeline
 
-> `const` **loginPipeline**: (*typeof* [`PreSignupService`](services/pre_signup.service.md#presignupservice) \| *typeof* [`SignupService`](services/signup.service.md#signupservice) \| *typeof* [`StartSessionService`](services/start_session.service.md#startsessionservice) \| *typeof* [`LoadIndexService`](services/load_index.service.md#loadindexservice))[]
+> `const` **loginPipeline**: (_typeof_
+> [`PreSignupService`](services/pre_signup.service.md#presignupservice) \| _typeof_
+> [`SignupService`](services/signup.service.md#signupservice) \| _typeof_
+> [`StartSessionService`](services/start_session.service.md#startsessionservice) \| _typeof_
+> [`LoadIndexService`](services/load_index.service.md#loadindexservice))[]
 
-Defined in: [api/pipelines/pipeline\_groups.ts:13](https://github.com/davinidae/umazing-musumengine/blob/c68a73a1f9fb9bbc643590478b70f489021a8c96/src/api/pipelines/pipeline_groups.ts#L13)
+Defined in:
+[api/pipelines/pipeline_groups.ts:13](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/src/api/pipelines/pipeline_groups.ts#L13)
 
-Bootstrap pipeline used by `/login` to start a user session.
-Order:
+Bootstrap pipeline used by `/login` to start a user session. Order:
+
 - `pre_signup` (kv-stream): send device/env data
 - `signup` (kv-stream): register/fetch viewer_id
 - `start_session` (length-prefixed): establish server session

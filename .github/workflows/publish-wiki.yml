@@ -3,35 +3,78 @@ name: Publish Docs to Wiki
 on:
   push:
     branches: [master]
-    paths:
-      - 'docs/**'
-  workflow_dispatch: {}
 
 jobs:
   publish:
+    environment:
+      name: main
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-      - name: Prepare wiki repository
+      - name: Diagnostics
         env:
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          REPO: ${{ github.repository }}
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
         run: |
           set -e
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git clone "https://x-access-token:${PERSONAL_ACCESS_TOKEN}@github.com/${REPO}.wiki.git" wiki
-          rm -rf wiki/*
-          cp -r docs/* wiki/
-          # Optional: root README to Home.md for wiki landing
-          if [ -f docs/README.md ]; then cp docs/README.md wiki/Home.md; fi
-          cd wiki
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "docs: sync docs/ to wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-            git push origin HEAD:master
+          set +x
+          echo "Diagnostics: starting"
+          echo ">> WIKI_USERNAME set: ${WIKI_USERNAME:+yes}"
+          if [ -n "$WIKI_TOKEN" ]; then
+            echo ">> WIKI_TOKEN set: yes"; else echo ">> WIKI_TOKEN set: no";
           fi
+          echo ">> Target wiki remote: https://${WIKI_USERNAME}:<masked>@github.com/davinidae/umazing-musumengine.wiki.git"
+          echo "Diagnostics: done"
+
+      - name: Check wiki availability
+        env:
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        run: |
+          set -e
+          set +x
+          echo "Checking wiki availability"
+          if ! git ls-remote "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" >/dev/null 2>&1; then
+            echo ">> Wiki repository not found or inaccessible. Enable Wiki and authorize PAT (SSO if applicable)."
+            exit 1
+          fi
+          echo "Wiki available"
+
+      - name: Clone and sync wiki
+        env:
+          WIKI_USERNAME: ${{ secrets.WIKI_USERNAME }}
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        run: |
+          set -e
+          set +x
+          # Configure git author
+          git config --global user.name "github-actions[bot]" >/dev/null 2>&1
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" >/dev/null 2>&1
+          # Clone wiki
+          git clone "https://${WIKI_USERNAME}:${WIKI_TOKEN}@github.com/davinidae/umazing-musumengine.wiki.git" wiki >/dev/null 2>&1
+          # Validate sources
+          [ -f docs/README.md ] && [ -f docs/_Sidebar.md ] || { echo "Missing docs/README.md or docs/_Sidebar.md"; exit 1; }
+          # Sync docs to wiki root
+          rsync -a --delete --exclude '.git' --exclude '.github' --exclude 'wiki' docs/ wiki/ >/dev/null 2>&1
+          # Ensure canonical filenames
+          mv -f wiki/README.md wiki/Home.md >/dev/null 2>&1 || cp docs/README.md wiki/Home.md >/dev/null 2>&1
+          cp -f docs/_Sidebar.md wiki/_Sidebar.md >/dev/null 2>&1 || true
+          # Enter wiki repo
+          cd wiki
+          # Detect default branch (fallback to master)
+          DEFAULT_BRANCH="$(git remote show origin | sed -n 's/.*HEAD branch: \(.*\)/\1/p')"
+          [ -n "$DEFAULT_BRANCH" ] || DEFAULT_BRANCH="master"
+          git fetch origin "$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          git checkout -B "$DEFAULT_BRANCH" "origin/$DEFAULT_BRANCH" >/dev/null 2>&1 || git checkout "$DEFAULT_BRANCH" >/dev/null 2>&1 || true
+          # Stage, commit, and push (always commit)
+          git add -A >/dev/null 2>&1
+          VERSION=$(node -p "require('../package.json').version" 2>/dev/null || echo "unknown")
+          TS=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          MSG="docs: wiki sync v${VERSION} @ ${TS}"
+          git commit -m "$MSG" --allow-empty >/dev/null 2>&1 || true
+          git push origin HEAD:"$DEFAULT_BRANCH" >/dev/null 2>&1
+          echo "Wiki updated: $MSG"

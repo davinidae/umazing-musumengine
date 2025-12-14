@@ -11,7 +11,7 @@ import {
   pkcs7Pad,
 } from '../../src';
 
-function parseJsonFromStdout(stdout: string): any {
+export function parseJsonFromStdout(stdout: string): any {
   const start = stdout.indexOf('{');
   const end = stdout.lastIndexOf('}');
   if (start === -1 || end === -1 || end < start) {
@@ -21,7 +21,7 @@ function parseJsonFromStdout(stdout: string): any {
   return JSON.parse(slice);
 }
 
-function runCli(
+export function runCli(
   args: string[],
   stdinText: string,
 ): Promise<{ code: number; stdout: string; stderr: string }> {
@@ -56,7 +56,7 @@ function runCli(
 /**
  * Minimal valid blob1 + payload reused across smoke tests.
  */
-const baseBlob1 = {
+export const baseBlob1 = {
   prefix_hex: 'aabb',
   udid_raw_hex: '00'.repeat(16),
   session_id_hex: '11'.repeat(16),

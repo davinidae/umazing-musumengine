@@ -4,10 +4,21 @@
 
 ### DecryptResponseService
 
-Defined in: [lib/decrypt/response.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/c68a73a1f9fb9bbc643590478b70f489021a8c96/src/lib/decrypt/response.service.ts#L11)
+Defined in:
+[lib/decrypt/response.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/src/lib/decrypt/response.service.ts#L11)
 
-Decode response Base64 buffers using the matching request for UDID/IV.
-The request blob1 provides UDID to derive the IV; the response is a raw blob2 buffer in Base64.
+Decode response Base64 buffers using the matching request for UDID/IV. The request blob1 provides
+UDID to derive the IV; the response is a raw blob2 buffer in Base64.
+
+#### Constructors
+
+##### Constructor
+
+> **new DecryptResponseService**(): [`DecryptResponseService`](#decryptresponseservice)
+
+###### Returns
+
+[`DecryptResponseService`](#decryptresponseservice)
 
 #### Methods
 
@@ -15,7 +26,8 @@ The request blob1 provides UDID to derive the IV; the response is a raw blob2 bu
 
 > **decodeFromBase64**(`requestB64`, `responseB64`): `object`
 
-Defined in: [lib/decrypt/response.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/c68a73a1f9fb9bbc643590478b70f489021a8c96/src/lib/decrypt/response.service.ts#L19)
+Defined in:
+[lib/decrypt/response.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/src/lib/decrypt/response.service.ts#L19)
 
 Decode a single response provided as a Base64 string, using its matching request.
 
@@ -37,43 +49,44 @@ Base64-encoded blob2 (ciphertext+key) buffer from the server.
 
 `object`
 
-`{ blob1, blob2, plaintext }` where `blob1` mirrors the request header (hex strings), `blob2` is JSON-compatible payload, and `plaintext` is decrypted bytes.
+`{ blob1, blob2, plaintext }` where `blob1` mirrors the request header (hex strings), `blob2` is
+JSON-compatible payload, and `plaintext` is decrypted bytes.
 
 ###### blob1
 
 > **blob1**: `object` = `headerJson`
 
-###### blob1.auth\_key\_hex
+###### blob1.auth_key_hex
 
-> **auth\_key\_hex**: `string`
+> **auth_key_hex**: `string`
 
-###### blob1.encryption\_key\_hex
+###### blob1.encryption_key_hex
 
-> **encryption\_key\_hex**: `string`
+> **encryption_key_hex**: `string`
 
-###### blob1.prefix\_hex
+###### blob1.prefix_hex
 
-> **prefix\_hex**: `string`
+> **prefix_hex**: `string`
 
-###### blob1.prefix\_len
+###### blob1.prefix_len
 
-> **prefix\_len**: `number` = `reqHeader.prefix.length`
+> **prefix_len**: `number` = `reqHeader.prefix.length`
 
-###### blob1.response\_key\_hex
+###### blob1.response_key_hex
 
-> **response\_key\_hex**: `string`
+> **response_key_hex**: `string`
 
-###### blob1.session\_id\_hex
+###### blob1.session_id_hex
 
-> **session\_id\_hex**: `string`
+> **session_id_hex**: `string`
 
-###### blob1.udid\_canonical
+###### blob1.udid_canonical
 
-> **udid\_canonical**: `string` = `udidStr`
+> **udid_canonical**: `string` = `udidStr`
 
-###### blob1.udid\_raw\_hex
+###### blob1.udid_raw_hex
 
-> **udid\_raw\_hex**: `string`
+> **udid_raw_hex**: `string`
 
 ###### blob2
 

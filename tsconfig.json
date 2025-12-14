@@ -4,5 +4,12 @@
     "types": ["node", "vitest/globals"],
     "noEmit": true
   },
-  "include": ["src", "tests", "vite.config.ts", "vite.config.unit.ts", "vite.config.integration.ts"]
+  "include": [
+    "src",
+    "scripts",
+    "tests",
+    "vite.config.ts",
+    "vite.config.unit.ts",
+    "vite.config.integration.ts"
+  ]
 }

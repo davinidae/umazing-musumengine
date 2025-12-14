@@ -6,9 +6,7 @@ import {
   parseHeaderBlob1,
   udidRawToCanonicalString,
   deriveIvFromUdidString,
-} from '../src/shared/protocol.util';
-import { decryptBlob2 } from '../src/decrypt/shared/blob.util';
-import {
+  decryptBlob2,
   LengthPrefixedStrategy,
   RawMsgpackStrategy,
   MapHeaderScanStrategy,
@@ -16,9 +14,14 @@ import {
   AnchorDataHeadersStrategy,
   MultiArrayStrategy,
   HeuristicStreamToObjectStrategy,
-} from '../src/decrypt/shared/unpacker.util';
+} from '../src';
 
-function readB64(p: string): Buffer {
+/**
+ * Read a base64 text file and return its raw bytes.
+ * Handles missing padding and whitespace.
+ * @param p Path to the base64 file
+ */
+export function readB64(p: string): Buffer {
   const text = fs.readFileSync(p, 'utf-8');
   const compact = text.split(/\s+/).join('');
   const padding = (4 - (compact.length % 4)) % 4;
@@ -26,7 +29,10 @@ function readB64(p: string): Buffer {
   return Buffer.from(padded, 'base64');
 }
 
-const strategies = [
+/**
+ * Candidate unpacking strategies applied to the response plaintext.
+ */
+export const strategies = [
   new LengthPrefixedStrategy(),
   new RawMsgpackStrategy(),
   new MapHeaderScanStrategy(),
@@ -36,7 +42,13 @@ const strategies = [
   new HeuristicStreamToObjectStrategy(),
 ];
 
-function whichStrategyForPack(packDir: string): string {
+/**
+ * Determine which unpacking strategy accepts the pack's response.
+ *
+ * @param packDir Directory containing `request.txt` and `response.txt`
+ * @returns Strategy class name or a sentinel value
+ */
+export function whichStrategyForPack(packDir: string): string {
   const reqPath = path.join(packDir, 'request.txt');
   const respPath = path.join(packDir, 'response.txt');
   if (!fs.existsSync(reqPath) || !fs.existsSync(respPath)) {
@@ -62,6 +74,11 @@ function whichStrategyForPack(packDir: string): string {
   return 'none';
 }
 
+/**
+ * CLI: Scan packs under `decrypt/input` and summarize detected formats.
+ *
+ * Usage: `tsx scripts/which-strategy.ts [baseDir]`
+ */
 async function main() {
   const baseDir = process.argv[2] ?? path.join('decrypt', 'input');
   const reqs = await fg('**/request.txt', { cwd: baseDir, dot: false });

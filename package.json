@@ -1,6 +1,6 @@
 {
   "name": "umazing-musumengine",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "private": true,
   "type": "module",
   "description": "Umamusume tools rewritten in TypeScript: decrypt/encrypt (AES-256-CBC, msgpack)",
@@ -50,7 +50,10 @@
     "format:check": "prettier --check .",
     "prepare": "husky install",
     "precommit": "npm run lint && npm run format && npm run typecheck",
-    "docs": "typedoc",
+    "docs:code": "typedoc --options typedoc.code.json",
+    "docs:scripts": "typedoc --options typedoc.scripts.json",
+    "docs": "npm run docs:code && npm run docs:scripts && tsx scripts/generate-sidebar.ts",
+    "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format",
     "api": "tsx src/api/index.ts",
     "api:dev": "nodemon --exec tsx src/api/index.ts"
   },
