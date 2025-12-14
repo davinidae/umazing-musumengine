@@ -7,7 +7,7 @@
 > `const` **decrypt**: `Command`
 
 Defined in:
-[cli/index.ts:42](https://github.com/davinidae/umazing-musumengine/blob/e7212aa6a686e4a1fdbfe719e8650490390832a8/src/cli/index.ts#L42)
+[cli/index.ts:42](https://github.com/davinidae/umazing-musumengine/blob/7c7f0885a1cd5e1f8e50683793a9a3c83de91334/src/cli/index.ts#L42)
 
 ---
 
@@ -16,7 +16,7 @@ Defined in:
 > `const` **encrypt**: `Command`
 
 Defined in:
-[cli/index.ts:158](https://github.com/davinidae/umazing-musumengine/blob/e7212aa6a686e4a1fdbfe719e8650490390832a8/src/cli/index.ts#L158)
+[cli/index.ts:158](https://github.com/davinidae/umazing-musumengine/blob/7c7f0885a1cd5e1f8e50683793a9a3c83de91334/src/cli/index.ts#L158)
 
 ---
 
@@ -25,7 +25,7 @@ Defined in:
 > `const` **program**: `Command`
 
 Defined in:
-[cli/index.ts:26](https://github.com/davinidae/umazing-musumengine/blob/e7212aa6a686e4a1fdbfe719e8650490390832a8/src/cli/index.ts#L26)
+[cli/index.ts:26](https://github.com/davinidae/umazing-musumengine/blob/7c7f0885a1cd5e1f8e50683793a9a3c83de91334/src/cli/index.ts#L26)
 
 ---
 
@@ -34,4 +34,4 @@ Defined in:
 > `const` **runtime**: `Command`
 
 Defined in:
-[cli/index.ts:237](https://github.com/davinidae/umazing-musumengine/blob/e7212aa6a686e4a1fdbfe719e8650490390832a8/src/cli/index.ts#L237)
+[cli/index.ts:237](https://github.com/davinidae/umazing-musumengine/blob/7c7f0885a1cd5e1f8e50683793a9a3c83de91334/src/cli/index.ts#L237)
