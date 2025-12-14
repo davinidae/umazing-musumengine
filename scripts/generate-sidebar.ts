@@ -71,7 +71,7 @@ export function read(dirAbs: string, relBase = ''): Node[] {
  */
 export function link(rel: string, name: string) {
   const title = name.replace(/\.md$/i, '');
-  const href = rel.replace(/\\/g, '/').replace(/\.md$/i, '');
+  const href = rel.replace(/\\/g, '/');
   return `[${title}](${href})`;
 }
 
