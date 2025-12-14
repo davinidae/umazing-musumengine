@@ -1,0 +1,49 @@
+Type: CommonResponse
+
+Method: System.Void Gallop.NoteGetCharaDataResponse/CommonResponse::.ctor():	Method Body (x86 ASM):
+		0x7FF890CD7E80 sub rsp,38h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 56
+		0x7FF890CD7E84 mov r10,[rcx+20h]		; DEBUG: {Register}/R10 {Memory}/None ||| RCX | 32 | None ||| N/A | N/A
+		0x7FF890CD7E88 test r10,r10		; DEBUG: {Register}/R10 {Register}/R10 ||| None | 0 | None ||| N/A | N/A
+		0x7FF890CD7E8B je short 00007FF890CD7EA6h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890CD7E8D mov rax,[r10+28h]		; DEBUG: {Register}/RAX {Memory}/None ||| R10 | 40 | None ||| N/A | N/A
+		0x7FF890CD7E91 xor r9d,r9d		; DEBUG: {Register}/R9D {Register}/R9D ||| None | 0 | None ||| N/A | N/A
+		0x7FF890CD7E94 mov rcx,[r10+40h]		; DEBUG: {Register}/RCX {Memory}/None ||| R10 | 64 | None ||| N/A | N/A
+		0x7FF890CD7E98 mov [rsp+20h],rax		; DEBUG: {Memory}/None {Register}/RAX ||| RSP | 32 | None ||| N/A | N/A
+		0x7FF890CD7E9D call qword ptr [r10+18h]		; DEBUG: {Memory}/None {Register}/None ||| R10 | 24 | None ||| N/A | N/A
+		0x7FF890CD7EA1 add rsp,38h		; DEBUG: {Register}/RSP {Immediate8to64}/None ||| None | 0 | None ||| N/A | 56
+		0x7FF890CD7EA5 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF890CD7EA6 call 00007FF88F1A6440h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF890CD7EAB int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Gallop.NoteGetCharaDataResponse/CommonResponse::.ctor():
+		End of function at 0x7FF890CD7EAC
+		Absolute End is at 0x7FF890CD7EAC
+		Identified Jump Destination addresses:
+
+		0x7FF890CD7E84: [!] Reads field  from {'this' (function parameter, type Gallop.NoteGetCharaDataResponse/CommonResponse)} and stores in a new local 
+
+		0x7FF890CD7E88: [!] Compares  and 0
+		0x7FF890CD7E8B: Jumps to 0x7FF890CD7EA6 (which throws a NRE) if  equals 0. Implicitly present in managed code, so ignored here.
+		0x7FF890CD7EA5: [!] Returns from the function
+
+		0x7FF890CD7EA6: [!] Constructs and throws an exception of kind System.NullReferenceException
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.NoteGetCharaDataResponse/CommonResponse
+	System.Void .ctor()
+		  = this.
+		return
+		throw new System.NullReferenceException()
+
+
+Generated IL:
+	Action of type Cpp2IL.Core.Analysis.Actions.x86.Important.FieldToLocalAction at (0x7FF890CD7E84) is corrupt (No further info) and cannot be created as IL.
+	IL_0000: ret
+	IL_0001: newobj System.Void System.NullReferenceException::.ctor()
+	IL_0006: throw
+	
+

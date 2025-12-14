@@ -1,0 +1,2 @@
+Type: PracticeRaceGetFollowUserDataResponse_CommonResponseFormatter
+

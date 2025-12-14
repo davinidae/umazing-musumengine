@@ -1,0 +1,2 @@
+Type: UserGetProfileCardInfoResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: JukeboxChangeUserRequestResponse_CommonResponseFormatter
+

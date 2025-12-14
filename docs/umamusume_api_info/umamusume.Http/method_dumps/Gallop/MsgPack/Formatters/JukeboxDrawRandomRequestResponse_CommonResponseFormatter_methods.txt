@@ -1,0 +1,2 @@
+Type: JukeboxDrawRandomRequestResponse_CommonResponseFormatter
+

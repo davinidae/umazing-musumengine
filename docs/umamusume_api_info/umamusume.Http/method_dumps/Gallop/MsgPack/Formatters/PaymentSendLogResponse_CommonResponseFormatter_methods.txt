@@ -1,0 +1,2 @@
+Type: PaymentSendLogResponse_CommonResponseFormatter
+

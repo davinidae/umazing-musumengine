@@ -1,0 +1,2 @@
+Type: TeamStadiumStartResponse_CommonResponseFormatter
+

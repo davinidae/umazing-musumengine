@@ -1,0 +1,2 @@
+Type: TrainedCharaChangeNicknameResponse_CommonResponseFormatter
+

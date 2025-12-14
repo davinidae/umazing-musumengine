@@ -1,0 +1,15 @@
+Type: Gallop.NoteLoadResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.NoteLoadResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x01E6F730
+		Ram Offset 0x7ff890cff730
+		Virtual Method Slot: 65535

@@ -1,0 +1,2 @@
+Type: LegendRaceRecoveryTicketResponse_CommonResponseFormatter
+

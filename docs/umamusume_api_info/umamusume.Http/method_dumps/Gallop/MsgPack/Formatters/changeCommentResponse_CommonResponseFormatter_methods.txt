@@ -1,0 +1,2 @@
+Type: changeCommentResponse_CommonResponseFormatter
+

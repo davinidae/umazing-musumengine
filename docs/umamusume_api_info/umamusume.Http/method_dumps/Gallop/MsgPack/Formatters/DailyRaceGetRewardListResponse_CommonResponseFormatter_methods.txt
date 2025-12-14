@@ -1,0 +1,89 @@
+Type: DailyRaceGetRewardListResponse_CommonResponseFormatter
+
+Method: System.Void Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::.ctor():	Method Body (x86 ASM):
+		0x7FF88F2B34B0 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF88F2B34B2 jmp near ptr 00007FF88F28A100h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF88F2B34B7 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::.ctor():
+		End of function at 0x7FF88F2B34B8
+		Absolute End is at 0x7FF88F2B34B8
+		Identified Jump Destination addresses:
+
+		0x7FF88F2B34B2: [!] Calls managed method System.Int32 Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::Serialize() on instance {'this' (function parameter, type Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter)} and stores the result in {'int32' (type System.Int32)}
+
+		0x7FF88F2B34B2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter
+	System.Void .ctor()
+
+		System.Int32 int32 = this.Serialize()
+		return
+
+
+Generated IL:
+	IL_0000: ldarg.0
+	IL_0001: call System.Int32 Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::Serialize()
+	IL_0006: stloc.0
+	IL_0007: ret
+	
+
+Method: System.Int32 Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::Serialize():	Method Body (x86 ASM):
+		0x7FF88F28A100 xor edx,edx		; DEBUG: {Register}/EDX {Register}/EDX ||| None | 0 | None ||| N/A | N/A
+		0x7FF88F28A102 jmp near ptr 00007FF88F295780h		; DEBUG: {NearBranch64}/None {Register}/None ||| None | 32760 | None ||| N/A | N/A
+		0x7FF88F28A107 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Int32 Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::Serialize():
+		End of function at 0x7FF88F28A108
+		Absolute End is at 0x7FF88F28A108
+		Identified Jump Destination addresses:
+
+		0x7FF88F28A100: Clears register rdx, yielding zero-local {'local1' (type System.Int32)}
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter
+	System.Int32 Serialize()
+		ulong local1 = 0
+
+
+Generated IL:
+	
+
+Method: System.Void Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::Deserialize():	Method Body (x86 ASM):
+		0x7FF88F2967C0 xor eax,eax		; DEBUG: {Register}/EAX {Register}/EAX ||| None | 0 | None ||| N/A | N/A
+		0x7FF88F2967C2 ret		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+		0x7FF88F2967C3 int 3		; DEBUG: {Register}/None {Register}/None ||| None | 0 | None ||| N/A | N/A
+
+	Method Synopsis For Method System.Void Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter::Deserialize():
+		End of function at 0x7FF88F2967C4
+		Absolute End is at 0x7FF88F2967C4
+		Identified Jump Destination addresses:
+
+		0x7FF88F2967C0: Clears register rax, yielding zero-local {'local1' (type System.Int32)}
+		0x7FF88F2967C2: [!] Returns from the function
+
+
+
+
+	Generated Pseudocode:
+
+	Declaring Type: Gallop.MsgPack.Formatters.DailyRaceGetRewardListResponse_CommonResponseFormatter
+	System.Void Deserialize()
+		ulong local1 = 0
+		return
+
+
+Generated IL:
+	IL_0000: ldc.i4.0
+	IL_0001: stloc.0
+	IL_0002: ret
+	
+

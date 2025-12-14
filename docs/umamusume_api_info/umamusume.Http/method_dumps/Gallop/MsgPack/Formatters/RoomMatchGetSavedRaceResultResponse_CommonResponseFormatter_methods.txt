@@ -1,0 +1,2 @@
+Type: RoomMatchGetSavedRaceResultResponse_CommonResponseFormatter
+

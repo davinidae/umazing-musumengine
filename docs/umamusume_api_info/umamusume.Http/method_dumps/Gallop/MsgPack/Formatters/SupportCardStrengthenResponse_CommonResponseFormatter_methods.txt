@@ -1,0 +1,2 @@
+Type: SupportCardStrengthenResponse_CommonResponseFormatter
+

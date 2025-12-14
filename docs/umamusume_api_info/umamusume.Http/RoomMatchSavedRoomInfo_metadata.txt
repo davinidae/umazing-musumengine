@@ -1,0 +1,122 @@
+Type: Gallop.RoomMatchSavedRoomInfo:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: saved_room_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: register_id
+		Type: System.UInt64
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: host_viewer_id
+		Type: System.Int64
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Field: race_instance_id
+		Type: System.Int32
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Field: room_name
+		Type: System.String
+		Offset in Defining Type: 0x30
+		Has Default: False
+
+	Field: message
+		Type: System.String
+		Offset in Defining Type: 0x38
+		Has Default: False
+
+	Field: season
+		Type: System.Int32
+		Offset in Defining Type: 0x40
+		Has Default: False
+
+	Field: weather
+		Type: System.Int32
+		Offset in Defining Type: 0x44
+		Has Default: False
+
+	Field: ground_condition
+		Type: System.Int32
+		Offset in Defining Type: 0x48
+		Has Default: False
+
+	Field: motivation
+		Type: System.Int32
+		Offset in Defining Type: 0x4C
+		Has Default: False
+
+	Field: entry_num
+		Type: System.Int32
+		Offset in Defining Type: 0x50
+		Has Default: False
+
+	Field: current_entry_num
+		Type: System.Int32
+		Offset in Defining Type: 0x54
+		Has Default: False
+
+	Field: private_entry_type
+		Type: System.Int32
+		Offset in Defining Type: 0x58
+		Has Default: False
+
+	Field: private_entry_num
+		Type: System.Int32
+		Offset in Defining Type: 0x5C
+		Has Default: False
+
+	Field: private_current_entry_num
+		Type: System.Int32
+		Offset in Defining Type: 0x60
+		Has Default: False
+
+	Field: is_allow_watching
+		Type: System.Int32
+		Offset in Defining Type: 0x64
+		Has Default: False
+
+	Field: trained_chara_restriction
+		Type: System.Int32
+		Offset in Defining Type: 0x68
+		Has Default: False
+
+	Field: restriction_type
+		Type: System.Int32
+		Offset in Defining Type: 0x6C
+		Has Default: False
+
+	Field: start_time
+		Type: System.String
+		Offset in Defining Type: 0x70
+		Has Default: False
+
+	Field: random_seed
+		Type: System.Int32
+		Offset in Defining Type: 0x78
+		Has Default: False
+
+	Field: favorite_flag
+		Type: System.Int32
+		Offset in Defining Type: 0x7C
+		Has Default: False
+
+	Field: own_join_type
+		Type: System.Int32
+		Offset in Defining Type: 0x80
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

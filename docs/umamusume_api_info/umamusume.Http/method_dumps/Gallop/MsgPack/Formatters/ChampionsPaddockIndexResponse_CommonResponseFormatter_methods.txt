@@ -1,0 +1,2 @@
+Type: ChampionsPaddockIndexResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: ChampionsStampPollResponse_CommonResponseFormatter
+

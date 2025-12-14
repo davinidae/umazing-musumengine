@@ -1,0 +1,27 @@
+Type: Gallop.LegendRaceData:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: legend_race_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: is_cleared
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: is_played
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

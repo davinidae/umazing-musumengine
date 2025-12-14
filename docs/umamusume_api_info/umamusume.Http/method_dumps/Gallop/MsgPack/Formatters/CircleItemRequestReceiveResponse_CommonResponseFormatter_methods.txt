@@ -1,0 +1,2 @@
+Type: CircleItemRequestReceiveResponse_CommonResponseFormatter
+

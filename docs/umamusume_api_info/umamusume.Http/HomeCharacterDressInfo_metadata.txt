@@ -1,0 +1,52 @@
+Type: Gallop.HomeCharacterDressInfo:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: position1_chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: position2_chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: position3_chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: position4_chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x1C
+		Has Default: False
+
+	Field: position1_cloth_id
+		Type: System.Int32
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Field: position2_cloth_id
+		Type: System.Int32
+		Offset in Defining Type: 0x24
+		Has Default: False
+
+	Field: position3_cloth_id
+		Type: System.Int32
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Field: position4_cloth_id
+		Type: System.Int32
+		Offset in Defining Type: 0x2C
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

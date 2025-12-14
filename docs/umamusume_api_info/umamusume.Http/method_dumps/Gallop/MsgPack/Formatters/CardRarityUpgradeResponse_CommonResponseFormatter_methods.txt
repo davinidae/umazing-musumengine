@@ -1,0 +1,2 @@
+Type: CardRarityUpgradeResponse_CommonResponseFormatter
+

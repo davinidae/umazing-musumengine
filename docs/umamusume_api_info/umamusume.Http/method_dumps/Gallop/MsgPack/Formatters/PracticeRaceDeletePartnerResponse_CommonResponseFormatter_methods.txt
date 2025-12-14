@@ -1,0 +1,2 @@
+Type: PracticeRaceDeletePartnerResponse_CommonResponseFormatter
+

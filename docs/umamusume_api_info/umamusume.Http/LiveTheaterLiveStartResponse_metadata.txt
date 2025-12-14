@@ -1,0 +1,15 @@
+Type: Gallop.LiveTheaterLiveStartResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.LiveTheaterLiveStartResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x020595D0
+		Ram Offset 0x7ff890ee95d0
+		Virtual Method Slot: 65535

@@ -1,0 +1,15 @@
+Type: Gallop.PracticeRaceGetFollowUserDataResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.PracticeRaceGetFollowUserDataResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x021A1400
+		Ram Offset 0x7ff891031400
+		Virtual Method Slot: 65535

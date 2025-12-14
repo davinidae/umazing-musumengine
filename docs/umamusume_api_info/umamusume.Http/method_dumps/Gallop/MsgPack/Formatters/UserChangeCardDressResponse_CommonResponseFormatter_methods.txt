@@ -1,0 +1,2 @@
+Type: UserChangeCardDressResponse_CommonResponseFormatter
+

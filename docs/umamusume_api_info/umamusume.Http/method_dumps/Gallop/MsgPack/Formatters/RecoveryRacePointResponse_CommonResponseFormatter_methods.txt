@@ -1,0 +1,2 @@
+Type: RecoveryRacePointResponse_CommonResponseFormatter
+

@@ -1,0 +1,32 @@
+Type: Gallop.EventContentsInfo:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: support_card_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: show_clear
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: show_clear_sort_id
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: is_effected_multi_chara
+		Type: System.Boolean
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

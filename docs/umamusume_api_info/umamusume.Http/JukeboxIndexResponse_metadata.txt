@@ -1,0 +1,15 @@
+Type: Gallop.JukeboxIndexResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.JukeboxIndexResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x021A5510
+		Ram Offset 0x7ff891035510
+		Virtual Method Slot: 65535

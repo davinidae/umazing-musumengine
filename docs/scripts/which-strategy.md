@@ -9,7 +9,7 @@
 > `MultiArrayStrategy` \| `HeuristicStreamToObjectStrategy`)[]
 
 Defined in:
-[which-strategy.ts:35](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/scripts/which-strategy.ts#L35)
+[which-strategy.ts:35](https://github.com/davinidae/umazing-musumengine/blob/db36618fed28dbba464f5028515be93be442d8f2/scripts/which-strategy.ts#L35)
 
 Candidate unpacking strategies applied to the response plaintext.
 
@@ -20,7 +20,7 @@ Candidate unpacking strategies applied to the response plaintext.
 > **readB64**(`p`): `Buffer`
 
 Defined in:
-[which-strategy.ts:24](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/scripts/which-strategy.ts#L24)
+[which-strategy.ts:24](https://github.com/davinidae/umazing-musumengine/blob/db36618fed28dbba464f5028515be93be442d8f2/scripts/which-strategy.ts#L24)
 
 Read a base64 text file and return its raw bytes. Handles missing padding and whitespace.
 
@@ -43,7 +43,7 @@ Path to the base64 file
 > **whichStrategyForPack**(`packDir`): `string`
 
 Defined in:
-[which-strategy.ts:51](https://github.com/davinidae/umazing-musumengine/blob/1ed115c1e87812b3f2579ab1c891c316bbf0b946/scripts/which-strategy.ts#L51)
+[which-strategy.ts:51](https://github.com/davinidae/umazing-musumengine/blob/db36618fed28dbba464f5028515be93be442d8f2/scripts/which-strategy.ts#L51)
 
 Determine which unpacking strategy accepts the pack's response.
 

@@ -1,0 +1,2 @@
+Type: MainStoryRaceGetEntryListResponse_CommonResponseFormatter
+

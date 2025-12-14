@@ -1,0 +1,32 @@
+Type: Gallop.NoteDataForDisplay:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: data_id
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: create_time
+		Type: System.String
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: new_flag
+		Type: System.Int32
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

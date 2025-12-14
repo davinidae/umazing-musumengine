@@ -1,0 +1,15 @@
+Type: Gallop.PracticeRaceGetSavedRaceListResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.PracticeRaceGetSavedRaceListResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x02331450
+		Ram Offset 0x7ff8911c1450
+		Virtual Method Slot: 65535

@@ -1,0 +1,2 @@
+Type: PaymentCancelResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: SingleModeFreeMultiItemExchange2Response_CommonResponseFormatter
+

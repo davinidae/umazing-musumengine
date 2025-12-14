@@ -1,0 +1,2 @@
+Type: SingleModeTeamChangeRunningStyleResponse_CommonResponseFormatter
+

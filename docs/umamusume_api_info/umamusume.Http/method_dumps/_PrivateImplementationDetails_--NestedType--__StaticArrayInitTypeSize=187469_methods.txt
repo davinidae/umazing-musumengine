@@ -1,0 +1,2 @@
+Type: __StaticArrayInitTypeSize=187469
+

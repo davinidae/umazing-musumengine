@@ -1,0 +1,2 @@
+Type: LegendRaceRaceStartResponse_CommonResponseFormatter
+

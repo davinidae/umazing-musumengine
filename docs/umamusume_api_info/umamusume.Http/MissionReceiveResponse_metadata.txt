@@ -1,0 +1,15 @@
+Type: Gallop.MissionReceiveResponse:
+	Base Class: 
+		
+
+	Interfaces:
+
+	Nested Types:
+		Gallop.MissionReceiveResponse/CommonResponse
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x01E48150
+		Ram Offset 0x7ff890cd8150
+		Virtual Method Slot: 65535

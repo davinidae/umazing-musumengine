@@ -1,0 +1,2 @@
+Type: ChampionsSelectLeagueResponse_CommonResponseFormatter
+

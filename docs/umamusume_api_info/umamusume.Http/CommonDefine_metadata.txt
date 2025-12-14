@@ -1,0 +1,437 @@
+Type: Gallop.CommonDefine:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: change_date_hour
+		Type: System.Int32
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: trained_chara_default_save_num
+		Type: System.Int32
+		Offset in Defining Type: 0x14
+		Has Default: False
+
+	Field: max_circle_member_num
+		Type: System.Int32
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: max_circle_scout_num
+		Type: System.Int32
+		Offset in Defining Type: 0x1C
+		Has Default: False
+
+	Field: item_request_expire
+		Type: System.Int32
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Field: max_donate_num_total
+		Type: System.Int32
+		Offset in Defining Type: 0x24
+		Has Default: False
+
+	Field: max_donate_num_for_request
+		Type: System.Int32
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Field: max_donate_count_day
+		Type: System.Int32
+		Offset in Defining Type: 0x2C
+		Has Default: False
+
+	Field: max_trainer_point
+		Type: System.Int32
+		Offset in Defining Type: 0x30
+		Has Default: False
+
+	Field: trainer_point_recovery_time
+		Type: System.Int32
+		Offset in Defining Type: 0x34
+		Has Default: False
+
+	Field: trainer_point_recovery_unit_value
+		Type: System.Int32
+		Offset in Defining Type: 0x38
+		Has Default: False
+
+	Field: trainer_point_recovery_calc_base
+		Type: System.Int32
+		Offset in Defining Type: 0x3C
+		Has Default: False
+
+	Field: max_race_point
+		Type: System.Int32
+		Offset in Defining Type: 0x40
+		Has Default: False
+
+	Field: race_point_recovery_time
+		Type: System.Int32
+		Offset in Defining Type: 0x44
+		Has Default: False
+
+	Field: race_point_recovery_unit_value
+		Type: System.Int32
+		Offset in Defining Type: 0x48
+		Has Default: False
+
+	Field: race_point_recovery_calc_base
+		Type: System.Int32
+		Offset in Defining Type: 0x4C
+		Has Default: False
+
+	Field: single_mode_trainer_point_use_value
+		Type: System.Int32
+		Offset in Defining Type: 0x50
+		Has Default: False
+
+	Field: single_mode_trained_chara_rental_max_num
+		Type: System.Int32
+		Offset in Defining Type: 0x54
+		Has Default: False
+
+	Field: new_single_mode_trained_chara_rental_open_time
+		Type: System.Int64
+		Offset in Defining Type: 0x58
+		Has Default: False
+
+	Field: new_single_mode_trained_chara_rental_max_num
+		Type: System.Int32
+		Offset in Defining Type: 0x60
+		Has Default: False
+
+	Field: coefficient_money_required_strength
+		Type: System.Int32
+		Offset in Defining Type: 0x64
+		Has Default: False
+
+	Field: max_follow_num
+		Type: System.Int32
+		Offset in Defining Type: 0x68
+		Has Default: False
+
+	Field: max_follower_num
+		Type: System.Int32
+		Offset in Defining Type: 0x6C
+		Has Default: False
+
+	Field: present_history_limit
+		Type: System.Int32
+		Offset in Defining Type: 0x70
+		Has Default: False
+
+	Field: team_stadium_reload_interval_ms
+		Type: System.Int32
+		Offset in Defining Type: 0x74
+		Has Default: False
+
+	Field: team_stadium_support_card_bonus_max
+		Type: System.Int32
+		Offset in Defining Type: 0x78
+		Has Default: False
+
+	Field: daily_race_ticket_max_num
+		Type: System.Int32
+		Offset in Defining Type: 0x7C
+		Has Default: False
+
+	Field: legend_race_ticket_max_num
+		Type: System.Int32
+		Offset in Defining Type: 0x80
+		Has Default: False
+
+	Field: daily_legend_race_ticket_max_num
+		Type: System.Int32
+		Offset in Defining Type: 0x84
+		Has Default: False
+
+	Field: need_team_rank_play_daily_race
+		Type: System.Int32
+		Offset in Defining Type: 0x88
+		Has Default: False
+
+	Field: need_team_rank_play_circle
+		Type: System.Int32
+		Offset in Defining Type: 0x8C
+		Has Default: False
+
+	Field: need_team_rank_play_champions
+		Type: System.Int32
+		Offset in Defining Type: 0x90
+		Has Default: False
+
+	Field: champions_open_league_rank_max
+		Type: System.Int32
+		Offset in Defining Type: 0x94
+		Has Default: False
+
+	Field: champions_entry_cost_num
+		Type: System.Int32
+		Offset in Defining Type: 0x98
+		Has Default: False
+
+	Field: champions_polling_interval
+		Type: System.Int32
+		Offset in Defining Type: 0x9C
+		Has Default: False
+
+	Field: champions_entry_reset_time
+		Type: System.Int32
+		Offset in Defining Type: 0xA0
+		Has Default: False
+
+	Field: champions_stamp_polling_interval
+		Type: System.Int32
+		Offset in Defining Type: 0xA4
+		Has Default: False
+
+	Field: champions_stamp_max_display_num
+		Type: System.Int32
+		Offset in Defining Type: 0xA8
+		Has Default: False
+
+	Field: serial_code_restrict_release_sec
+		Type: System.Int32
+		Offset in Defining Type: 0xAC
+		Has Default: False
+
+	Field: room_match_force_start_time_sec
+		Type: System.Int32
+		Offset in Defining Type: 0xB0
+		Has Default: False
+
+	Field: room_match_entry_limit_time
+		Type: System.Int32
+		Offset in Defining Type: 0xB4
+		Has Default: False
+
+	Field: room_match_max_saved_race_num
+		Type: System.Int32
+		Offset in Defining Type: 0xB8
+		Has Default: False
+
+	Field: room_match_max_join_watch_num
+		Type: System.Int32
+		Offset in Defining Type: 0xBC
+		Has Default: False
+
+	Field: need_team_rank_play_room_match
+		Type: System.Int32
+		Offset in Defining Type: 0xC0
+		Has Default: False
+
+	Field: need_team_rank_play_practice_race
+		Type: System.Int32
+		Offset in Defining Type: 0xC4
+		Has Default: False
+
+	Field: room_match_min_entry_num
+		Type: System.Int32
+		Offset in Defining Type: 0xC8
+		Has Default: False
+
+	Field: room_match_reload_interval_ms
+		Type: System.Int32
+		Offset in Defining Type: 0xCC
+		Has Default: False
+
+	Field: room_match_change_lock_reload_interval_ms
+		Type: System.Int32
+		Offset in Defining Type: 0xD0
+		Has Default: False
+
+	Field: room_match_preset_num_max
+		Type: System.Int32
+		Offset in Defining Type: 0xD4
+		Has Default: False
+
+	Field: room_match_preset_entry_num_max
+		Type: System.Int32
+		Offset in Defining Type: 0xD8
+		Has Default: False
+
+	Field: room_match_second_update
+		Type: System.String
+		Offset in Defining Type: 0xE0
+		Has Default: False
+
+	Field: practice_recommend_list_reload_interval_ms
+		Type: System.Int32
+		Offset in Defining Type: 0xE8
+		Has Default: False
+
+	Field: max_practice_partner_num
+		Type: System.Int32
+		Offset in Defining Type: 0xEC
+		Has Default: False
+
+	Field: practice_race_entry_chara_num_min
+		Type: System.Int32
+		Offset in Defining Type: 0xF0
+		Has Default: False
+
+	Field: practice_race_entry_same_chara_num_max
+		Type: System.Int32
+		Offset in Defining Type: 0xF4
+		Has Default: False
+
+	Field: practice_race_save_race_num_max
+		Type: System.Int32
+		Offset in Defining Type: 0xF8
+		Has Default: False
+
+	Field: practice_race_sns_share_partner_expire_hour
+		Type: System.Int32
+		Offset in Defining Type: 0xFC
+		Has Default: False
+
+	Field: practice_race_create_partner_id_daily_max_count
+		Type: System.Int32
+		Offset in Defining Type: 0x100
+		Has Default: False
+
+	Field: circle_chat_post_partner_hold_count
+		Type: System.Int32
+		Offset in Defining Type: 0x104
+		Has Default: False
+
+	Field: circle_chat_post_partner_daily_max_count
+		Type: System.Int32
+		Offset in Defining Type: 0x108
+		Has Default: False
+
+	Field: practice_race_used_history_expire_day_count
+		Type: System.Int32
+		Offset in Defining Type: 0x10C
+		Has Default: False
+
+	Field: practice_race_used_history_list_count_max
+		Type: System.Int32
+		Offset in Defining Type: 0x110
+		Has Default: False
+
+	Field: practice_race_preset_num_max
+		Type: System.Int32
+		Offset in Defining Type: 0x114
+		Has Default: False
+
+	Field: practice_race_preset_entry_num_max
+		Type: System.Int32
+		Offset in Defining Type: 0x118
+		Has Default: False
+
+	Field: practice_race_preset_open_date
+		Type: System.String
+		Offset in Defining Type: 0x120
+		Has Default: False
+
+	Field: hint_lvup_open_date
+		Type: System.String
+		Offset in Defining Type: 0x128
+		Has Default: False
+
+	Field: skill_upgrade_max_level
+		Type: System.Int32
+		Offset in Defining Type: 0x130
+		Has Default: False
+
+	Field: race_rich_open_date
+		Type: System.String
+		Offset in Defining Type: 0x138
+		Has Default: False
+
+	Field: home_eat_open_date
+		Type: System.String
+		Offset in Defining Type: 0x140
+		Has Default: False
+
+	Field: talk_gallery_open_date
+		Type: System.String
+		Offset in Defining Type: 0x148
+		Has Default: False
+
+	Field: multi_reserve_open_date
+		Type: System.String
+		Offset in Defining Type: 0x150
+		Has Default: False
+
+	Field: group_support_card_open_date
+		Type: System.String
+		Offset in Defining Type: 0x158
+		Has Default: False
+
+	Field: single_mode_scenario_free_shop_item_motivation_up_condition_check_open_date
+		Type: System.String
+		Offset in Defining Type: 0x160
+		Has Default: False
+
+	Field: profile_card_open_date
+		Type: System.String
+		Offset in Defining Type: 0x168
+		Has Default: False
+
+	Field: charm_add_evaluation
+		Type: System.Int32
+		Offset in Defining Type: 0x170
+		Has Default: False
+
+	Field: featured_stock_add_evaluation
+		Type: System.Int32
+		Offset in Defining Type: 0x174
+		Has Default: False
+
+	Field: dress_change_open_date
+		Type: System.String
+		Offset in Defining Type: 0x178
+		Has Default: False
+
+	Field: story_event_max_total_bonus
+		Type: System.Int32
+		Offset in Defining Type: 0x180
+		Has Default: False
+
+	Field: team_building_purchase_limit_num
+		Type: System.Int32
+		Offset in Defining Type: 0x184
+		Has Default: False
+
+	Field: team_building_coin_pay_cost
+		Type: System.Int32
+		Offset in Defining Type: 0x188
+		Has Default: False
+
+	Field: team_building_free_continue_num
+		Type: System.Int32
+		Offset in Defining Type: 0x18C
+		Has Default: False
+
+	Field: single_mode_free_auto_item_use_open_date
+		Type: System.String
+		Offset in Defining Type: 0x190
+		Has Default: False
+
+	Field: jukebox_open_date
+		Type: System.String
+		Offset in Defining Type: 0x198
+		Has Default: False
+
+	Field: race_orientation_open_date
+		Type: System.String
+		Offset in Defining Type: 0x1A0
+		Has Default: False
+
+	Field: choice_reward_preview_open_date
+		Type: System.String
+		Offset in Defining Type: 0x1A8
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

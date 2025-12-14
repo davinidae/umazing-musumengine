@@ -1,0 +1,2 @@
+Type: PracticeRaceSavePartnerResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: RoomMatchLeaveRoomResponse_CommonResponseFormatter
+

@@ -1,0 +1,2 @@
+Type: PaymentDummyResponse_CommonResponseFormatter
+

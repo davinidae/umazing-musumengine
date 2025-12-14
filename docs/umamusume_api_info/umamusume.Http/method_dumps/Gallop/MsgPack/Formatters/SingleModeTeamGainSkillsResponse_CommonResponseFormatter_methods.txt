@@ -1,0 +1,2 @@
+Type: SingleModeTeamGainSkillsResponse_CommonResponseFormatter
+

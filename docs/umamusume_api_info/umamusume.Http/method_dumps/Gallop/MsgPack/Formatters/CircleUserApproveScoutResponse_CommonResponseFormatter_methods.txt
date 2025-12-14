@@ -1,0 +1,2 @@
+Type: CircleUserApproveScoutResponse_CommonResponseFormatter
+

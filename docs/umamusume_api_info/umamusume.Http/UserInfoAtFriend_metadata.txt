@@ -1,0 +1,97 @@
+Type: Gallop.UserInfoAtFriend:
+	Base Class: 
+		System.Object
+
+	Interfaces:
+
+	Field: viewer_id
+		Type: System.Int64
+		Offset in Defining Type: 0x10
+		Has Default: False
+
+	Field: name
+		Type: System.String
+		Offset in Defining Type: 0x18
+		Has Default: False
+
+	Field: honor_id
+		Type: System.Int32
+		Offset in Defining Type: 0x20
+		Has Default: False
+
+	Field: last_login_time
+		Type: System.String
+		Offset in Defining Type: 0x28
+		Has Default: False
+
+	Field: leader_chara_id
+		Type: System.Int32
+		Offset in Defining Type: 0x30
+		Has Default: False
+
+	Field: support_card_id
+		Type: System.Int32
+		Offset in Defining Type: 0x34
+		Has Default: False
+
+	Field: comment
+		Type: System.String
+		Offset in Defining Type: 0x38
+		Has Default: False
+
+	Field: fan
+		Type: System.UInt64
+		Offset in Defining Type: 0x40
+		Has Default: False
+
+	Field: directory_level
+		Type: System.Int32
+		Offset in Defining Type: 0x48
+		Has Default: False
+
+	Field: rank_score
+		Type: System.Int32
+		Offset in Defining Type: 0x4C
+		Has Default: False
+
+	Field: team_stadium_win_count
+		Type: System.Int32
+		Offset in Defining Type: 0x50
+		Has Default: False
+
+	Field: single_mode_play_count
+		Type: System.Int32
+		Offset in Defining Type: 0x54
+		Has Default: False
+
+	Field: team_evaluation_point
+		Type: System.Int32
+		Offset in Defining Type: 0x58
+		Has Default: False
+
+	Field: best_team_evaluation_point
+		Type: System.Int32
+		Offset in Defining Type: 0x5C
+		Has Default: False
+
+	Field: friend_state
+		Type: System.Int32
+		Offset in Defining Type: 0x60
+		Has Default: False
+
+	Field: leader_chara_dress_id
+		Type: System.Int32
+		Offset in Defining Type: 0x80
+		Has Default: False
+
+	Field: state
+		Type: System.Int32
+		Offset in Defining Type: 0x90
+		Has Default: False
+
+	Method: .ctor:
+		Accessibility: Public
+		Return Type: System.Void
+		File Offset 0x00000000
+		Ram Offset 0x00000000
+		Virtual Method Slot: 65535

@@ -1,0 +1,2 @@
+Type: TrainedCharaRemoveResponse_CommonResponseFormatter
+
