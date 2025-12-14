@@ -7,7 +7,7 @@
 > **ensureDir**(`p`): `void`
 
 Defined in:
-[generate-umatypes.ts:8](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L8)
+[generate-umatypes.ts:8](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L8)
 
 Ensures a directory exists, creating any missing parent folders.
 
@@ -30,7 +30,7 @@ Absolute or relative path to the directory
 > **mapDotNetTypeToTs**(`type`): `string`
 
 Defined in:
-[generate-umatypes.ts:50](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L50)
+[generate-umatypes.ts:50](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L50)
 
 Map common .NET types found in metadata to TypeScript types.
 
@@ -55,7 +55,7 @@ A TypeScript type representation
 > **mirrorTxtToTypes**(): `void`
 
 Defined in:
-[generate-umatypes.ts:172](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L172)
+[generate-umatypes.ts:172](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L172)
 
 Entrypoint: cleans destination and generates a single `src/umatypes/index.d.ts`. Wraps all generated
 types inside `declare global { namespace Umatypes { ... } }`.
@@ -71,7 +71,7 @@ types inside `declare global { namespace Umatypes { ... } }`.
 > **readLines**(`filePath`): `string`[]
 
 Defined in:
-[generate-umatypes.ts:35](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L35)
+[generate-umatypes.ts:35](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L35)
 
 Read a text file and return non-empty trimmed lines.
 
@@ -94,7 +94,7 @@ Path to the text file
 > **toTypeName**(`fileName`): `string`
 
 Defined in:
-[generate-umatypes.ts:19](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L19)
+[generate-umatypes.ts:19](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L19)
 
 Convert a `_metadata.txt` filename into a PascalCase type name.
 
@@ -119,7 +119,7 @@ PascalCase type name (falls back to `Unnamed`)
 > **walk**(`abs`, `typeBlocks`): `string`[]
 
 Defined in:
-[generate-umatypes.ts:132](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L132)
+[generate-umatypes.ts:132](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L132)
 
 Recursively walk the docs tree, collecting type alias blocks.
 
@@ -152,7 +152,7 @@ The accumulator with collected type blocks
 > **writeTypeAliasFromMetadataToString**(`typeName`, `lines`): `string` \| `null`
 
 Defined in:
-[generate-umatypes.ts:82](https://github.com/davinidae/umazing-musumengine/blob/47f9b56140c43967809e5f0bc8aed0e51605223f/scripts/generate-umatypes.ts#L82)
+[generate-umatypes.ts:82](https://github.com/davinidae/umazing-musumengine/blob/793c33ed7f624cc50b8c617e045b6c1c9a8626f2/scripts/generate-umatypes.ts#L82)
 
 Build a TypeScript type alias from `_metadata.txt` contents.
 

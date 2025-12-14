@@ -70,17 +70,7 @@ export function read(dirAbs: string, relBase = ''): Node[] {
  * @param name Display name
  */
 export function link(rel: string, name: string) {
-  const isMd = /\.md$/i.test(name);
-  const target = rel.split(path.sep).join('/');
-  // For wiki pages (Markdown), strip extension and replace spaces with hyphens for stable routing
-  // For non-Markdown files, percent-encode spaces and reserved characters
-  const pageTarget = isMd
-    ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
-    : encodeURI(target).replace(/#/g, '%23');
-  // GitHub Wiki expects wiki page links without './' and without extensions.
-  // Prefix './' only for non-Markdown assets to keep them relative.
-  const href = isMd ? pageTarget : pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
-  return `[${name}](${href})`;
+  return `[${name.replace(/\.md$/i, '')}](${rel})`;
 }
 
 /**
