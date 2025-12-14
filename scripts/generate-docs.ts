@@ -70,8 +70,14 @@ export function read(dirAbs: string, relBase = ''): Node[] {
  * @param name Display name
  */
 export function link(rel: string, name: string) {
+  const isMd = /\.md$/i.test(name);
   const title = name.replace(/\.md$/i, '');
-  const href = rel.replace(/\\/g, '/');
+  const target = rel.split(path.sep).join('/');
+  // Wiki pages: no extension, spaces → hyphens; assets: keep relative ./
+  const pageTarget = isMd
+    ? target.replace(/\.md$/i, '').replace(/\s+/g, '-')
+    : encodeURI(target).replace(/#/g, '%23');
+  const href = isMd ? pageTarget : pageTarget.startsWith('./') ? pageTarget : `./${pageTarget}`;
   return `[${title}](${href})`;
 }
 
@@ -96,12 +102,12 @@ export function render(nodes: Node[], depth = 0): string[] {
       lines.push('');
       lines.push(`</details>`);
       lines.push('');
-    } else {
-      const item = `- ${link(n.rel, n.name)}`;
-      // Slight left margin for nested file items using non-breaking spaces
-      lines.push(item);
-      lines.push('');
+      continue;
     }
+    const item = `- ${link(n.rel, n.name)}`;
+    // Slight left margin for nested file items using non-breaking spaces
+    lines.push(item);
+    lines.push('');
   }
   return lines;
 }
@@ -111,7 +117,7 @@ function generateSidebar() {
   const renders = render(tree);
   fs.writeFileSync(
     SIDEBAR_PATH,
-    ['<!-- Auto-generated from /docs by scripts/generate-sidebar.ts -->', '', ...renders]
+    ['<!-- Auto-generated from /docs by scripts/generate-docs.ts -->', '', ...renders]
       .join('\n')
       .replace(/\n\n\n/g, '\n\n') + '\n',
     'utf-8',

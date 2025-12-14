@@ -52,7 +52,8 @@
     "precommit": "npm run lint && npm run format && npm run typecheck",
     "docs:code": "typedoc --options typedoc.code.json",
     "docs:scripts": "typedoc --options typedoc.scripts.json",
-    "docs": "npm run docs:code && npm run docs:scripts && tsx scripts/generate-sidebar.ts",
+    "docs:normalize": "tsx scripts/normalize-docs.ts",
+    "docs": "npm run docs:code && npm run docs:scripts && npm run docs:normalize && tsx scripts/generate-docs.ts",
     "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format",
     "api": "tsx src/api/index.ts",
     "api:dev": "nodemon --exec tsx src/api/index.ts"

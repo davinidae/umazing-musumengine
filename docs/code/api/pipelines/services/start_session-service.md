@@ -1,14 +1,14 @@
-# api/pipelines/services/load_index.service
+# api/pipelines/services/start_session.service
 
 ## Classes
 
-### LoadIndexService
+### StartSessionService
 
 Defined in:
-[api/pipelines/services/load_index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/load_index.service.ts#L8)
+[api/pipelines/services/start_session.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/start_session.service.ts#L8)
 
-load/index: Retrieves the main screen data for the session. Requires a valid viewer_id; skips
-otherwise.
+tool/start_session: Establishes a server session for the viewer. Skips execution if a valid
+viewer_id is not available.
 
 #### Extends
 
@@ -18,10 +18,10 @@ otherwise.
 
 ##### Constructor
 
-> **new LoadIndexService**(`ctx`): [`LoadIndexService`](#loadindexservice)
+> **new StartSessionService**(`ctx`): [`StartSessionService`](#startsessionservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/step.service.ts#L28)
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -35,7 +35,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ###### Returns
 
-[`LoadIndexService`](#loadindexservice)
+[`StartSessionService`](#startsessionservice)
 
 ###### Inherited from
 
@@ -49,7 +49,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > [`PipelineContext`](../../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/step.service.ts#L28)
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/step.service.ts#L28)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -59,10 +59,10 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ##### endpoint
 
-> `readonly` **endpoint**: `"load/index"` = `'load/index'`
+> `readonly` **endpoint**: `"tool/start_session"` = `'tool/start_session'`
 
 Defined in:
-[api/pipelines/services/load_index.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/load_index.service.ts#L10)
+[api/pipelines/services/start_session.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/start_session.service.ts#L10)
 
 ###### Overrides
 
@@ -74,7 +74,7 @@ Defined in:
 > `FramingMode.LengthPrefixed`
 
 Defined in:
-[api/pipelines/services/load_index.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/load_index.service.ts#L11)
+[api/pipelines/services/start_session.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/start_session.service.ts#L11)
 
 ###### Overrides
 
@@ -82,10 +82,10 @@ Defined in:
 
 ##### name
 
-> `readonly` **name**: `"load_index"` = `'load_index'`
+> `readonly` **name**: `"start_session"` = `'start_session'`
 
 Defined in:
-[api/pipelines/services/load_index.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/load_index.service.ts#L9)
+[api/pipelines/services/start_session.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/start_session.service.ts#L9)
 
 ###### Overrides
 
@@ -96,7 +96,7 @@ Defined in:
 > `protected` **omitViewerId**: `boolean` = `false`
 
 Defined in:
-[api/pipelines/services/step.service.ts:97](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/step.service.ts#L97)
+[api/pipelines/services/step.service.ts:97](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/step.service.ts#L97)
 
 Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
 
@@ -112,7 +112,7 @@ Override to `true` for steps that should not enforce `viewer_id` preconditions (
 > [`GallopResultCode`](../../models/result_codes.model.md#gallopresultcode); \}\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:48](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/step.service.ts#L48)
+[api/pipelines/services/step.service.ts:48](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/step.service.ts#L48)
 
 POST a Base64 request to the upstream API and return the Base64 response string with a result code.
 
@@ -145,7 +145,7 @@ If upstream base is missing or the response shape is invalid.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/step.service.ts#L110)
+[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -175,9 +175,9 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > **getPayload**(`viewer_id`): `object`
 
 Defined in:
-[api/pipelines/services/load_index.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/0d5eaab9c52ffffbb3921fe87280278f9295296e/src/api/pipelines/services/load_index.service.ts#L16)
+[api/pipelines/services/start_session.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/b7f77ffa9f6e848316c4394a9c270b27863fc360/src/api/pipelines/services/start_session.service.ts#L16)
 
-Build payload for `load/index` using `viewer_id` and client metadata.
+Build payload required by `tool/start_session` including device and platform metadata.
 
 ###### Parameters
 
@@ -188,6 +188,10 @@ Build payload for `load/index` using `viewer_id` and client metadata.
 ###### Returns
 
 `object`
+
+###### attestation_type
+
+> **attestation_type**: `number` = `0`
 
 ###### carrier
 
@@ -204,6 +208,10 @@ Build payload for `load/index` using `viewer_id` and client metadata.
 ###### device_name
 
 > **device_name**: `string`
+
+###### device_token
+
+> **device_token**: `null` = `null`
 
 ###### dmm_onetime_token
 
