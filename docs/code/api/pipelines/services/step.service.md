@@ -5,7 +5,7 @@
 ### `abstract` StepService
 
 Defined in:
-[api/pipelines/services/step.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L19)
+[api/pipelines/services/step.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L19)
 
 Base class for a pipeline service step.
 
@@ -29,7 +29,7 @@ Responsibilities
 > **new StepService**(`ctx`): [`StepService`](#stepservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L28)
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L28)
 
 Construct a step with the provided execution context.
 
@@ -53,7 +53,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > [`PipelineContext`](../../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L28)
+[api/pipelines/services/step.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L28)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -62,7 +62,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > `abstract` `readonly` **endpoint**: `string`
 
 Defined in:
-[api/pipelines/services/step.service.ts:21](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L21)
+[api/pipelines/services/step.service.ts:21](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L21)
 
 ##### framing
 
@@ -70,21 +70,21 @@ Defined in:
 > [`FramingMode`](../../../lib/models/runtime.model.md#framingmode)
 
 Defined in:
-[api/pipelines/services/step.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L22)
+[api/pipelines/services/step.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L22)
 
 ##### name
 
 > `abstract` `readonly` **name**: `string`
 
 Defined in:
-[api/pipelines/services/step.service.ts:20](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L20)
+[api/pipelines/services/step.service.ts:20](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L20)
 
 ##### omitViewerId
 
 > `protected` **omitViewerId**: `boolean` = `false`
 
 Defined in:
-[api/pipelines/services/step.service.ts:97](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L97)
+[api/pipelines/services/step.service.ts:97](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L97)
 
 Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
 
@@ -96,7 +96,7 @@ Override to `true` for steps that should not enforce `viewer_id` preconditions (
 > [`GallopResultCode`](../../models/result_codes.model.md#gallopresultcode); \}\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:48](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L48)
+[api/pipelines/services/step.service.ts:48](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L48)
 
 POST a Base64 request to the upstream API and return the Base64 response string with a result code.
 
@@ -125,7 +125,7 @@ If upstream base is missing or the response shape is invalid.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L110)
+[api/pipelines/services/step.service.ts:110](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L110)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -151,7 +151,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > `abstract` **getPayload**(`viewer_id`): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:92](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L92)
+[api/pipelines/services/step.service.ts:92](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L92)
 
 Build the request payload for this step.
 
@@ -176,7 +176,7 @@ Plain object serialized by the runtime encoder.
 > **StepServiceCtor** = (`ctx`) => [`StepService`](#stepservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:163](https://github.com/davinidae/umazing-musumengine/blob/eb0d94a793e33b34362240ac2f490d876ec8d45b/src/api/pipelines/services/step.service.ts#L163)
+[api/pipelines/services/step.service.ts:163](https://github.com/davinidae/umazing-musumengine/blob/f9c3fba97fd8d01a7cfed3bd71f75734cf83aaa7/src/api/pipelines/services/step.service.ts#L163)
 
 Constructor type for StepService implementations. Used to instantiate steps with a PipelineContext
 at runtime.

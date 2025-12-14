@@ -70,7 +70,7 @@ export function read(dirAbs: string, relBase = ''): Node[] {
  * @param name Display name
  */
 export function link(rel: string, name: string) {
-  return `[${name.replace(/\.md$/i, '')}](./${rel.replace(/\\/g, '/')})`;
+  return `[${name.replace(/\.md$/i, '')}](${rel.replace(/\\/g, '/')})`;
 }
 
 /**
