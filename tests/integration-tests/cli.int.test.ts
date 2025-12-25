@@ -114,7 +114,7 @@ describe('CLI runtime (integration)', () => {
       throw new Error(`decode-response exited with ${decRes.code}. stderr=\n${decRes.stderr}`);
     }
     const out = parseJsonFromStdout(decRes.stdout || '');
-    expect(out).toHaveProperty('payload');
-    expect(out.payload).toEqual(respPayload);
+    expect(out).toHaveProperty('blob2');
+    expect(out.blob2).toEqual(respPayload);
   });
 });

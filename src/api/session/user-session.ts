@@ -1,4 +1,4 @@
-import type { PipelineContext, StepPrevResult, StepResult } from '../models';
+import type { PipelineContext, StepPrevResult, StepResult, StoredData } from '../models';
 import { StepServiceCtor } from '../pipelines';
 import { Pipeline } from './pipeline';
 
@@ -14,14 +14,16 @@ import { Pipeline } from './pipeline';
 export class UserSession {
   private lastStep?: StepPrevResult;
   private pipeline: Pipeline;
+  public lastModifiedAt: number;
 
   constructor(
     public readonly id: string,
     public readonly createdAt: number,
-    public readonly meta: Record<string, unknown>,
+    public readonly storedData: StoredData,
     private readonly ctx: PipelineContext,
   ) {
-    this.pipeline = new Pipeline(this.id, this.createdAt, this.meta, this.ctx);
+    this.pipeline = new Pipeline(this.id, this.createdAt, this.storedData, this.ctx);
+    this.lastModifiedAt = createdAt;
   }
 
   /**
@@ -54,12 +56,22 @@ export class UserSession {
    * @returns Ordered list of `StepResult` items for the executed pipeline.
    */
   async runPipeline(services: StepServiceCtor[]): Promise<StepResult[]> {
-    console.log('Running pipeline for session ID:', this.id);
+    console.log(
+      'Running pipeline for session ID:',
+      this.id,
+      'with services:',
+      services.map((s) => s.name),
+    );
     const results = await this.pipeline.execute(services);
     if (results.length > 0) {
       this.lastStep = results[results.length - 1];
     }
     console.log('Pipeline completed for session ID:', this.id, 'Results:', results);
+    this.lastModifiedAt = Date.now();
     return results;
+  }
+
+  getStoredData(): StoredData {
+    return this.storedData;
   }
 }

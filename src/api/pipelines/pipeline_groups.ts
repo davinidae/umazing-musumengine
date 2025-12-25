@@ -1,4 +1,4 @@
-import { LoadIndexService, StartSessionService } from './services';
+import { LoadIndexService, PreSignupService, SignupService, StartSessionService } from './services';
 
 /**
  * Bootstrap pipeline used by `/login` to start a user session.
@@ -10,12 +10,11 @@ import { LoadIndexService, StartSessionService } from './services';
  *
  * @public
  */
-export const loginPipeline = [
-  /*
-  Formerly included steps:
-    PreSignupService,
-    SignupService,
-  */
+export const loginPipeline = [StartSessionService, LoadIndexService];
+
+export const signupPipeline = [
+  PreSignupService,
+  SignupService,
   StartSessionService,
   LoadIndexService,
 ];

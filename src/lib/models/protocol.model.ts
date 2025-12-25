@@ -3,24 +3,15 @@
  * Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
  */
 export class Blob1Header {
-  readonly prefix: Buffer;
-  readonly session_id: Buffer; // 16B
-  readonly udid_raw: Buffer; // 16B
-  readonly response_key: Buffer; // 32B
-  readonly auth_key: Buffer; // 48B
-
   private constructor(
-    prefix: Buffer,
-    session_id: Buffer,
-    udid_raw: Buffer,
-    response_key: Buffer,
-    auth_key: Buffer,
+    readonly prefix: Buffer,
+    readonly session_id: Buffer,
+    readonly udid_raw: Buffer,
+    readonly response_key: Buffer,
+    readonly auth_key: Buffer,
+    readonly viewer_id: number = 0,
   ) {
-    this.prefix = prefix;
-    this.session_id = session_id;
-    this.udid_raw = udid_raw;
-    this.response_key = response_key;
-    this.auth_key = auth_key;
+    //
   }
 
   /**

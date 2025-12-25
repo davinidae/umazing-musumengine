@@ -28,6 +28,7 @@ export class DecryptResponseService {
     const payload = unpacker.execute(plaintext);
     const printable = toJsonCompatible(payload);
     const headerJson = {
+      viewer_id: reqHeader.viewer_id,
       prefix_hex: reqHeader.prefix.toString('hex'),
       prefix_len: reqHeader.prefix.length,
       session_id_hex: reqHeader.session_id.toString('hex'),

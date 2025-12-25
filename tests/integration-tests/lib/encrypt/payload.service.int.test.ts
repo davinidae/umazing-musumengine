@@ -15,6 +15,7 @@ describe('EncryptPayloadService (integration)', () => {
   test('kv-stream build can be auto-unpacked by Unpacker', () => {
     const svc = new EncryptPayloadService();
     const blob1: EncodeRequestInput['blob1'] = {
+      viewer_id: 123456789,
       prefix_hex: 'bb66',
       udid_raw_hex: '11'.repeat(16),
       session_id_hex: '22'.repeat(16),
@@ -22,8 +23,8 @@ describe('EncryptPayloadService (integration)', () => {
       auth_key_hex: '44'.repeat(48),
       framing: FramingMode.KvStream,
     };
-    const payload = { a: 1, b: 'z' };
-    const { requestB64 } = svc.buildFromParts({ blob1, payload, DETERMINISTIC_ENC_SECRET });
+    const blob2 = { a: 1, b: 'z' };
+    const { requestB64 } = svc.buildFromParts({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
     const raw = Buffer.from(requestB64, 'base64');
     const [b1, b2] = parseRequest(raw);
     const h = parseHeaderBlob1(b1);
@@ -37,6 +38,6 @@ describe('EncryptPayloadService (integration)', () => {
     // but Unpacker should reconstruct the object
     const unpacker = new Unpacker();
     const obj = unpacker.execute(plaintext) as any;
-    expect(obj).toEqual(payload);
+    expect(obj).toEqual(blob2);
   });
 });

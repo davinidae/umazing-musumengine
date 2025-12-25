@@ -1,12 +1,18 @@
+import path from 'path';
 import {
   asResultCodeName,
   GallopResultCode,
+  StoredData,
   type PipelineContext,
   type StepPrevResult,
   type StepResult,
   type StepResultBase,
 } from '../models';
 import { StepServiceCtor } from '../pipelines';
+import fs from 'fs';
+import { fileURLToPath } from 'node:url';
+
+const moduleDir = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Executes a sequence of pipeline services within a session context.
@@ -16,7 +22,7 @@ export class Pipeline {
   constructor(
     public readonly id: string,
     public readonly createdAt: number,
-    public readonly meta: Record<string, unknown>,
+    public readonly storedData: StoredData,
     private ctx: PipelineContext,
   ) {
     //
@@ -38,13 +44,16 @@ export class Pipeline {
     return this.ctx;
   }
 
-  /**
-   * Execute a set of services sequentially, instantiating each with the current context.
-   * On error, pushes an error result and stops execution.
-   *
-   * @param steps Constructors for services to run, in order.
-   * @returns Ordered list of StepResult items, including the error entry if an error occurred.
-   */
+  async setStoredData() {
+    const file = fs.readFileSync(path.resolve(moduleDir, '../../assets/storedData.json'), 'utf-8');
+    const data = JSON.parse(file) as Record<string, StoredData>;
+    data[this.id] = this.storedData;
+    fs.writeFileSync(
+      path.resolve(moduleDir, '../../assets/storedData.json'),
+      JSON.stringify(data, null, 2),
+      'utf-8',
+    );
+  }
   /**
    * Execute services sequentially, instantiating each with the current context.
    * On error, pushes an error result and stops execution.
@@ -55,7 +64,7 @@ export class Pipeline {
     const results: StepResult[] = [];
     let prev: StepPrevResult | undefined = undefined;
     for (let i = 0; i < steps.length; i++) {
-      const service = new steps[i](this.ctx);
+      const service = new steps[i](this.ctx, this);
       try {
         console.log(`Executing pipeline step ${i + 1}/${steps.length}: ${service.name}`);
         const rBase: StepResultBase = await service.execute(prev);
@@ -65,6 +74,7 @@ export class Pipeline {
         };
         results.push(r);
         prev = r;
+        await this.setStoredData();
         console.log(`Completed pipeline step ${i + 1}/${steps.length}: ${service.name}`, r);
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);

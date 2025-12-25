@@ -1,16 +1,27 @@
 # api/endpoints/misc
 
-## Variables
+## Functions
 
-### router
+### healthHandler()
 
-> `const` **router**: `Router`
+> **healthHandler**(): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[api/endpoints/misc.ts:3](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/endpoints/misc.ts#L3)
+[api/endpoints/misc.ts:3](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/endpoints/misc.ts#L3)
 
-## References
+#### Returns
 
-### default
+`Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
-Renames and re-exports [router](#router)
+---
+
+### rootHandler()
+
+> **rootHandler**(): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
+
+Defined in:
+[api/endpoints/misc.ts:11](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/endpoints/misc.ts#L11)
+
+#### Returns
+
+`Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>

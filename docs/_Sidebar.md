@@ -18,11 +18,13 @@
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>models</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
-- [[code/api/models/api-enums-model.md|api-enums-model.md]]
+- [[code/api/models/api-model.md|api-model.md]]
 
 - [[code/api/models/pipelines-model.md|pipelines-model.md]]
 
 - [[code/api/models/result_codes-model.md|result_codes-model.md]]
+
+- [[code/api/models/umamusume-api-enums-model.md|umamusume-api-enums-model.md]]
 
 </ul>
 </details>
@@ -65,12 +67,22 @@
 </ul>
 </details>
 </li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>utils</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[code/api/utils/api-util.md|api-util.md]]
+
+</ul>
+</details>
+</li>
 
 - [[code/api/endpoints.md|endpoints.md]]
 
 - [[code/api/models.md|models.md]]
 
 - [[code/api/pipelines.md|pipelines.md]]
+
+- [[code/api/utils.md|utils.md]]
 
 </ul>
 </details>

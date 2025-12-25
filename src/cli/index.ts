@@ -184,7 +184,7 @@ encrypt
         }
         const { requestB64 } = encSvc.buildFromParts({
           blob1: root.blob1,
-          payload: root.blob2,
+          blob2: root.blob2,
           DETERMINISTIC_ENC_SECRET,
         });
         const outDir = path.join('encrypt/output', path.dirname(rel));
@@ -249,7 +249,7 @@ runtime
       });
       const out = runtimeClient.encodeRequest({
         blob1: input.blob1,
-        payload: input.payload,
+        blob2: input.blob2,
       });
       process.stdout.write(JSON.stringify(out));
       process.exitCode = 0;

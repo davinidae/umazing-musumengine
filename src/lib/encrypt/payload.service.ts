@@ -9,6 +9,12 @@ import {
 } from '../shared';
 import { EncodeRequestInput, FramingMode } from '../models';
 
+type BuiltEncryptedPayload = {
+  requestB64: string;
+  blob1: EncodeRequestInput['blob1'];
+  blob2: EncodeRequestInput['blob2'];
+};
+
 /**
  * Build Base64 requests from in-memory parts (no filesystem access).
  *
@@ -20,9 +26,103 @@ import { EncodeRequestInput, FramingMode } from '../models';
  */
 export class EncryptPayloadService {
   /**
-   * PURE: Build a Base64 request from provided blob1 fields and payload (no filesystem access).
-   * Mirrors the logic used in execute().
+   * blob1:
+   *  blob1 length [4 bytes]
+   *  prefix [52 bytes]
+   *  session_id [16 bytes]
+   *  udid [16 bytes]
+   *  random bytes [32 bytes]
+   * blob2:
+   *  [encrypted message]
+   *  key [32 bytes, randomly generated]
    */
+  buildSignup(
+    input: EncodeRequestInput & {
+      DETERMINISTIC_ENC_SECRET: string;
+    },
+  ): BuiltEncryptedPayload {
+    const { blob1, blob2, DETERMINISTIC_ENC_SECRET } = input;
+    // Resolve UDID string
+    let udidString: string | null = null;
+    if (typeof blob1.udid_canonical === 'string') {
+      udidString = blob1.udid_canonical;
+    } else if (typeof blob1.udid_raw_hex === 'string') {
+      udidString = udidRawToCanonicalString(Buffer.from(blob1.udid_raw_hex, 'hex'));
+    }
+    if (!udidString) {
+      throw new Error('Missing UDID (udid_canonical or udid_raw_hex)');
+    }
+    const iv = deriveIvFromUdidString(udidString);
+    const sidHex = blob1.session_id_hex;
+    const respKeyHex = blob1.response_key_hex;
+    if (!sidHex) {
+      throw new Error('Missing session_id_hex');
+    }
+    if (!respKeyHex) {
+      throw new Error('Missing response_key_hex');
+    }
+    const sessionId = Buffer.from(sidHex, 'hex');
+    if (sessionId.length !== 16) {
+      throw new Error('session_id_hex must be 16B');
+    }
+    const framing = blob1.framing ?? FramingMode.LengthPrefixed;
+    // Build plaintext
+    const payloadObj = fromJsonFriendly(blob2);
+    let plaintext: Buffer;
+    if (framing === FramingMode.LengthPrefixed) {
+      const packed = Buffer.from(encode(payloadObj));
+      const prefixed = Buffer.concat([Buffer.alloc(4), packed]);
+      prefixed.writeUInt32LE(packed.length, 0);
+      plaintext = prefixed;
+    } else {
+      if (!payloadObj || typeof payloadObj !== 'object' || Array.isArray(payloadObj)) {
+        throw new Error('kv-stream framing requires object payload');
+      }
+      const parts: Buffer[] = [];
+      for (const [k, v] of Object.entries(payloadObj)) {
+        parts.push(Buffer.from(encode(String(k))));
+        parts.push(Buffer.from(encode(v)));
+      }
+      plaintext = Buffer.concat(parts);
+    }
+    // Encrypt
+    const keyHash = createHash('sha256');
+    keyHash.update(DETERMINISTIC_ENC_SECRET, 'utf8');
+    const encryptionKey = keyHash.digest();
+    const padded = pkcs7Pad(plaintext, 16);
+    const ciphertext = encryptAes256Cbc(padded, encryptionKey, iv);
+    // Build request
+    const newBlob1 = Buffer.concat([
+      Buffer.from(blob1.prefix_hex, 'hex'),
+      sessionId,
+      Buffer.from(blob1.udid_raw_hex ?? udidString.replace(/-/g, ''), 'hex'),
+      Buffer.from(
+        createHash('sha256')
+          .update('resp:' + udidString, 'utf8')
+          .digest()
+          .toString('hex'),
+        'hex',
+      ),
+    ]);
+    const newBlob2 = Buffer.concat([
+      ciphertext,
+      Buffer.from(
+        createHash('sha256')
+          .update('auth:' + udidString, 'utf8')
+          .digest()
+          .toString('hex'),
+        'hex',
+      ),
+    ]);
+    const full = Buffer.concat([Buffer.alloc(4), newBlob1, newBlob2]);
+    full.writeUInt32LE(newBlob1.length, 0);
+    return {
+      requestB64: full.toString('base64'),
+      blob1,
+      blob2,
+    };
+  }
+
   /**
    * Build a single request as Base64 from header fields (blob1) and a JS payload.
    *
@@ -36,10 +136,8 @@ export class EncryptPayloadService {
     input: EncodeRequestInput & {
       DETERMINISTIC_ENC_SECRET: string;
     },
-  ): {
-    requestB64: string;
-  } {
-    const { blob1, payload, DETERMINISTIC_ENC_SECRET } = input;
+  ): BuiltEncryptedPayload {
+    const { blob1, blob2, DETERMINISTIC_ENC_SECRET } = input;
     // Resolve UDID string
     let udidString: string | null = null;
     if (typeof blob1.udid_canonical === 'string') {
@@ -51,7 +149,6 @@ export class EncryptPayloadService {
       throw new Error('Missing UDID (udid_canonical or udid_raw_hex)');
     }
     const iv = deriveIvFromUdidString(udidString);
-
     const sidHex = blob1.session_id_hex;
     const respKeyHex = blob1.response_key_hex;
     if (!sidHex) {
@@ -72,10 +169,9 @@ export class EncryptPayloadService {
     if (authKey.length !== 48) {
       throw new Error('auth_key_hex must be 48B');
     }
-
     // Build plaintext
     const framing = blob1.framing ?? FramingMode.LengthPrefixed;
-    const payloadObj = fromJsonFriendly(payload);
+    const payloadObj = fromJsonFriendly(blob2);
     let plaintext: Buffer;
     if (framing === FramingMode.LengthPrefixed) {
       const packed = Buffer.from(encode(payloadObj));
@@ -93,14 +189,12 @@ export class EncryptPayloadService {
       }
       plaintext = Buffer.concat(parts);
     }
-
     // Encrypt
     const keyHash = createHash('sha256');
     keyHash.update(DETERMINISTIC_ENC_SECRET, 'utf8');
     const encryptionKey = keyHash.digest();
     const padded = pkcs7Pad(plaintext, 16);
     const ciphertext = encryptAes256Cbc(padded, encryptionKey, iv);
-
     // Build request
     const newBlob1 = Buffer.concat([
       Buffer.from(blob1.prefix_hex, 'hex'),
@@ -117,6 +211,8 @@ export class EncryptPayloadService {
     full.writeUInt32LE(newBlob1.length, 0);
     return {
       requestB64: full.toString('base64'),
+      blob1,
+      blob2,
     };
   }
 }

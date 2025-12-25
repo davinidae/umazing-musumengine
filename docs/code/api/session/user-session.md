@@ -5,7 +5,7 @@
 ### UserSession
 
 Defined in:
-[api/session/user-session.ts:14](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L14)
+[api/session/user-session.ts:14](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L14)
 
 Represents a per-user server-side session owned by the API.
 
@@ -20,10 +20,10 @@ Responsibilities
 
 ##### Constructor
 
-> **new UserSession**(`id`, `createdAt`, `meta`, `ctx`): [`UserSession`](#usersession)
+> **new UserSession**(`id`, `createdAt`, `storedData`, `ctx`): [`UserSession`](#usersession)
 
 Defined in:
-[api/session/user-session.ts:18](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L18)
+[api/session/user-session.ts:19](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L19)
 
 ###### Parameters
 
@@ -35,9 +35,9 @@ Defined in:
 
 `number`
 
-###### meta
+###### storedData
 
-`Record`\<`string`, `unknown`\>
+[`StoredData`](../models/api.model.md#storeddata)
 
 ###### ctx
 
@@ -54,21 +54,28 @@ Defined in:
 > `readonly` **createdAt**: `number`
 
 Defined in:
-[api/session/user-session.ts:20](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L20)
+[api/session/user-session.ts:21](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L21)
 
 ##### ctx
 
 > `private` `readonly` **ctx**: [`PipelineContext`](../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/session/user-session.ts:22](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L22)
+[api/session/user-session.ts:23](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L23)
 
 ##### id
 
 > `readonly` **id**: `string`
 
 Defined in:
-[api/session/user-session.ts:19](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L19)
+[api/session/user-session.ts:20](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L20)
+
+##### lastModifiedAt
+
+> **lastModifiedAt**: `number`
+
+Defined in:
+[api/session/user-session.ts:17](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L17)
 
 ##### lastStep?
 
@@ -77,21 +84,21 @@ Defined in:
 > `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\>
 
 Defined in:
-[api/session/user-session.ts:15](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L15)
-
-##### meta
-
-> `readonly` **meta**: `Record`\<`string`, `unknown`\>
-
-Defined in:
-[api/session/user-session.ts:21](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L21)
+[api/session/user-session.ts:15](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L15)
 
 ##### pipeline
 
 > `private` **pipeline**: [`Pipeline`](pipeline.md#pipeline)
 
 Defined in:
-[api/session/user-session.ts:16](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L16)
+[api/session/user-session.ts:16](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L16)
+
+##### storedData
+
+> `readonly` **storedData**: [`StoredData`](../models/api.model.md#storeddata)
+
+Defined in:
+[api/session/user-session.ts:22](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L22)
 
 #### Methods
 
@@ -102,7 +109,7 @@ Defined in:
 > `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
 
 Defined in:
-[api/session/user-session.ts:47](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L47)
+[api/session/user-session.ts:49](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L49)
 
 Retrieve the last step result, used as input for chained pipelines.
 
@@ -119,7 +126,7 @@ Retrieve the last step result, used as input for chained pipelines.
 > **getPipeline**(): [`Pipeline`](pipeline.md#pipeline)
 
 Defined in:
-[api/session/user-session.ts:31](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L31)
+[api/session/user-session.ts:33](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L33)
 
 Access the underlying `Pipeline` instance.
 
@@ -129,13 +136,24 @@ Access the underlying `Pipeline` instance.
 
 Pipeline instance.
 
+##### getStoredData()
+
+> **getStoredData**(): [`StoredData`](../models/api.model.md#storeddata)
+
+Defined in:
+[api/session/user-session.ts:74](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L74)
+
+###### Returns
+
+[`StoredData`](../models/api.model.md#storeddata)
+
 ##### runPipeline()
 
 > **runPipeline**(`services`):
 > `Promise`\<[`StepResult`](../models/pipelines.model.md#stepresult)[]\>
 
 Defined in:
-[api/session/user-session.ts:56](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L56)
+[api/session/user-session.ts:58](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L58)
 
 Convenience wrapper around executePipeline that also saves the last step for chaining.
 
@@ -158,7 +176,7 @@ Ordered list of `StepResult` items for the executed pipeline.
 > **setLastStep**(`step`): `void`
 
 Defined in:
-[api/session/user-session.ts:39](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/session/user-session.ts#L39)
+[api/session/user-session.ts:41](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/session/user-session.ts#L41)
 
 Persist the last successful or terminal step of the pipeline.
 

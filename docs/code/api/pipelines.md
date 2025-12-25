@@ -20,6 +20,12 @@ Re-exports [PreSignupService](pipelines/services/pre_signup.service.md#presignup
 
 ---
 
+### signupPipeline
+
+Re-exports [signupPipeline](pipelines/pipeline_groups.md#signuppipeline)
+
+---
+
 ### SignupService
 
 Re-exports [SignupService](pipelines/services/signup.service.md#signupservice)

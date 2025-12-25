@@ -10,6 +10,7 @@ export class SignupService extends StepService {
   override readonly name = 'signup';
   override readonly endpoint = 'tool/signup';
   override readonly framing = FramingMode.KvStream;
+  override readonly isSignupStep = true;
 
   /**
    * Build payload including `viewer_id` (if available) along with client data.

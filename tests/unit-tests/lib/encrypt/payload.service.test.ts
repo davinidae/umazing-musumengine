@@ -15,14 +15,15 @@ describe('EncryptPayloadService (unit)', () => {
 
   test('buildFromParts length-prefixed encodes and can be decoded back', () => {
     const blob1 = {
+      viewer_id: 123456789,
       prefix_hex: 'aabb',
       udid_raw_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
     };
-    const payload = { hello: 'world', n: 7 };
-    const { requestB64 } = svc.buildFromParts({ blob1, payload, DETERMINISTIC_ENC_SECRET });
+    const blob2 = { hello: 'world', n: 7 };
+    const { requestB64 } = svc.buildFromParts({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
     const raw = Buffer.from(requestB64, 'base64');
     const [b1, b2] = parseRequest(raw);
     const h = parseHeaderBlob1(b1);
@@ -31,7 +32,7 @@ describe('EncryptPayloadService (unit)', () => {
     const { plaintext } = decryptBlob2(b2, iv);
     const strategy = new LengthPrefixedStrategy();
     const obj = strategy.execute(plaintext) as any;
-    expect(obj).toEqual(payload);
+    expect(obj).toEqual(blob2);
   });
 
   test('throws when UDID fields are missing', () => {
@@ -43,7 +44,7 @@ describe('EncryptPayloadService (unit)', () => {
           response_key_hex: '22'.repeat(32),
           auth_key_hex: '33'.repeat(48),
         } as any,
-        payload: { x: 1 },
+        blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
     ).toThrow(/Missing UDID/);
@@ -53,13 +54,14 @@ describe('EncryptPayloadService (unit)', () => {
     expect(() =>
       svc.buildFromParts({
         blob1: {
+          viewer_id: 123456789,
           prefix_hex: 'aa55',
           udid_raw_hex: '00'.repeat(16),
           session_id_hex: '11'.repeat(15), // 15B
           response_key_hex: '22'.repeat(32),
           auth_key_hex: '33'.repeat(48),
         },
-        payload: { x: 1 },
+        blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
     ).toThrow(/16B/);
@@ -69,13 +71,14 @@ describe('EncryptPayloadService (unit)', () => {
     expect(() =>
       svc.buildFromParts({
         blob1: {
+          viewer_id: 123456789,
           prefix_hex: 'aa55',
           udid_raw_hex: '00'.repeat(16),
           session_id_hex: '11'.repeat(16),
           response_key_hex: '22'.repeat(31),
           auth_key_hex: '33'.repeat(48),
         },
-        payload: { x: 1 },
+        blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
     ).toThrow(/32B/);
@@ -85,13 +88,14 @@ describe('EncryptPayloadService (unit)', () => {
     expect(() =>
       svc.buildFromParts({
         blob1: {
+          viewer_id: 123456789,
           prefix_hex: 'aa55',
           udid_raw_hex: '00'.repeat(16),
           session_id_hex: '11'.repeat(16),
           response_key_hex: '22'.repeat(32),
           auth_key_hex: '33'.repeat(47),
         },
-        payload: { x: 1 },
+        blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
     ).toThrow(/48B/);
@@ -101,6 +105,7 @@ describe('EncryptPayloadService (unit)', () => {
     expect(() =>
       svc.buildFromParts({
         blob1: {
+          viewer_id: 123456789,
           prefix_hex: 'aa55',
           udid_raw_hex: '00'.repeat(16),
           session_id_hex: '11'.repeat(16),
@@ -108,7 +113,7 @@ describe('EncryptPayloadService (unit)', () => {
           auth_key_hex: '33'.repeat(48),
           framing: FramingMode.KvStream,
         },
-        payload: [1, 2, 3],
+        blob2: [1, 2, 3],
         DETERMINISTIC_ENC_SECRET,
       }),
     ).toThrow(/kv-stream/);

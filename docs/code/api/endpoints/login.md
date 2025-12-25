@@ -1,16 +1,21 @@
 # api/endpoints/login
 
-## Variables
+## Functions
 
-### router
+### loginHandler()
 
-> `const` **router**: `Router`
+> **loginHandler**(`event`): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[api/endpoints/login.ts:5](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/api/endpoints/login.ts#L5)
+[api/endpoints/login.ts:6](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/api/endpoints/login.ts#L6)
 
-## References
+#### Parameters
 
-### default
+##### event
 
-Renames and re-exports [router](#router)
+[`HttpEvent`](../models/api.model.md#httpevent)\<`Partial`\<\{ `prevSessionId`: `number`;
+`steam_id`: `string`; `steam_session_ticket`: `string`; \}\>\>
+
+#### Returns
+
+`Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>

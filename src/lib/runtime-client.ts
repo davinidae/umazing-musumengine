@@ -49,19 +49,21 @@ export class RuntimeClient {
    * @throws If mandatory fields are missing or have invalid sizes.
    */
   encodeRequest(input: EncodeRequestInput): EncodeRequestOutput {
-    const { blob1, payload } = input;
+    const { blob1, blob2 } = input;
     this.logger.debug?.(
       '[runtime] encodeRequest framing=%s',
       blob1.framing ?? FramingMode.LengthPrefixed,
     );
-    const { requestB64 } = new EncryptPayloadService().buildFromParts({
+    const service = new EncryptPayloadService();
+    const o = {
       blob1,
-      payload,
+      blob2,
       DETERMINISTIC_ENC_SECRET: this.opts.DETERMINISTIC_ENC_SECRET,
-    });
-    return {
-      requestB64,
     };
+    if (input.isSignup) {
+      return service.buildSignup(o);
+    }
+    return service.buildFromParts(o);
   }
 
   /**
@@ -80,9 +82,6 @@ export class RuntimeClient {
     }
     const result = new DecryptResponseService().decodeFromBase64(requestB64, responseB64);
     this.logger.debug?.('[runtime] decodeResponse unpacked');
-    return {
-      data_headers: result.blob1,
-      payload: result.blob2,
-    };
+    return result;
   }
 }

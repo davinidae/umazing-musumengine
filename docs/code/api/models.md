@@ -10,7 +10,13 @@ Re-exports [asResultCodeName](models/result_codes.model.md#asresultcodename)
 
 ### AttestationType
 
-Re-exports [AttestationType](models/api-enums.model.md#attestationtype)
+Re-exports [AttestationType](models/umamusume-api-enums.model.md#attestationtype)
+
+---
+
+### DeviceType
+
+Re-exports [DeviceType](models/umamusume-api-enums.model.md#devicetype)
 
 ---
 
@@ -23,6 +29,12 @@ Re-exports [EncodedBase64](models/pipelines.model.md#encodedbase64)
 ### GallopResultCode
 
 Re-exports [GallopResultCode](models/result_codes.model.md#gallopresultcode)
+
+---
+
+### HttpEvent
+
+Re-exports [HttpEvent](models/api.model.md#httpevent)
 
 ---
 
@@ -47,3 +59,9 @@ Re-exports [StepResult](models/pipelines.model.md#stepresult)
 ### StepResultBase
 
 Re-exports [StepResultBase](models/pipelines.model.md#stepresultbase)
+
+---
+
+### StoredData
+
+Re-exports [StoredData](models/api.model.md#storeddata)

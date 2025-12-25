@@ -6,7 +6,8 @@ import {
   StepPrevResult,
   StepResultBase,
 } from '../../models';
-import { FramingMode } from '../../../lib';
+import { DecodeResponseOutput, FramingMode } from '../../../lib';
+import { Pipeline } from '../../session/pipeline';
 
 /**
  * Base class for a pipeline service step.
@@ -20,12 +21,16 @@ export abstract class StepService {
   abstract readonly name: string;
   abstract readonly endpoint: string;
   abstract readonly framing: FramingMode;
+  readonly isSignupStep: boolean = false;
 
   /**
    * Construct a step with the provided execution context.
    * @param ctx PipelineContext holding runtime, upstreamBase, blob1 and clientData.
    */
-  constructor(protected readonly ctx: PipelineContext) {
+  constructor(
+    protected readonly ctx: PipelineContext,
+    protected readonly pipeline: Pipeline,
+  ) {
     //
   }
 
@@ -47,6 +52,7 @@ export abstract class StepService {
    */
   protected async callUpstream(
     requestB64: string,
+    payload: unknown,
   ): Promise<{ responseB64: string; responseCode: GallopResultCode }> {
     console.log('Calling upstream for endpoint:', this.endpoint);
     const base = this.ctx.upstreamBase;
@@ -55,18 +61,13 @@ export abstract class StepService {
     }
     const url = [base.replace(/\/+$/, ''), this.endpoint.replace(/^\/+/, '')].join('/');
     console.log('Upstream URL:', url);
+    console.log('Upstream request payload:', payload);
+    console.log('Upstream request (Base64):', requestB64);
     try {
-      const resp = await axios.post(
-        url,
-        {
-          request: requestB64,
-        },
-        {
-          headers: {
-            'content-type': 'application/json',
-          },
-        },
-      );
+      console.log();
+      const resp = await axios.post(url, requestB64, {
+        headers: {},
+      });
       console.log('Upstream response status:', resp.status);
       const data = resp.data;
       console.log('Upstream response data:', data);
@@ -101,6 +102,16 @@ export abstract class StepService {
    */
   abstract getPayload(viewer_id: number): Record<string, unknown>;
 
+  private async onResponseDecoded(decodedResponse: DecodeResponseOutput): Promise<void> {
+    const ctx = this.pipeline.getContext();
+    if (ctx == null) {
+      return;
+    }
+    console.log(decodedResponse);
+    // ctx.blob1 = decodedResponse.blob1;
+    this.pipeline.setContext(ctx);
+  }
+
   /**
    * Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
    */
@@ -122,8 +133,8 @@ export abstract class StepService {
     if (!this.omitViewerId) {
       // Extract viewer_id from previous result if present
       try {
-        const prevHeaders = prev?.decoded?.data_headers ?? {};
-        if (typeof prevHeaders.viewer_id === 'number') {
+        const prevHeaders = prev?.decoded?.blob1;
+        if (typeof prevHeaders?.viewer_id === 'number') {
           viewer_id = prevHeaders.viewer_id;
         }
       } catch {
@@ -141,19 +152,23 @@ export abstract class StepService {
         };
       }
     }
-    const encoded = this.ctx.runtime.encodeRequest({
+    const payload = {
       blob1: {
         ...this.ctx.blob1,
         framing: this.framing,
+        viewer_id: viewer_id,
       },
-      payload: this.getPayload(viewer_id),
-    });
-    const requestB64 = encoded.requestB64;
-    const { responseB64, responseCode } = await this.callUpstream(requestB64);
+      blob2: this.getPayload(viewer_id),
+      isSignup: this.isSignupStep,
+    };
+    const encoded = this.ctx.runtime.encodeRequest(payload);
+    const { requestB64, blob1, blob2 } = encoded;
+    const { responseB64, responseCode } = await this.callUpstream(requestB64, { blob1, blob2 });
     const decodedResponse = this.ctx.runtime.decodeResponse({
       requestB64,
       responseB64,
     });
+    await this.onResponseDecoded(decodedResponse);
     return {
       name: this.name,
       endpoint: this.endpoint,
@@ -170,4 +185,4 @@ export abstract class StepService {
 /**
  * Constructor type for StepService implementations. Used to instantiate steps with a PipelineContext at runtime.
  */
-export type StepServiceCtor = new (ctx: PipelineContext) => StepService;
+export type StepServiceCtor = new (ctx: PipelineContext, pipeline: Pipeline) => StepService;

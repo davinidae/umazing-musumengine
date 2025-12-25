@@ -5,7 +5,7 @@
 ### FramingMode
 
 Defined in:
-[lib/models/runtime.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L6)
+[lib/models/runtime.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L6)
 
 Payload framing modes supported by the wire protocol.
 
@@ -19,14 +19,14 @@ Payload framing modes supported by the wire protocol.
 > **KvStream**: `"kv-stream"`
 
 Defined in:
-[lib/models/runtime.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L8)
+[lib/models/runtime.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L8)
 
 ##### LengthPrefixed
 
 > **LengthPrefixed**: `"length-prefixed"`
 
 Defined in:
-[lib/models/runtime.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L7)
+[lib/models/runtime.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L7)
 
 ## Type Aliases
 
@@ -35,7 +35,7 @@ Defined in:
 > **DecodeResponseInput** = `object`
 
 Defined in:
-[lib/models/runtime.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L37)
+[lib/models/runtime.model.ts:42](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L42)
 
 #### Properties
 
@@ -44,7 +44,7 @@ Defined in:
 > **requestB64**: `string`
 
 Defined in:
-[lib/models/runtime.model.ts:39](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L39)
+[lib/models/runtime.model.ts:44](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L44)
 
 Matching request (Base64) — used to obtain UDID and derive IV.
 
@@ -53,7 +53,7 @@ Matching request (Base64) — used to obtain UDID and derive IV.
 > **responseB64**: `string`
 
 Defined in:
-[lib/models/runtime.model.ts:40](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L40)
+[lib/models/runtime.model.ts:45](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L45)
 
 ---
 
@@ -62,44 +62,41 @@ Defined in:
 > **DecodeResponseOutput** = `object`
 
 Defined in:
-[lib/models/runtime.model.ts:43](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L43)
-
-#### Properties
-
-##### data_headers
-
-> **data_headers**: `Record`\<`string`, `unknown`\>
-
-Defined in:
-[lib/models/runtime.model.ts:44](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L44)
-
-##### payload
-
-> **payload**: `unknown`
-
-Defined in:
-[lib/models/runtime.model.ts:45](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L45)
-
----
-
-### EncodeRequestInput
-
-> **EncodeRequestInput** = `object`
-
-Defined in:
-[lib/models/runtime.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L12)
-
-Input parameters for building a request.
+[lib/models/runtime.model.ts:48](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L48)
 
 #### Properties
 
 ##### blob1
 
-> **blob1**: `object` & `Partial`\<\{ `framing`: [`FramingMode`](#framingmode); `udid_canonical`:
-> `string`; `udid_raw_hex`: `string`; \}\>
+> **blob1**: [`EncodeRequestInput`](#encoderequestinput)\[`"blob1"`\]
 
 Defined in:
-[lib/models/runtime.model.ts:13](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L13)
+[lib/models/runtime.model.ts:49](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L49)
+
+##### blob2
+
+> **blob2**: `unknown`
+
+Defined in:
+[lib/models/runtime.model.ts:50](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L50)
+
+---
+
+### EncodeRequestInput
+
+> **EncodeRequestInput** = `object` & `Partial`\<\{ `isSignup`: `boolean`; \}\>
+
+Defined in:
+[lib/models/runtime.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L12)
+
+Input parameters for building a request.
+
+#### Type Declaration
+
+##### blob1
+
+> **blob1**: `object` & `Partial`\<\{ `framing`: [`FramingMode`](#framingmode); `udid_canonical`:
+> `string`; `udid_raw_hex`: `string`; \}\>
 
 ###### Type Declaration
 
@@ -127,12 +124,13 @@ Free-form prefix; echoed back by the server.
 
 16-byte session identifier (hex).
 
-##### payload
+###### viewer_id
 
-> **payload**: `unknown`
+> **viewer_id**: `number`
 
-Defined in:
-[lib/models/runtime.model.ts:30](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L30)
+##### blob2
+
+> **blob2**: `unknown`
 
 ---
 
@@ -141,13 +139,27 @@ Defined in:
 > **EncodeRequestOutput** = `object`
 
 Defined in:
-[lib/models/runtime.model.ts:33](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L33)
+[lib/models/runtime.model.ts:36](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L36)
 
 #### Properties
+
+##### blob1
+
+> **blob1**: [`EncodeRequestInput`](#encoderequestinput)\[`"blob1"`\]
+
+Defined in:
+[lib/models/runtime.model.ts:38](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L38)
+
+##### blob2
+
+> **blob2**: [`EncodeRequestInput`](#encoderequestinput)\[`"blob2"`\]
+
+Defined in:
+[lib/models/runtime.model.ts:39](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L39)
 
 ##### requestB64
 
 > **requestB64**: `string`
 
 Defined in:
-[lib/models/runtime.model.ts:34](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/models/runtime.model.ts#L34)
+[lib/models/runtime.model.ts:37](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/runtime.model.ts#L37)

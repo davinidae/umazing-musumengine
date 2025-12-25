@@ -11,6 +11,7 @@ export enum FramingMode {
 /** Input parameters for building a request. */
 export type EncodeRequestInput = {
   blob1: {
+    viewer_id: number;
     /** Free-form prefix; echoed back by the server. */
     prefix_hex: string;
     /** 16-byte session identifier (hex). */
@@ -27,11 +28,15 @@ export type EncodeRequestInput = {
     /** Optional framing hint for the payload. Defaults to length-prefixed. */
     framing: FramingMode;
   }>;
-  payload: unknown;
-};
+  blob2: unknown;
+} & Partial<{
+  isSignup: boolean;
+}>;
 
 export type EncodeRequestOutput = {
   requestB64: string;
+  blob1: EncodeRequestInput['blob1'];
+  blob2: EncodeRequestInput['blob2'];
 };
 
 export type DecodeResponseInput = {
@@ -41,6 +46,6 @@ export type DecodeResponseInput = {
 };
 
 export type DecodeResponseOutput = {
-  data_headers: Record<string, unknown>;
-  payload: unknown;
+  blob1: EncodeRequestInput['blob1'];
+  blob2: unknown;
 };

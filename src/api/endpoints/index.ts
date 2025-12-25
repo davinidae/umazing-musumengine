@@ -1,18 +1,28 @@
-import { Router } from 'express';
-import loginRouter from './login';
-import miscRouter from './misc';
+import { loginHandler } from './login';
+import { healthHandler, rootHandler } from './misc';
+import { HttpEvent } from '../models';
+import { ApiResponse } from '../utils';
 
-/**
- * Root API router.
- *
- * Mounts sub-routers for public endpoints.
- * - `/` and `/health` from `misc`
- * - `/login` from `login`
- *
- * @remarks This router is consumed by `src/api/index.ts`.
- */
-export const router = Router();
-router.use(miscRouter);
-router.use(loginRouter);
+export type ApiRoute = {
+  method: string;
+  path: string;
+  handler: (event: HttpEvent<any>) => Promise<ApiResponse>;
+};
 
-export default router;
+export const routes: ApiRoute[] = [
+  {
+    method: 'GET',
+    path: '/',
+    handler: rootHandler,
+  },
+  {
+    method: 'GET',
+    path: '/health',
+    handler: healthHandler,
+  },
+  {
+    method: 'POST',
+    path: '/login',
+    handler: loginHandler,
+  },
+];
