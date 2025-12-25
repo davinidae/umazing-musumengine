@@ -18,6 +18,8 @@
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>models</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
+- [[code/api/models/api-enums-model.md|api-enums-model.md]]
+
 - [[code/api/models/pipelines-model.md|pipelines-model.md]]
 
 - [[code/api/models/result_codes-model.md|result_codes-model.md]]
@@ -410,6 +412,27 @@
 
 - [[umamusume_api_info/endpoints/present/README.md|README.md]]
 
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>race_entry</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[umamusume_api_info/endpoints/race_entry/README.md|README.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>read_info</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>index</summary>
+<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
+
+- [[umamusume_api_info/endpoints/read_info/index/README.md|README.md]]
+
+</ul>
+</details>
+</li>
 </ul>
 </details>
 </li>

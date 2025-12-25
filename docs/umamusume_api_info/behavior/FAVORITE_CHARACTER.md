@@ -4,8 +4,7 @@ Overview: Changing the favorite character setting.
 
 ## Actions
 
-- Confirm change: `user/change_favorite_character`  
-   See:
+- Confirm change: `user/change_favorite_character` See:
   [endpoints/user/change_favorite_character](../endpoints/user/change_favorite_character/README.md)
 
 ## Notes

@@ -29,28 +29,36 @@ type ItemShowExchangeRequest = {
 ```typescript
 type ItemShowExchangeResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Player identifier
-    sid: string; // Session ID
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result code
-  };
-  data: {
-    limit_list: {
-      item_exchange_id: number; // Exchange option identifier
-      exchange_count: number; // Number of times player has used this exchange
-      update_time: string; // Last time this exchange was used
-    }[];
-    disabled_id_array: number[]; // Exchange IDs that are currently disabled
-    release_id_array: number[]; // Exchange IDs that have been newly released
-    limited_shop_info: {
-      limited_exchange_id: number; // Limited shop identifier
-      open_flag: number; // Whether limited shop is open (0=closed, 1=open)
-      appear_flag: number; // Whether limited shop should appear in UI
-      close_time: number; // When limited shop closes (timestamp)
-      open_count: number; // Number of times limited shop has been opened
-    };
-    limited_goods_info_array: unknown[]; // Limited-time items available
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+}
+
+export interface Data {
+  limit_list: LimitList[];
+  disabled_id_array: any[];
+  release_id_array: any[];
+  limited_shop_info: LimitedShopInfo;
+  limited_goods_info_array: any[];
+}
+
+export interface LimitList {
+  item_exchange_id: number;
+  exchange_count: number;
+  update_time: string;
+}
+
+export interface LimitedShopInfo {
+  limited_exchange_id: number;
+  open_flag: number;
+  appear_flag: number;
+  close_time: number;
+  open_count: number;
+}
 ```

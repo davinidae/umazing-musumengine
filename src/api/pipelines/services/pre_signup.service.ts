@@ -6,9 +6,9 @@ import { StepService } from './step.service';
  * Uses kv-stream framing to build a (key,value,...) sequence.
  */
 export class PreSignupService extends StepService {
-  readonly name = 'pre_signup';
-  readonly endpoint = 'tool/pre_signup';
-  readonly framing = FramingMode.KvStream;
+  override readonly name = 'pre_signup';
+  override readonly endpoint = 'tool/pre_signup';
+  override readonly framing = FramingMode.KvStream;
 
   protected override omitViewerId = true;
 

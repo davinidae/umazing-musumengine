@@ -35,7 +35,16 @@ type ToolStartSessionResponse = {
     sid: string; // Session identifier
     servertime: number; // Server timestamp
     result_code: number; // Operation result
-    server_list?: unknown; // Resource server URLs
+    notifications?: {
+      unread_information_exists: number;
+    };
+    server_list?: {
+      // Resource server URLs
+      resource_server: string;
+      resource_server_cf: string;
+      resource_server_login: string;
+      resource_server_ingame: string;
+    };
   };
   data: {
     attest: boolean; // Attestation required flag

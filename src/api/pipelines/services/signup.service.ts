@@ -7,9 +7,9 @@ import { StepService } from './step.service';
  * Uses kv-stream framing.
  */
 export class SignupService extends StepService {
-  readonly name = 'signup';
-  readonly endpoint = 'tool/signup';
-  readonly framing = FramingMode.KvStream;
+  override readonly name = 'signup';
+  override readonly endpoint = 'tool/signup';
+  override readonly framing = FramingMode.KvStream;
 
   /**
    * Build payload including `viewer_id` (if available) along with client data.

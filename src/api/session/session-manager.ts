@@ -30,12 +30,21 @@ export class SessionManager {
    * @returns Initialized `PipelineContext`.
    */
   generateCtx(steam_id: string, steam_session_ticket: string): PipelineContext {
-    return {
+    console.log(
+      'Generating PipelineContext for Steam ID:',
+      steam_id,
+      'with ticket:',
+      steam_session_ticket,
+    );
+    if (steam_id.length === 0) {
+      throw new Error('Steam ID required. Use SteamDB to retrieve yours.');
+    }
+    const obj: PipelineContext = {
       runtime: new RuntimeClient({
         DETERMINISTIC_ENC_SECRET,
       }),
       // Upstream base URL (used by services via StepService.callUpstream). It should be set to the actual UmaMusume API in production.
-      upstreamBase: '',
+      upstreamBase: 'https://api.games.umamusume.com/umamusume',
       blob1: {
         prefix_hex: 'aa55',
         // Derive deterministic device UDID (16 bytes) from steam_id for reproducible requests
@@ -65,7 +74,7 @@ export class SessionManager {
       // Device/environment placeholders (Windows PC defaults)
       clientData: {
         viewer_id: 0,
-        device: 4,
+        device: 2,
         device_id: createHash('sha256')
           .update('dev:' + steam_id, 'utf8')
           .digest('hex'),
@@ -75,13 +84,17 @@ export class SessionManager {
         platform_os_version: process.platform + ' ' + process.version,
         carrier: '',
         keychain: 0,
-        locale: 'en',
+        locale: 'JPN',
         dmm_viewer_id: null,
         dmm_onetime_token: null,
-        steam_id,
-        steam_session_ticket,
       },
     };
+    if (steam_id.length > 0 && steam_session_ticket.length > 0) {
+      obj.clientData.steam_id = steam_id;
+      obj.clientData.steam_session_ticket = steam_session_ticket;
+    }
+    console.log('Generated PipelineContext:', obj);
+    return obj;
   }
 
   /**
@@ -96,11 +109,13 @@ export class SessionManager {
     steam_session_ticket: string,
     meta: Record<string, unknown>,
   ): UserSession {
+    console.log('Creating session for Steam ID:', steam_id, 'with ticket:', steam_session_ticket);
     const ctx = this.generateCtx(steam_id, steam_session_ticket);
     const id = randomUUID();
     const session = new UserSession(id, Date.now(), meta, ctx);
     this.sessions.set(id, session);
     this.deleteInactiveSessions();
+    console.log('Session created with ID:', session.id);
     return session;
   }
 

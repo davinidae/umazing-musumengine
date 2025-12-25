@@ -107,9 +107,10 @@ export type PipelineContext = {
     dmm_viewer_id: number | null;
     /** One-time DMM token (nullable). */
     dmm_onetime_token: string | null;
+  } & Partial<{
     /** Steam identifier. */
     steam_id: string;
     /** Steam session ticket. */
     steam_session_ticket: string;
-  };
+  }>;
 };

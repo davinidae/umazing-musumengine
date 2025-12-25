@@ -29,36 +29,44 @@ type PaymentItemListRequest = {
 ```typescript
 type PaymentItemListResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Player's viewer ID
-    sid: string; // Session ID
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result code
-  };
-  data: {
-    data: {
-      id: number; // Payment item identifier
-      store_product_id: string; // Platform store product ID
-      disp_order: number; // Display order in shop
-      price: number; // Price in local currency cents
-      formatted_price: string; // Formatted price display
-      charge_num: number; // Amount of premium currency received
-      free_num: number; // Bonus premium currency
-      limit_num: number; // Purchase limit quantity
-      limit_type: number; // Purchase limit type (0=no limit, 1=daily limit, 3=special limit)
-      item_pack_id: number; // Associated item pack ID
-      recommended_flag: number; // Recommended item flag (0=not recommended, 1=recommended)
-      start_time: number; // Availability start timestamp
-      end_time: number; // Availability end timestamp
-      number_of_product_purchased: number; // Times player has purchased this item
-    }[];
-    season_pack_info: {
-      product_master_id: number; // Season pack product ID
-      season_end_time: number; // Season pack expiration
-      repurchase_time: number; // When season pack can be repurchased
-      notice_status: number; // Notice status for season pack
-    };
-    last_checked_time: number; // Last time shop was checked
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+}
+
+export interface Data {
+  data: Daum[];
+  season_pack_info: SeasonPackInfo;
+  last_checked_time: number;
+}
+
+export interface Daum {
+  id: number;
+  store_product_id: string;
+  disp_order: number;
+  price: number;
+  formatted_price: string;
+  charge_num: number;
+  free_num: number;
+  limit_num: number;
+  limit_type: number;
+  item_pack_id: number;
+  recommended_flag: number;
+  start_time: number;
+  end_time: number;
+  number_of_product_purchased: number;
+}
+
+export interface SeasonPackInfo {
+  product_master_id: number;
+  season_end_time: number;
+  repurchase_time: number;
+  notice_status: number;
+}
 ```

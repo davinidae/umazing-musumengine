@@ -1,4 +1,4 @@
-# Tool - Pre Signup Endpoint
+# Tool - Pre Signup Endpoint (DEPRECATED)
 
 Initial authentication endpoint called before user registration/signup process.
 

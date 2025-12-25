@@ -411,14 +411,14 @@ import 'frida-il2cpp-bridge';
  */
 function logIl2CppString(name, strPtr) {
   if (strPtr.isNull()) {
-    console.log(`   ${name}: null`);
+    console.log(`${name}: null`);
     return;
   }
   try {
     const str = new Il2Cpp.String(strPtr);
-    console.log(`   ${name}: "${str.content}"`);
+    console.log(`${name}: "${str.content}"`);
   } catch (e) {
-    console.error(`   [!] Failed to read string ${name} at ${strPtr}: ${e.message}`);
+    console.error(`[!] Failed to read string ${name} at ${strPtr}: ${e.message}`);
   }
 }
 
@@ -429,20 +429,20 @@ function logIl2CppString(name, strPtr) {
  */
 function logIl2CppByteArray(name, arrPtr) {
   if (arrPtr.isNull()) {
-    console.log(`   ${name}: null`);
+    console.log(`${name}: null`);
     return;
   }
   try {
     const arr = new Il2Cpp.Array(arrPtr);
     const length = arr.length;
-    console.log(`   ${name} (length: ${length}):`);
+    console.log(`${name} (length: ${length}):`);
     console.log(
       hexdump(arr.elements, {
         length: length,
       }),
     );
   } catch (e) {
-    console.error(`   [!] Failed to read byte array ${name} at ${arrPtr}: ${e.message}`);
+    console.error(`[!] Failed to read byte array ${name} at ${arrPtr}: ${e.message}`);
   }
 }
 
@@ -467,7 +467,7 @@ Java.perform(function () {
           console.log('\n[+] Native Hook Hit: Salt for MD5 generation');
           const saltStringPtr = this.context.x1;
           const saltContent = new Il2Cpp.String(saltStringPtr).content;
-          console.log(`       The Secret Salt Is: "${saltContent}"`);
+          console.log(`The Secret Salt Is: "${saltContent}"`);
         },
       });
 
@@ -541,16 +541,16 @@ Java.perform(function () {
         if (field.isStatic) {
           try {
             const value = field.value;
-            console.log(`   Static Field: ${field.name} (type: ${field.type.name})`);
+            console.log(`Static Field: ${field.name} (type: ${field.type.name})`);
             if (field.type.name === 'System.String') {
-              logIl2CppString(`         Value`, value);
+              logIl2CppString(`Value`, value);
             } else if (field.type.name === 'System.Byte[]') {
-              logIl2CppByteArray(`         Value`, value);
+              logIl2CppByteArray(`Value`, value);
             } else {
-              console.log(`         Value: ${value}`);
+              console.log(`Value: ${value}`);
             }
           } catch (e) {
-            console.log(`   [!] Could not read value for static field ${field.name}: ${e.message}`);
+            console.log(`[!] Could not read value for static field ${field.name}: ${e.message}`);
           }
         }
       });

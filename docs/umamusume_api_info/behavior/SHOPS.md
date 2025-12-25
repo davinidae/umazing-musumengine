@@ -4,8 +4,8 @@ Overview: Viewing available shop exchanges.
 
 ## Actions
 
-- Open shop: `item/show_exchange`  
-   See: [endpoints/item/show_exchange](../endpoints/item/show_exchange/README.md)
+- Open shop: `item/show_exchange` See:
+  [endpoints/item/show_exchange](../endpoints/item/show_exchange/README.md)
 
 ## Notes
 

@@ -1,4 +1,5 @@
 import { FramingMode } from '../../../lib';
+import { AttestationType } from '../../models';
 import { StepService } from './step.service';
 
 /**
@@ -6,16 +7,18 @@ import { StepService } from './step.service';
  * Skips execution if a valid viewer_id is not available.
  */
 export class StartSessionService extends StepService {
-  readonly name = 'start_session';
-  readonly endpoint = 'tool/start_session';
-  readonly framing = FramingMode.LengthPrefixed;
+  override readonly name = 'start_session';
+  override readonly endpoint = 'tool/start_session';
+  override readonly framing = FramingMode.LengthPrefixed;
+  protected override omitViewerId = true;
 
   /**
    * Build payload required by `tool/start_session` including device and platform metadata.
    */
   getPayload(viewer_id: number) {
     return {
-      attestation_type: 0,
+      attestation_type:
+        this.ctx.clientData.steam_id != null ? AttestationType.PC : AttestationType.Mobile,
       device_token: null,
       viewer_id,
       device: this.ctx.clientData.device,

@@ -30,39 +30,49 @@ type MissionReceiveRequest = {
 ```typescript
 type MissionReceiveResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Player identifier
-    sid: string; // Session identifier
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result
-  };
-  data: {
-    reward_summary_info: {
-      add_item_list: {
-        item_id: number; // Item type identifier
-        number: number; // Quantity received
-      }[];
-      add_piece_list: unknown[]; // Character pieces/fragments received
-      add_card_list: unknown[]; // Character cards received
-      add_card_bonus_info: null; // Bonus information for new cards
-      add_support_card_list: unknown[]; // Support cards received
-      add_support_card_num_array: unknown[]; // Support card quantities
-      add_honor_list: unknown[]; // Honor/achievement rewards
-      add_chara_list: unknown[]; // New characters unlocked
-      add_cloth_list: unknown[]; // Costume/clothing rewards
-      add_music_list: unknown[]; // Music/song unlocks
-      add_story_id_array: unknown[]; // Story chapters unlocked
-      add_fcoin: number; // Free coins received
-      add_present_num: number; // Present box items added
-      add_total_fan: number; // Fan count increase
-      new_chara_profile_array: unknown[]; // New character profiles unlocked
-      force_update_honor_id: number; // Honor requiring immediate update
-    };
-    updated_mission_array: {
-      mission_id: number; // Mission that was updated
-      exec_count: number; // Updated progress count
-      mission_status: number; // New mission status (1=available, 2=completed, 3=claimed)
-    }[];
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+}
+
+export interface Data {
+  reward_summary_info: RewardSummaryInfo;
+  updated_mission_array: UpdatedMissionArray[];
+}
+
+export interface RewardSummaryInfo {
+  add_item_list: AddItemList[];
+  add_piece_list: any[];
+  add_card_list: any[];
+  add_card_bonus_info: any;
+  add_support_card_list: any[];
+  add_support_card_num_array: any[];
+  add_honor_list: any[];
+  add_chara_list: any[];
+  add_cloth_list: any[];
+  add_music_list: any[];
+  add_story_id_array: any[];
+  add_fcoin: number;
+  add_present_num: number;
+  add_total_fan: number;
+  new_chara_profile_array: any[];
+  force_update_honor_id: number;
+}
+
+export interface AddItemList {
+  item_id: number;
+  number: number;
+}
+
+export interface UpdatedMissionArray {
+  mission_id: number;
+  exec_count: number;
+  mission_status: number;
+}
 ```

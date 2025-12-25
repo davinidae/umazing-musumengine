@@ -6,9 +6,9 @@ import { StepService } from './step.service';
  * Requires a valid viewer_id; skips otherwise.
  */
 export class LoadIndexService extends StepService {
-  readonly name = 'load_index';
-  readonly endpoint = 'load/index';
-  readonly framing = FramingMode.LengthPrefixed;
+  override readonly name = 'load_index';
+  override readonly endpoint = 'load/index';
+  override readonly framing = FramingMode.LengthPrefixed;
 
   /**
    * Build payload for `load/index` using `viewer_id` and client metadata.

@@ -114,7 +114,7 @@ export function writeTypeAliasFromMetadataToString(
   }
   const content = [
     `type ${typeName} = {`,
-    ...fields.map((f) => `  ${f.name}: ${f.tsType};`),
+    ...fields.map((f) => `${f.name}: ${f.tsType};`),
     `};`,
     '',
   ].join('\n');
@@ -197,7 +197,7 @@ export function mirrorTxtToTypes() {
     '',
     ...typeBlocks,
     '',
-    `  }\n}\n\nexport {};`,
+    `}\n}\n\nexport {};`,
     '',
   ].join('\n');
   const SINGLE_OUT_FILE = path.join(SRC_ROOT, 'index.d.ts');

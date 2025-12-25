@@ -35,55 +35,69 @@ type DailyRaceReplayCheckRequest = {
 ```typescript
 type DailyRaceReplayCheckResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Player's viewer ID
-    sid: string; // Session ID
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result code
-  };
-  data: {
-    rank: number; // Player's final ranking in the race
-    first_clear_reward_array: unknown[]; // Special rewards for first-time completion
-    normal_reward_array: {
-      item_type: number; // Type/category of reward item
-      item_id: number; // Specific item identifier
-      item_num: number; // Quantity awarded
-    }[];
-    rare_reward_array: {
-      item_type: number; // Type/category of rare reward item
-      item_id: number; // Specific rare item identifier
-      item_num: number; // Quantity of rare reward
-    }[];
-    bonus_reward_array: unknown[]; // Additional bonus rewards
-    reward_summary_info: {
-      add_item_list: {
-        item_id: number; // Item identifier
-        number: number; // Quantity received
-      }[];
-      add_piece_list: unknown[]; // Character pieces received
-      add_card_list: unknown[]; // Cards received
-      add_card_bonus_info: null; // Card bonus information
-      add_support_card_list: unknown[]; // Support cards received
-      add_support_card_num_array: unknown[]; // Support card numbers
-      add_honor_list: unknown[]; // Honors received
-      add_chara_list: unknown[]; // Characters received
-      add_cloth_list: unknown[]; // Costumes received
-      add_music_list: unknown[]; // Music tracks received
-      add_story_id_array: unknown[]; // Story IDs unlocked
-      add_fcoin: number; // Friendship coins received
-      add_present_num: number; // Number of presents received
-      add_total_fan: number; // Total fan count increase
-      new_chara_profile_array: unknown[]; // New character profiles
-      force_update_honor_id: number; // Honor ID requiring update
-    };
-    state: number; // Race completion state
-    limited_shop_info: {
-      limited_exchange_id: number; // Shop identifier
-      open_flag: number; // Whether shop is open (1=open, 0=closed)
-      appear_flag: number; // Whether shop appears in UI
-      close_time: number; // Shop closing timestamp
-      open_count: number; // Number of times shop has opened
-    };
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+}
+
+export interface Data {
+  rank: number;
+  first_clear_reward_array: any[];
+  normal_reward_array: NormalRewardArray[];
+  rare_reward_array: RareRewardArray[];
+  bonus_reward_array: any[];
+  reward_summary_info: RewardSummaryInfo;
+  state: number;
+  limited_shop_info: LimitedShopInfo;
+}
+
+export interface NormalRewardArray {
+  item_type: number;
+  item_id: number;
+  item_num: number;
+}
+
+export interface RareRewardArray {
+  item_type: number;
+  item_id: number;
+  item_num: number;
+}
+
+export interface RewardSummaryInfo {
+  add_item_list: AddItemList[];
+  add_piece_list: any[];
+  add_card_list: any[];
+  add_card_bonus_info: any;
+  add_support_card_list: any[];
+  add_support_card_num_array: any[];
+  add_honor_list: any[];
+  add_chara_list: any[];
+  add_cloth_list: any[];
+  add_music_list: any[];
+  add_story_id_array: any[];
+  add_fcoin: number;
+  add_present_num: number;
+  add_total_fan: number;
+  new_chara_profile_array: any[];
+  force_update_honor_id: number;
+}
+
+export interface AddItemList {
+  item_id: number;
+  number: number;
+}
+
+export interface LimitedShopInfo {
+  limited_exchange_id: number;
+  open_flag: number;
+  appear_flag: number;
+  close_time: number;
+  open_count: number;
+}
 ```

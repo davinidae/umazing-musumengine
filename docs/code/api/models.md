@@ -8,6 +8,12 @@ Re-exports [asResultCodeName](models/result_codes.model.md#asresultcodename)
 
 ---
 
+### AttestationType
+
+Re-exports [AttestationType](models/api-enums.model.md#attestationtype)
+
+---
+
 ### EncodedBase64
 
 Re-exports [EncodedBase64](models/pipelines.model.md#encodedbase64)

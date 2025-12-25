@@ -1,4 +1,4 @@
-# Tool - Signup Endpoint
+# Tool - Signup Endpoint (DEPRECATED)
 
 User registration/account creation endpoint for new players.
 

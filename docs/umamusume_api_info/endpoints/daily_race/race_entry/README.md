@@ -31,79 +31,89 @@ type DailyRaceEntryRequest = {
 ```typescript
 type DailyRaceEntryResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Player's viewer ID
-    sid: string; // Session ID
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result code
-  };
-  data: {
-    race_horse_data_array: {
-      frame_order: number; // Starting gate position
-      viewer_id: number; // Owner's viewer ID (0 for NPCs)
-      trainer_name: string | null; // Owner's trainer name
-      owner_viewer_id: number; // Owner identifier
-      owner_trainer_name: string; // Owner's display name
-      single_mode_chara_id: number; // Single mode character ID
-      trained_chara_id: number; // Trained character instance ID
-      nickname_id: number; // Character nickname ID
-      chara_id: number; // Base character ID
-      card_id: number | null; // Character card ID
-      mob_id: number; // NPC mob ID (0 for player characters)
-      rarity: number; // Character rarity (1-3)
-      talent_level: number; // Talent awakening level
-      skill_array: {
-        skill_id: number; // Skill identifier
-        level: number; // Skill level
-      }[];
-      stamina: number; // Stamina stat
-      speed: number; // Speed stat
-      pow: number; // Power stat
-      guts: number; // Guts stat
-      wiz: number; // Wisdom stat
-      running_style: number; // Preferred running style (1=front_runners, 2=pace_chasers, 3=late_surgers, 4=end_closers)
-      race_dress_id: number; // Costume/outfit ID
-      npc_type: number; // NPC type classification
-      final_grade: number; // Character grade (8-13+)
-      popularity: number; // Race popularity ranking (1-18)
-      popularity_mark_rank_array: number[]; // Popularity indicators
-      proper_distance_short: number; // Short distance aptitude (1-7)
-      proper_distance_mile: number; // Mile distance aptitude (1-7)
-      proper_distance_middle: number; // Middle distance aptitude (1-7)
-      proper_distance_long: number; // Long distance aptitude (1-7)
-      proper_running_style_nige: number; // Front Runner running style aptitude (1-7)
-      proper_running_style_senko: number; // Pace Chaser running style aptitude (1-7)
-      proper_running_style_sashi: number; // Late Surger running style aptitude (1-7)
-      proper_running_style_oikomi: number; // End Closer running style aptitude (1-7)
-      proper_ground_turf: number; // Turf ground aptitude (1-7)
-      proper_ground_dirt: number; // Dirt ground aptitude (1-7)
-      motivation: number; // Current motivation level (1-5)
-      win_saddle_id_array: number[]; // Won race/saddle IDs
-      race_result_array: {
-        turn: number; // Training turn when race occurred
-        program_id: number; // Race program identifier
-        weather: number; // Weather condition
-        ground_condition: number; // Ground condition
-        running_style: number; // Running style used (1=front_runners, 2=pace_chasers, 3=late_surgers, 4=end_closers)
-        popularity: number; // Popularity in that race
-        result_rank: number; // Final race placement
-        result_time: number; // Race completion time
-        prize_money: number; // Prize money earned
-      }[];
-      team_id: number; // Team identifier
-      team_member_id: number; // Team member position
-      team_rank: number; // Team ranking
-      item_id_array: number[]; // Equipment item IDs
-      motivation_change_flag: number; // Motivation change indicator
-      frame_order_change_flag: number; // Gate position change indicator
-    }[];
-    season: number; // Current season
-    weather: number; // Weather condition
-    ground_condition: number; // Track condition
-    random_seed: number; // Random seed for race simulation
-    race_instance_id: number; // Unique race instance identifier
-    state: number; // Race state
-    trained_chara_id: number; // Player's entered character ID
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+}
+
+export interface Data {
+  race_horse_data_array: RaceHorseDataArray[];
+  season: number;
+  weather: number;
+  ground_condition: number;
+  random_seed: number;
+  race_instance_id: number;
+  state: number;
+  trained_chara_id: number;
+}
+
+export interface RaceHorseDataArray {
+  frame_order: number;
+  viewer_id: number;
+  trainer_name?: string;
+  owner_viewer_id: number;
+  owner_trainer_name: string;
+  single_mode_chara_id: number;
+  trained_chara_id: number;
+  nickname_id: number;
+  chara_id: number;
+  card_id?: number;
+  mob_id: number;
+  rarity: number;
+  talent_level: number;
+  skill_array: SkillArray[];
+  stamina: number;
+  speed: number;
+  pow: number;
+  guts: number;
+  wiz: number;
+  running_style: number;
+  race_dress_id: number;
+  npc_type: number;
+  final_grade: number;
+  popularity: number;
+  popularity_mark_rank_array: number[];
+  proper_distance_short: number;
+  proper_distance_mile: number;
+  proper_distance_middle: number;
+  proper_distance_long: number;
+  proper_running_style_nige: number;
+  proper_running_style_senko: number;
+  proper_running_style_sashi: number;
+  proper_running_style_oikomi: number;
+  proper_ground_turf: number;
+  proper_ground_dirt: number;
+  motivation: number;
+  win_saddle_id_array: number[];
+  race_result_array: RaceResultArray[];
+  team_id: number;
+  team_member_id: number;
+  team_rank: number;
+  item_id_array: any[];
+  motivation_change_flag: number;
+  frame_order_change_flag: number;
+}
+
+export interface SkillArray {
+  skill_id: number;
+  level: number;
+}
+
+export interface RaceResultArray {
+  turn: number;
+  program_id: number;
+  weather: number;
+  ground_condition: number;
+  running_style: number;
+  popularity: number;
+  result_rank: number;
+  result_time: number;
+  prize_money: number;
+}
 ```

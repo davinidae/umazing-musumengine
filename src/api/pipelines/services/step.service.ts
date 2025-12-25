@@ -48,40 +48,50 @@ export abstract class StepService {
   protected async callUpstream(
     requestB64: string,
   ): Promise<{ responseB64: string; responseCode: GallopResultCode }> {
+    console.log('Calling upstream for endpoint:', this.endpoint);
     const base = this.ctx.upstreamBase;
     if (!base) {
       throw new Error('Missing UMAZING_UPSTREAM_BASE (remote API base URL)');
     }
-    const url = `${String(base).replace(/\/+$/, '')}/${this.endpoint.replace(/^\/+/, '')}`;
-    const resp = await axios.post(
-      url,
-      {
-        request: requestB64,
-      },
-      {
-        headers: {
-          'content-type': 'application/json',
+    const url = [base.replace(/\/+$/, ''), this.endpoint.replace(/^\/+/, '')].join('/');
+    console.log('Upstream URL:', url);
+    try {
+      const resp = await axios.post(
+        url,
+        {
+          request: requestB64,
         },
-      },
-    );
-    const data = resp.data;
-    if (typeof data === 'string') {
-      return {
-        responseB64: data.trim(),
-        responseCode: resp.status as GallopResultCode,
-      };
-    }
-    if (data && typeof data === 'object') {
-      const b64 = data.response || data.responseB64 || data.data || '';
-      if (!b64 || typeof b64 !== 'string') {
-        throw new Error('Upstream JSON missing response field');
+        {
+          headers: {
+            'content-type': 'application/json',
+          },
+        },
+      );
+      console.log('Upstream response status:', resp.status);
+      const data = resp.data;
+      console.log('Upstream response data:', data);
+      if (typeof data === 'string') {
+        return {
+          responseB64: data.trim(),
+          responseCode: resp.status as GallopResultCode,
+        };
       }
-      return {
-        responseB64: b64.trim(),
-        responseCode: resp.status as GallopResultCode,
-      };
+      if (data && typeof data === 'object') {
+        const b64 = data.response || data.responseB64 || data.data || '';
+        if (!b64 || typeof b64 !== 'string') {
+          throw new Error('Upstream JSON missing response field');
+        }
+        return {
+          responseB64: b64.trim(),
+          responseCode: resp.status as GallopResultCode,
+        };
+      }
+      throw new Error('Invalid upstream response');
+    } catch (e) {
+      const error = e as Error;
+      console.error('Error calling upstream:', error.name, error.message, error.stack);
+      throw error;
     }
-    throw new Error('Invalid upstream response');
   }
 
   /**

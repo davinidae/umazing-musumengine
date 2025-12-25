@@ -57,6 +57,7 @@ export class Pipeline {
     for (let i = 0; i < steps.length; i++) {
       const service = new steps[i](this.ctx);
       try {
+        console.log(`Executing pipeline step ${i + 1}/${steps.length}: ${service.name}`);
         const rBase: StepResultBase = await service.execute(prev);
         const r: StepResult = {
           order: i + 1,
@@ -64,6 +65,7 @@ export class Pipeline {
         };
         results.push(r);
         prev = r;
+        console.log(`Completed pipeline step ${i + 1}/${steps.length}: ${service.name}`, r);
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         const stack = err instanceof Error && typeof err.stack === 'string' ? err.stack : undefined;

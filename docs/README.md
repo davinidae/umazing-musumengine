@@ -2,7 +2,7 @@
 
 Version 1.0.4
 
-Generated: 2025-12-14 17:12:40
+Generated: 2025-12-25 14:16:48
 
 This wiki contains documentation generated from the Umamusume API information.
 

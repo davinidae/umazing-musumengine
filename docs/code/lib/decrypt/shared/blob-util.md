@@ -7,7 +7,7 @@
 > **decryptBlob2**(`blob2`, `iv`): `object`
 
 Defined in:
-[lib/decrypt/shared/blob.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/92508e018818c5fb68a0c2fe2b0ebc322fd78ba3/src/lib/decrypt/shared/blob.util.ts#L7)
+[lib/decrypt/shared/blob.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/bf08ed126f8bb645eae5e47186cb126eac41d65e/src/lib/decrypt/shared/blob.util.ts#L7)
 
 Decrypts blob2 using the 32B key appended at its end and the provided IV (AES-256-CBC). Returns the
 unpadded plaintext and the key used.

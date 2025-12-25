@@ -29,20 +29,26 @@ type MissionIndexRequest = {
 ```typescript
 type MissionIndexResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Player identifier
-    sid: string; // Session ID
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result code
-  };
-  data: {
-    mission_list: {
-      mission_id: number; // Unique mission identifier
-      exec_count: number; // Current progress count
-      mission_status: number; // Mission completion status (1=available, 2=completed, 3=claimed)
-      mission_type: number; // Mission category (1=daily, 2=weekly, 3=permanent, 4=event)
-      event_id: number; // Associated event ID (0 for regular missions)
-    }[];
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+}
+
+export interface Data {
+  mission_list: MissionList[];
+}
+
+export interface MissionList {
+  mission_id: number;
+  exec_count: number;
+  mission_status: number;
+  mission_type: number;
+  event_id: number;
+}
 ```

@@ -7,6 +7,7 @@
 - [api/endpoints/login](api/endpoints/login.md)
 - [api/endpoints/misc](api/endpoints/misc.md)
 - [api/models](api/models.md)
+- [api/models/api-enums.model](api/models/api-enums.model.md)
 - [api/models/pipelines.model](api/models/pipelines.model.md)
 - [api/models/result_codes.model](api/models/result_codes.model.md)
 - [api/pipelines](api/pipelines.md)

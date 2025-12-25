@@ -29,22 +29,30 @@ type DailyRaceIndexRequest = {
 ```typescript
 type DailyRaceIndexResponse = {
   response_code: number;
-  data_headers: {
-    viewer_id: number; // Confirmed user ID
-    sid: string; // Session identifier
-    servertime: number; // Server timestamp
-    result_code: number; // Operation result
-    notifications: {
-      room_match_race_result_num: number; // Number of pending room match results
-    };
-  };
-  data: {
-    daily_race_record_array: {
-      daily_race_id: number; // Unique daily race identifier
-      is_cleared: number; // Whether race was successfully completed (1=cleared, 0=not cleared)
-      is_played: number; // Whether race was attempted (1=played, 0=not played)
-    }[];
-    purchase_num: number; // Number of additional race attempts purchased
-  };
+  data_headers: DataHeaders;
+  data: Data;
 };
+
+export interface DataHeaders {
+  viewer_id: number;
+  sid: string;
+  servertime: number;
+  result_code: number;
+  notifications: Notifications;
+}
+
+export interface Notifications {
+  room_match_race_result_num: number;
+}
+
+export interface Data {
+  daily_race_record_array: DailyRaceRecordArray[];
+  purchase_num: number;
+}
+
+export interface DailyRaceRecordArray {
+  daily_race_id: number;
+  is_cleared: number;
+  is_played: number;
+}
 ```

@@ -19,12 +19,9 @@ export const router = Router();
  */
 router.post('/login', async (req: Request, res: Response) => {
   try {
-    const { steam_id, steam_session_ticket = '' } = req.body || {};
-    if (!steam_id || typeof steam_id !== 'string') {
-      return res.status(400).json({
-        error: 'steam_id (string) is required',
-      });
-    }
+    console.log('Login request received');
+    console.log('Request body:', req.body);
+    const { steam_id = '', steam_session_ticket = '' } = req.body || {};
     const session = sessionManager.createSession(steam_id, steam_session_ticket, {
       steam_id,
     });
