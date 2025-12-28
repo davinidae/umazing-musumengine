@@ -62,6 +62,12 @@ Re-exports [RequestBase](models/uma-client.model.md#requestbase)
 
 ---
 
+### RequestResult
+
+Re-exports [RequestResult](models/uma-client.model.md#requestresult)
+
+---
+
 ### SignupData
 
 Re-exports [SignupData](models/uma-client.model.md#signupdata)
@@ -83,6 +89,12 @@ Re-exports [StartSessionRequest](models/uma-client.model.md#startsessionrequest)
 ### StartSessionResponse
 
 Re-exports [StartSessionResponse](models/uma-client.model.md#startsessionresponse)
+
+---
+
+### StepData
+
+Re-exports [StepData](models/uma-client.model.md#stepdata)
 
 ---
 

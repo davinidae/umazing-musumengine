@@ -1,5 +1,5 @@
 import { AttestationType, DeviceType } from '../../api/models';
-import { AuthKey, Udid } from '../utils';
+import { AuthKey, SessionId, Udid, UmaReqHeader } from '../utils';
 
 export type RequestBase = {
   carrier: string;
@@ -82,3 +82,18 @@ export type AuthMode =
       deviceType: DeviceType;
       attestationType: AttestationType;
     };
+
+export type RequestResult<T = unknown> = {
+  decoded: UmaResponse<T>;
+  endpoint: string;
+  body: Record<string, unknown>;
+  headers: Record<string, string>;
+};
+
+export type StepData = {
+  header: UmaReqHeader;
+  base: RequestBase;
+  resVer: string;
+  baseUrl: string;
+  updateSessionId: (sessionId: SessionId) => void;
+};

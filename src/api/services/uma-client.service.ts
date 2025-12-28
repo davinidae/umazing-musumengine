@@ -1,109 +1,95 @@
-import axios from 'axios';
-import {
-  AuthKey,
-  decompressResponse,
-  heuristicDecode,
-  newSessionId,
-  saltedMd5,
-  SessionId,
-  Udid,
-  UmaReqHeader,
-  UmaRequest,
-} from '../utils';
-import {
-  RequestBase,
-  SignupData,
-  SignupRequest,
-  StartSessionRequest,
-  StartSessionResponse,
-  UmaResponse,
-} from '../models';
+import { AuthKey, newSessionId, SessionId, sleep, Udid, UmaReqHeader } from '../utils';
+import { AttestationType, RequestBase, RequestResult } from '../models';
+import { ToolPreSignupStepService } from './steps/tool-pre_signup.step';
+import { ToolSignupStepService } from './steps/tool-signup.step';
+import { LoadIndexStepService } from './steps/load-index.step';
+import { StartSessionStepService } from './steps/start-session.step';
+import { UserChangeSexStepService } from './steps/user-change_sex.step';
+import { UserChangeNameStepService } from './steps/user-change_name.step';
+import { TutorialSkipStepService } from './steps/tutorial-skip.step';
 
+export function createUmaClient(
+  udid: Udid,
+  authKey: AuthKey | undefined,
+  base: RequestBase,
+  resVer: string,
+  baseUrl: string,
+): UmaClient {
+  const sessionId = newSessionId(udid, BigInt(base.viewer_id));
+  const header = new UmaReqHeader(sessionId, udid, authKey);
+  return new UmaClient(header, base, resVer, baseUrl);
+}
 export class UmaClient {
-  public resVer = '10002800';
-  public baseUrl = 'https://api.games.umamusume.com/umamusume/';
-
   public constructor(
     public header: UmaReqHeader,
     public base: RequestBase,
+    public resVer: string,
+    public baseUrl: string,
   ) {
     //
-  }
-
-  public static create(udid: Udid, authKey: AuthKey | undefined, base: RequestBase): UmaClient {
-    const sessionId = newSessionId(udid, BigInt(base.viewer_id));
-    const header = new UmaReqHeader(sessionId, udid, authKey);
-    return new UmaClient(header, base);
   }
 
   public regenSessionId(): void {
     this.header.sessionId = newSessionId(this.header.udid, BigInt(this.base.viewer_id));
   }
 
-  public async signup(): Promise<UmaResponse<SignupData>> {
-    await this.request<Record<string, never>, unknown>('tool/pre_signup', {});
-    this.regenSessionId();
-    const res = await this.request<SignupRequest, SignupData>('tool/signup', {
-      error_code: 0,
-      error_message: '',
-      attestation_type: 0,
-      optin_user_birth: 199801,
-      dma_state: 0,
-      country: 'Canada',
-      credential: '',
-    });
-    if (res.data) {
-      this.base.viewer_id = res.data.viewer_id;
-      this.header.authKey = new AuthKey(Uint8Array.from(Buffer.from(res.data.auth_key, 'base64')));
-    }
-    return res;
+  updateSessionId(sessionId: SessionId): void {
+    this.header.sessionId = sessionId;
   }
 
-  public async startSession(attestationType: number): Promise<UmaResponse<StartSessionResponse>> {
-    const res = await this.request<StartSessionRequest, StartSessionResponse>(
-      'tool/start_session',
-      { attestation_type: attestationType, device_token: null },
-    );
-    if (res.data?.resource_version) {
-      this.resVer = res.data.resource_version;
-    }
-    return res;
-  }
-
-  public async loadIndex(): Promise<UmaResponse<unknown>> {
-    return this.request<Record<string, string>, unknown>('load/index', {});
-  }
-
-  public async request<TReq extends object, TRes>(
-    endpoint: string,
-    req: TReq,
-  ): Promise<UmaResponse<TRes>> {
-    const wrapped = { ...req, ...this.base };
-    const request = UmaRequest.build(this.header, wrapped);
-    const res = await axios.post<string>(`${this.baseUrl}${endpoint}`, request.encode(), {
-      headers: {
-        SID: this.header.sessionId.asHex(),
-        Device: String(this.base.device),
-        ViewerID: String(this.base.viewer_id),
-        'X-Unity-Version': '2022.3.62f2',
-        'APP-VER': '1.20.11',
-        'RES-VER': this.resVer,
-        Accept: '*/*',
-        'Content-Type': 'application/x-msgpack',
+  getStepData() {
+    return {
+      header: this.header,
+      base: this.base,
+      resVer: this.resVer,
+      baseUrl: this.baseUrl,
+      updateSessionId: (sessionId: SessionId) => {
+        this.updateSessionId(sessionId);
       },
-      responseType: 'text',
-      transformResponse: (v) => v,
-      validateStatus: () => true,
-    });
-    const bodyB64 = res.data;
-    const decrypted = decompressResponse(bodyB64, this.header.udid);
-    const decoded = heuristicDecode<UmaResponse<TRes>>(decrypted);
-    if (decoded.data_headers?.sid) {
-      this.header.sessionId = new SessionId(
-        saltedMd5(Buffer.from(decoded.data_headers.sid, 'utf8')),
-      );
+    };
+  }
+
+  public async signup() {
+    const results: RequestResult[] = [];
+    const preSignupRes = await new ToolPreSignupStepService(this.getStepData()).execute();
+    results.push(preSignupRes);
+    this.regenSessionId();
+    const toolsignupRes = await new ToolSignupStepService(this.getStepData()).execute();
+    results.push(toolsignupRes);
+    const { viewer_id, authKey } = toolsignupRes;
+    this.base.viewer_id = viewer_id;
+    this.header.authKey = authKey;
+    return results;
+  }
+
+  public async logIn(attestationType: AttestationType) {
+    const results: RequestResult[] = [];
+    if (this.base.viewer_id !== 0 && this.header.authKey) {
+      // already signed up
+    } else {
+      results.push(...(await this.signup()));
     }
-    this.header.rerandomize();
-    return decoded;
+    this.regenSessionId();
+    const startSessionRes = await new StartSessionStepService(
+      this.getStepData(),
+      attestationType,
+    ).execute();
+    results.push(startSessionRes);
+    this.resVer = startSessionRes.resVer;
+    const loadIndexRes = await new LoadIndexStepService(this.getStepData()).execute();
+    results.push(loadIndexRes);
+    await sleep(2000);
+    const isTutorial = Boolean(startSessionRes.decoded.data?.is_tutorial);
+    if (isTutorial) {
+      const userChangeSexRes = await new UserChangeSexStepService(this.getStepData()).execute();
+      results.push(userChangeSexRes);
+      const userChangeNameRes = await new UserChangeNameStepService(this.getStepData()).execute();
+      results.push(userChangeNameRes);
+      const tutorialSkipRes = await new TutorialSkipStepService(this.getStepData()).execute();
+      results.push(tutorialSkipRes);
+    }
+    const loadIndexRes2 = await new LoadIndexStepService(this.getStepData()).execute();
+    results.push(loadIndexRes2);
+    return results;
   }
 }

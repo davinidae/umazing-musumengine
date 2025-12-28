@@ -1,6 +1,6 @@
 import { ApiResponse } from '../utils';
 import { HttpEvent } from '../models';
-import { Client } from '../services/client';
+import { UserSession } from '../services/user-session.service';
 
 export async function loginHandler(
   _event: HttpEvent<
@@ -11,15 +11,19 @@ export async function loginHandler(
     }>
   >,
 ): Promise<ApiResponse> {
+  const startTimestamp = new Date().toISOString();
   try {
-    const client = new Client();
-    await client.initialize();
+    const client = new UserSession();
+    const results = await client.initialize();
     return new ApiResponse(200, {
-      ok: true,
-      created_at: new Date().toISOString(),
+      startTimestamp,
+      endTimestamp: new Date().toISOString(),
+      results,
     });
   } catch (e: unknown) {
     return new ApiResponse(500, {
+      startTimestamp,
+      endTimestamp: new Date().toISOString(),
       error: 'login_failed',
       message: (e as Error).message || String(e),
     });

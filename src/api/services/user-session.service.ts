@@ -7,10 +7,13 @@ import {
   RequestBase,
 } from '../models';
 import { randomUUID } from 'crypto';
-import { sleep, Udid } from '../utils';
-import { UmaClient } from './uma-client.service';
+import { Udid } from '../utils';
+import { createUmaClient } from './uma-client.service';
 
-export class Client {
+export class UserSession {
+  public resVer = '10002800';
+  public baseUrl = 'https://api.games.umamusume.com/umamusume/';
+
   constructor(
     private readonly cfg: ClientConfig = {},
     private readonly auth: AuthMode = {
@@ -22,7 +25,7 @@ export class Client {
     //
   }
 
-  getDefaultInitBase(deviceType: number): RequestBase {
+  getDefaultBase(deviceType: number): RequestBase {
     return {
       carrier: '',
       device: deviceType,
@@ -43,32 +46,18 @@ export class Client {
 
   async initialize() {
     const udid = this.cfg.udid ?? new Udid(randomUUID());
-    const deviceType = this.auth.kind === 'steam' ? 4 : this.auth.deviceType;
-    const attestationType = this.auth.kind === 'steam' ? 0 : this.auth.attestationType;
-    const base: RequestBase = this.cfg.base ?? this.getDefaultInitBase(deviceType);
-    if (this.auth.kind === 'steam') {
+    const deviceType = this.auth.kind === AuthModeKind.STEAM ? 4 : this.auth.deviceType;
+    const attestationType = this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
+    const base: RequestBase = this.cfg.base ?? this.getDefaultBase(deviceType);
+    if (this.auth.kind === AuthModeKind.STEAM) {
       if (!base.steam_id || !base.steam_session_ticket) {
         throw new Error(
           'Steam auth requires cfg.base.steam_id and cfg.base.steam_session_ticket (ticket generation not implemented in TS port)',
         );
       }
     }
-    const client = UmaClient.create(udid, this.cfg.authKey, base);
-    if (client.base.viewer_id !== 0 && client.header.authKey) {
-      // already signed up
-    } else {
-      await client.signup();
-    }
-    client.regenSessionId();
-    const startSessionRes = await client.startSession(attestationType);
-    await client.loadIndex();
-    await sleep(2000);
-    const isTutorial = Boolean(startSessionRes.data?.is_tutorial);
-    if (isTutorial) {
-      await client.request('user/change_sex', { sex: 1 });
-      await client.request('user/change_name', { name: 'Carrot Liker' });
-      await client.request('tutorial/skip', {});
-    }
-    await client.loadIndex();
+    const client = createUmaClient(udid, this.cfg.authKey, base, this.resVer, this.baseUrl);
+    const results = await client.logIn(attestationType);
+    return results;
   }
 }
