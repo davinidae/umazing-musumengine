@@ -19,7 +19,7 @@ export type EncodeRequestInput = {
     /** 32-byte response key (hex); echoed back and used by the server. */
     response_key_hex: string;
     /** 48-byte auth key (hex); contents are opaque for our purposes. */
-    auth_key_hex: string;
+    auth_key_hex: string | null;
   } & Partial<{
     /** Raw 16-byte UDID in hex; alternative to udid_canonical. */
     udid_raw_hex: string;

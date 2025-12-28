@@ -3,7 +3,7 @@
  *
  * Wire format:
  * - request = [4B LE blob1_len][blob1][blob2]
- * - blob1   = [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)]
+ * - blob1   = [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(0|48)]
  * - blob2   = [AES-256-CBC(ciphertext)][deterministic_key(32)]
  *
  * Notes:

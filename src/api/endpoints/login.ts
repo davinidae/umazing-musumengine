@@ -1,32 +1,22 @@
 import { ApiResponse } from '../utils';
-import { loginPipeline, signupPipeline } from '../pipelines';
-import { sessionManager } from '../session/session-manager';
 import { HttpEvent } from '../models';
+import { Client } from '../services/client';
 
 export async function loginHandler(
-  event: HttpEvent<
+  _event: HttpEvent<
     Partial<{
       steam_id: string;
       steam_session_ticket: string;
-      prevSessionId: number;
+      prevSessionId: string | number;
     }>
   >,
 ): Promise<ApiResponse> {
   try {
-    const { steam_id = '', steam_session_ticket = '', prevSessionId } = event.body || {};
-    const session = await sessionManager.createSession(
-      steam_id,
-      steam_session_ticket,
-      prevSessionId,
-    );
-    const storedData = session.getStoredData();
-    const results = await session.runPipeline(storedData == null ? signupPipeline : loginPipeline);
-    const failed = results.find((r) => r.error);
+    const client = new Client();
+    await client.initialize();
     return new ApiResponse(200, {
-      session_id: session.id,
-      ok: !failed,
-      error: failed?.error ?? null,
-      created_at: new Date(session.createdAt).toISOString(),
+      ok: true,
+      created_at: new Date().toISOString(),
     });
   } catch (e: unknown) {
     return new ApiResponse(500, {

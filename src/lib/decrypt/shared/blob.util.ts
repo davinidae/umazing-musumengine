@@ -1,4 +1,4 @@
-import { createDecipheriv } from 'node:crypto';
+import { createDecipheriv } from 'crypto';
 
 /**
  * Decrypts blob2 using the 32B key appended at its end and the provided IV (AES-256-CBC).

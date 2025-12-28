@@ -96,6 +96,13 @@ describe('Unpacker strategies (unit)', () => {
     expect(out).toEqual({ a: 1, b: 'z' });
   });
 
+  test('KVStreamStrategy accepts a single (key,value) pair', () => {
+    const s = new KVStreamStrategy();
+    const kv = Buffer.concat([Buffer.from(encode('only')), Buffer.from(encode(123))]);
+    const out = s.execute(kv) as any;
+    expect(out).toEqual({ only: 123 });
+  });
+
   test('Unpacker falls back to diagnostic object when nothing matches', () => {
     const u = new Unpacker();
     const buf = Buffer.from([0x00, 0x01, 0x02, 0x03]);

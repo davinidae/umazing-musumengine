@@ -1,7 +1,7 @@
 /**
  * Protocol-related utilities: base64 file reading, request parsing, UDID helpers.
  */
-import fs from 'node:fs';
+import fs from 'fs';
 
 /**
  * Read a text file containing Base64 (possibly with whitespace) and return its bytes.
@@ -53,17 +53,34 @@ export function parseHeaderBlob1(blob1: Buffer): {
   response_key: Buffer;
   auth_key: Buffer;
 } {
-  if (blob1.length < 112) {
+  // Rust reference layout:
+  //   [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(0|48)]
+  // auth_key is optional for pre-signup/session-start flows.
+  const FIXED_WITHOUT_AUTH = 16 + 16 + 32;
+  const FIXED_WITH_AUTH = 16 + 16 + 32 + 48;
+
+  if (blob1.length < FIXED_WITHOUT_AUTH) {
     throw new Error(
-      `blob1 too short to contain the required 112 fixed bytes, ${blob1.length} found`,
+      `blob1 too short to contain the required ${FIXED_WITHOUT_AUTH} fixed bytes, ${blob1.length} found`,
     );
   }
+
+  const hasAuth = blob1.length >= FIXED_WITH_AUTH;
+  const fixed = hasAuth ? FIXED_WITH_AUTH : FIXED_WITHOUT_AUTH;
+  const prefix = blob1.subarray(0, blob1.length - fixed);
+  const tail = blob1.subarray(blob1.length - fixed);
+
+  const session_id = tail.subarray(0, 16);
+  const udid_raw = tail.subarray(16, 32);
+  const response_key = tail.subarray(32, 64);
+  const auth_key = hasAuth ? tail.subarray(64) : Buffer.alloc(0);
+
   return {
-    prefix: blob1.subarray(0, blob1.length - 112),
-    session_id: blob1.subarray(blob1.length - 112, blob1.length - 96),
-    udid_raw: blob1.subarray(blob1.length - 96, blob1.length - 80),
-    response_key: blob1.subarray(blob1.length - 80, blob1.length - 48),
-    auth_key: blob1.subarray(blob1.length - 48),
+    prefix,
+    session_id,
+    udid_raw,
+    response_key,
+    auth_key,
   };
 }
 

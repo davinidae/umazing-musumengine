@@ -1,6 +1,6 @@
 /**
  * Represents the parsed blob1 header fields.
- * Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
+ * Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(0|48)].
  */
 export class Blob1Header {
   private constructor(
@@ -21,14 +21,20 @@ export class Blob1Header {
    * @throws If required field sizes are not present.
    */
   static fromBuffer(blob1: Buffer): Blob1Header {
-    if (blob1.length < 112) {
-      throw new Error('blob1 too short to contain the required 112 fixed bytes');
+    const FIXED_WITHOUT_AUTH = 16 + 16 + 32;
+    const FIXED_WITH_AUTH = 16 + 16 + 32 + 48;
+    if (blob1.length < FIXED_WITHOUT_AUTH) {
+      throw new Error(`blob1 too short to contain the required ${FIXED_WITHOUT_AUTH} fixed bytes`);
     }
-    const prefix = blob1.subarray(0, blob1.length - 112);
-    const session_id = blob1.subarray(blob1.length - 112, blob1.length - 96);
-    const udid_raw = blob1.subarray(blob1.length - 96, blob1.length - 80);
-    const response_key = blob1.subarray(blob1.length - 80, blob1.length - 48);
-    const auth_key = blob1.subarray(blob1.length - 48);
+
+    const hasAuth = blob1.length >= FIXED_WITH_AUTH;
+    const fixed = hasAuth ? FIXED_WITH_AUTH : FIXED_WITHOUT_AUTH;
+    const prefix = blob1.subarray(0, blob1.length - fixed);
+    const tail = blob1.subarray(blob1.length - fixed);
+    const session_id = tail.subarray(0, 16);
+    const udid_raw = tail.subarray(16, 32);
+    const response_key = tail.subarray(32, 64);
+    const auth_key = hasAuth ? tail.subarray(64) : Buffer.alloc(0);
     if (session_id.length !== 16) {
       throw new Error('session_id must be 16 bytes');
     }
@@ -38,8 +44,8 @@ export class Blob1Header {
     if (response_key.length !== 32) {
       throw new Error('response_key must be 32 bytes');
     }
-    if (auth_key.length !== 48) {
-      throw new Error('auth_key must be 48 bytes');
+    if (auth_key.length !== 0 && auth_key.length !== 48) {
+      throw new Error('auth_key must be 0 or 48 bytes');
     }
     return new Blob1Header(prefix, session_id, udid_raw, response_key, auth_key);
   }

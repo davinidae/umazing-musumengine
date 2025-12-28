@@ -20,6 +20,19 @@ export function buildRequest(prefixHex: string): Buffer {
   return raw;
 }
 
+export function buildRequestWithoutAuth(prefixHex: string): Buffer {
+  const prefix = Buffer.from(prefixHex, 'hex');
+  const session = Buffer.from('11'.repeat(16), 'hex');
+  const udid = Buffer.from('22'.repeat(16), 'hex');
+  const respKey = Buffer.from('33'.repeat(32), 'hex');
+  const blob1 = Buffer.concat([prefix, session, udid, respKey]);
+  const key = Buffer.from('55'.repeat(32), 'hex');
+  const blob2 = Buffer.concat([Buffer.alloc(0), key]);
+  const raw = Buffer.concat([Buffer.alloc(4), blob1, blob2]);
+  raw.writeUInt32LE(blob1.length, 0);
+  return raw;
+}
+
 describe('protocol.util', () => {
   test('parseRequest splits header and blob2; parseHeaderBlob1 slices fields', () => {
     const raw = buildRequest('aabb');
@@ -30,6 +43,16 @@ describe('protocol.util', () => {
     expect(h.response_key.length).toEqual(32);
     expect(h.auth_key.length).toEqual(48);
     expect(blob2.length).toEqual(32); // only key appended
+  });
+
+  test('parseHeaderBlob1 supports missing auth_key (0B)', () => {
+    const raw = buildRequestWithoutAuth('aabb');
+    const [blob1] = parseRequest(raw);
+    const h = parseHeaderBlob1(blob1);
+    expect(h.session_id.length).toEqual(16);
+    expect(h.udid_raw.length).toEqual(16);
+    expect(h.response_key.length).toEqual(32);
+    expect(h.auth_key.length).toEqual(0);
   });
 
   test('udidRawToCanonicalString and deriveIvFromUdidString', () => {

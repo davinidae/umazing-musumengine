@@ -1,5 +1,5 @@
 import { encode } from '@msgpack/msgpack';
-import { createHash } from 'node:crypto';
+import { createHash } from 'crypto';
 import {
   deriveIvFromUdidString,
   encryptAes256Cbc,
@@ -69,9 +69,10 @@ export class EncryptPayloadService {
         if (responseKey.length !== 32) {
           throw new Error('response_key_hex must be 32B');
         }
-        const authKey = Buffer.from(blob1.auth_key_hex, 'hex');
-        if (authKey.length !== 48) {
-          throw new Error('auth_key_hex must be 48B');
+        const authKeyHex = blob1.auth_key_hex;
+        const authKey = authKeyHex ? Buffer.from(authKeyHex, 'hex') : Buffer.alloc(0);
+        if (authKey.length !== 0 && authKey.length !== 48) {
+          throw new Error('auth_key_hex must be 48B when provided');
         }
         // Build plaintext;
         const payloadObj = fromJsonFriendly(blob2);
@@ -92,7 +93,7 @@ export class EncryptPayloadService {
           sessionId,
           Buffer.from(blob1.udid_raw_hex ?? udidString.replace(/-/g, ''), 'hex'),
           responseKey,
-          authKey,
+          ...(authKey.length ? [authKey] : []),
         ]);
         const full = Buffer.concat([
           Buffer.alloc(4),

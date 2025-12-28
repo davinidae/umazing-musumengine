@@ -17,58 +17,28 @@
 </li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>models</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>umamusume-api</summary>
+<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
+
+- [[code/api/models/umamusume-api/enums-model.md|enums-model.md]]
+
+- [[code/api/models/umamusume-api/result_codes-model.md|result_codes-model.md]]
+
+</ul>
+</details>
+</li>
 
 - [[code/api/models/api-model.md|api-model.md]]
 
-- [[code/api/models/pipelines-model.md|pipelines-model.md]]
-
-- [[code/api/models/result_codes-model.md|result_codes-model.md]]
-
-- [[code/api/models/umamusume-api-enums-model.md|umamusume-api-enums-model.md]]
+- [[code/api/models/umamusume-api.md|umamusume-api.md]]
 
 </ul>
 </details>
 </li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>pipelines</summary>
-<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>services</summary>
-<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
-
-- [[code/api/pipelines/services/load-index-service.md|load-index-service.md]]
-
-- [[code/api/pipelines/services/step-service.md|step-service.md]]
-
-- [[code/api/pipelines/services/tool-pre_signup-service.md|tool-pre_signup-service.md]]
-
-- [[code/api/pipelines/services/tool-signup-service.md|tool-signup-service.md]]
-
-- [[code/api/pipelines/services/tool-start_session-service.md|tool-start_session-service.md]]
-
-- [[code/api/pipelines/services/tutorial-skip-service.md|tutorial-skip-service.md]]
-
-- [[code/api/pipelines/services/user-change_name-service.md|user-change_name-service.md]]
-
-- [[code/api/pipelines/services/user-change_sex-service.md|user-change_sex-service.md]]
-
-</ul>
-</details>
-</li>
-
-- [[code/api/pipelines/pipeline_groups.md|pipeline_groups.md]]
-
-- [[code/api/pipelines/services.md|services.md]]
-
-</ul>
-</details>
-</li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>session</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
-- [[code/api/session/pipeline.md|pipeline.md]]
-
-- [[code/api/session/session-manager.md|session-manager.md]]
-
-- [[code/api/session/user-session.md|user-session.md]]
+- [[code/api/services/client.md|client.md]]
 
 </ul>
 </details>
@@ -78,6 +48,8 @@
 
 - [[code/api/utils/api-util.md|api-util.md]]
 
+- [[code/api/utils/sleep-util.md|sleep-util.md]]
+
 </ul>
 </details>
 </li>
@@ -85,8 +57,6 @@
 - [[code/api/endpoints.md|endpoints.md]]
 
 - [[code/api/models.md|models.md]]
-
-- [[code/api/pipelines.md|pipelines.md]]
 
 - [[code/api/utils.md|utils.md]]
 
@@ -167,6 +137,50 @@
 </ul>
 </details>
 </li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>rust-port</summary>
+<ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>client</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[code/rust-port/client/model.md|model.md]]
+
+- [[code/rust-port/client/uma-client.md|uma-client.md]]
+
+- [[code/rust-port/client/utils.md|utils.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>msgpack</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[code/rust-port/msgpack/constants.md|constants.md]]
+
+- [[code/rust-port/msgpack/utils.md|utils.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>protocol</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[code/rust-port/protocol/constants.md|constants.md]]
+
+- [[code/rust-port/protocol/utils.md|utils.md]]
+
+</ul>
+</details>
+</li>
+
+- [[code/rust-port/client.md|client.md]]
+
+- [[code/rust-port/msgpack.md|msgpack.md]]
+
+- [[code/rust-port/protocol.md|protocol.md]]
+
+</ul>
+</details>
+</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>umatypes</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>namespaces</summary>
@@ -193,6 +207,8 @@
 - [[code/lib.md|lib.md]]
 
 - [[code/README.md|README.md]]
+
+- [[code/rust-port.md|rust-port.md]]
 
 - [[code/variables.md|variables.md]]
 
@@ -614,6 +630,16 @@
 </li>
 
 - [[umamusume_api_info/endpoints/README.md|README.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>rust</summary>
+<ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
+
+- [[umamusume_api_info/rust/lib.rs|lib.rs]]
+
+- [[umamusume_api_info/rust/msgpack.rs|msgpack.rs]]
 
 </ul>
 </details>

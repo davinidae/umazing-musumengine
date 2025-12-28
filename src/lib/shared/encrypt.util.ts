@@ -1,7 +1,7 @@
 /**
  * Encryption helpers.
  */
-import { createCipheriv } from 'node:crypto';
+import { createCipheriv } from 'crypto';
 
 /**
  * AES-256-CBC encrypt without auto-PKCS#7 padding (data must already be padded).

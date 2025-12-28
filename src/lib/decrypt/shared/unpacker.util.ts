@@ -103,18 +103,20 @@ export class KVStreamStrategy extends UnpackStrategy {
       }
       try {
         const seq = [...decodeMulti(buf.subarray(i))];
+        // Rust behavior: once it finds the first string key marker, it expects the remainder
+        // to be a strict (string key, value) stream until EOF.
+        if (seq.length === 0 || seq.length % 2 !== 0) {
+          continue;
+        }
         const obj: Record<string, unknown> = {};
-        let pairs = 0;
-        for (let j = 0; j + 1 < seq.length; j += 2) {
+        for (let j = 0; j < seq.length; j += 2) {
           if (typeof seq[j] !== 'string') {
-            break;
+            throw new Error('non-string key in kv-stream');
           }
           obj[seq[j] as string] = seq[j + 1];
-          pairs++;
         }
-        if (pairs >= 2) {
-          return this.normalizeResponseShape(obj);
-        }
+        // Accept even a single (k,v) pair; Rust does not require a minimum pair count.
+        return this.normalizeResponseShape(obj);
       } catch (_e) {
         /* ignore: heuristic decodeMulti attempt */
       }

@@ -1,5 +1,5 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from 'fs';
+import path from 'path';
 import { RuntimeClient } from '../src';
 import {
   parseRequest,
@@ -8,7 +8,7 @@ import {
   deriveIvFromUdidString,
 } from '../src';
 import { encode as mpEncode } from '@msgpack/msgpack';
-import { createHash } from 'node:crypto';
+import { createHash } from 'crypto';
 import { pkcs7Pad } from '../src';
 import { DETERMINISTIC_ENC_SECRET } from '../src/variables';
 import { encryptAes256Cbc } from '../src';

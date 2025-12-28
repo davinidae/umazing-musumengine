@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { createDecipheriv, createHash } from 'node:crypto';
+import { createDecipheriv, createHash } from 'crypto';
 import {
   EncryptPayloadService,
   DETERMINISTIC_ENC_SECRET,

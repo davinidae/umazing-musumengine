@@ -1,0 +1,38 @@
+Upstream URL: https: //api.games.umamusume.com/umamusume/tool/pre_signup
+Upstream headers: {
+    "sid": "1e84b0d25909f2d7bbd0b1d3ad0e24d5",
+    "device": 2,
+    "viewerid": 0,
+    "x-unity-version": "2022.3.62f2",
+    "app-ver": "1.20.11",
+    "res-ver": "10002800",
+    "accept": "*/*",
+    "content-type": "application/x-msgpack"
+}
+Upstream request payload: {
+    "blob1": {
+        "prefix_hex": "6b20e2ab6c311330f761d737ce3f3025750850665eea58b6372f8d2f57501eb344bdb7270a9067f5b63cd61f152cfb986cbfbf7a",
+        "udid_raw_hex": "263f2ffe540145713c1b8bd4bb690269",
+        "session_id_hex": "60a399bd7451524b984dffddf90d954d",
+        "response_key_hex": "00426e30e1d282d8b5c2afe7c14455e8b9fa3b723b6df6cb5fc4798669ddde8d",
+        "auth_key_hex": null,
+        "viewer_id": 0
+    },
+    "blob2": {
+        "viewer_id": 0,
+        "device": 2,
+        "device_id": "20996ca074d2476dbc2ff9e23679294a",
+        "device_name": "OnePlus HD 542",
+        "graphics_device_name": "Adreno (TM) 640",
+        "ip_address": "192.168.1.42",
+        "platform_os_version": "Windows 10  (10.0.26200) 64bit",
+        "carrier": "",
+        "keychain": 0,
+        "locale": "JPN",
+        "dmm_viewer_id": null,
+        "dmm_onetime_token": null,
+        "steam_id": null,
+        "steam_session_ticket": null
+    }
+}
+Upstream request (Base64): dAAAAGsg4qtsMRMw92HXN84/MCV1CFBmXupYtjcvjS9XUB6zRL23JwqQZ/W2PNYfFSz7mGy/v3pgo5m9dFFSS5hN/935DZVNJj8v/lQBRXE8G4vUu2kCaYD5U02jaTeBjK6VNg4Op9cqNriMnWciKOyUt2aLsazGioC845CVbHN8qt2jTkhU36fjjpiFCjSD320Rrh8h8RWZDR76Z57l9BmACAH2f9czaJAutehfYLGT5ZrcR3IbUNCJpSTOdqi/wDqDsYIOduRNKYIXNNL4viB1V3KRxLQ9Pw6fuRVixMnDmAEbklIOZFT+BTt5bOM6wB8HojT2Ma8eSj65bZnlsZUocg/QfLh287Z83rarB7+SB+1TuZwYj6JqCW1wEHXYA4qkmZYeKhHSpOvclqpgHRFPJkIJc9uHV+/ZASXAm2qELwOuJIPCxs/6U0CPfncYEkLu8e5kwoWvX4ECstQB1Mnfkw0P4rby3hUCnlSyshcjhqpsLe/wn5fQfOzh+pVqWsSHe4dKS039NWPuBebs06QAboBHeviRgb5UwrCKT5UjDQjZ2HS9Dtb7Rjz2VCT7TY5jWI554vL/zq+qDetw43QWDz5TfkdZ
