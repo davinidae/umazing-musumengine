@@ -5,7 +5,7 @@
 ### AttestationType
 
 Defined in:
-[api/models/umamusume-api/enums.model.ts:1](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/models/umamusume-api/enums.model.ts#L1)
+[api/models/umamusume-api/enums.model.ts:1](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/models/umamusume-api/enums.model.ts#L1)
 
 #### Enumeration Members
 
@@ -14,21 +14,21 @@ Defined in:
 > **Mobile**: `1`
 
 Defined in:
-[api/models/umamusume-api/enums.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/models/umamusume-api/enums.model.ts#L3)
+[api/models/umamusume-api/enums.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/models/umamusume-api/enums.model.ts#L3)
 
 ##### PC
 
 > **PC**: `0`
 
 Defined in:
-[api/models/umamusume-api/enums.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/models/umamusume-api/enums.model.ts#L2)
+[api/models/umamusume-api/enums.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/models/umamusume-api/enums.model.ts#L2)
 
 ---
 
 ### DeviceType
 
 Defined in:
-[api/models/umamusume-api/enums.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/models/umamusume-api/enums.model.ts#L6)
+[api/models/umamusume-api/enums.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/models/umamusume-api/enums.model.ts#L6)
 
 #### Enumeration Members
 
@@ -37,11 +37,11 @@ Defined in:
 > **ANDROID**: `2`
 
 Defined in:
-[api/models/umamusume-api/enums.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/models/umamusume-api/enums.model.ts#L7)
+[api/models/umamusume-api/enums.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/models/umamusume-api/enums.model.ts#L7)
 
 ##### PC
 
 > **PC**: `4`
 
 Defined in:
-[api/models/umamusume-api/enums.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/models/umamusume-api/enums.model.ts#L8)
+[api/models/umamusume-api/enums.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/models/umamusume-api/enums.model.ts#L8)

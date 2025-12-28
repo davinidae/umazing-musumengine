@@ -1,5 +1,5 @@
 import { decode, decodeMulti } from '@msgpack/msgpack';
-import { STR16, STR32, STR8 } from './constants';
+import { STR16, STR32, STR8 } from '../constants';
 
 function isStringMarker(marker: number): boolean {
   // FixStr: 0xa0..0xbf

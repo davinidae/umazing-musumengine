@@ -1,7 +1,7 @@
 import { AttestationType, DeviceType } from '../../api/models';
-import type { AuthKey, Udid } from '../protocol';
+import { AuthKey, Udid } from '../utils';
 
-export interface RequestBase {
+export type RequestBase = {
   carrier: string;
   device: number;
   device_id: string;
@@ -16,22 +16,23 @@ export interface RequestBase {
   viewer_id: number;
   steam_id: string | null;
   steam_session_ticket: string | null;
-}
+};
 
-export interface DataHeaders {
+export type DataHeaders = {
   viewer_id: number;
   sid: string;
   servertime: number;
   result_code: number;
   [k: string]: unknown;
-}
+};
 
-export interface UmaResponse<T> {
+export type UmaResponse<T> = {
   data_headers: DataHeaders;
-  data?: T;
-}
+} & Partial<{
+  data: T;
+}>;
 
-export interface SignupRequest {
+export type SignupRequest = {
   error_code: number;
   error_message: string;
   attestation_type: number;
@@ -39,40 +40,45 @@ export interface SignupRequest {
   dma_state: number;
   country: string;
   credential: string;
-}
+};
 
-export interface SignupData {
+export type SignupData = {
   viewer_id: number;
   auth_key: string;
-}
+};
 
-export interface StartSessionRequest {
+export type StartSessionRequest = {
   attestation_type: number;
   device_token: string | null;
-}
+};
 
-export interface StartSessionResponse {
+export type StartSessionResponse = {
   attest: boolean;
   is_tutorial: boolean;
   nonce: string;
   resource_version: string;
   terms_updated: boolean;
-}
+};
 
-export interface ClientConfig {
-  udid?: Udid;
-  authKey?: AuthKey;
-  base?: RequestBase;
+export type ClientConfig = Partial<{
+  udid: Udid;
+  authKey: AuthKey;
+  base: RequestBase;
+}>;
+
+export enum AuthModeKind {
+  STEAM = 'steam',
+  MOBILE = 'mobile',
 }
 
 export type AuthMode =
   | {
-      kind: 'steam';
+      kind: AuthModeKind.STEAM;
       username: string;
       password: string;
     }
   | {
-      kind: 'custom';
+      kind: AuthModeKind.MOBILE;
       deviceType: DeviceType;
       attestationType: AttestationType;
     };

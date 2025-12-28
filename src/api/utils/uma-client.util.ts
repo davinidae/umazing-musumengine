@@ -1,4 +1,4 @@
-import { RequestBase } from './model';
+import { RequestBase } from '../models';
 
 export function defaultRequestBase(): RequestBase {
   return {

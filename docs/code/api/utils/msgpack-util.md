@@ -1,4 +1,4 @@
-# rust-port/msgpack/utils
+# api/utils/msgpack.util
 
 ## Functions
 
@@ -7,7 +7,7 @@
 > **heuristicDecode**\<`T`\>(`data`): `T`
 
 Defined in:
-[rust-port/msgpack/utils.ts:48](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/rust-port/msgpack/utils.ts#L48)
+[api/utils/msgpack.util.ts:48](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/utils/msgpack.util.ts#L48)
 
 #### Type Parameters
 
@@ -32,7 +32,7 @@ Defined in:
 > **kvstreamDecode**\<`T`\>(`data`): `T`
 
 Defined in:
-[rust-port/msgpack/utils.ts:27](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/rust-port/msgpack/utils.ts#L27)
+[api/utils/msgpack.util.ts:27](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/utils/msgpack.util.ts#L27)
 
 Rust parity: scans forward until the first msgpack string marker, then decodes a sequence of
 key(string), value(any) pairs until EOF.
@@ -60,7 +60,7 @@ key(string), value(any) pairs until EOF.
 > **msgpackLenDecode**\<`T`\>(`data`): `T`
 
 Defined in:
-[rust-port/msgpack/utils.ts:11](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/rust-port/msgpack/utils.ts#L11)
+[api/utils/msgpack.util.ts:11](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/utils/msgpack.util.ts#L11)
 
 #### Type Parameters
 

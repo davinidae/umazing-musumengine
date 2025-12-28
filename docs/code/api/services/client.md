@@ -5,7 +5,7 @@
 ### Client
 
 Defined in:
-[api/services/client.ts:7](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/services/client.ts#L7)
+[api/services/client.ts:13](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/services/client.ts#L13)
 
 #### Constructors
 
@@ -14,17 +14,17 @@ Defined in:
 > **new Client**(`cfg`, `auth`): [`Client`](#client)
 
 Defined in:
-[api/services/client.ts:8](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/services/client.ts#L8)
+[api/services/client.ts:14](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/services/client.ts#L14)
 
 ###### Parameters
 
 ###### cfg
 
-[`ClientConfig`](../../rust-port/client/model.md#clientconfig) = `{}`
+[`ClientConfig`](../models/uma-client.model.md#clientconfig) = `{}`
 
 ###### auth
 
-[`AuthMode`](../../rust-port/client/model.md#authmode) = `...`
+[`AuthMode`](../models/uma-client.model.md#authmode) = `...`
 
 ###### Returns
 
@@ -34,27 +34,26 @@ Defined in:
 
 ##### auth
 
-> `private` `readonly` **auth**: [`AuthMode`](../../rust-port/client/model.md#authmode)
+> `private` `readonly` **auth**: [`AuthMode`](../models/uma-client.model.md#authmode)
 
 Defined in:
-[api/services/client.ts:10](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/services/client.ts#L10)
+[api/services/client.ts:16](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/services/client.ts#L16)
 
 ##### cfg
 
-> `private` `readonly` **cfg**: [`ClientConfig`](../../rust-port/client/model.md#clientconfig) =
-> `{}`
+> `private` `readonly` **cfg**: [`ClientConfig`](../models/uma-client.model.md#clientconfig) = `{}`
 
 Defined in:
-[api/services/client.ts:9](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/services/client.ts#L9)
+[api/services/client.ts:15](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/services/client.ts#L15)
 
 #### Methods
 
 ##### getDefaultInitBase()
 
-> **getDefaultInitBase**(`deviceType`): [`RequestBase`](../../rust-port/client/model.md#requestbase)
+> **getDefaultInitBase**(`deviceType`): [`RequestBase`](../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/client.ts:19](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/services/client.ts#L19)
+[api/services/client.ts:25](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/services/client.ts#L25)
 
 ###### Parameters
 
@@ -64,14 +63,14 @@ Defined in:
 
 ###### Returns
 
-[`RequestBase`](../../rust-port/client/model.md#requestbase)
+[`RequestBase`](../models/uma-client.model.md#requestbase)
 
 ##### initialize()
 
 > **initialize**(): `Promise`\<`void`\>
 
 Defined in:
-[api/services/client.ts:38](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/services/client.ts#L38)
+[api/services/client.ts:44](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/services/client.ts#L44)
 
 ###### Returns
 

@@ -1,14 +1,20 @@
-import { AttestationType, DeviceType } from '../models';
+import {
+  AttestationType,
+  AuthMode,
+  AuthModeKind,
+  ClientConfig,
+  DeviceType,
+  RequestBase,
+} from '../models';
 import { randomUUID } from 'crypto';
-import { Udid, UmaClient } from '../../rust-port';
-import type { AuthMode, ClientConfig, RequestBase } from '../../rust-port';
-import { sleep } from '../../api/utils';
+import { sleep, Udid } from '../utils';
+import { UmaClient } from './uma-client.service';
 
 export class Client {
   constructor(
     private readonly cfg: ClientConfig = {},
     private readonly auth: AuthMode = {
-      kind: 'custom',
+      kind: AuthModeKind.MOBILE,
       deviceType: DeviceType.ANDROID,
       attestationType: AttestationType.Mobile,
     },

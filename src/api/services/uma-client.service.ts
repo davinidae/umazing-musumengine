@@ -1,15 +1,15 @@
-import { heuristicDecode } from '../msgpack';
 import axios from 'axios';
 import {
   AuthKey,
-  saltedMd5,
   decompressResponse,
+  heuristicDecode,
   newSessionId,
+  saltedMd5,
   SessionId,
+  Udid,
   UmaReqHeader,
   UmaRequest,
-  Udid,
-} from '../protocol';
+} from '../utils';
 import {
   RequestBase,
   SignupData,
@@ -17,7 +17,7 @@ import {
   StartSessionRequest,
   StartSessionResponse,
   UmaResponse,
-} from './model';
+} from '../models';
 
 export class UmaClient {
   public resVer = '10002800';

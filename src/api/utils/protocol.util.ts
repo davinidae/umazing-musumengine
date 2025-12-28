@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import { encode } from '@msgpack/msgpack';
-import { COMMON_HEADER, SALT } from './constants';
+import { COMMON_HEADER, SALT } from '../constants';
 
 function u32le(value: number): Uint8Array {
   const out = new Uint8Array(4);

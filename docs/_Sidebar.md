@@ -5,6 +5,16 @@
 <ul style="list-style-type: disc; margin-left: 16px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>api</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>constants</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[code/api/constants/msgpack-constant.md|msgpack-constant.md]]
+
+- [[code/api/constants/protocol-constant.md|protocol-constant.md]]
+
+</ul>
+</details>
+</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>endpoints</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
@@ -30,6 +40,8 @@
 
 - [[code/api/models/api-model.md|api-model.md]]
 
+- [[code/api/models/uma-client-model.md|uma-client-model.md]]
+
 - [[code/api/models/umamusume-api.md|umamusume-api.md]]
 
 </ul>
@@ -40,6 +52,8 @@
 
 - [[code/api/services/client.md|client.md]]
 
+- [[code/api/services/uma-client-service.md|uma-client-service.md]]
+
 </ul>
 </details>
 </li>
@@ -48,11 +62,19 @@
 
 - [[code/api/utils/api-util.md|api-util.md]]
 
+- [[code/api/utils/msgpack-util.md|msgpack-util.md]]
+
+- [[code/api/utils/protocol-util.md|protocol-util.md]]
+
 - [[code/api/utils/sleep-util.md|sleep-util.md]]
+
+- [[code/api/utils/uma-client-util.md|uma-client-util.md]]
 
 </ul>
 </details>
 </li>
+
+- [[code/api/constants.md|constants.md]]
 
 - [[code/api/endpoints.md|endpoints.md]]
 
@@ -137,50 +159,6 @@
 </ul>
 </details>
 </li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>rust-port</summary>
-<ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>client</summary>
-<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-
-- [[code/rust-port/client/model.md|model.md]]
-
-- [[code/rust-port/client/uma-client.md|uma-client.md]]
-
-- [[code/rust-port/client/utils.md|utils.md]]
-
-</ul>
-</details>
-</li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>msgpack</summary>
-<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-
-- [[code/rust-port/msgpack/constants.md|constants.md]]
-
-- [[code/rust-port/msgpack/utils.md|utils.md]]
-
-</ul>
-</details>
-</li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>protocol</summary>
-<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-
-- [[code/rust-port/protocol/constants.md|constants.md]]
-
-- [[code/rust-port/protocol/utils.md|utils.md]]
-
-</ul>
-</details>
-</li>
-
-- [[code/rust-port/client.md|client.md]]
-
-- [[code/rust-port/msgpack.md|msgpack.md]]
-
-- [[code/rust-port/protocol.md|protocol.md]]
-
-</ul>
-</details>
-</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>umatypes</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>namespaces</summary>
@@ -207,8 +185,6 @@
 - [[code/lib.md|lib.md]]
 
 - [[code/README.md|README.md]]
-
-- [[code/rust-port.md|rust-port.md]]
 
 - [[code/variables.md|variables.md]]
 

@@ -7,7 +7,7 @@
 > **sleep**(`ms`): `Promise`\<`void`\>
 
 Defined in:
-[api/utils/sleep.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/5ab33fb89098eb733cdb60603508023e336b136a/src/api/utils/sleep.util.ts#L3)
+[api/utils/sleep.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/de45d1d49605fea07b4cf710c5fa2284e2c9d18c/src/api/utils/sleep.util.ts#L3)
 
 #### Parameters
 
