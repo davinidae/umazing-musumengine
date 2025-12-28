@@ -5,12 +5,12 @@
 ### ToolSignupStep
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L5)
+[api/services/steps/tool-signup.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/tool-signup.step.ts#L5)
 
 #### Extends
 
-- [`CoreStep`](core.step.md#corestep)\<[`SignupRequest`](../../models/uma-client.model.md#signuprequest),
-  [`SignupData`](../../models/uma-client.model.md#signupdata)\>
+- [`CoreStep`](core.step.md#corestep)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup),
+  [`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>
 
 #### Constructors
 
@@ -19,7 +19,7 @@ Defined in:
 > **new ToolSignupStep**(`stepData`): [`ToolSignupStep`](#toolsignupstep)
 
 Defined in:
-[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L9)
+[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L9)
 
 ###### Parameters
 
@@ -42,7 +42,7 @@ Defined in:
 > **endpoint**: `string` = `'tool/signup'`
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:6](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L6)
+[api/services/steps/tool-signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/tool-signup.step.ts#L9)
 
 ###### Overrides
 
@@ -53,7 +53,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L9)
+[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L9)
 
 ###### Inherited from
 
@@ -61,38 +61,55 @@ Defined in:
 
 #### Methods
 
-##### execute()
+##### afterExecute()
 
-> **execute**(): `Promise`\<\{ `authKey`: [`AuthKey`](../../utils/protocol.util.md#authkey) \|
-> `undefined`; `body`: `Record`\<`string`, `unknown`\>; `decoded`:
-> [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`SignupData`](../../models/uma-client.model.md#signupdata)\>;
-> `endpoint`: `string`; `headers`: `Record`\<`string`, `string`\>; `viewer_id`: `number`; \}\>
+> **afterExecute**(`result`): `Promise`\<`void`\>
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:20](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L20)
+[api/services/steps/tool-signup.step.ts:23](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/tool-signup.step.ts#L23)
+
+###### Parameters
+
+###### result
+
+[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>
 
 ###### Returns
 
-`Promise`\<\{ `authKey`: [`AuthKey`](../../utils/protocol.util.md#authkey) \| `undefined`; `body`:
-`Record`\<`string`, `unknown`\>; `decoded`:
-[`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`SignupData`](../../models/uma-client.model.md#signupdata)\>;
-`endpoint`: `string`; `headers`: `Record`\<`string`, `string`\>; `viewer_id`: `number`; \}\>
+`Promise`\<`void`\>
 
 ###### Overrides
+
+[`CoreStep`](core.step.md#corestep).[`afterExecute`](core.step.md#afterexecute)
+
+##### execute()
+
+> **execute**():
+> `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>\>
+
+Defined in:
+[api/services/steps/core.step.ts:68](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L68)
+
+###### Returns
+
+`Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>\>
+
+###### Inherited from
 
 [`CoreStep`](core.step.md#corestep).[`execute`](core.step.md#execute)
 
 ##### getBody()
 
-> `protected` **getBody**(): [`SignupRequest`](../../models/uma-client.model.md#signuprequest) &
+> `protected` **getBody**():
+> [`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup) &
 > [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L26)
+[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L26)
 
 ###### Returns
 
-[`SignupRequest`](../../models/uma-client.model.md#signuprequest) &
+[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup) &
 [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 ###### Inherited from
@@ -104,7 +121,7 @@ Defined in:
 > `protected` **getHeaders**(): `object`
 
 Defined in:
-[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L13)
+[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L13)
 
 ###### Returns
 
@@ -148,14 +165,42 @@ Defined in:
 
 ##### getRequestBody()
 
-> **getRequestBody**(): [`SignupRequest`](../../models/uma-client.model.md#signuprequest)
+> **getRequestBody**(): `object`
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L8)
+[api/services/steps/tool-signup.step.ts:11](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/tool-signup.step.ts#L11)
 
 ###### Returns
 
-[`SignupRequest`](../../models/uma-client.model.md#signuprequest)
+`object`
+
+###### attestation_type
+
+> **attestation_type**: `number` = `0`
+
+###### country
+
+> **country**: `string` = `'Canada'`
+
+###### credential
+
+> **credential**: `string` = `''`
+
+###### dma_state
+
+> **dma_state**: `number` = `0`
+
+###### error_code
+
+> **error_code**: `number` = `0`
+
+###### error_message
+
+> **error_message**: `string` = `''`
+
+###### optin_user_birth
+
+> **optin_user_birth**: `number` = `199801`
 
 ###### Overrides
 
@@ -164,21 +209,22 @@ Defined in:
 ##### request()
 
 > `protected` **request**(): `Promise`\<\{ `body`:
-> [`SignupRequest`](../../models/uma-client.model.md#signuprequest) &
+> [`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup) &
 > [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-> [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`SignupData`](../../models/uma-client.model.md#signupdata)\>;
+> [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>;
 > `headers`: \{ `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`:
 > `string`; `RES-VER`: `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`;
 > \}; \}\>
 
 Defined in:
-[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L33)
+[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L33)
 
 ###### Returns
 
-`Promise`\<\{ `body`: [`SignupRequest`](../../models/uma-client.model.md#signuprequest) &
+`Promise`\<\{ `body`:
+[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup) &
 [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-[`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`SignupData`](../../models/uma-client.model.md#signupdata)\>;
+[`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>;
 `headers`: \{ `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`;
 `RES-VER`: `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`; \}; \}\>
 

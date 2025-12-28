@@ -1,9 +1,16 @@
 import { CoreStep } from './core.step';
 
-export class ToolPreSignupStep extends CoreStep<Record<string, never>, unknown> {
+export class ToolPreSignupStep extends CoreStep<
+  Umatypes.Request.ToolPreSignup,
+  Umatypes.Response.ToolPreSignup
+> {
   endpoint = 'tool/pre_signup';
 
-  getRequestBody(): Record<string, never> {
+  getRequestBody() {
     return {};
+  }
+
+  protected async afterExecute() {
+    await this.stepData.umaclient.regenSessionId();
   }
 }

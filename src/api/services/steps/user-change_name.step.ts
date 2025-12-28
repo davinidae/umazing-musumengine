@@ -1,11 +1,23 @@
 import { CoreStep } from './core.step';
 
-export class UserChangeNameStep extends CoreStep<Record<string, string>, unknown> {
+export class UserChangeNameStep extends CoreStep<
+  Umatypes.Request.UserChangeName,
+  Umatypes.Response.UserChangeName
+> {
   endpoint = 'user/change_name';
 
   getRequestBody() {
+    const date = new Date();
     return {
-      name: 'Carrot Liker',
+      name: [
+        'UMA',
+        date.getFullYear().toString().substring(2),
+        date.getMonth() + 1,
+        date.getDate(),
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+      ].join(''),
     };
   }
 }

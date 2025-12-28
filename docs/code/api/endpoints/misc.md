@@ -7,7 +7,7 @@
 > **healthHandler**(): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[api/endpoints/misc.ts:3](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/endpoints/misc.ts#L3)
+[api/endpoints/misc.ts:3](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/endpoints/misc.ts#L3)
 
 #### Returns
 
@@ -20,7 +20,7 @@ Defined in:
 > **rootHandler**(): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[api/endpoints/misc.ts:11](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/endpoints/misc.ts#L11)
+[api/endpoints/misc.ts:11](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/endpoints/misc.ts#L11)
 
 #### Returns
 

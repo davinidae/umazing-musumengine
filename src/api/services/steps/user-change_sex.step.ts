@@ -1,10 +1,8 @@
 import { CoreStep } from './core.step';
 
 export class UserChangeSexStep extends CoreStep<
-  {
-    sex: number;
-  },
-  unknown
+  Umatypes.Request.UserChangeSex,
+  Umatypes.Response.UserChangeSex
 > {
   endpoint = 'user/change_sex';
 

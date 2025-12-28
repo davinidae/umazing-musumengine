@@ -185,9 +185,26 @@
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>namespaces</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>Umatypes</summary>
+<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>namespaces</summary>
+<ul style="list-style-type: disc; margin-left: 80px; padding-left: 0;">
 
-- [[code/umatypes/namespaces/Umatypes.md|Umatypes.md]]
+- [[code/umatypes/namespaces/Umatypes/namespaces/Request.md|Request.md]]
 
+- [[code/umatypes/namespaces/Umatypes/namespaces/Response.md|Response.md]]
+
+- [[code/umatypes/namespaces/Umatypes/namespaces/Unused.md|Unused.md]]
+
+</ul>
+</details>
+</li>
+
+- [[code/umatypes/namespaces/Umatypes/README.md|README.md]]
+
+</ul>
+</details>
+</li>
 </ul>
 </details>
 </li>

@@ -13,8 +13,9 @@ export async function loginHandler(
 ): Promise<ApiResponse> {
   const startTimestamp = new Date().toISOString();
   try {
-    const client = new UserSession();
-    const results = await client.initialize();
+    const userSession = new UserSession();
+    const client = await userSession.initialize();
+    const results = await client.logIn();
     return new ApiResponse(200, {
       startTimestamp,
       endTimestamp: new Date().toISOString(),

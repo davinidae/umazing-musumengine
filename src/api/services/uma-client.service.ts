@@ -1,5 +1,13 @@
-import { AuthKey, newSessionId, SessionId, sleep, Udid, UmaReqHeader } from '../utils';
-import { AttestationType, RequestBase, RequestResult } from '../models';
+import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../utils';
+import {
+  AuthMode,
+  AuthModeKind,
+  ClientConfig,
+  RequestBase,
+  RequestResult,
+  StepData,
+  UmaClientData,
+} from '../models';
 import { ToolPreSignupStep } from './steps/tool-pre_signup.step';
 import { ToolSignupStep } from './steps/tool-signup.step';
 import { LoadIndexStep } from './steps/load-index.step';
@@ -9,6 +17,8 @@ import { UserChangeNameStep } from './steps/user-change_name.step';
 import { TutorialSkipStep } from './steps/tutorial-skip.step';
 
 export function createUmaClient(
+  cfg: ClientConfig,
+  auth: AuthMode,
   udid: Udid,
   authKey: AuthKey | undefined,
   base: RequestBase,
@@ -17,79 +27,96 @@ export function createUmaClient(
 ): UmaClient {
   const sessionId = newSessionId(udid, BigInt(base.viewer_id));
   const header = new UmaReqHeader(sessionId, udid, authKey);
-  return new UmaClient(header, base, resVer, baseUrl);
+  return new UmaClient(cfg, auth, {
+    header,
+    base,
+    resVer,
+    baseUrl,
+  });
 }
+
 export class UmaClient {
-  public constructor(
-    public header: UmaReqHeader,
-    public base: RequestBase,
-    public resVer: string,
-    public baseUrl: string,
+  constructor(
+    private readonly cfg: ClientConfig,
+    private readonly auth: AuthMode,
+    private readonly umaclientData: UmaClientData,
   ) {
     //
   }
 
   public regenSessionId(): void {
-    this.header.sessionId = newSessionId(this.header.udid, BigInt(this.base.viewer_id));
+    this.umaclientData.header.sessionId = newSessionId(
+      this.umaclientData.header.udid,
+      BigInt(this.umaclientData.base.viewer_id),
+    );
   }
 
-  updateSessionId(sessionId: SessionId): void {
-    this.header.sessionId = sessionId;
+  public updateSessionId(sessionId: SessionId): void {
+    this.umaclientData.header.sessionId = sessionId;
   }
 
-  getStepData() {
+  private getStepData(prevResults: RequestResult[] = []): StepData {
     return {
-      header: this.header,
-      base: this.base,
-      resVer: this.resVer,
-      baseUrl: this.baseUrl,
-      updateSessionId: (sessionId: SessionId) => {
-        this.updateSessionId(sessionId);
-      },
+      ...this.umaclientData,
+      prevResults,
+      umaclient: this,
     };
   }
 
-  public async signup() {
-    const results: RequestResult[] = [];
-    const preSignupRes = await new ToolPreSignupStep(this.getStepData()).execute();
-    results.push(preSignupRes);
-    this.regenSessionId();
-    const toolsignupRes = await new ToolSignupStep(this.getStepData()).execute();
-    results.push(toolsignupRes);
-    const { viewer_id, authKey } = toolsignupRes;
-    this.base.viewer_id = viewer_id;
-    this.header.authKey = authKey;
-    return results;
+  public updateResVer(resVer: string): void {
+    this.umaclientData.resVer = resVer;
   }
 
-  public async logIn(attestationType: AttestationType) {
-    const results: RequestResult[] = [];
-    if (this.base.viewer_id !== 0 && this.header.authKey) {
-      // already signed up
-    } else {
-      results.push(...(await this.signup()));
+  public updateViewerId(viewerId: number): void {
+    this.umaclientData.base.viewer_id = viewerId;
+  }
+
+  public updateAuthKey(authKey: AuthKey | undefined): void {
+    this.umaclientData.header.authKey = authKey;
+  }
+
+  private async signup(): Promise<RequestResult[]> {
+    if (this.umaclientData.base.viewer_id !== 0 && this.umaclientData.header.authKey) {
+      this.regenSessionId();
+      return [];
     }
-    this.regenSessionId();
+    return [
+      await new ToolPreSignupStep(this.getStepData()).execute(),
+      await new ToolSignupStep(this.getStepData()).execute(),
+    ];
+  }
+
+  private async tutorial(results: RequestResult[]): Promise<RequestResult[]> {
+    const startSessionResult = results.find((o) => {
+      return o.endpoint === '/start_session';
+    });
+    const isTutorial = Boolean(
+      (startSessionResult as RequestResult<Umatypes.Response.ToolStartSession>)?.decoded.data
+        ?.is_tutorial,
+    );
+    if (!isTutorial) {
+      return [];
+    }
+    return [
+      await new UserChangeSexStep(this.getStepData()).execute(),
+      await new UserChangeNameStep(this.getStepData()).execute(),
+      await new TutorialSkipStep(this.getStepData()).execute(),
+    ];
+  }
+
+  public async logIn(): Promise<RequestResult[]> {
+    const attestationType = this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
+    const results = [...(await this.signup())];
     const startSessionRes = await new StartSessionStep(
       this.getStepData(),
       attestationType,
     ).execute();
-    results.push(startSessionRes);
-    this.resVer = startSessionRes.resVer;
-    const loadIndexRes = await new LoadIndexStep(this.getStepData()).execute();
-    results.push(loadIndexRes);
-    await sleep(2000);
-    const isTutorial = Boolean(startSessionRes.decoded.data?.is_tutorial);
-    if (isTutorial) {
-      const userChangeSexRes = await new UserChangeSexStep(this.getStepData()).execute();
-      results.push(userChangeSexRes);
-      const userChangeNameRes = await new UserChangeNameStep(this.getStepData()).execute();
-      results.push(userChangeNameRes);
-      const tutorialSkipRes = await new TutorialSkipStep(this.getStepData()).execute();
-      results.push(tutorialSkipRes);
-    }
-    const loadIndexRes2 = await new LoadIndexStep(this.getStepData()).execute();
-    results.push(loadIndexRes2);
+    results.push(
+      startSessionRes,
+      await new LoadIndexStep(this.getStepData()).execute(),
+      ...(await this.tutorial(results)),
+      await new LoadIndexStep(this.getStepData(), false).execute(),
+    );
     return results;
   }
 }

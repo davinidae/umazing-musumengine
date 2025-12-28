@@ -1,5 +1,6 @@
 import { AttestationType, DeviceType } from '../../api/models';
-import { AuthKey, SessionId, Udid, UmaReqHeader } from '../utils';
+import { UmaClient } from '../services/uma-client.service';
+import { AuthKey, Udid, UmaReqHeader } from '../utils';
 
 export type RequestBase = {
   carrier: string;
@@ -32,34 +33,6 @@ export type UmaResponse<T> = {
   data: T;
 }>;
 
-export type SignupRequest = {
-  error_code: number;
-  error_message: string;
-  attestation_type: number;
-  optin_user_birth: number;
-  dma_state: number;
-  country: string;
-  credential: string;
-};
-
-export type SignupData = {
-  viewer_id: number;
-  auth_key: string;
-};
-
-export type StartSessionRequest = {
-  attestation_type: number;
-  device_token: string | null;
-};
-
-export type StartSessionResponse = {
-  attest: boolean;
-  is_tutorial: boolean;
-  nonce: string;
-  resource_version: string;
-  terms_updated: boolean;
-};
-
 export type ClientConfig = Partial<{
   udid: Udid;
   authKey: AuthKey;
@@ -90,10 +63,14 @@ export type RequestResult<T = unknown> = {
   headers: Record<string, string>;
 };
 
-export type StepData = {
+export type StepData = UmaClientData & {
+  prevResults: RequestResult[];
+  umaclient: UmaClient;
+};
+
+export type UmaClientData = {
   header: UmaReqHeader;
   base: RequestBase;
   resVer: string;
   baseUrl: string;
-  updateSessionId: (sessionId: SessionId) => void;
 };

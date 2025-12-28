@@ -6,7 +6,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
   abstract endpoint: string;
   abstract getRequestBody(): TReq;
 
-  public constructor(protected readonly stepData: StepData) {
+  constructor(protected readonly stepData: StepData) {
     //
   }
 
@@ -49,7 +49,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
     const decrypted = decompressResponse(bodyB64, this.stepData.header.udid);
     const decoded = heuristicDecode<UmaResponse<TRes>>(decrypted);
     if (decoded.data_headers?.sid) {
-      this.stepData.updateSessionId(
+      this.stepData.umaclient.updateSessionId(
         new SessionId(saltedMd5(Buffer.from(decoded.data_headers.sid, 'utf8'))),
       );
     }
@@ -61,10 +61,16 @@ export abstract class CoreStep<TReq extends object, TRes> {
     };
   }
 
+  protected async afterExecute(_result: RequestResult<TRes>): Promise<void> {
+    //
+  }
+
   async execute(): Promise<RequestResult<TRes>> {
-    return {
+    const result = {
       ...(await this.request()),
       endpoint: this.endpoint,
     };
+    await this.afterExecute(result);
+    return result;
   }
 }

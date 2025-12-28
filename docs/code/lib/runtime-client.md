@@ -5,7 +5,7 @@
 ### RuntimeClient
 
 Defined in:
-[lib/runtime-client.ts:27](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/lib/runtime-client.ts#L27)
+[lib/runtime-client.ts:27](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/runtime-client.ts#L27)
 
 #### Constructors
 
@@ -14,7 +14,7 @@ Defined in:
 > **new RuntimeClient**(`opts`): [`RuntimeClient`](#runtimeclient)
 
 Defined in:
-[lib/runtime-client.ts:31](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/lib/runtime-client.ts#L31)
+[lib/runtime-client.ts:31](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/runtime-client.ts#L31)
 
 Thin OO wrapper so consumers can inject options later.
 
@@ -37,7 +37,7 @@ Runtime options including the deterministic secret.
 > `private` `readonly` **opts**: [`ServiceOptions`](models/client.model.md#serviceoptions)
 
 Defined in:
-[lib/runtime-client.ts:32](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/lib/runtime-client.ts#L32)
+[lib/runtime-client.ts:32](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/runtime-client.ts#L32)
 
 Runtime options including the deterministic secret.
 
@@ -49,7 +49,7 @@ Runtime options including the deterministic secret.
 > [`DecodeResponseOutput`](models/runtime.model.md#decoderesponseoutput)
 
 Defined in:
-[lib/runtime-client.ts:64](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/lib/runtime-client.ts#L64)
+[lib/runtime-client.ts:64](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/runtime-client.ts#L64)
 
 Decode a Base64 response using the matching request for UDID/IV. Extracts UDID from blob1, derives
 IV, decrypts blob2, and uses the heuristic Unpacker to parse the plaintext.
@@ -77,7 +77,7 @@ If the request blob1 is malformed and UDID cannot be extracted.
 > **encodeRequest**(`input`): [`EncodeRequestOutput`](models/runtime.model.md#encoderequestoutput)
 
 Defined in:
-[lib/runtime-client.ts:46](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/lib/runtime-client.ts#L46)
+[lib/runtime-client.ts:46](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/runtime-client.ts#L46)
 
 Encode a request from header fields (blob1) and a JS payload.
 

@@ -47,7 +47,6 @@ export class UserSession {
   async initialize() {
     const udid = this.cfg.udid ?? new Udid(randomUUID());
     const deviceType = this.auth.kind === AuthModeKind.STEAM ? 4 : this.auth.deviceType;
-    const attestationType = this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
     const base: RequestBase = this.cfg.base ?? this.getDefaultBase(deviceType);
     if (this.auth.kind === AuthModeKind.STEAM) {
       if (!base.steam_id || !base.steam_session_ticket) {
@@ -56,8 +55,15 @@ export class UserSession {
         );
       }
     }
-    const client = createUmaClient(udid, this.cfg.authKey, base, this.resVer, this.baseUrl);
-    const results = await client.logIn(attestationType);
-    return results;
+    const client = createUmaClient(
+      this.cfg,
+      this.auth,
+      udid,
+      this.cfg.authKey,
+      base,
+      this.resVer,
+      this.baseUrl,
+    );
+    return client;
   }
 }

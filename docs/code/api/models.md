@@ -68,30 +68,6 @@ Re-exports [RequestResult](models/uma-client.model.md#requestresult)
 
 ---
 
-### SignupData
-
-Re-exports [SignupData](models/uma-client.model.md#signupdata)
-
----
-
-### SignupRequest
-
-Re-exports [SignupRequest](models/uma-client.model.md#signuprequest)
-
----
-
-### StartSessionRequest
-
-Re-exports [StartSessionRequest](models/uma-client.model.md#startsessionrequest)
-
----
-
-### StartSessionResponse
-
-Re-exports [StartSessionResponse](models/uma-client.model.md#startsessionresponse)
-
----
-
 ### StepData
 
 Re-exports [StepData](models/uma-client.model.md#stepdata)
@@ -101,6 +77,12 @@ Re-exports [StepData](models/uma-client.model.md#stepdata)
 ### StoredData
 
 Re-exports [StoredData](models/api.model.md#storeddata)
+
+---
+
+### UmaClientData
+
+Re-exports [UmaClientData](models/uma-client.model.md#umaclientdata)
 
 ---
 

@@ -1,7 +1,10 @@
-import { RequestResult, StartSessionRequest, StartSessionResponse, StepData } from '../../models';
+import { RequestResult, StepData } from '../../models';
 import { CoreStep } from './core.step';
 
-export class StartSessionStep extends CoreStep<StartSessionRequest, StartSessionResponse> {
+export class StartSessionStep extends CoreStep<
+  Umatypes.Request.ToolStartSession,
+  Umatypes.Response.ToolStartSession
+> {
   endpoint = 'tool/start_session';
 
   getRequestBody() {
@@ -18,19 +21,11 @@ export class StartSessionStep extends CoreStep<StartSessionRequest, StartSession
     super(stepData);
   }
 
-  public override async execute(): Promise<
-    RequestResult<StartSessionResponse> & {
-      resVer: string;
-    }
-  > {
-    const response = await super.execute();
+  protected override async afterExecute(result: RequestResult<Umatypes.Response.ToolStartSession>) {
     let resVer = this.stepData.resVer;
-    if (response.decoded.data?.resource_version) {
-      resVer = response.decoded.data.resource_version;
+    if (result.decoded.data?.resource_version) {
+      resVer = result.decoded.data.resource_version;
     }
-    return {
-      ...response,
-      resVer,
-    };
+    this.stepData.umaclient.updateResVer(resVer);
   }
 }

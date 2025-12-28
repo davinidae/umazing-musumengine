@@ -26,6 +26,10 @@ export default [
       parser: tsParser,
       sourceType: 'module',
       ecmaVersion: 'latest',
+      globals: {
+        // TypeScript ambient global namespace (declared in src/umatypes.d.ts)
+        Umatypes: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': tsPlugin,

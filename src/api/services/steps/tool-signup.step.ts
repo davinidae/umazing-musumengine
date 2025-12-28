@@ -1,11 +1,14 @@
-import { SignupData, SignupRequest } from '../../models';
+import { RequestResult } from '../../models';
 import { AuthKey } from '../../utils';
 import { CoreStep } from './core.step';
 
-export class ToolSignupStep extends CoreStep<SignupRequest, SignupData> {
+export class ToolSignupStep extends CoreStep<
+  Umatypes.Request.ToolSignup,
+  Umatypes.Response.ToolSignup
+> {
   endpoint = 'tool/signup';
 
-  getRequestBody(): SignupRequest {
+  getRequestBody() {
     return {
       error_code: 0,
       error_message: '',
@@ -17,18 +20,15 @@ export class ToolSignupStep extends CoreStep<SignupRequest, SignupData> {
     };
   }
 
-  public override async execute() {
-    const response = await super.execute();
+  public override async afterExecute(result: RequestResult<Umatypes.Response.ToolSignup>) {
     let viewer_id = this.stepData.base.viewer_id;
     let authKey = this.stepData.header.authKey;
-    if (response.decoded.data) {
-      viewer_id = response.decoded.data.viewer_id;
-      authKey = new AuthKey(Uint8Array.from(Buffer.from(response.decoded.data.auth_key, 'base64')));
+    if (result.decoded.data) {
+      viewer_id = result.decoded.data.viewer_id;
+      authKey = new AuthKey(Uint8Array.from(Buffer.from(result.decoded.data.auth_key, 'base64')));
     }
-    return {
-      ...response,
-      viewer_id,
-      authKey,
-    };
+    this.stepData.umaclient.updateViewerId(viewer_id);
+    this.stepData.umaclient.updateAuthKey(authKey);
+    this.stepData.umaclient.regenSessionId();
   }
 }

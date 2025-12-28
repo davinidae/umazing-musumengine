@@ -2,4 +2,4 @@
 
 ## Namespaces
 
-- [Umatypes](namespaces/Umatypes.md)
+- [Umatypes](namespaces/Umatypes/README.md)

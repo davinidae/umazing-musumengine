@@ -5,11 +5,12 @@
 ### UserChangeNameStep
 
 Defined in:
-[api/services/steps/user-change_name.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/user-change_name.step.ts#L3)
+[api/services/steps/user-change_name.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/user-change_name.step.ts#L3)
 
 #### Extends
 
-- [`CoreStep`](core.step.md#corestep)\<`Record`\<`string`, `string`\>, `unknown`\>
+- [`CoreStep`](core.step.md#corestep)\<[`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename),
+  [`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#userchangename)\>
 
 #### Constructors
 
@@ -18,7 +19,7 @@ Defined in:
 > **new UserChangeNameStep**(`stepData`): [`UserChangeNameStep`](#userchangenamestep)
 
 Defined in:
-[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L9)
+[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L9)
 
 ###### Parameters
 
@@ -41,7 +42,7 @@ Defined in:
 > **endpoint**: `string` = `'user/change_name'`
 
 Defined in:
-[api/services/steps/user-change_name.step.ts:4](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/user-change_name.step.ts#L4)
+[api/services/steps/user-change_name.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/user-change_name.step.ts#L7)
 
 ###### Overrides
 
@@ -52,7 +53,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L9)
+[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L9)
 
 ###### Inherited from
 
@@ -60,13 +61,34 @@ Defined in:
 
 #### Methods
 
+##### afterExecute()
+
+> `protected` **afterExecute**(`_result`): `Promise`\<`void`\>
+
+Defined in:
+[api/services/steps/core.step.ts:64](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L64)
+
+###### Parameters
+
+###### \_result
+
+[`RequestResult`](../../models/uma-client.model.md#requestresult)\<`unknown`\>
+
+###### Returns
+
+`Promise`\<`void`\>
+
+###### Inherited from
+
+[`CoreStep`](core.step.md#corestep).[`afterExecute`](core.step.md#afterexecute)
+
 ##### execute()
 
 > **execute**():
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<`unknown`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:64](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L64)
+[api/services/steps/core.step.ts:68](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L68)
 
 ###### Returns
 
@@ -78,15 +100,17 @@ Defined in:
 
 ##### getBody()
 
-> `protected` **getBody**(): `Record`\<`string`, `string`\> &
+> `protected` **getBody**():
+> [`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
 > [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L26)
+[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L26)
 
 ###### Returns
 
-`Record`\<`string`, `string`\> & [`RequestBase`](../../models/uma-client.model.md#requestbase)
+[`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
+[`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 ###### Inherited from
 
@@ -97,7 +121,7 @@ Defined in:
 > `protected` **getHeaders**(): `object`
 
 Defined in:
-[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L13)
+[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L13)
 
 ###### Returns
 
@@ -144,7 +168,7 @@ Defined in:
 > **getRequestBody**(): `object`
 
 Defined in:
-[api/services/steps/user-change_name.step.ts:6](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/user-change_name.step.ts#L6)
+[api/services/steps/user-change_name.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/user-change_name.step.ts#L9)
 
 ###### Returns
 
@@ -152,7 +176,7 @@ Defined in:
 
 ###### name
 
-> **name**: `string` = `'Carrot Liker'`
+> **name**: `string`
 
 ###### Overrides
 
@@ -160,18 +184,20 @@ Defined in:
 
 ##### request()
 
-> `protected` **request**(): `Promise`\<\{ `body`: `Record`\<`string`, `string`\> &
+> `protected` **request**(): `Promise`\<\{ `body`:
+> [`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
 > [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
 > [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<`unknown`\>; `headers`: \{
 > `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`; `RES-VER`:
 > `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`; \}; \}\>
 
 Defined in:
-[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L33)
+[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L33)
 
 ###### Returns
 
-`Promise`\<\{ `body`: `Record`\<`string`, `string`\> &
+`Promise`\<\{ `body`:
+[`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
 [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
 [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<`unknown`\>; `headers`: \{ `Accept`:
 `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`; `RES-VER`: `string`;
