@@ -5,7 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/encrypt/payload.service.ts#L27)
+[lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/lib/encrypt/payload.service.ts#L27)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -31,7 +31,7 @@ Framing modes:
 > **build**(`input`): `BuiltEncryptedPayload`
 
 Defined in:
-[lib/encrypt/payload.service.ts:37](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/encrypt/payload.service.ts#L37)
+[lib/encrypt/payload.service.ts:37](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/lib/encrypt/payload.service.ts#L37)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 

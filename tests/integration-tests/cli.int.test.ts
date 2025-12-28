@@ -12,13 +12,59 @@ import {
 } from '../../src';
 
 export function parseJsonFromStdout(stdout: string): any {
-  const start = stdout.indexOf('{');
-  const end = stdout.lastIndexOf('}');
-  if (start === -1 || end === -1 || end < start) {
-    throw new SyntaxError('Could not locate JSON payload in stdout');
+  type Range = { start: number; end: number };
+  const ranges: Range[] = [];
+  let depth = 0;
+  let start = -1;
+  let inString = false;
+  let escaped = false;
+  for (let i = 0; i < stdout.length; i++) {
+    const ch = stdout[i];
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+        continue;
+      }
+      if (ch === '\\') {
+        escaped = true;
+        continue;
+      }
+      if (ch === '"') {
+        inString = false;
+      }
+      continue;
+    }
+    if (ch === '"') {
+      inString = true;
+      continue;
+    }
+    if (ch === '{') {
+      if (depth === 0) {
+        start = i;
+      }
+      depth++;
+      continue;
+    }
+    if (ch === '}') {
+      if (depth > 0) {
+        depth--;
+      }
+      if (depth === 0 && start !== -1) {
+        ranges.push({ start, end: i });
+        start = -1;
+      }
+    }
   }
-  const slice = stdout.slice(start, end + 1);
-  return JSON.parse(slice);
+  for (let i = ranges.length - 1; i >= 0; i--) {
+    const r = ranges[i];
+    const slice = stdout.slice(r.start, r.end + 1);
+    try {
+      return JSON.parse(slice);
+    } catch {
+      // Try earlier JSON blocks
+    }
+  }
+  throw new SyntaxError('Could not locate JSON payload in stdout');
 }
 
 export function runCli(

@@ -5,7 +5,7 @@
 ### UserChangeNameService
 
 Defined in:
-[api/pipelines/services/user-change_name.service.ts:3](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/user-change_name.service.ts#L3)
+[api/pipelines/services/user-change_name.service.ts:3](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/user-change_name.service.ts#L3)
 
 Base class for a pipeline service step.
 
@@ -27,7 +27,7 @@ Responsibilities
 > [`UserChangeNameService`](#userchangenameservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:62](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L62)
+[api/pipelines/services/step.service.ts:62](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L62)
 
 Construct a step with the provided execution context.
 
@@ -59,7 +59,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > [`PipelineContext`](../../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L63)
+[api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L63)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -72,7 +72,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > `readonly` **endpoint**: `"user/change_name"` = `'user/change_name'`
 
 Defined in:
-[api/pipelines/services/user-change_name.service.ts:5](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/user-change_name.service.ts#L5)
+[api/pipelines/services/user-change_name.service.ts:5](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/user-change_name.service.ts#L5)
 
 ###### Overrides
 
@@ -84,7 +84,7 @@ Defined in:
 > `FramingMode.LengthPrefixed`
 
 Defined in:
-[api/pipelines/services/step.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L24)
+[api/pipelines/services/step.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L24)
 
 ###### Inherited from
 
@@ -95,7 +95,7 @@ Defined in:
 > `readonly` **name**: `"change_name"` = `'change_name'`
 
 Defined in:
-[api/pipelines/services/user-change_name.service.ts:4](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/user-change_name.service.ts#L4)
+[api/pipelines/services/user-change_name.service.ts:4](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/user-change_name.service.ts#L4)
 
 ###### Overrides
 
@@ -106,7 +106,7 @@ Defined in:
 > `protected` `readonly` **pipeline**: [`Pipeline`](../../session/pipeline.md#pipeline)
 
 Defined in:
-[api/pipelines/services/step.service.ts:64](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L64)
+[api/pipelines/services/step.service.ts:64](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L64)
 
 ###### Inherited from
 
@@ -120,7 +120,7 @@ Defined in:
 > `responseCode`: [`GallopResultCode`](../../models/result_codes.model.md#gallopresultcode); \}\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:85](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L85)
+[api/pipelines/services/step.service.ts:85](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L85)
 
 POST a Base64 request to the upstream API and return the Base64 response string with a result code.
 
@@ -157,7 +157,7 @@ If upstream base is missing or the response shape is invalid.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:174](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L174)
+[api/pipelines/services/step.service.ts:174](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L174)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -187,7 +187,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > **getBaseHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:45](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L45)
+[api/pipelines/services/step.service.ts:45](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L45)
 
 ###### Returns
 
@@ -234,7 +234,7 @@ Defined in:
 > **getBasePayload**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:26](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L26)
+[api/pipelines/services/step.service.ts:26](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L26)
 
 ###### Returns
 
@@ -305,7 +305,7 @@ Defined in:
 > **getHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/user-change_name.service.ts:29](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/user-change_name.service.ts#L29)
+[api/pipelines/services/user-change_name.service.ts:29](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/user-change_name.service.ts#L29)
 
 ###### Returns
 
@@ -352,7 +352,7 @@ Defined in:
 > **getPayload**(): `object`
 
 Defined in:
-[api/pipelines/services/user-change_name.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/user-change_name.service.ts#L10)
+[api/pipelines/services/user-change_name.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/user-change_name.service.ts#L10)
 
 Build payload including `viewer_id` (if available) along with client data.
 

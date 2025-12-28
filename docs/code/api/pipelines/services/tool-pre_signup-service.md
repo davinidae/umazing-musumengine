@@ -5,7 +5,7 @@
 ### ToolPreSignupService
 
 Defined in:
-[api/pipelines/services/tool-pre_signup.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/tool-pre_signup.service.ts#L8)
+[api/pipelines/services/tool-pre_signup.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/tool-pre_signup.service.ts#L8)
 
 tool/pre_signup: Send initial client device/environment data. Uses kv-stream framing to build a
 (key,value,...) sequence.
@@ -21,7 +21,7 @@ tool/pre_signup: Send initial client device/environment data. Uses kv-stream fra
 > **new ToolPreSignupService**(`ctx`, `pipeline`): [`ToolPreSignupService`](#toolpresignupservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:62](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L62)
+[api/pipelines/services/step.service.ts:62](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L62)
 
 Construct a step with the provided execution context.
 
@@ -53,7 +53,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > [`PipelineContext`](../../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L63)
+[api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L63)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -66,7 +66,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > `readonly` **endpoint**: `"tool/pre_signup"` = `'tool/pre_signup'`
 
 Defined in:
-[api/pipelines/services/tool-pre_signup.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/tool-pre_signup.service.ts#L10)
+[api/pipelines/services/tool-pre_signup.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/tool-pre_signup.service.ts#L10)
 
 ###### Overrides
 
@@ -78,7 +78,7 @@ Defined in:
 > `FramingMode.KvStream`
 
 Defined in:
-[api/pipelines/services/tool-pre_signup.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/tool-pre_signup.service.ts#L11)
+[api/pipelines/services/tool-pre_signup.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/tool-pre_signup.service.ts#L11)
 
 ###### Overrides
 
@@ -89,7 +89,7 @@ Defined in:
 > `readonly` **name**: `"pre_signup"` = `'pre_signup'`
 
 Defined in:
-[api/pipelines/services/tool-pre_signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/tool-pre_signup.service.ts#L9)
+[api/pipelines/services/tool-pre_signup.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/tool-pre_signup.service.ts#L9)
 
 ###### Overrides
 
@@ -100,7 +100,7 @@ Defined in:
 > `protected` `readonly` **pipeline**: [`Pipeline`](../../session/pipeline.md#pipeline)
 
 Defined in:
-[api/pipelines/services/step.service.ts:64](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L64)
+[api/pipelines/services/step.service.ts:64](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L64)
 
 ###### Inherited from
 
@@ -114,7 +114,7 @@ Defined in:
 > `responseCode`: [`GallopResultCode`](../../models/result_codes.model.md#gallopresultcode); \}\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:85](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L85)
+[api/pipelines/services/step.service.ts:85](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L85)
 
 POST a Base64 request to the upstream API and return the Base64 response string with a result code.
 
@@ -151,7 +151,7 @@ If upstream base is missing or the response shape is invalid.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:174](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L174)
+[api/pipelines/services/step.service.ts:174](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L174)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -181,7 +181,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > **getBaseHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:45](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L45)
+[api/pipelines/services/step.service.ts:45](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L45)
 
 ###### Returns
 
@@ -228,7 +228,7 @@ Defined in:
 > **getBasePayload**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:26](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L26)
+[api/pipelines/services/step.service.ts:26](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/step.service.ts#L26)
 
 ###### Returns
 
@@ -299,7 +299,7 @@ Defined in:
 > **getHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/tool-pre_signup.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/tool-pre_signup.service.ts#L22)
+[api/pipelines/services/tool-pre_signup.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/tool-pre_signup.service.ts#L22)
 
 ###### Returns
 
@@ -346,7 +346,7 @@ Defined in:
 > **getPayload**(): `object`
 
 Defined in:
-[api/pipelines/services/tool-pre_signup.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/tool-pre_signup.service.ts#L16)
+[api/pipelines/services/tool-pre_signup.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/pipelines/services/tool-pre_signup.service.ts#L16)
 
 Build payload from base client data; no viewer_id required for pre-signup.
 

@@ -54,7 +54,9 @@ export function parseHeaderBlob1(blob1: Buffer): {
   auth_key: Buffer;
 } {
   if (blob1.length < 112) {
-    throw new Error('blob1 too short to contain the required 112 fixed bytes');
+    throw new Error(
+      `blob1 too short to contain the required 112 fixed bytes, ${blob1.length} found`,
+    );
   }
   return {
     prefix: blob1.subarray(0, blob1.length - 112),

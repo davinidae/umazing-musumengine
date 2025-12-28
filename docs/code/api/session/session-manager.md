@@ -5,7 +5,7 @@
 ### SessionManager
 
 Defined in:
-[api/session/session-manager.ts:18](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L18)
+[api/session/session-manager.ts:18](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L18)
 
 Simple in-memory session manager to keep server-only data between endpoint calls. Not for production
 multi-process use without an external store.
@@ -17,7 +17,7 @@ multi-process use without an external store.
 > **new SessionManager**(`opts?`): [`SessionManager`](#sessionmanager)
 
 Defined in:
-[api/session/session-manager.ts:23](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L23)
+[api/session/session-manager.ts:23](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L23)
 
 ###### Parameters
 
@@ -36,14 +36,14 @@ Defined in:
 > `private` `readonly` **sessions**: `Map`\<`string`, [`UserSession`](user-session.md#usersession)\>
 
 Defined in:
-[api/session/session-manager.ts:19](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L19)
+[api/session/session-manager.ts:19](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L19)
 
 ##### ttlMs
 
 > `private` `readonly` **ttlMs**: `number`
 
 Defined in:
-[api/session/session-manager.ts:21](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L21)
+[api/session/session-manager.ts:21](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L21)
 
 #### Methods
 
@@ -53,7 +53,7 @@ Defined in:
 > `Promise`\<[`UserSession`](user-session.md#usersession)\>
 
 Defined in:
-[api/session/session-manager.ts:127](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L127)
+[api/session/session-manager.ts:127](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L127)
 
 Create a new server-side session and store it in memory.
 
@@ -86,7 +86,7 @@ Created `UserSession`.
 > **delete**(`id`): `void`
 
 Defined in:
-[api/session/session-manager.ts:211](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L211)
+[api/session/session-manager.ts:211](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L211)
 
 Delete a session by id.
 
@@ -107,7 +107,7 @@ Session id.
 > `private` **deleteInactiveSessions**(): `void`
 
 Defined in:
-[api/session/session-manager.ts:215](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L215)
+[api/session/session-manager.ts:215](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L215)
 
 ###### Returns
 
@@ -119,7 +119,7 @@ Defined in:
 > [`PipelineContext`](../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/session/session-manager.ts:38](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L38)
+[api/session/session-manager.ts:38](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L38)
 
 Generate a default `PipelineContext` for a user based on Steam identifiers. Uses deterministic
 derivations for development/testing.
@@ -154,7 +154,7 @@ Initialized `PipelineContext`.
 > `undefined`
 
 Defined in:
-[api/session/session-manager.ts:181](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L181)
+[api/session/session-manager.ts:181](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L181)
 
 Access the current pipeline context for a session.
 
@@ -179,7 +179,7 @@ Session id.
 > `string`; `name`: `string`; `requestB64`: `string`; `responseB64`: `string`; \}\> \| `undefined`
 
 Defined in:
-[api/session/session-manager.ts:203](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L203)
+[api/session/session-manager.ts:203](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L203)
 
 Read the last step result for a session.
 
@@ -204,7 +204,7 @@ Session id.
 > **getSession**(`id`): [`UserSession`](user-session.md#usersession) \| `undefined`
 
 Defined in:
-[api/session/session-manager.ts:155](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L155)
+[api/session/session-manager.ts:155](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L155)
 
 Retrieve a session by id. Applies TTL lazily and prunes expired entries.
 
@@ -227,7 +227,7 @@ Session identifier.
 > **getStoredData**(`prevSessionId`): `Promise`\<[`StoredData`](../models/api.model.md#storeddata)\>
 
 Defined in:
-[api/session/session-manager.ts:141](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L141)
+[api/session/session-manager.ts:141](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L141)
 
 ###### Parameters
 
@@ -244,7 +244,7 @@ Defined in:
 > **setContext**(`id`, `ctx`): `void`
 
 Defined in:
-[api/session/session-manager.ts:168](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L168)
+[api/session/session-manager.ts:168](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L168)
 
 Update the session's pipeline context.
 
@@ -271,7 +271,7 @@ New `PipelineContext`.
 > **setLastStep**(`id`, `step`): `void`
 
 Defined in:
-[api/session/session-manager.ts:190](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L190)
+[api/session/session-manager.ts:190](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L190)
 
 Persist the last step result for a session.
 
@@ -302,4 +302,4 @@ Last step or `undefined`.
 > `const` **sessionManager**: [`SessionManager`](#sessionmanager)
 
 Defined in:
-[api/session/session-manager.ts:225](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/session-manager.ts#L225)
+[api/session/session-manager.ts:225](https://github.com/davinidae/umazing-musumengine/blob/c7165367514289ac3f84628f7086bb7b2e32980f/src/api/session/session-manager.ts#L225)
