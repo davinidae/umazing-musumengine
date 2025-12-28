@@ -1,13 +1,31 @@
 # constants
 
-## Variables
+## References
+
+### COMMON_HEADER
+
+Re-exports [COMMON_HEADER](constants/protocol.constant.md#common_header)
+
+---
 
 ### DETERMINISTIC_ENC_SECRET
 
-> `const` **DETERMINISTIC_ENC_SECRET**: `"co!=Y;(UQCGxJ_n82"` = `'co!=Y;(UQCGxJ_n82'`
+Re-exports [DETERMINISTIC_ENC_SECRET](constants/salt.constant.md#deterministic_enc_secret)
 
-Defined in:
-[constants.ts:11](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/constants.ts#L11)
+---
 
-ASCII secret used to deterministically derive the 32-byte AES-256 key for blob2 during development
-and tests. In production, use a secure runtime secret. Also known as SALT
+### STR16
+
+Re-exports [STR16](constants/msgpack.constant.md#str16)
+
+---
+
+### STR32
+
+Re-exports [STR32](constants/msgpack.constant.md#str32)
+
+---
+
+### STR8
+
+Re-exports [STR8](constants/msgpack.constant.md#str8)

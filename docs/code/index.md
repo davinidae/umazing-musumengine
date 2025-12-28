@@ -15,6 +15,12 @@ Re-exports [Blob1Header](lib/models/protocol.model.md#blob1header)
 
 ---
 
+### COMMON_HEADER
+
+Re-exports [COMMON_HEADER](constants/protocol.constant.md#common_header)
+
+---
+
 ### DecodeResponseInput
 
 Re-exports [DecodeResponseInput](lib/models/runtime.model.md#decoderesponseinput)
@@ -53,7 +59,7 @@ Re-exports [deriveIvFromUdidString](lib/shared/protocol.util.md#deriveivfromudid
 
 ### DETERMINISTIC_ENC_SECRET
 
-Re-exports [DETERMINISTIC_ENC_SECRET](constants.md#deterministic_enc_secret)
+Re-exports [DETERMINISTIC_ENC_SECRET](constants/salt.constant.md#deterministic_enc_secret)
 
 ---
 
@@ -175,6 +181,24 @@ Re-exports [RuntimeClientOptions](lib/models/client.model.md#runtimeclientoption
 ### ServiceOptions
 
 Re-exports [ServiceOptions](lib/models/client.model.md#serviceoptions)
+
+---
+
+### STR16
+
+Re-exports [STR16](constants/msgpack.constant.md#str16)
+
+---
+
+### STR32
+
+Re-exports [STR32](constants/msgpack.constant.md#str32)
+
+---
+
+### STR8
+
+Re-exports [STR8](constants/msgpack.constant.md#str8)
 
 ---
 

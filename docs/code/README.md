@@ -3,9 +3,6 @@
 ## Modules
 
 - [api](api.md)
-- [api/constants](api/constants.md)
-- [api/constants/msgpack.constant](api/constants/msgpack.constant.md)
-- [api/constants/protocol.constant](api/constants/protocol.constant.md)
 - [api/endpoints](api/endpoints.md)
 - [api/endpoints/login](api/endpoints/login.md)
 - [api/endpoints/misc](api/endpoints/misc.md)
@@ -33,6 +30,9 @@
 - [api/utils/uma-client.util](api/utils/uma-client.util.md)
 - [cli](cli.md)
 - [constants](constants.md)
+- [constants/msgpack.constant](constants/msgpack.constant.md)
+- [constants/protocol.constant](constants/protocol.constant.md)
+- [constants/salt.constant](constants/salt.constant.md)
 - [index](index.md)
 - [lib](lib.md)
 - [lib/decrypt](lib/decrypt.md)

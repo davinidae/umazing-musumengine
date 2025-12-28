@@ -5,7 +5,7 @@
 ### ToolSignupStep
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/tool-signup.step.ts#L5)
+[api/services/steps/tool-signup.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L5)
 
 #### Extends
 
@@ -19,7 +19,7 @@ Defined in:
 > **new ToolSignupStep**(`stepData`): [`ToolSignupStep`](#toolsignupstep)
 
 Defined in:
-[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/core.step.ts#L9)
+[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L9)
 
 ###### Parameters
 
@@ -42,7 +42,7 @@ Defined in:
 > **endpoint**: `string` = `'tool/signup'`
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:6](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/tool-signup.step.ts#L6)
+[api/services/steps/tool-signup.step.ts:6](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L6)
 
 ###### Overrides
 
@@ -53,7 +53,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/core.step.ts#L9)
+[api/services/steps/core.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L9)
 
 ###### Inherited from
 
@@ -69,7 +69,7 @@ Defined in:
 > `endpoint`: `string`; `headers`: `Record`\<`string`, `string`\>; `viewer_id`: `number`; \}\>
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:20](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/tool-signup.step.ts#L20)
+[api/services/steps/tool-signup.step.ts:20](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L20)
 
 ###### Returns
 
@@ -88,7 +88,7 @@ Defined in:
 > [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/core.step.ts#L26)
+[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L26)
 
 ###### Returns
 
@@ -104,7 +104,7 @@ Defined in:
 > `protected` **getHeaders**(): `object`
 
 Defined in:
-[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/core.step.ts#L13)
+[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L13)
 
 ###### Returns
 
@@ -151,7 +151,7 @@ Defined in:
 > **getRequestBody**(): [`SignupRequest`](../../models/uma-client.model.md#signuprequest)
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/tool-signup.step.ts#L8)
+[api/services/steps/tool-signup.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/tool-signup.step.ts#L8)
 
 ###### Returns
 
@@ -172,7 +172,7 @@ Defined in:
 > \}; \}\>
 
 Defined in:
-[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/services/steps/core.step.ts#L33)
+[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/57e727b3c2cba8f6b015598291ecad23e61d967f/src/api/services/steps/core.step.ts#L33)
 
 ###### Returns
 

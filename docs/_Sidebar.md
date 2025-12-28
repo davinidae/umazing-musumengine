@@ -5,16 +5,6 @@
 <ul style="list-style-type: disc; margin-left: 16px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>api</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>constants</summary>
-<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-
-- [[code/api/constants/msgpack-constant.md|msgpack-constant.md]]
-
-- [[code/api/constants/protocol-constant.md|protocol-constant.md]]
-
-</ul>
-</details>
-</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>endpoints</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
@@ -96,13 +86,23 @@
 </details>
 </li>
 
-- [[code/api/constants.md|constants.md]]
-
 - [[code/api/endpoints.md|endpoints.md]]
 
 - [[code/api/models.md|models.md]]
 
 - [[code/api/utils.md|utils.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>constants</summary>
+<ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
+
+- [[code/constants/msgpack-constant.md|msgpack-constant.md]]
+
+- [[code/constants/protocol-constant.md|protocol-constant.md]]
+
+- [[code/constants/salt-constant.md|salt-constant.md]]
 
 </ul>
 </details>
