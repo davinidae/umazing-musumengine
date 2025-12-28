@@ -148,8 +148,6 @@
 
 - [[code/lib/shared/json-util.md|json-util.md]]
 
-- [[code/lib/shared/logger-util.md|logger-util.md]]
-
 - [[code/lib/shared/protocol-util.md|protocol-util.md]]
 
 </ul>

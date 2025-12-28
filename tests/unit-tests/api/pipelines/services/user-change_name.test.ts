@@ -7,7 +7,6 @@ import { Pipeline } from '../../../../../src/api/session/pipeline';
 const ctx: PipelineContext = {
   runtime: new RuntimeClient({
     DETERMINISTIC_ENC_SECRET: DETERMINISTIC_ENC_SECRET,
-    logger: console,
   }),
   upstreamBase: 'https://example.com',
   blob1: {

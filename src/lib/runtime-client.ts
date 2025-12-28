@@ -13,7 +13,6 @@
  *
  * @public
  */
-import { defaultLogger } from './shared';
 import { DETERMINISTIC_ENC_SECRET } from '../variables';
 import { DecryptResponseService } from './decrypt';
 import { EncryptPayloadService } from './encrypt';
@@ -23,22 +22,18 @@ import {
   DecodeResponseInput,
   DecodeResponseOutput,
   RuntimeClientOptions,
-  Logger,
-  FramingMode,
 } from './models';
 
 export class RuntimeClient {
-  /** Thin OO wrapper so consumers can inject options later (e.g., logger).
-   * @param opts Runtime options including the deterministic secret and optional logger.
+  /** Thin OO wrapper so consumers can inject options later.
+   * @param opts Runtime options including the deterministic secret.
    */
   constructor(
     private readonly opts: RuntimeClientOptions = {
       DETERMINISTIC_ENC_SECRET: DETERMINISTIC_ENC_SECRET,
-      logger: defaultLogger,
     },
-  ) {}
-  private get logger(): Logger {
-    return this.opts.logger ?? defaultLogger;
+  ) {
+    //
   }
 
   /**
@@ -49,21 +44,13 @@ export class RuntimeClient {
    * @throws If mandatory fields are missing or have invalid sizes.
    */
   encodeRequest(input: EncodeRequestInput): EncodeRequestOutput {
-    const { blob1, blob2 } = input;
-    this.logger.debug?.(
-      '[runtime] encodeRequest framing=%s',
-      blob1.framing ?? FramingMode.LengthPrefixed,
-    );
+    const { framing } = input;
+    console.log('[runtime] encodeRequest framing=%s', framing);
     const service = new EncryptPayloadService();
-    const o = {
-      blob1,
-      blob2,
+    return service.build({
+      ...input,
       DETERMINISTIC_ENC_SECRET: this.opts.DETERMINISTIC_ENC_SECRET,
-    };
-    if (input.isSignup) {
-      return service.buildSignup(o);
-    }
-    return service.buildFromParts(o);
+    });
   }
 
   /**
@@ -75,13 +62,12 @@ export class RuntimeClient {
    * @throws If the request blob1 is malformed and UDID cannot be extracted.
    */
   decodeResponse(input: DecodeResponseInput): DecodeResponseOutput {
-    this.logger.debug?.('[runtime] decodeResponse start');
     const { requestB64, responseB64 } = input;
     if (!requestB64 || !responseB64) {
       throw new Error('Missing requestB64 or responseB64');
     }
     const result = new DecryptResponseService().decodeFromBase64(requestB64, responseB64);
-    this.logger.debug?.('[runtime] decodeResponse unpacked');
+    console.log('[runtime] Decoded', JSON.stringify(result, null, 2));
     return result;
   }
 }

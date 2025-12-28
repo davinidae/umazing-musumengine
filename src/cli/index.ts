@@ -182,7 +182,7 @@ encrypt
           console.log(`Skip (invalid decoded.json structure): ${full}`);
           continue;
         }
-        const { requestB64 } = encSvc.buildFromParts({
+        const { requestB64 } = encSvc.build({
           blob1: root.blob1,
           blob2: root.blob2,
           DETERMINISTIC_ENC_SECRET,
@@ -247,10 +247,7 @@ runtime
       const runtimeClient = new RuntimeClient({
         DETERMINISTIC_ENC_SECRET,
       });
-      const out = runtimeClient.encodeRequest({
-        blob1: input.blob1,
-        blob2: input.blob2,
-      });
+      const out = runtimeClient.encodeRequest(input);
       process.stdout.write(JSON.stringify(out));
       process.exitCode = 0;
     } catch (e: unknown) {

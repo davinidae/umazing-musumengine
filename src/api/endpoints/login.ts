@@ -13,8 +13,6 @@ export async function loginHandler(
   >,
 ): Promise<ApiResponse> {
   try {
-    console.log('Login request received');
-    console.log('Request body:', event.body);
     const { steam_id = '', steam_session_ticket = '', prevSessionId } = event.body || {};
     const session = await sessionManager.createSession(
       steam_id,
@@ -22,7 +20,6 @@ export async function loginHandler(
       prevSessionId,
     );
     const storedData = session.getStoredData();
-    console.log('Running pipeline. Stored data found:', storedData != null);
     const results = await session.runPipeline(storedData == null ? signupPipeline : loginPipeline);
     const failed = results.find((r) => r.error);
     return new ApiResponse(200, {

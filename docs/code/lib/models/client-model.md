@@ -2,81 +2,12 @@
 
 ## Type Aliases
 
-### Logger
-
-> **Logger** = `object` & `Partial`\<\{ `log`: (...`args`) => `void`; \}\>
-
-Defined in:
-[lib/models/client.model.ts:4](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/client.model.ts#L4)
-
-Minimal logger interface for dependency injection.
-
-#### Type Declaration
-
-##### debug()
-
-> **debug**: (...`args`) => `void`
-
-###### Parameters
-
-###### args
-
-...`unknown`[]
-
-###### Returns
-
-`void`
-
-##### error()
-
-> **error**: (...`args`) => `void`
-
-###### Parameters
-
-###### args
-
-...`unknown`[]
-
-###### Returns
-
-`void`
-
-##### info()
-
-> **info**: (...`args`) => `void`
-
-###### Parameters
-
-###### args
-
-...`unknown`[]
-
-###### Returns
-
-`void`
-
-##### warn()
-
-> **warn**: (...`args`) => `void`
-
-###### Parameters
-
-###### args
-
-...`unknown`[]
-
-###### Returns
-
-`void`
-
----
-
 ### RuntimeClientOptions
 
 > **RuntimeClientOptions** = [`ServiceOptions`](#serviceoptions)
 
 Defined in:
-[lib/models/client.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/client.model.ts#L14)
+[lib/models/client.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/models/client.model.ts#L2)
 
 Options for RuntimeClient construction.
 
@@ -84,15 +15,18 @@ Options for RuntimeClient construction.
 
 ### ServiceOptions
 
-> **ServiceOptions** = `object` & `Partial`\<\{ `logger`: [`Logger`](#logger); \}\>
+> **ServiceOptions** = `object`
 
 Defined in:
-[lib/models/client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/client.model.ts#L17)
+[lib/models/client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/models/client.model.ts#L5)
 
 Common options for long-running services (decrypt/encrypt).
 
-#### Type Declaration
+#### Properties
 
 ##### DETERMINISTIC_ENC_SECRET
 
 > **DETERMINISTIC_ENC_SECRET**: `string`
+
+Defined in:
+[lib/models/client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/models/client.model.ts#L6)

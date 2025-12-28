@@ -9,9 +9,6 @@ export class ToolPreSignupService extends StepService {
   override readonly name = 'pre_signup';
   override readonly endpoint = 'tool/pre_signup';
   override readonly framing = FramingMode.KvStream;
-  override readonly isSignupStep = true;
-
-  protected override omitViewerId = true;
 
   /**
    * Build payload from base client data; no viewer_id required for pre-signup.

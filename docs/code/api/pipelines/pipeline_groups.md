@@ -9,7 +9,7 @@
 > [`ToolStartSessionService`](services/tool-start_session.service.md#toolstartsessionservice))[]
 
 Defined in:
-[api/pipelines/pipeline_groups.ts:21](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/pipeline_groups.ts#L21)
+[api/pipelines/pipeline_groups.ts:21](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/pipeline_groups.ts#L21)
 
 Bootstrap pipeline used by `/login` to start a user session when data already exists for a specific
 user. Order:
@@ -33,7 +33,7 @@ user. Order:
 > _typeof_ [`TutorialSkipService`](services/tutorial-skip.service.md#tutorialskipservice))[]
 
 Defined in:
-[api/pipelines/pipeline_groups.ts:36](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/pipeline_groups.ts#L36)
+[api/pipelines/pipeline_groups.ts:36](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/pipeline_groups.ts#L36)
 
 Bootstrap pipeline used by `/login` to start a user session when data does not yet exist for a
 specific user. Order:

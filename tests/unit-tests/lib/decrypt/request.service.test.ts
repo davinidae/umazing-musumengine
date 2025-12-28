@@ -14,7 +14,7 @@ describe('DecryptRequestService (unit)', () => {
       auth_key_hex: '33'.repeat(48),
     };
     const blob2 = { v: 123, s: 'ok' };
-    const { requestB64 } = enc.buildFromParts({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
+    const { requestB64 } = enc.build({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
 
     const reqSvc = new DecryptRequestService();
     const reqOut = reqSvc.decodeFromBase64(requestB64);

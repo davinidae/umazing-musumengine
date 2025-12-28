@@ -5,7 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/encrypt/payload.service.ts#L27)
+[lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/encrypt/payload.service.ts#L27)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -26,12 +26,12 @@ Framing modes:
 
 #### Methods
 
-##### buildFromParts()
+##### build()
 
-> **buildFromParts**(`input`): `BuiltEncryptedPayload`
+> **build**(`input`): `BuiltEncryptedPayload`
 
 Defined in:
-[lib/encrypt/payload.service.ts:135](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/encrypt/payload.service.ts#L135)
+[lib/encrypt/payload.service.ts:37](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/lib/encrypt/payload.service.ts#L37)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -39,7 +39,8 @@ Build a single request as Base64 from header fields (blob1) and a JS payload.
 
 ###### input
 
-`object` & `Partial`\<\{ `isSignup`: `boolean`; \}\> & `object`
+`object` & `Partial`\<\{ `framing`: [`FramingMode`](../models/runtime.model.md#framingmode); \}\> &
+`object`
 
 ###### Returns
 
@@ -51,23 +52,3 @@ An object containing the Base64-encoded request buffer as `requestB64`.
 
 If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, response_key !=
 32B).
-
-##### buildSignup()
-
-> **buildSignup**(`input`): `BuiltEncryptedPayload`
-
-Defined in:
-[lib/encrypt/payload.service.ts:39](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/encrypt/payload.service.ts#L39)
-
-blob1: blob1 length [4 bytes] prefix [52 bytes] session_id [16 bytes] udid [16 bytes] random bytes
-[32 bytes] blob2: [encrypted message] key [32 bytes, randomly generated]
-
-###### Parameters
-
-###### input
-
-`object` & `Partial`\<\{ `isSignup`: `boolean`; \}\> & `object`
-
-###### Returns
-
-`BuiltEncryptedPayload`

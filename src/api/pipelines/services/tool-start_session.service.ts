@@ -1,4 +1,3 @@
-import { FramingMode } from '../../../lib';
 import { AttestationType } from '../../models';
 import { StepService } from './step.service';
 
@@ -9,8 +8,6 @@ import { StepService } from './step.service';
 export class ToolStartSessionService extends StepService {
   override readonly name = 'start_session';
   override readonly endpoint = 'tool/start_session';
-  override readonly framing = FramingMode.LengthPrefixed;
-  protected override omitViewerId = true;
 
   /**
    * Build payload required by `tool/start_session` including device and platform metadata.

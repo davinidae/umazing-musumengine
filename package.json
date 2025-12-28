@@ -49,7 +49,7 @@
     "docs:normalize": "tsx scripts/normalize-docs.ts",
     "docs": "npm run docs:code && npm run docs:scripts && npm run docs:normalize && tsx scripts/generate-docs.ts",
     "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format",
-    "api": "nodemon --watch src --ext ts --exec tsx src/api/index.ts"
+    "api": "nodemon ."
   },
   "dependencies": {
     "@msgpack/msgpack": "^3.0.0",

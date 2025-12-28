@@ -25,12 +25,11 @@ export type EncodeRequestInput = {
     udid_raw_hex: string;
     /** Canonical UDID string (with dashes); alternative to udid_raw_hex. */
     udid_canonical: string;
-    /** Optional framing hint for the payload. Defaults to length-prefixed. */
-    framing: FramingMode;
   }>;
   blob2: unknown;
 } & Partial<{
-  isSignup: boolean;
+  /** Optional framing hint for the payload. Defaults to length-prefixed. */
+  framing: FramingMode;
 }>;
 
 export type EncodeRequestOutput = {

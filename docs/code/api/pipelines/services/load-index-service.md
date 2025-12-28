@@ -5,7 +5,7 @@
 ### LoadIndexService
 
 Defined in:
-[api/pipelines/services/load-index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/load-index.service.ts#L8)
+[api/pipelines/services/load-index.service.ts:7](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/load-index.service.ts#L7)
 
 load/index: Retrieves the main screen data for the session. Requires a valid viewer_id; skips
 otherwise.
@@ -21,7 +21,7 @@ otherwise.
 > **new LoadIndexService**(`ctx`, `pipeline`): [`LoadIndexService`](#loadindexservice)
 
 Defined in:
-[api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L63)
+[api/pipelines/services/step.service.ts:62](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L62)
 
 Construct a step with the provided execution context.
 
@@ -53,7 +53,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > [`PipelineContext`](../../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/pipelines/services/step.service.ts:64](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L64)
+[api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L63)
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
@@ -66,7 +66,7 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 > `readonly` **endpoint**: `"load/index"` = `'load/index'`
 
 Defined in:
-[api/pipelines/services/load-index.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/load-index.service.ts#L10)
+[api/pipelines/services/load-index.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/load-index.service.ts#L9)
 
 ###### Overrides
 
@@ -74,57 +74,33 @@ Defined in:
 
 ##### framing
 
-> `readonly` **framing**: [`LengthPrefixed`](../../../lib/models/runtime.model.md#lengthprefixed) =
+> `readonly` **framing**: [`FramingMode`](../../../lib/models/runtime.model.md#framingmode) =
 > `FramingMode.LengthPrefixed`
 
 Defined in:
-[api/pipelines/services/load-index.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/load-index.service.ts#L11)
-
-###### Overrides
-
-[`StepService`](step.service.md#stepservice).[`framing`](step.service.md#framing)
-
-##### isSignupStep
-
-> `readonly` **isSignupStep**: `boolean` = `false`
-
-Defined in:
-[api/pipelines/services/step.service.ts:25](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L25)
+[api/pipelines/services/step.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L24)
 
 ###### Inherited from
 
-[`StepService`](step.service.md#stepservice).[`isSignupStep`](step.service.md#issignupstep)
+[`StepService`](step.service.md#stepservice).[`framing`](step.service.md#framing)
 
 ##### name
 
 > `readonly` **name**: `"load_index"` = `'load_index'`
 
 Defined in:
-[api/pipelines/services/load-index.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/load-index.service.ts#L9)
+[api/pipelines/services/load-index.service.ts:8](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/load-index.service.ts#L8)
 
 ###### Overrides
 
 [`StepService`](step.service.md#stepservice).[`name`](step.service.md#name)
-
-##### omitViewerId
-
-> `protected` **omitViewerId**: `boolean` = `false`
-
-Defined in:
-[api/pipelines/services/step.service.ts:156](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L156)
-
-Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
-
-###### Inherited from
-
-[`StepService`](step.service.md#stepservice).[`omitViewerId`](step.service.md#omitviewerid)
 
 ##### pipeline
 
 > `protected` `readonly` **pipeline**: [`Pipeline`](../../session/pipeline.md#pipeline)
 
 Defined in:
-[api/pipelines/services/step.service.ts:65](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L65)
+[api/pipelines/services/step.service.ts:64](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L64)
 
 ###### Inherited from
 
@@ -138,7 +114,7 @@ Defined in:
 > `responseCode`: [`GallopResultCode`](../../models/result_codes.model.md#gallopresultcode); \}\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:86](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L86)
+[api/pipelines/services/step.service.ts:85](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L85)
 
 POST a Base64 request to the upstream API and return the Base64 response string with a result code.
 
@@ -175,7 +151,7 @@ If upstream base is missing or the response shape is invalid.
 > `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 Defined in:
-[api/pipelines/services/step.service.ts:169](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L169)
+[api/pipelines/services/step.service.ts:174](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L174)
 
 Execute the step end-to-end: obtain preconditions, encode request, call upstream, and decode
 response.
@@ -205,7 +181,7 @@ StepResultBase without the `order` field (assigned by the pipeline runner).
 > **getBaseHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:46](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L46)
+[api/pipelines/services/step.service.ts:45](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L45)
 
 ###### Returns
 
@@ -252,7 +228,7 @@ Defined in:
 > **getBasePayload**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L27)
+[api/pipelines/services/step.service.ts:26](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/step.service.ts#L26)
 
 ###### Returns
 
@@ -323,7 +299,7 @@ Defined in:
 > **getHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/load-index.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/load-index.service.ts#L22)
+[api/pipelines/services/load-index.service.ts:20](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/load-index.service.ts#L20)
 
 ###### Returns
 
@@ -370,7 +346,7 @@ Defined in:
 > **getPayload**(): `object`
 
 Defined in:
-[api/pipelines/services/load-index.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/load-index.service.ts#L16)
+[api/pipelines/services/load-index.service.ts:14](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/pipelines/services/load-index.service.ts#L14)
 
 Build payload for `load/index` using `viewer_id` and client metadata.
 

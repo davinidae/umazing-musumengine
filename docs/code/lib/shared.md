@@ -2,12 +2,6 @@
 
 ## References
 
-### defaultLogger
-
-Re-exports [defaultLogger](shared/logger.util.md#defaultlogger)
-
----
-
 ### deriveIvFromUdidString
 
 Re-exports [deriveIvFromUdidString](shared/protocol.util.md#deriveivfromudidstring)

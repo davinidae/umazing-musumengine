@@ -45,12 +45,6 @@ Re-exports [DecryptResponseService](lib/decrypt/response.service.md#decryptrespo
 
 ---
 
-### defaultLogger
-
-Re-exports [defaultLogger](lib/shared/logger.util.md#defaultlogger)
-
----
-
 ### deriveIvFromUdidString
 
 Re-exports [deriveIvFromUdidString](lib/shared/protocol.util.md#deriveivfromudidstring)
@@ -115,12 +109,6 @@ Re-exports [KVStreamStrategy](lib/decrypt/shared/unpacker.util.md#kvstreamstrate
 ### LengthPrefixedStrategy
 
 Re-exports [LengthPrefixedStrategy](lib/decrypt/shared/unpacker.util.md#lengthprefixedstrategy)
-
----
-
-### Logger
-
-Re-exports [Logger](lib/models/client.model.md#logger)
 
 ---
 

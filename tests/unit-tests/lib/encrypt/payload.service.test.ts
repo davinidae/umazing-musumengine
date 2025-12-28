@@ -23,7 +23,11 @@ describe('EncryptPayloadService (unit)', () => {
       auth_key_hex: '33'.repeat(48),
     };
     const blob2 = { hello: 'world', n: 7 };
-    const { requestB64 } = svc.buildFromParts({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
+    const { requestB64 } = svc.build({
+      blob1,
+      blob2,
+      DETERMINISTIC_ENC_SECRET,
+    });
     const raw = Buffer.from(requestB64, 'base64');
     const [b1, b2] = parseRequest(raw);
     const h = parseHeaderBlob1(b1);
@@ -37,7 +41,7 @@ describe('EncryptPayloadService (unit)', () => {
 
   test('throws when UDID fields are missing', () => {
     expect(() =>
-      svc.buildFromParts({
+      svc.build({
         blob1: {
           prefix_hex: 'aa55',
           session_id_hex: '11'.repeat(16),
@@ -52,7 +56,7 @@ describe('EncryptPayloadService (unit)', () => {
 
   test('throws when session_id_hex is not 16B', () => {
     expect(() =>
-      svc.buildFromParts({
+      svc.build({
         blob1: {
           viewer_id: 123456789,
           prefix_hex: 'aa55',
@@ -69,7 +73,7 @@ describe('EncryptPayloadService (unit)', () => {
 
   test('throws when response_key_hex is not 32B', () => {
     expect(() =>
-      svc.buildFromParts({
+      svc.build({
         blob1: {
           viewer_id: 123456789,
           prefix_hex: 'aa55',
@@ -86,7 +90,7 @@ describe('EncryptPayloadService (unit)', () => {
 
   test('throws when auth_key_hex is not 48B', () => {
     expect(() =>
-      svc.buildFromParts({
+      svc.build({
         blob1: {
           viewer_id: 123456789,
           prefix_hex: 'aa55',
@@ -103,7 +107,7 @@ describe('EncryptPayloadService (unit)', () => {
 
   test('kv-stream requires object payload', () => {
     expect(() =>
-      svc.buildFromParts({
+      svc.build({
         blob1: {
           viewer_id: 123456789,
           prefix_hex: 'aa55',
@@ -111,8 +115,8 @@ describe('EncryptPayloadService (unit)', () => {
           session_id_hex: '11'.repeat(16),
           response_key_hex: '22'.repeat(32),
           auth_key_hex: '33'.repeat(48),
-          framing: FramingMode.KvStream,
         },
+        framing: FramingMode.KvStream,
         blob2: [1, 2, 3],
         DETERMINISTIC_ENC_SECRET,
       }),

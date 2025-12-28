@@ -6,7 +6,7 @@ import {
   StepPrevResult,
   StepResultBase,
 } from '../../models';
-import { DecodeResponseOutput, FramingMode } from '../../../lib';
+import { DecodeResponseOutput, EncodeRequestInput, FramingMode } from '../../../lib';
 import { Pipeline } from '../../session/pipeline';
 import { randomUUID } from 'crypto';
 
@@ -21,8 +21,7 @@ import { randomUUID } from 'crypto';
 export abstract class StepService {
   abstract readonly name: string;
   abstract readonly endpoint: string;
-  abstract readonly framing: FramingMode;
-  readonly isSignupStep: boolean = false;
+  readonly framing: FramingMode = FramingMode.LengthPrefixed;
 
   getBasePayload() {
     return {
@@ -31,7 +30,7 @@ export abstract class StepService {
       device_id: this.ctx.clientData.device_id,
       device_name: this.ctx.clientData.device_name,
       graphics_device_name: this.ctx.clientData.graphics_device_name,
-      ip_address: this.ctx.clientData.ip_address,
+      ip_address: this.ctx.clientData.ip_address || '192.168.0.1',
       platform_os_version: this.ctx.clientData.platform_os_version,
       carrier: this.ctx.clientData.carrier,
       keychain: this.ctx.clientData.keychain,
@@ -90,23 +89,23 @@ export abstract class StepService {
     responseB64: string;
     responseCode: GallopResultCode;
   }> {
-    console.log('Calling upstream for endpoint:', this.endpoint);
     const base = this.ctx.upstreamBase;
     if (!base) {
       throw new Error('Missing UMAZING_UPSTREAM_BASE (remote API base URL)');
     }
     const url = [base.replace(/\/+$/, ''), this.endpoint.replace(/^\/+/, '')].join('/');
+    const headers = this.getHeaders() as AxiosHeaders;
     console.log('Upstream URL:', url);
-    console.log('Upstream request payload:', payload);
+    console.log('Upstream headers:', JSON.stringify(headers, null, 2));
+    console.log('Upstream request payload:', JSON.stringify(payload, null, 2));
     console.log('Upstream request (Base64):', requestB64);
     try {
-      console.log();
       const resp = await axios.post(url, requestB64, {
-        headers: this.getHeaders() as AxiosHeaders,
+        headers,
       });
-      console.log('Upstream response status:', resp.status);
       const data = resp.data;
-      console.log('Upstream response data:', data);
+      console.log('Upstream response status:', resp.status);
+      console.log('Upstream response data:', JSON.stringify(data, null, 2));
       if (typeof data === 'string') {
         return {
           responseB64: data.trim(),
@@ -145,15 +144,21 @@ export abstract class StepService {
     if (ctx == null) {
       return;
     }
-    console.log(decodedResponse);
-    // ctx.blob1 = decodedResponse.blob1;
+    console.log('Decoded response:', JSON.stringify(decodedResponse, null, 2));
+    if (this.endpoint === 'tool/signup') {
+      if (decodedResponse.blob1 != null) {
+        ctx.clientData = {
+          ...ctx.clientData,
+          ...decodedResponse.blob1,
+        };
+        ctx.blob1 = {
+          ...ctx.blob1,
+          ...decodedResponse.blob1,
+        };
+      }
+    }
     this.pipeline.setContext(ctx);
   }
-
-  /**
-   * Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
-   */
-  protected omitViewerId = false;
 
   /**
    * Implement the step's business logic.
@@ -168,37 +173,34 @@ export abstract class StepService {
    */
   public async execute(prev: StepPrevResult | undefined): Promise<StepResultBase> {
     let viewer_id = this.ctx.clientData.viewer_id ?? 0;
-    if (!this.omitViewerId) {
-      // Extract viewer_id from previous result if present
-      try {
-        const prevHeaders = prev?.decoded?.blob1;
-        if (typeof prevHeaders?.viewer_id === 'number') {
-          viewer_id = prevHeaders.viewer_id;
-        }
-      } catch {
-        // ignore, fallback to default viewer_id
+    // Extract viewer_id from previous result if present
+    try {
+      const prevHeaders = prev?.decoded?.blob1;
+      if (typeof prevHeaders?.viewer_id === 'number') {
+        viewer_id = prevHeaders.viewer_id;
       }
-      if (!(typeof viewer_id === 'number' && Number.isFinite(viewer_id) && viewer_id > 0)) {
-        return {
-          name: this.name,
-          endpoint: this.endpoint,
-          framing: this.framing,
-          skipped: true,
-          note: 'viewer_id not available; skipping step',
-          responseCode: GallopResultCode.MissingViewerId,
-          responseCodeName: asResultCodeName(GallopResultCode.MissingViewerId),
-        };
-      }
+    } catch {
+      // ignore, fallback to default viewer_id
+    }
+    if (!(typeof viewer_id === 'number' && Number.isFinite(viewer_id) && viewer_id >= 0)) {
+      return {
+        name: this.name,
+        endpoint: this.endpoint,
+        framing: this.framing,
+        skipped: true,
+        note: `viewer_id = ${viewer_id}; not available; skipping step`,
+        responseCode: GallopResultCode.MissingViewerId,
+        responseCodeName: asResultCodeName(GallopResultCode.MissingViewerId),
+      };
     }
     this.ctx.clientData.viewer_id = viewer_id;
-    const payload = {
+    const payload: EncodeRequestInput = {
+      framing: this.framing,
       blob1: {
         ...this.ctx.blob1,
-        framing: this.framing,
         viewer_id: viewer_id,
       },
       blob2: this.getPayload(),
-      isSignup: this.isSignupStep,
     };
     const encoded = this.ctx.runtime.encodeRequest(payload);
     const { requestB64, blob1, blob2 } = encoded;

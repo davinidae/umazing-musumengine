@@ -21,10 +21,14 @@ describe('EncryptPayloadService (integration)', () => {
       session_id_hex: '22'.repeat(16),
       response_key_hex: '55'.repeat(32),
       auth_key_hex: '44'.repeat(48),
-      framing: FramingMode.KvStream,
     };
     const blob2 = { a: 1, b: 'z' };
-    const { requestB64 } = svc.buildFromParts({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
+    const { requestB64 } = svc.build({
+      blob1,
+      blob2,
+      DETERMINISTIC_ENC_SECRET,
+      framing: FramingMode.KvStream,
+    });
     const raw = Buffer.from(requestB64, 'base64');
     const [b1, b2] = parseRequest(raw);
     const h = parseHeaderBlob1(b1);

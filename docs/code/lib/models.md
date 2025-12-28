@@ -38,12 +38,6 @@ Re-exports [FramingMode](models/runtime.model.md#framingmode)
 
 ---
 
-### Logger
-
-Re-exports [Logger](models/client.model.md#logger)
-
----
-
 ### ParsedRequest
 
 Re-exports [ParsedRequest](models/protocol.model.md#parsedrequest)

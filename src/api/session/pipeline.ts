@@ -75,7 +75,6 @@ export class Pipeline {
         results.push(r);
         prev = r;
         await this.setStoredData();
-        console.log(`Completed pipeline step ${i + 1}/${steps.length}: ${service.name}`, r);
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         const stack = err instanceof Error && typeof err.stack === 'string' ? err.stack : undefined;

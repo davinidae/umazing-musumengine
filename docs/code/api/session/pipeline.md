@@ -5,7 +5,7 @@
 ### Pipeline
 
 Defined in:
-[api/session/pipeline.ts:21](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L21)
+[api/session/pipeline.ts:21](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L21)
 
 Executes a sequence of pipeline services within a session context.
 
@@ -16,7 +16,7 @@ Executes a sequence of pipeline services within a session context.
 > **new Pipeline**(`id`, `createdAt`, `storedData`, `ctx`): [`Pipeline`](#pipeline)
 
 Defined in:
-[api/session/pipeline.ts:22](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L22)
+[api/session/pipeline.ts:22](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L22)
 
 ###### Parameters
 
@@ -47,28 +47,28 @@ Defined in:
 > `readonly` **createdAt**: `number`
 
 Defined in:
-[api/session/pipeline.ts:24](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L24)
+[api/session/pipeline.ts:24](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L24)
 
 ##### ctx
 
 > `private` **ctx**: [`PipelineContext`](../models/pipelines.model.md#pipelinecontext)
 
 Defined in:
-[api/session/pipeline.ts:26](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L26)
+[api/session/pipeline.ts:26](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L26)
 
 ##### id
 
 > `readonly` **id**: `string`
 
 Defined in:
-[api/session/pipeline.ts:23](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L23)
+[api/session/pipeline.ts:23](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L23)
 
 ##### storedData
 
 > `readonly` **storedData**: [`StoredData`](../models/api.model.md#storeddata)
 
 Defined in:
-[api/session/pipeline.ts:25](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L25)
+[api/session/pipeline.ts:25](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L25)
 
 #### Methods
 
@@ -77,7 +77,7 @@ Defined in:
 > **execute**(`steps`): `Promise`\<[`StepResult`](../models/pipelines.model.md#stepresult)[]\>
 
 Defined in:
-[api/session/pipeline.ts:63](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L63)
+[api/session/pipeline.ts:63](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L63)
 
 Execute services sequentially, instantiating each with the current context. On error, pushes an
 error result and stops execution.
@@ -101,7 +101,7 @@ Ordered list of `StepResult` items, including an error entry if an error occurre
 > **getContext**(): [`PipelineContext`](../models/pipelines.model.md#pipelinecontext) \| `undefined`
 
 Defined in:
-[api/session/pipeline.ts:43](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L43)
+[api/session/pipeline.ts:43](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L43)
 
 Access the pipeline context, if any.
 
@@ -116,7 +116,7 @@ Current `PipelineContext` or `undefined`.
 > **setContext**(`ctx`): `void`
 
 Defined in:
-[api/session/pipeline.ts:35](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L35)
+[api/session/pipeline.ts:35](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L35)
 
 Replace or initialize the pipeline context for this session.
 
@@ -137,7 +137,7 @@ New `PipelineContext` to set.
 > **setStoredData**(): `Promise`\<`void`\>
 
 Defined in:
-[api/session/pipeline.ts:47](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/session/pipeline.ts#L47)
+[api/session/pipeline.ts:47](https://github.com/davinidae/umazing-musumengine/blob/d3505fca22e9cc9337c67181003a80a301f9263f/src/api/session/pipeline.ts#L47)
 
 ###### Returns
 

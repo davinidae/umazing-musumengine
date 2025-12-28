@@ -1,4 +1,3 @@
-import { FramingMode } from '../../../lib';
 import { StepService } from './step.service';
 
 /**
@@ -8,7 +7,6 @@ import { StepService } from './step.service';
 export class LoadIndexService extends StepService {
   override readonly name = 'load_index';
   override readonly endpoint = 'load/index';
-  override readonly framing = FramingMode.LengthPrefixed;
 
   /**
    * Build payload for `load/index` using `viewer_id` and client metadata.

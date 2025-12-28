@@ -40,7 +40,6 @@ export class SessionManager {
     steam_session_ticket: string,
     storedData: StoredData,
   ): PipelineContext {
-    console.log('Generating PipelineContext');
     const nets = networkInterfaces();
     const networks: Record<string, string[]> = {};
     for (const name of Object.keys(nets)) {
@@ -56,7 +55,6 @@ export class SessionManager {
         }
       }
     }
-    console.log(networks);
     const viewerId = storedData?.viewerId ?? 0;
     const udid = storedData?.udid ?? randomUUID();
     const obj: PipelineContext = {
@@ -66,7 +64,8 @@ export class SessionManager {
       // Upstream base URL (used by services via StepService.callUpstream). It should be set to the actual UmaMusume API in production.
       upstreamBase: 'https://api.games.umamusume.com/umamusume',
       blob1: {
-        prefix_hex: 'aa55',
+        prefix_hex:
+          '6b20e2ab6c311330f761d737ce3f3025750850665eea58b6372f8d2f57501eb344bdb7270a9067f5b63cd61f152cfb986cbfbf7a',
         udid_raw_hex: createHash('sha256')
           .update(viewerId + udid + DETERMINISTIC_ENC_SECRET, 'utf8')
           .digest()
@@ -87,7 +86,7 @@ export class SessionManager {
         // Common
         viewer_id: viewerId,
         device_id: randomUUID(),
-        ip_address: networks['eth0']?.[0] ?? '',
+        ip_address: Object.values(networks).flat()[0] ?? '192.168.0.1',
         platform_os_version: 'Windows 10  (10.0.26200) 64bit',
         carrier: '',
         keychain: 0,
@@ -115,7 +114,6 @@ export class SessionManager {
       obj.clientData.graphics_device_name = 'Adreno (TM) 640';
       // obj.clientData.platform_os_version = 'Android OS 7.1.2 / API-25 (N2G48H/rel.se.infra.20200730.150525)';
     }
-    console.log('Generated PipelineContext:', obj);
     return obj;
   }
 
@@ -131,14 +129,12 @@ export class SessionManager {
     steam_session_ticket: string,
     prevSessionId: number | undefined,
   ): Promise<UserSession> {
-    console.log('Creating session');
     const storedData = await this.getStoredData(prevSessionId);
     const ctx = this.generateCtx(steam_id, steam_session_ticket, storedData);
     const id = randomUUID();
     const session = new UserSession(id, Date.now(), storedData, ctx);
     this.sessions.set(id, session);
     this.deleteInactiveSessions();
-    console.log('Session created with ID:', session.id);
     return session;
   }
 

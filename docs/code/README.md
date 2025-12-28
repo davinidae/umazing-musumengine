@@ -48,7 +48,6 @@
 - [lib/shared/decrypt.util](lib/shared/decrypt.util.md)
 - [lib/shared/encrypt.util](lib/shared/encrypt.util.md)
 - [lib/shared/json.util](lib/shared/json.util.md)
-- [lib/shared/logger.util](lib/shared/logger.util.md)
 - [lib/shared/protocol.util](lib/shared/protocol.util.md)
 - [umatypes](umatypes/README.md)
 - [variables](variables.md)

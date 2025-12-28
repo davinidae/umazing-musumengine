@@ -14,7 +14,7 @@ describe('DecryptResponseService (unit)', () => {
       auth_key_hex: '33'.repeat(48),
     };
     const blob2 = { v: 123, s: 'ok' };
-    const { requestB64 } = enc.buildFromParts({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
+    const { requestB64 } = enc.build({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
     const raw = Buffer.from(requestB64, 'base64');
     const [, blob2Parsed] = parseRequest(raw);
     const responseB64 = Buffer.from(blob2Parsed).toString('base64');
