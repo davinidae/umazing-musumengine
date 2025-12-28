@@ -5,7 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/encrypt/payload.service.ts#L27)
+[lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/encrypt/payload.service.ts#L27)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -31,7 +31,7 @@ Framing modes:
 > **buildFromParts**(`input`): `BuiltEncryptedPayload`
 
 Defined in:
-[lib/encrypt/payload.service.ts:135](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/encrypt/payload.service.ts#L135)
+[lib/encrypt/payload.service.ts:135](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/encrypt/payload.service.ts#L135)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -57,7 +57,7 @@ If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, 
 > **buildSignup**(`input`): `BuiltEncryptedPayload`
 
 Defined in:
-[lib/encrypt/payload.service.ts:39](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/encrypt/payload.service.ts#L39)
+[lib/encrypt/payload.service.ts:39](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/encrypt/payload.service.ts#L39)
 
 blob1: blob1 length [4 bytes] prefix [52 bytes] session_id [16 bytes] udid [16 bytes] random bytes
 [32 bytes] blob2: [encrypted message] key [32 bytes, randomly generated]

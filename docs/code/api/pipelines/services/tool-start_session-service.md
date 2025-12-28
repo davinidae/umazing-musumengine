@@ -1,35 +1,25 @@
-# api/pipelines/services/step.service
+# api/pipelines/services/tool-start_session.service
 
 ## Classes
 
-### `abstract` StepService
+### ToolStartSessionService
 
 Defined in:
-[api/pipelines/services/step.service.ts:21](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L21)
+[api/pipelines/services/tool-start_session.service.ts:9](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L9)
 
-Base class for a pipeline service step.
+tool/start_session: Establishes a server session for the viewer. Skips execution if a valid
+viewer_id is not available.
 
-Responsibilities
+#### Extends
 
-- Receives a PipelineContext with runtime helpers and upstream configuration.
-- Implements execute(prev) to build a request, call upstream, and decode the response.
-- Provides callUpstream() helper to POST Base64 requests to the configured upstream base.
-
-#### Extended by
-
-- [`LoadIndexService`](load-index.service.md#loadindexservice)
-- [`ToolPreSignupService`](tool-pre_signup.service.md#toolpresignupservice)
-- [`ToolSignupService`](tool-signup.service.md#toolsignupservice)
-- [`ToolStartSessionService`](tool-start_session.service.md#toolstartsessionservice)
-- [`TutorialSkipService`](tutorial-skip.service.md#tutorialskipservice)
-- [`UserChangeNameService`](user-change_name.service.md#userchangenameservice)
-- [`UserChangeSexService`](user-change_sex.service.md#userchangesexservice)
+- [`StepService`](step.service.md#stepservice)
 
 #### Constructors
 
 ##### Constructor
 
-> **new StepService**(`ctx`, `pipeline`): [`StepService`](#stepservice)
+> **new ToolStartSessionService**(`ctx`, `pipeline`):
+> [`ToolStartSessionService`](#toolstartsessionservice)
 
 Defined in:
 [api/pipelines/services/step.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L63)
@@ -50,7 +40,11 @@ PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
 ###### Returns
 
-[`StepService`](#stepservice)
+[`ToolStartSessionService`](#toolstartsessionservice)
+
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`constructor`](step.service.md#constructor)
 
 #### Properties
 
@@ -64,20 +58,32 @@ Defined in:
 
 PipelineContext holding runtime, upstreamBase, blob1 and clientData.
 
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`ctx`](step.service.md#ctx)
+
 ##### endpoint
 
-> `abstract` `readonly` **endpoint**: `string`
+> `readonly` **endpoint**: `"tool/start_session"` = `'tool/start_session'`
 
 Defined in:
-[api/pipelines/services/step.service.ts:23](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L23)
+[api/pipelines/services/tool-start_session.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L11)
+
+###### Overrides
+
+[`StepService`](step.service.md#stepservice).[`endpoint`](step.service.md#endpoint)
 
 ##### framing
 
-> `abstract` `readonly` **framing**:
-> [`FramingMode`](../../../lib/models/runtime.model.md#framingmode)
+> `readonly` **framing**: [`LengthPrefixed`](../../../lib/models/runtime.model.md#lengthprefixed) =
+> `FramingMode.LengthPrefixed`
 
 Defined in:
-[api/pipelines/services/step.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L24)
+[api/pipelines/services/tool-start_session.service.ts:12](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L12)
+
+###### Overrides
+
+[`StepService`](step.service.md#stepservice).[`framing`](step.service.md#framing)
 
 ##### isSignupStep
 
@@ -86,21 +92,33 @@ Defined in:
 Defined in:
 [api/pipelines/services/step.service.ts:25](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L25)
 
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`isSignupStep`](step.service.md#issignupstep)
+
 ##### name
 
-> `abstract` `readonly` **name**: `string`
+> `readonly` **name**: `"start_session"` = `'start_session'`
 
 Defined in:
-[api/pipelines/services/step.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L22)
+[api/pipelines/services/tool-start_session.service.ts:10](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L10)
+
+###### Overrides
+
+[`StepService`](step.service.md#stepservice).[`name`](step.service.md#name)
 
 ##### omitViewerId
 
-> `protected` **omitViewerId**: `boolean` = `false`
+> `protected` **omitViewerId**: `boolean` = `true`
 
 Defined in:
-[api/pipelines/services/step.service.ts:156](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L156)
+[api/pipelines/services/tool-start_session.service.ts:13](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L13)
 
 Override to `true` for steps that should not enforce `viewer_id` preconditions (e.g., `pre_signup`).
+
+###### Overrides
+
+[`StepService`](step.service.md#stepservice).[`omitViewerId`](step.service.md#omitviewerid)
 
 ##### pipeline
 
@@ -108,6 +126,10 @@ Override to `true` for steps that should not enforce `viewer_id` preconditions (
 
 Defined in:
 [api/pipelines/services/step.service.ts:65](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L65)
+
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`pipeline`](step.service.md#pipeline)
 
 #### Methods
 
@@ -144,6 +166,10 @@ Base64-encoded request buffer.
 
 If upstream base is missing or the response shape is invalid.
 
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`callUpstream`](step.service.md#callupstream)
+
 ##### execute()
 
 > **execute**(`prev`):
@@ -170,6 +196,10 @@ Previous step result, if any.
 `Promise`\<[`StepResultBase`](../../models/pipelines.model.md#stepresultbase)\>
 
 StepResultBase without the `order` field (assigned by the pipeline runner).
+
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`execute`](step.service.md#execute)
 
 ##### getBaseHeaders()
 
@@ -213,6 +243,10 @@ Defined in:
 ###### x-unity-version
 
 > **x-unity-version**: `string` = `'2022.3.62f2'`
+
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`getBaseHeaders`](step.service.md#getbaseheaders)
 
 ##### getBasePayload()
 
@@ -281,71 +315,135 @@ Defined in:
 
 > **viewer_id**: `number`
 
+###### Inherited from
+
+[`StepService`](step.service.md#stepservice).[`getBasePayload`](step.service.md#getbasepayload)
+
 ##### getHeaders()
 
-> `abstract` **getHeaders**(): `Record`\<`string`, `unknown`\>
+> **getHeaders**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:141](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L141)
+[api/pipelines/services/tool-start_session.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L27)
 
 ###### Returns
 
-`Record`\<`string`, `unknown`\>
+`object`
+
+###### accept
+
+> **accept**: `string` = `'*/*'`
+
+###### app-ver
+
+> **app-ver**: `string` = `'1.20.11'`
+
+###### content-type
+
+> **content-type**: `string` = `'application/x-msgpack'`
+
+###### device
+
+> **device**: `number`
+
+###### res-ver
+
+> **res-ver**: `string` = `'10002800'`
+
+###### sid
+
+> **sid**: `` `${string}-${string}-${string}-${string}-${string}` ``
+
+###### viewerid
+
+> **viewerid**: `number`
+
+###### x-unity-version
+
+> **x-unity-version**: `string` = `'2022.3.62f2'`
+
+###### Overrides
+
+[`StepService`](step.service.md#stepservice).[`getHeaders`](step.service.md#getheaders)
 
 ##### getPayload()
 
-> `abstract` **getPayload**(): `Record`\<`string`, `unknown`\>
+> **getPayload**(): `object`
 
 Defined in:
-[api/pipelines/services/step.service.ts:139](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L139)
+[api/pipelines/services/tool-start_session.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/tool-start_session.service.ts#L18)
 
-Build the request payload for this step.
+Build payload required by `tool/start_session` including device and platform metadata.
 
 ###### Returns
 
-`Record`\<`string`, `unknown`\>
+`object`
 
-Plain object serialized by the runtime encoder.
+###### attestation_type
 
-##### onResponseDecoded()
+> **attestation_type**:
+> [`AttestationType`](../../models/umamusume-api-enums.model.md#attestationtype)
 
-> `private` **onResponseDecoded**(`decodedResponse`): `Promise`\<`void`\>
+###### carrier
 
-Defined in:
-[api/pipelines/services/step.service.ts:143](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L143)
+> **carrier**: `string`
 
-###### Parameters
+###### device
 
-###### decodedResponse
+> **device**: `number`
 
-[`DecodeResponseOutput`](../../../lib/models/runtime.model.md#decoderesponseoutput)
+###### device_id
 
-###### Returns
+> **device_id**: `string`
 
-`Promise`\<`void`\>
+###### device_name
 
-## Type Aliases
+> **device_name**: `string`
 
-### StepServiceCtor()
+###### device_token
 
-> **StepServiceCtor** = (`ctx`, `pipeline`) => [`StepService`](#stepservice)
+> **device_token**: `null` = `null`
 
-Defined in:
-[api/pipelines/services/step.service.ts:227](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/api/pipelines/services/step.service.ts#L227)
+###### dmm_onetime_token
 
-Constructor type for StepService implementations. Used to instantiate steps with a PipelineContext
-at runtime.
+> **dmm_onetime_token**: `string` \| `null`
 
-#### Parameters
+###### dmm_viewer_id
 
-##### ctx
+> **dmm_viewer_id**: `number` \| `null`
 
-[`PipelineContext`](../../models/pipelines.model.md#pipelinecontext)
+###### graphics_device_name
 
-##### pipeline
+> **graphics_device_name**: `string`
 
-[`Pipeline`](../../session/pipeline.md#pipeline)
+###### ip_address
 
-#### Returns
+> **ip_address**: `string`
 
-[`StepService`](#stepservice)
+###### keychain
+
+> **keychain**: `number`
+
+###### locale
+
+> **locale**: `string`
+
+###### platform_os_version
+
+> **platform_os_version**: `string`
+
+###### steam_id
+
+> **steam_id**: `string` \| `undefined`
+
+###### steam_session_ticket
+
+> **steam_session_ticket**: `string` \| `undefined`
+
+###### viewer_id
+
+> **viewer_id**: `number`
+
+###### Overrides
+
+[`StepService`](step.service.md#stepservice).[`getPayload`](step.service.md#getpayload)

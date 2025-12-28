@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosHeaders } from 'axios';
 import {
   asResultCodeName,
   GallopResultCode,
@@ -8,6 +8,7 @@ import {
 } from '../../models';
 import { DecodeResponseOutput, FramingMode } from '../../../lib';
 import { Pipeline } from '../../session/pipeline';
+import { randomUUID } from 'crypto';
 
 /**
  * Base class for a pipeline service step.
@@ -22,6 +23,38 @@ export abstract class StepService {
   abstract readonly endpoint: string;
   abstract readonly framing: FramingMode;
   readonly isSignupStep: boolean = false;
+
+  getBasePayload() {
+    return {
+      viewer_id: this.ctx.clientData.viewer_id ?? 0,
+      device: this.ctx.clientData.device,
+      device_id: this.ctx.clientData.device_id,
+      device_name: this.ctx.clientData.device_name,
+      graphics_device_name: this.ctx.clientData.graphics_device_name,
+      ip_address: this.ctx.clientData.ip_address,
+      platform_os_version: this.ctx.clientData.platform_os_version,
+      carrier: this.ctx.clientData.carrier,
+      keychain: this.ctx.clientData.keychain,
+      locale: this.ctx.clientData.locale,
+      dmm_viewer_id: this.ctx.clientData.dmm_viewer_id,
+      dmm_onetime_token: this.ctx.clientData.dmm_onetime_token,
+      steam_id: this.ctx.clientData.steam_id,
+      steam_session_ticket: this.ctx.clientData.steam_session_ticket,
+    };
+  }
+
+  getBaseHeaders() {
+    return {
+      sid: randomUUID(),
+      device: this.ctx.clientData.device,
+      viewerid: this.ctx.clientData.viewer_id ?? 0,
+      'x-unity-version': '2022.3.62f2',
+      'app-ver': '1.20.11',
+      'res-ver': '10002800',
+      accept: '*/*',
+      'content-type': 'application/x-msgpack',
+    };
+  }
 
   /**
    * Construct a step with the provided execution context.
@@ -53,7 +86,10 @@ export abstract class StepService {
   protected async callUpstream(
     requestB64: string,
     payload: unknown,
-  ): Promise<{ responseB64: string; responseCode: GallopResultCode }> {
+  ): Promise<{
+    responseB64: string;
+    responseCode: GallopResultCode;
+  }> {
     console.log('Calling upstream for endpoint:', this.endpoint);
     const base = this.ctx.upstreamBase;
     if (!base) {
@@ -66,7 +102,7 @@ export abstract class StepService {
     try {
       console.log();
       const resp = await axios.post(url, requestB64, {
-        headers: {},
+        headers: this.getHeaders() as AxiosHeaders,
       });
       console.log('Upstream response status:', resp.status);
       const data = resp.data;
@@ -100,7 +136,9 @@ export abstract class StepService {
    * @param viewer_id Viewer identifier propagated from previous step or context.
    * @returns Plain object serialized by the runtime encoder.
    */
-  abstract getPayload(viewer_id: number): Record<string, unknown>;
+  abstract getPayload(): Record<string, unknown>;
+
+  abstract getHeaders(): Record<string, unknown>;
 
   private async onResponseDecoded(decodedResponse: DecodeResponseOutput): Promise<void> {
     const ctx = this.pipeline.getContext();
@@ -152,13 +190,14 @@ export abstract class StepService {
         };
       }
     }
+    this.ctx.clientData.viewer_id = viewer_id;
     const payload = {
       blob1: {
         ...this.ctx.blob1,
         framing: this.framing,
         viewer_id: viewer_id,
       },
-      blob2: this.getPayload(viewer_id),
+      blob2: this.getPayload(),
       isSignup: this.isSignupStep,
     };
     const encoded = this.ctx.runtime.encodeRequest(payload);

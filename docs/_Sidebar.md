@@ -34,15 +34,21 @@
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>services</summary>
 <ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
 
-- [[code/api/pipelines/services/load_index-service.md|load_index-service.md]]
-
-- [[code/api/pipelines/services/pre_signup-service.md|pre_signup-service.md]]
-
-- [[code/api/pipelines/services/signup-service.md|signup-service.md]]
-
-- [[code/api/pipelines/services/start_session-service.md|start_session-service.md]]
+- [[code/api/pipelines/services/load-index-service.md|load-index-service.md]]
 
 - [[code/api/pipelines/services/step-service.md|step-service.md]]
+
+- [[code/api/pipelines/services/tool-pre_signup-service.md|tool-pre_signup-service.md]]
+
+- [[code/api/pipelines/services/tool-signup-service.md|tool-signup-service.md]]
+
+- [[code/api/pipelines/services/tool-start_session-service.md|tool-start_session-service.md]]
+
+- [[code/api/pipelines/services/tutorial-skip-service.md|tutorial-skip-service.md]]
+
+- [[code/api/pipelines/services/user-change_name-service.md|user-change_name-service.md]]
+
+- [[code/api/pipelines/services/user-change_sex-service.md|user-change_sex-service.md]]
 
 </ul>
 </details>
@@ -560,12 +566,36 @@
 </ul>
 </details>
 </li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>tutorial</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>skip</summary>
+</details>
+</li>
+</ul>
+</details>
+</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>user</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>change_favorite_character</summary>
 <ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
 
 - [[umamusume_api_info/endpoints/user/change_favorite_character/README.md|README.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>change_name</summary>
+<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
+
+- [[umamusume_api_info/endpoints/user/change_name/README.md|README.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>change_sex</summary>
+<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
+
+- [[umamusume_api_info/endpoints/user/change_sex/README.md|README.md]]
 
 </ul>
 </details>

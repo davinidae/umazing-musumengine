@@ -6,19 +6,24 @@ import { StepService } from './step.service';
  * Carries viewer_id forward when available from previous step.
  * Uses kv-stream framing.
  */
-export class SignupService extends StepService {
-  override readonly name = 'signup';
-  override readonly endpoint = 'tool/signup';
-  override readonly framing = FramingMode.KvStream;
-  override readonly isSignupStep = true;
+export class UserChangeSexService extends StepService {
+  override readonly name = 'change_sex';
+  override readonly endpoint = 'user/change_sex';
+  override readonly framing = FramingMode.LengthPrefixed;
 
   /**
    * Build payload including `viewer_id` (if available) along with client data.
    */
-  getPayload(viewer_id: number): Record<string, unknown> {
+  getPayload() {
     return {
-      ...this.ctx.clientData,
-      viewer_id,
+      ...this.getBasePayload(),
+      sex: 1, // ?
+    };
+  }
+
+  getHeaders() {
+    return {
+      ...this.getBaseHeaders(),
     };
   }
 }

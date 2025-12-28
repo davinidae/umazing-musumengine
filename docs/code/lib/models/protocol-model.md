@@ -5,7 +5,7 @@
 ### Blob1Header
 
 Defined in:
-[lib/models/protocol.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L5)
+[lib/models/protocol.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L5)
 
 Represents the parsed blob1 header fields. Layout:
 [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(48)].
@@ -18,7 +18,7 @@ Represents the parsed blob1 header fields. Layout:
 > `viewer_id`): [`Blob1Header`](#blob1header)
 
 Defined in:
-[lib/models/protocol.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L6)
+[lib/models/protocol.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L6)
 
 ###### Parameters
 
@@ -57,42 +57,42 @@ Defined in:
 > `readonly` **auth_key**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:11](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L11)
+[lib/models/protocol.model.ts:11](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L11)
 
 ##### prefix
 
 > `readonly` **prefix**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L7)
+[lib/models/protocol.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L7)
 
 ##### response_key
 
 > `readonly` **response_key**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L10)
+[lib/models/protocol.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L10)
 
 ##### session_id
 
 > `readonly` **session_id**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L8)
+[lib/models/protocol.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L8)
 
 ##### udid_raw
 
 > `readonly` **udid_raw**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L9)
+[lib/models/protocol.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L9)
 
 ##### viewer_id
 
 > `readonly` **viewer_id**: `number` = `0`
 
 Defined in:
-[lib/models/protocol.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L12)
+[lib/models/protocol.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L12)
 
 #### Methods
 
@@ -101,7 +101,7 @@ Defined in:
 > **udidCanonical**(): `string`
 
 Defined in:
-[lib/models/protocol.model.ts:51](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L51)
+[lib/models/protocol.model.ts:51](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L51)
 
 UDID canonical dashed-format string derived from udid_raw.
 
@@ -116,7 +116,7 @@ Canonical UDID string (8-4-4-4-12).
 > `static` **fromBuffer**(`blob1`): [`Blob1Header`](#blob1header)
 
 Defined in:
-[lib/models/protocol.model.ts:23](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L23)
+[lib/models/protocol.model.ts:23](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L23)
 
 Parse a blob1 Buffer into a Blob1Header instance.
 
@@ -143,7 +143,7 @@ If required field sizes are not present.
 ### ParsedRequest
 
 Defined in:
-[lib/models/protocol.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L60)
+[lib/models/protocol.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L60)
 
 Represents a parsed full request with blob1 and blob2 sections.
 
@@ -154,7 +154,7 @@ Represents a parsed full request with blob1 and blob2 sections.
 > `private` **new ParsedRequest**(`blob1Buffer`, `blob2`): [`ParsedRequest`](#parsedrequest)
 
 Defined in:
-[lib/models/protocol.model.ts:65](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L65)
+[lib/models/protocol.model.ts:65](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L65)
 
 ###### Parameters
 
@@ -177,21 +177,21 @@ Defined in:
 > `readonly` **blob1**: [`Blob1Header`](#blob1header)
 
 Defined in:
-[lib/models/protocol.model.ts:63](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L63)
+[lib/models/protocol.model.ts:63](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L63)
 
 ##### blob1Buffer
 
 > `readonly` **blob1Buffer**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:61](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L61)
+[lib/models/protocol.model.ts:61](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L61)
 
 ##### blob2
 
 > `readonly` **blob2**: `Buffer`
 
 Defined in:
-[lib/models/protocol.model.ts:62](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L62)
+[lib/models/protocol.model.ts:62](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L62)
 
 #### Methods
 
@@ -200,7 +200,7 @@ Defined in:
 > `static` **parse**(`raw`): [`ParsedRequest`](#parsedrequest)
 
 Defined in:
-[lib/models/protocol.model.ts:77](https://github.com/davinidae/umazing-musumengine/blob/f7b34d19a41237760d3f0823d1a963b560f03912/src/lib/models/protocol.model.ts#L77)
+[lib/models/protocol.model.ts:77](https://github.com/davinidae/umazing-musumengine/blob/597f437b525cf870a83f149525066e220aca93bd/src/lib/models/protocol.model.ts#L77)
 
 Parse a full request buffer into a ParsedRequest.
 
