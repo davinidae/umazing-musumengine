@@ -1,10 +1,7 @@
 import { RequestResult, StartSessionRequest, StartSessionResponse, StepData } from '../../models';
-import { CoreStepService } from './core.step';
+import { CoreStep } from './core.step';
 
-export class StartSessionStepService extends CoreStepService<
-  StartSessionRequest,
-  StartSessionResponse
-> {
+export class StartSessionStep extends CoreStep<StartSessionRequest, StartSessionResponse> {
   endpoint = 'tool/start_session';
 
   getRequestBody() {

@@ -1,12 +1,12 @@
 import { AuthKey, newSessionId, SessionId, sleep, Udid, UmaReqHeader } from '../utils';
 import { AttestationType, RequestBase, RequestResult } from '../models';
-import { ToolPreSignupStepService } from './steps/tool-pre_signup.step';
-import { ToolSignupStepService } from './steps/tool-signup.step';
-import { LoadIndexStepService } from './steps/load-index.step';
-import { StartSessionStepService } from './steps/start-session.step';
-import { UserChangeSexStepService } from './steps/user-change_sex.step';
-import { UserChangeNameStepService } from './steps/user-change_name.step';
-import { TutorialSkipStepService } from './steps/tutorial-skip.step';
+import { ToolPreSignupStep } from './steps/tool-pre_signup.step';
+import { ToolSignupStep } from './steps/tool-signup.step';
+import { LoadIndexStep } from './steps/load-index.step';
+import { StartSessionStep } from './steps/start-session.step';
+import { UserChangeSexStep } from './steps/user-change_sex.step';
+import { UserChangeNameStep } from './steps/user-change_name.step';
+import { TutorialSkipStep } from './steps/tutorial-skip.step';
 
 export function createUmaClient(
   udid: Udid,
@@ -51,10 +51,10 @@ export class UmaClient {
 
   public async signup() {
     const results: RequestResult[] = [];
-    const preSignupRes = await new ToolPreSignupStepService(this.getStepData()).execute();
+    const preSignupRes = await new ToolPreSignupStep(this.getStepData()).execute();
     results.push(preSignupRes);
     this.regenSessionId();
-    const toolsignupRes = await new ToolSignupStepService(this.getStepData()).execute();
+    const toolsignupRes = await new ToolSignupStep(this.getStepData()).execute();
     results.push(toolsignupRes);
     const { viewer_id, authKey } = toolsignupRes;
     this.base.viewer_id = viewer_id;
@@ -70,25 +70,25 @@ export class UmaClient {
       results.push(...(await this.signup()));
     }
     this.regenSessionId();
-    const startSessionRes = await new StartSessionStepService(
+    const startSessionRes = await new StartSessionStep(
       this.getStepData(),
       attestationType,
     ).execute();
     results.push(startSessionRes);
     this.resVer = startSessionRes.resVer;
-    const loadIndexRes = await new LoadIndexStepService(this.getStepData()).execute();
+    const loadIndexRes = await new LoadIndexStep(this.getStepData()).execute();
     results.push(loadIndexRes);
     await sleep(2000);
     const isTutorial = Boolean(startSessionRes.decoded.data?.is_tutorial);
     if (isTutorial) {
-      const userChangeSexRes = await new UserChangeSexStepService(this.getStepData()).execute();
+      const userChangeSexRes = await new UserChangeSexStep(this.getStepData()).execute();
       results.push(userChangeSexRes);
-      const userChangeNameRes = await new UserChangeNameStepService(this.getStepData()).execute();
+      const userChangeNameRes = await new UserChangeNameStep(this.getStepData()).execute();
       results.push(userChangeNameRes);
-      const tutorialSkipRes = await new TutorialSkipStepService(this.getStepData()).execute();
+      const tutorialSkipRes = await new TutorialSkipStep(this.getStepData()).execute();
       results.push(tutorialSkipRes);
     }
-    const loadIndexRes2 = await new LoadIndexStepService(this.getStepData()).execute();
+    const loadIndexRes2 = await new LoadIndexStep(this.getStepData()).execute();
     results.push(loadIndexRes2);
     return results;
   }

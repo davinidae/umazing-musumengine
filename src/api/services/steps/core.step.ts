@@ -2,7 +2,7 @@ import axios from 'axios';
 import { RequestResult, StepData, UmaResponse } from '../../models';
 import { decompressResponse, heuristicDecode, saltedMd5, SessionId, UmaRequest } from '../../utils';
 
-export abstract class CoreStepService<TReq extends object, TRes> {
+export abstract class CoreStep<TReq extends object, TRes> {
   abstract endpoint: string;
   abstract getRequestBody(): TReq;
 

@@ -202,13 +202,13 @@
 
 - [[code/cli.md|cli.md]]
 
+- [[code/constants.md|constants.md]]
+
 - [[code/index.md|index.md]]
 
 - [[code/lib.md|lib.md]]
 
 - [[code/README.md|README.md]]
-
-- [[code/variables.md|variables.md]]
 
 </ul>
 </details>

@@ -32,6 +32,7 @@
 - [api/utils/sleep.util](api/utils/sleep.util.md)
 - [api/utils/uma-client.util](api/utils/uma-client.util.md)
 - [cli](cli.md)
+- [constants](constants.md)
 - [index](index.md)
 - [lib](lib.md)
 - [lib/decrypt](lib/decrypt.md)
@@ -54,4 +55,3 @@
 - [lib/shared/json.util](lib/shared/json.util.md)
 - [lib/shared/protocol.util](lib/shared/protocol.util.md)
 - [umatypes](umatypes/README.md)
-- [variables](variables.md)

@@ -13,7 +13,7 @@
  *
  * @public
  */
-import { DETERMINISTIC_ENC_SECRET } from '../variables';
+import { DETERMINISTIC_ENC_SECRET } from '../constants';
 import { DecryptResponseService } from './decrypt';
 import { EncryptPayloadService } from './encrypt';
 import {

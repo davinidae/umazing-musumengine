@@ -10,7 +10,7 @@ import {
 import { encode as mpEncode } from '@msgpack/msgpack';
 import { createHash } from 'crypto';
 import { pkcs7Pad } from '../src';
-import { DETERMINISTIC_ENC_SECRET } from '../src/variables';
+import { DETERMINISTIC_ENC_SECRET } from '../src/constants';
 import { encryptAes256Cbc } from '../src';
 
 /**

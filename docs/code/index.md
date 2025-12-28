@@ -53,7 +53,7 @@ Re-exports [deriveIvFromUdidString](lib/shared/protocol.util.md#deriveivfromudid
 
 ### DETERMINISTIC_ENC_SECRET
 
-Re-exports [DETERMINISTIC_ENC_SECRET](variables.md#deterministic_enc_secret)
+Re-exports [DETERMINISTIC_ENC_SECRET](constants.md#deterministic_enc_secret)
 
 ---
 

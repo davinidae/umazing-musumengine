@@ -1,6 +1,6 @@
-import { CoreStepService } from './core.step';
+import { CoreStep } from './core.step';
 
-export class ToolPreSignupStepService extends CoreStepService<Record<string, never>, unknown> {
+export class ToolPreSignupStep extends CoreStep<Record<string, never>, unknown> {
   endpoint = 'tool/pre_signup';
 
   getRequestBody(): Record<string, never> {

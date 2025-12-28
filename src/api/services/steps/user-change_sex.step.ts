@@ -1,6 +1,6 @@
-import { CoreStepService } from './core.step';
+import { CoreStep } from './core.step';
 
-export class UserChangeSexStepService extends CoreStepService<
+export class UserChangeSexStep extends CoreStep<
   {
     sex: number;
   },

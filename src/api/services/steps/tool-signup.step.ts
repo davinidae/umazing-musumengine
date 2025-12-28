@@ -1,8 +1,8 @@
 import { SignupData, SignupRequest } from '../../models';
 import { AuthKey } from '../../utils';
-import { CoreStepService } from './core.step';
+import { CoreStep } from './core.step';
 
-export class ToolSignupStepService extends CoreStepService<SignupRequest, SignupData> {
+export class ToolSignupStep extends CoreStep<SignupRequest, SignupData> {
   endpoint = 'tool/signup';
 
   getRequestBody(): SignupRequest {

@@ -21,7 +21,7 @@ import {
 import path from 'node:path';
 import fs from 'node:fs';
 import fastGlob from 'fast-glob';
-import { DETERMINISTIC_ENC_SECRET } from '../variables';
+import { DETERMINISTIC_ENC_SECRET } from '../constants';
 
 export const program = new Command();
 program

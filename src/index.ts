@@ -6,4 +6,4 @@
  * Express server startup) when consumers import the library.
  */
 export * from './lib';
-export * from './variables';
+export * from './constants';

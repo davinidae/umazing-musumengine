@@ -7,7 +7,7 @@
 > `const` **STR16**: `218` = `0xda`
 
 Defined in:
-[api/constants/msgpack.constant.ts:2](https://github.com/davinidae/umazing-musumengine/blob/3287c40709f1f448cf5e0c1e301ea35ff5829e19/src/api/constants/msgpack.constant.ts#L2)
+[api/constants/msgpack.constant.ts:2](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/constants/msgpack.constant.ts#L2)
 
 ---
 
@@ -16,7 +16,7 @@ Defined in:
 > `const` **STR32**: `219` = `0xdb`
 
 Defined in:
-[api/constants/msgpack.constant.ts:3](https://github.com/davinidae/umazing-musumengine/blob/3287c40709f1f448cf5e0c1e301ea35ff5829e19/src/api/constants/msgpack.constant.ts#L3)
+[api/constants/msgpack.constant.ts:3](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/constants/msgpack.constant.ts#L3)
 
 ---
 
@@ -25,4 +25,4 @@ Defined in:
 > `const` **STR8**: `217` = `0xd9`
 
 Defined in:
-[api/constants/msgpack.constant.ts:1](https://github.com/davinidae/umazing-musumengine/blob/3287c40709f1f448cf5e0c1e301ea35ff5829e19/src/api/constants/msgpack.constant.ts#L1)
+[api/constants/msgpack.constant.ts:1](https://github.com/davinidae/umazing-musumengine/blob/cfd3e9ae4e3abb10b26497490639c3570af3d3eb/src/api/constants/msgpack.constant.ts#L1)

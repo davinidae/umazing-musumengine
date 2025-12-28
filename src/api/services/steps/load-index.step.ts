@@ -1,6 +1,6 @@
-import { CoreStepService } from './core.step';
+import { CoreStep } from './core.step';
 
-export class LoadIndexStepService extends CoreStepService<Record<string, string>, unknown> {
+export class LoadIndexStep extends CoreStep<Record<string, string>, unknown> {
   endpoint = 'load/index';
 
   getRequestBody() {

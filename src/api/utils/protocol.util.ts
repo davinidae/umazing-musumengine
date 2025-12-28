@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import { encode } from '@msgpack/msgpack';
-import { COMMON_HEADER, SALT } from '../constants';
+import { COMMON_HEADER } from '../constants';
+import { DETERMINISTIC_ENC_SECRET } from '../../constants';
 
 function u32le(value: number): Uint8Array {
   const out = new Uint8Array(4);
@@ -59,7 +60,7 @@ export function genKey(): Uint8Array {
 export function saltedMd5(data: Uint8Array): Uint8Array {
   const hash = crypto.createHash('md5');
   hash.update(data);
-  hash.update(Buffer.from(SALT, 'utf8'));
+  hash.update(Buffer.from(DETERMINISTIC_ENC_SECRET, 'utf8'));
   return Uint8Array.from(hash.digest());
 }
 
