@@ -1,12 +1,12 @@
 import { setTimeout } from 'timers';
-import { StepData } from '../../models';
+import type { StepData } from '../../models';
 import { CoreStep } from './core.step';
 
 /**
  * Local sleep helper.
  * Kept here (instead of a shared util) because it is only used by this step.
  */
-function sleep(ms: number) {
+function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, ms));
 }
 
@@ -20,7 +20,7 @@ export class LoadIndexStep extends CoreStep<
   Umatypes.Request.LoadIndex,
   Umatypes.Response.LoadIndex
 > {
-  endpoint = 'load/index';
+  override endpoint = 'load/index';
 
   constructor(
     protected readonly stepData: StepData,
@@ -29,11 +29,11 @@ export class LoadIndexStep extends CoreStep<
     super(stepData);
   }
 
-  getRequestBody() {
+  override getRequestBody(): Umatypes.Request.LoadIndex {
     return {};
   }
 
-  protected override async afterExecute() {
+  protected override async afterExecute(): Promise<void> {
     if (!this.doSleep) {
       return;
     }

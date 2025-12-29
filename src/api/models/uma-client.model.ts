@@ -1,6 +1,6 @@
-import { AttestationType, DeviceType } from '../../api/models';
-import { AuthKey, Udid, UmaReqHeader } from '../../lib';
-import { UmaClient } from '../services/uma-client.service';
+import type { AttestationType, DeviceType } from '../../api/models';
+import type { AuthKey, Udid, UmaReqHeader } from '../../lib';
+import type { UmaClient } from '../services/uma-client.service';
 
 export type RequestBase = {
   carrier: string;

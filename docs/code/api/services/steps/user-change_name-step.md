@@ -5,7 +5,7 @@
 ### UserChangeNameStep
 
 Defined in:
-[api/services/steps/user-change_name.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/user-change_name.step.ts#L3)
+[api/services/steps/user-change_name.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/user-change_name.step.ts#L3)
 
 Base class for a single API “step”.
 
@@ -29,7 +29,7 @@ A step:
 > **new UserChangeNameStep**(`stepData`): [`UserChangeNameStep`](#userchangenamestep)
 
 Defined in:
-[api/services/steps/core.step.ts:46](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L46)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
 
 ###### Parameters
 
@@ -52,7 +52,7 @@ Defined in:
 > **endpoint**: `string` = `'user/change_name'`
 
 Defined in:
-[api/services/steps/user-change_name.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/user-change_name.step.ts#L7)
+[api/services/steps/user-change_name.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/user-change_name.step.ts#L7)
 
 ###### Overrides
 
@@ -63,7 +63,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:46](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L46)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
 
 ###### Inherited from
 
@@ -73,10 +73,10 @@ Defined in:
 
 ##### afterExecute()
 
-> `protected` **afterExecute**(`_result`): `Promise`\<`void`\>
+> `protected` **afterExecute**(`_result`): `void` \| `Promise`\<`void`\>
 
 Defined in:
-[api/services/steps/core.step.ts:105](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L105)
+[api/services/steps/core.step.ts:134](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L134)
 
 Optional hook executed after `request()` and before returning from `execute()`.
 
@@ -88,7 +88,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 
 ###### Returns
 
-`Promise`\<`void`\>
+`void` \| `Promise`\<`void`\>
 
 ###### Inherited from
 
@@ -100,7 +100,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<`unknown`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:110](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L110)
+[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L139)
 
 Execute the step end-to-end.
 
@@ -114,19 +114,16 @@ Execute the step end-to-end.
 
 ##### getBody()
 
-> `protected` **getBody**():
-> [`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
-> [`RequestBase`](../../models/uma-client.model.md#requestbase)
+> `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/services/steps/core.step.ts:65](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L65)
+[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L66)
 
 Combine the step-specific body with common request fields from StepData.
 
 ###### Returns
 
-[`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
-[`RequestBase`](../../models/uma-client.model.md#requestbase)
+`Record`\<`string`, `unknown`\>
 
 ###### Inherited from
 
@@ -134,48 +131,16 @@ Combine the step-specific body with common request fields from StepData.
 
 ##### getHeaders()
 
-> `protected` **getHeaders**(): `object`
+> `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[api/services/steps/core.step.ts:51](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L51)
+[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L52)
 
 Build upstream headers expected by the game API.
 
 ###### Returns
 
-`object`
-
-###### Accept
-
-> **Accept**: `string` = `'*/*'`
-
-###### APP-VER
-
-> **APP-VER**: `string` = `'1.20.11'`
-
-###### Content-Type
-
-> **Content-Type**: `string` = `'application/x-msgpack'`
-
-###### Device
-
-> **Device**: `string`
-
-###### RES-VER
-
-> **RES-VER**: `string`
-
-###### SID
-
-> **SID**: `string`
-
-###### ViewerID
-
-> **ViewerID**: `string`
-
-###### X-Unity-Version
-
-> **X-Unity-Version**: `string` = `'2022.3.62f2'`
+`Record`\<`string`, `string`\>
 
 ###### Inherited from
 
@@ -183,18 +148,15 @@ Build upstream headers expected by the game API.
 
 ##### getRequestBody()
 
-> **getRequestBody**(): `object`
+> **getRequestBody**():
+> [`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename)
 
 Defined in:
-[api/services/steps/user-change_name.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/user-change_name.step.ts#L9)
+[api/services/steps/user-change_name.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/user-change_name.step.ts#L9)
 
 ###### Returns
 
-`object`
-
-###### name
-
-> **name**: `string`
+[`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename)
 
 ###### Overrides
 
@@ -202,26 +164,19 @@ Defined in:
 
 ##### request()
 
-> `protected` **request**(): `Promise`\<\{ `body`:
-> [`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
-> [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-> [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<`unknown`\>; `headers`: \{
-> `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`; `RES-VER`:
-> `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`; \}; \}\>
+> `protected` **request**():
+> `Promise`\<`Omit`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<`unknown`\>,
+> `"endpoint"`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:73](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L73)
+[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L117)
 
 Execute the upstream HTTP request and return decoded response + diagnostics.
 
 ###### Returns
 
-`Promise`\<\{ `body`:
-[`UserChangeName`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#userchangename) &
-[`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-[`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<`unknown`\>; `headers`: \{ `Accept`:
-`string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`; `RES-VER`: `string`;
-`SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`; \}; \}\>
+`Promise`\<`Omit`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<`unknown`\>,
+`"endpoint"`\>\>
 
 ###### Inherited from
 

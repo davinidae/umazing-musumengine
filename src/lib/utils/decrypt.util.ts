@@ -5,6 +5,9 @@
  * @returns New buffer with padding bytes appended.
  */
 export function pkcs7Pad(data: Buffer, blockSize: number): Buffer {
+  if (!Number.isInteger(blockSize) || blockSize <= 0 || blockSize > 255) {
+    throw new Error(`blockSize must be an integer in [1, 255], got ${blockSize}`);
+  }
   const padLen = blockSize - (data.length % blockSize);
   return Buffer.concat([data, Buffer.alloc(padLen, padLen)]);
 }

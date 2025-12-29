@@ -16,7 +16,12 @@ export class ApiResponse {
    * Convert the response into a JSON HTTP response object.
    * `body` is serialized to a JSON string.
    */
-  execute() {
+  execute(): {
+    statusCode: number;
+    headers: Record<string, string>;
+    cookies: string[];
+    body: string;
+  } {
     return {
       statusCode: this.statusCode,
       headers: {
@@ -27,4 +32,18 @@ export class ApiResponse {
       body: JSON.stringify(this.body),
     };
   }
+}
+
+/** Extract a stable error message from unknown caught values. */
+export function getErrorMessage(e: unknown): string {
+  if (e instanceof Error && typeof e.message === 'string' && e.message.length > 0) {
+    return e.message;
+  }
+  if (e && typeof e === 'object' && 'message' in e) {
+    const maybeMessage = (e as { message?: unknown }).message;
+    if (typeof maybeMessage === 'string' && maybeMessage.length > 0) {
+      return maybeMessage;
+    }
+  }
+  return String(e);
 }

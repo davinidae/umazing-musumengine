@@ -1,14 +1,14 @@
 import { AuthKey } from '../../../lib';
-import { RequestResult } from '../../models';
+import type { RequestResult } from '../../models';
 import { CoreStep } from './core.step';
 
 export class ToolSignupStep extends CoreStep<
   Umatypes.Request.ToolSignup,
   Umatypes.Response.ToolSignup
 > {
-  endpoint = 'tool/signup';
+  override endpoint = 'tool/signup';
 
-  getRequestBody() {
+  override getRequestBody(): Umatypes.Request.ToolSignup {
     return {
       error_code: 0,
       error_message: '',
@@ -20,7 +20,7 @@ export class ToolSignupStep extends CoreStep<
     };
   }
 
-  public override async afterExecute(result: RequestResult<Umatypes.Response.ToolSignup>) {
+  protected override afterExecute(result: RequestResult<Umatypes.Response.ToolSignup>): void {
     let viewer_id = this.stepData.base.viewer_id;
     let authKey = this.stepData.header.authKey;
     if (result.decoded.data) {

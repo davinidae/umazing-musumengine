@@ -4,9 +4,9 @@ export class TutorialSkipStep extends CoreStep<
   Umatypes.Request.TutorialSkip,
   Umatypes.Response.TutorialSkip
 > {
-  endpoint = 'tutorial/skip';
+  override endpoint = 'tutorial/skip';
 
-  getRequestBody() {
+  override getRequestBody(): Umatypes.Request.TutorialSkip {
     return {};
   }
 }

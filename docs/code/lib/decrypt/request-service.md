@@ -5,7 +5,7 @@
 ### DecryptRequestService
 
 Defined in:
-[lib/decrypt/request.service.ts:15](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/decrypt/request.service.ts#L15)
+[lib/decrypt/request.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/decrypt/request.service.ts#L11)
 
 Decode request Base64 buffers into header fields and a printable payload. No filesystem access;
 suitable for programmatic use and tests.
@@ -27,7 +27,7 @@ suitable for programmatic use and tests.
 > **decodeFromBase64**(`requestB64`): `object`
 
 Defined in:
-[lib/decrypt/request.service.ts:22](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/decrypt/request.service.ts#L22)
+[lib/decrypt/request.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/decrypt/request.service.ts#L18)
 
 Decode a single request provided as a Base64 string.
 
@@ -48,39 +48,7 @@ Base64-encoded request buffer: [4B LE blob1_len][blob1][blob2].
 
 ###### blob1
 
-> **blob1**: `object` = `headerJson`
-
-###### blob1.auth_key_hex
-
-> **auth_key_hex**: `string`
-
-###### blob1.encryption_key_hex
-
-> **encryption_key_hex**: `string`
-
-###### blob1.prefix_hex
-
-> **prefix_hex**: `string`
-
-###### blob1.prefix_len
-
-> **prefix_len**: `number` = `header.prefix.length`
-
-###### blob1.response_key_hex
-
-> **response_key_hex**: `string`
-
-###### blob1.session_id_hex
-
-> **session_id_hex**: `string`
-
-###### blob1.udid_canonical
-
-> **udid_canonical**: `string` = `udidStr`
-
-###### blob1.udid_raw_hex
-
-> **udid_raw_hex**: `string`
+> **blob1**: `Blob1Json`
 
 ###### blob2
 

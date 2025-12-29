@@ -1,11 +1,5 @@
-import {
-  AuthMode,
-  AuthModeKind,
-  RequestBase,
-  RequestResult,
-  StepData,
-  UmaClientData,
-} from '../models';
+import { AuthModeKind } from '../models';
+import type { AuthMode, RequestBase, RequestResult, StepData, UmaClientData } from '../models';
 import { ToolPreSignupStep } from './steps/tool-pre_signup.step';
 import { ToolSignupStep } from './steps/tool-signup.step';
 import { LoadIndexStep } from './steps/load-index.step';
@@ -72,8 +66,16 @@ export class UmaClient {
     this.umaclientData.header.authKey = authKey;
   }
 
+  private hasActiveSession(): boolean {
+    return this.umaclientData.base.viewer_id !== 0 && Boolean(this.umaclientData.header.authKey);
+  }
+
+  private getAttestationType(): number {
+    return this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
+  }
+
   private async signup(): Promise<RequestResult[]> {
-    if (this.umaclientData.base.viewer_id !== 0 && this.umaclientData.header.authKey) {
+    if (this.hasActiveSession()) {
       this.regenSessionId();
       return [];
     }
@@ -83,14 +85,28 @@ export class UmaClient {
     ];
   }
 
+  private async runPostSignupFlow(
+    signupResults: RequestResult[],
+    attestationType: number,
+  ): Promise<RequestResult[]> {
+    const startSessionRes = await new StartSessionStep(
+      this.getStepData(),
+      attestationType,
+    ).execute();
+    const firstLoadIndex = await new LoadIndexStep(this.getStepData()).execute();
+    const tutorialResults = await this.tutorial(signupResults);
+    const finalLoadIndex = await new LoadIndexStep(this.getStepData(), false).execute();
+    return [startSessionRes, firstLoadIndex, ...tutorialResults, finalLoadIndex];
+  }
+
   private async tutorial(results: RequestResult[]): Promise<RequestResult[]> {
-    const startSessionResult = results.find((o) => {
-      return o.endpoint === '/start_session';
-    });
-    const isTutorial = Boolean(
-      (startSessionResult as RequestResult<Umatypes.Response.ToolStartSession>)?.decoded.data
-        ?.is_tutorial,
-    );
+    const isStartSessionResult = (
+      r: RequestResult,
+    ): r is RequestResult<Umatypes.Response.ToolStartSession> =>
+      r.endpoint === 'tool/start_session';
+
+    const startSessionResult = results.find(isStartSessionResult);
+    const isTutorial = Boolean(startSessionResult?.decoded.data?.is_tutorial);
     if (!isTutorial) {
       return [];
     }
@@ -102,18 +118,10 @@ export class UmaClient {
   }
 
   public async logIn(): Promise<RequestResult[]> {
-    const attestationType = this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
+    const attestationType = this.getAttestationType();
     const results = [...(await this.signup())];
-    const startSessionRes = await new StartSessionStep(
-      this.getStepData(),
-      attestationType,
-    ).execute();
-    results.push(
-      startSessionRes,
-      await new LoadIndexStep(this.getStepData()).execute(),
-      ...(await this.tutorial(results)),
-      await new LoadIndexStep(this.getStepData(), false).execute(),
-    );
+    const extra = await this.runPostSignupFlow(results, attestationType);
+    results.push(...extra);
     return results;
   }
 }

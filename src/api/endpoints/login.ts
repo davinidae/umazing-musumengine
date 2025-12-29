@@ -1,16 +1,8 @@
-import { ApiResponse } from '../utils';
-import { HttpEvent } from '../models';
+import { ApiResponse, getErrorMessage } from '../utils';
+import type { HttpEvent } from '../models';
 import { UserSession } from '../services/user-session.service';
 
-export async function loginHandler(
-  _event: HttpEvent<
-    Partial<{
-      steam_id: string;
-      steam_session_ticket: string;
-      prevSessionId: string | number;
-    }>
-  >,
-): Promise<ApiResponse> {
+export async function loginHandler(_event: HttpEvent<unknown>): Promise<ApiResponse> {
   const startTimestamp = new Date().toISOString();
   try {
     const userSession = new UserSession();
@@ -26,7 +18,7 @@ export async function loginHandler(
       startTimestamp,
       endTimestamp: new Date().toISOString(),
       error: 'login_failed',
-      message: (e as Error).message || String(e),
+      message: getErrorMessage(e),
     });
   }
 }

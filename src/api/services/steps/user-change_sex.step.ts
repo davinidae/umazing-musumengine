@@ -4,9 +4,9 @@ export class UserChangeSexStep extends CoreStep<
   Umatypes.Request.UserChangeSex,
   Umatypes.Response.UserChangeSex
 > {
-  endpoint = 'user/change_sex';
+  override endpoint = 'user/change_sex';
 
-  getRequestBody() {
+  override getRequestBody(): Umatypes.Request.UserChangeSex {
     return {
       sex: 1,
     };

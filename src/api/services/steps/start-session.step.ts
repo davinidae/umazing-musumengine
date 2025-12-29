@@ -1,13 +1,13 @@
-import { RequestResult, StepData } from '../../models';
+import type { RequestResult, StepData } from '../../models';
 import { CoreStep } from './core.step';
 
 export class StartSessionStep extends CoreStep<
   Umatypes.Request.ToolStartSession,
   Umatypes.Response.ToolStartSession
 > {
-  endpoint = 'tool/start_session';
+  override endpoint = 'tool/start_session';
 
-  getRequestBody() {
+  override getRequestBody(): Umatypes.Request.ToolStartSession {
     return {
       attestation_type: this.attestationType,
       device_token: null,
@@ -21,7 +21,7 @@ export class StartSessionStep extends CoreStep<
     super(stepData);
   }
 
-  protected override async afterExecute(result: RequestResult<Umatypes.Response.ToolStartSession>) {
+  protected override afterExecute(result: RequestResult<Umatypes.Response.ToolStartSession>): void {
     let resVer = this.stepData.resVer;
     if (result.decoded.data?.resource_version) {
       resVer = result.decoded.data.resource_version;

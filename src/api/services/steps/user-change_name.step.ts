@@ -4,9 +4,9 @@ export class UserChangeNameStep extends CoreStep<
   Umatypes.Request.UserChangeName,
   Umatypes.Response.UserChangeName
 > {
-  endpoint = 'user/change_name';
+  override endpoint = 'user/change_name';
 
-  getRequestBody() {
+  override getRequestBody(): Umatypes.Request.UserChangeName {
     const date = new Date();
     return {
       name: [

@@ -3,7 +3,8 @@ import { COMMON_HEADER, DETERMINISTIC_ENC_SECRET } from '../../constants';
 import { deriveIvFromUdidString } from './udid.util';
 import { buildLengthPrefixedPayload } from './framing.util';
 import { pkcs7Pad } from './decrypt.util';
-import { decryptBlob2, encryptAes256Cbc } from '../..';
+import { encryptAes256Cbc } from './encrypt.util';
+import { decryptBlob2 } from '../decrypt/utils/blob.util';
 import crypto from 'crypto';
 
 /**
@@ -16,45 +17,58 @@ import crypto from 'crypto';
  * - session/udid helpers used by both API flows and CLI tooling
  */
 
-/**
- * Represents the parsed blob1 header fields.
- * Layout: [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(0|48)].
- */
-class Blob1Header {
-  constructor(
-    readonly prefix: Buffer,
-    readonly session_id: Buffer,
-    readonly udid_raw: Buffer,
-    readonly response_key: Buffer,
-    readonly auth_key: Buffer,
-    readonly viewer_id: number = 0,
-  ) {
-    //
-  }
+const SESSION_ID_BYTES = 16;
+const UDID_RAW_BYTES = 16;
+const RESPONSE_KEY_BYTES = 32;
+const AUTH_KEY_BYTES = 48;
 
-  /**
-   * UDID canonical dashed-format string derived from udid_raw.
-   * @returns Canonical UDID string (8-4-4-4-12).
-   */
-  udidCanonical(): string {
-    const hx = this.udid_raw.toString('hex');
-    return `${hx.slice(0, 8)}-${hx.slice(8, 12)}-${hx.slice(12, 16)}-${hx.slice(16, 20)}-${hx.slice(20, 32)}`;
+type Blob1Header = {
+  prefix: Buffer;
+  session_id: Buffer;
+  udid_raw: Buffer;
+  response_key: Buffer;
+  auth_key: Buffer;
+  viewer_id: number;
+};
+
+type ParsedRequest = {
+  blob1Buffer: Buffer;
+  blob2: Buffer;
+  blob1: Blob1Header;
+};
+
+function splitBlob1PrefixAndTail(blob1: Buffer): {
+  prefix: Buffer;
+  tail: Buffer;
+  hasAuth: boolean;
+} {
+  const fixedWithoutAuth = SESSION_ID_BYTES + UDID_RAW_BYTES + RESPONSE_KEY_BYTES;
+  const fixedWithAuth = fixedWithoutAuth + AUTH_KEY_BYTES;
+  if (blob1.length < fixedWithoutAuth) {
+    throw new Error(
+      `blob1 too short: need at least ${fixedWithoutAuth} bytes, got ${blob1.length}`,
+    );
   }
+  const hasAuth = blob1.length >= fixedWithAuth;
+  const fixed = hasAuth ? fixedWithAuth : fixedWithoutAuth;
+  return {
+    prefix: blob1.subarray(0, blob1.length - fixed),
+    tail: blob1.subarray(blob1.length - fixed),
+    hasAuth,
+  };
 }
 
-/**
- * Represents a parsed full request with blob1 and blob2 sections.
- */
-class ParsedRequest {
-  readonly blob1Buffer: Buffer;
-  readonly blob2: Buffer;
-  readonly blob1: Blob1Header;
-
-  constructor(blob1Buffer: Buffer, blob2: Buffer) {
-    this.blob1Buffer = blob1Buffer;
-    this.blob2 = blob2;
-    this.blob1 = parseHeaderBlob1(blob1Buffer);
+function readBlob1LengthPrefix(raw: Buffer): number {
+  if (raw.length < 4) {
+    throw new Error('Request buffer too short: missing 4-byte blob1 length prefix');
   }
+  const headerLen = raw.readUInt32LE(0);
+  if (raw.length < 4 + headerLen) {
+    throw new Error(
+      `Request buffer too short: blob1 length prefix (${headerLen}) exceeds available bytes (${raw.length - 4})`,
+    );
+  }
+  return headerLen;
 }
 
 /**
@@ -62,33 +76,36 @@ class ParsedRequest {
  * @throws If required field sizes are not present.
  */
 export function parseHeaderBlob1(blob1: Buffer): Blob1Header {
-  const FIXED_WITHOUT_AUTH = 16 + 16 + 32;
-  const FIXED_WITH_AUTH = 16 + 16 + 32 + 48;
-  if (blob1.length < FIXED_WITHOUT_AUTH) {
-    throw new Error(`blob1 too short to contain the required ${FIXED_WITHOUT_AUTH} fixed bytes`);
+  const { prefix, tail, hasAuth } = splitBlob1PrefixAndTail(blob1);
+  const session_id = tail.subarray(0, SESSION_ID_BYTES);
+  const udid_raw = tail.subarray(SESSION_ID_BYTES, SESSION_ID_BYTES + UDID_RAW_BYTES);
+  const response_key = tail.subarray(
+    SESSION_ID_BYTES + UDID_RAW_BYTES,
+    SESSION_ID_BYTES + UDID_RAW_BYTES + RESPONSE_KEY_BYTES,
+  );
+  const auth_key = hasAuth
+    ? tail.subarray(SESSION_ID_BYTES + UDID_RAW_BYTES + RESPONSE_KEY_BYTES)
+    : Buffer.alloc(0);
+  if (session_id.length !== SESSION_ID_BYTES) {
+    throw new Error(`session_id must be ${SESSION_ID_BYTES} bytes`);
   }
-
-  const hasAuth = blob1.length >= FIXED_WITH_AUTH;
-  const fixed = hasAuth ? FIXED_WITH_AUTH : FIXED_WITHOUT_AUTH;
-  const prefix = blob1.subarray(0, blob1.length - fixed);
-  const tail = blob1.subarray(blob1.length - fixed);
-  const session_id = tail.subarray(0, 16);
-  const udid_raw = tail.subarray(16, 32);
-  const response_key = tail.subarray(32, 64);
-  const auth_key = hasAuth ? tail.subarray(64) : Buffer.alloc(0);
-  if (session_id.length !== 16) {
-    throw new Error('session_id must be 16 bytes');
+  if (udid_raw.length !== UDID_RAW_BYTES) {
+    throw new Error(`udid_raw must be ${UDID_RAW_BYTES} bytes`);
   }
-  if (udid_raw.length !== 16) {
-    throw new Error('udid_raw must be 16 bytes');
+  if (response_key.length !== RESPONSE_KEY_BYTES) {
+    throw new Error(`response_key must be ${RESPONSE_KEY_BYTES} bytes`);
   }
-  if (response_key.length !== 32) {
-    throw new Error('response_key must be 32 bytes');
+  if (auth_key.length !== 0 && auth_key.length !== AUTH_KEY_BYTES) {
+    throw new Error(`auth_key must be 0 or ${AUTH_KEY_BYTES} bytes`);
   }
-  if (auth_key.length !== 0 && auth_key.length !== 48) {
-    throw new Error('auth_key must be 0 or 48 bytes');
-  }
-  return new Blob1Header(prefix, session_id, udid_raw, response_key, auth_key);
+  return {
+    prefix,
+    session_id,
+    udid_raw,
+    response_key,
+    auth_key,
+    viewer_id: 0,
+  };
 }
 
 /**
@@ -96,19 +113,19 @@ export function parseHeaderBlob1(blob1: Buffer): Blob1Header {
  * @throws If the buffer is too short or sizes are inconsistent.
  */
 export function parseParsedRequest(raw: Buffer): ParsedRequest {
-  if (raw.length < 4) {
-    throw new Error('File too short: missing 4-byte length prefix for blob1');
-  }
-  const headerLen = raw.readUInt32LE(0);
-  if (raw.length < 4 + headerLen) {
-    throw new Error('blob1 length in header is inconsistent with actual size');
-  }
+  const headerLen = readBlob1LengthPrefix(raw);
   const blob1 = raw.subarray(4, 4 + headerLen);
   const blob2 = raw.subarray(4 + headerLen);
-  if (blob2.length < 32) {
-    throw new Error('blob2 too short: missing 32-byte AES key appended at the end');
+  if (blob2.length < RESPONSE_KEY_BYTES) {
+    throw new Error(
+      `blob2 too short: need at least ${RESPONSE_KEY_BYTES} bytes (ciphertext + key), got ${blob2.length}`,
+    );
   }
-  return new ParsedRequest(blob1, blob2);
+  return {
+    blob1Buffer: blob1,
+    blob2,
+    blob1: parseHeaderBlob1(blob1),
+  };
 }
 
 /**
@@ -134,17 +151,17 @@ export function buildBlob1Buffer(input: {
   const { prefix, sessionId, udidRaw, responseKey } = input;
   const authKey = input.authKey ?? Buffer.alloc(0);
 
-  if (sessionId.length !== 16) {
-    throw new Error('sessionId must be 16 bytes');
+  if (sessionId.length !== SESSION_ID_BYTES) {
+    throw new Error(`sessionId must be ${SESSION_ID_BYTES} bytes`);
   }
-  if (udidRaw.length !== 16) {
-    throw new Error('udidRaw must be 16 bytes');
+  if (udidRaw.length !== UDID_RAW_BYTES) {
+    throw new Error(`udidRaw must be ${UDID_RAW_BYTES} bytes`);
   }
-  if (responseKey.length !== 32) {
-    throw new Error('responseKey must be 32 bytes');
+  if (responseKey.length !== RESPONSE_KEY_BYTES) {
+    throw new Error(`responseKey must be ${RESPONSE_KEY_BYTES} bytes`);
   }
-  if (authKey.length !== 0 && authKey.length !== 48) {
-    throw new Error('authKey must be 0 or 48 bytes');
+  if (authKey.length !== 0 && authKey.length !== AUTH_KEY_BYTES) {
+    throw new Error(`authKey must be 0 or ${AUTH_KEY_BYTES} bytes`);
   }
 
   return Buffer.concat([
@@ -170,8 +187,8 @@ export function saltedMd5(data: Uint8Array): Uint8Array {
 /** A 16-byte session identifier. */
 export class SessionId {
   public constructor(public readonly bytes: Uint8Array) {
-    if (bytes.byteLength !== 16) {
-      throw new Error('SessionId must be 16 bytes');
+    if (bytes.byteLength !== SESSION_ID_BYTES) {
+      throw new Error(`SessionId must be ${SESSION_ID_BYTES} bytes`);
     }
   }
 
@@ -191,14 +208,19 @@ export class Udid {
   public rawBytes(): Uint8Array {
     const hex = this.simpleRepresentation();
     const normalized = hex.trim().toLowerCase();
+    if (normalized.length !== UDID_RAW_BYTES * 2) {
+      throw new Error(
+        `UDID must be ${UDID_RAW_BYTES} bytes (${UDID_RAW_BYTES * 2} hex chars) after removing dashes`,
+      );
+    }
     if (normalized.length % 2 !== 0) {
-      throw new Error('invalid hex');
+      throw new Error('UDID hex must have an even number of characters');
     }
     const out = new Uint8Array(normalized.length / 2);
     for (let i = 0; i < out.length; i++) {
       const byte = Number.parseInt(normalized.slice(i * 2, i * 2 + 2), 16);
-      if (!Number.isFinite(byte)) {
-        throw new Error('invalid hex');
+      if (!Number.isFinite(byte) || Number.isNaN(byte)) {
+        throw new Error('UDID contains non-hex characters');
       }
       out[i] = byte;
     }
@@ -213,7 +235,11 @@ export class Udid {
 
 /** Auth key wrapper (48 bytes when present). */
 export class AuthKey {
-  public constructor(public readonly bytes: Uint8Array) {}
+  public constructor(public readonly bytes: Uint8Array) {
+    if (bytes.byteLength !== AUTH_KEY_BYTES) {
+      throw new Error(`AuthKey must be ${AUTH_KEY_BYTES} bytes`);
+    }
+  }
 }
 
 /**
@@ -247,7 +273,13 @@ export class UmaReqHeader {
   }
 
   public encodedSize(): number {
-    return this.commonHeader.byteLength + 16 + 16 + 32 + (this.authKey?.bytes.byteLength ?? 0);
+    return (
+      this.commonHeader.byteLength +
+      SESSION_ID_BYTES +
+      UDID_RAW_BYTES +
+      RESPONSE_KEY_BYTES +
+      (this.authKey?.bytes.byteLength ?? 0)
+    );
   }
 
   public encode(): Uint8Array {
@@ -259,7 +291,9 @@ export class UmaReqHeader {
       authKey: this.authKey ? Buffer.from(this.authKey.bytes) : undefined,
     });
     if (out.byteLength !== this.encodedSize()) {
-      throw new Error('encoded size mismatch');
+      throw new Error(
+        `encoded size mismatch: expected ${this.encodedSize()} bytes, got ${out.byteLength}`,
+      );
     }
     return Uint8Array.from(out);
   }
@@ -279,22 +313,40 @@ function genUmaRequestKey(): Uint8Array {
   return Uint8Array.from(out.slice(0, 32));
 }
 
+function buildEncryptedBlob2LengthPrefixed(body: unknown, udid: Udid, key: Uint8Array): Buffer {
+  const data = encode(body);
+  const ivBytes = Buffer.from(udid.ivRepresentation());
+  const plaintext = buildLengthPrefixedPayload(data);
+  const padded = pkcs7Pad(plaintext, 16);
+  const encrypted = encryptAes256Cbc(padded, Buffer.from(key), ivBytes);
+  return Buffer.concat([encrypted, Buffer.from(key)]);
+}
+
+function extractLengthPrefixedPayload(decrypted: Buffer): Uint8Array {
+  if (decrypted.length < 4) {
+    throw new Error('decrypted payload too short: missing 4-byte length prefix');
+  }
+  const len = decrypted.readUInt32LE(0);
+  const payload = decrypted.subarray(4);
+  if (len > payload.length) {
+    throw new Error(
+      `decrypted payload too short: length prefix (${len}) exceeds available bytes (${payload.length})`,
+    );
+  }
+  return Uint8Array.from(payload.subarray(0, len));
+}
+
 /**
  * Encode a full request to Base64.
  * Wire format: [4B LE blob1_len][blob1][blob2].
  */
 export function encodeUmaRequestB64(header: UmaReqHeader, body: unknown): string {
-  const data = encode(body);
   const key = genUmaRequestKey();
-  if (key.byteLength !== 32) {
-    throw new Error('key must be 32 bytes');
+  if (key.byteLength !== RESPONSE_KEY_BYTES) {
+    throw new Error(`key must be ${RESPONSE_KEY_BYTES} bytes`);
   }
 
-  const ivBytes = Buffer.from(header.udid.ivRepresentation());
-  const plaintext = buildLengthPrefixedPayload(data);
-  const padded = pkcs7Pad(plaintext, 16);
-  const encrypted = encryptAes256Cbc(padded, Buffer.from(key), ivBytes);
-  const blob2 = Buffer.concat([encrypted, Buffer.from(key)]);
+  const blob2 = buildEncryptedBlob2LengthPrefixed(body, header.udid, key);
 
   const blob1 = Buffer.from(header.encode());
   const blob1Len = Buffer.alloc(4);
@@ -311,19 +363,12 @@ export function encodeUmaRequestB64(header: UmaReqHeader, body: unknown): string
  */
 export function decompressResponse(sourceB64: string, udid: Udid): Uint8Array {
   const source = Buffer.from(sourceB64, 'base64');
-  if (source.byteLength < 32) {
-    throw new Error('response too short');
+  if (source.byteLength < RESPONSE_KEY_BYTES) {
+    throw new Error(
+      `response too short: expected at least ${RESPONSE_KEY_BYTES} bytes, got ${source.byteLength}`,
+    );
   }
   const ivBytes = Buffer.from(udid.ivRepresentation());
   const { plaintext: decrypted } = decryptBlob2(source, ivBytes);
-  if (decrypted.length < 4) {
-    throw new Error('message too short');
-  }
-  const len = decrypted.readUInt32LE(0);
-  const payload = decrypted.subarray(4);
-  if (len > payload.length) {
-    throw new Error('message too short');
-  }
-  const extracted = payload.subarray(0, len);
-  return Uint8Array.from(extracted);
+  return extractLengthPrefixedPayload(decrypted);
 }

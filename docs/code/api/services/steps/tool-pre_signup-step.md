@@ -5,7 +5,7 @@
 ### ToolPreSignupStep
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/tool-pre_signup.step.ts#L3)
+[api/services/steps/tool-pre_signup.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-pre_signup.step.ts#L3)
 
 Base class for a single API “step”.
 
@@ -29,7 +29,7 @@ A step:
 > **new ToolPreSignupStep**(`stepData`): [`ToolPreSignupStep`](#toolpresignupstep)
 
 Defined in:
-[api/services/steps/core.step.ts:46](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L46)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
 
 ###### Parameters
 
@@ -52,7 +52,7 @@ Defined in:
 > **endpoint**: `string` = `'tool/pre_signup'`
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/tool-pre_signup.step.ts#L7)
+[api/services/steps/tool-pre_signup.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-pre_signup.step.ts#L7)
 
 ###### Overrides
 
@@ -63,7 +63,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:46](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L46)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
 
 ###### Inherited from
 
@@ -73,16 +73,16 @@ Defined in:
 
 ##### afterExecute()
 
-> `protected` **afterExecute**(): `Promise`\<`void`\>
+> `protected` **afterExecute**(): `void`
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/tool-pre_signup.step.ts#L13)
+[api/services/steps/tool-pre_signup.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-pre_signup.step.ts#L13)
 
 Optional hook executed after `request()` and before returning from `execute()`.
 
 ###### Returns
 
-`Promise`\<`void`\>
+`void`
 
 ###### Overrides
 
@@ -94,7 +94,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolPreSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:110](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L110)
+[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L139)
 
 Execute the step end-to-end.
 
@@ -108,17 +108,16 @@ Execute the step end-to-end.
 
 ##### getBody()
 
-> `protected` **getBody**(): `object` &
-> [`RequestBase`](../../models/uma-client.model.md#requestbase)
+> `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/services/steps/core.step.ts:65](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L65)
+[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L66)
 
 Combine the step-specific body with common request fields from StepData.
 
 ###### Returns
 
-`object` & [`RequestBase`](../../models/uma-client.model.md#requestbase)
+`Record`\<`string`, `unknown`\>
 
 ###### Inherited from
 
@@ -126,48 +125,16 @@ Combine the step-specific body with common request fields from StepData.
 
 ##### getHeaders()
 
-> `protected` **getHeaders**(): `object`
+> `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[api/services/steps/core.step.ts:51](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L51)
+[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L52)
 
 Build upstream headers expected by the game API.
 
 ###### Returns
 
-`object`
-
-###### Accept
-
-> **Accept**: `string` = `'*/*'`
-
-###### APP-VER
-
-> **APP-VER**: `string` = `'1.20.11'`
-
-###### Content-Type
-
-> **Content-Type**: `string` = `'application/x-msgpack'`
-
-###### Device
-
-> **Device**: `string`
-
-###### RES-VER
-
-> **RES-VER**: `string`
-
-###### SID
-
-> **SID**: `string`
-
-###### ViewerID
-
-> **ViewerID**: `string`
-
-###### X-Unity-Version
-
-> **X-Unity-Version**: `string` = `'2022.3.62f2'`
+`Record`\<`string`, `string`\>
 
 ###### Inherited from
 
@@ -178,7 +145,7 @@ Build upstream headers expected by the game API.
 > **getRequestBody**(): `object`
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/tool-pre_signup.step.ts#L9)
+[api/services/steps/tool-pre_signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-pre_signup.step.ts#L9)
 
 ###### Returns
 
@@ -190,25 +157,19 @@ Defined in:
 
 ##### request()
 
-> `protected` **request**(): `Promise`\<\{ `body`: `object` &
-> [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-> [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`ToolPreSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>;
-> `headers`: \{ `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`:
-> `string`; `RES-VER`: `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`;
-> \}; \}\>
+> `protected` **request**():
+> `Promise`\<`Omit`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolPreSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>,
+> `"endpoint"`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:73](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L73)
+[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L117)
 
 Execute the upstream HTTP request and return decoded response + diagnostics.
 
 ###### Returns
 
-`Promise`\<\{ `body`: `object` & [`RequestBase`](../../models/uma-client.model.md#requestbase);
-`decoded`:
-[`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`ToolPreSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>;
-`headers`: \{ `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`;
-`RES-VER`: `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`; \}; \}\>
+`Promise`\<`Omit`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolPreSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>,
+`"endpoint"`\>\>
 
 ###### Inherited from
 

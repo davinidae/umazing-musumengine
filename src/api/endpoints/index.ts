@@ -1,12 +1,12 @@
 import { loginHandler } from './login';
 import { healthHandler, rootHandler } from './misc';
-import { HttpEvent } from '../models';
+import type { HttpEvent } from '../models';
 import { ApiResponse } from '../utils';
 
 export const routes: Array<{
   method: string;
   path: string;
-  handler: (event: HttpEvent<any>) => Promise<ApiResponse>;
+  handler: (event: HttpEvent<unknown>) => Promise<ApiResponse>;
 }> = [
   {
     method: 'GET',

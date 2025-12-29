@@ -1,14 +1,9 @@
-import {
-  AttestationType,
-  AuthMode,
-  AuthModeKind,
-  ClientConfig,
-  DeviceType,
-  RequestBase,
-} from '../models';
+import { AttestationType, AuthModeKind, DeviceType } from '../models';
+import type { AuthMode, ClientConfig, RequestBase } from '../models';
 import { randomUUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
 import { Udid } from '../../lib';
+import type { UmaClient } from './uma-client.service';
 
 export class UserSession {
   public resVer = '10002800';
@@ -44,16 +39,33 @@ export class UserSession {
     };
   }
 
-  async initialize() {
-    const udid = this.cfg.udid ?? new Udid(randomUUID());
-    const deviceType = this.auth.kind === AuthModeKind.STEAM ? 4 : this.auth.deviceType;
-    const base: RequestBase = this.cfg.base ?? this.getDefaultBase(deviceType);
+  private resolveUdid(): Udid {
+    return this.cfg.udid ?? new Udid(randomUUID());
+  }
+
+  private resolveDeviceType(): number {
+    return this.auth.kind === AuthModeKind.STEAM ? 4 : this.auth.deviceType;
+  }
+
+  private resolveBase(deviceType: number): RequestBase {
+    return this.cfg.base ?? this.getDefaultBase(deviceType);
+  }
+
+  private assertSteamBase(base: RequestBase): void {
+    if (base.steam_id && base.steam_session_ticket) {
+      return;
+    }
+    throw new Error(
+      'Steam auth requires cfg.base.steam_id and cfg.base.steam_session_ticket (ticket generation not implemented in TS port)',
+    );
+  }
+
+  async initialize(): Promise<UmaClient> {
+    const udid = this.resolveUdid();
+    const deviceType = this.resolveDeviceType();
+    const base: RequestBase = this.resolveBase(deviceType);
     if (this.auth.kind === AuthModeKind.STEAM) {
-      if (!base.steam_id || !base.steam_session_ticket) {
-        throw new Error(
-          'Steam auth requires cfg.base.steam_id and cfg.base.steam_session_ticket (ticket generation not implemented in TS port)',
-        );
-      }
+      this.assertSteamBase(base);
     }
     const client = createUmaClient(
       this.auth,

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { RequestResult, StepData, UmaResponse } from '../../models';
+import type { RequestResult, StepData, UmaResponse } from '../../models';
 import {
   decompressResponse,
   encodeUmaRequestB64,
@@ -24,7 +24,8 @@ const apiUnpacker = new Unpacker([new LengthPrefixedStrategy(), new KVStreamStra
 function decodeUmaResponsePayload<T = unknown>(data: Uint8Array): T {
   const out = apiUnpacker.execute(Buffer.from(data));
   if (out && typeof out === 'object' && '_unparsed_note' in out) {
-    throw new Error('failed to decode response payload');
+    const note = String((out as { _unparsed_note?: unknown })._unparsed_note ?? 'unknown');
+    throw new Error(`failed to decode response payload: ${note}`);
   }
   return out as T;
 }
@@ -48,7 +49,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
   }
 
   /** Build upstream headers expected by the game API. */
-  protected getHeaders() {
+  protected getHeaders(): Record<string, string> {
     return {
       SID: this.stepData.header.sessionId.asHex(),
       Device: String(this.stepData.base.device),
@@ -62,20 +63,27 @@ export abstract class CoreStep<TReq extends object, TRes> {
   }
 
   /** Combine the step-specific body with common request fields from StepData. */
-  protected getBody() {
+  protected getBody(): Record<string, unknown> {
     return {
       ...this.getRequestBody(),
       ...this.stepData.base,
     };
   }
 
-  /** Execute the upstream HTTP request and return decoded response + diagnostics. */
-  protected async request() {
-    const endpoint = this.endpoint;
-    const body = this.getBody();
-    const requestB64 = encodeUmaRequestB64(this.stepData.header, body);
-    const headers = this.getHeaders();
-    const res = await axios.post<string>(`${this.stepData.baseUrl}${endpoint}`, requestB64, {
+  private buildUpstreamUrl(): string {
+    return `${this.stepData.baseUrl}${this.endpoint}`;
+  }
+
+  private encodeRequestB64(body: Record<string, unknown>): string {
+    return encodeUmaRequestB64(this.stepData.header, body);
+  }
+
+  private async postBase64(
+    url: string,
+    requestB64: string,
+    headers: Record<string, string>,
+  ): Promise<string> {
+    const res = await axios.post<string>(url, requestB64, {
       headers,
       responseType: 'text',
       transformResponse: (v) => {
@@ -85,14 +93,35 @@ export abstract class CoreStep<TReq extends object, TRes> {
         return true;
       },
     });
-    const bodyB64 = res.data;
-    const decrypted = decompressResponse(bodyB64, this.stepData.header.udid);
-    const decoded = decodeUmaResponsePayload<UmaResponse<TRes>>(decrypted);
-    if (decoded.data_headers?.sid) {
-      this.stepData.umaclient.updateSessionId(
-        new SessionId(saltedMd5(Buffer.from(decoded.data_headers.sid, 'utf8'))),
-      );
+
+    if (typeof res.data !== 'string') {
+      throw new Error('Unexpected upstream response: expected Base64 string body');
     }
+    return res.data;
+  }
+
+  private decodeResponseBody(bodyB64: string): UmaResponse<TRes> {
+    const decrypted = decompressResponse(bodyB64, this.stepData.header.udid);
+    return decodeUmaResponsePayload<UmaResponse<TRes>>(decrypted);
+  }
+
+  private maybeUpdateSessionId(decoded: UmaResponse<TRes>): void {
+    const sid = decoded.data_headers?.sid;
+    if (!sid) {
+      return;
+    }
+    this.stepData.umaclient.updateSessionId(new SessionId(saltedMd5(Buffer.from(sid, 'utf8'))));
+  }
+
+  /** Execute the upstream HTTP request and return decoded response + diagnostics. */
+  protected async request(): Promise<Omit<RequestResult<TRes>, 'endpoint'>> {
+    const body = this.getBody();
+    const requestB64 = this.encodeRequestB64(body);
+    const headers = this.getHeaders();
+    const url = this.buildUpstreamUrl();
+    const bodyB64 = await this.postBase64(url, requestB64, headers);
+    const decoded = this.decodeResponseBody(bodyB64);
+    this.maybeUpdateSessionId(decoded);
     this.stepData.header.rerandomize();
     return {
       decoded,
@@ -102,7 +131,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
   }
 
   /** Optional hook executed after `request()` and before returning from `execute()`. */
-  protected async afterExecute(_result: RequestResult<TRes>): Promise<void> {
+  protected afterExecute(_result: RequestResult<TRes>): void | Promise<void> {
     //
   }
 

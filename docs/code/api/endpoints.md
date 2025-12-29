@@ -7,7 +7,7 @@
 > `const` **routes**: `object`[]
 
 Defined in:
-[api/endpoints/index.ts:6](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/endpoints/index.ts#L6)
+[api/endpoints/index.ts:6](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/endpoints/index.ts#L6)
 
 #### Type Declaration
 
@@ -19,7 +19,7 @@ Defined in:
 
 ###### event
 
-[`HttpEvent`](models/api.model.md#httpevent)\<`any`\>
+[`HttpEvent`](models/api.model.md#httpevent)\<`unknown`\>
 
 ###### Returns
 

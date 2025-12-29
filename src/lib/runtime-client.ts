@@ -16,7 +16,7 @@
 import { DETERMINISTIC_ENC_SECRET } from '../constants';
 import { DecryptResponseService } from './decrypt';
 import { EncryptPayloadService } from './encrypt';
-import {
+import type {
   EncodeRequestInput,
   EncodeRequestOutput,
   DecodeResponseInput,
@@ -44,8 +44,7 @@ export class RuntimeClient {
    * @throws If mandatory fields are missing or have invalid sizes.
    */
   encodeRequest(input: EncodeRequestInput): EncodeRequestOutput {
-    const { framing } = input;
-    console.log('[runtime] encodeRequest framing=%s', framing);
+    // Intentionally quiet: this is used by CLI/stdout JSON workflows.
     const service = new EncryptPayloadService();
     return service.build({
       ...input,
@@ -64,10 +63,9 @@ export class RuntimeClient {
   decodeResponse(input: DecodeResponseInput): DecodeResponseOutput {
     const { requestB64, responseB64 } = input;
     if (!requestB64 || !responseB64) {
-      throw new Error('Missing requestB64 or responseB64');
+      throw new Error('requestB64 and responseB64 are required');
     }
     const result = new DecryptResponseService().decodeFromBase64(requestB64, responseB64);
-    console.log('[runtime] Decoded', JSON.stringify(result, null, 2));
     return result;
   }
 }

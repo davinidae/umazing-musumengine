@@ -1,10 +1,6 @@
-import {
-  udidRawToCanonicalString,
-  deriveIvFromUdidString,
-  toJsonCompatible,
-  parseParsedRequest,
-} from '../utils';
+import { toJsonCompatible } from '../utils';
 import { decryptBlob2, Unpacker } from './utils';
+import { blob1ToJson, decodeRequestContextFromBase64 } from './utils/request-context.util';
 
 /**
  * Decode response Base64 buffers using the matching request for UDID/IV.
@@ -21,29 +17,14 @@ export class DecryptResponseService {
    * @returns `{ blob1, blob2, plaintext }` where `blob1` mirrors the request header (hex strings), `blob2` is JSON-compatible payload, and `plaintext` is decrypted bytes.
    */
   decodeFromBase64(requestB64: string, responseB64: string) {
-    const reqRaw = Buffer.from(requestB64, 'base64');
-    const parsedReq = parseParsedRequest(reqRaw);
-    const reqHeader = parsedReq.blob1;
-    const udidStr = udidRawToCanonicalString(reqHeader.udid_raw);
-    const iv = deriveIvFromUdidString(udidStr);
+    const ctx = decodeRequestContextFromBase64(requestB64);
     const respRaw = Buffer.from(responseB64, 'base64');
-    const { plaintext, keyUsed } = decryptBlob2(respRaw, iv);
+    const { plaintext, keyUsed } = decryptBlob2(respRaw, ctx.iv);
     const unpacker = new Unpacker();
     const payload = unpacker.execute(plaintext);
     const printable = toJsonCompatible(payload);
-    const headerJson = {
-      viewer_id: reqHeader.viewer_id,
-      prefix_hex: reqHeader.prefix.toString('hex'),
-      prefix_len: reqHeader.prefix.length,
-      session_id_hex: reqHeader.session_id.toString('hex'),
-      udid_raw_hex: reqHeader.udid_raw.toString('hex'),
-      udid_canonical: udidStr,
-      response_key_hex: reqHeader.response_key.toString('hex'),
-      auth_key_hex: reqHeader.auth_key.toString('hex'),
-      encryption_key_hex: keyUsed.toString('hex'),
-    };
     return {
-      blob1: headerJson,
+      blob1: blob1ToJson(ctx.header, ctx.udidCanonical, keyUsed),
       blob2: printable,
       plaintext,
     };

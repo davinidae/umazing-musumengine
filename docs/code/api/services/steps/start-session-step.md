@@ -5,7 +5,7 @@
 ### StartSessionStep
 
 Defined in:
-[api/services/steps/start-session.step.ts:4](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L4)
+[api/services/steps/start-session.step.ts:4](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L4)
 
 Base class for a single API “step”.
 
@@ -29,7 +29,7 @@ A step:
 > **new StartSessionStep**(`stepData`, `attestationType`): [`StartSessionStep`](#startsessionstep)
 
 Defined in:
-[api/services/steps/start-session.step.ts:17](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L17)
+[api/services/steps/start-session.step.ts:17](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L17)
 
 ###### Parameters
 
@@ -56,14 +56,14 @@ Defined in:
 > `private` `readonly` **attestationType**: `number`
 
 Defined in:
-[api/services/steps/start-session.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L19)
+[api/services/steps/start-session.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L19)
 
 ##### endpoint
 
 > **endpoint**: `string` = `'tool/start_session'`
 
 Defined in:
-[api/services/steps/start-session.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L8)
+[api/services/steps/start-session.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L8)
 
 ###### Overrides
 
@@ -74,7 +74,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/start-session.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L18)
+[api/services/steps/start-session.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L18)
 
 ###### Inherited from
 
@@ -84,10 +84,10 @@ Defined in:
 
 ##### afterExecute()
 
-> `protected` **afterExecute**(`result`): `Promise`\<`void`\>
+> `protected` **afterExecute**(`result`): `void`
 
 Defined in:
-[api/services/steps/start-session.step.ts:24](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L24)
+[api/services/steps/start-session.step.ts:24](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L24)
 
 Optional hook executed after `request()` and before returning from `execute()`.
 
@@ -99,7 +99,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 
 ###### Returns
 
-`Promise`\<`void`\>
+`void`
 
 ###### Overrides
 
@@ -111,7 +111,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolstartsession)\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:110](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L110)
+[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L139)
 
 Execute the step end-to-end.
 
@@ -125,19 +125,16 @@ Execute the step end-to-end.
 
 ##### getBody()
 
-> `protected` **getBody**():
-> [`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolstartsession)
-> & [`RequestBase`](../../models/uma-client.model.md#requestbase)
+> `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/services/steps/core.step.ts:65](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L65)
+[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L66)
 
 Combine the step-specific body with common request fields from StepData.
 
 ###### Returns
 
-[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolstartsession) &
-[`RequestBase`](../../models/uma-client.model.md#requestbase)
+`Record`\<`string`, `unknown`\>
 
 ###### Inherited from
 
@@ -145,48 +142,16 @@ Combine the step-specific body with common request fields from StepData.
 
 ##### getHeaders()
 
-> `protected` **getHeaders**(): `object`
+> `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[api/services/steps/core.step.ts:51](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L51)
+[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L52)
 
 Build upstream headers expected by the game API.
 
 ###### Returns
 
-`object`
-
-###### Accept
-
-> **Accept**: `string` = `'*/*'`
-
-###### APP-VER
-
-> **APP-VER**: `string` = `'1.20.11'`
-
-###### Content-Type
-
-> **Content-Type**: `string` = `'application/x-msgpack'`
-
-###### Device
-
-> **Device**: `string`
-
-###### RES-VER
-
-> **RES-VER**: `string`
-
-###### SID
-
-> **SID**: `string`
-
-###### ViewerID
-
-> **ViewerID**: `string`
-
-###### X-Unity-Version
-
-> **X-Unity-Version**: `string` = `'2022.3.62f2'`
+`Record`\<`string`, `string`\>
 
 ###### Inherited from
 
@@ -194,22 +159,15 @@ Build upstream headers expected by the game API.
 
 ##### getRequestBody()
 
-> **getRequestBody**(): `object`
+> **getRequestBody**():
+> [`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolstartsession)
 
 Defined in:
-[api/services/steps/start-session.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/start-session.step.ts#L10)
+[api/services/steps/start-session.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/start-session.step.ts#L10)
 
 ###### Returns
 
-`object`
-
-###### attestation_type
-
-> **attestation_type**: `number`
-
-###### device_token
-
-> **device_token**: `null` = `null`
+[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolstartsession)
 
 ###### Overrides
 
@@ -217,27 +175,19 @@ Defined in:
 
 ##### request()
 
-> `protected` **request**(): `Promise`\<\{ `body`:
-> [`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolstartsession)
-> & [`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-> [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolstartsession)\>;
-> `headers`: \{ `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`:
-> `string`; `RES-VER`: `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`;
-> \}; \}\>
+> `protected` **request**():
+> `Promise`\<`Omit`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolstartsession)\>,
+> `"endpoint"`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:73](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L73)
+[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L117)
 
 Execute the upstream HTTP request and return decoded response + diagnostics.
 
 ###### Returns
 
-`Promise`\<\{ `body`:
-[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolstartsession) &
-[`RequestBase`](../../models/uma-client.model.md#requestbase); `decoded`:
-[`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolstartsession)\>;
-`headers`: \{ `Accept`: `string`; `APP-VER`: `string`; `Content-Type`: `string`; `Device`: `string`;
-`RES-VER`: `string`; `SID`: `string`; `ViewerID`: `string`; `X-Unity-Version`: `string`; \}; \}\>
+`Promise`\<`Omit`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolstartsession)\>,
+`"endpoint"`\>\>
 
 ###### Inherited from
 

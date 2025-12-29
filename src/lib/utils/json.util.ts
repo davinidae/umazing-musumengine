@@ -6,6 +6,12 @@
  * @returns Value with Buffers reconstructed where applicable.
  */
 export function fromJsonFriendly(value: unknown): unknown {
+  if (Buffer.isBuffer(value)) {
+    return value;
+  }
+  if (value instanceof Uint8Array) {
+    return Buffer.from(value);
+  }
   if (Array.isArray(value)) {
     return value.map(fromJsonFriendly);
   }

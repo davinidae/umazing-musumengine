@@ -108,6 +108,8 @@
 
 - [[code/lib/decrypt/utils/blob-util.md|blob-util.md]]
 
+- [[code/lib/decrypt/utils/request-context-util.md|request-context-util.md]]
+
 - [[code/lib/decrypt/utils/unpacker-util.md|unpacker-util.md]]
 
 </ul>
