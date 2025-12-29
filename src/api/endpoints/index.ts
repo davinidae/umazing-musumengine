@@ -3,13 +3,11 @@ import { healthHandler, rootHandler } from './misc';
 import { HttpEvent } from '../models';
 import { ApiResponse } from '../utils';
 
-export type ApiRoute = {
+export const routes: Array<{
   method: string;
   path: string;
   handler: (event: HttpEvent<any>) => Promise<ApiResponse>;
-};
-
-export const routes: ApiRoute[] = [
+}> = [
   {
     method: 'GET',
     path: '/',

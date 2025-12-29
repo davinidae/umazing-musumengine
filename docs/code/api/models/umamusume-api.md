@@ -2,12 +2,6 @@
 
 ## References
 
-### asResultCodeName
-
-Re-exports [asResultCodeName](umamusume-api/result_codes.model.md#asresultcodename)
-
----
-
 ### AttestationType
 
 Re-exports [AttestationType](umamusume-api/enums.model.md#attestationtype)

@@ -10,31 +10,19 @@ Re-exports [AnchorDataHeadersStrategy](lib/decrypt/utils/unpacker.util.md#anchor
 
 ### AuthKey
 
-Re-exports [AuthKey](lib/api-protocol/protocol.util.md#authkey)
-
----
-
-### Blob1Header
-
-Re-exports [Blob1Header](lib/models/protocol.model.md#blob1header)
+Re-exports [AuthKey](lib/utils/protocol.util.md#authkey)
 
 ---
 
 ### buildBlob1Buffer
 
-Re-exports [buildBlob1Buffer](lib/models/protocol.model.md#buildblob1buffer)
+Re-exports [buildBlob1Buffer](lib/utils/protocol.util.md#buildblob1buffer)
 
 ---
 
 ### buildLengthPrefixedPayload
 
 Re-exports [buildLengthPrefixedPayload](lib/utils/framing.util.md#buildlengthprefixedpayload)
-
----
-
-### buildUmaRequest
-
-Re-exports [buildUmaRequest](lib/api-protocol/protocol.util.md#buildumarequest)
 
 ---
 
@@ -58,7 +46,7 @@ Re-exports [DecodeResponseOutput](lib/models/runtime.model.md#decoderesponseoutp
 
 ### decompressResponse
 
-Re-exports [decompressResponse](lib/api-protocol/protocol.util.md#decompressresponse)
+Re-exports [decompressResponse](lib/utils/protocol.util.md#decompressresponse)
 
 ---
 
@@ -104,6 +92,12 @@ Re-exports [EncodeRequestOutput](lib/models/runtime.model.md#encoderequestoutput
 
 ---
 
+### encodeUmaRequestB64
+
+Re-exports [encodeUmaRequestB64](lib/utils/protocol.util.md#encodeumarequestb64)
+
+---
+
 ### encryptAes256Cbc
 
 Re-exports [encryptAes256Cbc](lib/utils/encrypt.util.md#encryptaes256cbc)
@@ -125,12 +119,6 @@ Re-exports [FramingMode](lib/models/runtime.model.md#framingmode)
 ### fromJsonFriendly
 
 Re-exports [fromJsonFriendly](lib/utils/json.util.md#fromjsonfriendly)
-
----
-
-### genUmaRequestKey
-
-Re-exports [genUmaRequestKey](lib/api-protocol/protocol.util.md#genumarequestkey)
 
 ---
 
@@ -167,31 +155,25 @@ Re-exports [MultiArrayStrategy](lib/decrypt/utils/unpacker.util.md#multiarraystr
 
 ### newSessionId
 
-Re-exports [newSessionId](lib/api-protocol/protocol.util.md#newsessionid)
-
----
-
-### ParsedRequest
-
-Re-exports [ParsedRequest](lib/models/protocol.model.md#parsedrequest)
+Re-exports [newSessionId](lib/utils/protocol.util.md#newsessionid)
 
 ---
 
 ### parseHeaderBlob1
 
-Re-exports [parseHeaderBlob1](lib/models/protocol.model.md#parseheaderblob1)
+Re-exports [parseHeaderBlob1](lib/utils/protocol.util.md#parseheaderblob1)
 
 ---
 
 ### parseParsedRequest
 
-Re-exports [parseParsedRequest](lib/models/protocol.model.md#parseparsedrequest)
+Re-exports [parseParsedRequest](lib/utils/protocol.util.md#parseparsedrequest)
 
 ---
 
 ### parseRequest
 
-Re-exports [parseRequest](lib/models/protocol.model.md#parserequest)
+Re-exports [parseRequest](lib/utils/protocol.util.md#parserequest)
 
 ---
 
@@ -221,19 +203,13 @@ Re-exports [RuntimeClientOptions](lib/models/client.model.md#runtimeclientoption
 
 ### saltedMd5
 
-Re-exports [saltedMd5](lib/api-protocol/protocol.util.md#saltedmd5)
-
----
-
-### ServiceOptions
-
-Re-exports [ServiceOptions](lib/models/client.model.md#serviceoptions)
+Re-exports [saltedMd5](lib/utils/protocol.util.md#saltedmd5)
 
 ---
 
 ### SessionId
 
-Re-exports [SessionId](lib/api-protocol/protocol.util.md#sessionid)
+Re-exports [SessionId](lib/utils/protocol.util.md#sessionid)
 
 ---
 
@@ -263,7 +239,7 @@ Re-exports [toJsonCompatible](lib/utils/json.util.md#tojsoncompatible)
 
 ### Udid
 
-Re-exports [Udid](lib/api-protocol/protocol.util.md#udid)
+Re-exports [Udid](lib/utils/protocol.util.md#udid)
 
 ---
 
@@ -273,21 +249,9 @@ Re-exports [udidRawToCanonicalString](lib/utils/udid.util.md#udidrawtocanonicals
 
 ---
 
-### UmaReqBody
-
-Re-exports [UmaReqBody](lib/api-protocol/protocol.util.md#umareqbody)
-
----
-
 ### UmaReqHeader
 
-Re-exports [UmaReqHeader](lib/api-protocol/protocol.util.md#umareqheader)
-
----
-
-### UmaRequest
-
-Re-exports [UmaRequest](lib/api-protocol/protocol.util.md#umarequest)
+Re-exports [UmaReqHeader](lib/utils/protocol.util.md#umareqheader)
 
 ---
 
@@ -299,4 +263,4 @@ Re-exports [Unpacker](lib/decrypt/utils/unpacker.util.md#unpacker)
 
 ### UnpackStrategy
 
-Re-exports [UnpackStrategy](lib/models/decrypt.model.md#unpackstrategy)
+Re-exports [UnpackStrategy](lib/utils/decrypt.util.md#unpackstrategy)

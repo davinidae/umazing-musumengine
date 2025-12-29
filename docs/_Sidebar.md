@@ -74,8 +74,6 @@
 
 - [[code/api/utils/api-util.md|api-util.md]]
 
-- [[code/api/utils/uma-response-decoder-util.md|uma-response-decoder-util.md]]
-
 </ul>
 </details>
 </li>
@@ -103,14 +101,6 @@
 </li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>lib</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>api-protocol</summary>
-<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-
-- [[code/lib/api-protocol/protocol-util.md|protocol-util.md]]
-
-</ul>
-</details>
-</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>decrypt</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>utils</summary>
@@ -146,10 +136,6 @@
 
 - [[code/lib/models/client-model.md|client-model.md]]
 
-- [[code/lib/models/decrypt-model.md|decrypt-model.md]]
-
-- [[code/lib/models/protocol-model.md|protocol-model.md]]
-
 - [[code/lib/models/runtime-model.md|runtime-model.md]]
 
 </ul>
@@ -166,13 +152,13 @@
 
 - [[code/lib/utils/json-util.md|json-util.md]]
 
+- [[code/lib/utils/protocol-util.md|protocol-util.md]]
+
 - [[code/lib/utils/udid-util.md|udid-util.md]]
 
 </ul>
 </details>
 </li>
-
-- [[code/lib/api-protocol.md|api-protocol.md]]
 
 - [[code/lib/decrypt.md|decrypt.md]]
 
@@ -220,14 +206,6 @@
 </ul>
 </details>
 </li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>utils</summary>
-<ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
-
-- [[code/utils/sleep-util.md|sleep-util.md]]
-
-</ul>
-</details>
-</li>
 
 - [[code/api.md|api.md]]
 
@@ -240,8 +218,6 @@
 - [[code/lib.md|lib.md]]
 
 - [[code/README.md|README.md]]
-
-- [[code/utils.md|utils.md]]
 
 </ul>
 </details>

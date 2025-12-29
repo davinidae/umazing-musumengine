@@ -5,7 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[lib/encrypt/payload.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L28)
+[lib/encrypt/payload.service.ts:23](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/encrypt/payload.service.ts#L23)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -28,10 +28,10 @@ Framing modes:
 
 ##### build()
 
-> **build**(`input`): `BuiltEncryptedPayload`
+> **build**(`input`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:77](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L77)
+[lib/encrypt/payload.service.ts:72](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/encrypt/payload.service.ts#L72)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -44,9 +44,51 @@ Build a single request as Base64 from header fields (blob1) and a JS payload.
 
 ###### Returns
 
-`BuiltEncryptedPayload`
+`object`
 
 An object containing the Base64-encoded request buffer as `requestB64`.
+
+###### blob1
+
+> **blob1**: `object` & `Partial`\<\{ `udid_canonical`: `string`; `udid_raw_hex`: `string`; \}\>
+
+###### Type Declaration
+
+###### auth_key_hex
+
+> **auth_key_hex**: `string` \| `null`
+
+48-byte auth key (hex); contents are opaque for our purposes.
+
+###### prefix_hex
+
+> **prefix_hex**: `string`
+
+Free-form prefix; echoed back by the server.
+
+###### response_key_hex
+
+> **response_key_hex**: `string`
+
+32-byte response key (hex); echoed back and used by the server.
+
+###### session_id_hex
+
+> **session_id_hex**: `string`
+
+16-byte session identifier (hex).
+
+###### viewer_id
+
+> **viewer_id**: `number`
+
+###### blob2
+
+> **blob2**: `unknown`
+
+###### requestB64
+
+> **requestB64**: `string`
 
 ###### Throws
 
@@ -58,7 +100,7 @@ If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, 
 > `private` **resolveSessionId**(`sessionIdHex`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:57](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L57)
+[lib/encrypt/payload.service.ts:52](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/encrypt/payload.service.ts#L52)
 
 ###### Parameters
 
@@ -75,7 +117,7 @@ Defined in:
 > `private` **resolveUdid**(`blob1`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:29](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L29)
+[lib/encrypt/payload.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/encrypt/payload.service.ts#L24)
 
 ###### Parameters
 
@@ -100,7 +142,7 @@ Defined in:
 > `private` **sha256Key**(`secret`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:51](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L51)
+[lib/encrypt/payload.service.ts:46](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/lib/encrypt/payload.service.ts#L46)
 
 ###### Parameters
 

@@ -1,7 +1,6 @@
 import {
   AuthMode,
   AuthModeKind,
-  ClientConfig,
   RequestBase,
   RequestResult,
   StepData,
@@ -17,7 +16,6 @@ import { TutorialSkipStep } from './steps/tutorial-skip.step';
 import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../../lib';
 
 export function createUmaClient(
-  cfg: ClientConfig,
   auth: AuthMode,
   udid: Udid,
   authKey: AuthKey | undefined,
@@ -27,7 +25,7 @@ export function createUmaClient(
 ): UmaClient {
   const sessionId = newSessionId(udid, BigInt(base.viewer_id));
   const header = new UmaReqHeader(sessionId, udid, authKey);
-  return new UmaClient(cfg, auth, {
+  return new UmaClient(auth, {
     header,
     base,
     resVer,
@@ -37,7 +35,6 @@ export function createUmaClient(
 
 export class UmaClient {
   constructor(
-    private readonly cfg: ClientConfig,
     private readonly auth: AuthMode,
     private readonly umaclientData: UmaClientData,
   ) {

@@ -23,7 +23,7 @@ import fs from 'node:fs';
 import fastGlob from 'fast-glob';
 import { DETERMINISTIC_ENC_SECRET } from '../constants';
 
-export const program = new Command();
+const program = new Command();
 program
   .name('umazing')
   .description('Umamusume tools in TypeScript: decrypt and encrypt (AES-256-CBC, msgpack)')
@@ -39,7 +39,7 @@ program
       `- encrypt build scans encrypt/input recursively for decoded.json and writes built files under encrypt/output, mirroring folder structure.\n`,
   );
 
-export const decrypt = program.command('decrypt').description('Decryption operations');
+const decrypt = program.command('decrypt').description('Decryption operations');
 decrypt
   .command('request')
   .description("Decrypt all packs' request.txt under decrypt/input (recursive)")
@@ -155,7 +155,7 @@ decrypt
     process.exitCode = 0;
   });
 
-export const encrypt = program.command('encrypt').description('Build/encrypt operations');
+const encrypt = program.command('encrypt').description('Build/encrypt operations');
 encrypt
   .command('build')
   .description(
@@ -234,9 +234,7 @@ async function readAllStdin(): Promise<string> {
   });
 }
 
-export const runtime = program
-  .command('runtime')
-  .description('Programmatic helpers via stdin/stdout');
+const runtime = program.command('runtime').description('Programmatic helpers via stdin/stdout');
 runtime
   .command('encode-request')
   .description('Read { blob1, payload } JSON from stdin and print { requestB64 }')

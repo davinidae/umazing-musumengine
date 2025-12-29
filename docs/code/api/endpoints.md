@@ -1,22 +1,19 @@
 # api/endpoints
 
-## Type Aliases
+## Variables
 
-### ApiRoute
+### routes
 
-> **ApiRoute** = `object`
+> `const` **routes**: `object`[]
 
 Defined in:
-[api/endpoints/index.ts:6](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/endpoints/index.ts#L6)
+[api/endpoints/index.ts:6](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/endpoints/index.ts#L6)
 
-#### Properties
+#### Type Declaration
 
 ##### handler()
 
 > **handler**: (`event`) => `Promise`\<[`ApiResponse`](utils/api.util.md#apiresponse)\>
-
-Defined in:
-[api/endpoints/index.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/endpoints/index.ts#L9)
 
 ###### Parameters
 
@@ -32,21 +29,6 @@ Defined in:
 
 > **method**: `string`
 
-Defined in:
-[api/endpoints/index.ts:7](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/endpoints/index.ts#L7)
-
 ##### path
 
 > **path**: `string`
-
-Defined in:
-[api/endpoints/index.ts:8](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/endpoints/index.ts#L8)
-
-## Variables
-
-### routes
-
-> `const` **routes**: [`ApiRoute`](#apiroute)[]
-
-Defined in:
-[api/endpoints/index.ts:12](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/endpoints/index.ts#L12)

@@ -5,8 +5,8 @@
  * until one succeeds. This keeps the core decoding resilient to real-world quirks.
  */
 import { decode, decodeMulti } from '@msgpack/msgpack';
-import { UnpackStrategy } from '../../models';
 import { STR16, STR32, STR8 } from '../../../constants';
+import { UnpackStrategy } from '../../utils';
 
 /**
  * First try: classic length-prefixed msgpack [4B LE len][msgpack].
@@ -15,7 +15,7 @@ import { STR16, STR32, STR8 } from '../../../constants';
  */
 export class LengthPrefixedStrategy extends UnpackStrategy {
   /**
-   * @param buf Decrypted plaintext buffer.
+   * @param data Decrypted plaintext buffer.
    * @returns Decoded value if valid; otherwise throws on malformed prefix/length.
    * @throws If the buffer is too short or the declared length is inconsistent with data.
    */

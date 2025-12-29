@@ -7,7 +7,7 @@
 > **loginHandler**(`_event`): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[api/endpoints/login.ts:5](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/endpoints/login.ts#L5)
+[api/endpoints/login.ts:5](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/endpoints/login.ts#L5)
 
 #### Parameters
 

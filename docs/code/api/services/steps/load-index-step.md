@@ -5,7 +5,12 @@
 ### LoadIndexStep
 
 Defined in:
-[api/services/steps/load-index.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L5)
+[api/services/steps/load-index.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L19)
+
+`load/index` step.
+
+Some upstream flows behave more reliably with a small delay after the call, so this step optionally
+sleeps in `afterExecute()`.
 
 #### Extends
 
@@ -19,7 +24,7 @@ Defined in:
 > **new LoadIndexStep**(`stepData`, `doSleep`): [`LoadIndexStep`](#loadindexstep)
 
 Defined in:
-[api/services/steps/load-index.step.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L11)
+[api/services/steps/load-index.step.ts:25](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L25)
 
 ###### Parameters
 
@@ -46,14 +51,14 @@ Defined in:
 > `private` `readonly` **doSleep**: `boolean` = `true`
 
 Defined in:
-[api/services/steps/load-index.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L13)
+[api/services/steps/load-index.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L27)
 
 ##### endpoint
 
 > **endpoint**: `string` = `'load/index'`
 
 Defined in:
-[api/services/steps/load-index.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L9)
+[api/services/steps/load-index.step.ts:23](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L23)
 
 ###### Overrides
 
@@ -64,7 +69,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/load-index.step.ts:12](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L12)
+[api/services/steps/load-index.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L26)
 
 ###### Inherited from
 
@@ -77,7 +82,9 @@ Defined in:
 > `protected` **afterExecute**(): `Promise`\<`void`\>
 
 Defined in:
-[api/services/steps/load-index.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L22)
+[api/services/steps/load-index.step.ts:36](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L36)
+
+Optional hook executed after `request()` and before returning from `execute()`.
 
 ###### Returns
 
@@ -93,7 +100,9 @@ Defined in:
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`LoadIndex`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#loadindex)\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:69](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L69)
+[api/services/steps/core.step.ts:110](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L110)
+
+Execute the step end-to-end.
 
 ###### Returns
 
@@ -109,7 +118,9 @@ Defined in:
 > [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/steps/core.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L27)
+[api/services/steps/core.step.ts:65](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L65)
+
+Combine the step-specific body with common request fields from StepData.
 
 ###### Returns
 
@@ -124,7 +135,9 @@ Defined in:
 > `protected` **getHeaders**(): `object`
 
 Defined in:
-[api/services/steps/core.step.ts:14](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L14)
+[api/services/steps/core.step.ts:51](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L51)
+
+Build upstream headers expected by the game API.
 
 ###### Returns
 
@@ -171,7 +184,7 @@ Defined in:
 > **getRequestBody**(): `object`
 
 Defined in:
-[api/services/steps/load-index.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/load-index.step.ts#L18)
+[api/services/steps/load-index.step.ts:32](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/load-index.step.ts#L32)
 
 ###### Returns
 
@@ -191,7 +204,9 @@ Defined in:
 > \}; \}\>
 
 Defined in:
-[api/services/steps/core.step.ts:34](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L34)
+[api/services/steps/core.step.ts:73](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/services/steps/core.step.ts#L73)
+
+Execute the upstream HTTP request and return decoded response + diagnostics.
 
 ###### Returns
 

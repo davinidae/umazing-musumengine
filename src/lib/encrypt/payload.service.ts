@@ -7,14 +7,9 @@ import {
   fromJsonFriendly,
   pkcs7Pad,
   buildLengthPrefixedPayload,
+  buildBlob1Buffer,
 } from '../utils';
-import { EncodeRequestInput, FramingMode, buildBlob1Buffer } from '../models';
-
-type BuiltEncryptedPayload = {
-  requestB64: string;
-  blob1: EncodeRequestInput['blob1'];
-  blob2: EncodeRequestInput['blob2'];
-};
+import { EncodeRequestInput, FramingMode } from '../models';
 
 /**
  * Build Base64 requests from in-memory parts (no filesystem access).
@@ -78,7 +73,11 @@ export class EncryptPayloadService {
     input: EncodeRequestInput & {
       DETERMINISTIC_ENC_SECRET: string;
     },
-  ): BuiltEncryptedPayload {
+  ): {
+    requestB64: string;
+    blob1: EncodeRequestInput['blob1'];
+    blob2: EncodeRequestInput['blob2'];
+  } {
     const { blob1, blob2, DETERMINISTIC_ENC_SECRET, framing = FramingMode.LengthPrefixed } = input;
     switch (framing) {
       case FramingMode.LengthPrefixed: {

@@ -1,3 +1,3 @@
 ---
 
-\*This documentation is auto-generated from the Umamusume API information
+_Parts of this wiki are auto-generated (TypeDoc + docs scripts)._

@@ -3,3 +3,4 @@ export * from './encrypt.util';
 export * from './decrypt.util';
 export * from './udid.util';
 export * from './framing.util';
+export * from './protocol.util';

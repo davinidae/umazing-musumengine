@@ -5,7 +5,12 @@
 ### ApiResponse
 
 Defined in:
-[api/utils/api.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L1)
+[api/utils/api.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L7)
+
+Minimal API response wrapper used by API route handlers.
+
+This mirrors the shape commonly used in Lambda/API-Gateway style handlers, but is also convenient
+for the local Express adapter in `src/api/index.ts`.
 
 #### Constructors
 
@@ -14,7 +19,7 @@ Defined in:
 > **new ApiResponse**(`statusCode`, `body`, `headers?`, `cookies?`): [`ApiResponse`](#apiresponse)
 
 Defined in:
-[api/utils/api.util.ts:2](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L2)
+[api/utils/api.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L8)
 
 ###### Parameters
 
@@ -45,28 +50,28 @@ Defined in:
 > **body**: `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/utils/api.util.ts:4](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L4)
+[api/utils/api.util.ts:10](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L10)
 
 ##### cookies?
 
 > `optional` **cookies**: `string`[]
 
 Defined in:
-[api/utils/api.util.ts:6](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L6)
+[api/utils/api.util.ts:12](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L12)
 
 ##### headers?
 
 > `optional` **headers**: `Record`\<`string`, `string`\>
 
 Defined in:
-[api/utils/api.util.ts:5](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L5)
+[api/utils/api.util.ts:11](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L11)
 
 ##### statusCode
 
 > **statusCode**: `number`
 
 Defined in:
-[api/utils/api.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L3)
+[api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L9)
 
 #### Methods
 
@@ -75,7 +80,9 @@ Defined in:
 > **execute**(): `object`
 
 Defined in:
-[api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L9)
+[api/utils/api.util.ts:19](https://github.com/davinidae/umazing-musumengine/blob/23b121617aef679f48a8d2fac9ca051b023fc6da/src/api/utils/api.util.ts#L19)
+
+Convert the response into a JSON HTTP response object. `body` is serialized to a JSON string.
 
 ###### Returns
 

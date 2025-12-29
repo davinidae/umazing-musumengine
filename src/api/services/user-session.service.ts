@@ -56,7 +56,6 @@ export class UserSession {
       }
     }
     const client = createUmaClient(
-      this.cfg,
       this.auth,
       udid,
       this.cfg.authKey,

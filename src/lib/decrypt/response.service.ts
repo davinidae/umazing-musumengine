@@ -1,6 +1,10 @@
-import { udidRawToCanonicalString, deriveIvFromUdidString, toJsonCompatible } from '../utils';
+import {
+  udidRawToCanonicalString,
+  deriveIvFromUdidString,
+  toJsonCompatible,
+  parseParsedRequest,
+} from '../utils';
 import { decryptBlob2, Unpacker } from './utils';
-import { parseParsedRequest } from '../models';
 
 /**
  * Decode response Base64 buffers using the matching request for UDID/IV.

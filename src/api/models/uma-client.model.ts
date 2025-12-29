@@ -19,16 +19,14 @@ export type RequestBase = {
   steam_session_ticket: string | null;
 };
 
-export type DataHeaders = {
-  viewer_id: number;
-  sid: string;
-  servertime: number;
-  result_code: number;
-  [k: string]: unknown;
-};
-
 export type UmaResponse<T> = {
-  data_headers: DataHeaders;
+  data_headers: {
+    viewer_id: number;
+    sid: string;
+    servertime: number;
+    result_code: number;
+    [k: string]: unknown;
+  };
 } & Partial<{
   data: T;
 }>;

@@ -221,16 +221,3 @@ export enum GallopResultCode {
   PipelineError = -2,
   MissingViewerId = -3,
 }
-
-/**
- * Convert a numeric result code to its enum key name.
- * Falls back to `CantFindResultCode` if the value is not present.
- * @param v Numeric value from `GallopResultCode`.
- * @returns Enum key name as a string.
- */
-export function asResultCodeName(v: GallopResultCode): keyof typeof GallopResultCode {
-  const o = Object.entries(GallopResultCode).find(([_key, value]) => {
-    return value === v;
-  }) || ['CantFindResultCode', GallopResultCode.CantFindResultCode];
-  return o[0] as keyof typeof GallopResultCode;
-}

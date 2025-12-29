@@ -69,8 +69,8 @@ builder will skip that file and log the reason.
 
 Deterministic encryption: For reproducibility within this repository, the builder uses a
 deterministic AES‑256 key derived as SHA‑256 of the ASCII string `co!=Y;(UQCGxJ_n82` (see
-`src/variables.ts`). That derived key is appended to `blob2` and visible in decrypted outputs. There
-are no CLI flags to override this.
+`src/constants/salt.constant.ts`). That derived key is appended to `blob2` and visible in decrypted
+outputs. There are no CLI flags to override this.
 
 ## Documenting endpoints
 

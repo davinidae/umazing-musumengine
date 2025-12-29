@@ -1,3 +1,13 @@
+/**
+ * Local API server entrypoint.
+ *
+ * This file starts an Express server and adapts the repo's route handlers (which
+ * are written in a Lambda-ish style) to Express.
+ *
+ * Notes:
+ * - This module is intentionally NOT re-exported from `src/index.ts` because it
+ *   has side effects (it starts a server on import).
+ */
 import express from 'express';
 import type { HttpEvent } from './models';
 import { routes } from './endpoints';

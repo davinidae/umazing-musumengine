@@ -38,17 +38,15 @@ conventions.
 - `src/`
   - `lib/`: core crypto, encoding/decoding, and shared utilities
     - `runtime-client.ts`: programmatic API to encode requests and decode responses in-process
-    - `decrypt/`, `encrypt/`, `shared/`, `models/`: internal helpers and types
+    - `decrypt/`, `encrypt/`, `models/`, `utils/`: internal helpers and types
   - `cli/`
     - `index.ts`: unified CLI with `decrypt`, `encrypt`, and `runtime` subcommands
   - `api/`
-    - `endpoints/`: Express routers (e.g., `login.ts`)
-    - `pipelines/`: pipeline runner and services for upstream calls
-      - `run.ts`: sequential runner with early-stop on error
-      - `services/`: `pre_signup`, `signup`, `start_session`, `load_index`, etc.
-    - `session/`: in-memory session manager and server-owned `UserSession`
-    - `models/`: API-level types used by pipelines and sessions
-  - `variables.ts`: central constants; includes `DETERMINISTIC_ENC_SECRET`
+    - `endpoints/`: route definitions (Lambda-ish handlers)
+    - `services/`: upstream client orchestration and step runner
+    - `models/`: API-level types
+    - `index.ts`: local Express adapter/server entrypoint
+  - `constants/`: shared constants, including `DETERMINISTIC_ENC_SECRET`
 - `tests/`
   - `unit-tests/**`: focused unit specs for helpers
   - `integration-tests/**`: end-to-end flows: decrypt run(), encrypt build, skip cases, roundtrip
@@ -76,7 +74,7 @@ The double dash `--` ensures npm forwards arguments to the CLI script.
 Bundled CLI (after build):
 
 ```powershell
-npm run build
+# If you have a release artifact / built dist/ folder available:
 node dist/cli.bundle.js --help
 ```
 
@@ -147,8 +145,8 @@ Encryption key note:
 - The `encrypt build` command uses a deterministic AES-256 encryption key derived from the ASCII
   string `co!=Y;(UQCGxJ_n82` (via SHA-256). This value is appended to blob2 and shown in logs,
   ensuring reproducible builds.
-- The secret is defined in `src/variables.ts` as `DETERMINISTIC_ENC_SECRET`. There are no CLI flags
-  to override this.
+- The secret is defined in `src/constants/salt.constant.ts` as `DETERMINISTIC_ENC_SECRET`. There are
+  no CLI flags to override this.
 
 Required fields inside `blob1` (used to derive IV and rebuild blob1):
 
@@ -259,22 +257,17 @@ Unit coverage thresholds are enforced via `vite.config.unit.ts`.
 ## Lint, format, build
 
 ```powershell
-# Lint / fix
+# Lint
 npm run lint
-npm run lint:fix
 
-# Format / check
+# Format
 npm run format
-npm run format:check
 
-# Typecheck both repo and build configs
+# Typecheck
 npm run typecheck
 
-# Bundle the CLI to dist/ (esbuild ESM bundle)
-npm run build
-
-# Lint and format
-npm run lint; npm run format
+# Generate docs (TypeDoc + wiki sidebar)
+npm run docs
 
 ```
 
@@ -307,16 +300,16 @@ not supported; the builder reads required values from `blob1` in each `decoded.j
 # Development (TS sources)
 npm run cli -- decrypt all
 
-# Distribution (bundled)
+# Distribution (bundled, if available)
 node dist/cli.bundle.js decrypt all
 
 # Encode a request via stdin/stdout
 {"blob1": {"prefix_hex":"...", "udid_raw_hex":"...", "auth_key_hex":"...", "session_id_hex":"...", "response_key_hex":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
-| node dist/cli.bundle.js runtime encode-request
+| npm run cli -- runtime encode-request
 | Set-Content -Path request.b64
 
 # Decode a response via stdin/stdout
-#{"requestB64": "<base64>", "responseB64": "<base64>"} | node dist/cli.bundle.js runtime decode-response
+#{"requestB64": "<base64>", "responseB64": "<base64>"} | npm run cli -- runtime decode-response
 ```
 
 ## Runtime API (programmatic and piping)
@@ -343,7 +336,11 @@ RuntimeClient in-process.
 For a small OO wrapper, use `RuntimeClient`:
 
 ```ts
-import { RuntimeClient } from './src';
+// If consuming as a package:
+// import { RuntimeClient } from 'umazing-musumengine';
+
+// If running from this repo (tsx/ts-node):
+import { RuntimeClient } from './src/index.ts';
 
 export const client = new RuntimeClient();
 

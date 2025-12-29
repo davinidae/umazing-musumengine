@@ -2,12 +2,6 @@
 
 ## References
 
-### asResultCodeName
-
-Re-exports [asResultCodeName](models/umamusume-api/result_codes.model.md#asresultcodename)
-
----
-
 ### AttestationType
 
 Re-exports [AttestationType](models/umamusume-api/enums.model.md#attestationtype)
@@ -29,12 +23,6 @@ Re-exports [AuthModeKind](models/uma-client.model.md#authmodekind)
 ### ClientConfig
 
 Re-exports [ClientConfig](models/uma-client.model.md#clientconfig)
-
----
-
-### DataHeaders
-
-Re-exports [DataHeaders](models/uma-client.model.md#dataheaders)
 
 ---
 
@@ -71,12 +59,6 @@ Re-exports [RequestResult](models/uma-client.model.md#requestresult)
 ### StepData
 
 Re-exports [StepData](models/uma-client.model.md#stepdata)
-
----
-
-### StoredData
-
-Re-exports [StoredData](models/api.model.md#storeddata)
 
 ---
 

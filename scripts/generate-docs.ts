@@ -15,7 +15,10 @@ export function isHidden(name: string) {
   return name.startsWith('.') || name === '_Sidebar.md' || name === '_Sidebar';
 }
 
-type Node = {
+/**
+ * Tree node representing a file or directory under `docs/`.
+ */
+export type Node = {
   name: string;
   rel: string;
   dir: boolean;
@@ -132,9 +135,15 @@ function generateHome() {
       '',
       `Generated: ${date}`,
       '',
-      'This wiki contains documentation generated from the Umamusume API information.',
+      'This wiki contains project documentation and generated API references.',
       '',
-      'See the [Sidebar](./_Sidebar) for available topics.',
+      'Start here:',
+      '',
+      '- [code](./code) — TypeDoc reference for the TypeScript sources under src/',
+      '- [scripts](./scripts) — TypeDoc reference for the repository scripts/',
+      '- [umamusume_api_info](./umamusume_api_info) — upstream research notes and dumps',
+      '',
+      'See the [Sidebar](./_Sidebar) for all topics.',
       '',
     ].join('\n'),
     'utf-8',
@@ -146,9 +155,7 @@ function generateFooter() {
   const footerPath = path.join(DOCS_ROOT, '_Footer.md');
   fs.writeFileSync(
     footerPath,
-    [`---`, ``, `*This documentation is auto-generated from the Umamusume API information`].join(
-      '\n',
-    ),
+    [`---`, ``, `*Parts of this wiki are auto-generated (TypeDoc + docs scripts).*`].join('\n'),
     'utf-8',
   );
   console.log(`Generated ${footerPath}`);

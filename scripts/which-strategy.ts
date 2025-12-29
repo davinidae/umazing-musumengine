@@ -32,7 +32,7 @@ export function readB64(p: string): Buffer {
 /**
  * Candidate unpacking strategies applied to the response plaintext.
  */
-export const strategies = [
+export const strategies: Array<{ execute(buf: Buffer): unknown | undefined }> = [
   new LengthPrefixedStrategy(),
   new RawMsgpackStrategy(),
   new MapHeaderScanStrategy(),
