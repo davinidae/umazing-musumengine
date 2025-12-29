@@ -5,7 +5,9 @@
 ### RuntimeClient
 
 Defined in:
-[lib/runtime-client.ts:27](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/runtime-client.ts#L27)
+[src/lib/runtime-client.ts:30](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/runtime-client.ts#L30)
+
+RuntimeClient.
 
 #### Constructors
 
@@ -14,9 +16,9 @@ Defined in:
 > **new RuntimeClient**(`opts`): [`RuntimeClient`](#runtimeclient)
 
 Defined in:
-[lib/runtime-client.ts:31](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/runtime-client.ts#L31)
+[src/lib/runtime-client.ts:39](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/runtime-client.ts#L39)
 
-Thin OO wrapper so consumers can inject options later.
+constructor.
 
 ###### Parameters
 
@@ -24,11 +26,13 @@ Thin OO wrapper so consumers can inject options later.
 
 [`RuntimeClientOptions`](models/client.model.md#runtimeclientoptions) = `...`
 
-Runtime options including the deterministic secret.
+Type: `RuntimeClientOptions`.
 
 ###### Returns
 
 [`RuntimeClient`](#runtimeclient)
+
+Type: `RuntimeClient`.
 
 #### Properties
 
@@ -38,9 +42,9 @@ Runtime options including the deterministic secret.
 > [`RuntimeClientOptions`](models/client.model.md#runtimeclientoptions)
 
 Defined in:
-[lib/runtime-client.ts:32](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/runtime-client.ts#L32)
+[src/lib/runtime-client.ts:40](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/runtime-client.ts#L40)
 
-Runtime options including the deterministic secret.
+Type: `RuntimeClientOptions`.
 
 #### Methods
 
@@ -50,10 +54,9 @@ Runtime options including the deterministic secret.
 > [`DecodeResponseOutput`](models/runtime.model.md#decoderesponseoutput)
 
 Defined in:
-[lib/runtime-client.ts:63](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/runtime-client.ts#L63)
+[src/lib/runtime-client.ts:88](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/runtime-client.ts#L88)
 
-Decode a Base64 response using the matching request for UDID/IV. Extracts UDID from blob1, derives
-IV, decrypts blob2, and uses the heuristic Unpacker to parse the plaintext.
+decodeResponse.
 
 ###### Parameters
 
@@ -61,26 +64,22 @@ IV, decrypts blob2, and uses the heuristic Unpacker to parse the plaintext.
 
 [`DecodeResponseInput`](models/runtime.model.md#decoderesponseinput)
 
-An object with `requestB64` and `responseB64`.
+Type: `DecodeResponseInput`.
 
 ###### Returns
 
 [`DecodeResponseOutput`](models/runtime.model.md#decoderesponseoutput)
 
-`{ payload }` best-effort parsed and normalized payload.
-
-###### Throws
-
-If the request blob1 is malformed and UDID cannot be extracted.
+Type: `DecodeResponseOutput`.
 
 ##### encodeRequest()
 
 > **encodeRequest**(`input`): [`EncodeRequestOutput`](models/runtime.model.md#encoderequestoutput)
 
 Defined in:
-[lib/runtime-client.ts:46](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/runtime-client.ts#L46)
+[src/lib/runtime-client.ts:59](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/runtime-client.ts#L59)
 
-Encode a request from header fields (blob1) and a JS payload.
+encodeRequest.
 
 ###### Parameters
 
@@ -88,14 +87,10 @@ Encode a request from header fields (blob1) and a JS payload.
 
 [`EncodeRequestInput`](models/runtime.model.md#encoderequestinput)
 
-Blob1 header pieces and the payload to serialize.
+Type: `EncodeRequestInput`.
 
 ###### Returns
 
 [`EncodeRequestOutput`](models/runtime.model.md#encoderequestoutput)
 
-`{ requestB64 }` the Base64-encoded request buffer.
-
-###### Throws
-
-If mandatory fields are missing or have invalid sizes.
+Type: `EncodeRequestOutput`.

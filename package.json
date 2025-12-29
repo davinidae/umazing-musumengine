@@ -1,6 +1,6 @@
 {
   "name": "umazing-musumengine",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "description": "Umamusume tools rewritten in TypeScript: decrypt/encrypt (AES-256-CBC, msgpack)",
@@ -55,6 +55,7 @@
     "@msgpack/msgpack": "^3.0.0",
     "axios": "^1.7.7",
     "commander": "^12.1.0",
+    "es-toolkit": "^1.43.0",
     "express": "^4.19.2",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
@@ -71,6 +72,7 @@
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
+    "globals": "^15.14.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "nodemon": "^3.1.10",

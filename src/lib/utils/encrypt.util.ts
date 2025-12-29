@@ -10,6 +10,13 @@ import { createCipheriv } from 'crypto';
  * @param iv 16-byte initialization vector.
  * @returns Ciphertext Buffer.
  */
+/**
+ * encryptAes256Cbc.
+ * @param dataPadded - Type: `Buffer<ArrayBufferLike>`.
+ * @param key - Type: `Buffer<ArrayBufferLike>`.
+ * @param iv - Type: `Buffer<ArrayBufferLike>`.
+ * @returns Type: `Buffer<ArrayBufferLike>`.
+ */
 export function encryptAes256Cbc(dataPadded: Buffer, key: Buffer, iv: Buffer): Buffer {
   if (key.length !== 32) {
     throw new Error(`AES-256-CBC key must be 32 bytes, got ${key.length}`);
@@ -22,6 +29,11 @@ export function encryptAes256Cbc(dataPadded: Buffer, key: Buffer, iv: Buffer): B
       `AES-256-CBC data must be padded to a multiple of 16 bytes, got ${dataPadded.length}`,
     );
   }
+  /**
+   * cipher.
+   * @remarks Type: `Cipher`.
+   * @defaultValue `createCipheriv('aes-256-cbc', key, iv)`
+   */
   const cipher = createCipheriv('aes-256-cbc', key, iv);
   cipher.setAutoPadding(false);
   return Buffer.concat([cipher.update(dataPadded), cipher.final()]);

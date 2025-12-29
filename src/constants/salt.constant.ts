@@ -8,4 +8,9 @@
  * during development and tests. In production, use a secure runtime secret.
  * Also known as SALT
  */
+/**
+ * DETERMINISTIC_ENC_SECRET.
+ * @remarks Type: `"co!=Y;(UQCGxJ_n82"`.
+ * @defaultValue `'co!=Y;(UQCGxJ_n82'`
+ */
 export const DETERMINISTIC_ENC_SECRET = 'co!=Y;(UQCGxJ_n82';

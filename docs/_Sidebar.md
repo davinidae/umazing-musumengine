@@ -39,24 +39,60 @@
 </li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>services</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>steps</summary>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>step-groups</summary>
 <ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
 
+- [[code/api/services/step-groups/core-step-group.md|core-step-group.md]]
+
+- [[code/api/services/step-groups/signup-step-group.md|signup-step-group.md]]
+
+- [[code/api/services/step-groups/tutorial-step-group.md|tutorial-step-group.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>steps</summary>
+<ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>load</summary>
+<ul style="list-style-type: disc; margin-left: 80px; padding-left: 0;">
+
+- [[code/api/services/steps/load/index-step.md|index-step.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>tool</summary>
+<ul style="list-style-type: disc; margin-left: 80px; padding-left: 0;">
+
+- [[code/api/services/steps/tool/pre_signup-step.md|pre_signup-step.md]]
+
+- [[code/api/services/steps/tool/signup-step.md|signup-step.md]]
+
+- [[code/api/services/steps/tool/start_session-step.md|start_session-step.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>tutorial</summary>
+<ul style="list-style-type: disc; margin-left: 80px; padding-left: 0;">
+
+- [[code/api/services/steps/tutorial/skip-step.md|skip-step.md]]
+
+</ul>
+</details>
+</li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>user</summary>
+<ul style="list-style-type: disc; margin-left: 80px; padding-left: 0;">
+
+- [[code/api/services/steps/user/change_name-step.md|change_name-step.md]]
+
+- [[code/api/services/steps/user/change_sex-step.md|change_sex-step.md]]
+
+</ul>
+</details>
+</li>
+
 - [[code/api/services/steps/core-step.md|core-step.md]]
-
-- [[code/api/services/steps/load-index-step.md|load-index-step.md]]
-
-- [[code/api/services/steps/start-session-step.md|start-session-step.md]]
-
-- [[code/api/services/steps/tool-pre_signup-step.md|tool-pre_signup-step.md]]
-
-- [[code/api/services/steps/tool-signup-step.md|tool-signup-step.md]]
-
-- [[code/api/services/steps/tutorial-skip-step.md|tutorial-skip-step.md]]
-
-- [[code/api/services/steps/user-change_name-step.md|user-change_name-step.md]]
-
-- [[code/api/services/steps/user-change_sex-step.md|user-change_sex-step.md]]
 
 </ul>
 </details>

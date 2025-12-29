@@ -5,7 +5,9 @@
 ### ApiResponse
 
 Defined in:
-[api/utils/api.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L7)
+[src/api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L9)
+
+ApiResponse.
 
 Minimal API response wrapper used by API route handlers.
 
@@ -19,7 +21,9 @@ for the local Express adapter in `src/api/index.ts`.
 > **new ApiResponse**(`statusCode`, `body`, `headers?`, `cookies?`): [`ApiResponse`](#apiresponse)
 
 Defined in:
-[api/utils/api.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L8)
+[src/api/utils/api.util.ts:18](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L18)
+
+constructor.
 
 ###### Parameters
 
@@ -27,21 +31,31 @@ Defined in:
 
 `number`
 
+Type: `number`.
+
 ###### body
 
 `Record`\<`string`, `unknown`\>
+
+Type: `Record<string, unknown>`.
 
 ###### headers?
 
 `Record`\<`string`, `string`\>
 
+Type: `Record<string, string> | undefined`.
+
 ###### cookies?
 
 `string`[]
 
+Type: `string[] | undefined`.
+
 ###### Returns
 
 [`ApiResponse`](#apiresponse)
+
+Type: `ApiResponse`.
 
 #### Properties
 
@@ -50,28 +64,36 @@ Defined in:
 > **body**: `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/utils/api.util.ts:10](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L10)
+[src/api/utils/api.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L20)
+
+Type: `Record<string, unknown>`.
 
 ##### cookies?
 
 > `optional` **cookies**: `string`[]
 
 Defined in:
-[api/utils/api.util.ts:12](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L12)
+[src/api/utils/api.util.ts:22](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L22)
+
+Type: `string[] | undefined`.
 
 ##### headers?
 
 > `optional` **headers**: `Record`\<`string`, `string`\>
 
 Defined in:
-[api/utils/api.util.ts:11](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L11)
+[src/api/utils/api.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L21)
+
+Type: `Record<string, string> | undefined`.
 
 ##### statusCode
 
 > **statusCode**: `number`
 
 Defined in:
-[api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L9)
+[src/api/utils/api.util.ts:19](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L19)
+
+Type: `number`.
 
 #### Methods
 
@@ -80,13 +102,17 @@ Defined in:
 > **execute**(): `object`
 
 Defined in:
-[api/utils/api.util.ts:19](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L19)
+[src/api/utils/api.util.ts:33](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L33)
+
+execute.
 
 Convert the response into a JSON HTTP response object. `body` is serialized to a JSON string.
 
 ###### Returns
 
 `object`
+
+Type: `{ statusCode: number; headers: Record<string, string>; cookies: string[]; body: string; }`.
 
 ###### body
 
@@ -111,7 +137,9 @@ Convert the response into a JSON HTTP response object. `body` is serialized to a
 > **getErrorMessage**(`e`): `string`
 
 Defined in:
-[api/utils/api.util.ts:38](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/utils/api.util.ts#L38)
+[src/api/utils/api.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/utils/api.util.ts#L59)
+
+getErrorMessage.
 
 Extract a stable error message from unknown caught values.
 
@@ -121,6 +149,10 @@ Extract a stable error message from unknown caught values.
 
 `unknown`
 
+Type: `unknown`.
+
 #### Returns
 
 `string`
+
+Type: `string`.

@@ -1,14 +1,46 @@
 import { AuthModeKind } from '../models';
-import type { AuthMode, RequestBase, RequestResult, StepData, UmaClientData } from '../models';
-import { ToolPreSignupStep } from './steps/tool-pre_signup.step';
-import { ToolSignupStep } from './steps/tool-signup.step';
-import { LoadIndexStep } from './steps/load-index.step';
-import { StartSessionStep } from './steps/start-session.step';
-import { UserChangeSexStep } from './steps/user-change_sex.step';
-import { UserChangeNameStep } from './steps/user-change_name.step';
-import { TutorialSkipStep } from './steps/tutorial-skip.step';
+import type { AuthMode, RequestBase, RequestResult, UmaClientData } from '../models';
+import { LoadIndexStep } from './steps/load/index.step';
+import { StartSessionStep } from './steps/tool/start_session.step';
 import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../../lib';
+import { CoreStep } from './steps/core.step';
+import { TutorialStepGroup } from './step-groups/tutorial.step-group';
+import { CoreStepGroup } from './step-groups/core.step-group';
+import { SignupStepGroup } from './step-groups/signup.step-group';
 
+type CoreStepGroupClass = new (...args: any[]) => CoreStepGroup;
+
+type CoreStepClass = new (...args: any[]) => CoreStep<any, any>;
+
+enum FlowType {
+  STEP = 'step',
+  GROUP = 'group',
+}
+
+type Flow = (
+  | {
+      type: FlowType.STEP;
+      service: CoreStepClass;
+    }
+  | {
+      type: FlowType.GROUP;
+      services: CoreStepGroupClass;
+    }
+) &
+  Partial<{
+    extra: any[];
+  }>;
+
+/**
+ * createUmaClient.
+ * @param auth - Type: `AuthMode`.
+ * @param udid - Type: `Udid`.
+ * @param authKey - Type: `AuthKey | undefined`.
+ * @param base - Type: `RequestBase`.
+ * @param resVer - Type: `string`.
+ * @param baseUrl - Type: `string`.
+ * @returns Type: `UmaClient`.
+ */
 export function createUmaClient(
   auth: AuthMode,
   udid: Udid,
@@ -17,7 +49,17 @@ export function createUmaClient(
   resVer: string,
   baseUrl: string,
 ): UmaClient {
+  /**
+   * sessionId.
+   * @remarks Type: `SessionId`.
+   * @defaultValue `newSessionId(udid, BigInt(base.viewer_id))`
+   */
   const sessionId = newSessionId(udid, BigInt(base.viewer_id));
+  /**
+   * header.
+   * @remarks Type: `UmaReqHeader`.
+   * @defaultValue `new UmaReqHeader(sessionId, udid, authKey)`
+   */
   const header = new UmaReqHeader(sessionId, udid, authKey);
   return new UmaClient(auth, {
     header,
@@ -27,101 +69,184 @@ export function createUmaClient(
   });
 }
 
+/**
+ * UmaClient.
+ */
 export class UmaClient {
+  /**
+   * constructor.
+   * @param auth - Type: `AuthMode`.
+   * @param data - Type: `UmaClientData`.
+   * @returns Type: `UmaClient`.
+   */
   constructor(
     private readonly auth: AuthMode,
-    private readonly umaclientData: UmaClientData,
+    public readonly data: UmaClientData,
   ) {
     //
   }
 
+  /**
+   * prevResults.
+   * @remarks Type: `RequestResult[]`.
+   * @defaultValue `[]`
+   */
+  public readonly prevResults: RequestResult[] = [];
+
+  /**
+   * regenSessionId.
+   */
   public regenSessionId(): void {
-    this.umaclientData.header.sessionId = newSessionId(
-      this.umaclientData.header.udid,
-      BigInt(this.umaclientData.base.viewer_id),
+    this.data.header.sessionId = newSessionId(
+      this.data.header.udid,
+      BigInt(this.data.base.viewer_id),
     );
   }
 
+  /**
+   * updateSessionId.
+   * @param sessionId - Type: `SessionId`.
+   */
   public updateSessionId(sessionId: SessionId): void {
-    this.umaclientData.header.sessionId = sessionId;
+    this.data.header.sessionId = sessionId;
   }
 
-  private getStepData(prevResults: RequestResult[] = []): StepData {
-    return {
-      ...this.umaclientData,
-      prevResults,
-      umaclient: this,
-    };
-  }
-
+  /**
+   * updateResVer.
+   * @param resVer - Type: `string`.
+   */
   public updateResVer(resVer: string): void {
-    this.umaclientData.resVer = resVer;
+    this.data.resVer = resVer;
   }
 
+  /**
+   * updateViewerId.
+   * @param viewerId - Type: `number`.
+   */
   public updateViewerId(viewerId: number): void {
-    this.umaclientData.base.viewer_id = viewerId;
+    this.data.base.viewer_id = viewerId;
   }
 
+  /**
+   * updateAuthKey.
+   * @param authKey - Type: `AuthKey | undefined`.
+   */
   public updateAuthKey(authKey: AuthKey | undefined): void {
-    this.umaclientData.header.authKey = authKey;
+    this.data.header.authKey = authKey;
   }
 
-  private hasActiveSession(): boolean {
-    return this.umaclientData.base.viewer_id !== 0 && Boolean(this.umaclientData.header.authKey);
+  /**
+   * hasActiveSession.
+   * @returns Type: `boolean`.
+   */
+  public hasActiveSession(): boolean {
+    return this.data.base.viewer_id !== 0 && Boolean(this.data.header.authKey);
   }
 
+  /**
+   * getAttestationType.
+   * @returns Type: `number`.
+   */
   private getAttestationType(): number {
     return this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
   }
 
-  private async signup(): Promise<RequestResult[]> {
-    if (this.hasActiveSession()) {
-      this.regenSessionId();
-      return [];
+  /**
+   * executeStep (async).
+   * @param step - Type: `CoreStepClass`.
+   * @param extra - Type: `any`.
+   * @returns Type: `Promise<void>`.
+   */
+  public async executeStep(step: CoreStepClass, ...extra: any): Promise<void> {
+    /**
+     * result.
+     * @remarks Type: `RequestResult<any>`.
+     * @defaultValue `await new step(this, ...(extra ?? [])).execute()`
+     */
+    const result = await new step(this, ...(extra ?? [])).execute();
+    this.prevResults.push(result);
+  }
+
+  /**
+   * executeStepGroup (async).
+   * @param stepGroup - Type: `CoreStepGroupClass`.
+   * @param extra - Type: `any`.
+   * @returns Type: `Promise<void>`.
+   */
+  public async executeStepGroup(stepGroup: CoreStepGroupClass, ...extra: any): Promise<void> {
+    await new stepGroup(this, ...(extra ?? [])).execute();
+  }
+
+  /**
+   * executeFlow (async).
+   * @param steps - Type: `Flow[]`.
+   * @returns Type: `Promise<void>`.
+   */
+  public async executeFlow(steps: Flow[]): Promise<void> {
+    try {
+      /**
+       * step.
+       * @remarks Type: `Flow`.
+       */
+      for (const step of steps) {
+        switch (step.type) {
+          case FlowType.STEP: {
+            await this.executeStep(step.service, ...(step.extra ?? []));
+            break;
+          }
+          case FlowType.GROUP: {
+            await this.executeStepGroup(step.services, ...(step.extra ?? []));
+            break;
+          }
+          default: {
+            break;
+          }
+        }
+      }
+    } catch (err) {
+      /**
+       * catch (err).
+       * @remarks Type: `unknown`.
+       */
+      console.error('Error during UMA client flow execution:', err);
     }
-    return [
-      await new ToolPreSignupStep(this.getStepData()).execute(),
-      await new ToolSignupStep(this.getStepData()).execute(),
-    ];
   }
 
-  private async runPostSignupFlow(
-    signupResults: RequestResult[],
-    attestationType: number,
-  ): Promise<RequestResult[]> {
-    const startSessionRes = await new StartSessionStep(
-      this.getStepData(),
-      attestationType,
-    ).execute();
-    const firstLoadIndex = await new LoadIndexStep(this.getStepData()).execute();
-    const tutorialResults = await this.tutorial(signupResults);
-    const finalLoadIndex = await new LoadIndexStep(this.getStepData(), false).execute();
-    return [startSessionRes, firstLoadIndex, ...tutorialResults, finalLoadIndex];
-  }
-
-  private async tutorial(results: RequestResult[]): Promise<RequestResult[]> {
-    const isStartSessionResult = (
-      r: RequestResult,
-    ): r is RequestResult<Umatypes.Response.ToolStartSession> =>
-      r.endpoint === 'tool/start_session';
-
-    const startSessionResult = results.find(isStartSessionResult);
-    const isTutorial = Boolean(startSessionResult?.decoded.data?.is_tutorial);
-    if (!isTutorial) {
-      return [];
-    }
-    return [
-      await new UserChangeSexStep(this.getStepData()).execute(),
-      await new UserChangeNameStep(this.getStepData()).execute(),
-      await new TutorialSkipStep(this.getStepData()).execute(),
-    ];
-  }
-
+  /**
+   * logIn (async).
+   * @returns Type: `Promise<RequestResult[]>`.
+   */
   public async logIn(): Promise<RequestResult[]> {
+    /**
+     * attestationType.
+     * @remarks Type: `number`.
+     * @defaultValue `this.getAttestationType()`
+     */
     const attestationType = this.getAttestationType();
-    const results = [...(await this.signup())];
-    const extra = await this.runPostSignupFlow(results, attestationType);
-    results.push(...extra);
-    return results;
+    await this.executeFlow([
+      {
+        type: FlowType.GROUP,
+        services: SignupStepGroup,
+      },
+      {
+        type: FlowType.STEP,
+        service: StartSessionStep,
+        extra: [attestationType],
+      },
+      {
+        type: FlowType.STEP,
+        service: LoadIndexStep,
+      },
+      {
+        type: FlowType.GROUP,
+        services: TutorialStepGroup,
+      },
+      {
+        type: FlowType.STEP,
+        service: LoadIndexStep,
+        extra: [false],
+      },
+    ]);
+    return this.prevResults;
   }
 }

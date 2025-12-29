@@ -7,7 +7,9 @@
 > `const` **routes**: `object`[]
 
 Defined in:
-[api/endpoints/index.ts:6](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/endpoints/index.ts#L6)
+[src/api/endpoints/index.ts:11](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/endpoints/index.ts#L11)
+
+routes.
 
 #### Type Declaration
 
@@ -32,3 +34,12 @@ Defined in:
 ##### path
 
 > **path**: `string`
+
+#### Remarks
+
+Type:
+`{ method: string; path: string; handler: (event: HttpEvent<unknown>) => Promise<ApiResponse>; }[]`.
+
+#### Default Value
+
+`[ { method: 'GET', path: '/', handler: rootHandler, }, { method: 'GET', path: '/health', handler: healthHandler, }, { method: 'POST', path:…`

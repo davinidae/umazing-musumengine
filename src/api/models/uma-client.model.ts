@@ -57,12 +57,12 @@ export type AuthMode =
 export type RequestResult<T = unknown> = {
   decoded: UmaResponse<T>;
   endpoint: string;
+  name: string;
   body: Record<string, unknown>;
   headers: Record<string, string>;
 };
 
-export type StepData = UmaClientData & {
-  prevResults: RequestResult[];
+export type StepData = {
   umaclient: UmaClient;
 };
 

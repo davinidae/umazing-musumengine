@@ -1,0 +1,61 @@
+import { AuthKey } from '../../../../lib';
+import type { RequestResult } from '../../../models';
+import { CoreStep } from '../core.step';
+
+/**
+ * ToolSignupStep.
+ * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.ToolSignup, Umatypes.Response.ToolSignup >`.
+ */
+export class ToolSignupStep extends CoreStep<
+  Umatypes.Request.ToolSignup,
+  Umatypes.Response.ToolSignup
+> {
+  /**
+   * endpoint.
+   * @remarks Type: `string`.
+   * @defaultValue `'tool/signup'`
+   */
+  override endpoint = 'tool/signup';
+
+  /**
+   * getRequestBody.
+   * @returns Type: `ToolSignup`.
+   */
+  override getRequestBody(): Umatypes.Request.ToolSignup {
+    return {
+      error_code: 0,
+      error_message: '',
+      attestation_type: 0,
+      optin_user_birth: 199801,
+      dma_state: 0,
+      country: 'Canada',
+      credential: '',
+    };
+  }
+
+  /**
+   * afterExecute.
+   * @param result - Type: `RequestResult<ToolSignup>`.
+   */
+  protected override afterExecute(result: RequestResult<Umatypes.Response.ToolSignup>): void {
+    /**
+     * viewer_id.
+     * @remarks Type: `number`.
+     * @defaultValue `this.umaClient.data.base.viewer_id`
+     */
+    let viewer_id = this.umaClient.data.base.viewer_id;
+    /**
+     * authKey.
+     * @remarks Type: `AuthKey | undefined`.
+     * @defaultValue `this.umaClient.data.header.authKey`
+     */
+    let authKey = this.umaClient.data.header.authKey;
+    if (result.decoded.data) {
+      viewer_id = result.decoded.data.viewer_id;
+      authKey = new AuthKey(Uint8Array.from(Buffer.from(result.decoded.data.auth_key, 'base64')));
+    }
+    this.umaClient.updateViewerId(viewer_id);
+    this.umaClient.updateAuthKey(authKey);
+    this.umaClient.regenSessionId();
+  }
+}

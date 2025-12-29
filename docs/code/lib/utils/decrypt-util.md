@@ -5,7 +5,9 @@
 ### `abstract` UnpackStrategy
 
 Defined in:
-[lib/utils/decrypt.util.ts:15](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/decrypt.util.ts#L15)
+[src/lib/utils/decrypt.util.ts:29](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/utils/decrypt.util.ts#L29)
+
+UnpackStrategy.
 
 #### Extended by
 
@@ -34,7 +36,9 @@ Defined in:
 > `abstract` **execute**(`buf`): `unknown`
 
 Defined in:
-[lib/utils/decrypt.util.ts:16](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/decrypt.util.ts#L16)
+[src/lib/utils/decrypt.util.ts:36](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/utils/decrypt.util.ts#L36)
+
+execute.
 
 ###### Parameters
 
@@ -42,19 +46,26 @@ Defined in:
 
 `Buffer`
 
+Type: `Buffer<ArrayBufferLike>`.
+
 ###### Returns
 
 `unknown`
+
+Type: `unknown`.
+
+###### Remarks
+
+Source: `abstract execute(buf: Buffer): unknown | undefined;`.
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[lib/utils/decrypt.util.ts:22](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/decrypt.util.ts#L22)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/utils/decrypt.util.ts#L47)
 
-Normalize common response shape: if an object has data and flattened header-like keys, wrap the
-headers under data_headers.
+normalizeResponseShape.
 
 ###### Parameters
 
@@ -62,9 +73,13 @@ headers under data_headers.
 
 `unknown`
 
+Type: `unknown`.
+
 ###### Returns
 
 `unknown`
+
+Type: `unknown`.
 
 ## Functions
 
@@ -73,9 +88,9 @@ headers under data_headers.
 > **pkcs7Pad**(`data`, `blockSize`): `Buffer`
 
 Defined in:
-[lib/utils/decrypt.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/decrypt.util.ts#L7)
+[src/lib/utils/decrypt.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/utils/decrypt.util.ts#L13)
 
-Apply PKCS#7 padding to a Buffer to reach a multiple of blockSize.
+pkcs7Pad.
 
 #### Parameters
 
@@ -83,16 +98,16 @@ Apply PKCS#7 padding to a Buffer to reach a multiple of blockSize.
 
 `Buffer`
 
-Input buffer to pad.
+Type: `Buffer<ArrayBufferLike>`.
 
 ##### blockSize
 
 `number`
 
-Block size in bytes (e.g., 16 for AES).
+Type: `number`.
 
 #### Returns
 
 `Buffer`
 
-New buffer with padding bytes appended.
+Type: `Buffer<ArrayBufferLike>`.

@@ -15,14 +15,44 @@ type Blob1Json = EncodeRequestInput['blob1'] & {
   encryption_key_hex: string;
 };
 
+/**
+ * decodeRequestContextFromBase64.
+ * @param requestB64 - Type: `string`.
+ * @returns Type: `RequestContext`.
+ */
 export function decodeRequestContextFromBase64(requestB64: string): RequestContext {
   if (!requestB64) {
     throw new Error('requestB64 is required');
   }
+  /**
+   * raw.
+   * @remarks Type: `Buffer<ArrayBuffer>`.
+   * @defaultValue `Buffer.from(requestB64, 'base64')`
+   */
   const raw = Buffer.from(requestB64, 'base64');
+  /**
+   * request.
+   * @remarks Type: `ParsedRequest`.
+   * @defaultValue `parseParsedRequest(raw)`
+   */
   const request = parseParsedRequest(raw);
+  /**
+   * header.
+   * @remarks Type: `Blob1Header`.
+   * @defaultValue `request.blob1`
+   */
   const header = request.blob1;
+  /**
+   * udidCanonical.
+   * @remarks Type: `string`.
+   * @defaultValue `udidRawToCanonicalString(header.udid_raw)`
+   */
   const udidCanonical = udidRawToCanonicalString(header.udid_raw);
+  /**
+   * iv.
+   * @remarks Type: `Buffer<ArrayBufferLike>`.
+   * @defaultValue `deriveIvFromUdidString(udidCanonical)`
+   */
   const iv = deriveIvFromUdidString(udidCanonical);
   return {
     request,
@@ -32,11 +62,23 @@ export function decodeRequestContextFromBase64(requestB64: string): RequestConte
   };
 }
 
+/**
+ * blob1ToJson.
+ * @param header - Type: `Blob1Header`.
+ * @param udidCanonical - Type: `string`.
+ * @param keyUsed - Type: `Buffer<ArrayBufferLike>`.
+ * @returns Type: `Blob1Json`.
+ */
 export function blob1ToJson(
   header: Blob1Header,
   udidCanonical: string,
   keyUsed: Buffer,
 ): Blob1Json {
+  /**
+   * out.
+   * @remarks Type: `Blob1Json`.
+   * @defaultValue `{ viewer_id: header.viewer_id, prefix_hex: header.prefix.toString('hex'), prefix_len: header.prefix.length, session_id_hex: header.session_…`
+   */
   const out: Blob1Json = {
     viewer_id: header.viewer_id,
     prefix_hex: header.prefix.toString('hex'),

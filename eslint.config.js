@@ -4,6 +4,7 @@ import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
+import globals from 'globals';
 
 export default [
   {
@@ -14,9 +15,8 @@ export default [
     files: ['**/*.{ts,js}'],
     languageOptions: {
       globals: {
-        console: 'readonly',
-        process: 'readonly',
-        Buffer: 'readonly',
+        ...globals.es2021,
+        ...globals.node,
       },
     },
   },
@@ -29,6 +29,8 @@ export default [
       globals: {
         // TypeScript ambient global namespace (declared in src/umatypes.d.ts)
         Umatypes: 'readonly',
+        ...globals.es2021,
+        ...globals.node,
       },
     },
     plugins: {

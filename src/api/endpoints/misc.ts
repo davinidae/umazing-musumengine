@@ -1,5 +1,9 @@
 import { ApiResponse } from '../utils';
 
+/**
+ * healthHandler (async).
+ * @returns Type: `Promise<ApiResponse>`.
+ */
 export async function healthHandler() {
   return new ApiResponse(200, {
     status: 'ok',
@@ -8,6 +12,10 @@ export async function healthHandler() {
   });
 }
 
+/**
+ * rootHandler (async).
+ * @returns Type: `Promise<ApiResponse>`.
+ */
 export async function rootHandler() {
   return new ApiResponse(200, {
     name: 'umazing-musumengine API',

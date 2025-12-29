@@ -1,12 +1,30 @@
-import { CoreStep } from './core.step';
+import { CoreStep } from '../core.step';
 
+/**
+ * UserChangeNameStep.
+ * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.UserChangeName, Umatypes.Response.UserChangeName >`.
+ */
 export class UserChangeNameStep extends CoreStep<
   Umatypes.Request.UserChangeName,
   Umatypes.Response.UserChangeName
 > {
+  /**
+   * endpoint.
+   * @remarks Type: `string`.
+   * @defaultValue `'user/change_name'`
+   */
   override endpoint = 'user/change_name';
 
+  /**
+   * getRequestBody.
+   * @returns Type: `UserChangeName`.
+   */
   override getRequestBody(): Umatypes.Request.UserChangeName {
+    /**
+     * date.
+     * @remarks Type: `Date`.
+     * @defaultValue `new Date()`
+     */
     const date = new Date();
     return {
       name: [

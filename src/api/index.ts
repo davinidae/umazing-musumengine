@@ -18,6 +18,11 @@ type NormalizedRequest = express.Request & {
   normalizedQuery: Record<string, string>;
 };
 
+/**
+ * applyResponseHeaders.
+ * @param res - Type: `Response<any, Record<string, any>>`.
+ * @param headers - Type: `Record<string, unknown> | undefined`.
+ */
 function applyResponseHeaders(
   res: express.Response,
   headers: Record<string, unknown> | undefined,
@@ -25,6 +30,10 @@ function applyResponseHeaders(
   if (!headers) {
     return;
   }
+  /**
+   * [key, value].
+   * @remarks Type: `[string, unknown]`.
+   */
   for (const [key, value] of Object.entries(headers)) {
     if (value != null) {
       res.setHeader(key, String(value));
@@ -32,13 +41,28 @@ function applyResponseHeaders(
   }
 }
 
+/**
+ * applyResponseCookies.
+ * @param res - Type: `Response<any, Record<string, any>>`.
+ * @param cookies - Type: `string[] | undefined`.
+ */
 function applyResponseCookies(res: express.Response, cookies: string[] | undefined): void {
   if (cookies && cookies.length > 0) {
     res.setHeader('set-cookie', cookies);
   }
 }
 
+/**
+ * sendLambdaResult.
+ * @param res - Type: `Response<any, Record<string, any>>`.
+ * @param response - Type: `ApiResponse`.
+ */
 function sendLambdaResult(res: express.Response, response: ApiResponse): void {
+  /**
+   * result.
+   * @remarks Type: `{ statusCode: number; headers: Record<string, string>; cookies: string[]; body: string; }`.
+   * @defaultValue `response.execute()`
+   */
   const result = response.execute();
   applyResponseHeaders(res, result.headers);
   applyResponseCookies(res, result.cookies);
@@ -52,9 +76,25 @@ function sendLambdaResult(res: express.Response, response: ApiResponse): void {
   res.json(result.body ?? null);
 }
 
+/**
+ * normalizeHeaders.
+ *
+ * Normalize headers to string values (Express already lowercases keys)
+ *
+ * @param headers - Type: `IncomingHttpHeaders`.
+ * @returns Type: `Record<string, string>`.
+ */
 function normalizeHeaders(headers: express.Request['headers']): Record<string, string> {
-  // Normalize headers to string values (Express already lowercases keys)
+  /**
+   * out.
+   * @remarks Type: `Record<string, string>`.
+   * @defaultValue `{}`
+   */
   const out: Record<string, string> = {};
+  /**
+   * [key, value].
+   * @remarks Type: `[string, string | string[] | undefined]`.
+   */
   for (const [key, value] of Object.entries(headers)) {
     if (typeof value === 'string') {
       out[key] = value;
@@ -73,10 +113,31 @@ function normalizeHeaders(headers: express.Request['headers']): Record<string, s
   return out;
 }
 
+/**
+ * normalizeQuery.
+ * @param query - Type: `unknown`.
+ * @returns Type: `Record<string, string>`.
+ */
 function normalizeQuery(query: unknown): Record<string, string> {
-  // Normalize query params to string values (first value wins)
+  /**
+   * obj.
+   *
+   * Normalize query params to string values (first value wins)
+   *
+   * @remarks Type: `Record<string, unknown>`.
+   * @defaultValue `query && typeof query === 'object' ? (query as Record<string, unknown>) : {}`
+   */
   const obj = query && typeof query === 'object' ? (query as Record<string, unknown>) : {};
+  /**
+   * out.
+   * @remarks Type: `Record<string, string>`.
+   * @defaultValue `{}`
+   */
   const out: Record<string, string> = {};
+  /**
+   * [key, value].
+   * @remarks Type: `[string, unknown]`.
+   */
   for (const [key, value] of Object.entries(obj)) {
     if (typeof value === 'string') {
       out[key] = value;
@@ -95,10 +156,23 @@ function normalizeQuery(query: unknown): Record<string, string> {
   return out;
 }
 
+/**
+ * rawQueryStringFromUrl.
+ * @param url - Type: `string`.
+ * @returns Type: `string`.
+ */
 function rawQueryStringFromUrl(url: string): string {
   return url.includes('?') ? (url.split('?')[1] ?? '') : '';
 }
 
+/**
+ * buildRequestContext.
+ * @param req - Type: `Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>`.
+ * @param normalizedHeaders - Type: `Record<string, string>`.
+ * @param timeIso - Type: `string`.
+ * @param timeEpoch - Type: `number`.
+ * @returns Type: `APIGatewayEventRequestContextV2`.
+ */
 function buildRequestContext(
   req: express.Request,
   normalizedHeaders: Record<string, string>,
@@ -125,15 +199,50 @@ function buildRequestContext(
   };
 }
 
+/**
+ * normalizedHttpEvent.
+ * @param req - Type: `Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>`.
+ * @returns Type: `HttpEvent<unknown>`.
+ */
 function normalizedHttpEvent(req: express.Request): HttpEvent<unknown> {
+  /**
+   * r.
+   * @remarks Type: `NormalizedRequest`.
+   * @defaultValue `req as NormalizedRequest`
+   */
   const r = req as NormalizedRequest;
+  /**
+   * queryStringParameters.
+   * @remarks Type: `Record<string, string> | undefined`.
+   * @defaultValue `Object.keys(r.normalizedQuery).length > 0 ? r.normalizedQuery : undefined`
+   */
   const queryStringParameters =
     Object.keys(r.normalizedQuery).length > 0 ? r.normalizedQuery : undefined;
 
+  /**
+   * now.
+   * @remarks Type: `Date`.
+   * @defaultValue `new Date()`
+   */
   const now = new Date();
+  /**
+   * timeIso.
+   * @remarks Type: `string`.
+   * @defaultValue `now.toISOString()`
+   */
   const timeIso = now.toISOString();
+  /**
+   * timeEpoch.
+   * @remarks Type: `number`.
+   * @defaultValue `now.getTime()`
+   */
   const timeEpoch = now.getTime();
 
+  /**
+   * event.
+   * @remarks Type: `HttpEvent<unknown>`.
+   * @defaultValue `{ version: '2.0', routeKey: `${req.method} ${req.path}`, rawPath: req.path, rawQueryString: rawQueryStringFromUrl(req.url), headers: r.norm…`
+   */
   const event: HttpEvent<unknown> = {
     version: '2.0',
     routeKey: `${req.method} ${req.path}`,
@@ -152,16 +261,41 @@ function normalizedHttpEvent(req: express.Request): HttpEvent<unknown> {
   return event;
 }
 
+/**
+ * app.
+ * @remarks Type: `Express`.
+ * @defaultValue `express()`
+ */
 const app = express();
 
 app.use((req, _res, next) => {
+  /**
+   * r.
+   * @remarks Type: `NormalizedRequest`.
+   * @defaultValue `req as NormalizedRequest`
+   */
   const r = req as NormalizedRequest;
   r.normalizedHeaders = normalizeHeaders(req.headers);
   r.normalizedQuery = normalizeQuery(req.query);
   next();
 });
+/**
+ * route.
+ * @remarks Type: `{ method: string; path: string; handler: (event: HttpEvent<unknown>) => Promise<ApiResponse>; }`.
+ */
 for (const route of routes) {
+  /**
+   * method.
+   * @remarks Type: `string`.
+   * @defaultValue `route.method.toLowerCase()`
+   */
   const method = route.method.toLowerCase();
+  /**
+   * register.
+   * @remarks Type: `(handler: RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>) => void`.
+   * @defaultValue `(handler: express.RequestHandler) => { if (method === 'any' || method === 'all') { app.all(route.path, handler); return; } switch (method) …`
+   * @param handler - Type: `RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>`.
+   */
   const register = (handler: express.RequestHandler) => {
     if (method === 'any' || method === 'all') {
       app.all(route.path, handler);
@@ -195,10 +329,24 @@ for (const route of routes) {
   };
   register(async (req, res) => {
     try {
+      /**
+       * event.
+       * @remarks Type: `HttpEvent<unknown>`.
+       * @defaultValue `normalizedHttpEvent(req)`
+       */
       const event = normalizedHttpEvent(req);
+      /**
+       * result.
+       * @remarks Type: `ApiResponse`.
+       * @defaultValue `await route.handler(event)`
+       */
       const result = await route.handler(event);
       sendLambdaResult(res, result);
     } catch (e: unknown) {
+      /**
+       * catch (e).
+       * @remarks Type: `unknown`.
+       */
       res.status(500).json({
         error: 'internal_error',
         message: getErrorMessage(e),
@@ -207,7 +355,17 @@ for (const route of routes) {
   });
 }
 
+/**
+ * port.
+ * @remarks Type: `number`.
+ * @defaultValue `Number(process.env.PORT ?? 4000)`
+ */
 const port = Number(process.env.PORT ?? 4000);
+/**
+ * host.
+ * @remarks Type: `string`.
+ * @defaultValue `process.env.HOST ?? 'localhost'`
+ */
 const host = process.env.HOST ?? 'localhost';
 
 app.listen(port, host, () => {

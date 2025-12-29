@@ -24,9 +24,17 @@ import type {
   RuntimeClientOptions,
 } from './models';
 
+/**
+ * RuntimeClient.
+ */
 export class RuntimeClient {
   /** Thin OO wrapper so consumers can inject options later.
    * @param opts Runtime options including the deterministic secret.
+   */
+  /**
+   * constructor.
+   * @param opts - Type: `RuntimeClientOptions`.
+   * @returns Type: `RuntimeClient`.
    */
   constructor(
     private readonly opts: RuntimeClientOptions = {
@@ -43,8 +51,20 @@ export class RuntimeClient {
    * @returns `{ requestB64 }` the Base64-encoded request buffer.
    * @throws If mandatory fields are missing or have invalid sizes.
    */
+  /**
+   * encodeRequest.
+   * @param input - Type: `EncodeRequestInput`.
+   * @returns Type: `EncodeRequestOutput`.
+   */
   encodeRequest(input: EncodeRequestInput): EncodeRequestOutput {
-    // Intentionally quiet: this is used by CLI/stdout JSON workflows.
+    /**
+     * service.
+     *
+     * Intentionally quiet: this is used by CLI/stdout JSON workflows.
+     *
+     * @remarks Type: `EncryptPayloadService`.
+     * @defaultValue `new EncryptPayloadService()`
+     */
     const service = new EncryptPayloadService();
     return service.build({
       ...input,
@@ -60,11 +80,26 @@ export class RuntimeClient {
    * @returns `{ payload }` best-effort parsed and normalized payload.
    * @throws If the request blob1 is malformed and UDID cannot be extracted.
    */
+  /**
+   * decodeResponse.
+   * @param input - Type: `DecodeResponseInput`.
+   * @returns Type: `DecodeResponseOutput`.
+   */
   decodeResponse(input: DecodeResponseInput): DecodeResponseOutput {
+    /**
+     * { requestB64, responseB64 }.
+     * @remarks Type: `DecodeResponseInput`.
+     * @defaultValue `input`
+     */
     const { requestB64, responseB64 } = input;
     if (!requestB64 || !responseB64) {
       throw new Error('requestB64 and responseB64 are required');
     }
+    /**
+     * result.
+     * @remarks Type: `{ blob1: Blob1Json; blob2: unknown; plaintext: Buffer<ArrayBufferLike>; }`.
+     * @defaultValue `new DecryptResponseService().decodeFromBase64(requestB64, responseB64)`
+     */
     const result = new DecryptResponseService().decodeFromBase64(requestB64, responseB64);
     return result;
   }

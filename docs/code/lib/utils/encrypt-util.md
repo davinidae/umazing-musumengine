@@ -7,9 +7,9 @@
 > **encryptAes256Cbc**(`dataPadded`, `key`, `iv`): `Buffer`
 
 Defined in:
-[lib/utils/encrypt.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/encrypt.util.ts#L13)
+[src/lib/utils/encrypt.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/lib/utils/encrypt.util.ts#L20)
 
-AES-256-CBC encrypt without auto-PKCS#7 padding (data must already be padded).
+encryptAes256Cbc.
 
 #### Parameters
 
@@ -17,22 +17,22 @@ AES-256-CBC encrypt without auto-PKCS#7 padding (data must already be padded).
 
 `Buffer`
 
-Input data with PKCS#7 padding applied.
+Type: `Buffer<ArrayBufferLike>`.
 
 ##### key
 
 `Buffer`
 
-32-byte AES key.
+Type: `Buffer<ArrayBufferLike>`.
 
 ##### iv
 
 `Buffer`
 
-16-byte initialization vector.
+Type: `Buffer<ArrayBufferLike>`.
 
 #### Returns
 
 `Buffer`
 
-Ciphertext Buffer.
+Type: `Buffer<ArrayBufferLike>`.
