@@ -5,7 +5,7 @@
 ### AuthModeKind
 
 Defined in:
-[src/api/models/uma-client.model.ts:40](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L40)
+[src/api/models/uma-client.model.ts:40](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L40)
 
 #### Enumeration Members
 
@@ -14,14 +14,14 @@ Defined in:
 > **MOBILE**: `"mobile"`
 
 Defined in:
-[src/api/models/uma-client.model.ts:42](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L42)
+[src/api/models/uma-client.model.ts:42](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L42)
 
 ##### STEAM
 
 > **STEAM**: `"steam"`
 
 Defined in:
-[src/api/models/uma-client.model.ts:41](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L41)
+[src/api/models/uma-client.model.ts:41](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L41)
 
 ## Type Aliases
 
@@ -33,7 +33,7 @@ Defined in:
 > [`MOBILE`](#mobile); \}
 
 Defined in:
-[src/api/models/uma-client.model.ts:45](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L45)
+[src/api/models/uma-client.model.ts:45](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L45)
 
 ---
 
@@ -44,7 +44,7 @@ Defined in:
 > \}\>
 
 Defined in:
-[src/api/models/uma-client.model.ts:34](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L34)
+[src/api/models/uma-client.model.ts:34](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L34)
 
 ---
 
@@ -53,7 +53,7 @@ Defined in:
 > **RequestBase** = `object`
 
 Defined in:
-[src/api/models/uma-client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L5)
+[src/api/models/uma-client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L5)
 
 #### Properties
 
@@ -62,98 +62,98 @@ Defined in:
 > **carrier**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L6)
+[src/api/models/uma-client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L6)
 
 ##### device
 
 > **device**: `number`
 
 Defined in:
-[src/api/models/uma-client.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L7)
+[src/api/models/uma-client.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L7)
 
 ##### device_id
 
 > **device_id**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L8)
+[src/api/models/uma-client.model.ts:8](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L8)
 
 ##### device_name
 
 > **device_name**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L9)
+[src/api/models/uma-client.model.ts:9](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L9)
 
 ##### dmm_onetime_token
 
 > **dmm_onetime_token**: `null`
 
 Defined in:
-[src/api/models/uma-client.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L10)
+[src/api/models/uma-client.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L10)
 
 ##### dmm_viewer_id
 
 > **dmm_viewer_id**: `null`
 
 Defined in:
-[src/api/models/uma-client.model.ts:11](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L11)
+[src/api/models/uma-client.model.ts:11](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L11)
 
 ##### graphics_device_name
 
 > **graphics_device_name**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L12)
+[src/api/models/uma-client.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L12)
 
 ##### ip_address
 
 > **ip_address**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:13](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L13)
+[src/api/models/uma-client.model.ts:13](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L13)
 
 ##### keychain
 
 > **keychain**: `number`
 
 Defined in:
-[src/api/models/uma-client.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L14)
+[src/api/models/uma-client.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L14)
 
 ##### locale
 
 > **locale**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L15)
+[src/api/models/uma-client.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L15)
 
 ##### platform_os_version
 
 > **platform_os_version**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:16](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L16)
+[src/api/models/uma-client.model.ts:16](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L16)
 
 ##### steam_id
 
 > **steam_id**: `string` \| `null`
 
 Defined in:
-[src/api/models/uma-client.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L18)
+[src/api/models/uma-client.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L18)
 
 ##### steam_session_ticket
 
 > **steam_session_ticket**: `string` \| `null`
 
 Defined in:
-[src/api/models/uma-client.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L19)
+[src/api/models/uma-client.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L19)
 
 ##### viewer_id
 
 > **viewer_id**: `number`
 
 Defined in:
-[src/api/models/uma-client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L17)
+[src/api/models/uma-client.model.ts:17](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L17)
 
 ---
 
@@ -162,7 +162,7 @@ Defined in:
 > **RequestResult**\<`T`\> = `object`
 
 Defined in:
-[src/api/models/uma-client.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L57)
+[src/api/models/uma-client.model.ts:57](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L57)
 
 #### Type Parameters
 
@@ -177,35 +177,35 @@ Defined in:
 > **body**: `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/api/models/uma-client.model.ts:61](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L61)
+[src/api/models/uma-client.model.ts:61](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L61)
 
 ##### decoded
 
 > **decoded**: [`UmaResponse`](#umaresponse)\<`T`\>
 
 Defined in:
-[src/api/models/uma-client.model.ts:58](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L58)
+[src/api/models/uma-client.model.ts:58](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L58)
 
 ##### endpoint
 
 > **endpoint**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:59](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L59)
+[src/api/models/uma-client.model.ts:59](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L59)
 
 ##### headers
 
 > **headers**: `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/models/uma-client.model.ts:62](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L62)
+[src/api/models/uma-client.model.ts:62](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L62)
 
 ##### name
 
 > **name**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L60)
+[src/api/models/uma-client.model.ts:60](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L60)
 
 ---
 
@@ -214,7 +214,7 @@ Defined in:
 > **StepData** = `object`
 
 Defined in:
-[src/api/models/uma-client.model.ts:65](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L65)
+[src/api/models/uma-client.model.ts:65](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L65)
 
 #### Properties
 
@@ -223,7 +223,7 @@ Defined in:
 > **umaclient**: [`UmaClient`](../services/uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/models/uma-client.model.ts:66](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L66)
+[src/api/models/uma-client.model.ts:66](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L66)
 
 ---
 
@@ -232,7 +232,7 @@ Defined in:
 > **UmaClientData** = `object`
 
 Defined in:
-[src/api/models/uma-client.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L69)
+[src/api/models/uma-client.model.ts:69](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L69)
 
 #### Properties
 
@@ -241,28 +241,28 @@ Defined in:
 > **base**: [`RequestBase`](#requestbase)
 
 Defined in:
-[src/api/models/uma-client.model.ts:71](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L71)
+[src/api/models/uma-client.model.ts:71](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L71)
 
 ##### baseUrl
 
 > **baseUrl**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:73](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L73)
+[src/api/models/uma-client.model.ts:73](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L73)
 
 ##### header
 
 > **header**: [`UmaReqHeader`](../../lib/utils/protocol.util.md#umareqheader)
 
 Defined in:
-[src/api/models/uma-client.model.ts:70](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L70)
+[src/api/models/uma-client.model.ts:70](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L70)
 
 ##### resVer
 
 > **resVer**: `string`
 
 Defined in:
-[src/api/models/uma-client.model.ts:72](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L72)
+[src/api/models/uma-client.model.ts:72](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L72)
 
 ---
 
@@ -271,7 +271,7 @@ Defined in:
 > **UmaResponse**\<`T`\> = `object` & `Partial`\<\{ `data`: `T`; \}\>
 
 Defined in:
-[src/api/models/uma-client.model.ts:22](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/uma-client.model.ts#L22)
+[src/api/models/uma-client.model.ts:22](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/uma-client.model.ts#L22)
 
 #### Type Declaration
 

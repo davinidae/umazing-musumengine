@@ -7,7 +7,7 @@
 > **HttpEvent**\<`T`\> = `Omit`\<`APIGatewayProxyEventV2`, `"body"`\> & `object`
 
 Defined in:
-[src/api/models/api.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/70c65772a693b9af9eb32a052402dfc126c355a3/src/api/models/api.model.ts#L3)
+[src/api/models/api.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/models/api.model.ts#L3)
 
 #### Type Declaration
 
