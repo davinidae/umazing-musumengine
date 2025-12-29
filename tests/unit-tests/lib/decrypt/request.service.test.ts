@@ -1,6 +1,9 @@
 import { describe, test, expect } from 'vitest';
-import { EncryptPayloadService, DETERMINISTIC_ENC_SECRET } from '../../../../src';
-import { DecryptRequestService } from '../../../../src';
+import {
+  EncryptPayloadService,
+  DETERMINISTIC_ENC_SECRET,
+  DecryptRequestService,
+} from '../../../../src';
 
 describe('DecryptRequestService (unit)', () => {
   test('decodes requestB64 and returns original payload', () => {

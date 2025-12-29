@@ -6,6 +6,7 @@
  */
 import { decode, decodeMulti } from '@msgpack/msgpack';
 import { UnpackStrategy } from '../../models';
+import { STR16, STR32, STR8 } from '../../../constants';
 
 /**
  * First try: classic length-prefixed msgpack [4B LE len][msgpack].
@@ -18,16 +19,17 @@ export class LengthPrefixedStrategy extends UnpackStrategy {
    * @returns Decoded value if valid; otherwise throws on malformed prefix/length.
    * @throws If the buffer is too short or the declared length is inconsistent with data.
    */
-  execute(buf: Buffer): unknown | undefined {
-    if (buf.length < 4) {
-      throw new Error('Decrypted payload too short for length prefix');
+  execute(data: Buffer): unknown | undefined {
+    if (data.byteLength < 4) {
+      throw new Error('message too short');
     }
-    const msgLen = buf.readUInt32LE(0);
-    if (buf.length < 4 + msgLen) {
-      throw new Error('Msgpack length inconsistent with data');
+    const len = data[0]! | (data[1]! << 8) | (data[2]! << 16) | (data[3]! << 24);
+    const payloadLen = len >>> 0;
+    if (payloadLen > data.byteLength - 4) {
+      throw new Error('message too short');
     }
-    const mp = buf.subarray(4, 4 + msgLen);
-    return decode(mp);
+    const decoded = decode(data.subarray(4, 4 + payloadLen));
+    return this.normalizeResponseShape(decoded);
   }
 }
 
@@ -88,40 +90,44 @@ export class MapHeaderScanStrategy extends UnpackStrategy {
  * This matches some tool endpoints that stream key/value pairs without a surrounding map.
  */
 export class KVStreamStrategy extends UnpackStrategy {
+  isStringMarker(marker: number): boolean {
+    // FixStr: 0xa0..0xbf
+    return (
+      (marker >= 0xa0 && marker <= 0xbf) || marker === STR8 || marker === STR16 || marker === STR32
+    );
+  }
+
   /**
    * @param buf Decrypted plaintext buffer.
    * @returns Object reconstructed from (key, value, ...) stream, or undefined.
    */
   execute(buf: Buffer): unknown | undefined {
-    const isStrHeader = (b: number) => {
-      return (b >= 0xa0 && b <= 0xbf) || b === 0xd9 || b === 0xda || b === 0xdb;
-    };
-    const maxScan2 = Math.min(512, buf.length);
-    for (let i = 0; i < maxScan2; i++) {
-      if (!isStrHeader(buf[i])) {
-        continue;
+    try {
+      let start = 0;
+      while (start < buf.byteLength && !this.isStringMarker(buf[start]!)) {
+        start += 1;
       }
-      try {
-        const seq = [...decodeMulti(buf.subarray(i))];
-        // Rust behavior: once it finds the first string key marker, it expects the remainder
-        // to be a strict (string key, value) stream until EOF.
-        if (seq.length === 0 || seq.length % 2 !== 0) {
-          continue;
-        }
-        const obj: Record<string, unknown> = {};
-        for (let j = 0; j < seq.length; j += 2) {
-          if (typeof seq[j] !== 'string') {
-            throw new Error('non-string key in kv-stream');
-          }
-          obj[seq[j] as string] = seq[j + 1];
-        }
-        // Accept even a single (k,v) pair; Rust does not require a minimum pair count.
-        return this.normalizeResponseShape(obj);
-      } catch (_e) {
-        /* ignore: heuristic decodeMulti attempt */
+      const sliced = buf.subarray(start);
+      const values = Array.from(decodeMulti(sliced));
+      if (values.length % 2 !== 0) {
+        throw new Error('failed to read string key');
       }
+      const obj: Record<string, unknown> = {};
+      for (let i = 0; i < values.length; i += 2) {
+        const key = values[i];
+        if (typeof key !== 'string') {
+          throw new Error('failed to read string key');
+        }
+        obj[key] = values[i + 1] as unknown;
+      }
+      // Preserve previous Unpacker behavior: don't accept an empty decode as a valid parse.
+      if (obj && typeof obj === 'object' && !Array.isArray(obj) && Object.keys(obj).length === 0) {
+        return undefined;
+      }
+      return this.normalizeResponseShape(obj);
+    } catch {
+      return undefined;
     }
-    return undefined;
   }
 }
 

@@ -1,4 +1,3 @@
-import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../utils';
 import {
   AuthMode,
   AuthModeKind,
@@ -15,6 +14,7 @@ import { StartSessionStep } from './steps/start-session.step';
 import { UserChangeSexStep } from './steps/user-change_sex.step';
 import { UserChangeNameStep } from './steps/user-change_name.step';
 import { TutorialSkipStep } from './steps/tutorial-skip.step';
+import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../../lib';
 
 export function createUmaClient(
   cfg: ClientConfig,

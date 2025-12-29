@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { RequestResult, StepData, UmaResponse } from '../../models';
-import { decompressResponse, heuristicDecode, saltedMd5, SessionId, UmaRequest } from '../../utils';
+import { UmaResponseDecoder } from '../../utils';
+import { decompressResponse, saltedMd5, SessionId, UmaRequest } from '../../../lib';
 
 export abstract class CoreStep<TReq extends object, TRes> {
   abstract endpoint: string;
@@ -47,7 +48,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
     });
     const bodyB64 = res.data;
     const decrypted = decompressResponse(bodyB64, this.stepData.header.udid);
-    const decoded = heuristicDecode<UmaResponse<TRes>>(decrypted);
+    const decoded = new UmaResponseDecoder().decode<UmaResponse<TRes>>(decrypted);
     if (decoded.data_headers?.sid) {
       this.stepData.umaclient.updateSessionId(
         new SessionId(saltedMd5(Buffer.from(decoded.data_headers.sid, 'utf8'))),

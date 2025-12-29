@@ -7,8 +7,9 @@ import {
   udidRawToCanonicalString,
   deriveIvFromUdidString,
   FramingMode,
+  decryptBlob2,
+  LengthPrefixedStrategy,
 } from '../../../../src';
-import { decryptBlob2, LengthPrefixedStrategy } from '../../../../src/lib/decrypt/shared';
 
 describe('EncryptPayloadService (unit)', () => {
   const svc = new EncryptPayloadService();

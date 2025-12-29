@@ -96,3 +96,56 @@ export class ParsedRequest {
     return new ParsedRequest(blob1, blob2);
   }
 }
+
+/**
+ * Legacy helper: parse a full request buffer into `[blob1, blob2]`.
+ * Kept for backwards compatibility with older tests/consumers.
+ */
+export function parseRequest(raw: Buffer): [Buffer, Buffer] {
+  const parsed = ParsedRequest.parse(raw);
+  return [parsed.blob1Buffer, parsed.blob2];
+}
+
+/**
+ * Legacy helper: parse blob1 buffer into a `Blob1Header`.
+ * Kept for backwards compatibility with older tests/consumers.
+ */
+export function parseHeaderBlob1(blob1: Buffer): Blob1Header {
+  return Blob1Header.fromBuffer(blob1);
+}
+
+/**
+ * Build a blob1 buffer with the canonical layout:
+ * [prefix][session_id(16)][udid_raw(16)][response_key(32)][auth_key(0|48)].
+ */
+export function buildBlob1Buffer(input: {
+  prefix: Buffer;
+  sessionId: Buffer;
+  udidRaw: Buffer;
+  responseKey: Buffer;
+  authKey?: Buffer;
+}): Buffer {
+  const { prefix, sessionId, udidRaw, responseKey } = input;
+  const authKey = input.authKey ?? Buffer.alloc(0);
+
+  if (sessionId.length !== 16) {
+    throw new Error('sessionId must be 16 bytes');
+  }
+  if (udidRaw.length !== 16) {
+    throw new Error('udidRaw must be 16 bytes');
+  }
+  if (responseKey.length !== 32) {
+    throw new Error('responseKey must be 32 bytes');
+  }
+  if (authKey.length !== 0 && authKey.length !== 48) {
+    throw new Error('authKey must be 0 or 48 bytes');
+  }
+
+  return Buffer.concat([
+    prefix,
+    sessionId,
+    udidRaw,
+    responseKey,
+    ...(authKey.length ? [authKey] : []),
+  ]);
+}

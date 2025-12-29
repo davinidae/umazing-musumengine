@@ -1,5 +1,5 @@
+import { AuthKey } from '../../../lib';
 import { RequestResult } from '../../models';
-import { AuthKey } from '../../utils';
 import { CoreStep } from './core.step';
 
 export class ToolSignupStep extends CoreStep<

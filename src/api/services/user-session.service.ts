@@ -7,8 +7,8 @@ import {
   RequestBase,
 } from '../models';
 import { randomUUID } from 'crypto';
-import { Udid } from '../utils';
 import { createUmaClient } from './uma-client.service';
+import { Udid } from '../../lib';
 
 export class UserSession {
   public resVer = '10002800';

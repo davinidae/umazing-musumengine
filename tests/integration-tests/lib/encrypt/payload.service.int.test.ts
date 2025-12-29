@@ -7,8 +7,9 @@ import {
   deriveIvFromUdidString,
   EncodeRequestInput,
   FramingMode,
+  LengthPrefixedStrategy,
+  Unpacker,
 } from '../../../../src';
-import { LengthPrefixedStrategy, Unpacker } from '../../../../src/lib/decrypt/shared';
 
 describe('EncryptPayloadService (integration)', () => {
   test('kv-stream build can be auto-unpacked by Unpacker', () => {

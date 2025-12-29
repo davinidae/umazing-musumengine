@@ -1,5 +1,5 @@
-import { udidRawToCanonicalString, deriveIvFromUdidString, toJsonCompatible } from '../shared';
-import { decryptBlob2, Unpacker } from './shared';
+import { udidRawToCanonicalString, deriveIvFromUdidString, toJsonCompatible } from '../utils';
+import { decryptBlob2, Unpacker } from './utils';
 import { ParsedRequest } from '../models';
 
 /**

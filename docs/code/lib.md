@@ -4,14 +4,31 @@
 
 ### AnchorDataHeadersStrategy
 
-Re-exports
-[AnchorDataHeadersStrategy](lib/decrypt/shared/unpacker.util.md#anchordataheadersstrategy)
+Re-exports [AnchorDataHeadersStrategy](lib/decrypt/utils/unpacker.util.md#anchordataheadersstrategy)
+
+---
+
+### AuthKey
+
+Re-exports [AuthKey](lib/api-protocol/protocol.util.md#authkey)
 
 ---
 
 ### Blob1Header
 
 Re-exports [Blob1Header](lib/models/protocol.model.md#blob1header)
+
+---
+
+### buildBlob1Buffer
+
+Re-exports [buildBlob1Buffer](lib/models/protocol.model.md#buildblob1buffer)
+
+---
+
+### buildLengthPrefixedPayload
+
+Re-exports [buildLengthPrefixedPayload](lib/utils/framing.util.md#buildlengthprefixedpayload)
 
 ---
 
@@ -27,9 +44,15 @@ Re-exports [DecodeResponseOutput](lib/models/runtime.model.md#decoderesponseoutp
 
 ---
 
+### decompressResponse
+
+Re-exports [decompressResponse](lib/api-protocol/protocol.util.md#decompressresponse)
+
+---
+
 ### decryptBlob2
 
-Re-exports [decryptBlob2](lib/decrypt/shared/blob.util.md#decryptblob2)
+Re-exports [decryptBlob2](lib/decrypt/utils/blob.util.md#decryptblob2)
 
 ---
 
@@ -47,7 +70,7 @@ Re-exports [DecryptResponseService](lib/decrypt/response.service.md#decryptrespo
 
 ### deriveIvFromUdidString
 
-Re-exports [deriveIvFromUdidString](lib/shared/protocol.util.md#deriveivfromudidstring)
+Re-exports [deriveIvFromUdidString](lib/utils/udid.util.md#deriveivfromudidstring)
 
 ---
 
@@ -65,7 +88,7 @@ Re-exports [EncodeRequestOutput](lib/models/runtime.model.md#encoderequestoutput
 
 ### encryptAes256Cbc
 
-Re-exports [encryptAes256Cbc](lib/shared/encrypt.util.md#encryptaes256cbc)
+Re-exports [encryptAes256Cbc](lib/utils/encrypt.util.md#encryptaes256cbc)
 
 ---
 
@@ -83,38 +106,44 @@ Re-exports [FramingMode](lib/models/runtime.model.md#framingmode)
 
 ### fromJsonFriendly
 
-Re-exports [fromJsonFriendly](lib/shared/json.util.md#fromjsonfriendly)
+Re-exports [fromJsonFriendly](lib/utils/json.util.md#fromjsonfriendly)
 
 ---
 
 ### HeuristicStreamToObjectStrategy
 
 Re-exports
-[HeuristicStreamToObjectStrategy](lib/decrypt/shared/unpacker.util.md#heuristicstreamtoobjectstrategy)
+[HeuristicStreamToObjectStrategy](lib/decrypt/utils/unpacker.util.md#heuristicstreamtoobjectstrategy)
 
 ---
 
 ### KVStreamStrategy
 
-Re-exports [KVStreamStrategy](lib/decrypt/shared/unpacker.util.md#kvstreamstrategy)
+Re-exports [KVStreamStrategy](lib/decrypt/utils/unpacker.util.md#kvstreamstrategy)
 
 ---
 
 ### LengthPrefixedStrategy
 
-Re-exports [LengthPrefixedStrategy](lib/decrypt/shared/unpacker.util.md#lengthprefixedstrategy)
+Re-exports [LengthPrefixedStrategy](lib/decrypt/utils/unpacker.util.md#lengthprefixedstrategy)
 
 ---
 
 ### MapHeaderScanStrategy
 
-Re-exports [MapHeaderScanStrategy](lib/decrypt/shared/unpacker.util.md#mapheaderscanstrategy)
+Re-exports [MapHeaderScanStrategy](lib/decrypt/utils/unpacker.util.md#mapheaderscanstrategy)
 
 ---
 
 ### MultiArrayStrategy
 
-Re-exports [MultiArrayStrategy](lib/decrypt/shared/unpacker.util.md#multiarraystrategy)
+Re-exports [MultiArrayStrategy](lib/decrypt/utils/unpacker.util.md#multiarraystrategy)
+
+---
+
+### newSessionId
+
+Re-exports [newSessionId](lib/api-protocol/protocol.util.md#newsessionid)
 
 ---
 
@@ -126,31 +155,25 @@ Re-exports [ParsedRequest](lib/models/protocol.model.md#parsedrequest)
 
 ### parseHeaderBlob1
 
-Re-exports [parseHeaderBlob1](lib/shared/protocol.util.md#parseheaderblob1)
+Re-exports [parseHeaderBlob1](lib/models/protocol.model.md#parseheaderblob1)
 
 ---
 
 ### parseRequest
 
-Re-exports [parseRequest](lib/shared/protocol.util.md#parserequest)
+Re-exports [parseRequest](lib/models/protocol.model.md#parserequest)
 
 ---
 
 ### pkcs7Pad
 
-Re-exports [pkcs7Pad](lib/shared/decrypt.util.md#pkcs7pad)
+Re-exports [pkcs7Pad](lib/utils/decrypt.util.md#pkcs7pad)
 
 ---
 
 ### RawMsgpackStrategy
 
-Re-exports [RawMsgpackStrategy](lib/decrypt/shared/unpacker.util.md#rawmsgpackstrategy)
-
----
-
-### readBase64File
-
-Re-exports [readBase64File](lib/shared/protocol.util.md#readbase64file)
+Re-exports [RawMsgpackStrategy](lib/decrypt/utils/unpacker.util.md#rawmsgpackstrategy)
 
 ---
 
@@ -166,27 +189,63 @@ Re-exports [RuntimeClientOptions](lib/models/client.model.md#runtimeclientoption
 
 ---
 
+### saltedMd5
+
+Re-exports [saltedMd5](lib/api-protocol/protocol.util.md#saltedmd5)
+
+---
+
 ### ServiceOptions
 
 Re-exports [ServiceOptions](lib/models/client.model.md#serviceoptions)
 
 ---
 
+### SessionId
+
+Re-exports [SessionId](lib/api-protocol/protocol.util.md#sessionid)
+
+---
+
 ### toJsonCompatible
 
-Re-exports [toJsonCompatible](lib/shared/json.util.md#tojsoncompatible)
+Re-exports [toJsonCompatible](lib/utils/json.util.md#tojsoncompatible)
+
+---
+
+### Udid
+
+Re-exports [Udid](lib/api-protocol/protocol.util.md#udid)
 
 ---
 
 ### udidRawToCanonicalString
 
-Re-exports [udidRawToCanonicalString](lib/shared/protocol.util.md#udidrawtocanonicalstring)
+Re-exports [udidRawToCanonicalString](lib/utils/udid.util.md#udidrawtocanonicalstring)
+
+---
+
+### UmaReqBody
+
+Re-exports [UmaReqBody](lib/api-protocol/protocol.util.md#umareqbody)
+
+---
+
+### UmaReqHeader
+
+Re-exports [UmaReqHeader](lib/api-protocol/protocol.util.md#umareqheader)
+
+---
+
+### UmaRequest
+
+Re-exports [UmaRequest](lib/api-protocol/protocol.util.md#umarequest)
 
 ---
 
 ### Unpacker
 
-Re-exports [Unpacker](lib/decrypt/shared/unpacker.util.md#unpacker)
+Re-exports [Unpacker](lib/decrypt/utils/unpacker.util.md#unpacker)
 
 ---
 

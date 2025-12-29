@@ -5,13 +5,11 @@ import {
   RawMsgpackStrategy,
   KVStreamStrategy,
   Unpacker,
-} from '../../../../../src/lib/decrypt/shared';
-import {
   MapHeaderScanStrategy,
   AnchorDataHeadersStrategy,
   MultiArrayStrategy,
   HeuristicStreamToObjectStrategy,
-} from '../../../../../src/lib/decrypt/shared/unpacker.util';
+} from '../../../../../src';
 
 describe('Unpacker strategies (unit)', () => {
   test('MapHeaderScanStrategy finds map header inside buffer', () => {

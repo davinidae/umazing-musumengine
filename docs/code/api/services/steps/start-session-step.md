@@ -5,7 +5,7 @@
 ### StartSessionStep
 
 Defined in:
-[api/services/steps/start-session.step.ts:4](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L4)
+[api/services/steps/start-session.step.ts:4](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L4)
 
 #### Extends
 
@@ -19,7 +19,7 @@ Defined in:
 > **new StartSessionStep**(`stepData`, `attestationType`): [`StartSessionStep`](#startsessionstep)
 
 Defined in:
-[api/services/steps/start-session.step.ts:17](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L17)
+[api/services/steps/start-session.step.ts:17](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L17)
 
 ###### Parameters
 
@@ -46,14 +46,14 @@ Defined in:
 > `private` `readonly` **attestationType**: `number`
 
 Defined in:
-[api/services/steps/start-session.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L19)
+[api/services/steps/start-session.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L19)
 
 ##### endpoint
 
 > **endpoint**: `string` = `'tool/start_session'`
 
 Defined in:
-[api/services/steps/start-session.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L8)
+[api/services/steps/start-session.step.ts:8](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L8)
 
 ###### Overrides
 
@@ -64,7 +64,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/start-session.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L18)
+[api/services/steps/start-session.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L18)
 
 ###### Inherited from
 
@@ -77,7 +77,7 @@ Defined in:
 > `protected` **afterExecute**(`result`): `Promise`\<`void`\>
 
 Defined in:
-[api/services/steps/start-session.step.ts:24](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L24)
+[api/services/steps/start-session.step.ts:24](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L24)
 
 ###### Parameters
 
@@ -99,7 +99,7 @@ Defined in:
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolStartSession`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolstartsession)\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:68](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L68)
+[api/services/steps/core.step.ts:69](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L69)
 
 ###### Returns
 
@@ -116,7 +116,7 @@ Defined in:
 > & [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/steps/core.step.ts:26](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L26)
+[api/services/steps/core.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L27)
 
 ###### Returns
 
@@ -132,7 +132,7 @@ Defined in:
 > `protected` **getHeaders**(): `object`
 
 Defined in:
-[api/services/steps/core.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L13)
+[api/services/steps/core.step.ts:14](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L14)
 
 ###### Returns
 
@@ -179,7 +179,7 @@ Defined in:
 > **getRequestBody**(): `object`
 
 Defined in:
-[api/services/steps/start-session.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/start-session.step.ts#L10)
+[api/services/steps/start-session.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/start-session.step.ts#L10)
 
 ###### Returns
 
@@ -208,7 +208,7 @@ Defined in:
 > \}; \}\>
 
 Defined in:
-[api/services/steps/core.step.ts:33](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/api/services/steps/core.step.ts#L33)
+[api/services/steps/core.step.ts:34](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L34)
 
 ###### Returns
 

@@ -1,4 +1,4 @@
-# lib/shared/decrypt.util
+# lib/utils/decrypt.util
 
 ## Functions
 
@@ -7,7 +7,7 @@
 > **pkcs7Pad**(`data`, `blockSize`): `Buffer`
 
 Defined in:
-[lib/shared/decrypt.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/shared/decrypt.util.ts#L7)
+[lib/utils/decrypt.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/utils/decrypt.util.ts#L7)
 
 Apply PKCS#7 padding to a Buffer to reach a multiple of blockSize.
 

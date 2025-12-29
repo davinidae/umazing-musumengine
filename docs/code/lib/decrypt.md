@@ -4,13 +4,13 @@
 
 ### AnchorDataHeadersStrategy
 
-Re-exports [AnchorDataHeadersStrategy](decrypt/shared/unpacker.util.md#anchordataheadersstrategy)
+Re-exports [AnchorDataHeadersStrategy](decrypt/utils/unpacker.util.md#anchordataheadersstrategy)
 
 ---
 
 ### decryptBlob2
 
-Re-exports [decryptBlob2](decrypt/shared/blob.util.md#decryptblob2)
+Re-exports [decryptBlob2](decrypt/utils/blob.util.md#decryptblob2)
 
 ---
 
@@ -29,40 +29,40 @@ Re-exports [DecryptResponseService](decrypt/response.service.md#decryptresponses
 ### HeuristicStreamToObjectStrategy
 
 Re-exports
-[HeuristicStreamToObjectStrategy](decrypt/shared/unpacker.util.md#heuristicstreamtoobjectstrategy)
+[HeuristicStreamToObjectStrategy](decrypt/utils/unpacker.util.md#heuristicstreamtoobjectstrategy)
 
 ---
 
 ### KVStreamStrategy
 
-Re-exports [KVStreamStrategy](decrypt/shared/unpacker.util.md#kvstreamstrategy)
+Re-exports [KVStreamStrategy](decrypt/utils/unpacker.util.md#kvstreamstrategy)
 
 ---
 
 ### LengthPrefixedStrategy
 
-Re-exports [LengthPrefixedStrategy](decrypt/shared/unpacker.util.md#lengthprefixedstrategy)
+Re-exports [LengthPrefixedStrategy](decrypt/utils/unpacker.util.md#lengthprefixedstrategy)
 
 ---
 
 ### MapHeaderScanStrategy
 
-Re-exports [MapHeaderScanStrategy](decrypt/shared/unpacker.util.md#mapheaderscanstrategy)
+Re-exports [MapHeaderScanStrategy](decrypt/utils/unpacker.util.md#mapheaderscanstrategy)
 
 ---
 
 ### MultiArrayStrategy
 
-Re-exports [MultiArrayStrategy](decrypt/shared/unpacker.util.md#multiarraystrategy)
+Re-exports [MultiArrayStrategy](decrypt/utils/unpacker.util.md#multiarraystrategy)
 
 ---
 
 ### RawMsgpackStrategy
 
-Re-exports [RawMsgpackStrategy](decrypt/shared/unpacker.util.md#rawmsgpackstrategy)
+Re-exports [RawMsgpackStrategy](decrypt/utils/unpacker.util.md#rawmsgpackstrategy)
 
 ---
 
 ### Unpacker
 
-Re-exports [Unpacker](decrypt/shared/unpacker.util.md#unpacker)
+Re-exports [Unpacker](decrypt/utils/unpacker.util.md#unpacker)

@@ -1,5 +1,5 @@
 import { StepData } from '../../models';
-import { sleep } from '../../utils';
+import { sleep } from '../../../utils';
 import { CoreStep } from './core.step';
 
 export class LoadIndexStep extends CoreStep<
@@ -20,8 +20,9 @@ export class LoadIndexStep extends CoreStep<
   }
 
   protected override async afterExecute() {
-    if (this.doSleep) {
-      await sleep(2000);
+    if (!this.doSleep) {
+      return;
     }
+    await sleep(2000);
   }
 }

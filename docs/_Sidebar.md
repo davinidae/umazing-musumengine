@@ -74,13 +74,7 @@
 
 - [[code/api/utils/api-util.md|api-util.md]]
 
-- [[code/api/utils/msgpack-util.md|msgpack-util.md]]
-
-- [[code/api/utils/protocol-util.md|protocol-util.md]]
-
-- [[code/api/utils/sleep-util.md|sleep-util.md]]
-
-- [[code/api/utils/uma-client-util.md|uma-client-util.md]]
+- [[code/api/utils/uma-response-decoder-util.md|uma-response-decoder-util.md]]
 
 </ul>
 </details>
@@ -109,14 +103,22 @@
 </li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>lib</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>api-protocol</summary>
+<ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
+
+- [[code/lib/api-protocol/protocol-util.md|protocol-util.md]]
+
+</ul>
+</details>
+</li>
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>decrypt</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>shared</summary>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>utils</summary>
 <ul style="list-style-type: disc; margin-left: 64px; padding-left: 0;">
 
-- [[code/lib/decrypt/shared/blob-util.md|blob-util.md]]
+- [[code/lib/decrypt/utils/blob-util.md|blob-util.md]]
 
-- [[code/lib/decrypt/shared/unpacker-util.md|unpacker-util.md]]
+- [[code/lib/decrypt/utils/unpacker-util.md|unpacker-util.md]]
 
 </ul>
 </details>
@@ -126,7 +128,7 @@
 
 - [[code/lib/decrypt/response-service.md|response-service.md]]
 
-- [[code/lib/decrypt/shared.md|shared.md]]
+- [[code/lib/decrypt/utils.md|utils.md]]
 
 </ul>
 </details>
@@ -153,20 +155,24 @@
 </ul>
 </details>
 </li>
-<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>shared</summary>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>utils</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
-- [[code/lib/shared/decrypt-util.md|decrypt-util.md]]
+- [[code/lib/utils/decrypt-util.md|decrypt-util.md]]
 
-- [[code/lib/shared/encrypt-util.md|encrypt-util.md]]
+- [[code/lib/utils/encrypt-util.md|encrypt-util.md]]
 
-- [[code/lib/shared/json-util.md|json-util.md]]
+- [[code/lib/utils/framing-util.md|framing-util.md]]
 
-- [[code/lib/shared/protocol-util.md|protocol-util.md]]
+- [[code/lib/utils/json-util.md|json-util.md]]
+
+- [[code/lib/utils/udid-util.md|udid-util.md]]
 
 </ul>
 </details>
 </li>
+
+- [[code/lib/api-protocol.md|api-protocol.md]]
 
 - [[code/lib/decrypt.md|decrypt.md]]
 
@@ -176,7 +182,7 @@
 
 - [[code/lib/runtime-client.md|runtime-client.md]]
 
-- [[code/lib/shared.md|shared.md]]
+- [[code/lib/utils.md|utils.md]]
 
 </ul>
 </details>
@@ -214,6 +220,14 @@
 </ul>
 </details>
 </li>
+<li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>utils</summary>
+<ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
+
+- [[code/utils/sleep-util.md|sleep-util.md]]
+
+</ul>
+</details>
+</li>
 
 - [[code/api.md|api.md]]
 
@@ -226,6 +240,8 @@
 - [[code/lib.md|lib.md]]
 
 - [[code/README.md|README.md]]
+
+- [[code/utils.md|utils.md]]
 
 </ul>
 </details>

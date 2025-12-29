@@ -7,7 +7,7 @@
 > **RuntimeClientOptions** = [`ServiceOptions`](#serviceoptions)
 
 Defined in:
-[lib/models/client.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/models/client.model.ts#L2)
+[lib/models/client.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/models/client.model.ts#L2)
 
 Options for RuntimeClient construction.
 
@@ -18,7 +18,7 @@ Options for RuntimeClient construction.
 > **ServiceOptions** = `object`
 
 Defined in:
-[lib/models/client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/models/client.model.ts#L5)
+[lib/models/client.model.ts:5](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/models/client.model.ts#L5)
 
 Common options for long-running services (decrypt/encrypt).
 
@@ -29,4 +29,4 @@ Common options for long-running services (decrypt/encrypt).
 > **DETERMINISTIC_ENC_SECRET**: `string`
 
 Defined in:
-[lib/models/client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/f24ccabc8ff8469c9450c4a9272c4cd9c6be182a/src/lib/models/client.model.ts#L6)
+[lib/models/client.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/models/client.model.ts#L6)

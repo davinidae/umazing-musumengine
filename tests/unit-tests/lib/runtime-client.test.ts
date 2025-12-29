@@ -6,8 +6,9 @@ import {
   parseHeaderBlob1,
   udidRawToCanonicalString,
   deriveIvFromUdidString,
+  decryptBlob2,
+  LengthPrefixedStrategy,
 } from '../../../src';
-import { decryptBlob2, LengthPrefixedStrategy } from '../../../src/lib/decrypt/shared';
 
 describe('RuntimeClient (unit)', () => {
   const client = new RuntimeClient({ DETERMINISTIC_ENC_SECRET });
