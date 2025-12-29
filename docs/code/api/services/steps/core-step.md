@@ -5,7 +5,7 @@
 ### `abstract` CoreStep
 
 Defined in:
-[api/services/steps/core.step.ts:43](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L43)
+[api/services/steps/core.step.ts:43](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L43)
 
 Base class for a single API “step”.
 
@@ -44,7 +44,7 @@ A step:
 > **new CoreStep**\<`TReq`, `TRes`\>(`stepData`): [`CoreStep`](#corestep)\<`TReq`, `TRes`\>
 
 Defined in:
-[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L47)
 
 ###### Parameters
 
@@ -63,14 +63,14 @@ Defined in:
 > `abstract` **endpoint**: `string`
 
 Defined in:
-[api/services/steps/core.step.ts:44](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L44)
+[api/services/steps/core.step.ts:44](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L44)
 
 ##### stepData
 
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L47)
 
 #### Methods
 
@@ -79,7 +79,7 @@ Defined in:
 > `protected` **afterExecute**(`_result`): `void` \| `Promise`\<`void`\>
 
 Defined in:
-[api/services/steps/core.step.ts:134](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L134)
+[api/services/steps/core.step.ts:134](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L134)
 
 Optional hook executed after `request()` and before returning from `execute()`.
 
@@ -98,7 +98,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 > `private` **buildUpstreamUrl**(): `string`
 
 Defined in:
-[api/services/steps/core.step.ts:73](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L73)
+[api/services/steps/core.step.ts:73](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L73)
 
 ###### Returns
 
@@ -110,7 +110,7 @@ Defined in:
 > [`UmaResponse`](../../models/uma-client.model.md#umaresponse)\<`TRes`\>
 
 Defined in:
-[api/services/steps/core.step.ts:103](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L103)
+[api/services/steps/core.step.ts:103](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L103)
 
 ###### Parameters
 
@@ -127,7 +127,7 @@ Defined in:
 > `private` **encodeRequestB64**(`body`): `string`
 
 Defined in:
-[api/services/steps/core.step.ts:77](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L77)
+[api/services/steps/core.step.ts:77](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L77)
 
 ###### Parameters
 
@@ -145,7 +145,7 @@ Defined in:
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<`TRes`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L139)
+[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L139)
 
 Execute the step end-to-end.
 
@@ -158,7 +158,7 @@ Execute the step end-to-end.
 > `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L66)
+[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L66)
 
 Combine the step-specific body with common request fields from StepData.
 
@@ -171,7 +171,7 @@ Combine the step-specific body with common request fields from StepData.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L52)
+[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L52)
 
 Build upstream headers expected by the game API.
 
@@ -184,7 +184,7 @@ Build upstream headers expected by the game API.
 > `abstract` **getRequestBody**(): `TReq`
 
 Defined in:
-[api/services/steps/core.step.ts:45](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L45)
+[api/services/steps/core.step.ts:45](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L45)
 
 ###### Returns
 
@@ -195,7 +195,7 @@ Defined in:
 > `private` **maybeUpdateSessionId**(`decoded`): `void`
 
 Defined in:
-[api/services/steps/core.step.ts:108](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L108)
+[api/services/steps/core.step.ts:108](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L108)
 
 ###### Parameters
 
@@ -212,7 +212,7 @@ Defined in:
 > `private` **postBase64**(`url`, `requestB64`, `headers`): `Promise`\<`string`\>
 
 Defined in:
-[api/services/steps/core.step.ts:81](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L81)
+[api/services/steps/core.step.ts:81](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L81)
 
 ###### Parameters
 
@@ -239,7 +239,7 @@ Defined in:
 > `"endpoint"`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L117)
+[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L117)
 
 Execute the upstream HTTP request and return decoded response + diagnostics.
 

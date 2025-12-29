@@ -23,4 +23,28 @@ describe('DecryptRequestService (unit)', () => {
     const reqOut = reqSvc.decodeFromBase64(requestB64);
     expect(reqOut.blob2).toEqual(blob2);
   });
+
+  test('throws when requestB64 is missing', () => {
+    const reqSvc = new DecryptRequestService();
+    expect(() => reqSvc.decodeFromBase64('')).toThrow(/requestB64 is required/i);
+  });
+
+  test('throws when requestB64 decodes to fewer than 4 bytes', () => {
+    const reqSvc = new DecryptRequestService();
+    const tooShort = Buffer.alloc(2).toString('base64');
+    expect(() => reqSvc.decodeFromBase64(tooShort)).toThrow(/missing 4-byte blob1 length prefix/i);
+  });
+
+  test('throws when blob1 length prefix exceeds available bytes', () => {
+    const reqSvc = new DecryptRequestService();
+    const raw = Buffer.concat([Buffer.alloc(4), Buffer.alloc(3)]);
+    raw.writeUInt32LE(10, 0);
+    const bad = raw.toString('base64');
+    expect(() => reqSvc.decodeFromBase64(bad)).toThrow(/blob1 length prefix/i);
+  });
+
+  test('throws for non-base64 input that decodes to an empty buffer', () => {
+    const reqSvc = new DecryptRequestService();
+    expect(() => reqSvc.decodeFromBase64('!!!!')).toThrow(/missing 4-byte blob1 length prefix/i);
+  });
 });

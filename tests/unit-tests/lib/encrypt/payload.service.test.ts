@@ -1,3 +1,4 @@
+import { createHash } from 'crypto';
 import { describe, test, expect } from 'vitest';
 import {
   EncryptPayloadService,
@@ -40,6 +41,33 @@ describe('EncryptPayloadService (unit)', () => {
     expect(obj).toEqual(blob2);
   });
 
+  test('length-prefixed supports udid_canonical (no udid_raw_hex)', () => {
+    const blob1 = {
+      viewer_id: 123456789,
+      prefix_hex: 'aabb',
+      udid_canonical: '00112233-4455-6677-8899-aabbccddeeff',
+      session_id_hex: '11'.repeat(16),
+      response_key_hex: '22'.repeat(32),
+      auth_key_hex: null,
+    };
+    const blob2 = { hello: 'world', n: 7 };
+    const { requestB64 } = svc.build({
+      blob1,
+      blob2,
+      DETERMINISTIC_ENC_SECRET,
+    });
+
+    const raw = Buffer.from(requestB64, 'base64');
+    const [b1, b2] = parseRequest(raw);
+    const h = parseHeaderBlob1(b1);
+    const udidCanon = udidRawToCanonicalString(h.udid_raw);
+    const iv = deriveIvFromUdidString(udidCanon);
+    const { plaintext } = decryptBlob2(b2, iv);
+    const strategy = new LengthPrefixedStrategy();
+    const obj = strategy.execute(plaintext) as any;
+    expect(obj).toEqual(blob2);
+  });
+
   test('throws when UDID fields are missing', () => {
     expect(() =>
       svc.build({
@@ -52,7 +80,7 @@ describe('EncryptPayloadService (unit)', () => {
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/Missing UDID/);
+    ).toThrow(/(Missing UDID|UDID is required)/);
   });
 
   test('throws when session_id_hex is not 16B', () => {
@@ -69,7 +97,7 @@ describe('EncryptPayloadService (unit)', () => {
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/16B/);
+    ).toThrow(/session_id_hex must be (16B|16 bytes)/);
   });
 
   test('throws when response_key_hex is not 32B', () => {
@@ -86,7 +114,7 @@ describe('EncryptPayloadService (unit)', () => {
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/32B/);
+    ).toThrow(/response_key_hex must be (32B|32 bytes)/);
   });
 
   test('throws when auth_key_hex is not 48B', () => {
@@ -103,7 +131,58 @@ describe('EncryptPayloadService (unit)', () => {
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/48B/);
+    ).toThrow(/auth_key_hex must be (48B|48 bytes)/);
+  });
+
+  test('throws when response_key_hex is missing', () => {
+    expect(() =>
+      svc.build({
+        blob1: {
+          viewer_id: 123456789,
+          prefix_hex: 'aa55',
+          udid_raw_hex: '00'.repeat(16),
+          session_id_hex: '11'.repeat(16),
+          // response_key_hex missing
+          auth_key_hex: '33'.repeat(48),
+        } as any,
+        blob2: { x: 1 },
+        DETERMINISTIC_ENC_SECRET,
+      }),
+    ).toThrow(/response_key_hex/);
+  });
+
+  test('throws when udid_raw_hex is wrong length', () => {
+    expect(() =>
+      svc.build({
+        blob1: {
+          viewer_id: 123456789,
+          prefix_hex: 'aa55',
+          udid_raw_hex: '00'.repeat(15), // 15B
+          session_id_hex: '11'.repeat(16),
+          response_key_hex: '22'.repeat(32),
+          auth_key_hex: '33'.repeat(48),
+        },
+        blob2: { x: 1 },
+        DETERMINISTIC_ENC_SECRET,
+      }),
+    ).toThrow(/udid_raw_hex/);
+  });
+
+  test('throws when udid_canonical is wrong length', () => {
+    expect(() =>
+      svc.build({
+        blob1: {
+          viewer_id: 123456789,
+          prefix_hex: 'aa55',
+          udid_canonical: '00112233-4455-6677',
+          session_id_hex: '11'.repeat(16),
+          response_key_hex: '22'.repeat(32),
+          auth_key_hex: '33'.repeat(48),
+        } as any,
+        blob2: { x: 1 },
+        DETERMINISTIC_ENC_SECRET,
+      }),
+    ).toThrow(/udid_canonical/);
   });
 
   test('allows missing auth_key_hex (pre-auth flows)', () => {
@@ -127,6 +206,28 @@ describe('EncryptPayloadService (unit)', () => {
     expect(h.auth_key.length).toEqual(0);
   });
 
+  test('length-prefixed appends AES key = sha256(secret) to blob2', () => {
+    const blob1 = {
+      viewer_id: 123456789,
+      prefix_hex: 'aabb',
+      udid_raw_hex: '00'.repeat(16),
+      session_id_hex: '11'.repeat(16),
+      response_key_hex: '22'.repeat(32),
+      auth_key_hex: null,
+    };
+    const { requestB64 } = svc.build({
+      blob1,
+      blob2: { x: 1 },
+      DETERMINISTIC_ENC_SECRET,
+    });
+
+    const raw = Buffer.from(requestB64, 'base64');
+    const [, blob2] = parseRequest(raw);
+    const appendedKey = blob2.subarray(blob2.length - 32);
+    const expectedKey = createHash('sha256').update(DETERMINISTIC_ENC_SECRET, 'utf8').digest();
+    expect(appendedKey.toString('hex')).toEqual(expectedKey.toString('hex'));
+  });
+
   test('kv-stream requires object payload', () => {
     expect(() =>
       svc.build({
@@ -143,5 +244,40 @@ describe('EncryptPayloadService (unit)', () => {
         DETERMINISTIC_ENC_SECRET,
       }),
     ).toThrow(/kv-stream/);
+  });
+
+  test('kv-stream derives response_key and appends auth key based on udidString', () => {
+    const udidRawHex = '00'.repeat(16);
+    const udidString = udidRawToCanonicalString(Buffer.from(udidRawHex, 'hex'));
+
+    const blob1 = {
+      viewer_id: 123456789,
+      prefix_hex: 'aa55',
+      udid_raw_hex: udidRawHex,
+      session_id_hex: '11'.repeat(16),
+      // required (even though kv-stream derives its own response key)
+      response_key_hex: '22'.repeat(32),
+      auth_key_hex: null,
+    };
+
+    const { requestB64 } = svc.build({
+      blob1,
+      framing: FramingMode.KvStream,
+      blob2: { a: 1, b: 'x' },
+      DETERMINISTIC_ENC_SECRET,
+    });
+
+    const raw = Buffer.from(requestB64, 'base64');
+    const [b1, b2] = parseRequest(raw);
+    const h = parseHeaderBlob1(b1);
+
+    const expectedResponseKey = createHash('sha256')
+      .update('resp:' + udidString, 'utf8')
+      .digest();
+    const expectedAuthKey = createHash('sha256')
+      .update('auth:' + udidString, 'utf8')
+      .digest();
+    expect(h.response_key.toString('hex')).toEqual(expectedResponseKey.toString('hex'));
+    expect(b2.subarray(b2.length - 32).toString('hex')).toEqual(expectedAuthKey.toString('hex'));
   });
 });

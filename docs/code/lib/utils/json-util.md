@@ -7,7 +7,7 @@
 > **fromJsonFriendly**(`value`): `unknown`
 
 Defined in:
-[lib/utils/json.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/utils/json.util.ts#L8)
+[lib/utils/json.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/json.util.ts#L8)
 
 Convert JSON-friendly representations into runtime shapes.
 
@@ -35,7 +35,7 @@ Value with Buffers reconstructed where applicable.
 > **toJsonCompatible**(`value`): `unknown`
 
 Defined in:
-[lib/utils/json.util.ts:37](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/utils/json.util.ts#L37)
+[lib/utils/json.util.ts:37](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/utils/json.util.ts#L37)
 
 Convert Buffers/Uint8Arrays to UTF-8 strings when possible; otherwise to base64 strings. Recurses
 into arrays and objects, and stringifies Buffer keys to stable string keys.

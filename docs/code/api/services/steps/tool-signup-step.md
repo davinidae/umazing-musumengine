@@ -5,7 +5,7 @@
 ### ToolSignupStep
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-signup.step.ts#L5)
+[api/services/steps/tool-signup.step.ts:5](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/tool-signup.step.ts#L5)
 
 Base class for a single API “step”.
 
@@ -29,7 +29,7 @@ A step:
 > **new ToolSignupStep**(`stepData`): [`ToolSignupStep`](#toolsignupstep)
 
 Defined in:
-[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L47)
 
 ###### Parameters
 
@@ -52,7 +52,7 @@ Defined in:
 > **endpoint**: `string` = `'tool/signup'`
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-signup.step.ts#L9)
+[api/services/steps/tool-signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/tool-signup.step.ts#L9)
 
 ###### Overrides
 
@@ -63,7 +63,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L47)
+[api/services/steps/core.step.ts:47](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L47)
 
 ###### Inherited from
 
@@ -76,7 +76,7 @@ Defined in:
 > `protected` **afterExecute**(`result`): `void`
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:23](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-signup.step.ts#L23)
+[api/services/steps/tool-signup.step.ts:23](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/tool-signup.step.ts#L23)
 
 Optional hook executed after `request()` and before returning from `execute()`.
 
@@ -100,7 +100,7 @@ Optional hook executed after `request()` and before returning from `execute()`.
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L139)
+[api/services/steps/core.step.ts:139](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L139)
 
 Execute the step end-to-end.
 
@@ -117,7 +117,7 @@ Execute the step end-to-end.
 > `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L66)
+[api/services/steps/core.step.ts:66](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L66)
 
 Combine the step-specific body with common request fields from StepData.
 
@@ -134,7 +134,7 @@ Combine the step-specific body with common request fields from StepData.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L52)
+[api/services/steps/core.step.ts:52](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L52)
 
 Build upstream headers expected by the game API.
 
@@ -152,7 +152,7 @@ Build upstream headers expected by the game API.
 > [`ToolSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup)
 
 Defined in:
-[api/services/steps/tool-signup.step.ts:11](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/tool-signup.step.ts#L11)
+[api/services/steps/tool-signup.step.ts:11](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/tool-signup.step.ts#L11)
 
 ###### Returns
 
@@ -169,7 +169,7 @@ Defined in:
 > `"endpoint"`\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/api/services/steps/core.step.ts#L117)
+[api/services/steps/core.step.ts:117](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/api/services/steps/core.step.ts#L117)
 
 Execute the upstream HTTP request and return decoded response + diagnostics.
 

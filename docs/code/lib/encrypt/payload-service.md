@@ -5,7 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[lib/encrypt/payload.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L24)
+[lib/encrypt/payload.service.ts:24](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L24)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -31,7 +31,7 @@ Framing modes:
 > **build**(`input`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:221](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L221)
+[lib/encrypt/payload.service.ts:221](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L221)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -100,7 +100,7 @@ If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, 
 > `private` **buildKvStreamRequest**(`input`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:146](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L146)
+[lib/encrypt/payload.service.ts:146](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L146)
 
 ###### Parameters
 
@@ -169,7 +169,7 @@ Free-form prefix; echoed back by the server.
 > `private` **buildLengthPrefixedRequest**(`input`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:100](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L100)
+[lib/encrypt/payload.service.ts:100](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L100)
 
 ###### Parameters
 
@@ -238,7 +238,7 @@ Free-form prefix; echoed back by the server.
 > `private` **requireResponseKeyHex**(`blob1`): `string`
 
 Defined in:
-[lib/encrypt/payload.service.ts:74](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L74)
+[lib/encrypt/payload.service.ts:74](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L74)
 
 ###### Parameters
 
@@ -255,7 +255,7 @@ Defined in:
 > `private` **resolveAuthKey**(`blob1`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:91](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L91)
+[lib/encrypt/payload.service.ts:91](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L91)
 
 ###### Parameters
 
@@ -272,7 +272,7 @@ Defined in:
 > `private` **resolveResponseKey**(`blob1`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:82](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L82)
+[lib/encrypt/payload.service.ts:82](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L82)
 
 ###### Parameters
 
@@ -289,7 +289,7 @@ Defined in:
 > `private` **resolveSessionId**(`sessionIdHex`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L63)
+[lib/encrypt/payload.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L63)
 
 ###### Parameters
 
@@ -306,7 +306,7 @@ Defined in:
 > `private` **resolveUdid**(`blob1`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:25](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L25)
+[lib/encrypt/payload.service.ts:25](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L25)
 
 ###### Parameters
 
@@ -331,7 +331,7 @@ Defined in:
 > `private` **sha256Key**(`secret`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:57](https://github.com/davinidae/umazing-musumengine/blob/214adb783384a11b15b86407e00e671feb1ec440/src/lib/encrypt/payload.service.ts#L57)
+[lib/encrypt/payload.service.ts:57](https://github.com/davinidae/umazing-musumengine/blob/80d3c8cc1b6a4bb7394b4c2aa6642f2fb6343d3b/src/lib/encrypt/payload.service.ts#L57)
 
 ###### Parameters
 
