@@ -5,7 +5,7 @@
 ### ApiResponse
 
 Defined in:
-[api/utils/api.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L1)
+[api/utils/api.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L1)
 
 #### Constructors
 
@@ -14,7 +14,7 @@ Defined in:
 > **new ApiResponse**(`statusCode`, `body`, `headers?`, `cookies?`): [`ApiResponse`](#apiresponse)
 
 Defined in:
-[api/utils/api.util.ts:2](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L2)
+[api/utils/api.util.ts:2](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L2)
 
 ###### Parameters
 
@@ -45,28 +45,28 @@ Defined in:
 > **body**: `Record`\<`string`, `unknown`\>
 
 Defined in:
-[api/utils/api.util.ts:4](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L4)
+[api/utils/api.util.ts:4](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L4)
 
 ##### cookies?
 
 > `optional` **cookies**: `string`[]
 
 Defined in:
-[api/utils/api.util.ts:6](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L6)
+[api/utils/api.util.ts:6](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L6)
 
 ##### headers?
 
 > `optional` **headers**: `Record`\<`string`, `string`\>
 
 Defined in:
-[api/utils/api.util.ts:5](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L5)
+[api/utils/api.util.ts:5](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L5)
 
 ##### statusCode
 
 > **statusCode**: `number`
 
 Defined in:
-[api/utils/api.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L3)
+[api/utils/api.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L3)
 
 #### Methods
 
@@ -75,7 +75,7 @@ Defined in:
 > **execute**(): `object`
 
 Defined in:
-[api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/utils/api.util.ts#L9)
+[api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/utils/api.util.ts#L9)
 
 ###### Returns
 

@@ -5,7 +5,7 @@
 ### ToolPreSignupStep
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/tool-pre_signup.step.ts#L3)
+[api/services/steps/tool-pre_signup.step.ts:3](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/tool-pre_signup.step.ts#L3)
 
 #### Extends
 
@@ -19,7 +19,7 @@ Defined in:
 > **new ToolPreSignupStep**(`stepData`): [`ToolPreSignupStep`](#toolpresignupstep)
 
 Defined in:
-[api/services/steps/core.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L10)
+[api/services/steps/core.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L10)
 
 ###### Parameters
 
@@ -42,7 +42,7 @@ Defined in:
 > **endpoint**: `string` = `'tool/pre_signup'`
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/tool-pre_signup.step.ts#L7)
+[api/services/steps/tool-pre_signup.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/tool-pre_signup.step.ts#L7)
 
 ###### Overrides
 
@@ -53,7 +53,7 @@ Defined in:
 > `protected` `readonly` **stepData**: [`StepData`](../../models/uma-client.model.md#stepdata)
 
 Defined in:
-[api/services/steps/core.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L10)
+[api/services/steps/core.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L10)
 
 ###### Inherited from
 
@@ -66,7 +66,7 @@ Defined in:
 > `protected` **afterExecute**(): `Promise`\<`void`\>
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/tool-pre_signup.step.ts#L13)
+[api/services/steps/tool-pre_signup.step.ts:13](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/tool-pre_signup.step.ts#L13)
 
 ###### Returns
 
@@ -82,7 +82,7 @@ Defined in:
 > `Promise`\<[`RequestResult`](../../models/uma-client.model.md#requestresult)\<[`ToolPreSignup`](../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>\>
 
 Defined in:
-[api/services/steps/core.step.ts:69](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L69)
+[api/services/steps/core.step.ts:69](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L69)
 
 ###### Returns
 
@@ -98,7 +98,7 @@ Defined in:
 > [`RequestBase`](../../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/steps/core.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L27)
+[api/services/steps/core.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L27)
 
 ###### Returns
 
@@ -113,7 +113,7 @@ Defined in:
 > `protected` **getHeaders**(): `object`
 
 Defined in:
-[api/services/steps/core.step.ts:14](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L14)
+[api/services/steps/core.step.ts:14](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L14)
 
 ###### Returns
 
@@ -160,7 +160,7 @@ Defined in:
 > **getRequestBody**(): `object`
 
 Defined in:
-[api/services/steps/tool-pre_signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/tool-pre_signup.step.ts#L9)
+[api/services/steps/tool-pre_signup.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/tool-pre_signup.step.ts#L9)
 
 ###### Returns
 
@@ -180,7 +180,7 @@ Defined in:
 > \}; \}\>
 
 Defined in:
-[api/services/steps/core.step.ts:34](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/steps/core.step.ts#L34)
+[api/services/steps/core.step.ts:34](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/steps/core.step.ts#L34)
 
 ###### Returns
 

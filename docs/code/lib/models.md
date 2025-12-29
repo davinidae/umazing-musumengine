@@ -56,6 +56,12 @@ Re-exports [parseHeaderBlob1](models/protocol.model.md#parseheaderblob1)
 
 ---
 
+### parseParsedRequest
+
+Re-exports [parseParsedRequest](models/protocol.model.md#parseparsedrequest)
+
+---
+
 ### parseRequest
 
 Re-exports [parseRequest](models/protocol.model.md#parserequest)

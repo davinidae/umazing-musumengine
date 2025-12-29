@@ -8,9 +8,21 @@ Re-exports [AuthKey](api-protocol/protocol.util.md#authkey)
 
 ---
 
+### buildUmaRequest
+
+Re-exports [buildUmaRequest](api-protocol/protocol.util.md#buildumarequest)
+
+---
+
 ### decompressResponse
 
 Re-exports [decompressResponse](api-protocol/protocol.util.md#decompressresponse)
+
+---
+
+### genUmaRequestKey
+
+Re-exports [genUmaRequestKey](api-protocol/protocol.util.md#genumarequestkey)
 
 ---
 

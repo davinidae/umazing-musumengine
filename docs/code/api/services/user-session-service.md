@@ -5,7 +5,7 @@
 ### UserSession
 
 Defined in:
-[api/services/user-session.service.ts:13](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L13)
+[api/services/user-session.service.ts:13](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L13)
 
 #### Constructors
 
@@ -14,7 +14,7 @@ Defined in:
 > **new UserSession**(`cfg`, `auth`): [`UserSession`](#usersession)
 
 Defined in:
-[api/services/user-session.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L17)
+[api/services/user-session.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L17)
 
 ###### Parameters
 
@@ -37,28 +37,28 @@ Defined in:
 > `private` `readonly` **auth**: [`AuthMode`](../models/uma-client.model.md#authmode)
 
 Defined in:
-[api/services/user-session.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L19)
+[api/services/user-session.service.ts:19](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L19)
 
 ##### baseUrl
 
 > **baseUrl**: `string` = `'https://api.games.umamusume.com/umamusume/'`
 
 Defined in:
-[api/services/user-session.service.ts:15](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L15)
+[api/services/user-session.service.ts:15](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L15)
 
 ##### cfg
 
 > `private` `readonly` **cfg**: [`ClientConfig`](../models/uma-client.model.md#clientconfig) = `{}`
 
 Defined in:
-[api/services/user-session.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L18)
+[api/services/user-session.service.ts:18](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L18)
 
 ##### resVer
 
 > **resVer**: `string` = `'10002800'`
 
 Defined in:
-[api/services/user-session.service.ts:14](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L14)
+[api/services/user-session.service.ts:14](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L14)
 
 #### Methods
 
@@ -67,7 +67,7 @@ Defined in:
 > **getDefaultBase**(`deviceType`): [`RequestBase`](../models/uma-client.model.md#requestbase)
 
 Defined in:
-[api/services/user-session.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L28)
+[api/services/user-session.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L28)
 
 ###### Parameters
 
@@ -84,7 +84,7 @@ Defined in:
 > **initialize**(): `Promise`\<[`UmaClient`](uma-client.service.md#umaclient)\>
 
 Defined in:
-[api/services/user-session.service.ts:47](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/api/services/user-session.service.ts#L47)
+[api/services/user-session.service.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/api/services/user-session.service.ts#L47)
 
 ###### Returns
 

@@ -1,6 +1,6 @@
 import { udidRawToCanonicalString, deriveIvFromUdidString, toJsonCompatible } from '../utils';
 import { decryptBlob2, Unpacker } from './utils';
-import { ParsedRequest } from '../models';
+import { parseParsedRequest } from '../models';
 
 /**
  * Decode response Base64 buffers using the matching request for UDID/IV.
@@ -18,7 +18,7 @@ export class DecryptResponseService {
    */
   decodeFromBase64(requestB64: string, responseB64: string) {
     const reqRaw = Buffer.from(requestB64, 'base64');
-    const parsedReq = ParsedRequest.parse(reqRaw);
+    const parsedReq = parseParsedRequest(reqRaw);
     const reqHeader = parsedReq.blob1;
     const udidStr = udidRawToCanonicalString(reqHeader.udid_raw);
     const iv = deriveIvFromUdidString(udidStr);

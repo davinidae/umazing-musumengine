@@ -5,7 +5,7 @@
 ### AuthKey
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:58](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L58)
+[lib/api-protocol/protocol.util.ts:58](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L58)
 
 #### Constructors
 
@@ -14,7 +14,7 @@ Defined in:
 > **new AuthKey**(`bytes`): [`AuthKey`](#authkey)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L59)
+[lib/api-protocol/protocol.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L59)
 
 ###### Parameters
 
@@ -33,14 +33,14 @@ Defined in:
 > `readonly` **bytes**: `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L59)
+[lib/api-protocol/protocol.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L59)
 
 ---
 
 ### SessionId
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:16](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L16)
+[lib/api-protocol/protocol.util.ts:16](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L16)
 
 #### Constructors
 
@@ -49,7 +49,7 @@ Defined in:
 > **new SessionId**(`bytes`): [`SessionId`](#sessionid)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:17](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L17)
+[lib/api-protocol/protocol.util.ts:17](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L17)
 
 ###### Parameters
 
@@ -68,7 +68,7 @@ Defined in:
 > `readonly` **bytes**: `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:17](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L17)
+[lib/api-protocol/protocol.util.ts:17](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L17)
 
 #### Methods
 
@@ -77,7 +77,7 @@ Defined in:
 > **asHex**(): `string`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:23](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L23)
+[lib/api-protocol/protocol.util.ts:23](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L23)
 
 ###### Returns
 
@@ -88,7 +88,7 @@ Defined in:
 ### Udid
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:28](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L28)
+[lib/api-protocol/protocol.util.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L28)
 
 #### Constructors
 
@@ -97,7 +97,7 @@ Defined in:
 > **new Udid**(`uuid`): [`Udid`](#udid)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:29](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L29)
+[lib/api-protocol/protocol.util.ts:29](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L29)
 
 ###### Parameters
 
@@ -116,7 +116,7 @@ Defined in:
 > `readonly` **uuid**: `string`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:29](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L29)
+[lib/api-protocol/protocol.util.ts:29](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L29)
 
 #### Methods
 
@@ -125,7 +125,7 @@ Defined in:
 > **ivRepresentation**(): `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:52](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L52)
+[lib/api-protocol/protocol.util.ts:52](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L52)
 
 ###### Returns
 
@@ -136,7 +136,7 @@ Defined in:
 > **rawBytes**(): `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:35](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L35)
+[lib/api-protocol/protocol.util.ts:35](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L35)
 
 ###### Returns
 
@@ -147,7 +147,7 @@ Defined in:
 > **simpleRepresentation**(): `string`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:31](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L31)
+[lib/api-protocol/protocol.util.ts:31](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L31)
 
 ###### Returns
 
@@ -158,7 +158,7 @@ Defined in:
 ### UmaReqBody
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:103](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L103)
+[lib/api-protocol/protocol.util.ts:103](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L103)
 
 #### Constructors
 
@@ -167,7 +167,7 @@ Defined in:
 > **new UmaReqBody**(`data`, `key`): [`UmaReqBody`](#umareqbody)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:104](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L104)
+[lib/api-protocol/protocol.util.ts:104](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L104)
 
 ###### Parameters
 
@@ -190,14 +190,14 @@ Defined in:
 > `readonly` **data**: `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:105](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L105)
+[lib/api-protocol/protocol.util.ts:105](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L105)
 
 ##### key
 
 > `readonly` **key**: `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:106](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L106)
+[lib/api-protocol/protocol.util.ts:106](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L106)
 
 #### Methods
 
@@ -206,7 +206,7 @@ Defined in:
 > **encrypt**(`iv`): `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:113](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L113)
+[lib/api-protocol/protocol.util.ts:113](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L113)
 
 ###### Parameters
 
@@ -223,7 +223,7 @@ Defined in:
 ### UmaReqHeader
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:68](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L68)
+[lib/api-protocol/protocol.util.ts:68](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L68)
 
 #### Constructors
 
@@ -232,7 +232,7 @@ Defined in:
 > **new UmaReqHeader**(`sessionId`, `udid`, `authKey?`): [`UmaReqHeader`](#umareqheader)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:72](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L72)
+[lib/api-protocol/protocol.util.ts:72](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L72)
 
 ###### Parameters
 
@@ -259,35 +259,35 @@ Defined in:
 > `optional` **authKey**: [`AuthKey`](#authkey)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:75](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L75)
+[lib/api-protocol/protocol.util.ts:75](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L75)
 
 ##### commonHeader
 
 > **commonHeader**: `Uint8Array` = `COMMON_HEADER`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:69](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L69)
+[lib/api-protocol/protocol.util.ts:69](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L69)
 
 ##### randomBytes
 
 > **randomBytes**: `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:70](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L70)
+[lib/api-protocol/protocol.util.ts:70](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L70)
 
 ##### sessionId
 
 > **sessionId**: [`SessionId`](#sessionid)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:73](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L73)
+[lib/api-protocol/protocol.util.ts:73](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L73)
 
 ##### udid
 
 > **udid**: [`Udid`](#udid)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:74](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L74)
+[lib/api-protocol/protocol.util.ts:74](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L74)
 
 #### Methods
 
@@ -296,7 +296,7 @@ Defined in:
 > **encode**(): `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:88](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L88)
+[lib/api-protocol/protocol.util.ts:88](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L88)
 
 ###### Returns
 
@@ -307,7 +307,7 @@ Defined in:
 > **encodedSize**(): `number`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:84](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L84)
+[lib/api-protocol/protocol.util.ts:84](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L84)
 
 ###### Returns
 
@@ -318,7 +318,7 @@ Defined in:
 > **rerandomize**(): `void`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:80](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L80)
+[lib/api-protocol/protocol.util.ts:80](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L80)
 
 ###### Returns
 
@@ -329,7 +329,7 @@ Defined in:
 ### UmaRequest
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:125](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L125)
+[lib/api-protocol/protocol.util.ts:125](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L125)
 
 #### Constructors
 
@@ -338,7 +338,7 @@ Defined in:
 > **new UmaRequest**(`header`, `body`): [`UmaRequest`](#umarequest)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:126](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L126)
+[lib/api-protocol/protocol.util.ts:126](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L126)
 
 ###### Parameters
 
@@ -361,14 +361,14 @@ Defined in:
 > `readonly` **body**: [`UmaReqBody`](#umareqbody)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:128](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L128)
+[lib/api-protocol/protocol.util.ts:128](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L128)
 
 ##### header
 
 > `readonly` **header**: [`UmaReqHeader`](#umareqheader)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:127](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L127)
+[lib/api-protocol/protocol.util.ts:127](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L127)
 
 #### Methods
 
@@ -377,52 +377,43 @@ Defined in:
 > **encode**(): `string`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:145](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L145)
+[lib/api-protocol/protocol.util.ts:131](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L131)
 
 ###### Returns
 
 `string`
 
-##### build()
+## Functions
 
-> `static` **build**(`header`, `body`): [`UmaRequest`](#umarequest)
+### buildUmaRequest()
+
+> **buildUmaRequest**(`header`, `body`): [`UmaRequest`](#umarequest)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:164](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L164)
+[lib/api-protocol/protocol.util.ts:165](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L165)
 
-###### Parameters
+#### Parameters
 
-###### header
+##### header
 
 [`UmaReqHeader`](#umareqheader)
 
-###### body
+##### body
 
 `unknown`
 
-###### Returns
+#### Returns
 
 [`UmaRequest`](#umarequest)
 
-##### genKey()
-
-> `static` **genKey**(): `Uint8Array`
-
-Defined in:
-[lib/api-protocol/protocol.util.ts:131](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L131)
-
-###### Returns
-
-`Uint8Array`
-
-## Functions
+---
 
 ### decompressResponse()
 
 > **decompressResponse**(`sourceB64`, `udid`): `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:171](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L171)
+[lib/api-protocol/protocol.util.ts:171](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L171)
 
 #### Parameters
 
@@ -440,12 +431,25 @@ Defined in:
 
 ---
 
+### genUmaRequestKey()
+
+> **genUmaRequestKey**(): `Uint8Array`
+
+Defined in:
+[lib/api-protocol/protocol.util.ts:151](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L151)
+
+#### Returns
+
+`Uint8Array`
+
+---
+
 ### newSessionId()
 
 > **newSessionId**(`udid`, `viewerId`): [`SessionId`](#sessionid)
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:62](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L62)
+[lib/api-protocol/protocol.util.ts:62](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L62)
 
 #### Parameters
 
@@ -468,7 +472,7 @@ Defined in:
 > **saltedMd5**(`data`): `Uint8Array`
 
 Defined in:
-[lib/api-protocol/protocol.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/api-protocol/protocol.util.ts#L9)
+[lib/api-protocol/protocol.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/api-protocol/protocol.util.ts#L9)
 
 #### Parameters
 

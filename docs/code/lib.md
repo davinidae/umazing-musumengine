@@ -32,6 +32,12 @@ Re-exports [buildLengthPrefixedPayload](lib/utils/framing.util.md#buildlengthpre
 
 ---
 
+### buildUmaRequest
+
+Re-exports [buildUmaRequest](lib/api-protocol/protocol.util.md#buildumarequest)
+
+---
+
 ### DecodeResponseInput
 
 Re-exports [DecodeResponseInput](lib/models/runtime.model.md#decoderesponseinput)
@@ -110,6 +116,12 @@ Re-exports [fromJsonFriendly](lib/utils/json.util.md#fromjsonfriendly)
 
 ---
 
+### genUmaRequestKey
+
+Re-exports [genUmaRequestKey](lib/api-protocol/protocol.util.md#genumarequestkey)
+
+---
+
 ### HeuristicStreamToObjectStrategy
 
 Re-exports
@@ -156,6 +168,12 @@ Re-exports [ParsedRequest](lib/models/protocol.model.md#parsedrequest)
 ### parseHeaderBlob1
 
 Re-exports [parseHeaderBlob1](lib/models/protocol.model.md#parseheaderblob1)
+
+---
+
+### parseParsedRequest
+
+Re-exports [parseParsedRequest](lib/models/protocol.model.md#parseparsedrequest)
 
 ---
 

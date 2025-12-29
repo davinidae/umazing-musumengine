@@ -5,7 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[lib/encrypt/payload.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/encrypt/payload.service.ts#L28)
+[lib/encrypt/payload.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L28)
 
 Build Base64 requests from in-memory parts (no filesystem access).
 
@@ -31,7 +31,7 @@ Framing modes:
 > **build**(`input`): `BuiltEncryptedPayload`
 
 Defined in:
-[lib/encrypt/payload.service.ts:77](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/encrypt/payload.service.ts#L77)
+[lib/encrypt/payload.service.ts:77](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L77)
 
 Build a single request as Base64 from header fields (blob1) and a JS payload.
 
@@ -58,7 +58,7 @@ If mandatory fields are missing or have invalid sizes (e.g., session_id != 16B, 
 > `private` **resolveSessionId**(`sessionIdHex`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:57](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/encrypt/payload.service.ts#L57)
+[lib/encrypt/payload.service.ts:57](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L57)
 
 ###### Parameters
 
@@ -75,7 +75,7 @@ Defined in:
 > `private` **resolveUdid**(`blob1`): `object`
 
 Defined in:
-[lib/encrypt/payload.service.ts:29](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/encrypt/payload.service.ts#L29)
+[lib/encrypt/payload.service.ts:29](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L29)
 
 ###### Parameters
 
@@ -100,7 +100,7 @@ Defined in:
 > `private` **sha256Key**(`secret`): `Buffer`
 
 Defined in:
-[lib/encrypt/payload.service.ts:51](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/lib/encrypt/payload.service.ts#L51)
+[lib/encrypt/payload.service.ts:51](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/lib/encrypt/payload.service.ts#L51)
 
 ###### Parameters
 

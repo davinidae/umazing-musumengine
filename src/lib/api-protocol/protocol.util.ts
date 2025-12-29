@@ -128,20 +128,6 @@ export class UmaRequest {
     public readonly body: UmaReqBody,
   ) {}
 
-  static genKey(): Uint8Array {
-    // Rust parity: builds a 32-byte key by concatenating ASCII hex of random u16s
-    // until length >= 32, then truncating to 32 bytes.
-    const out: number[] = [];
-    while (out.length < 32) {
-      const randomNum = crypto.randomBytes(2).readUInt16LE(0);
-      const hex = randomNum.toString(16); // no zero-padding
-      for (let i = 0; i < hex.length; i++) {
-        out.push(hex.charCodeAt(i));
-      }
-    }
-    return Uint8Array.from(out.slice(0, 32));
-  }
-
   public encode(): string {
     const encryptedBody = this.body.encrypt(this.header.udid);
     const encodedHeader = this.header.encode();
@@ -160,12 +146,26 @@ export class UmaRequest {
     }
     return Buffer.from(out).toString('base64');
   }
+}
 
-  public static build(header: UmaReqHeader, body: unknown): UmaRequest {
-    const data = encode(body);
-    const key = this.genKey();
-    return new UmaRequest(header, new UmaReqBody(data, key));
+export function genUmaRequestKey(): Uint8Array {
+  // Rust parity: builds a 32-byte key by concatenating ASCII hex of random u16s
+  // until length >= 32, then truncating to 32 bytes.
+  const out: number[] = [];
+  while (out.length < 32) {
+    const randomNum = crypto.randomBytes(2).readUInt16LE(0);
+    const hex = randomNum.toString(16); // no zero-padding
+    for (let i = 0; i < hex.length; i++) {
+      out.push(hex.charCodeAt(i));
+    }
   }
+  return Uint8Array.from(out.slice(0, 32));
+}
+
+export function buildUmaRequest(header: UmaReqHeader, body: unknown): UmaRequest {
+  const data = encode(body);
+  const key = genUmaRequestKey();
+  return new UmaRequest(header, new UmaReqBody(data, key));
 }
 
 export function decompressResponse(sourceB64: string, udid: Udid): Uint8Array {

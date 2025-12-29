@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { RequestResult, StepData, UmaResponse } from '../../models';
 import { UmaResponseDecoder } from '../../utils';
-import { decompressResponse, saltedMd5, SessionId, UmaRequest } from '../../../lib';
+import { buildUmaRequest, decompressResponse, saltedMd5, SessionId } from '../../../lib';
 
 export abstract class CoreStep<TReq extends object, TRes> {
   abstract endpoint: string;
@@ -34,7 +34,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
   protected async request() {
     const endpoint = this.endpoint;
     const body = this.getBody();
-    const request = UmaRequest.build(this.stepData.header, body);
+    const request = buildUmaRequest(this.stepData.header, body);
     const headers = this.getHeaders();
     const res = await axios.post<string>(`${this.stepData.baseUrl}${endpoint}`, request.encode(), {
       headers,

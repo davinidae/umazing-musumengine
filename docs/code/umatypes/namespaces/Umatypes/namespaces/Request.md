@@ -7,7 +7,7 @@
 > **LoadIndex** = `object`
 
 Defined in:
-[umatypes.d.ts:31](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L31)
+[umatypes.d.ts:31](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L31)
 
 ---
 
@@ -16,7 +16,7 @@ Defined in:
 > **ToolPreSignup** = `object`
 
 Defined in:
-[umatypes.d.ts:33](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L33)
+[umatypes.d.ts:33](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L33)
 
 ---
 
@@ -25,7 +25,7 @@ Defined in:
 > **ToolSignup** = `object`
 
 Defined in:
-[umatypes.d.ts:21](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L21)
+[umatypes.d.ts:21](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L21)
 
 #### Properties
 
@@ -34,49 +34,49 @@ Defined in:
 > **attestation_type**: `number`
 
 Defined in:
-[umatypes.d.ts:24](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L24)
+[umatypes.d.ts:24](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L24)
 
 ##### country
 
 > **country**: `string`
 
 Defined in:
-[umatypes.d.ts:27](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L27)
+[umatypes.d.ts:27](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L27)
 
 ##### credential
 
 > **credential**: `string`
 
 Defined in:
-[umatypes.d.ts:28](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L28)
+[umatypes.d.ts:28](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L28)
 
 ##### dma_state
 
 > **dma_state**: `number`
 
 Defined in:
-[umatypes.d.ts:26](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L26)
+[umatypes.d.ts:26](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L26)
 
 ##### error_code
 
 > **error_code**: `number`
 
 Defined in:
-[umatypes.d.ts:22](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L22)
+[umatypes.d.ts:22](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L22)
 
 ##### error_message
 
 > **error_message**: `string`
 
 Defined in:
-[umatypes.d.ts:23](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L23)
+[umatypes.d.ts:23](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L23)
 
 ##### optin_user_birth
 
 > **optin_user_birth**: `number`
 
 Defined in:
-[umatypes.d.ts:25](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L25)
+[umatypes.d.ts:25](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L25)
 
 ---
 
@@ -85,7 +85,7 @@ Defined in:
 > **ToolStartSession** = `object`
 
 Defined in:
-[umatypes.d.ts:6](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L6)
+[umatypes.d.ts:6](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L6)
 
 #### Properties
 
@@ -94,14 +94,14 @@ Defined in:
 > **attestation_type**: `number`
 
 Defined in:
-[umatypes.d.ts:7](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L7)
+[umatypes.d.ts:7](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L7)
 
 ##### device_token
 
 > **device_token**: `string` \| `null`
 
 Defined in:
-[umatypes.d.ts:8](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L8)
+[umatypes.d.ts:8](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L8)
 
 ---
 
@@ -110,7 +110,7 @@ Defined in:
 > **TutorialSkip** = `object`
 
 Defined in:
-[umatypes.d.ts:19](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L19)
+[umatypes.d.ts:19](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L19)
 
 ---
 
@@ -119,7 +119,7 @@ Defined in:
 > **UserChangeName** = `object`
 
 Defined in:
-[umatypes.d.ts:11](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L11)
+[umatypes.d.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L11)
 
 #### Properties
 
@@ -128,7 +128,7 @@ Defined in:
 > **name**: `string`
 
 Defined in:
-[umatypes.d.ts:12](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L12)
+[umatypes.d.ts:12](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L12)
 
 ---
 
@@ -137,7 +137,7 @@ Defined in:
 > **UserChangeSex** = `object`
 
 Defined in:
-[umatypes.d.ts:15](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L15)
+[umatypes.d.ts:15](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L15)
 
 #### Properties
 
@@ -146,4 +146,4 @@ Defined in:
 > **sex**: `number`
 
 Defined in:
-[umatypes.d.ts:16](https://github.com/davinidae/umazing-musumengine/blob/8c2a93a99924070f3bed30bfbb56b7b18480c6b1/src/umatypes.d.ts#L16)
+[umatypes.d.ts:16](https://github.com/davinidae/umazing-musumengine/blob/0bb596e6e6fa8d19fbe3c8768f8762ae9ecbec4a/src/umatypes.d.ts#L16)
