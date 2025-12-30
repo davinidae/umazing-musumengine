@@ -35,6 +35,7 @@ export class UserSession {
       deviceType: DeviceType.ANDROID,
       attestationType: AttestationType.Mobile,
     },
+    private readonly trainerId: number = 0,
   ) {
     //
   }
@@ -57,7 +58,7 @@ export class UserSession {
       keychain: 0,
       locale: 'JPN',
       platform_os_version: 'Windows 10  (10.0.19045) 64bit',
-      viewer_id: 0,
+      viewer_id: this.trainerId,
       steam_id: null,
       steam_session_ticket: null,
     };

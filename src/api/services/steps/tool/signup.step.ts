@@ -1,5 +1,6 @@
 import { AuthKey } from '../../../../lib';
-import type { RequestResult } from '../../../models';
+import type { AttestationType, RequestResult } from '../../../models';
+import { UmaClient } from '../../uma-client.service';
 import { CoreStep } from '../core.step';
 
 /**
@@ -17,6 +18,13 @@ export class ToolSignupStep extends CoreStep<
    */
   override endpoint = 'tool/signup';
 
+  constructor(
+    protected readonly umaClient: UmaClient,
+    private readonly attestationType: AttestationType,
+  ) {
+    super(umaClient);
+  }
+
   /**
    * getRequestBody.
    * @returns Type: `ToolSignup`.
@@ -25,10 +33,10 @@ export class ToolSignupStep extends CoreStep<
     return {
       error_code: 0,
       error_message: '',
-      attestation_type: 0,
-      optin_user_birth: 199801,
+      attestation_type: this.attestationType,
+      optin_user_birth: 199709,
       dma_state: 0,
-      country: 'Canada',
+      country: 'Spain',
       credential: '',
     };
   }

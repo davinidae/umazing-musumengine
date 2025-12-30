@@ -1,4 +1,4 @@
-import { AuthModeKind } from '../models';
+import { AuthModeKind, GallopResultCode } from '../models';
 import type { AuthMode, RequestBase, RequestResult, UmaClientData } from '../models';
 import { LoadIndexStep } from './steps/load/index.step';
 import { StartSessionStep } from './steps/tool/start_session.step';
@@ -7,6 +7,7 @@ import { CoreStep } from './steps/core.step';
 import { TutorialStepGroup } from './step-groups/tutorial.step-group';
 import { CoreStepGroup } from './step-groups/core.step-group';
 import { SignupStepGroup } from './step-groups/signup.step-group';
+import { ToolSignupStep } from './steps/tool/signup.step';
 
 type CoreStepGroupClass = new (...args: any[]) => CoreStepGroup;
 
@@ -158,6 +159,14 @@ export class UmaClient {
    * @returns Type: `Promise<void>`.
    */
   public async executeStep(step: CoreStepClass, ...extra: any): Promise<void> {
+    if (this.prevResults.length > 0) {
+      if (
+        this.prevResults[this.prevResults.length - 1].decoded.response_code !==
+        GallopResultCode.RESULT_CODE_OK
+      ) {
+        return;
+      }
+    }
     /**
      * result.
      * @remarks Type: `RequestResult<any>`.
@@ -223,10 +232,39 @@ export class UmaClient {
      * @defaultValue `this.getAttestationType()`
      */
     const attestationType = this.getAttestationType();
+    if (this.data.base.viewer_id !== 0) {
+      await this.executeFlow([
+        {
+          type: FlowType.STEP,
+          service: ToolSignupStep,
+          extra: [attestationType],
+        },
+        {
+          type: FlowType.STEP,
+          service: StartSessionStep,
+          extra: [attestationType],
+        },
+        {
+          type: FlowType.STEP,
+          service: LoadIndexStep,
+        },
+        {
+          type: FlowType.GROUP,
+          services: TutorialStepGroup,
+        },
+        {
+          type: FlowType.STEP,
+          service: LoadIndexStep,
+          extra: [false],
+        },
+      ]);
+      return this.prevResults;
+    }
     await this.executeFlow([
       {
         type: FlowType.GROUP,
         services: SignupStepGroup,
+        extra: [attestationType],
       },
       {
         type: FlowType.STEP,

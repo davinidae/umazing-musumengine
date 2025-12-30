@@ -20,6 +20,7 @@ export type RequestBase = {
 };
 
 export type UmaResponse<T> = {
+  response_code: number;
   data_headers: {
     viewer_id: number;
     sid: string;

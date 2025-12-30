@@ -5,7 +5,7 @@
 ### ToolPreSignupStep
 
 Defined in:
-[src/api/services/steps/tool/pre_signup.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/tool/pre_signup.step.ts#L7)
+[src/api/services/steps/tool/pre_signup.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/tool/pre_signup.step.ts#L7)
 
 ToolPreSignupStep.
 
@@ -26,7 +26,7 @@ Extends/implements:
 > **new ToolPreSignupStep**(`umaClient`, ...`_extra`): [`ToolPreSignupStep`](#toolpresignupstep)
 
 Defined in:
-[src/api/services/steps/core.step.ts:87](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/core.step.ts#L87)
+[src/api/services/steps/core.step.ts:87](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/core.step.ts#L87)
 
 constructor.
 
@@ -61,7 +61,7 @@ Type: `CoreStep<TReq, TRes>`.
 > **endpoint**: `string` = `'tool/pre_signup'`
 
 Defined in:
-[src/api/services/steps/tool/pre_signup.step.ts:16](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/tool/pre_signup.step.ts#L16)
+[src/api/services/steps/tool/pre_signup.step.ts:16](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/tool/pre_signup.step.ts#L16)
 
 endpoint.
 
@@ -82,7 +82,7 @@ Type: `string`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/steps/core.step.ts:88](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/core.step.ts#L88)
+[src/api/services/steps/core.step.ts:88](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/core.step.ts#L88)
 
 Type: `UmaClient`.
 
@@ -97,7 +97,7 @@ Type: `UmaClient`.
 > `protected` **afterExecute**(): `void`
 
 Defined in:
-[src/api/services/steps/tool/pre_signup.step.ts:29](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/tool/pre_signup.step.ts#L29)
+[src/api/services/steps/tool/pre_signup.step.ts:29](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/tool/pre_signup.step.ts#L29)
 
 afterExecute.
 
@@ -115,7 +115,7 @@ afterExecute.
 > `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`ToolPreSignup`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolpresignup)\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:277](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/core.step.ts#L277)
+[src/api/services/steps/core.step.ts:277](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/core.step.ts#L277)
 
 execute (async).
 
@@ -134,7 +134,7 @@ Type: `Promise<RequestResult<TRes>>`.
 > `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:121](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/core.step.ts#L121)
+[src/api/services/steps/core.step.ts:121](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/core.step.ts#L121)
 
 getBody.
 
@@ -155,7 +155,7 @@ Type: `Record<string, unknown>`.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:101](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/core.step.ts#L101)
+[src/api/services/steps/core.step.ts:101](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/core.step.ts#L101)
 
 getHeaders.
 
@@ -176,7 +176,7 @@ Type: `Record<string, string>`.
 > **getRequestBody**(): `object`
 
 Defined in:
-[src/api/services/steps/tool/pre_signup.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/tool/pre_signup.step.ts#L22)
+[src/api/services/steps/tool/pre_signup.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/tool/pre_signup.step.ts#L22)
 
 getRequestBody.
 
@@ -197,7 +197,7 @@ Type: `object`.
 > `"endpoint"` \| `"name"`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:216](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/steps/core.step.ts#L216)
+[src/api/services/steps/core.step.ts:216](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/steps/core.step.ts#L216)
 
 request (async).
 

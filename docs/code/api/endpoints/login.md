@@ -4,20 +4,18 @@
 
 ### loginHandler()
 
-> **loginHandler**(`_event`): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
+> **loginHandler**(`event`): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[src/api/endpoints/login.ts:10](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/endpoints/login.ts#L10)
+[src/api/endpoints/login.ts:10](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/endpoints/login.ts#L10)
 
 loginHandler (async).
 
 #### Parameters
 
-##### \_event
+##### event
 
-[`HttpEvent`](../models/api.model.md#httpevent)\<`unknown`\>
-
-Type: `HttpEvent<unknown>`.
+[`HttpEvent`](../models/api.model.md#httpevent)\<`Partial`\<\{ `trainerId`: `number`; \}\>\>
 
 #### Returns
 

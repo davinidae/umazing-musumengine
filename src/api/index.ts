@@ -268,6 +268,17 @@ function normalizedHttpEvent(req: express.Request): HttpEvent<unknown> {
  */
 const app = express();
 
+// Parse JSON bodies for local API calls.
+// Without this, `req.body` stays undefined and handlers receive `event.body = null`.
+app.use(
+  express.json({
+    // Keep this reasonably sized; this API isn't intended for large uploads.
+    limit: '2mb',
+    type: ['application/json', 'application/*+json'],
+  }),
+);
+app.use(express.urlencoded({ extended: true }));
+
 app.use((req, _res, next) => {
   /**
    * r.

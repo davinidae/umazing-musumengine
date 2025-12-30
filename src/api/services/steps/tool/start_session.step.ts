@@ -1,4 +1,4 @@
-import type { RequestResult } from '../../../models';
+import type { AttestationType, RequestResult } from '../../../models';
 import { UmaClient } from '../../uma-client.service';
 import { CoreStep } from '../core.step';
 
@@ -36,7 +36,7 @@ export class StartSessionStep extends CoreStep<
    */
   constructor(
     protected readonly umaClient: UmaClient,
-    private readonly attestationType: number,
+    private readonly attestationType: AttestationType,
   ) {
     super(umaClient);
   }

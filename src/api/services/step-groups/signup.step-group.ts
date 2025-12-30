@@ -1,5 +1,7 @@
+import { AttestationType } from '../../models';
 import { ToolPreSignupStep } from '../steps/tool/pre_signup.step';
 import { ToolSignupStep } from '../steps/tool/signup.step';
+import { UmaClient } from '../uma-client.service';
 import { CoreStepGroup } from './core.step-group';
 
 /**
@@ -7,6 +9,13 @@ import { CoreStepGroup } from './core.step-group';
  * @remarks Extends/implements: `extends CoreStepGroup`.
  */
 export class SignupStepGroup extends CoreStepGroup {
+  constructor(
+    protected readonly umaClient: UmaClient,
+    private readonly attestationType: AttestationType,
+  ) {
+    super(umaClient);
+  }
+
   /**
    * execute (async).
    * @returns Type: `Promise<void>`.
@@ -17,6 +26,6 @@ export class SignupStepGroup extends CoreStepGroup {
       return;
     }
     await this.executeStep(ToolPreSignupStep);
-    await this.executeStep(ToolSignupStep);
+    await this.executeStep(ToolSignupStep, this.attestationType);
   }
 }

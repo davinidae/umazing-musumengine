@@ -7,7 +7,15 @@ import { UserSession } from '../services/user-session.service';
  * @param _event - Type: `HttpEvent<unknown>`.
  * @returns Type: `Promise<ApiResponse>`.
  */
-export async function loginHandler(_event: HttpEvent<unknown>): Promise<ApiResponse> {
+export async function loginHandler(
+  event: HttpEvent<
+    Partial<{
+      trainerId: number;
+    }>
+  >,
+): Promise<ApiResponse> {
+  const body = event.body || {};
+  const trainerId = body.trainerId;
   /**
    * startTimestamp.
    * @remarks Type: `string`.
@@ -18,9 +26,9 @@ export async function loginHandler(_event: HttpEvent<unknown>): Promise<ApiRespo
     /**
      * userSession.
      * @remarks Type: `UserSession`.
-     * @defaultValue `new UserSession()`
+     * @defaultValue `new UserSession(undefined, undefined, trainerId)`
      */
-    const userSession = new UserSession();
+    const userSession = new UserSession(undefined, undefined, trainerId);
     /**
      * client.
      * @remarks Type: `UmaClient`.

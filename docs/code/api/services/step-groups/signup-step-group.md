@@ -5,7 +5,7 @@
 ### SignupStepGroup
 
 Defined in:
-[src/api/services/step-groups/signup.step-group.ts:9](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/signup.step-group.ts#L9)
+[src/api/services/step-groups/signup.step-group.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/signup.step-group.ts#L11)
 
 SignupStepGroup.
 
@@ -21,12 +21,10 @@ Extends/implements: `extends CoreStepGroup`.
 
 ##### Constructor
 
-> **new SignupStepGroup**(`umaClient`, ...`args`): [`SignupStepGroup`](#signupstepgroup)
+> **new SignupStepGroup**(`umaClient`, `attestationType`): [`SignupStepGroup`](#signupstepgroup)
 
 Defined in:
-[src/api/services/step-groups/core.step-group.ts:20](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/core.step-group.ts#L20)
-
-constructor.
+[src/api/services/step-groups/signup.step-group.ts:12](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/signup.step-group.ts#L12)
 
 ###### Parameters
 
@@ -34,21 +32,15 @@ constructor.
 
 [`UmaClient`](../uma-client.service.md#umaclient)
 
-Type: `UmaClient`.
+###### attestationType
 
-###### args
-
-...`any`[]
-
-Type: `any[]`.
+[`AttestationType`](../../models/umamusume-api/enums.model.md#attestationtype)
 
 ###### Returns
 
 [`SignupStepGroup`](#signupstepgroup)
 
-Type: `CoreStepGroup`.
-
-###### Inherited from
+###### Overrides
 
 [`CoreStepGroup`](core.step-group.md#corestepgroup).[`constructor`](core.step-group.md#constructor)
 
@@ -59,7 +51,7 @@ Type: `CoreStepGroup`.
 > `protected` `readonly` **args**: `any`[] = `[]`
 
 Defined in:
-[src/api/services/step-groups/core.step-group.ts:12](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/core.step-group.ts#L12)
+[src/api/services/step-groups/core.step-group.ts:12](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/core.step-group.ts#L12)
 
 args.
 
@@ -75,12 +67,20 @@ Type: `any[]`.
 
 [`CoreStepGroup`](core.step-group.md#corestepgroup).[`args`](core.step-group.md#args)
 
+##### attestationType
+
+> `private` `readonly` **attestationType**:
+> [`AttestationType`](../../models/umamusume-api/enums.model.md#attestationtype)
+
+Defined in:
+[src/api/services/step-groups/signup.step-group.ts:14](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/signup.step-group.ts#L14)
+
 ##### executeStep()
 
 > `protected` **executeStep**: (...`args`) => `Promise`
 
 Defined in:
-[src/api/services/step-groups/core.step-group.ts:32](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/core.step-group.ts#L32)
+[src/api/services/step-groups/core.step-group.ts:32](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/core.step-group.ts#L32)
 
 executeStep.
 
@@ -111,7 +111,7 @@ Type: `(...args: any[]) => Promise<void>`.
 > `protected` **executeStepGroup**: (...`args`) => `Promise`
 
 Defined in:
-[src/api/services/step-groups/core.step-group.ts:38](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/core.step-group.ts#L38)
+[src/api/services/step-groups/core.step-group.ts:38](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/core.step-group.ts#L38)
 
 executeStepGroup.
 
@@ -142,7 +142,7 @@ Type: `(...args: any[]) => Promise<void>`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/step-groups/core.step-group.ts:21](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/core.step-group.ts#L21)
+[src/api/services/step-groups/signup.step-group.ts:13](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/signup.step-group.ts#L13)
 
 Type: `UmaClient`.
 
@@ -157,7 +157,7 @@ Type: `UmaClient`.
 > **execute**(): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/step-groups/signup.step-group.ts:14](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/services/step-groups/signup.step-group.ts#L14)
+[src/api/services/step-groups/signup.step-group.ts:23](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/step-groups/signup.step-group.ts#L23)
 
 execute (async).
 

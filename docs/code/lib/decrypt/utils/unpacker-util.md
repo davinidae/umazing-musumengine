@@ -5,7 +5,7 @@
 ### AnchorDataHeadersStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:333](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L333)
+[src/lib/decrypt/utils/unpacker.util.ts:333](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L333)
 
 AnchorDataHeadersStrategy.
 
@@ -38,7 +38,7 @@ Extends/implements: `extends UnpackStrategy`.
 > `private` **buildKeyEncodings**(`key`): `Buffer`\<`ArrayBufferLike`\>[]
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:339](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L339)
+[src/lib/decrypt/utils/unpacker.util.ts:339](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L339)
 
 buildKeyEncodings.
 
@@ -61,7 +61,7 @@ Type: `Buffer<ArrayBufferLike>[]`.
 > `private` **buildObjectFromKvSequence**(`seq`): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:402](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L402)
+[src/lib/decrypt/utils/unpacker.util.ts:402](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L402)
 
 buildObjectFromKvSequence.
 
@@ -84,7 +84,7 @@ Type: `Record<string, unknown>`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:450](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L450)
+[src/lib/decrypt/utils/unpacker.util.ts:450](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L450)
 
 execute.
 
@@ -111,7 +111,7 @@ Type: `unknown`.
 > `private` **findFirstPatternIndex**(`buf`, `patterns`): `number`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:378](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L378)
+[src/lib/decrypt/utils/unpacker.util.ts:378](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L378)
 
 findFirstPatternIndex.
 
@@ -140,7 +140,7 @@ Type: `number`.
 > `private` **looksAnchored**(`out`): `boolean`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:428](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L428)
+[src/lib/decrypt/utils/unpacker.util.ts:428](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L428)
 
 looksAnchored.
 
@@ -163,7 +163,7 @@ Type: `boolean`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -190,7 +190,7 @@ Type: `unknown`.
 ### HeuristicStreamToObjectStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:546](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L546)
+[src/lib/decrypt/utils/unpacker.util.ts:546](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L546)
 
 HeuristicStreamToObjectStrategy.
 
@@ -224,7 +224,7 @@ Extends/implements: `extends UnpackStrategy`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:608](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L608)
+[src/lib/decrypt/utils/unpacker.util.ts:608](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L608)
 
 execute.
 
@@ -252,7 +252,7 @@ Type: `unknown`.
 > `unknown`\> \| `undefined`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:554](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L554)
+[src/lib/decrypt/utils/unpacker.util.ts:554](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L554)
 
 foldFromFirstStringRun.
 
@@ -287,7 +287,7 @@ Type: `Record<string, unknown> | undefined`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -314,7 +314,7 @@ Type: `unknown`.
 ### KVStreamStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:201](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L201)
+[src/lib/decrypt/utils/unpacker.util.ts:201](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L201)
 
 KVStreamStrategy.
 
@@ -347,7 +347,7 @@ Extends/implements: `extends UnpackStrategy`.
 > `private` **decodeStreamToObject**(`values`): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:237](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L237)
+[src/lib/decrypt/utils/unpacker.util.ts:237](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L237)
 
 decodeStreamToObject.
 
@@ -370,7 +370,7 @@ Type: `Record<string, unknown>`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:294](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L294)
+[src/lib/decrypt/utils/unpacker.util.ts:294](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L294)
 
 execute.
 
@@ -397,7 +397,7 @@ Type: `unknown`.
 > `private` **findFirstStringMarkerIndex**(`buf`): `number`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:219](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L219)
+[src/lib/decrypt/utils/unpacker.util.ts:219](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L219)
 
 findFirstStringMarkerIndex.
 
@@ -420,7 +420,7 @@ Type: `number`.
 > `private` **isEmptyObject**(`value`): `boolean`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:272](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L272)
+[src/lib/decrypt/utils/unpacker.util.ts:272](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L272)
 
 isEmptyObject.
 
@@ -443,7 +443,7 @@ Type: `boolean`.
 > `private` **isStringMarker**(`marker`): `boolean`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:207](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L207)
+[src/lib/decrypt/utils/unpacker.util.ts:207](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L207)
 
 isStringMarker.
 
@@ -466,7 +466,7 @@ Type: `boolean`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -493,7 +493,7 @@ Type: `unknown`.
 ### LengthPrefixedStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L20)
+[src/lib/decrypt/utils/unpacker.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L20)
 
 LengthPrefixedStrategy.
 
@@ -526,7 +526,7 @@ Extends/implements: `extends UnpackStrategy`.
 > **execute**(`data`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:31](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L31)
+[src/lib/decrypt/utils/unpacker.util.ts:31](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L31)
 
 execute.
 
@@ -553,7 +553,7 @@ Type: `unknown`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -580,7 +580,7 @@ Type: `unknown`.
 ### MapHeaderScanStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:97](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L97)
+[src/lib/decrypt/utils/unpacker.util.ts:97](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L97)
 
 MapHeaderScanStrategy.
 
@@ -613,7 +613,7 @@ Extends/implements: `extends UnpackStrategy`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:150](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L150)
+[src/lib/decrypt/utils/unpacker.util.ts:150](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L150)
 
 execute.
 
@@ -640,7 +640,7 @@ Type: `unknown`.
 > `private` **isPlausibleMapHeaderMarker**(`marker`): `boolean`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:103](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L103)
+[src/lib/decrypt/utils/unpacker.util.ts:103](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L103)
 
 isPlausibleMapHeaderMarker.
 
@@ -663,7 +663,7 @@ Type: `boolean`.
 > `private` **looksLikeUsefulObject**(`value`, `likelyKeys`): `boolean`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:116](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L116)
+[src/lib/decrypt/utils/unpacker.util.ts:116](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L116)
 
 looksLikeUsefulObject.
 
@@ -692,7 +692,7 @@ Type: `boolean`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -719,7 +719,7 @@ Type: `unknown`.
 ### MultiArrayStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:494](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L494)
+[src/lib/decrypt/utils/unpacker.util.ts:494](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L494)
 
 MultiArrayStrategy.
 
@@ -752,7 +752,7 @@ Extends/implements: `extends UnpackStrategy`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:504](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L504)
+[src/lib/decrypt/utils/unpacker.util.ts:504](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L504)
 
 execute.
 
@@ -779,7 +779,7 @@ Type: `unknown`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -806,7 +806,7 @@ Type: `unknown`.
 ### RawMsgpackStrategy
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:70](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L70)
+[src/lib/decrypt/utils/unpacker.util.ts:70](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L70)
 
 RawMsgpackStrategy.
 
@@ -839,7 +839,7 @@ Extends/implements: `extends UnpackStrategy`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:80](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L80)
+[src/lib/decrypt/utils/unpacker.util.ts:80](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L80)
 
 execute.
 
@@ -866,7 +866,7 @@ Type: `unknown`.
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/utils/decrypt.util.ts#L47)
+[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/decrypt.util.ts#L47)
 
 normalizeResponseShape.
 
@@ -893,7 +893,7 @@ Type: `unknown`.
 ### Unpacker
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:643](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L643)
+[src/lib/decrypt/utils/unpacker.util.ts:643](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L643)
 
 Unpacker.
 
@@ -904,7 +904,7 @@ Unpacker.
 > **new Unpacker**(`strategies`): [`Unpacker`](#unpacker)
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:659](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L659)
+[src/lib/decrypt/utils/unpacker.util.ts:659](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L659)
 
 constructor.
 
@@ -930,7 +930,7 @@ Type: `Unpacker`.
 > [`UnpackStrategy`](../../utils/decrypt.util.md#unpackstrategy)[]
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:660](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L660)
+[src/lib/decrypt/utils/unpacker.util.ts:660](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L660)
 
 Type: `UnpackStrategy[]`.
 
@@ -941,7 +941,7 @@ Type: `UnpackStrategy[]`.
 > **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/decrypt/utils/unpacker.util.ts:678](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/lib/decrypt/utils/unpacker.util.ts#L678)
+[src/lib/decrypt/utils/unpacker.util.ts:678](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/decrypt/utils/unpacker.util.ts#L678)
 
 execute.
 

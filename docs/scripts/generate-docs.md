@@ -7,7 +7,7 @@
 > **Node** = `object`
 
 Defined in:
-[generate-docs.ts:21](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L21)
+[generate-docs.ts:21](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L21)
 
 Tree node representing a file or directory under `docs/`.
 
@@ -18,28 +18,28 @@ Tree node representing a file or directory under `docs/`.
 > `optional` **children**: [`Node`](#node)[]
 
 Defined in:
-[generate-docs.ts:25](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L25)
+[generate-docs.ts:25](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L25)
 
 ##### dir
 
 > **dir**: `boolean`
 
 Defined in:
-[generate-docs.ts:24](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L24)
+[generate-docs.ts:24](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L24)
 
 ##### name
 
 > **name**: `string`
 
 Defined in:
-[generate-docs.ts:22](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L22)
+[generate-docs.ts:22](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L22)
 
 ##### rel
 
 > **rel**: `string`
 
 Defined in:
-[generate-docs.ts:23](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L23)
+[generate-docs.ts:23](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L23)
 
 ## Variables
 
@@ -48,7 +48,7 @@ Defined in:
 > `const` **DOCS_ROOT**: `string`
 
 Defined in:
-[generate-docs.ts:5](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L5)
+[generate-docs.ts:5](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L5)
 
 ---
 
@@ -57,7 +57,7 @@ Defined in:
 > `const` **HOME_PATH**: `string`
 
 Defined in:
-[generate-docs.ts:7](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L7)
+[generate-docs.ts:7](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L7)
 
 ---
 
@@ -66,7 +66,7 @@ Defined in:
 > `const` **SIDEBAR_PATH**: `string`
 
 Defined in:
-[generate-docs.ts:6](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L6)
+[generate-docs.ts:6](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L6)
 
 ## Functions
 
@@ -75,7 +75,7 @@ Defined in:
 > **generate**(): `void`
 
 Defined in:
-[generate-docs.ts:167](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L167)
+[generate-docs.ts:167](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L167)
 
 Entrypoint: generates `docs/_Sidebar.md` from the contents of `docs/`.
 
@@ -90,7 +90,7 @@ Entrypoint: generates `docs/_Sidebar.md` from the contents of `docs/`.
 > **isHidden**(`name`): `boolean`
 
 Defined in:
-[generate-docs.ts:14](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L14)
+[generate-docs.ts:14](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L14)
 
 Returns whether a docs entry should be hidden from the sidebar.
 
@@ -113,7 +113,7 @@ Filename or directory name
 > **link**(`rel`, `name`): `string`
 
 Defined in:
-[generate-docs.ts:75](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L75)
+[generate-docs.ts:75](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L75)
 
 Create a GitHub Wiki compatible Markdown link for a file.
 
@@ -145,7 +145,7 @@ Display name
 > **read**(`dirAbs`, `relBase`): [`Node`](#node)[]
 
 Defined in:
-[generate-docs.ts:34](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L34)
+[generate-docs.ts:34](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L34)
 
 Recursively reads the docs directory into a tree of nodes.
 
@@ -174,7 +174,7 @@ Relative path base used to compute links
 > **render**(`nodes`, `depth`): `string`[]
 
 Defined in:
-[generate-docs.ts:87](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/scripts/generate-docs.ts#L87)
+[generate-docs.ts:87](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/scripts/generate-docs.ts#L87)
 
 Render the sidebar tree into Markdown with collapsible sections.
 

@@ -11,7 +11,7 @@ import { ApiResponse } from '../utils';
 export const routes: Array<{
   method: string;
   path: string;
-  handler: (event: HttpEvent<unknown>) => Promise<ApiResponse>;
+  handler: (event: HttpEvent<any>) => Promise<ApiResponse>;
 }> = [
   {
     method: 'GET',

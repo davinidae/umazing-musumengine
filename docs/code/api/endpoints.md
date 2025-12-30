@@ -7,7 +7,7 @@
 > `const` **routes**: `object`[]
 
 Defined in:
-[src/api/endpoints/index.ts:11](https://github.com/davinidae/umazing-musumengine/blob/c700395cebb260e117f031a8c5db6db9062abc06/src/api/endpoints/index.ts#L11)
+[src/api/endpoints/index.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/endpoints/index.ts#L11)
 
 routes.
 
@@ -21,7 +21,7 @@ routes.
 
 ###### event
 
-[`HttpEvent`](models/api.model.md#httpevent)\<`unknown`\>
+[`HttpEvent`](models/api.model.md#httpevent)\<`any`\>
 
 ###### Returns
 
