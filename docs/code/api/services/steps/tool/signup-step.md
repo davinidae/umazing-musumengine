@@ -5,7 +5,7 @@
 ### ToolSignupStep
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L10)
+[src/api/services/steps/tool/signup.step.ts:10](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L10)
 
 ToolSignupStep.
 
@@ -25,7 +25,7 @@ Extends/implements: `extends CoreStep< Umatypes.Request.ToolSignup, Umatypes.Res
 > **new ToolSignupStep**(`umaClient`, `attestationType`): [`ToolSignupStep`](#toolsignupstep)
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:21](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L21)
+[src/api/services/steps/tool/signup.step.ts:21](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L21)
 
 ###### Parameters
 
@@ -53,14 +53,14 @@ Defined in:
 > [`AttestationType`](../../../models/umamusume-api/enums.model.md#attestationtype)
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:23](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L23)
+[src/api/services/steps/tool/signup.step.ts:23](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L23)
 
 ##### endpoint
 
 > **endpoint**: `string` = `'tool/signup'`
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L19)
+[src/api/services/steps/tool/signup.step.ts:19](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L19)
 
 endpoint.
 
@@ -81,7 +81,7 @@ Type: `string`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L22)
+[src/api/services/steps/tool/signup.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L22)
 
 Type: `UmaClient`.
 
@@ -96,7 +96,7 @@ Type: `UmaClient`.
 > `protected` **afterExecute**(`result`): `void`
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:48](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L48)
+[src/api/services/steps/tool/signup.step.ts:48](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L48)
 
 afterExecute.
 
@@ -122,7 +122,7 @@ Type: `RequestResult<ToolSignup>`.
 > `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`ToolSignup`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#toolsignup)\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:277](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/core.step.ts#L277)
+[src/api/services/steps/core.step.ts:277](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/core.step.ts#L277)
 
 execute (async).
 
@@ -141,7 +141,7 @@ Type: `Promise<RequestResult<TRes>>`.
 > `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:121](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/core.step.ts#L121)
+[src/api/services/steps/core.step.ts:121](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/core.step.ts#L121)
 
 getBody.
 
@@ -162,7 +162,7 @@ Type: `Record<string, unknown>`.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:101](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/core.step.ts#L101)
+[src/api/services/steps/core.step.ts:101](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/core.step.ts#L101)
 
 getHeaders.
 
@@ -184,7 +184,7 @@ Type: `Record<string, string>`.
 > [`ToolSignup`](../../../../umatypes/namespaces/Umatypes/namespaces/Request.md#toolsignup)
 
 Defined in:
-[src/api/services/steps/tool/signup.step.ts:32](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/tool/signup.step.ts#L32)
+[src/api/services/steps/tool/signup.step.ts:32](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/tool/signup.step.ts#L32)
 
 getRequestBody.
 
@@ -205,7 +205,7 @@ Type: `ToolSignup`.
 > `"endpoint"` \| `"name"`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:216](https://github.com/davinidae/umazing-musumengine/blob/8d9fa9473d811fefa3457f1bbad2aa6c3eb63afc/src/api/services/steps/core.step.ts#L216)
+[src/api/services/steps/core.step.ts:216](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/services/steps/core.step.ts#L216)
 
 request (async).
 

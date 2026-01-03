@@ -26,8 +26,9 @@ export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiRespon
       deviceType: DeviceType.ANDROID,
       attestationType: AttestationType.Mobile,
     };
+    delete body.steamId;
     /*
-    UNCOMMEND TO ENABLE STEAM LOGIN
+    UNCOMMENT TO ENABLE STEAM LOGIN
 
     const pcLogin = {
       kind: AuthModeKind.STEAM,
