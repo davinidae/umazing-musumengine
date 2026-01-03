@@ -53,12 +53,14 @@
   },
   "dependencies": {
     "@msgpack/msgpack": "^3.0.0",
+    "@types/steam-user": "^5.1.1",
     "axios": "^1.7.7",
     "commander": "^12.1.0",
     "es-toolkit": "^1.43.0",
     "express": "^4.19.2",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
+    "steam-user": "^5.3.0",
     "zod": "^4.2.1"
   },
   "devDependencies": {

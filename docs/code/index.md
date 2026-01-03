@@ -213,6 +213,12 @@ Re-exports [SessionId](lib/utils/protocol.util.md#sessionid)
 
 ---
 
+### STEAM_APP_ID
+
+Re-exports [STEAM_APP_ID](constants/steam.constant.md#steam_app_id)
+
+---
+
 ### STR16
 
 Re-exports [STR16](constants/msgpack.constant.md#str16)

@@ -5,7 +5,7 @@
 ### AuthKey
 
 Defined in:
-[src/lib/utils/protocol.util.ts:437](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L437)
+[src/lib/utils/protocol.util.ts:437](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L437)
 
 AuthKey.
 
@@ -16,7 +16,7 @@ AuthKey.
 > **new AuthKey**(`bytes`): [`AuthKey`](#authkey)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:443](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L443)
+[src/lib/utils/protocol.util.ts:443](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L443)
 
 constructor.
 
@@ -41,7 +41,7 @@ Type: `AuthKey`.
 > `readonly` **bytes**: `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:443](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L443)
+[src/lib/utils/protocol.util.ts:443](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L443)
 
 Type: `Uint8Array<ArrayBufferLike>`.
 
@@ -50,7 +50,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 ### SessionId
 
 Defined in:
-[src/lib/utils/protocol.util.ts:331](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L331)
+[src/lib/utils/protocol.util.ts:331](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L331)
 
 SessionId.
 
@@ -61,7 +61,7 @@ SessionId.
 > **new SessionId**(`bytes`): [`SessionId`](#sessionid)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:337](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L337)
+[src/lib/utils/protocol.util.ts:337](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L337)
 
 constructor.
 
@@ -86,7 +86,7 @@ Type: `SessionId`.
 > `readonly` **bytes**: `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:337](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L337)
+[src/lib/utils/protocol.util.ts:337](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L337)
 
 Type: `Uint8Array<ArrayBufferLike>`.
 
@@ -97,7 +97,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **asHex**(): `string`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:347](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L347)
+[src/lib/utils/protocol.util.ts:347](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L347)
 
 asHex.
 
@@ -112,7 +112,7 @@ Type: `string`.
 ### Udid
 
 Defined in:
-[src/lib/utils/protocol.util.ts:356](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L356)
+[src/lib/utils/protocol.util.ts:356](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L356)
 
 Udid.
 
@@ -123,7 +123,7 @@ Udid.
 > **new Udid**(`uuid`): [`Udid`](#udid)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:362](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L362)
+[src/lib/utils/protocol.util.ts:362](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L362)
 
 constructor.
 
@@ -148,7 +148,7 @@ Type: `Udid`.
 > `readonly` **uuid**: `string`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:362](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L362)
+[src/lib/utils/protocol.util.ts:362](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L362)
 
 Type: `string`.
 
@@ -159,7 +159,7 @@ Type: `string`.
 > **ivRepresentation**(): `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:427](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L427)
+[src/lib/utils/protocol.util.ts:427](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L427)
 
 ivRepresentation.
 
@@ -174,7 +174,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **rawBytes**(): `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:376](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L376)
+[src/lib/utils/protocol.util.ts:376](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L376)
 
 rawBytes.
 
@@ -189,7 +189,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **simpleRepresentation**(): `string`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:368](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L368)
+[src/lib/utils/protocol.util.ts:368](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L368)
 
 simpleRepresentation.
 
@@ -204,7 +204,7 @@ Type: `string`.
 ### UmaReqHeader
 
 Defined in:
-[src/lib/utils/protocol.util.ts:480](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L480)
+[src/lib/utils/protocol.util.ts:480](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L480)
 
 UmaReqHeader.
 
@@ -215,7 +215,7 @@ UmaReqHeader.
 > **new UmaReqHeader**(`sessionId`, `udid`, `authKey?`): [`UmaReqHeader`](#umareqheader)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:500](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L500)
+[src/lib/utils/protocol.util.ts:500](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L500)
 
 constructor.
 
@@ -252,7 +252,7 @@ Type: `UmaReqHeader`.
 > `optional` **authKey**: [`AuthKey`](#authkey)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:503](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L503)
+[src/lib/utils/protocol.util.ts:503](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L503)
 
 Type: `AuthKey | undefined`.
 
@@ -261,7 +261,7 @@ Type: `AuthKey | undefined`.
 > **commonHeader**: `Uint8Array` = `COMMON_HEADER`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:486](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L486)
+[src/lib/utils/protocol.util.ts:486](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L486)
 
 commonHeader.
 
@@ -278,7 +278,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **randomBytes**: `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:491](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L491)
+[src/lib/utils/protocol.util.ts:491](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L491)
 
 randomBytes.
 
@@ -291,7 +291,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **sessionId**: [`SessionId`](#sessionid)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:501](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L501)
+[src/lib/utils/protocol.util.ts:501](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L501)
 
 Type: `SessionId`.
 
@@ -300,7 +300,7 @@ Type: `SessionId`.
 > **udid**: [`Udid`](#udid)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:502](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L502)
+[src/lib/utils/protocol.util.ts:502](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L502)
 
 Type: `Udid`.
 
@@ -311,7 +311,7 @@ Type: `Udid`.
 > **encode**(): `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:533](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L533)
+[src/lib/utils/protocol.util.ts:533](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L533)
 
 encode.
 
@@ -326,7 +326,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **encodedSize**(): `number`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:519](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L519)
+[src/lib/utils/protocol.util.ts:519](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L519)
 
 encodedSize.
 
@@ -341,7 +341,7 @@ Type: `number`.
 > **rerandomize**(): `void`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:511](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L511)
+[src/lib/utils/protocol.util.ts:511](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L511)
 
 rerandomize.
 
@@ -356,7 +356,7 @@ rerandomize.
 > **buildBlob1Buffer**(`input`): `Buffer`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:264](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L264)
+[src/lib/utils/protocol.util.ts:264](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L264)
 
 buildBlob1Buffer.
 
@@ -400,7 +400,7 @@ Type: `Buffer<ArrayBufferLike>`.
 > **decompressResponse**(`sourceB64`, `udid`): `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:722](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L722)
+[src/lib/utils/protocol.util.ts:722](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L722)
 
 decompressResponse.
 
@@ -431,7 +431,7 @@ Type: `Uint8Array<ArrayBufferLike>`.
 > **encodeUmaRequestB64**(`header`, `body`): `string`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:675](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L675)
+[src/lib/utils/protocol.util.ts:675](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L675)
 
 encodeUmaRequestB64.
 
@@ -462,7 +462,7 @@ Type: `string`.
 > **newSessionId**(`udid`, `viewerId`): [`SessionId`](#sessionid)
 
 Defined in:
-[src/lib/utils/protocol.util.ts:460](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L460)
+[src/lib/utils/protocol.util.ts:460](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L460)
 
 newSessionId.
 
@@ -493,7 +493,7 @@ Type: `SessionId`.
 > **parseHeaderBlob1**(`blob1`): `Blob1Header`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:138](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L138)
+[src/lib/utils/protocol.util.ts:138](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L138)
 
 parseHeaderBlob1.
 
@@ -518,7 +518,7 @@ Type: `Blob1Header`.
 > **parseParsedRequest**(`raw`): `ParsedRequest`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:205](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L205)
+[src/lib/utils/protocol.util.ts:205](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L205)
 
 parseParsedRequest.
 
@@ -543,7 +543,7 @@ Type: `ParsedRequest`.
 > **parseRequest**(`raw`): \[`Buffer`\<`ArrayBufferLike`\>, `Buffer`\<`ArrayBufferLike`\>\]
 
 Defined in:
-[src/lib/utils/protocol.util.ts:245](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L245)
+[src/lib/utils/protocol.util.ts:245](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L245)
 
 parseRequest.
 
@@ -568,7 +568,7 @@ Type: `[Buffer<ArrayBufferLike>, Buffer<ArrayBufferLike>]`.
 > **saltedMd5**(`data`): `Uint8Array`
 
 Defined in:
-[src/lib/utils/protocol.util.ts:315](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/protocol.util.ts#L315)
+[src/lib/utils/protocol.util.ts:315](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/protocol.util.ts#L315)
 
 saltedMd5.
 

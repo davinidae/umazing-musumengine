@@ -7,7 +7,7 @@
 > `const` **COMMON_HEADER**: `Uint8Array`\<`ArrayBuffer`\>
 
 Defined in:
-[src/constants/protocol.constant.ts:6](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/constants/protocol.constant.ts#L6)
+[src/constants/protocol.constant.ts:6](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/constants/protocol.constant.ts#L6)
 
 COMMON_HEADER.
 

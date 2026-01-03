@@ -7,7 +7,7 @@
 > **fromJsonFriendly**(`value`): `unknown`
 
 Defined in:
-[src/lib/utils/json.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/json.util.ts#L13)
+[src/lib/utils/json.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/json.util.ts#L13)
 
 fromJsonFriendly.
 
@@ -32,7 +32,7 @@ Type: `unknown`.
 > **toJsonCompatible**(`value`): `unknown`
 
 Defined in:
-[src/lib/utils/json.util.ts:56](https://github.com/davinidae/umazing-musumengine/blob/27a67ead77e7e430a7a2f321d3db88cc32f51df1/src/lib/utils/json.util.ts#L56)
+[src/lib/utils/json.util.ts:56](https://github.com/davinidae/umazing-musumengine/blob/7b7fb26e300246328ff4c87810f666ed56b6ab3f/src/lib/utils/json.util.ts#L56)
 
 toJsonCompatible.
 

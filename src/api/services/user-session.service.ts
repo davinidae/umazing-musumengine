@@ -4,11 +4,14 @@ import { randomUUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
 import { AuthKey, Udid } from '../../lib';
 import type { UmaClient } from './uma-client.service';
+import { STEAM_APP_ID } from '../../constants';
+import SteamUser from 'steam-user';
 
 /**
  * UserSession.
  */
 export class UserSession {
+  steamUser = new SteamUser();
   /**
    * resVer.
    * @remarks Type: `string`.
@@ -39,45 +42,53 @@ export class UserSession {
     //
   }
 
+  public steamSessionTicket: string | null = null;
+
   /**
    * getDefaultBase.
    * @param deviceType - Type: `number`.
    * @returns Type: `RequestBase`.
    */
   getDefaultBase(deviceType: number): RequestBase {
+    const common: Omit<
+      RequestBase,
+      | 'device_name'
+      | 'graphics_device_name'
+      | 'ip_address'
+      | 'platform_os_version'
+      | 'steam_id'
+      | 'steam_session_ticket'
+    > = {
+      carrier: '',
+      device: deviceType,
+      device_id: randomUUID().replace(/-/g, ''),
+      dmm_onetime_token: null,
+      dmm_viewer_id: null,
+      keychain: 0,
+      locale: 'JPN',
+      viewer_id: this.umaData.trainerId ?? 0,
+    };
     switch (deviceType) {
       case DeviceType.ANDROID: {
         return {
-          carrier: '',
-          device: deviceType,
-          device_id: randomUUID().replace(/-/g, ''),
+          ...common,
           device_name: 'OnePlus HD 542',
-          dmm_onetime_token: null,
-          dmm_viewer_id: null,
           graphics_device_name: 'Adreno (TM) 640',
           ip_address: '192.168.1.100',
-          keychain: 0,
-          locale: 'JPN',
           platform_os_version: 'Windows 10  (10.0.19045) 64bit',
-          viewer_id: this.umaData.trainerId ?? 0,
+          steam_id: null,
+          steam_session_ticket: null,
         };
       }
       case DeviceType.PC: {
         return {
-          carrier: '',
-          device: deviceType,
-          device_id: randomUUID().replace(/-/g, ''),
+          ...common,
           device_name: 'System Product Name (ASUS)',
-          dmm_onetime_token: null,
-          dmm_viewer_id: null,
           graphics_device_name: 'NVIDIA GeForce RTX 3080',
           ip_address: '192.168.1.42',
-          keychain: 0,
-          locale: 'JPN',
           platform_os_version: 'Windows 11  (10.0.26200) 64bit',
-          viewer_id: this.umaData.trainerId ?? 0,
-          steam_id: this.umaData.steamId?.toString() ?? '00000000000000000',
-          steam_session_ticket: '00000000000000000000000000000000000000000000000000000000000000000',
+          steam_id: this.umaData.steamId?.toString() ?? null,
+          steam_session_ticket: this.steamSessionTicket ?? null,
         };
       }
       default: {
@@ -111,23 +122,28 @@ export class UserSession {
     return this.getDefaultBase(deviceType);
   }
 
-  /**
-   * assertSteamBase.
-   * @param base - Type: `RequestBase`.
-   */
-  private assertSteamBase(base: RequestBase): void {
-    if (base.steam_id && base.steam_session_ticket) {
-      return;
-    }
-    throw new Error(
-      'Steam auth requires cfg.base.steam_id and cfg.base.steam_session_ticket (ticket generation not implemented in TS port)',
-    );
-  }
-
   public getAuthKey() {
     return this.umaData.authKey != null
       ? new AuthKey(Buffer.from(this.umaData.authKey, 'base64'))
       : undefined;
+  }
+
+  logInSteam() {
+    if (this.umaData.steamId == null) {
+      return;
+    }
+    return new Promise<void>((resolve) => {
+      this.steamUser.on('loggedOn', () => {
+        this.steamUser.createAuthSessionTicket(STEAM_APP_ID, (obj) => {
+          this.steamSessionTicket = obj.sessionTicket.toString('base64');
+          resolve();
+        });
+      });
+      this.steamUser.logOn({
+        anonymous: true,
+        steamID: this.umaData.steamId?.toString(),
+      });
+    });
   }
 
   /**
@@ -135,6 +151,9 @@ export class UserSession {
    * @returns Type: `Promise<UmaClient>`.
    */
   async initialize(): Promise<UmaClient> {
+    if (this.auth.kind === AuthModeKind.STEAM) {
+      await this.logInSteam();
+    }
     /**
      * udid.
      * @remarks Type: `Udid`.
@@ -162,7 +181,16 @@ export class UserSession {
      * @defaultValue `createUmaClient( this.auth, udid, this.cfg.authKey, base, this.resVer, this.baseUrl, )`
      */
     const authKey = this.getAuthKey();
-    const client = createUmaClient(this.auth, udid, authKey, base, this.resVer, this.baseUrl);
+    const client = createUmaClient(
+      this.auth,
+      udid,
+      authKey,
+      base,
+      this.resVer,
+      this.baseUrl,
+      this.umaData,
+      this,
+    );
     return client;
   }
 }

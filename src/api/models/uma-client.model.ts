@@ -15,10 +15,9 @@ export type RequestBase = {
   locale: string;
   platform_os_version: string;
   viewer_id: number;
-} & Partial<{
   steam_id: string | null;
   steam_session_ticket: string | null;
-}>;
+};
 
 export type UmaResponse<T> = {
   response_code: number;

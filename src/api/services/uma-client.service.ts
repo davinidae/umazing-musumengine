@@ -7,6 +7,7 @@ import { CoreStep } from './steps/core.step';
 import { TutorialStepGroup } from './step-groups/tutorial.step-group';
 import { CoreStepGroup } from './step-groups/core.step-group';
 import { SignupStepGroup } from './step-groups/signup.step-group';
+import { UserSession } from './user-session.service';
 
 type CoreStepGroupClass = new (...args: any[]) => CoreStepGroup;
 
@@ -48,6 +49,8 @@ export function createUmaClient(
   base: RequestBase,
   resVer: string,
   baseUrl: string,
+  umaData: UmaData,
+  userSession: UserSession,
 ): UmaClient {
   /**
    * sessionId.
@@ -61,12 +64,17 @@ export function createUmaClient(
    * @defaultValue `new UmaReqHeader(sessionId, udid, authKey)`
    */
   const header = new UmaReqHeader(sessionId, udid, authKey);
-  return new UmaClient(auth, {
-    header,
-    base,
-    resVer,
-    baseUrl,
-  });
+  return new UmaClient(
+    auth,
+    {
+      header,
+      base,
+      resVer,
+      baseUrl,
+    },
+    umaData,
+    userSession,
+  );
 }
 
 /**
@@ -82,6 +90,8 @@ export class UmaClient {
   constructor(
     private readonly auth: AuthMode,
     public readonly data: UmaClientData,
+    public readonly umaData: UmaData,
+    public readonly userSession: UserSession,
   ) {
     //
   }
