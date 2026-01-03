@@ -21,20 +21,22 @@ export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiRespon
      * @remarks Type: `UserSession`.
      * @defaultValue `new UserSession(undefined, undefined, trainerId)`
      */
-    const userSession = new UserSession(
-      body,
-      body.steamId != null
-        ? {
-            kind: AuthModeKind.STEAM,
-            deviceType: DeviceType.PC,
-            attestationType: AttestationType.PC,
-          }
-        : {
-            kind: AuthModeKind.MOBILE,
-            deviceType: DeviceType.ANDROID,
-            attestationType: AttestationType.Mobile,
-          },
-    );
+    const mobileLogin = {
+      kind: AuthModeKind.MOBILE,
+      deviceType: DeviceType.ANDROID,
+      attestationType: AttestationType.Mobile,
+    };
+    /*
+    UNCOMMEND TO ENABLE STEAM LOGIN
+
+    const pcLogin = {
+      kind: AuthModeKind.STEAM,
+      deviceType: DeviceType.PC,
+      attestationType: AttestationType.PC,
+    };
+    const userSession = new UserSession(body, body.steamId != null ? pcLogin : mobileLogin);
+    */
+    const userSession = new UserSession(body, mobileLogin);
     /**
      * client.
      * @remarks Type: `UmaClient`.
