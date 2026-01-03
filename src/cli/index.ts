@@ -307,7 +307,7 @@ function buildEncryptEntry(
     }
     /**
      * { requestB64 }.
-     * @remarks Type: `{ requestB64: string; blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_raw_hex: string; udid_canonical: string; }>; blob2: unknown; }`.
+     * @remarks Type: `{ requestB64: string; blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; }`.
      * @defaultValue `encSvc.build({ blob1: root.blob1 as EncodeRequestInput['blob1'], blob2: root.blob2, DETERMINISTIC_ENC_SECRET, })`
      */
     const { requestB64 } = encSvc.build({

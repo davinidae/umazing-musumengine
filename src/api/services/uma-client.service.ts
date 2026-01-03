@@ -161,6 +161,11 @@ export class UmaClient {
     return this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
   }
 
+  public getResponseCodeName(code: number): string {
+    const entry = Object.entries(GallopResultCode).find(([_key, value]) => value === code) || [];
+    return entry[0] || 'UnknownResponseCode';
+  }
+
   /**
    * executeStep (async).
    * @param step - Type: `CoreStepClass`.
@@ -182,6 +187,7 @@ export class UmaClient {
      * @defaultValue `await new step(this, ...(extra ?? [])).execute()`
      */
     const result = await new step(this, ...(extra ?? [])).execute();
+    result.decoded.response_name = this.getResponseCodeName(result.decoded.response_code);
     this.prevResults.push(result);
   }
 

@@ -40,15 +40,15 @@ When decrypted by the CLI, `blob1` appears in JSON as:
 - `prefix_hex` (hex string, variable length)
 - `prefix_len` (bytes)
 - `session_id_hex` (32 hex chars → 16 bytes)
-- `udid_raw_hex` (32 hex chars → 16 bytes)
-- `udid_canonical` (UUID-like string derived from `udid_raw_hex`)
+- `udid_hex` (32 hex chars → 16 bytes)
+- `udid_raw` (UUID-like string derived from `udid_hex`)
 - `response_key_hex` (64 hex chars → 32 bytes)
 - `auth_key_hex` (hex, 96 chars → 48 bytes)
 - `encryption_key_hex` (64 hex chars → 32 bytes, copied from the end of `blob2`)
 
 ### IV derivation (for AES‑CBC)
 
-The IV is derived from `udid_canonical` (the hyphenated form of `udid_raw_hex`) via the helper
+The IV is derived from `udid_raw` (the hyphenated form of `udid_hex`) via the helper
 `deriveIvFromUdidString`. The decrypt tools compute this automatically.
 
 ## Builder behavior (tools in this repo)
@@ -59,7 +59,7 @@ Base64 request as described above.
 Required fields in `blob1`:
 
 - `prefix_hex`
-- `udid_raw_hex` (or `udid_canonical`)
+- `udid_hex` (or `udid_raw`)
 - `auth_key_hex`
 - `session_id_hex` (16 bytes)
 - `response_key_hex` (32 bytes)

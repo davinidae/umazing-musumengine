@@ -13,6 +13,7 @@ export type RequestContext = {
 type Blob1Json = EncodeRequestInput['blob1'] & {
   prefix_len: number;
   encryption_key_hex: string;
+  encryption_key_b64: string;
 };
 
 /**
@@ -82,13 +83,19 @@ export function blob1ToJson(
   const out: Blob1Json = {
     viewer_id: header.viewer_id,
     prefix_hex: header.prefix.toString('hex'),
+    prefix_b64: header.prefix.toString('base64'),
     prefix_len: header.prefix.length,
     session_id_hex: header.session_id.toString('hex'),
-    udid_raw_hex: header.udid_raw.toString('hex'),
-    udid_canonical: udidCanonical,
+    session_id_b64: header.session_id.toString('base64'),
+    udid_raw: udidCanonical,
+    udid_hex: header.udid_raw.toString('hex'),
+    udid_b64: header.udid_raw.toString('base64'),
     response_key_hex: header.response_key.toString('hex'),
+    response_key_b64: header.response_key.toString('base64'),
     auth_key_hex: header.auth_key.length === 0 ? null : header.auth_key.toString('hex'),
+    auth_key_b64: header.auth_key.length === 0 ? null : header.auth_key.toString('base64'),
     encryption_key_hex: keyUsed.toString('hex'),
+    encryption_key_b64: keyUsed.toString('base64'),
   };
   return out;
 }

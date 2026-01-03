@@ -104,7 +104,7 @@ export function runCli(
  */
 export const baseBlob1 = {
   prefix_hex: 'aabb',
-  udid_raw_hex: '00'.repeat(16),
+  udid_hex: '00'.repeat(16),
   session_id_hex: '11'.repeat(16),
   response_key_hex: '22'.repeat(32),
   auth_key_hex: '33'.repeat(48),

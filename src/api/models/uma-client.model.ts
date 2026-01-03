@@ -15,9 +15,10 @@ export type RequestBase = {
   locale: string;
   platform_os_version: string;
   viewer_id: number;
+} & Partial<{
   steam_id: string | null;
   steam_session_ticket: string | null;
-};
+}>;
 
 export type UmaResponse<T> = {
   response_code: number;
@@ -30,6 +31,7 @@ export type UmaResponse<T> = {
   };
 } & Partial<{
   data: T;
+  response_name: string;
 }>;
 
 export type ClientConfig = Partial<{
@@ -43,17 +45,14 @@ export enum AuthModeKind {
   MOBILE = 'mobile',
 }
 
-export type AuthMode =
-  | {
-      kind: AuthModeKind.STEAM;
-      username: string;
-      password: string;
-    }
-  | {
-      kind: AuthModeKind.MOBILE;
-      deviceType: DeviceType;
-      attestationType: AttestationType;
-    };
+export type AuthMode = {
+  kind: AuthModeKind;
+  deviceType: DeviceType;
+  attestationType: AttestationType;
+} & Partial<{
+  username: string;
+  password: string;
+}>;
 
 export type RequestResult<T = unknown> = {
   decoded: UmaResponse<T>;

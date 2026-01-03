@@ -151,7 +151,7 @@ Encryption key note:
 Required fields inside `blob1` (used to derive IV and rebuild blob1):
 
 - `prefix_hex`
-- `udid_raw_hex` (or `udid_canonical`)
+- `udid_hex` (or `udid_raw`)
 - `auth_key_hex`
 - `session_id_hex` (16 bytes hex)
 - `response_key_hex` (32 bytes hex)
@@ -304,7 +304,7 @@ npm run cli -- decrypt all
 node dist/cli.bundle.js decrypt all
 
 # Encode a request via stdin/stdout
-{"blob1": {"prefix_hex":"...", "udid_raw_hex":"...", "auth_key_hex":"...", "session_id_hex":"...", "response_key_hex":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
+{"blob1": {"prefix_hex":"...", "udid_hex":"...", "auth_key_hex":"...", "session_id_hex":"...", "response_key_hex":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
 | npm run cli -- runtime encode-request
 | Set-Content -Path request.b64
 
@@ -348,7 +348,7 @@ export const client = new RuntimeClient();
 export const { requestB64 } = client.encodeRequest({
   blob1: {
     prefix_hex: 'aabbcc',
-    udid_raw_hex: '00'.repeat(16),
+    udid_hex: '00'.repeat(16),
     session_id_hex: '11'.repeat(16),
     response_key_hex: '22'.repeat(32),
     auth_key_hex: '33'.repeat(48),

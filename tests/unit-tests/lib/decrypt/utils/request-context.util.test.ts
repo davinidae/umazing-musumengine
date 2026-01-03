@@ -23,10 +23,14 @@ describe('decrypt/utils/request-context.util', () => {
     const blob1 = {
       viewer_id: 123,
       prefix_hex: 'aabb',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: null,
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { hello: 'world' };
     const { requestB64 } = svc.build({
@@ -53,7 +57,7 @@ describe('decrypt/utils/request-context.util', () => {
 
     const out = blob1ToJson(header, udidCanonical, keyUsed);
     expect(out.prefix_len).toEqual(header.prefix.length);
-    expect(out.udid_canonical).toEqual(udidCanonical);
+    expect(out.udid_raw).toEqual(udidCanonical);
     expect(out.encryption_key_hex).toEqual(keyUsed.toString('hex'));
     expect(out.auth_key_hex).toEqual(null);
   });

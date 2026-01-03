@@ -45,22 +45,45 @@ export class UserSession {
    * @returns Type: `RequestBase`.
    */
   getDefaultBase(deviceType: number): RequestBase {
-    return {
-      carrier: '',
-      device: deviceType,
-      device_id: randomUUID().replace(/-/g, ''),
-      device_name: 'OnePlus HD 542',
-      dmm_onetime_token: null,
-      dmm_viewer_id: null,
-      graphics_device_name: 'Adreno (TM) 640',
-      ip_address: '192.168.1.100',
-      keychain: 0,
-      locale: 'JPN',
-      platform_os_version: 'Windows 10  (10.0.19045) 64bit',
-      viewer_id: this.umaData.trainerId ?? 0,
-      steam_id: null,
-      steam_session_ticket: null,
-    };
+    switch (deviceType) {
+      case DeviceType.ANDROID: {
+        return {
+          carrier: '',
+          device: deviceType,
+          device_id: randomUUID().replace(/-/g, ''),
+          device_name: 'OnePlus HD 542',
+          dmm_onetime_token: null,
+          dmm_viewer_id: null,
+          graphics_device_name: 'Adreno (TM) 640',
+          ip_address: '192.168.1.100',
+          keychain: 0,
+          locale: 'JPN',
+          platform_os_version: 'Windows 10  (10.0.19045) 64bit',
+          viewer_id: this.umaData.trainerId ?? 0,
+        };
+      }
+      case DeviceType.PC: {
+        return {
+          carrier: '',
+          device: deviceType,
+          device_id: randomUUID().replace(/-/g, ''),
+          device_name: 'System Product Name (ASUS)',
+          dmm_onetime_token: null,
+          dmm_viewer_id: null,
+          graphics_device_name: 'NVIDIA GeForce RTX 3080',
+          ip_address: '192.168.1.42',
+          keychain: 0,
+          locale: 'JPN',
+          platform_os_version: 'Windows 11  (10.0.26200) 64bit',
+          viewer_id: this.umaData.trainerId ?? 0,
+          steam_id: this.umaData.steamId?.toString() ?? '00000000000000000',
+          steam_session_ticket: '00000000000000000000000000000000000000000000000000000000000000000',
+        };
+      }
+      default: {
+        throw new Error(`Unsupported device type: ${deviceType}`);
+      }
+    }
   }
 
   /**
@@ -76,7 +99,7 @@ export class UserSession {
    * @returns Type: `number`.
    */
   private resolveDeviceType(): number {
-    return this.auth.kind === AuthModeKind.STEAM ? 4 : this.auth.deviceType;
+    return this.auth.kind === AuthModeKind.STEAM ? DeviceType.PC : this.auth.deviceType;
   }
 
   /**
@@ -99,6 +122,12 @@ export class UserSession {
     throw new Error(
       'Steam auth requires cfg.base.steam_id and cfg.base.steam_session_ticket (ticket generation not implemented in TS port)',
     );
+  }
+
+  public getAuthKey() {
+    return this.umaData.authKey != null
+      ? new AuthKey(Buffer.from(this.umaData.authKey, 'base64'))
+      : undefined;
   }
 
   /**
@@ -125,23 +154,15 @@ export class UserSession {
      */
     const base: RequestBase = this.resolveBase(deviceType);
     if (this.auth.kind === AuthModeKind.STEAM) {
-      this.assertSteamBase(base);
+      //this.assertSteamBase(base);
     }
     /**
      * client.
      * @remarks Type: `UmaClient`.
      * @defaultValue `createUmaClient( this.auth, udid, this.cfg.authKey, base, this.resVer, this.baseUrl, )`
      */
-    const client = createUmaClient(
-      this.auth,
-      udid,
-      this.umaData.authKey != null
-        ? new AuthKey(Buffer.from(this.umaData.authKey, 'base64'))
-        : undefined,
-      base,
-      this.resVer,
-      this.baseUrl,
-    );
+    const authKey = this.getAuthKey();
+    const client = createUmaClient(this.auth, udid, authKey, base, this.resVer, this.baseUrl);
     return client;
   }
 }

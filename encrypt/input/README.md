@@ -20,7 +20,7 @@ Example `decoded.json` (excerpt):
   "framing": "kv-stream", // optional; omit for default length-prefixed
   "blob1": {
     "prefix_hex": "...",
-    "udid_raw_hex": "...",
+    "udid_hex": "...",
     "auth_key_hex": "...",
     "session_id_hex": "...",
     "response_key_hex": "..."

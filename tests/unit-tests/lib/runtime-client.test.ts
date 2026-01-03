@@ -20,10 +20,14 @@ describe('RuntimeClient (unit)', () => {
     const blob1 = {
       viewer_id: 123456789,
       prefix_hex: 'cc77',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { ok: true, n: 9 };
     const { requestB64 } = client.encodeRequest({ blob1, blob2 });
@@ -41,10 +45,14 @@ describe('RuntimeClient (unit)', () => {
     const blob1 = {
       viewer_id: 123456789,
       prefix_hex: 'dd88',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { a: 1, b: 'z' };
     const { requestB64 } = client.encodeRequest({ blob1, blob2 });
@@ -74,10 +82,14 @@ describe('RuntimeClient (unit)', () => {
     const blob1 = {
       viewer_id: 1,
       prefix_hex: 'aa55',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { ok: true };
 
@@ -91,10 +103,14 @@ describe('RuntimeClient (unit)', () => {
     const blob1 = {
       viewer_id: 123456789,
       prefix_hex: 'ee99',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { a: 1, b: 'z', c: true };
     const { requestB64 } = client.encodeRequest({ blob1, blob2, framing: FramingMode.KvStream });
@@ -108,10 +124,14 @@ describe('RuntimeClient (unit)', () => {
     const blob1 = {
       viewer_id: 123,
       prefix_hex: 'ff00',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { a: 1 };
     const { requestB64 } = client.encodeRequest({ blob1, blob2 });

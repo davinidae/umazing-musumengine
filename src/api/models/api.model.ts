@@ -5,7 +5,8 @@ export type HttpEvent<T = unknown> = Omit<APIGatewayProxyEventV2, 'body'> & {
 };
 
 export type UmaData = Partial<{
-  trainerId?: number;
-  udid?: string;
-  authKey?: string;
+  trainerId: number;
+  udid: string;
+  authKey: string;
+  steamId: number;
 }>;

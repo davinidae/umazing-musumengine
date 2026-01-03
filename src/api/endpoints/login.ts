@@ -1,5 +1,5 @@
 import { ApiResponse, getErrorMessage } from '../utils';
-import type { HttpEvent, UmaData } from '../models';
+import { AttestationType, AuthModeKind, DeviceType, type HttpEvent, type UmaData } from '../models';
 import { UserSession } from '../services/user-session.service';
 
 /**
@@ -21,7 +21,20 @@ export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiRespon
      * @remarks Type: `UserSession`.
      * @defaultValue `new UserSession(undefined, undefined, trainerId)`
      */
-    const userSession = new UserSession(body, undefined);
+    const userSession = new UserSession(
+      body,
+      body.steamId != null
+        ? {
+            kind: AuthModeKind.STEAM,
+            deviceType: DeviceType.PC,
+            attestationType: AttestationType.PC,
+          }
+        : {
+            kind: AuthModeKind.MOBILE,
+            deviceType: DeviceType.ANDROID,
+            attestationType: AttestationType.Mobile,
+          },
+    );
     /**
      * client.
      * @remarks Type: `UmaClient`.

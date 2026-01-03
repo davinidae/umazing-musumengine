@@ -11,10 +11,14 @@ describe('DecryptRequestService (unit)', () => {
     const blob1 = {
       viewer_id: 123456789,
       prefix_hex: 'aa55',
-      udid_raw_hex: '00'.repeat(16),
+      udid_hex: '00'.repeat(16),
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: '33'.repeat(48),
+      prefix_b64: 'aabbccdd',
+      session_id_b64: '11'.repeat(16),
+      response_key_b64: '22'.repeat(32),
+      auth_key_b64: '33'.repeat(48),
     };
     const blob2 = { v: 123, s: 'ok' };
     const { requestB64 } = enc.build({ blob1, blob2, DETERMINISTIC_ENC_SECRET });
