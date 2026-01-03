@@ -1,5 +1,5 @@
 import { AuthModeKind, GallopResultCode } from '../models';
-import type { AuthMode, RequestBase, RequestResult, UmaClientData } from '../models';
+import type { AuthMode, RequestBase, RequestResult, UmaClientData, UmaData } from '../models';
 import { LoadIndexStep } from './steps/load/index.step';
 import { StartSessionStep } from './steps/tool/start_session.step';
 import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../../lib';
@@ -7,7 +7,6 @@ import { CoreStep } from './steps/core.step';
 import { TutorialStepGroup } from './step-groups/tutorial.step-group';
 import { CoreStepGroup } from './step-groups/core.step-group';
 import { SignupStepGroup } from './step-groups/signup.step-group';
-import { ToolSignupStep } from './steps/tool/signup.step';
 
 type CoreStepGroupClass = new (...args: any[]) => CoreStepGroup;
 
@@ -85,6 +84,16 @@ export class UmaClient {
     public readonly data: UmaClientData,
   ) {
     //
+  }
+
+  public getUmaData(): UmaData {
+    return {
+      trainerId: this.data.base.viewer_id,
+      udid: this.data.header.udid.uuid,
+      authKey: this.data.header.authKey
+        ? Buffer.from(this.data.header.authKey.bytes).toString('base64')
+        : undefined,
+    };
   }
 
   /**
@@ -234,11 +243,6 @@ export class UmaClient {
     const attestationType = this.getAttestationType();
     if (this.data.base.viewer_id !== 0) {
       await this.executeFlow([
-        {
-          type: FlowType.STEP,
-          service: ToolSignupStep,
-          extra: [attestationType],
-        },
         {
           type: FlowType.STEP,
           service: StartSessionStep,

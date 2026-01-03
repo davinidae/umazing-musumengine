@@ -1,8 +1,8 @@
 import { AttestationType, AuthModeKind, DeviceType } from '../models';
-import type { AuthMode, ClientConfig, RequestBase } from '../models';
+import type { AuthMode, UmaData, RequestBase } from '../models';
 import { randomUUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
-import { Udid } from '../../lib';
+import { AuthKey, Udid } from '../../lib';
 import type { UmaClient } from './uma-client.service';
 
 /**
@@ -29,13 +29,12 @@ export class UserSession {
    * @returns Type: `UserSession`.
    */
   constructor(
-    private readonly cfg: ClientConfig = {},
+    private readonly umaData: UmaData = {},
     private readonly auth: AuthMode = {
       kind: AuthModeKind.MOBILE,
       deviceType: DeviceType.ANDROID,
       attestationType: AttestationType.Mobile,
     },
-    private readonly trainerId: number = 0,
   ) {
     //
   }
@@ -58,7 +57,7 @@ export class UserSession {
       keychain: 0,
       locale: 'JPN',
       platform_os_version: 'Windows 10  (10.0.19045) 64bit',
-      viewer_id: this.trainerId,
+      viewer_id: this.umaData.trainerId ?? 0,
       steam_id: null,
       steam_session_ticket: null,
     };
@@ -69,7 +68,7 @@ export class UserSession {
    * @returns Type: `Udid`.
    */
   private resolveUdid(): Udid {
-    return this.cfg.udid ?? new Udid(randomUUID());
+    return new Udid(this.umaData.udid ?? randomUUID());
   }
 
   /**
@@ -86,7 +85,7 @@ export class UserSession {
    * @returns Type: `RequestBase`.
    */
   private resolveBase(deviceType: number): RequestBase {
-    return this.cfg.base ?? this.getDefaultBase(deviceType);
+    return this.getDefaultBase(deviceType);
   }
 
   /**
@@ -136,7 +135,9 @@ export class UserSession {
     const client = createUmaClient(
       this.auth,
       udid,
-      this.cfg.authKey,
+      this.umaData.authKey != null
+        ? new AuthKey(Buffer.from(this.umaData.authKey, 'base64'))
+        : undefined,
       base,
       this.resVer,
       this.baseUrl,

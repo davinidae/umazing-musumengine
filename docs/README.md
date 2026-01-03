@@ -2,7 +2,7 @@
 
 Version 2.0.0
 
-Generated: 2025-12-30 19:52:43
+Generated: 2026-01-03 18:08:36
 
 This wiki contains project documentation and generated API references.
 

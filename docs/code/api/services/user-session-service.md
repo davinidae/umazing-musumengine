@@ -5,7 +5,7 @@
 ### UserSession
 
 Defined in:
-[src/api/services/user-session.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L11)
+[src/api/services/user-session.service.ts:11](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L11)
 
 UserSession.
 
@@ -13,30 +13,24 @@ UserSession.
 
 ##### Constructor
 
-> **new UserSession**(`cfg`, `auth`, `trainerId`): [`UserSession`](#usersession)
+> **new UserSession**(`umaData`, `auth`): [`UserSession`](#usersession)
 
 Defined in:
-[src/api/services/user-session.service.ts:31](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L31)
+[src/api/services/user-session.service.ts:31](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L31)
 
 constructor.
 
 ###### Parameters
 
-###### cfg
+###### umaData
 
-[`ClientConfig`](../models/uma-client.model.md#clientconfig) = `{}`
-
-Type: `Partial<{ udid: Udid; authKey: AuthKey; base: RequestBase; }>`.
+[`UmaData`](../models/api.model.md#umadata) = `{}`
 
 ###### auth
 
 [`AuthMode`](../models/uma-client.model.md#authmode) = `...`
 
 Type: `AuthMode`.
-
-###### trainerId
-
-`number` = `0`
 
 ###### Returns
 
@@ -51,7 +45,7 @@ Type: `UserSession`.
 > `private` `readonly` **auth**: [`AuthMode`](../models/uma-client.model.md#authmode)
 
 Defined in:
-[src/api/services/user-session.service.ts:33](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L33)
+[src/api/services/user-session.service.ts:33](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L33)
 
 Type: `AuthMode`.
 
@@ -60,7 +54,7 @@ Type: `AuthMode`.
 > **baseUrl**: `string` = `'https://api.games.umamusume.com/umamusume/'`
 
 Defined in:
-[src/api/services/user-session.service.ts:23](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L23)
+[src/api/services/user-session.service.ts:23](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L23)
 
 baseUrl.
 
@@ -72,21 +66,12 @@ Type: `string`.
 
 `'https://api.games.umamusume.com/umamusume/'`
 
-##### cfg
-
-> `private` `readonly` **cfg**: [`ClientConfig`](../models/uma-client.model.md#clientconfig) = `{}`
-
-Defined in:
-[src/api/services/user-session.service.ts:32](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L32)
-
-Type: `Partial<{ udid: Udid; authKey: AuthKey; base: RequestBase; }>`.
-
 ##### resVer
 
 > **resVer**: `string` = `'10002800'`
 
 Defined in:
-[src/api/services/user-session.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L17)
+[src/api/services/user-session.service.ts:17](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L17)
 
 resVer.
 
@@ -98,12 +83,12 @@ Type: `string`.
 
 `'10002800'`
 
-##### trainerId
+##### umaData
 
-> `private` `readonly` **trainerId**: `number` = `0`
+> `private` `readonly` **umaData**: [`UmaData`](../models/api.model.md#umadata) = `{}`
 
 Defined in:
-[src/api/services/user-session.service.ts:38](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L38)
+[src/api/services/user-session.service.ts:32](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L32)
 
 #### Methods
 
@@ -112,7 +97,7 @@ Defined in:
 > `private` **assertSteamBase**(`base`): `void`
 
 Defined in:
-[src/api/services/user-session.service.ts:96](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L96)
+[src/api/services/user-session.service.ts:95](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L95)
 
 assertSteamBase.
 
@@ -133,7 +118,7 @@ Type: `RequestBase`.
 > **getDefaultBase**(`deviceType`): [`RequestBase`](../models/uma-client.model.md#requestbase)
 
 Defined in:
-[src/api/services/user-session.service.ts:48](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L48)
+[src/api/services/user-session.service.ts:47](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L47)
 
 getDefaultBase.
 
@@ -156,7 +141,7 @@ Type: `RequestBase`.
 > **initialize**(): `Promise`\<[`UmaClient`](uma-client.service.md#umaclient)\>
 
 Defined in:
-[src/api/services/user-session.service.ts:109](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L109)
+[src/api/services/user-session.service.ts:108](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L108)
 
 initialize (async).
 
@@ -172,7 +157,7 @@ Type: `Promise<UmaClient>`.
 > [`RequestBase`](../models/uma-client.model.md#requestbase)
 
 Defined in:
-[src/api/services/user-session.service.ts:88](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L88)
+[src/api/services/user-session.service.ts:87](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L87)
 
 resolveBase.
 
@@ -195,7 +180,7 @@ Type: `RequestBase`.
 > `private` **resolveDeviceType**(): `number`
 
 Defined in:
-[src/api/services/user-session.service.ts:79](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L79)
+[src/api/services/user-session.service.ts:78](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L78)
 
 resolveDeviceType.
 
@@ -210,7 +195,7 @@ Type: `number`.
 > `private` **resolveUdid**(): [`Udid`](../../lib/utils/protocol.util.md#udid)
 
 Defined in:
-[src/api/services/user-session.service.ts:71](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/api/services/user-session.service.ts#L71)
+[src/api/services/user-session.service.ts:70](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/api/services/user-session.service.ts#L70)
 
 resolveUdid.
 

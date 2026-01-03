@@ -68,6 +68,12 @@ Re-exports [UmaClientData](models/uma-client.model.md#umaclientdata)
 
 ---
 
+### UmaData
+
+Re-exports [UmaData](models/api.model.md#umadata)
+
+---
+
 ### UmaResponse
 
 Re-exports [UmaResponse](models/uma-client.model.md#umaresponse)

@@ -1,5 +1,5 @@
 import { ApiResponse, getErrorMessage } from '../utils';
-import type { HttpEvent } from '../models';
+import type { HttpEvent, UmaData } from '../models';
 import { UserSession } from '../services/user-session.service';
 
 /**
@@ -7,15 +7,8 @@ import { UserSession } from '../services/user-session.service';
  * @param _event - Type: `HttpEvent<unknown>`.
  * @returns Type: `Promise<ApiResponse>`.
  */
-export async function loginHandler(
-  event: HttpEvent<
-    Partial<{
-      trainerId: number;
-    }>
-  >,
-): Promise<ApiResponse> {
+export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiResponse> {
   const body = event.body || {};
-  const trainerId = body.trainerId;
   /**
    * startTimestamp.
    * @remarks Type: `string`.
@@ -28,7 +21,7 @@ export async function loginHandler(
      * @remarks Type: `UserSession`.
      * @defaultValue `new UserSession(undefined, undefined, trainerId)`
      */
-    const userSession = new UserSession(undefined, undefined, trainerId);
+    const userSession = new UserSession(body, undefined);
     /**
      * client.
      * @remarks Type: `UmaClient`.
@@ -42,6 +35,7 @@ export async function loginHandler(
      */
     const results = await client.logIn();
     return new ApiResponse(200, {
+      umaData: client.getUmaData(),
       startTimestamp,
       endTimestamp: new Date().toISOString(),
       results,

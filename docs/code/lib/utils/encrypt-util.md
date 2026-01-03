@@ -7,7 +7,7 @@
 > **encryptAes256Cbc**(`dataPadded`, `key`, `iv`): `Buffer`
 
 Defined in:
-[src/lib/utils/encrypt.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/0f4b26a7c602290bed10e9aa2723b492bef975ef/src/lib/utils/encrypt.util.ts#L20)
+[src/lib/utils/encrypt.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/0cdafb59e2857b4cc23f37a28f9086735e2a093a/src/lib/utils/encrypt.util.ts#L20)
 
 encryptAes256Cbc.
 
