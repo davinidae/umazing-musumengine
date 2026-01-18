@@ -5,7 +5,7 @@
 ### DecryptResponseService
 
 Defined in:
-[src/lib/decrypt/response.service.ts:14](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/lib/decrypt/response.service.ts#L14)
+[src/lib/decrypt/response.service.ts:14](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/decrypt/response.service.ts#L14)
 
 DecryptResponseService.
 
@@ -26,7 +26,7 @@ DecryptResponseService.
 > **decodeFromBase64**(`requestB64`, `responseB64`): `object`
 
 Defined in:
-[src/lib/decrypt/response.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/lib/decrypt/response.service.ts#L28)
+[src/lib/decrypt/response.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/decrypt/response.service.ts#L28)
 
 decodeFromBase64.
 

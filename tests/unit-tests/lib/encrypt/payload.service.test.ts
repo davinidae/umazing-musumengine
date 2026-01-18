@@ -49,7 +49,7 @@ describe('EncryptPayloadService (unit)', () => {
     const blob1 = {
       viewer_id: 123456789,
       prefix_hex: 'aabb',
-      udid_raw: '00112233-4455-6677-8899-aabbccddeeff',
+      udid_canonical: '00112233-4455-6677-8899-aabbccddeeff',
       session_id_hex: '11'.repeat(16),
       response_key_hex: '22'.repeat(32),
       auth_key_hex: null,

@@ -7,7 +7,7 @@
 > **LoadIndex** = `object`
 
 Defined in:
-[src/umatypes.d.ts:32](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L32)
+[src/umatypes.d.ts:32](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L32)
 
 ---
 
@@ -16,7 +16,7 @@ Defined in:
 > **ToolPreSignup** = `object`
 
 Defined in:
-[src/umatypes.d.ts:34](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L34)
+[src/umatypes.d.ts:34](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L34)
 
 ---
 
@@ -25,7 +25,7 @@ Defined in:
 > **ToolSignup** = `object`
 
 Defined in:
-[src/umatypes.d.ts:22](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L22)
+[src/umatypes.d.ts:22](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L22)
 
 #### Properties
 
@@ -34,49 +34,49 @@ Defined in:
 > **attestation_type**: `number`
 
 Defined in:
-[src/umatypes.d.ts:25](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L25)
+[src/umatypes.d.ts:25](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L25)
 
 ##### country
 
 > **country**: `string`
 
 Defined in:
-[src/umatypes.d.ts:28](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L28)
+[src/umatypes.d.ts:28](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L28)
 
 ##### credential
 
 > **credential**: `string`
 
 Defined in:
-[src/umatypes.d.ts:29](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L29)
+[src/umatypes.d.ts:29](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L29)
 
 ##### dma_state
 
 > **dma_state**: `number`
 
 Defined in:
-[src/umatypes.d.ts:27](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L27)
+[src/umatypes.d.ts:27](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L27)
 
 ##### error_code
 
 > **error_code**: `number`
 
 Defined in:
-[src/umatypes.d.ts:23](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L23)
+[src/umatypes.d.ts:23](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L23)
 
 ##### error_message
 
 > **error_message**: `string`
 
 Defined in:
-[src/umatypes.d.ts:24](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L24)
+[src/umatypes.d.ts:24](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L24)
 
 ##### optin_user_birth
 
 > **optin_user_birth**: `number`
 
 Defined in:
-[src/umatypes.d.ts:26](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L26)
+[src/umatypes.d.ts:26](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L26)
 
 ---
 
@@ -85,7 +85,7 @@ Defined in:
 > **ToolStartSession** = `object`
 
 Defined in:
-[src/umatypes.d.ts:6](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L6)
+[src/umatypes.d.ts:6](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L6)
 
 #### Properties
 
@@ -94,21 +94,21 @@ Defined in:
 > **attestation_type**: `number`
 
 Defined in:
-[src/umatypes.d.ts:7](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L7)
+[src/umatypes.d.ts:7](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L7)
 
 ##### button_info
 
 > **button_info**: `string`
 
 Defined in:
-[src/umatypes.d.ts:9](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L9)
+[src/umatypes.d.ts:9](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L9)
 
 ##### device_token
 
 > **device_token**: `string` \| `null`
 
 Defined in:
-[src/umatypes.d.ts:8](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L8)
+[src/umatypes.d.ts:8](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L8)
 
 ---
 
@@ -117,7 +117,7 @@ Defined in:
 > **TutorialSkip** = `object`
 
 Defined in:
-[src/umatypes.d.ts:20](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L20)
+[src/umatypes.d.ts:20](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L20)
 
 ---
 
@@ -126,7 +126,7 @@ Defined in:
 > **UserChangeName** = `object`
 
 Defined in:
-[src/umatypes.d.ts:12](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L12)
+[src/umatypes.d.ts:12](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L12)
 
 #### Properties
 
@@ -135,7 +135,7 @@ Defined in:
 > **name**: `string`
 
 Defined in:
-[src/umatypes.d.ts:13](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L13)
+[src/umatypes.d.ts:13](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L13)
 
 ---
 
@@ -144,7 +144,7 @@ Defined in:
 > **UserChangeSex** = `object`
 
 Defined in:
-[src/umatypes.d.ts:16](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L16)
+[src/umatypes.d.ts:16](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L16)
 
 #### Properties
 
@@ -153,4 +153,4 @@ Defined in:
 > **sex**: `number`
 
 Defined in:
-[src/umatypes.d.ts:17](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/umatypes.d.ts#L17)
+[src/umatypes.d.ts:17](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/umatypes.d.ts#L17)
