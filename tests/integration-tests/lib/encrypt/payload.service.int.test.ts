@@ -16,15 +16,11 @@ describe('EncryptPayloadService (integration)', () => {
     const svc = new EncryptPayloadService();
     const blob1: EncodeRequestInput['blob1'] = {
       viewer_id: 123456789,
-      prefix_hex: 'bb66',
-      prefix_b64: 'aabbccdd',
-      session_id_b64: '11'.repeat(16),
-      response_key_b64: '22'.repeat(32),
-      auth_key_b64: '33'.repeat(48),
-      udid_hex: '11'.repeat(16),
-      session_id_hex: '22'.repeat(16),
-      response_key_hex: '55'.repeat(32),
-      auth_key_hex: '44'.repeat(48),
+      prefix: 'bb66',
+      udid: '11'.repeat(16),
+      session_id: '22'.repeat(16),
+      response_key: '55'.repeat(32),
+      auth_key: '44'.repeat(48),
     };
     const blob2 = { a: 1, b: 'z' };
     const { requestB64 } = svc.build({
@@ -39,7 +35,7 @@ describe('EncryptPayloadService (integration)', () => {
     // kv-stream framing does not use the fixed 112-byte blob1 layout, so don't parse it with parseHeaderBlob1.
     // It also doesn't append the AES key to blob2; instead it appends a 32B auth digest.
     // Decrypt using the deterministic key derivation used by EncryptPayloadService.
-    const udidNoHyphens = (blob1.udid_hex ?? '').toLowerCase();
+    const udidNoHyphens = (blob1.udid ?? '').toLowerCase();
     expect(udidNoHyphens.length).toBe(32);
     const iv = deriveIvFromUdidString(
       `${udidNoHyphens.slice(0, 8)}-${udidNoHyphens.slice(8, 12)}-${udidNoHyphens.slice(

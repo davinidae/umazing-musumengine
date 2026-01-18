@@ -19,11 +19,11 @@ describe('RuntimeClient (unit)', () => {
   test('encodeRequest produces valid requestB64 and roundtrips', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'cc77',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: '33'.repeat(48),
+      prefix: 'cc77',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: '33'.repeat(48),
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -44,11 +44,11 @@ describe('RuntimeClient (unit)', () => {
   test('decodeResponse returns payload via unpacker', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'dd88',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: '33'.repeat(48),
+      prefix: 'dd88',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: '33'.repeat(48),
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -75,17 +75,17 @@ describe('RuntimeClient (unit)', () => {
     );
   });
 
-  test('encodeRequest uses injected deterministic secret (encryption_key_hex matches SHA-256(secret))', () => {
+  test('encodeRequest uses injected deterministic secret (encryption_key matches SHA-256(secret))', () => {
     const secret = 'unit-test-secret';
     const injected = new RuntimeClient({ DETERMINISTIC_ENC_SECRET: secret });
 
     const blob1 = {
       viewer_id: 1,
-      prefix_hex: 'aa55',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: '33'.repeat(48),
+      prefix: 'aa55',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: '33'.repeat(48),
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -96,17 +96,17 @@ describe('RuntimeClient (unit)', () => {
     const { requestB64 } = injected.encodeRequest({ blob1, blob2 });
     const decoded = new DecryptRequestService().decodeFromBase64(requestB64);
     const expectedKeyHex = createHash('sha256').update(secret, 'utf8').digest('hex');
-    expect((decoded.blob1 as any).encryption_key_hex).toBe(expectedKeyHex);
+    expect((decoded.blob1 as any).encryption_key).toBe(expectedKeyHex);
   });
 
   test('encodeRequest supports kv-stream framing; decodeResponse does not roundtrip it', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'ee99',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: '33'.repeat(48),
+      prefix: 'ee99',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: '33'.repeat(48),
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -123,11 +123,11 @@ describe('RuntimeClient (unit)', () => {
   test('decodeResponse throws when response blob2 is too short', () => {
     const blob1 = {
       viewer_id: 123,
-      prefix_hex: 'ff00',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: '33'.repeat(48),
+      prefix: 'ff00',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: '33'.repeat(48),
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),

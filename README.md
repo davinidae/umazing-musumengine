@@ -150,11 +150,11 @@ Encryption key note:
 
 Required fields inside `blob1` (used to derive IV and rebuild blob1):
 
-- `prefix_hex`
-- `udid_hex` (or `udid_raw`)
-- `auth_key_hex`
-- `session_id_hex` (16 bytes hex)
-- `response_key_hex` (32 bytes hex)
+- `prefix`
+- `udid` (or `udid_raw`)
+- `auth_key`
+- `session_id` (16 bytes hex)
+- `response_key` (32 bytes hex)
 
 The `decrypt` step already produces `blob1` with all these fields.
 
@@ -166,8 +166,8 @@ Framing selection:
   explicit hint; there is no path-based auto-detection.
 
 Skip behavior: the builder scans `encrypt/input/**/decoded.json` and will skip a file (logging the
-reason) if any required field is missing/invalid (e.g., `session_id_hex` not 16 bytes,
-`response_key_hex` not 32 bytes, missing `prefix_hex`, UDID not present, etc.).
+reason) if any required field is missing/invalid (e.g., `session_id` not 16 bytes, `response_key`
+not 32 bytes, missing `prefix`, UDID not present, etc.).
 
 ## Common usage (end-to-end)
 
@@ -288,7 +288,7 @@ Commands:
   decrypt all       Decrypt packs (request + response)
 under decrypt/input (recursive)
   encrypt build     Build Base64 requests from all decoded.json under encrypt/input (recursive).
-                    Uses session_id_hex and response_key_hex from blob1; encryption key is deterministic.
+                    Uses session_id and response_key from blob1; encryption key is deterministic.
   runtime encode-request  Read JSON from stdin { blob1, payload } and write { requestB64 } to stdout
   runtime decode-response Read JSON from stdin { requestB64, responseB64 } and write { payload } to stdout
 ```
@@ -304,7 +304,7 @@ npm run cli -- decrypt all
 node dist/cli.bundle.js decrypt all
 
 # Encode a request via stdin/stdout
-{"blob1": {"prefix_hex":"...", "udid_hex":"...", "auth_key_hex":"...", "session_id_hex":"...", "response_key_hex":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
+{"blob1": {"prefix":"...", "udid":"...", "auth_key":"...", "session_id":"...", "response_key":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
 | npm run cli -- runtime encode-request
 | Set-Content -Path request.b64
 
@@ -347,11 +347,11 @@ export const client = new RuntimeClient();
 // Encode a request
 export const { requestB64 } = client.encodeRequest({
   blob1: {
-    prefix_hex: 'aabbcc',
-    udid_hex: '00'.repeat(16),
-    session_id_hex: '11'.repeat(16),
-    response_key_hex: '22'.repeat(32),
-    auth_key_hex: '33'.repeat(48),
+    prefix: 'aabbcc',
+    udid: '00'.repeat(16),
+    session_id: '11'.repeat(16),
+    response_key: '22'.repeat(32),
+    auth_key: '33'.repeat(48),
   },
   payload: { x: 1 },
 });

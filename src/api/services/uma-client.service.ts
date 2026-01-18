@@ -99,13 +99,11 @@ export class UmaClient {
   public getUmaData(): UmaData {
     return {
       viewerId: this.data.base.viewer_id,
-      udidCanonical: this.data.header.udid.uuid,
-      authKeyB64: this.data.header.authKey
-        ? Buffer.from(this.data.header.authKey.bytes).toString('base64')
-        : undefined,
-      authKeyHex: this.data.header.authKey
-        ? Buffer.from(this.data.header.authKey.bytes).toString('hex')
-        : undefined,
+      udidRaw: this.data.header.udid.uuid,
+      authKey:
+        this.data.header.authKey != null
+          ? Buffer.from(this.data.header.authKey.bytes).toString('hex')
+          : undefined,
       steamId: this.umaData.steamId,
       steamSessionTicket: this.umaData.steamSessionTicket,
     };

@@ -3,8 +3,8 @@
 Place here files you want to use for building Base64 requests (batch).
 
 - `decoded.json` (required): output from decrypt, with shape `{ blob1: { ...}, blob2: <payload> }`.
-  The builder uses `blob2` as the payload and may take defaults from `blob1` (`session_id_hex`,
-  `response_key_hex`) when flags are not provided. You can place multiple `decoded.json` files in a
+  The builder uses `blob2` as the payload and may take defaults from `blob1` (`session_id`,
+  `response_key`) when flags are not provided. You can place multiple `decoded.json` files in a
   nested folder structure; the builder will process them recursively.
 
 Framing:
@@ -19,11 +19,11 @@ Example `decoded.json` (excerpt):
 {
   "framing": "kv-stream", // optional; omit for default length-prefixed
   "blob1": {
-    "prefix_hex": "...",
-    "udid_hex": "...",
-    "auth_key_hex": "...",
-    "session_id_hex": "...",
-    "response_key_hex": "..."
+    "prefix": "...",
+    "udid": "...",
+    "auth_key": "...",
+    "session_id": "...",
+    "response_key": "..."
   },
   "blob2": {
     "k1": "v1",

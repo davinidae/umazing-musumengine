@@ -40,11 +40,9 @@ export class UserSession {
     private readonly umaData: UmaData,
     private readonly auth: AuthMode,
   ) {
-    this.udid = new Udid(umaData.udidCanonical ?? randomUUID());
-    if (this.umaData.authKeyHex != null) {
-      this.authKey = new AuthKey(Buffer.from(this.umaData.authKeyHex, 'hex'));
-    } else if (this.umaData.authKeyB64 != null) {
-      this.authKey = new AuthKey(Buffer.from(this.umaData.authKeyB64, 'base64'));
+    this.udid = new Udid(umaData.udidRaw ?? randomUUID());
+    if (this.umaData.authKey != null) {
+      this.authKey = new AuthKey(Buffer.from(this.umaData.authKey, 'hex'));
     }
   }
 

@@ -27,15 +27,11 @@ async function main() {
   // Minimal valid header fields
   const blob1: EncodeRequestInput['blob1'] = {
     viewer_id: 123456789,
-    prefix_hex: 'aabbccdd',
-    prefix_b64: 'aabbccdd',
-    session_id_b64: '11'.repeat(16),
-    response_key_b64: '22'.repeat(32),
-    auth_key_b64: '33'.repeat(48),
-    udid_hex: '00'.repeat(16),
-    session_id_hex: '11'.repeat(16),
-    response_key_hex: '22'.repeat(32),
-    auth_key_hex: '33'.repeat(48),
+    prefix: 'aabbccdd',
+    udid: '00'.repeat(16),
+    session_id: '11'.repeat(16),
+    response_key: '22'.repeat(32),
+    auth_key: '33'.repeat(48),
   };
   // Simple payload
   const blob2: EncodeRequestInput['blob2'] = {

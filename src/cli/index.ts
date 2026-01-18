@@ -307,7 +307,7 @@ function buildEncryptEntry(
     }
     /**
      * { requestB64 }.
-     * @remarks Type: `{ requestB64: string; blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; }`.
+     * @remarks Type: `{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
      * @defaultValue `encSvc.build({ blob1: root.blob1 as EncodeRequestInput['blob1'], blob2: root.blob2, DETERMINISTIC_ENC_SECRET, })`
      */
     const { requestB64 } = encSvc.build({
@@ -499,7 +499,7 @@ const encrypt = program.command('encrypt').description('Build/encrypt operations
 encrypt
   .command('build')
   .description(
-    'Build Base64 requests from all decoded.json under encrypt/input (recursive). Uses session_id_hex and response_key_hex from blob1; encryption key is deterministic.',
+    'Build Base64 requests from all decoded.json under encrypt/input (recursive). Uses session_id and response_key from blob1; encryption key is deterministic.',
   )
   .action(async () => {
     /**

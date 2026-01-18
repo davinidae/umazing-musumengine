@@ -22,11 +22,11 @@ describe('decrypt/utils/request-context.util', () => {
     const svc = new EncryptPayloadService();
     const blob1 = {
       viewer_id: 123,
-      prefix_hex: 'aabb',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: null,
+      prefix: 'aabb',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: null,
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -40,8 +40,8 @@ describe('decrypt/utils/request-context.util', () => {
     });
 
     const ctx = decodeRequestContextFromBase64(requestB64);
-    expect(ctx.udidCanonical).toEqual(udidRawToCanonicalString(ctx.header.udid_raw));
-    expect(ctx.iv).toEqual(deriveIvFromUdidString(ctx.udidCanonical));
+    expect(ctx.udidRaw).toEqual(udidRawToCanonicalString(ctx.header.udid_raw));
+    expect(ctx.iv).toEqual(deriveIvFromUdidString(ctx.udidRaw));
 
     const raw = Buffer.from(requestB64, 'base64');
     const [b1] = parseRequest(raw);
@@ -49,16 +49,16 @@ describe('decrypt/utils/request-context.util', () => {
     expect(ctx.header.session_id.toString('hex')).toEqual(parsedHeader.session_id.toString('hex'));
   });
 
-  test('blob1ToJson produces expected fields and auth_key_hex null when missing', () => {
+  test('blob1ToJson produces expected fields and auth_key null when missing', () => {
     const raw = Buffer.from('aa'.repeat(2 + 16 + 16 + 32), 'hex');
     const header = parseHeaderBlob1(raw);
-    const udidCanonical = udidRawToCanonicalString(header.udid_raw);
+    const udidRaw = udidRawToCanonicalString(header.udid_raw);
     const keyUsed = createHash('sha256').update('k', 'utf8').digest();
 
-    const out = blob1ToJson(header, udidCanonical, keyUsed);
+    const out = blob1ToJson(header, udidRaw, keyUsed);
     expect(out.prefix_len).toEqual(header.prefix.length);
-    expect(out.udid_canonical).toEqual(udidCanonical);
-    expect(out.encryption_key_hex).toEqual(keyUsed.toString('hex'));
-    expect(out.auth_key_hex).toEqual(null);
+    expect(out.udid_raw).toEqual(udidRaw);
+    expect(out.encryption_key).toEqual(keyUsed.toString('hex'));
+    expect(out.auth_key).toEqual(null);
   });
 });

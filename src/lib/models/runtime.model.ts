@@ -12,24 +12,19 @@ export enum FramingMode {
 export type EncodeRequestInput = {
   blob1: {
     viewer_id: number;
-    /** Free-form prefix; echoed back by the server. */
-    prefix_hex: string;
-    prefix_b64: string;
+    /** Prefix (hex); echoed back by the server. */
+    prefix: string;
     /** 16-byte session identifier (hex). */
-    session_id_hex: string;
-    session_id_b64: string;
+    session_id: string;
     /** 32-byte response key (hex); echoed back and used by the server. */
-    response_key_hex: string;
-    response_key_b64: string;
+    response_key: string;
     /** 48-byte auth key (hex); contents are opaque for our purposes. */
-    auth_key_hex: string | null;
-    auth_key_b64: string | null;
+    auth_key: string | null;
   } & Partial<{
-    /** Canonical UDID string (with dashes); alternative to udid_hex. */
-    udid_canonical: string;
+    /** Canonical UDID string (with dashes); alternative to udid. */
+    udid_raw: string;
     /** Raw 16-byte UDID in hex; alternative to udid_raw. */
-    udid_hex: string;
-    udid_b64: string;
+    udid: string;
   }>;
   blob2: unknown;
 } & Partial<{

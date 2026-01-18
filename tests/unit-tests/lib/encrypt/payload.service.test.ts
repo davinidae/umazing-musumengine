@@ -18,11 +18,11 @@ describe('EncryptPayloadService (unit)', () => {
   test('buildFromParts length-prefixed encodes and can be decoded back', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'aabb',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: '33'.repeat(48),
+      prefix: 'aabb',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: '33'.repeat(48),
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -45,14 +45,14 @@ describe('EncryptPayloadService (unit)', () => {
     expect(obj).toEqual(blob2);
   });
 
-  test('length-prefixed supports udid_raw (no udid_hex)', () => {
+  test('length-prefixed supports udid_raw (no udid)', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'aabb',
-      udid_canonical: '00112233-4455-6677-8899-aabbccddeeff',
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: null,
+      prefix: 'aabb',
+      udid_raw: '00112233-4455-6677-8899-aabbccddeeff',
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: null,
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -80,10 +80,10 @@ describe('EncryptPayloadService (unit)', () => {
     expect(() =>
       svc.build({
         blob1: {
-          prefix_hex: 'aa55',
-          session_id_hex: '11'.repeat(16),
-          response_key_hex: '22'.repeat(32),
-          auth_key_hex: '33'.repeat(48),
+          prefix: 'aa55',
+          session_id: '11'.repeat(16),
+          response_key: '22'.repeat(32),
+          auth_key: '33'.repeat(48),
         } as any,
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
@@ -91,105 +91,89 @@ describe('EncryptPayloadService (unit)', () => {
     ).toThrow(/(Missing UDID|UDID is required)/);
   });
 
-  test('throws when session_id_hex is not 16B', () => {
+  test('throws when session_id is not 16B', () => {
     expect(() =>
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
-          udid_hex: '00'.repeat(16),
-          session_id_hex: '11'.repeat(15), // 15B
-          response_key_hex: '22'.repeat(32),
-          auth_key_hex: '33'.repeat(48),
-          prefix_b64: 'aabbccdd',
-          session_id_b64: '11'.repeat(16),
-          response_key_b64: '22'.repeat(32),
-          auth_key_b64: '33'.repeat(48),
+          prefix: 'aa55',
+          udid: '00'.repeat(16),
+          session_id: '11'.repeat(15), // 15B
+          response_key: '22'.repeat(32),
+          auth_key: '33'.repeat(48),
         },
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/session_id_hex must be (16B|16 bytes)/);
+    ).toThrow(/session_id must be (16B|16 bytes)/);
   });
 
-  test('throws when response_key_hex is not 32B', () => {
+  test('throws when response_key is not 32B', () => {
     expect(() =>
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
-          udid_hex: '00'.repeat(16),
-          session_id_hex: '11'.repeat(16),
-          response_key_hex: '22'.repeat(31),
-          auth_key_hex: '33'.repeat(48),
-          prefix_b64: 'aabbccdd',
-          session_id_b64: '11'.repeat(16),
-          response_key_b64: '22'.repeat(32),
-          auth_key_b64: '33'.repeat(48),
+          prefix: 'aa55',
+          udid: '00'.repeat(16),
+          session_id: '11'.repeat(16),
+          response_key: '22'.repeat(31),
+          auth_key: '33'.repeat(48),
         },
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/response_key_hex must be (32B|32 bytes)/);
+    ).toThrow(/response_key must be (32B|32 bytes)/);
   });
 
-  test('throws when auth_key_hex is not 48B', () => {
+  test('throws when auth_key is not 48B', () => {
     expect(() =>
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
-          udid_hex: '00'.repeat(16),
-          session_id_hex: '11'.repeat(16),
-          response_key_hex: '22'.repeat(32),
-          auth_key_hex: '33'.repeat(47),
-          prefix_b64: 'aabbccdd',
-          session_id_b64: '11'.repeat(16),
-          response_key_b64: '22'.repeat(32),
-          auth_key_b64: '33'.repeat(48),
+          prefix: 'aa55',
+          udid: '00'.repeat(16),
+          session_id: '11'.repeat(16),
+          response_key: '22'.repeat(32),
+          auth_key: '33'.repeat(47),
         },
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/auth_key_hex must be (48B|48 bytes)/);
+    ).toThrow(/auth_key must be (48B|48 bytes)/);
   });
 
-  test('throws when response_key_hex is missing', () => {
+  test('throws when response_key is missing', () => {
     expect(() =>
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
-          udid_hex: '00'.repeat(16),
-          session_id_hex: '11'.repeat(16),
-          // response_key_hex missing
-          auth_key_hex: '33'.repeat(48),
+          prefix: 'aa55',
+          udid: '00'.repeat(16),
+          session_id: '11'.repeat(16),
+          // response_key missing
+          auth_key: '33'.repeat(48),
         } as any,
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/response_key_hex/);
+    ).toThrow(/response_key/);
   });
 
-  test('throws when udid_hex is wrong length', () => {
+  test('throws when udid is wrong length', () => {
     expect(() =>
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
-          udid_hex: '00'.repeat(15), // 15B
-          session_id_hex: '11'.repeat(16),
-          response_key_hex: '22'.repeat(32),
-          auth_key_hex: '33'.repeat(48),
-          prefix_b64: 'aabbccdd',
-          session_id_b64: '11'.repeat(16),
-          response_key_b64: '22'.repeat(32),
-          auth_key_b64: '33'.repeat(48),
+          prefix: 'aa55',
+          udid: '00'.repeat(15), // 15B
+          session_id: '11'.repeat(16),
+          response_key: '22'.repeat(32),
+          auth_key: '33'.repeat(48),
         },
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
       }),
-    ).toThrow(/udid_hex/);
+    ).toThrow(/udid/);
   });
 
   test('throws when udid_raw is wrong length', () => {
@@ -197,11 +181,11 @@ describe('EncryptPayloadService (unit)', () => {
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
+          prefix: 'aa55',
           udid_raw: '00112233-4455-6677',
-          session_id_hex: '11'.repeat(16),
-          response_key_hex: '22'.repeat(32),
-          auth_key_hex: '33'.repeat(48),
+          session_id: '11'.repeat(16),
+          response_key: '22'.repeat(32),
+          auth_key: '33'.repeat(48),
         } as any,
         blob2: { x: 1 },
         DETERMINISTIC_ENC_SECRET,
@@ -209,14 +193,14 @@ describe('EncryptPayloadService (unit)', () => {
     ).toThrow(/udid_raw/);
   });
 
-  test('allows missing auth_key_hex (pre-auth flows)', () => {
+  test('allows missing auth_key (pre-auth flows)', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'aabb',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: null,
+      prefix: 'aabb',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: null,
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -237,11 +221,11 @@ describe('EncryptPayloadService (unit)', () => {
   test('length-prefixed appends AES key = sha256(secret) to blob2', () => {
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'aabb',
-      udid_hex: '00'.repeat(16),
-      session_id_hex: '11'.repeat(16),
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: null,
+      prefix: 'aabb',
+      udid: '00'.repeat(16),
+      session_id: '11'.repeat(16),
+      response_key: '22'.repeat(32),
+      auth_key: null,
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),
@@ -265,15 +249,11 @@ describe('EncryptPayloadService (unit)', () => {
       svc.build({
         blob1: {
           viewer_id: 123456789,
-          prefix_hex: 'aa55',
-          udid_hex: '00'.repeat(16),
-          session_id_hex: '11'.repeat(16),
-          response_key_hex: '22'.repeat(32),
-          auth_key_hex: '33'.repeat(48),
-          prefix_b64: 'aabbccdd',
-          session_id_b64: '11'.repeat(16),
-          response_key_b64: '22'.repeat(32),
-          auth_key_b64: '33'.repeat(48),
+          prefix: 'aa55',
+          udid: '00'.repeat(16),
+          session_id: '11'.repeat(16),
+          response_key: '22'.repeat(32),
+          auth_key: '33'.repeat(48),
         },
         framing: FramingMode.KvStream,
         blob2: [1, 2, 3],
@@ -288,12 +268,12 @@ describe('EncryptPayloadService (unit)', () => {
 
     const blob1 = {
       viewer_id: 123456789,
-      prefix_hex: 'aa55',
-      udid_hex: udidRawHex,
-      session_id_hex: '11'.repeat(16),
+      prefix: 'aa55',
+      udid: udidRawHex,
+      session_id: '11'.repeat(16),
       // required (even though kv-stream derives its own response key)
-      response_key_hex: '22'.repeat(32),
-      auth_key_hex: null,
+      response_key: '22'.repeat(32),
+      auth_key: null,
       prefix_b64: 'aabbccdd',
       session_id_b64: '11'.repeat(16),
       response_key_b64: '22'.repeat(32),

@@ -27,20 +27,20 @@ import type { EncodeRequestInput } from '../models';
 export class EncryptPayloadService {
   /**
    * resolveUdid.
-   * @param blob1 - Type: `{ viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>`.
+   * @param blob1 - Type: `{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
    * @returns Type: `{ udidString: string; udidRawHex: string; }`.
    */
   private resolveUdid(blob1: EncodeRequestInput['blob1']): {
     udidString: string;
     udidRawHex: string;
   } {
-    if (typeof blob1.udid_canonical === 'string') {
+    if (typeof blob1.udid_raw === 'string') {
       /**
        * udidString.
        * @remarks Type: `string`.
        * @defaultValue `blob1.udid_raw`
        */
-      const udidString = blob1.udid_canonical;
+      const udidString = blob1.udid_raw;
       /**
        * udidRawHex.
        * @remarks Type: `string`.
@@ -57,22 +57,22 @@ export class EncryptPayloadService {
         udidRawHex,
       };
     }
-    if (typeof blob1.udid_hex === 'string') {
-      if (blob1.udid_hex.length !== 32) {
-        throw new Error(`udid_hex must be 16 bytes (32 hex chars), got ${blob1.udid_hex.length}`);
+    if (typeof blob1.udid === 'string') {
+      if (blob1.udid.length !== 32) {
+        throw new Error(`udid must be 16 bytes (32 hex chars), got ${blob1.udid.length}`);
       }
       /**
        * udidString.
        * @remarks Type: `string`.
-       * @defaultValue `udidRawToCanonicalString(Buffer.from(blob1.udid_hex, 'hex'))`
+       * @defaultValue `udidRawToCanonicalString(Buffer.from(blob1.udid, 'hex'))`
        */
-      const udidString = udidRawToCanonicalString(Buffer.from(blob1.udid_hex, 'hex'));
+      const udidString = udidRawToCanonicalString(Buffer.from(blob1.udid, 'hex'));
       return {
         udidString,
-        udidRawHex: blob1.udid_hex,
+        udidRawHex: blob1.udid,
       };
     }
-    throw new Error('UDID is required (udid_raw or udid_hex)');
+    throw new Error('UDID is required (udid_raw or udid)');
   }
 
   /**
@@ -98,7 +98,7 @@ export class EncryptPayloadService {
    */
   private resolveSessionId(sessionIdHex: string | undefined): Buffer {
     if (!sessionIdHex) {
-      throw new Error('session_id_hex is required');
+      throw new Error('session_id is required');
     }
     /**
      * sessionId.
@@ -107,32 +107,32 @@ export class EncryptPayloadService {
      */
     const sessionId = Buffer.from(sessionIdHex, 'hex');
     if (sessionId.length !== 16) {
-      throw new Error(`session_id_hex must be 16 bytes, got ${sessionId.length}`);
+      throw new Error(`session_id must be 16 bytes, got ${sessionId.length}`);
     }
     return sessionId;
   }
 
   /**
    * requireResponseKeyHex.
-   * @param blob1 - Type: `{ viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>`.
+   * @param blob1 - Type: `{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
    * @returns Type: `string`.
    */
   private requireResponseKeyHex(blob1: EncodeRequestInput['blob1']): string {
     /**
      * respKeyHex.
      * @remarks Type: `string`.
-     * @defaultValue `blob1.response_key_hex`
+     * @defaultValue `blob1.response_key`
      */
-    const respKeyHex = blob1.response_key_hex;
+    const respKeyHex = blob1.response_key;
     if (!respKeyHex) {
-      throw new Error('response_key_hex is required');
+      throw new Error('response_key is required');
     }
     return respKeyHex;
   }
 
   /**
    * resolveResponseKey.
-   * @param blob1 - Type: `{ viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>`.
+   * @param blob1 - Type: `{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
    * @returns Type: `Buffer<ArrayBufferLike>`.
    */
   private resolveResponseKey(blob1: EncodeRequestInput['blob1']): Buffer {
@@ -149,39 +149,33 @@ export class EncryptPayloadService {
      */
     const responseKey = Buffer.from(respKeyHex, 'hex');
     if (responseKey.length !== 32) {
-      throw new Error(`response_key_hex must be 32 bytes, got ${responseKey.length}`);
+      throw new Error(`response_key must be 32 bytes, got ${responseKey.length}`);
     }
     return responseKey;
   }
 
   /**
    * resolveAuthKey.
-   * @param blob1 - Type: `{ viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>`.
+   * @param blob1 - Type: `{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
    * @returns Type: `Buffer<ArrayBufferLike>`.
    */
   private resolveAuthKey(blob1: EncodeRequestInput['blob1']): Buffer {
     /**
-     * authKeyHex.
-     * @remarks Type: `string | null`.
-     * @defaultValue `blob1.auth_key_hex`
-     */
-    const authKeyHex = blob1.auth_key_hex;
-    /**
      * authKey.
      * @remarks Type: `Buffer<ArrayBuffer>`.
-     * @defaultValue `authKeyHex ? Buffer.from(authKeyHex, 'hex') : Buffer.alloc(0)`
+     * @defaultValue `blob1.auth_key ? Buffer.from(blob1.auth_key, 'hex') : Buffer.alloc(0)`
      */
-    const authKey = authKeyHex ? Buffer.from(authKeyHex, 'hex') : Buffer.alloc(0);
+    const authKey = blob1.auth_key ? Buffer.from(blob1.auth_key, 'hex') : Buffer.alloc(0);
     if (authKey.length !== 0 && authKey.length !== 48) {
-      throw new Error(`auth_key_hex must be 48 bytes when provided, got ${authKey.length}`);
+      throw new Error(`auth_key must be 48 bytes when provided, got ${authKey.length}`);
     }
     return authKey;
   }
 
   /**
    * buildLengthPrefixedRequest.
-   * @param input - Type: `{ blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
-   * @returns Type: `{ requestB64: string; blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; }`.
+   * @param input - Type: `{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
+   * @returns Type: `{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
    */
   private buildLengthPrefixedRequest(input: {
     blob1: EncodeRequestInput['blob1'];
@@ -194,7 +188,7 @@ export class EncryptPayloadService {
   } {
     /**
      * { blob1, blob2, DETERMINISTIC_ENC_SECRET }.
-     * @remarks Type: `{ blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
+     * @remarks Type: `{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
      * @defaultValue `input`
      */
     const { blob1, blob2, DETERMINISTIC_ENC_SECRET } = input;
@@ -214,9 +208,9 @@ export class EncryptPayloadService {
     /**
      * sessionId.
      * @remarks Type: `Buffer<ArrayBufferLike>`.
-     * @defaultValue `this.resolveSessionId(blob1.session_id_hex)`
+     * @defaultValue `this.resolveSessionId(blob1.session_id)`
      */
-    const sessionId = this.resolveSessionId(blob1.session_id_hex);
+    const sessionId = this.resolveSessionId(blob1.session_id);
     /**
      * responseKey.
      * @remarks Type: `Buffer<ArrayBufferLike>`.
@@ -271,10 +265,10 @@ export class EncryptPayloadService {
     /**
      * newBlob1.
      * @remarks Type: `Buffer<ArrayBufferLike>`.
-     * @defaultValue `buildBlob1Buffer({ prefix: Buffer.from(blob1.prefix_hex, 'hex'), sessionId, udidRaw: Buffer.from(udidRawHex, 'hex'), responseKey, authKey, …`
+     * @defaultValue `buildBlob1Buffer({ prefix: Buffer.from(blob1.prefix, 'hex'), sessionId, udidRaw: Buffer.from(udidRawHex, 'hex'), responseKey, authKey, …`
      */
     const newBlob1 = buildBlob1Buffer({
-      prefix: Buffer.from(blob1.prefix_hex, 'hex'),
+      prefix: Buffer.from(blob1.prefix, 'hex'),
       sessionId,
       udidRaw: Buffer.from(udidRawHex, 'hex'),
       responseKey,
@@ -301,8 +295,8 @@ export class EncryptPayloadService {
 
   /**
    * buildKvStreamRequest.
-   * @param input - Type: `{ blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
-   * @returns Type: `{ requestB64: string; blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; }`.
+   * @param input - Type: `{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
+   * @returns Type: `{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
    */
   private buildKvStreamRequest(input: {
     blob1: EncodeRequestInput['blob1'];
@@ -315,7 +309,7 @@ export class EncryptPayloadService {
   } {
     /**
      * { blob1, blob2, DETERMINISTIC_ENC_SECRET }.
-     * @remarks Type: `{ blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
+     * @remarks Type: `{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
      * @defaultValue `input`
      */
     const { blob1, blob2, DETERMINISTIC_ENC_SECRET } = input;
@@ -335,10 +329,10 @@ export class EncryptPayloadService {
     /**
      * sessionId.
      * @remarks Type: `Buffer<ArrayBufferLike>`.
-     * @defaultValue `this.resolveSessionId(blob1.session_id_hex)`
+     * @defaultValue `this.resolveSessionId(blob1.session_id)`
      */
-    const sessionId = this.resolveSessionId(blob1.session_id_hex);
-    // Preserve previous behavior: require response_key_hex even though kv-stream derives its own response key.
+    const sessionId = this.resolveSessionId(blob1.session_id);
+    // Preserve previous behavior: require response_key even though kv-stream derives its own response key.
     this.requireResponseKeyHex(blob1);
 
     /**
@@ -410,10 +404,10 @@ export class EncryptPayloadService {
     /**
      * newBlob1.
      * @remarks Type: `Buffer<ArrayBufferLike>`.
-     * @defaultValue `buildBlob1Buffer({ prefix: Buffer.from(blob1.prefix_hex, 'hex'), sessionId, udidRaw: Buffer.from(udidRawHex, 'hex'), responseKey: derivedRe…`
+     * @defaultValue `buildBlob1Buffer({ prefix: Buffer.from(blob1.prefix, 'hex'), sessionId, udidRaw: Buffer.from(udidRawHex, 'hex'), responseKey: derivedRe…`
      */
     const newBlob1 = buildBlob1Buffer({
-      prefix: Buffer.from(blob1.prefix_hex, 'hex'),
+      prefix: Buffer.from(blob1.prefix, 'hex'),
       sessionId,
       udidRaw: Buffer.from(udidRawHex, 'hex'),
       responseKey: derivedResponseKey,
@@ -460,8 +454,8 @@ export class EncryptPayloadService {
    */
   /**
    * build.
-   * @param input - Type: `{ blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; } & Partial<{ framing: FramingMode; }> & { DETERMINISTIC_ENC_SECRET: string; }`.
-   * @returns Type: `{ requestB64: string; blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; }`.
+   * @param input - Type: `{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; } & Partial<{ framing: FramingMode; }> & { DETERMINISTIC_ENC_SECRET: string; }`.
+   * @returns Type: `{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
    */
   build(
     input: EncodeRequestInput & {
@@ -474,7 +468,7 @@ export class EncryptPayloadService {
   } {
     /**
      * { blob1, blob2, DETERMINISTIC_ENC_SECRET, framing = FramingMode.LengthPrefixed }.
-     * @remarks Type: `{ blob1: { viewer_id: number; prefix_hex: string; session_id_hex: string; response_key_hex: string; auth_key_hex: string | null; } & Partial<{ udid_hex: string; udid_raw: string; }>; blob2: unknown; } & Partial<{ framing: FramingMode; }> & { DETERMINISTIC_ENC_SECRET: string; }`.
+     * @remarks Type: `{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; } & Partial<{ framing: FramingMode; }> & { DETERMINISTIC_ENC_SECRET: string; }`.
      * @defaultValue `input`
      */
     const { blob1, blob2, DETERMINISTIC_ENC_SECRET, framing = FramingMode.LengthPrefixed } = input;

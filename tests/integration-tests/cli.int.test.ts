@@ -103,11 +103,11 @@ export function runCli(
  * Minimal valid blob1 + payload reused across smoke tests.
  */
 export const baseBlob1 = {
-  prefix_hex: 'aabb',
-  udid_hex: '00'.repeat(16),
-  session_id_hex: '11'.repeat(16),
-  response_key_hex: '22'.repeat(32),
-  auth_key_hex: '33'.repeat(48),
+  prefix: 'aabb',
+  udid: '00'.repeat(16),
+  session_id: '11'.repeat(16),
+  response_key: '22'.repeat(32),
+  auth_key: '33'.repeat(48),
 };
 
 describe('CLI runtime (integration)', () => {

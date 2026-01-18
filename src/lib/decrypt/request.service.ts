@@ -55,7 +55,7 @@ export class DecryptRequestService {
      */
     const printable = toJsonCompatible(payload);
     return {
-      blob1: blob1ToJson(ctx.header, ctx.udidCanonical, keyUsed),
+      blob1: blob1ToJson(ctx.header, ctx.udidRaw, keyUsed),
       blob2: printable,
       plaintext,
     };
