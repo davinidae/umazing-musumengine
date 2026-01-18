@@ -7,7 +7,7 @@
 > **HttpEvent**\<`T`\> = `Omit`\<`APIGatewayProxyEventV2`, `"body"`\> & `object`
 
 Defined in:
-[src/api/models/api.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/api/models/api.model.ts#L3)
+[src/api/models/api.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/api/models/api.model.ts#L3)
 
 #### Type Declaration
 
@@ -29,4 +29,4 @@ Defined in:
 > `steamSessionTicket`: `string`; `udidCanonical`: `string`; `viewerId`: `number`; \}\>
 
 Defined in:
-[src/api/models/api.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/api/models/api.model.ts#L7)
+[src/api/models/api.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/api/models/api.model.ts#L7)

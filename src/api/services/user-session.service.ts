@@ -84,7 +84,7 @@ export class UserSession {
   }
 
   async resolveSteamSessionTicket(): Promise<void> {
-    if (this.umaData.steamId == null) {
+    if (this.umaData.steamId == null || this.umaData.steamSessionTicket != null) {
       return;
     }
     const client = steamworks.init(STEAM_APP_ID);

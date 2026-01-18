@@ -5,7 +5,7 @@
 ### RuntimeClient
 
 Defined in:
-[src/lib/runtime-client.ts:30](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/runtime-client.ts#L30)
+[src/lib/runtime-client.ts:30](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/lib/runtime-client.ts#L30)
 
 RuntimeClient.
 
@@ -16,7 +16,7 @@ RuntimeClient.
 > **new RuntimeClient**(`opts`): [`RuntimeClient`](#runtimeclient)
 
 Defined in:
-[src/lib/runtime-client.ts:39](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/runtime-client.ts#L39)
+[src/lib/runtime-client.ts:39](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/lib/runtime-client.ts#L39)
 
 constructor.
 
@@ -42,7 +42,7 @@ Type: `RuntimeClient`.
 > [`RuntimeClientOptions`](models/client.model.md#runtimeclientoptions)
 
 Defined in:
-[src/lib/runtime-client.ts:40](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/runtime-client.ts#L40)
+[src/lib/runtime-client.ts:40](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/lib/runtime-client.ts#L40)
 
 Type: `RuntimeClientOptions`.
 
@@ -54,7 +54,7 @@ Type: `RuntimeClientOptions`.
 > [`DecodeResponseOutput`](models/runtime.model.md#decoderesponseoutput)
 
 Defined in:
-[src/lib/runtime-client.ts:88](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/runtime-client.ts#L88)
+[src/lib/runtime-client.ts:88](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/lib/runtime-client.ts#L88)
 
 decodeResponse.
 
@@ -77,7 +77,7 @@ Type: `DecodeResponseOutput`.
 > **encodeRequest**(`input`): [`EncodeRequestOutput`](models/runtime.model.md#encoderequestoutput)
 
 Defined in:
-[src/lib/runtime-client.ts:59](https://github.com/davinidae/umazing-musumengine/blob/ede291a885f081feee7d488c29b346fd43d8d8b3/src/lib/runtime-client.ts#L59)
+[src/lib/runtime-client.ts:59](https://github.com/davinidae/umazing-musumengine/blob/2b696d82fbabdc92d50663114c51adb9edb4509d/src/lib/runtime-client.ts#L59)
 
 encodeRequest.
 
