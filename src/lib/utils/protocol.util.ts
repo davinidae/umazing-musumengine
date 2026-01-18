@@ -5,7 +5,7 @@ import { buildLengthPrefixedPayload } from './framing.util';
 import { pkcs7Pad } from './decrypt.util';
 import { encryptAes256Cbc } from './encrypt.util';
 import { decryptBlob2 } from '../decrypt/utils/blob.util';
-import crypto from 'crypto';
+import { randomBytes, createHash } from 'crypto';
 
 /**
  * Uma request/response wire-format helpers.
@@ -316,9 +316,9 @@ export function saltedMd5(data: Uint8Array): Uint8Array {
   /**
    * hash.
    * @remarks Type: `Hash`.
-   * @defaultValue `crypto.createHash('md5')`
+   * @defaultValue `createHash('md5')`
    */
-  const hash = crypto.createHash('md5');
+  const hash = createHash('md5');
   hash.update(data);
   hash.update(Buffer.from(DETERMINISTIC_ENC_SECRET, 'utf8'));
   return Uint8Array.from(hash.digest());
@@ -457,7 +457,7 @@ export class AuthKey {
  * @param viewerId - Type: `bigint`.
  * @returns Type: `SessionId`.
  */
-export function newSessionId(udid: Udid, viewerId: bigint): SessionId {
+export function newSessionId(udid: Udid, viewerId: number): SessionId {
   /**
    * s.
    *
@@ -466,8 +466,7 @@ export function newSessionId(udid: Udid, viewerId: bigint): SessionId {
    * @remarks Type: `string`.
    * @defaultValue ``${viewerId.toString()}${udid.uuid}``
    */
-  const s = `${viewerId.toString()}${udid.uuid}`;
-  return new SessionId(saltedMd5(Buffer.from(s, 'utf8')));
+  return new SessionId(saltedMd5(Buffer.from([viewerId.toString(), udid.uuid].join(''), 'utf8')));
 }
 
 /**
@@ -502,14 +501,14 @@ export class UmaReqHeader {
     public udid: Udid,
     public authKey?: AuthKey,
   ) {
-    this.randomBytes = crypto.randomBytes(32);
+    this.randomBytes = randomBytes(32);
   }
 
   /**
    * rerandomize.
    */
   public rerandomize(): void {
-    this.randomBytes = crypto.randomBytes(32);
+    this.randomBytes = randomBytes(32);
   }
 
   /**
@@ -571,9 +570,9 @@ function genUmaRequestKey(): Uint8Array {
     /**
      * randomNum.
      * @remarks Type: `number`.
-     * @defaultValue `crypto.randomBytes(2).readUInt16LE(0)`
+     * @defaultValue `randomBytes(2).readUInt16LE(0)`
      */
-    const randomNum = crypto.randomBytes(2).readUInt16LE(0);
+    const randomNum = randomBytes(2).readUInt16LE(0);
     /**
      * hex.
      * @remarks Type: `string`.

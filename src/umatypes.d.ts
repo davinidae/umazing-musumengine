@@ -6,6 +6,7 @@ declare global {
       type ToolStartSession = {
         attestation_type: number;
         device_token: string | null;
+        button_info: string;
       };
 
       type UserChangeName = {

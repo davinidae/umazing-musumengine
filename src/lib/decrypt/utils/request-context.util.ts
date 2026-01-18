@@ -87,7 +87,7 @@ export function blob1ToJson(
     prefix_len: header.prefix.length,
     session_id_hex: header.session_id.toString('hex'),
     session_id_b64: header.session_id.toString('base64'),
-    udid_raw: udidCanonical,
+    udid_canonical: udidCanonical,
     udid_hex: header.udid_raw.toString('hex'),
     udid_b64: header.udid_raw.toString('base64'),
     response_key_hex: header.response_key.toString('hex'),

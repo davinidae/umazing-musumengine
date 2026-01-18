@@ -57,7 +57,7 @@ describe('decrypt/utils/request-context.util', () => {
 
     const out = blob1ToJson(header, udidCanonical, keyUsed);
     expect(out.prefix_len).toEqual(header.prefix.length);
-    expect(out.udid_raw).toEqual(udidCanonical);
+    expect(out.udid_canonical).toEqual(udidCanonical);
     expect(out.encryption_key_hex).toEqual(keyUsed.toString('hex'));
     expect(out.auth_key_hex).toEqual(null);
   });

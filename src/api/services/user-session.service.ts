@@ -4,7 +4,6 @@ import { randomUUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
 import { AuthKey, Udid } from '../../lib';
 import type { UmaClient } from './uma-client.service';
-import { STEAM_APP_ID } from '../../constants';
 import SteamUser from 'steam-user';
 
 /**
@@ -12,18 +11,23 @@ import SteamUser from 'steam-user';
  */
 export class UserSession {
   steamUser = new SteamUser();
+
   /**
    * resVer.
    * @remarks Type: `string`.
    * @defaultValue `'10002800'`
    */
   public resVer = '10002800';
+
   /**
    * baseUrl.
    * @remarks Type: `string`.
    * @defaultValue `'https://api.games.umamusume.com/umamusume/'`
    */
   public baseUrl = 'https://api.games.umamusume.com/umamusume/';
+
+  public readonly udid: Udid;
+  public readonly authKey: AuthKey | undefined;
 
   /**
    * constructor.
@@ -39,17 +43,20 @@ export class UserSession {
       attestationType: AttestationType.Mobile,
     },
   ) {
-    //
+    this.udid = new Udid(umaData.udidCanonical ?? randomUUID());
+    if (this.umaData.authKeyHex != null) {
+      this.authKey = new AuthKey(Buffer.from(this.umaData.authKeyHex, 'hex'));
+    } else if (this.umaData.authKeyB64 != null) {
+      this.authKey = new AuthKey(Buffer.from(this.umaData.authKeyB64, 'base64'));
+    }
   }
 
-  public steamSessionTicket: string | null = null;
-
   /**
-   * getDefaultBase.
+   * getBase.
    * @param deviceType - Type: `number`.
    * @returns Type: `RequestBase`.
    */
-  getDefaultBase(deviceType: number): RequestBase {
+  getBase(): RequestBase {
     const common: Omit<
       RequestBase,
       | 'device_name'
@@ -60,15 +67,15 @@ export class UserSession {
       | 'steam_session_ticket'
     > = {
       carrier: '',
-      device: deviceType,
+      device: this.auth.deviceType,
       device_id: randomUUID().replace(/-/g, ''),
-      dmm_onetime_token: null,
-      dmm_viewer_id: null,
       keychain: 0,
       locale: 'JPN',
-      viewer_id: this.umaData.trainerId ?? 0,
+      viewer_id: this.umaData.viewerId ?? 0,
+      dmm_onetime_token: null,
+      dmm_viewer_id: null,
     };
-    switch (deviceType) {
+    switch (this.auth.deviceType) {
       case DeviceType.ANDROID: {
         return {
           ...common,
@@ -88,62 +95,13 @@ export class UserSession {
           ip_address: '192.168.1.42',
           platform_os_version: 'Windows 11  (10.0.26200) 64bit',
           steam_id: this.umaData.steamId?.toString() ?? null,
-          steam_session_ticket: this.steamSessionTicket ?? null,
+          steam_session_ticket: this.umaData.steamSessionTicket ?? null,
         };
       }
       default: {
-        throw new Error(`Unsupported device type: ${deviceType}`);
+        throw new Error(`Unsupported device type: ${this.auth.deviceType}`);
       }
     }
-  }
-
-  /**
-   * resolveUdid.
-   * @returns Type: `Udid`.
-   */
-  private resolveUdid(): Udid {
-    return new Udid(this.umaData.udid ?? randomUUID());
-  }
-
-  /**
-   * resolveDeviceType.
-   * @returns Type: `number`.
-   */
-  private resolveDeviceType(): number {
-    return this.auth.kind === AuthModeKind.STEAM ? DeviceType.PC : this.auth.deviceType;
-  }
-
-  /**
-   * resolveBase.
-   * @param deviceType - Type: `number`.
-   * @returns Type: `RequestBase`.
-   */
-  private resolveBase(deviceType: number): RequestBase {
-    return this.getDefaultBase(deviceType);
-  }
-
-  public getAuthKey() {
-    return this.umaData.authKey != null
-      ? new AuthKey(Buffer.from(this.umaData.authKey, 'base64'))
-      : undefined;
-  }
-
-  logInSteam() {
-    if (this.umaData.steamId == null) {
-      return;
-    }
-    return new Promise<void>((resolve) => {
-      this.steamUser.on('loggedOn', () => {
-        this.steamUser.createAuthSessionTicket(STEAM_APP_ID, (obj) => {
-          this.steamSessionTicket = obj.sessionTicket.toString('base64');
-          resolve();
-        });
-      });
-      this.steamUser.logOn({
-        anonymous: true,
-        steamID: this.umaData.steamId?.toString(),
-      });
-    });
   }
 
   /**
@@ -151,41 +109,11 @@ export class UserSession {
    * @returns Type: `Promise<UmaClient>`.
    */
   async initialize(): Promise<UmaClient> {
-    if (this.auth.kind === AuthModeKind.STEAM) {
-      await this.logInSteam();
-    }
-    /**
-     * udid.
-     * @remarks Type: `Udid`.
-     * @defaultValue `this.resolveUdid()`
-     */
-    const udid = this.resolveUdid();
-    /**
-     * deviceType.
-     * @remarks Type: `number`.
-     * @defaultValue `this.resolveDeviceType()`
-     */
-    const deviceType = this.resolveDeviceType();
-    /**
-     * base.
-     * @remarks Type: `RequestBase`.
-     * @defaultValue `this.resolveBase(deviceType)`
-     */
-    const base: RequestBase = this.resolveBase(deviceType);
-    if (this.auth.kind === AuthModeKind.STEAM) {
-      //this.assertSteamBase(base);
-    }
-    /**
-     * client.
-     * @remarks Type: `UmaClient`.
-     * @defaultValue `createUmaClient( this.auth, udid, this.cfg.authKey, base, this.resVer, this.baseUrl, )`
-     */
-    const authKey = this.getAuthKey();
     const client = createUmaClient(
       this.auth,
-      udid,
-      authKey,
-      base,
+      this.udid,
+      this.authKey,
+      this.getBase(),
       this.resVer,
       this.baseUrl,
       this.umaData,

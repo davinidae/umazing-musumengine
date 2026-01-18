@@ -7,7 +7,7 @@
 > **LoadIndex** = `object`
 
 Defined in:
-[src/umatypes.d.ts:37](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L37)
+[src/umatypes.d.ts:38](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L38)
 
 #### Properties
 
@@ -16,77 +16,77 @@ Defined in:
 > **border_line**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:201](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L201)
+[src/umatypes.d.ts:202](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L202)
 
 ##### card_dress_array
 
 > **card_dress_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:156](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L156)
+[src/umatypes.d.ts:157](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L157)
 
 ##### card_list
 
 > **card_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:157](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L157)
+[src/umatypes.d.ts:158](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L158)
 
 ##### champions_info
 
 > **champions_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:206](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L206)
+[src/umatypes.d.ts:207](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L207)
 
 ##### chara_list
 
 > **chara_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:155](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L155)
+[src/umatypes.d.ts:156](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L156)
 
 ##### chara_profile_array
 
 > **chara_profile_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:184](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L184)
+[src/umatypes.d.ts:185](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L185)
 
 ##### character_story_data_list
 
 > **character_story_data_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:174](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L174)
+[src/umatypes.d.ts:175](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L175)
 
 ##### circle_data
 
 > **circle_data**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:172](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L172)
+[src/umatypes.d.ts:173](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L173)
 
 ##### cloth_list
 
 > **cloth_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:163](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L163)
+[src/umatypes.d.ts:164](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L164)
 
 ##### coin_info
 
 > **coin_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:152](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L152)
+[src/umatypes.d.ts:153](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L153)
 
 ##### common_define
 
 > **common_define**: `object`
 
 Defined in:
-[src/umatypes.d.ts:38](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L38)
+[src/umatypes.d.ts:39](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L39)
 
 ###### champions_entry_cost_num
 
@@ -453,287 +453,287 @@ Defined in:
 > **country_type**: `number`
 
 Defined in:
-[src/umatypes.d.ts:223](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L223)
+[src/umatypes.d.ts:224](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L224)
 
 ##### cygames_id_apply_product_flag
 
 > **cygames_id_apply_product_flag**: `boolean`
 
 Defined in:
-[src/umatypes.d.ts:219](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L219)
+[src/umatypes.d.ts:220](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L220)
 
 ##### cygames_id_serial_code_reward_info_array
 
 > **cygames_id_serial_code_reward_info_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:220](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L220)
+[src/umatypes.d.ts:221](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L221)
 
 ##### daily_legend_race_playing_info
 
 > **daily_legend_race_playing_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:190](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L190)
+[src/umatypes.d.ts:191](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L191)
 
 ##### daily_race_playing_info
 
 > **daily_race_playing_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:188](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L188)
+[src/umatypes.d.ts:189](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L189)
 
 ##### directory_card_array
 
 > **directory_card_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:186](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L186)
+[src/umatypes.d.ts:187](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L187)
 
 ##### dma_state
 
 > **dma_state**: `number`
 
 Defined in:
-[src/umatypes.d.ts:222](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L222)
+[src/umatypes.d.ts:223](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L223)
 
 ##### event_data_array
 
 > **event_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:183](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L183)
+[src/umatypes.d.ts:184](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L184)
 
 ##### extra_story_data_list
 
 > **extra_story_data_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:205](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L205)
+[src/umatypes.d.ts:206](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L206)
 
 ##### gacha_banner_info
 
 > **gacha_banner_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:167](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L167)
+[src/umatypes.d.ts:168](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L168)
 
 ##### gacha_campaign_info_array
 
 > **gacha_campaign_info_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:168](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L168)
+[src/umatypes.d.ts:169](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L169)
 
 ##### home_position_info
 
 > **home_position_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:178](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L178)
+[src/umatypes.d.ts:179](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L179)
 
 ##### home_poster_data_array
 
 > **home_poster_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:197](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L197)
+[src/umatypes.d.ts:198](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L198)
 
 ##### home_story_data_array
 
 > **home_story_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:195](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L195)
+[src/umatypes.d.ts:196](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L196)
 
 ##### honor_info
 
 > **honor_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:191](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L191)
+[src/umatypes.d.ts:192](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L192)
 
 ##### is_linkage
 
 > **is_linkage**: `number`
 
 Defined in:
-[src/umatypes.d.ts:179](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L179)
+[src/umatypes.d.ts:180](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L180)
 
 ##### item_list
 
 > **item_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:161](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L161)
+[src/umatypes.d.ts:162](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L162)
 
 ##### jukebox_info
 
 > **jukebox_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:211](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L211)
+[src/umatypes.d.ts:212](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L212)
 
 ##### jukebox_request_history
 
 > **jukebox_request_history**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:212](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L212)
+[src/umatypes.d.ts:213](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L213)
 
 ##### last_information_update_time
 
 > **last_information_update_time**: `null`
 
 Defined in:
-[src/umatypes.d.ts:202](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L202)
+[src/umatypes.d.ts:203](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L203)
 
 ##### last_select_support_card_deck_id
 
 > **last_select_support_card_deck_id**: `number`
 
 Defined in:
-[src/umatypes.d.ts:160](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L160)
+[src/umatypes.d.ts:161](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L161)
 
 ##### legend_race_playing_info
 
 > **legend_race_playing_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:189](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L189)
+[src/umatypes.d.ts:190](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L190)
 
 ##### login_trophy_info_array
 
 > **login_trophy_info_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:192](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L192)
+[src/umatypes.d.ts:193](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L193)
 
 ##### main_story_data_list
 
 > **main_story_data_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:173](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L173)
+[src/umatypes.d.ts:174](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L174)
 
 ##### menu_badge_info
 
 > **menu_badge_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:166](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L166)
+[src/umatypes.d.ts:167](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L167)
 
 ##### music_list
 
 > **music_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:164](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L164)
+[src/umatypes.d.ts:165](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L165)
 
 ##### notice_data
 
 > **notice_data**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:210](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L210)
+[src/umatypes.d.ts:211](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L211)
 
 ##### optin_user_birth
 
 > **optin_user_birth**: `number`
 
 Defined in:
-[src/umatypes.d.ts:221](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L221)
+[src/umatypes.d.ts:222](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L222)
 
 ##### parental_consent
 
 > **parental_consent**: `number`
 
 Defined in:
-[src/umatypes.d.ts:224](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L224)
+[src/umatypes.d.ts:225](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L225)
 
 ##### payment_purchased_times_list
 
 > **payment_purchased_times_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:169](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L169)
+[src/umatypes.d.ts:170](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L170)
 
 ##### piece_list
 
 > **piece_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:162](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L162)
+[src/umatypes.d.ts:163](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L163)
 
 ##### practice_partner_chara_array
 
 > **practice_partner_chara_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:207](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L207)
+[src/umatypes.d.ts:208](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L208)
 
 ##### practice_partner_owner_info_array
 
 > **practice_partner_owner_info_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:208](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L208)
+[src/umatypes.d.ts:209](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L209)
 
 ##### practice_race_state
 
 > **practice_race_state**: `number`
 
 Defined in:
-[src/umatypes.d.ts:209](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L209)
+[src/umatypes.d.ts:210](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L210)
 
 ##### ranking
 
 > **ranking**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:200](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L200)
+[src/umatypes.d.ts:201](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L201)
 
 ##### release_card_array
 
 > **release_card_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:203](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L203)
+[src/umatypes.d.ts:204](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L204)
 
 ##### release_item_flag
 
 > **release_item_flag**: `number`
 
 Defined in:
-[src/umatypes.d.ts:194](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L194)
+[src/umatypes.d.ts:195](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L195)
 
 ##### released_episode_data_array
 
 > **released_episode_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:199](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L199)
+[src/umatypes.d.ts:200](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L200)
 
 ##### res_version
 
 > **res_version**: `string`
 
 Defined in:
-[src/umatypes.d.ts:170](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L170)
+[src/umatypes.d.ts:171](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L171)
 
 ##### rp_info
 
 > **rp_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:151](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L151)
+[src/umatypes.d.ts:152](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L152)
 
 ##### season_pack_info
 
 > **season_pack_info**: `object`
 
 Defined in:
-[src/umatypes.d.ts:180](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L180)
+[src/umatypes.d.ts:181](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L181)
 
 ###### season_end_time
 
@@ -744,147 +744,147 @@ Defined in:
 > **short_episode_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:196](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L196)
+[src/umatypes.d.ts:197](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L197)
 
 ##### single_mode_chara_light
 
 > **single_mode_chara_light**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:175](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L175)
+[src/umatypes.d.ts:176](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L176)
 
 ##### single_mode_difficulty_info_array
 
 > **single_mode_difficulty_info_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:177](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L177)
+[src/umatypes.d.ts:178](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L178)
 
 ##### single_mode_rental_succession_num
 
 > **single_mode_rental_succession_num**: `number`
 
 Defined in:
-[src/umatypes.d.ts:176](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L176)
+[src/umatypes.d.ts:177](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L177)
 
 ##### stadium_race_chara_id_array
 
 > **stadium_race_chara_id_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:204](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L204)
+[src/umatypes.d.ts:205](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L205)
 
 ##### story_favorite_array
 
 > **story_favorite_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:217](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L217)
+[src/umatypes.d.ts:218](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L218)
 
 ##### support_card_deck_array
 
 > **support_card_deck_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:159](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L159)
+[src/umatypes.d.ts:160](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L160)
 
 ##### support_card_list
 
 > **support_card_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:158](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L158)
+[src/umatypes.d.ts:159](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L159)
 
 ##### talk_gallery_list
 
 > **talk_gallery_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:215](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L215)
+[src/umatypes.d.ts:216](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L216)
 
 ##### team_building_load_info
 
 > **team_building_load_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:218](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L218)
+[src/umatypes.d.ts:219](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L219)
 
 ##### team_data_array
 
 > **team_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:185](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L185)
+[src/umatypes.d.ts:186](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L186)
 
 ##### team_stadium_race_status
 
 > **team_stadium_race_status**: `number`
 
 Defined in:
-[src/umatypes.d.ts:193](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L193)
+[src/umatypes.d.ts:194](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L194)
 
 ##### team_stadium_user
 
 > **team_stadium_user**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:187](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L187)
+[src/umatypes.d.ts:188](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L188)
 
 ##### tp_info
 
 > **tp_info**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:150](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L150)
+[src/umatypes.d.ts:151](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L151)
 
 ##### trained_chara
 
 > **trained_chara**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:153](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L153)
+[src/umatypes.d.ts:154](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L154)
 
 ##### trained_chara_favorite_array
 
 > **trained_chara_favorite_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:154](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L154)
+[src/umatypes.d.ts:155](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L155)
 
 ##### training_challenge_exam_info
 
 > **training_challenge_exam_info**: `null`
 
 Defined in:
-[src/umatypes.d.ts:214](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L214)
+[src/umatypes.d.ts:215](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L215)
 
 ##### training_challenge_user_info
 
 > **training_challenge_user_info**: `null`
 
 Defined in:
-[src/umatypes.d.ts:213](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L213)
+[src/umatypes.d.ts:214](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L214)
 
 ##### tutorial_guide_data_array
 
 > **tutorial_guide_data_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:198](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L198)
+[src/umatypes.d.ts:199](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L199)
 
 ##### user_birth
 
 > **user_birth**: `null`
 
 Defined in:
-[src/umatypes.d.ts:171](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L171)
+[src/umatypes.d.ts:172](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L172)
 
 ##### user_info
 
 > **user_info**: `object`
 
 Defined in:
-[src/umatypes.d.ts:130](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L130)
+[src/umatypes.d.ts:131](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L131)
 
 ###### best_team_evaluation_point
 
@@ -963,14 +963,14 @@ Defined in:
 > **user_last_checked_time_list**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:165](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L165)
+[src/umatypes.d.ts:166](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L166)
 
 ##### valentine_campaign_received_array
 
 > **valentine_campaign_received_array**: `unknown`[]
 
 Defined in:
-[src/umatypes.d.ts:216](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L216)
+[src/umatypes.d.ts:217](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L217)
 
 ---
 
@@ -979,7 +979,7 @@ Defined in:
 > **ToolPreSignup** = `object`
 
 Defined in:
-[src/umatypes.d.ts:227](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L227)
+[src/umatypes.d.ts:228](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L228)
 
 #### Properties
 
@@ -988,14 +988,14 @@ Defined in:
 > **attest**: `boolean`
 
 Defined in:
-[src/umatypes.d.ts:228](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L228)
+[src/umatypes.d.ts:229](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L229)
 
 ##### country_list
 
 > **country_list**: `object`[]
 
 Defined in:
-[src/umatypes.d.ts:230](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L230)
+[src/umatypes.d.ts:231](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L231)
 
 ###### country
 
@@ -1010,14 +1010,14 @@ Defined in:
 > **enable_steam_account**: `boolean`
 
 Defined in:
-[src/umatypes.d.ts:234](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L234)
+[src/umatypes.d.ts:235](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L235)
 
 ##### nonce
 
 > **nonce**: `string`
 
 Defined in:
-[src/umatypes.d.ts:229](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L229)
+[src/umatypes.d.ts:230](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L230)
 
 ---
 
@@ -1026,7 +1026,7 @@ Defined in:
 > **ToolSignup** = `object`
 
 Defined in:
-[src/umatypes.d.ts:237](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L237)
+[src/umatypes.d.ts:238](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L238)
 
 #### Properties
 
@@ -1035,14 +1035,14 @@ Defined in:
 > **auth_key**: `string`
 
 Defined in:
-[src/umatypes.d.ts:239](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L239)
+[src/umatypes.d.ts:240](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L240)
 
 ##### viewer_id
 
 > **viewer_id**: `number`
 
 Defined in:
-[src/umatypes.d.ts:238](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L238)
+[src/umatypes.d.ts:239](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L239)
 
 ---
 
@@ -1051,7 +1051,7 @@ Defined in:
 > **ToolStartSession** = `object`
 
 Defined in:
-[src/umatypes.d.ts:248](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L248)
+[src/umatypes.d.ts:249](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L249)
 
 #### Properties
 
@@ -1060,35 +1060,35 @@ Defined in:
 > **attest**: `boolean`
 
 Defined in:
-[src/umatypes.d.ts:249](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L249)
+[src/umatypes.d.ts:250](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L250)
 
 ##### is_tutorial
 
 > **is_tutorial**: `boolean`
 
 Defined in:
-[src/umatypes.d.ts:250](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L250)
+[src/umatypes.d.ts:251](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L251)
 
 ##### nonce
 
 > **nonce**: `string`
 
 Defined in:
-[src/umatypes.d.ts:251](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L251)
+[src/umatypes.d.ts:252](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L252)
 
 ##### resource_version
 
 > **resource_version**: `string`
 
 Defined in:
-[src/umatypes.d.ts:252](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L252)
+[src/umatypes.d.ts:253](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L253)
 
 ##### terms_updated
 
 > **terms_updated**: `boolean`
 
 Defined in:
-[src/umatypes.d.ts:253](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L253)
+[src/umatypes.d.ts:254](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L254)
 
 ---
 
@@ -1097,7 +1097,7 @@ Defined in:
 > **TutorialSkip** = `unknown`
 
 Defined in:
-[src/umatypes.d.ts:242](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L242)
+[src/umatypes.d.ts:243](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L243)
 
 ---
 
@@ -1106,7 +1106,7 @@ Defined in:
 > **UserChangeName** = `unknown`
 
 Defined in:
-[src/umatypes.d.ts:246](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L246)
+[src/umatypes.d.ts:247](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L247)
 
 ---
 
@@ -1115,4 +1115,4 @@ Defined in:
 > **UserChangeSex** = `unknown`
 
 Defined in:
-[src/umatypes.d.ts:244](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/umatypes.d.ts#L244)
+[src/umatypes.d.ts:245](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/umatypes.d.ts#L245)

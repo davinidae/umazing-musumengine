@@ -7,7 +7,7 @@
 > **buildLengthPrefixedPayload**(`payload`): `Buffer`
 
 Defined in:
-[src/lib/utils/framing.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/lib/utils/framing.util.ts#L7)
+[src/lib/utils/framing.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/lib/utils/framing.util.ts#L7)
 
 buildLengthPrefixedPayload.
 

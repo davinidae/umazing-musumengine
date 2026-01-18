@@ -7,7 +7,7 @@
 > **HttpEvent**\<`T`\> = `Omit`\<`APIGatewayProxyEventV2`, `"body"`\> & `object`
 
 Defined in:
-[src/api/models/api.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/models/api.model.ts#L3)
+[src/api/models/api.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/models/api.model.ts#L3)
 
 #### Type Declaration
 
@@ -25,8 +25,8 @@ Defined in:
 
 ### UmaData
 
-> **UmaData** = `Partial`\<\{ `authKey`: `string`; `steamId`: `number`; `trainerId`: `number`;
-> `udid`: `string`; \}\>
+> **UmaData** = `Partial`\<\{ `authKeyB64`: `string`; `authKeyHex`: `string`; `steamId`: `number`;
+> `steamSessionTicket`: `string`; `udidCanonical`: `string`; `viewerId`: `number`; \}\>
 
 Defined in:
-[src/api/models/api.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/b3f1e8e392a0fc341ec0633657c0dde131d6df19/src/api/models/api.model.ts#L7)
+[src/api/models/api.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/models/api.model.ts#L7)

@@ -34,13 +34,13 @@ export class EncryptPayloadService {
     udidString: string;
     udidRawHex: string;
   } {
-    if (typeof blob1.udid_raw === 'string') {
+    if (typeof blob1.udid_canonical === 'string') {
       /**
        * udidString.
        * @remarks Type: `string`.
        * @defaultValue `blob1.udid_raw`
        */
-      const udidString = blob1.udid_raw;
+      const udidString = blob1.udid_canonical;
       /**
        * udidRawHex.
        * @remarks Type: `string`.

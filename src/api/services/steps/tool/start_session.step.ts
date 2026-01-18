@@ -25,6 +25,7 @@ export class StartSessionStep extends CoreStep<
     return {
       attestation_type: this.attestationType,
       device_token: null,
+      button_info: '',
     };
   }
 

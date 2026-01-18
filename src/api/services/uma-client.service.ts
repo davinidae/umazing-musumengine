@@ -55,9 +55,9 @@ export function createUmaClient(
   /**
    * sessionId.
    * @remarks Type: `SessionId`.
-   * @defaultValue `newSessionId(udid, BigInt(base.viewer_id))`
+   * @defaultValue `newSessionId(udid, base.viewer_id)`
    */
-  const sessionId = newSessionId(udid, BigInt(base.viewer_id));
+  const sessionId = newSessionId(udid, base.viewer_id);
   /**
    * header.
    * @remarks Type: `UmaReqHeader`.
@@ -98,10 +98,13 @@ export class UmaClient {
 
   public getUmaData(): UmaData {
     return {
-      trainerId: this.data.base.viewer_id,
-      udid: this.data.header.udid.uuid,
-      authKey: this.data.header.authKey
+      viewerId: this.data.base.viewer_id,
+      udidCanonical: this.data.header.udid.uuid,
+      authKeyB64: this.data.header.authKey
         ? Buffer.from(this.data.header.authKey.bytes).toString('base64')
+        : undefined,
+      authKeyHex: this.data.header.authKey
+        ? Buffer.from(this.data.header.authKey.bytes).toString('hex')
         : undefined,
     };
   }
@@ -117,10 +120,7 @@ export class UmaClient {
    * regenSessionId.
    */
   public regenSessionId(): void {
-    this.data.header.sessionId = newSessionId(
-      this.data.header.udid,
-      BigInt(this.data.base.viewer_id),
-    );
+    this.data.header.sessionId = newSessionId(this.data.header.udid, this.data.base.viewer_id);
   }
 
   /**

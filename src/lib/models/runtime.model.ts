@@ -26,7 +26,7 @@ export type EncodeRequestInput = {
     auth_key_b64: string | null;
   } & Partial<{
     /** Canonical UDID string (with dashes); alternative to udid_hex. */
-    udid_raw: string;
+    udid_canonical: string;
     /** Raw 16-byte UDID in hex; alternative to udid_raw. */
     udid_hex: string;
     udid_b64: string;
