@@ -106,6 +106,8 @@ export class UmaClient {
       authKeyHex: this.data.header.authKey
         ? Buffer.from(this.data.header.authKey.bytes).toString('hex')
         : undefined,
+      steamId: this.umaData.steamId,
+      steamSessionTicket: this.umaData.steamSessionTicket,
     };
   }
 

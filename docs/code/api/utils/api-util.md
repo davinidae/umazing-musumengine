@@ -5,7 +5,7 @@
 ### ApiResponse
 
 Defined in:
-[src/api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L9)
+[src/api/utils/api.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L9)
 
 ApiResponse.
 
@@ -21,7 +21,7 @@ for the local Express adapter in `src/api/index.ts`.
 > **new ApiResponse**(`statusCode`, `body`, `headers?`, `cookies?`): [`ApiResponse`](#apiresponse)
 
 Defined in:
-[src/api/utils/api.util.ts:18](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L18)
+[src/api/utils/api.util.ts:18](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L18)
 
 constructor.
 
@@ -64,7 +64,7 @@ Type: `ApiResponse`.
 > **body**: `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/api/utils/api.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L20)
+[src/api/utils/api.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L20)
 
 Type: `Record<string, unknown>`.
 
@@ -73,7 +73,7 @@ Type: `Record<string, unknown>`.
 > `optional` **cookies**: `string`[]
 
 Defined in:
-[src/api/utils/api.util.ts:22](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L22)
+[src/api/utils/api.util.ts:22](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L22)
 
 Type: `string[] | undefined`.
 
@@ -82,7 +82,7 @@ Type: `string[] | undefined`.
 > `optional` **headers**: `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/utils/api.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L21)
+[src/api/utils/api.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L21)
 
 Type: `Record<string, string> | undefined`.
 
@@ -91,7 +91,7 @@ Type: `Record<string, string> | undefined`.
 > **statusCode**: `number`
 
 Defined in:
-[src/api/utils/api.util.ts:19](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L19)
+[src/api/utils/api.util.ts:19](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L19)
 
 Type: `number`.
 
@@ -102,7 +102,7 @@ Type: `number`.
 > **execute**(): `object`
 
 Defined in:
-[src/api/utils/api.util.ts:33](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L33)
+[src/api/utils/api.util.ts:33](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L33)
 
 execute.
 
@@ -137,7 +137,7 @@ Type: `{ statusCode: number; headers: Record<string, string>; cookies: string[];
 > **getErrorMessage**(`e`): `string`
 
 Defined in:
-[src/api/utils/api.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/bfc4a80e82b79071340aa57781e33eb50ffad709/src/api/utils/api.util.ts#L59)
+[src/api/utils/api.util.ts:59](https://github.com/davinidae/umazing-musumengine/blob/ae91acd9f749df28e5b6996053e72ff3692b5518/src/api/utils/api.util.ts#L59)
 
 getErrorMessage.
 

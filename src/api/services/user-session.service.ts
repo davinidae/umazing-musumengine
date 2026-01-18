@@ -1,10 +1,11 @@
-import { AttestationType, AuthModeKind, DeviceType } from '../models';
 import type { AuthMode, UmaData, RequestBase } from '../models';
 import { randomUUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
 import { AuthKey, Udid } from '../../lib';
 import type { UmaClient } from './uma-client.service';
 import SteamUser from 'steam-user';
+import steamworks from 'steamworks.js';
+import { STEAM_APP_ID } from '../../constants';
 
 /**
  * UserSession.
@@ -36,12 +37,8 @@ export class UserSession {
    * @returns Type: `UserSession`.
    */
   constructor(
-    private readonly umaData: UmaData = {},
-    private readonly auth: AuthMode = {
-      kind: AuthModeKind.MOBILE,
-      deviceType: DeviceType.ANDROID,
-      attestationType: AttestationType.Mobile,
-    },
+    private readonly umaData: UmaData,
+    private readonly auth: AuthMode,
   ) {
     this.udid = new Udid(umaData.udidCanonical ?? randomUUID());
     if (this.umaData.authKeyHex != null) {
@@ -75,33 +72,26 @@ export class UserSession {
       dmm_onetime_token: null,
       dmm_viewer_id: null,
     };
-    switch (this.auth.deviceType) {
-      case DeviceType.ANDROID: {
-        return {
-          ...common,
-          device_name: 'OnePlus HD 542',
-          graphics_device_name: 'Adreno (TM) 640',
-          ip_address: '192.168.1.100',
-          platform_os_version: 'Windows 10  (10.0.19045) 64bit',
-          steam_id: null,
-          steam_session_ticket: null,
-        };
-      }
-      case DeviceType.PC: {
-        return {
-          ...common,
-          device_name: 'System Product Name (ASUS)',
-          graphics_device_name: 'NVIDIA GeForce RTX 3080',
-          ip_address: '192.168.1.42',
-          platform_os_version: 'Windows 11  (10.0.26200) 64bit',
-          steam_id: this.umaData.steamId?.toString() ?? null,
-          steam_session_ticket: this.umaData.steamSessionTicket ?? null,
-        };
-      }
-      default: {
-        throw new Error(`Unsupported device type: ${this.auth.deviceType}`);
-      }
+    return {
+      ...common,
+      device_name: 'System Product Name (ASUS)',
+      graphics_device_name: 'NVIDIA GeForce RTX 3080',
+      ip_address: '192.168.1.42',
+      platform_os_version: 'Windows 11  (10.0.26200) 64bit',
+      steam_id: this.umaData.steamId ?? null,
+      steam_session_ticket: this.umaData.steamSessionTicket ?? null,
+    };
+  }
+
+  async resolveSteamSessionTicket(): Promise<void> {
+    if (this.umaData.steamId == null) {
+      return;
     }
+    const client = steamworks.init(STEAM_APP_ID);
+    const sessionTicket = await client.auth.getSessionTicketWithSteamId(
+      BigInt(this.umaData.steamId),
+    );
+    this.umaData.steamSessionTicket = sessionTicket.getBytes().toString('hex');
   }
 
   /**
@@ -109,6 +99,7 @@ export class UserSession {
    * @returns Type: `Promise<UmaClient>`.
    */
   async initialize(): Promise<UmaClient> {
+    await this.resolveSteamSessionTicket();
     const client = createUmaClient(
       this.auth,
       this.udid,

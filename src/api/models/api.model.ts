@@ -10,6 +10,6 @@ export type UmaData = Partial<{
   udidCanonical: string;
   authKeyHex: string;
   authKeyB64: string;
-  steamId: number;
+  steamId: string;
   steamSessionTicket: string;
 }>;
