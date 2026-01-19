@@ -4,9 +4,10 @@
 
 - [api](api.md)
 - [api/endpoints](api/endpoints.md)
+- [api/endpoints/collect-presents](api/endpoints/collect-presents.md)
 - [api/endpoints/login](api/endpoints/login.md)
 - [api/endpoints/misc](api/endpoints/misc.md)
-- [api/endpoints/presents](api/endpoints/presents.md)
+- [api/endpoints/play-team-trials](api/endpoints/play-team-trials.md)
 - [api/models](api/models.md)
 - [api/models/api.model](api/models/api.model.md)
 - [api/models/uma-client.model](api/models/uma-client.model.md)

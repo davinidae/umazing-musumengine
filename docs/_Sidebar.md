@@ -8,11 +8,13 @@
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>endpoints</summary>
 <ul style="list-style-type: disc; margin-left: 48px; padding-left: 0;">
 
+- [[code/api/endpoints/collect-presents.md|collect-presents.md]]
+
 - [[code/api/endpoints/login.md|login.md]]
 
 - [[code/api/endpoints/misc.md|misc.md]]
 
-- [[code/api/endpoints/presents.md|presents.md]]
+- [[code/api/endpoints/play-team-trials.md|play-team-trials.md]]
 
 </ul>
 </details>

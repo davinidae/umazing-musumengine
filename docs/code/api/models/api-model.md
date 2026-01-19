@@ -7,7 +7,7 @@
 > **HttpEvent**\<`T`\> = `Omit`\<`APIGatewayProxyEventV2`, `"body"`\> & `object`
 
 Defined in:
-[src/api/models/api.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/models/api.model.ts#L6)
+[src/api/models/api.model.ts:6](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/models/api.model.ts#L6)
 
 #### Type Declaration
 
@@ -29,7 +29,7 @@ Defined in:
 > `object`
 
 Defined in:
-[src/api/models/api.model.ts:25](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/models/api.model.ts#L25)
+[src/api/models/api.model.ts:25](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/models/api.model.ts#L25)
 
 A `UserSession` where `client` is guaranteed to be initialized.
 
@@ -51,7 +51,7 @@ A `UserSession` where `client` is guaranteed to be initialized.
 > [`Blob1Json`](../../lib/decrypt/utils/request-context.util.md#blob1json)\[`"viewer_id"`\]; \}\>
 
 Defined in:
-[src/api/models/api.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/models/api.model.ts#L10)
+[src/api/models/api.model.ts:10](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/models/api.model.ts#L10)
 
 ---
 
@@ -60,7 +60,7 @@ Defined in:
 > **UserData** = `object`
 
 Defined in:
-[src/api/models/api.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/models/api.model.ts#L18)
+[src/api/models/api.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/models/api.model.ts#L18)
 
 #### Properties
 
@@ -69,4 +69,4 @@ Defined in:
 > **userId**: `string`
 
 Defined in:
-[src/api/models/api.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/models/api.model.ts#L19)
+[src/api/models/api.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/models/api.model.ts#L19)

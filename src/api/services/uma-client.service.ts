@@ -113,11 +113,11 @@ export class UmaClient {
   }
 
   /**
-   * prevResults.
+   * results.
    * @remarks Type: `RequestResult[]`.
    * @defaultValue `[]`
    */
-  public readonly prevResults: RequestResult[] = [];
+  public readonly results: RequestResult[] = [];
 
   /**
    * regenSessionId.
@@ -186,9 +186,9 @@ export class UmaClient {
    * @returns Type: `Promise<void>`.
    */
   public async executeStep(step: CoreStepClass, ...extra: any): Promise<void> {
-    if (this.prevResults.length > 0) {
+    if (this.results.length > 0) {
       if (
-        this.prevResults[this.prevResults.length - 1].decoded.response_code !==
+        this.results[this.results.length - 1].decoded.response_code !==
         GallopResultCode.RESULT_CODE_OK
       ) {
         return;
@@ -201,7 +201,7 @@ export class UmaClient {
      */
     const result = await new step(this, ...(extra ?? [])).execute();
     result.decoded.response_name = this.getResponseCodeName(result.decoded.response_code);
-    this.prevResults.push(result);
+    this.results.push(result);
   }
 
   /**
@@ -251,9 +251,9 @@ export class UmaClient {
 
   /**
    * logIn (async).
-   * @returns Type: `Promise<RequestResult[]>`.
+   * @returns Type: `Promise<void>`.
    */
-  public async logIn(): Promise<RequestResult[]> {
+  public async logIn(): Promise<void> {
     /**
      * attestationType.
      * @remarks Type: `number`.
@@ -281,7 +281,6 @@ export class UmaClient {
           extra: [false],
         },
       ]);
-      return this.prevResults;
     }
     await this.executeFlow([
       {
@@ -309,10 +308,9 @@ export class UmaClient {
       },
     ]);
     sessionManager.addSession(this.userSession);
-    return this.prevResults;
   }
 
-  async collectPresents(): Promise<RequestResult[]> {
+  async collectPresents(): Promise<void> {
     await this.executeFlow([
       {
         type: FlowType.STEP,
@@ -327,6 +325,9 @@ export class UmaClient {
         service: PresentsIndexStep,
       },
     ]);
-    return this.prevResults;
+  }
+
+  async playTeamTrials(): Promise<void> {
+    //
   }
 }

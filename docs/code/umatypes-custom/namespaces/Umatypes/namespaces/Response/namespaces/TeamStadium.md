@@ -7,7 +7,7 @@
 > **DecideFrameOrder** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:256](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L256)
+[src/umatypes-custom.d.ts:256](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L256)
 
 #### Properties
 
@@ -16,7 +16,7 @@ Defined in:
 > **frame_order_info_array**: `object`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:257](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L257)
+[src/umatypes-custom.d.ts:257](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L257)
 
 ###### distance_type
 
@@ -36,35 +36,35 @@ Defined in:
 > & `object`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:272](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L272)
+[src/umatypes-custom.d.ts:272](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L272)
 
 ##### opponent_info_copy
 
 > **opponent_info_copy**: [`OpponentInfoItem`](../../Common.md#opponentinfoitem)
 
 Defined in:
-[src/umatypes-custom.d.ts:271](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L271)
+[src/umatypes-custom.d.ts:271](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L271)
 
 ##### user_team_data_array_copy
 
 > **user_team_data_array_copy**: [`TeamDataItem`](../../Common.md#teamdataitem)[]
 
 Defined in:
-[src/umatypes-custom.d.ts:269](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L269)
+[src/umatypes-custom.d.ts:269](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L269)
 
 ##### user_trained_chara_array_copy
 
 > **user_trained_chara_array_copy**: [`TrainedCharaItem`](../../Common.md#trainedcharaitem)[]
 
 Defined in:
-[src/umatypes-custom.d.ts:270](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L270)
+[src/umatypes-custom.d.ts:270](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L270)
 
 ##### winning_reward_guarantee_status
 
 > **winning_reward_guarantee_status**: `0` \| `1`
 
 Defined in:
-[src/umatypes-custom.d.ts:276](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L276)
+[src/umatypes-custom.d.ts:276](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L276)
 
 ---
 
@@ -73,7 +73,7 @@ Defined in:
 > **Index** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:279](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L279)
+[src/umatypes-custom.d.ts:279](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L279)
 
 #### Properties
 
@@ -82,7 +82,7 @@ Defined in:
 > **border_line**: `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:294](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L294)
+[src/umatypes-custom.d.ts:294](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L294)
 
 ###### demotion_point
 
@@ -113,14 +113,14 @@ Defined in:
 > **race_status**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:308](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L308)
+[src/umatypes-custom.d.ts:308](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L308)
 
 ##### ranking
 
 > **ranking**: `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:287](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L287)
+[src/umatypes-custom.d.ts:287](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L287)
 
 ###### best_point
 
@@ -147,7 +147,7 @@ Defined in:
 > **reward_info_array**: `object`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:303](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L303)
+[src/umatypes-custom.d.ts:303](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L303)
 
 ###### item_id
 
@@ -166,21 +166,21 @@ Defined in:
 > **team_class_change_state**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:302](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L302)
+[src/umatypes-custom.d.ts:302](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L302)
 
 ##### team_stadium_id
 
 > **team_stadium_id**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:280](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L280)
+[src/umatypes-custom.d.ts:280](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L280)
 
 ##### team_stadium_user
 
 > **team_stadium_user**: `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:281](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L281)
+[src/umatypes-custom.d.ts:281](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L281)
 
 ###### best_point
 
@@ -203,7 +203,7 @@ Defined in:
 > **term_state**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:309](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L309)
+[src/umatypes-custom.d.ts:309](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L309)
 
 ---
 
@@ -212,7 +212,7 @@ Defined in:
 > **OpponentList** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:312](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L312)
+[src/umatypes-custom.d.ts:312](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L312)
 
 #### Properties
 
@@ -221,4 +221,4 @@ Defined in:
 > **opponent_info_array**: [`OpponentInfoItem`](../../Common.md#opponentinfoitem)[]
 
 Defined in:
-[src/umatypes-custom.d.ts:313](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/umatypes-custom.d.ts#L313)
+[src/umatypes-custom.d.ts:313](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L313)

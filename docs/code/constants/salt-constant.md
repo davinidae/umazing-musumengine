@@ -7,7 +7,7 @@
 > `const` **DETERMINISTIC_ENC_SECRET**: `"co!=Y;(UQCGxJ_n82"` = `'co!=Y;(UQCGxJ_n82'`
 
 Defined in:
-[src/constants/salt.constant.ts:16](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/constants/salt.constant.ts#L16)
+[src/constants/salt.constant.ts:16](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/constants/salt.constant.ts#L16)
 
 DETERMINISTIC_ENC_SECRET.
 

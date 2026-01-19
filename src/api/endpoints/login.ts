@@ -43,13 +43,13 @@ export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiRespon
      * @remarks Type: `RequestResult[]`.
      * @defaultValue `await client.logIn()`
      */
-    const results = await client.logIn();
+    await client.logIn();
     return new ApiResponse(200, {
       umaData: client.getUmaData(),
       userId: userSession.userId,
       startTimestamp,
       endTimestamp: new Date().toISOString(),
-      results,
+      results: client.results,
     });
   } catch (e: unknown) {
     /**

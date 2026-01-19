@@ -3,11 +3,11 @@ import { type HttpEvent, type UserData } from '../models';
 import { sessionManager } from '../services/session-manager.service';
 
 /**
- * presentsHandler (async).
+ * collectPresentsHandler (async).
  * @param _event - Type: `HttpEvent<unknown>`.
  * @returns Type: `Promise<ApiResponse>`.
  */
-export async function presentsHandler(event: HttpEvent<UserData>): Promise<ApiResponse> {
+export async function collectPresentsHandler(event: HttpEvent<UserData>): Promise<ApiResponse> {
   const body = event.body;
   const startTimestamp = new Date().toISOString();
   try {
@@ -15,12 +15,12 @@ export async function presentsHandler(event: HttpEvent<UserData>): Promise<ApiRe
       throw new Error('userId is required in the request body. Check login payload.');
     }
     const userSession = sessionManager.getSession(body);
-    const results = await userSession.client.collectPresents();
+    await userSession.client.collectPresents();
     return new ApiResponse(200, {
       umaData: userSession.client.getUmaData(),
       startTimestamp,
       endTimestamp: new Date().toISOString(),
-      results,
+      results: userSession.client.results,
     });
   } catch (e: unknown) {
     /**

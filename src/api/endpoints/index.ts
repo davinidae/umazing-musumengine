@@ -2,7 +2,8 @@ import { loginHandler } from './login';
 import { healthHandler, rootHandler } from './misc';
 import type { HttpEvent } from '../models';
 import { ApiResponse } from '../utils';
-import { presentsHandler } from './presents';
+import { collectPresentsHandler } from './collect-presents';
+import { playTeamTrialsHandler } from './play-team-trials';
 
 /**
  * routes.
@@ -31,7 +32,12 @@ export const routes: Array<{
   },
   {
     method: 'POST',
-    path: '/presents',
-    handler: presentsHandler,
+    path: '/presents/collect',
+    handler: collectPresentsHandler,
+  },
+  {
+    method: 'POST',
+    path: '/team-trials/play',
+    handler: playTeamTrialsHandler,
   },
 ];
