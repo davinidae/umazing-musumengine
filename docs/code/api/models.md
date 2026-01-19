@@ -44,6 +44,12 @@ Re-exports [HttpEvent](models/api.model.md#httpevent)
 
 ---
 
+### InitializedUserSession
+
+Re-exports [InitializedUserSession](models/api.model.md#initializedusersession)
+
+---
+
 ### RequestBase
 
 Re-exports [RequestBase](models/uma-client.model.md#requestbase)
@@ -77,3 +83,9 @@ Re-exports [UmaData](models/api.model.md#umadata)
 ### UmaResponse
 
 Re-exports [UmaResponse](models/uma-client.model.md#umaresponse)
+
+---
+
+### UserData
+
+Re-exports [UserData](models/api.model.md#userdata)

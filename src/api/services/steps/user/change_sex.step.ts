@@ -5,8 +5,8 @@ import { CoreStep } from '../core.step';
  * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.UserChangeSex, Umatypes.Response.UserChangeSex >`.
  */
 export class UserChangeSexStep extends CoreStep<
-  Umatypes.Request.UserChangeSex,
-  Umatypes.Response.UserChangeSex
+  Umatypes.Request.User.ChangeSex,
+  Umatypes.Response.User.ChangeSex
 > {
   /**
    * endpoint.
@@ -19,7 +19,7 @@ export class UserChangeSexStep extends CoreStep<
    * getRequestBody.
    * @returns Type: `UserChangeSex`.
    */
-  override getRequestBody(): Umatypes.Request.UserChangeSex {
+  override getRequestBody(): Umatypes.Request.User.ChangeSex {
     return {
       sex: 1,
     };

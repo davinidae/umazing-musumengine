@@ -46,6 +46,7 @@ export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiRespon
     const results = await client.logIn();
     return new ApiResponse(200, {
       umaData: client.getUmaData(),
+      userId: userSession.userId,
       startTimestamp,
       endTimestamp: new Date().toISOString(),
       results,

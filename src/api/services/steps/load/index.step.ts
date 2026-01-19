@@ -16,8 +16,8 @@ function sleep(ms: number): Promise<void> {
  * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.LoadIndex, Umatypes.Response.LoadIndex >`.
  */
 export class LoadIndexStep extends CoreStep<
-  Umatypes.Request.LoadIndex,
-  Umatypes.Response.LoadIndex
+  Umatypes.Request.Load.Index,
+  Umatypes.Response.Load.Index
 > {
   /**
    * endpoint.
@@ -43,7 +43,7 @@ export class LoadIndexStep extends CoreStep<
    * getRequestBody.
    * @returns Type: `object`.
    */
-  override getRequestBody(): Umatypes.Request.LoadIndex {
+  override getRequestBody(): Umatypes.Request.Load.Index {
     return {};
   }
 

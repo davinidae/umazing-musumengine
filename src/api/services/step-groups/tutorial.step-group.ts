@@ -22,7 +22,7 @@ export class TutorialStepGroup extends CoreStepGroup {
      */
     const startSessionResult = findLast(
       this.umaClient.prevResults,
-      (r: RequestResult): r is RequestResult<Umatypes.Response.ToolStartSession> => {
+      (r: RequestResult): r is RequestResult<Umatypes.Response.Tool.StartSession> => {
         return r.endpoint === 'tool/start_session';
       },
     );

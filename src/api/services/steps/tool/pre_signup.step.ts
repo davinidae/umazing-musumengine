@@ -5,8 +5,8 @@ import { CoreStep } from '../core.step';
  * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.ToolPreSignup, Umatypes.Response.ToolPreSignup >`.
  */
 export class ToolPreSignupStep extends CoreStep<
-  Umatypes.Request.ToolPreSignup,
-  Umatypes.Response.ToolPreSignup
+  Umatypes.Request.Tool.PreSignup,
+  Umatypes.Response.Tool.PreSignup
 > {
   /**
    * endpoint.
@@ -19,7 +19,7 @@ export class ToolPreSignupStep extends CoreStep<
    * getRequestBody.
    * @returns Type: `object`.
    */
-  override getRequestBody(): Umatypes.Request.ToolPreSignup {
+  override getRequestBody(): Umatypes.Request.Tool.PreSignup {
     return {};
   }
 

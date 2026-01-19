@@ -8,6 +8,9 @@ import { TutorialStepGroup } from './step-groups/tutorial.step-group';
 import { CoreStepGroup } from './step-groups/core.step-group';
 import { SignupStepGroup } from './step-groups/signup.step-group';
 import { UserSession } from './user-session.service';
+import { sessionManager } from './session-manager.service';
+import { PresentsIndexStep } from './steps/presents/index.step';
+import { PresentsReceiveAllStep } from './steps/presents/receive_all.step';
 
 type CoreStepGroupClass = new (...args: any[]) => CoreStepGroup;
 
@@ -303,6 +306,25 @@ export class UmaClient {
         type: FlowType.STEP,
         service: LoadIndexStep,
         extra: [false],
+      },
+    ]);
+    sessionManager.addSession(this.userSession);
+    return this.prevResults;
+  }
+
+  async collectPresents(): Promise<RequestResult[]> {
+    await this.executeFlow([
+      {
+        type: FlowType.STEP,
+        service: PresentsIndexStep,
+      },
+      {
+        type: FlowType.STEP,
+        service: PresentsReceiveAllStep,
+      },
+      {
+        type: FlowType.STEP,
+        service: PresentsIndexStep,
       },
     ]);
     return this.prevResults;

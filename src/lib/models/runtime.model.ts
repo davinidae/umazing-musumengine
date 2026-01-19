@@ -11,6 +11,7 @@ export enum FramingMode {
 /** Input parameters for building a request. */
 export type EncodeRequestInput = {
   blob1: {
+    // viewerId = trainerId
     viewer_id: number;
     /** Prefix (hex); echoed back by the server. */
     prefix: string;

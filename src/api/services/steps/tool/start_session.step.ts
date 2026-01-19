@@ -7,8 +7,8 @@ import { CoreStep } from '../core.step';
  * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.ToolStartSession, Umatypes.Response.ToolStartSession >`.
  */
 export class StartSessionStep extends CoreStep<
-  Umatypes.Request.ToolStartSession,
-  Umatypes.Response.ToolStartSession
+  Umatypes.Request.Tool.StartSession,
+  Umatypes.Response.Tool.StartSession
 > {
   /**
    * endpoint.
@@ -21,7 +21,7 @@ export class StartSessionStep extends CoreStep<
    * getRequestBody.
    * @returns Type: `ToolStartSession`.
    */
-  override getRequestBody(): Umatypes.Request.ToolStartSession {
+  override getRequestBody(): Umatypes.Request.Tool.StartSession {
     return {
       attestation_type: this.attestationType,
       device_token: null,
@@ -46,7 +46,9 @@ export class StartSessionStep extends CoreStep<
    * afterExecute.
    * @param result - Type: `RequestResult<ToolStartSession>`.
    */
-  protected override afterExecute(result: RequestResult<Umatypes.Response.ToolStartSession>): void {
+  protected override afterExecute(
+    result: RequestResult<Umatypes.Response.Tool.StartSession>,
+  ): void {
     /**
      * resVer.
      * @remarks Type: `string`.

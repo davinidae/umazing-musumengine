@@ -1,18 +1,16 @@
-import type { AuthMode, UmaData, RequestBase } from '../models';
+import type { AuthMode, UmaData, RequestBase, InitializedUserSession } from '../models';
 import { randomUUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
 import { AuthKey, Udid } from '../../lib';
-import type { UmaClient } from './uma-client.service';
-import SteamUser from 'steam-user';
+import { UmaClient } from './uma-client.service';
 import steamworks from 'steamworks.js';
 import { STEAM_APP_ID } from '../../constants';
+import { sessionManager } from './session-manager.service';
 
 /**
  * UserSession.
  */
 export class UserSession {
-  steamUser = new SteamUser();
-
   /**
    * resVer.
    * @remarks Type: `string`.
@@ -30,6 +28,8 @@ export class UserSession {
   public readonly udid: Udid;
   public readonly authKey: AuthKey | undefined;
 
+  public userId = randomUUID();
+
   /**
    * constructor.
    * @param cfg - Type: `Partial<{ udid: Udid; authKey: AuthKey; base: RequestBase; }>`.
@@ -40,6 +40,10 @@ export class UserSession {
     private readonly umaData: UmaData,
     private readonly auth: AuthMode,
   ) {
+    while (sessionManager.getSession(this).hasClient()) {
+      // Regenerate userId until a unique one is found
+      this.userId = randomUUID();
+    }
     this.udid = new Udid(umaData.udidRaw ?? randomUUID());
     if (this.umaData.authKey != null) {
       this.authKey = new AuthKey(Buffer.from(this.umaData.authKey, 'hex'));
@@ -92,13 +96,22 @@ export class UserSession {
     this.umaData.steamSessionTicket = sessionTicket.getBytes().toString('hex');
   }
 
+  public client: UmaClient | undefined;
+
+  /**
+   * Returns `true` if this session has an initialized `UmaClient`.
+   */
+  hasClient(): this is InitializedUserSession {
+    return this.client != null;
+  }
+
   /**
    * initialize (async).
    * @returns Type: `Promise<UmaClient>`.
    */
   async initialize(): Promise<UmaClient> {
     await this.resolveSteamSessionTicket();
-    const client = createUmaClient(
+    this.client = createUmaClient(
       this.auth,
       this.udid,
       this.authKey,
@@ -108,6 +121,17 @@ export class UserSession {
       this.umaData,
       this,
     );
-    return client;
+    return this.client;
+  }
+}
+
+/**
+ * Narrow a `UserSession` to an initialized session.
+ */
+export function assertInitializedUserSession(
+  session: UserSession,
+): asserts session is InitializedUserSession {
+  if (session?.client == null) {
+    throw new Error('Session client is not initialized');
   }
 }

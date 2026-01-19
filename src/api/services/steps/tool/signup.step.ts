@@ -8,8 +8,8 @@ import { CoreStep } from '../core.step';
  * @remarks Extends/implements: `extends CoreStep< Umatypes.Request.ToolSignup, Umatypes.Response.ToolSignup >`.
  */
 export class ToolSignupStep extends CoreStep<
-  Umatypes.Request.ToolSignup,
-  Umatypes.Response.ToolSignup
+  Umatypes.Request.Tool.Signup,
+  Umatypes.Response.Tool.Signup
 > {
   /**
    * endpoint.
@@ -29,7 +29,7 @@ export class ToolSignupStep extends CoreStep<
    * getRequestBody.
    * @returns Type: `ToolSignup`.
    */
-  override getRequestBody(): Umatypes.Request.ToolSignup {
+  override getRequestBody(): Umatypes.Request.Tool.Signup {
     return {
       error_code: 0,
       error_message: '',
@@ -45,7 +45,7 @@ export class ToolSignupStep extends CoreStep<
    * afterExecute.
    * @param result - Type: `RequestResult<ToolSignup>`.
    */
-  protected override afterExecute(result: RequestResult<Umatypes.Response.ToolSignup>): void {
+  protected override afterExecute(result: RequestResult<Umatypes.Response.Tool.Signup>): void {
     /**
      * viewer_id.
      * @remarks Type: `number`.

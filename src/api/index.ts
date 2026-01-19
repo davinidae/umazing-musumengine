@@ -313,29 +313,37 @@ for (const route of routes) {
       return;
     }
     switch (method) {
-      case 'get':
+      case 'get': {
         app.get(route.path, handler);
         return;
-      case 'post':
+      }
+      case 'post': {
         app.post(route.path, handler);
         return;
-      case 'put':
+      }
+      case 'put': {
         app.put(route.path, handler);
         return;
-      case 'patch':
+      }
+      case 'patch': {
         app.patch(route.path, handler);
         return;
-      case 'delete':
+      }
+      case 'delete': {
         app.delete(route.path, handler);
         return;
-      case 'options':
+      }
+      case 'options': {
         app.options(route.path, handler);
         return;
-      case 'head':
+      }
+      case 'head': {
         app.head(route.path, handler);
         return;
-      default:
+      }
+      default: {
         throw new Error(`Unsupported HTTP method for route ${route.method} ${route.path}`);
+      }
     }
   };
   register(async (req, res) => {

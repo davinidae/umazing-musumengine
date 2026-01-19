@@ -5,7 +5,7 @@
 ### LoadIndexStep
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L18)
+[src/api/services/steps/load/index.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L18)
 
 LoadIndexStep.
 
@@ -15,8 +15,8 @@ Extends/implements: `extends CoreStep< Umatypes.Request.LoadIndex, Umatypes.Resp
 
 #### Extends
 
-- [`CoreStep`](../core.step.md#corestep)\<[`LoadIndex`](../../../../umatypes/namespaces/Umatypes/namespaces/Request.md#loadindex),
-  [`LoadIndex`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#loadindex)\>
+- [`CoreStep`](../core.step.md#corestep)\<[`Index`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/Load.md#index),
+  [`Index`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Response/namespaces/Load.md#index)\>
 
 #### Constructors
 
@@ -25,7 +25,7 @@ Extends/implements: `extends CoreStep< Umatypes.Request.LoadIndex, Umatypes.Resp
 > **new LoadIndexStep**(`umaClient`, `doSleep`): [`LoadIndexStep`](#loadindexstep)
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:35](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L35)
+[src/api/services/steps/load/index.step.ts:35](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L35)
 
 constructor.
 
@@ -60,7 +60,7 @@ Type: `LoadIndexStep`.
 > `private` `readonly` **doSleep**: `boolean` = `true`
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:37](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L37)
+[src/api/services/steps/load/index.step.ts:37](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L37)
 
 Type: `boolean`.
 
@@ -69,7 +69,7 @@ Type: `boolean`.
 > **endpoint**: `string` = `'load/index'`
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L27)
+[src/api/services/steps/load/index.step.ts:27](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L27)
 
 endpoint.
 
@@ -90,7 +90,7 @@ Type: `string`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:36](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L36)
+[src/api/services/steps/load/index.step.ts:36](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L36)
 
 Type: `UmaClient`.
 
@@ -105,7 +105,7 @@ Type: `UmaClient`.
 > `protected` **afterExecute**(): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:54](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L54)
+[src/api/services/steps/load/index.step.ts:54](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L54)
 
 afterExecute (async).
 
@@ -122,16 +122,16 @@ Type: `Promise<void>`.
 ##### execute()
 
 > **execute**():
-> `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`LoadIndex`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#loadindex)\>\>
+> `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`Index`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Response/namespaces/Load.md#index)\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:277](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/core.step.ts#L277)
+[src/api/services/steps/core.step.ts:277](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/core.step.ts#L277)
 
 execute (async).
 
 ###### Returns
 
-`Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`LoadIndex`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#loadindex)\>\>
+`Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`Index`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Response/namespaces/Load.md#index)\>\>
 
 Type: `Promise<RequestResult<TRes>>`.
 
@@ -144,7 +144,7 @@ Type: `Promise<RequestResult<TRes>>`.
 > `protected` **getBody**(): `Record`\<`string`, `unknown`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:121](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/core.step.ts#L121)
+[src/api/services/steps/core.step.ts:121](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/core.step.ts#L121)
 
 getBody.
 
@@ -165,7 +165,7 @@ Type: `Record<string, unknown>`.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:101](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/core.step.ts#L101)
+[src/api/services/steps/core.step.ts:101](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/core.step.ts#L101)
 
 getHeaders.
 
@@ -186,7 +186,7 @@ Type: `Record<string, string>`.
 > **getRequestBody**(): `object`
 
 Defined in:
-[src/api/services/steps/load/index.step.ts:46](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/load/index.step.ts#L46)
+[src/api/services/steps/load/index.step.ts:46](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/load/index.step.ts#L46)
 
 getRequestBody.
 
@@ -203,17 +203,17 @@ Type: `object`.
 ##### request()
 
 > `protected` **request**():
-> `Promise`\<`Omit`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`LoadIndex`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#loadindex)\>,
+> `Promise`\<`Omit`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`Index`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Response/namespaces/Load.md#index)\>,
 > `"endpoint"` \| `"name"`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:216](https://github.com/davinidae/umazing-musumengine/blob/ebaf158dd5679712f54ae827a19a292737f0c6a5/src/api/services/steps/core.step.ts#L216)
+[src/api/services/steps/core.step.ts:216](https://github.com/davinidae/umazing-musumengine/blob/c3424db7d4c963120848a67fbf3509fbef9995f9/src/api/services/steps/core.step.ts#L216)
 
 request (async).
 
 ###### Returns
 
-`Promise`\<`Omit`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`LoadIndex`](../../../../umatypes/namespaces/Umatypes/namespaces/Response.md#loadindex)\>,
+`Promise`\<`Omit`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`Index`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Response/namespaces/Load.md#index)\>,
 `"endpoint"` \| `"name"`\>\>
 
 Type: `Promise<Omit<RequestResult<TRes>, "name" | "endpoint">>`.
