@@ -7,9 +7,9 @@ export class PresentsReceiveAllStep extends CoreStep<
   /**
    * endpoint.
    * @remarks Type: `string`.
-   * @defaultValue `'presents/receive_all'`
+   * @defaultValue `'present/receive_all'`
    */
-  override endpoint = 'presents/receive_all';
+  override endpoint = 'present/receive_all';
 
   /**
    * getRequestBody.

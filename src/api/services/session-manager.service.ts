@@ -1,25 +1,58 @@
-import { InitializedUserSession, UserData } from '../models';
-import { type UserSession } from './user-session.service';
+import { readFileSync, writeFileSync } from 'fs';
+import { AuthMode, InitializedUserSession, UmaData, UserData } from '../models';
+import { UserSession } from './user-session.service';
 import { assertInitializedUserSession } from './user-session.service';
+import { Client } from 'steamworks.js';
+
+type DatabaseSchema = {
+  umaData: UmaData;
+  auth: AuthMode;
+};
 
 class SessionManager {
-  sessions = new Map<string, InitializedUserSession>();
+  async getDatabase(): Promise<Map<string, DatabaseSchema>> {
+    const database = new Map<string, DatabaseSchema>();
+    const sessionData: Record<string, DatabaseSchema> = JSON.parse(
+      await readFileSync('src/database/user-sessions.json', 'utf-8'),
+    );
+    for (const [userId, data] of Object.entries(sessionData)) {
+      database.set(userId, data);
+    }
+    return database;
+  }
 
-  getSession(userData: UserData): InitializedUserSession {
-    const session = this.sessions.get(userData.userId);
-    if (session == null) {
+  async getSession(userData: UserData, steamClient: Client): Promise<InitializedUserSession> {
+    const database = await this.getDatabase();
+    const sessionData = database.get(userData.userId);
+    if (sessionData == null) {
       throw new Error('Session not found for userId: ' + userData.userId);
     }
+    const session = new UserSession(
+      sessionData.umaData,
+      sessionData.auth,
+      steamClient,
+      userData.userId,
+    );
+    await session.initialize();
     assertInitializedUserSession(session);
     return session;
   }
 
-  addSession(userSession: UserSession): void {
+  async addSession(userSession: UserSession): Promise<void> {
     if (userSession.userId == null) {
       throw new Error('Cannot add session: userId is null');
     }
     assertInitializedUserSession(userSession);
-    this.sessions.set(userSession.userId, userSession);
+    const database = await this.getDatabase();
+    database.set(userSession.userId, {
+      umaData: userSession.umaData,
+      auth: userSession.auth,
+    });
+    await writeFileSync(
+      'src/database/user-sessions.json',
+      JSON.stringify(Object.fromEntries(database), null, 2),
+      'utf-8',
+    );
   }
 }
 

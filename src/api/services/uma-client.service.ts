@@ -91,7 +91,7 @@ export class UmaClient {
    * @returns Type: `UmaClient`.
    */
   constructor(
-    private readonly auth: AuthMode,
+    public readonly auth: AuthMode,
     public readonly data: UmaClientData,
     public readonly umaData: UmaData,
     public readonly userSession: UserSession,
@@ -106,9 +106,8 @@ export class UmaClient {
       authKey:
         this.data.header.authKey != null
           ? Buffer.from(this.data.header.authKey.bytes).toString('hex')
-          : undefined,
-      steamId: this.umaData.steamId,
-      steamSessionTicket: this.umaData.steamSessionTicket,
+          : '',
+      useSteam: this.umaData.useSteam,
     };
   }
 
@@ -307,7 +306,7 @@ export class UmaClient {
         extra: [false],
       },
     ]);
-    sessionManager.addSession(this.userSession);
+    await sessionManager.addSession(this.userSession);
   }
 
   async collectPresents(): Promise<void> {

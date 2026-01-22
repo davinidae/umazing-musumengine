@@ -1,14 +1,24 @@
 import { ApiResponse, getErrorMessage } from '../utils';
 import { AttestationType, AuthModeKind, DeviceType, type HttpEvent, type UmaData } from '../models';
 import { UserSession } from '../services/user-session.service';
+import { Client } from 'steamworks.js';
 
 /**
  * loginHandler (async).
  * @param _event - Type: `HttpEvent<unknown>`.
  * @returns Type: `Promise<ApiResponse>`.
  */
-export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiResponse> {
-  const body = event.body || {};
+export async function loginHandler(
+  event: HttpEvent<UmaData>,
+  steamClient: Client,
+): Promise<ApiResponse> {
+  const body = event.body;
+  if (body == null) {
+    return new ApiResponse(400, {
+      error: 'invalid_request',
+      message: 'Request body is required.',
+    });
+  }
   /**
    * startTimestamp.
    * @remarks Type: `string`.
@@ -31,7 +41,11 @@ export async function loginHandler(event: HttpEvent<UmaData>): Promise<ApiRespon
       deviceType: DeviceType.ANDROID,
       attestationType: AttestationType.Mobile,
     };
-    const userSession = new UserSession(body, body.steamId != null ? steamLogin : mobileLogin);
+    const userSession = new UserSession(
+      body,
+      body.useSteam != null ? steamLogin : mobileLogin,
+      steamClient,
+    );
     /**
      * client.
      * @remarks Type: `UmaClient`.

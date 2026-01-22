@@ -10,6 +10,7 @@ import {
   Unpacker,
 } from '../../../lib';
 import { UmaClient } from '../uma-client.service';
+import { APP_VERSION, X_UNITY_VERSION } from '../../../constants';
 
 /**
  * apiUnpacker.
@@ -103,8 +104,8 @@ export abstract class CoreStep<TReq extends object, TRes> {
       SID: this.umaClient.data.header.sessionId.asHex(),
       Device: String(this.umaClient.data.base.device),
       ViewerID: String(this.umaClient.data.base.viewer_id),
-      'X-Unity-Version': '2022.3.62f2',
-      'APP-VER': '1.20.11',
+      'X-Unity-Version': X_UNITY_VERSION,
+      'APP-VER': APP_VERSION,
       'RES-VER': this.umaClient.data.resVer,
       Accept: '*/*',
       'Content-Type': 'application/x-msgpack',

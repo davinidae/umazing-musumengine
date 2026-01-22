@@ -142,6 +142,8 @@
 <li style="margin: 4px 0;"><details style="margin-left: 8px;"><summary>constants</summary>
 <ul style="list-style-type: disc; margin-left: 32px; padding-left: 0;">
 
+- [[code/constants/game-constant.md|game-constant.md]]
+
 - [[code/constants/msgpack-constant.md|msgpack-constant.md]]
 
 - [[code/constants/protocol-constant.md|protocol-constant.md]]

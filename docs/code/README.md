@@ -34,6 +34,7 @@
 - [api/utils/api.util](api/utils/api.util.md)
 - [cli](cli.md)
 - [constants](constants.md)
+- [constants/game.constant](constants/game.constant.md)
 - [constants/msgpack.constant](constants/msgpack.constant.md)
 - [constants/protocol.constant](constants/protocol.constant.md)
 - [constants/salt.constant](constants/salt.constant.md)

@@ -7,7 +7,7 @@
 > **ChangeName** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:236](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L236)
+[src/umatypes-custom.d.ts:236](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L236)
 
 #### Properties
 
@@ -16,7 +16,7 @@ Defined in:
 > **name**: `string`
 
 Defined in:
-[src/umatypes-custom.d.ts:237](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L237)
+[src/umatypes-custom.d.ts:237](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L237)
 
 ---
 
@@ -25,7 +25,7 @@ Defined in:
 > **ChangeSex** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:240](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L240)
+[src/umatypes-custom.d.ts:240](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L240)
 
 #### Properties
 
@@ -34,4 +34,4 @@ Defined in:
 > **sex**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:241](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/umatypes-custom.d.ts#L241)
+[src/umatypes-custom.d.ts:241](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L241)

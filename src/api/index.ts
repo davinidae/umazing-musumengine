@@ -12,6 +12,20 @@ import express from 'express';
 import type { HttpEvent } from './models';
 import { routes } from './endpoints';
 import { ApiResponse, getErrorMessage } from './utils';
+import steamworks, { Client } from 'steamworks.js';
+import { STEAM_APP_ID } from '../constants';
+
+const steamClient = steamworks.init(STEAM_APP_ID);
+if (!steamClient.apps.isSubscribed()) {
+  throw new Error('Steam client is not subscribed to the app.');
+}
+if (!steamClient.apps.isAppInstalled(STEAM_APP_ID)) {
+  throw new Error('Steam client is not running or the app is not installed.');
+}
+if (!steamClient.apps.isSubscribedApp(STEAM_APP_ID)) {
+  throw new Error('Steam client is not subscribed to the app.');
+}
+console.log('Steam client initialized successfully.');
 
 type NormalizedRequest = express.Request & {
   normalizedHeaders: Record<string, string>;
@@ -359,7 +373,7 @@ for (const route of routes) {
        * @remarks Type: `ApiResponse`.
        * @defaultValue `await route.handler(event)`
        */
-      const result = await route.handler(event);
+      const result = await route.handler(event, steamClient as Client);
       sendLambdaResult(res, result);
     } catch (e: unknown) {
       /**

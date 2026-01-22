@@ -4,10 +4,11 @@
 
 ### playTeamTrialsHandler()
 
-> **playTeamTrialsHandler**(`event`): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
+> **playTeamTrialsHandler**(`event`, `steamClient`):
+> `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[src/api/endpoints/play-team-trials.ts:10](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/endpoints/play-team-trials.ts#L10)
+[src/api/endpoints/play-team-trials.ts:11](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/endpoints/play-team-trials.ts#L11)
 
 playTeamTrialsHandler (async).
 
@@ -16,6 +17,10 @@ playTeamTrialsHandler (async).
 ##### event
 
 [`HttpEvent`](../models/api.model.md#httpevent)\<[`UserData`](../models/api.model.md#userdata)\>
+
+##### steamClient
+
+`__module`
 
 #### Returns
 

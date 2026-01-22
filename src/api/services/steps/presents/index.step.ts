@@ -7,9 +7,9 @@ export class PresentsIndexStep extends CoreStep<
   /**
    * endpoint.
    * @remarks Type: `string`.
-   * @defaultValue `'presents/index'`
+   * @defaultValue `'present/index'`
    */
-  override endpoint = 'presents/index';
+  override endpoint = 'present/index';
 
   /**
    * getRequestBody.

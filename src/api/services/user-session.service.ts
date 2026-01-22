@@ -1,11 +1,10 @@
 import type { AuthMode, UmaData, RequestBase, InitializedUserSession } from '../models';
-import { randomUUID } from 'crypto';
+import { randomUUID, UUID } from 'crypto';
 import { createUmaClient } from './uma-client.service';
 import { AuthKey, Udid } from '../../lib';
 import { UmaClient } from './uma-client.service';
-import steamworks from 'steamworks.js';
-import { STEAM_APP_ID } from '../../constants';
-import { sessionManager } from './session-manager.service';
+import { RES_VERSION } from '../../constants';
+import { Client } from 'steamworks.js';
 
 /**
  * UserSession.
@@ -16,8 +15,7 @@ export class UserSession {
    * @remarks Type: `string`.
    * @defaultValue `'10002800'`
    */
-  public resVer = '10002800';
-
+  public resVer = RES_VERSION;
   /**
    * baseUrl.
    * @remarks Type: `string`.
@@ -30,6 +28,9 @@ export class UserSession {
 
   public userId = randomUUID();
 
+  public steamId: bigint | null = null;
+  public steamSessionTicket: string | null = null;
+
   /**
    * constructor.
    * @param cfg - Type: `Partial<{ udid: Udid; authKey: AuthKey; base: RequestBase; }>`.
@@ -37,13 +38,12 @@ export class UserSession {
    * @returns Type: `UserSession`.
    */
   constructor(
-    private readonly umaData: UmaData,
-    private readonly auth: AuthMode,
+    public readonly umaData: UmaData,
+    public readonly auth: AuthMode,
+    public readonly steamClient: Client,
+    public readonly userIdOverride?: UUID,
   ) {
-    while (sessionManager.getSession(this).hasClient()) {
-      // Regenerate userId until a unique one is found
-      this.userId = randomUUID();
-    }
+    this.userId = this.userIdOverride ?? randomUUID();
     this.udid = new Udid(umaData.udidRaw ?? randomUUID());
     if (this.umaData.authKey != null) {
       this.authKey = new AuthKey(Buffer.from(this.umaData.authKey, 'hex'));
@@ -80,20 +80,21 @@ export class UserSession {
       graphics_device_name: 'NVIDIA GeForce RTX 3080',
       ip_address: '192.168.1.42',
       platform_os_version: 'Windows 11  (10.0.26200) 64bit',
-      steam_id: this.umaData.steamId ?? null,
-      steam_session_ticket: this.umaData.steamSessionTicket ?? null,
+      steam_id: this.steamId != null ? this.steamId.toString() : null,
+      steam_session_ticket: this.steamSessionTicket,
     };
   }
 
   async resolveSteamSessionTicket(): Promise<void> {
-    if (this.umaData.steamId == null || this.umaData.steamSessionTicket != null) {
+    if (!this.umaData.useSteam) {
       return;
     }
-    const client = steamworks.init(STEAM_APP_ID);
-    const sessionTicket = await client.auth.getSessionTicketWithSteamId(
-      BigInt(this.umaData.steamId),
+    const steamId = await this.steamClient.localplayer.getSteamId();
+    const sessionTicket = await this.steamClient.auth.getSessionTicketWithSteamId(
+      steamId.steamId64,
     );
-    this.umaData.steamSessionTicket = sessionTicket.getBytes().toString('hex');
+    this.steamId = steamId.steamId64;
+    this.steamSessionTicket = sessionTicket.getBytes().toString('hex');
   }
 
   public client: UmaClient | undefined;

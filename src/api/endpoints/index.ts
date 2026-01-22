@@ -4,6 +4,7 @@ import type { HttpEvent } from '../models';
 import { ApiResponse } from '../utils';
 import { collectPresentsHandler } from './collect-presents';
 import { playTeamTrialsHandler } from './play-team-trials';
+import { Client } from 'steamworks.js';
 
 /**
  * routes.
@@ -13,7 +14,7 @@ import { playTeamTrialsHandler } from './play-team-trials';
 export const routes: Array<{
   method: string;
   path: string;
-  handler: (event: HttpEvent<any>) => Promise<ApiResponse>;
+  handler: (event: HttpEvent<any>, steamClient: Client) => Promise<ApiResponse>;
 }> = [
   {
     method: 'GET',

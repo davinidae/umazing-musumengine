@@ -8,6 +8,12 @@ Re-exports [AnchorDataHeadersStrategy](lib/decrypt/utils/unpacker.util.md#anchor
 
 ---
 
+### APP_VERSION
+
+Re-exports [APP_VERSION](constants/game.constant.md#app_version)
+
+---
+
 ### AuthKey
 
 Re-exports [AuthKey](lib/utils/protocol.util.md#authkey)
@@ -189,6 +195,12 @@ Re-exports [RawMsgpackStrategy](lib/decrypt/utils/unpacker.util.md#rawmsgpackstr
 
 ---
 
+### RES_VERSION
+
+Re-exports [RES_VERSION](constants/game.constant.md#res_version)
+
+---
+
 ### RuntimeClient
 
 Re-exports [RuntimeClient](lib/runtime-client.md#runtimeclient)
@@ -270,3 +282,9 @@ Re-exports [Unpacker](lib/decrypt/utils/unpacker.util.md#unpacker)
 ### UnpackStrategy
 
 Re-exports [UnpackStrategy](lib/utils/decrypt.util.md#unpackstrategy)
+
+---
+
+### X_UNITY_VERSION
+
+Re-exports [X_UNITY_VERSION](constants/game.constant.md#x_unity_version)

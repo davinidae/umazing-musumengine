@@ -7,7 +7,7 @@
 > `const` **routes**: `object`[]
 
 Defined in:
-[src/api/endpoints/index.ts:13](https://github.com/davinidae/umazing-musumengine/blob/2fd0a7ae5bcd71fb665112d795849ae0ada2b9de/src/api/endpoints/index.ts#L13)
+[src/api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/endpoints/index.ts#L14)
 
 routes.
 
@@ -15,13 +15,18 @@ routes.
 
 ##### handler()
 
-> **handler**: (`event`) => `Promise`\<[`ApiResponse`](utils/api.util.md#apiresponse)\>
+> **handler**: (`event`, `steamClient`) =>
+> `Promise`\<[`ApiResponse`](utils/api.util.md#apiresponse)\>
 
 ###### Parameters
 
 ###### event
 
 [`HttpEvent`](models/api.model.md#httpevent)\<`any`\>
+
+###### steamClient
+
+`Client`
 
 ###### Returns
 

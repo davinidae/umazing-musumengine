@@ -2,6 +2,12 @@
 
 ## References
 
+### APP_VERSION
+
+Re-exports [APP_VERSION](constants/game.constant.md#app_version)
+
+---
+
 ### COMMON_HEADER
 
 Re-exports [COMMON_HEADER](constants/protocol.constant.md#common_header)
@@ -11,6 +17,12 @@ Re-exports [COMMON_HEADER](constants/protocol.constant.md#common_header)
 ### DETERMINISTIC_ENC_SECRET
 
 Re-exports [DETERMINISTIC_ENC_SECRET](constants/salt.constant.md#deterministic_enc_secret)
+
+---
+
+### RES_VERSION
+
+Re-exports [RES_VERSION](constants/game.constant.md#res_version)
 
 ---
 
@@ -35,3 +47,9 @@ Re-exports [STR32](constants/msgpack.constant.md#str32)
 ### STR8
 
 Re-exports [STR8](constants/msgpack.constant.md#str8)
+
+---
+
+### X_UNITY_VERSION
+
+Re-exports [X_UNITY_VERSION](constants/game.constant.md#x_unity_version)
