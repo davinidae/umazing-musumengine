@@ -159,3 +159,5 @@ encrypt/output/**
 api/**/request.txt
 api/**/response.txt
 .esbuild
+
+src/database/user-sessions.json

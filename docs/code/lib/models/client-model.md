@@ -7,7 +7,7 @@
 > **RuntimeClientOptions** = `object`
 
 Defined in:
-[src/lib/models/client.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/lib/models/client.model.ts#L2)
+[src/lib/models/client.model.ts:2](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/models/client.model.ts#L2)
 
 Options for RuntimeClient construction.
 
@@ -18,4 +18,4 @@ Options for RuntimeClient construction.
 > **DETERMINISTIC_ENC_SECRET**: `string`
 
 Defined in:
-[src/lib/models/client.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/lib/models/client.model.ts#L3)
+[src/lib/models/client.model.ts:3](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/models/client.model.ts#L3)

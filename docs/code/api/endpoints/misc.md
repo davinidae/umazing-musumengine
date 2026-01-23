@@ -7,7 +7,7 @@
 > **healthHandler**(): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[src/api/endpoints/misc.ts:7](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/endpoints/misc.ts#L7)
+[src/api/endpoints/misc.ts:7](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/endpoints/misc.ts#L7)
 
 healthHandler (async).
 
@@ -24,7 +24,7 @@ Type: `Promise<ApiResponse>`.
 > **rootHandler**(): `Promise`\<[`ApiResponse`](../utils/api.util.md#apiresponse)\>
 
 Defined in:
-[src/api/endpoints/misc.ts:19](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/endpoints/misc.ts#L19)
+[src/api/endpoints/misc.ts:19](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/endpoints/misc.ts#L19)
 
 rootHandler (async).
 

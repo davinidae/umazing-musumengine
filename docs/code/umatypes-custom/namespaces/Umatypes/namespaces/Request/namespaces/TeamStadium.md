@@ -7,7 +7,7 @@
 > **DecideFrameOrder** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:191](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L191)
+[src/umatypes-custom.d.ts:191](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/umatypes-custom.d.ts#L191)
 
 #### Properties
 
@@ -16,7 +16,7 @@ Defined in:
 > **opponent_info**: [`OpponentInfoItem`](../../Common.md#opponentinfoitem) & `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:192](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L192)
+[src/umatypes-custom.d.ts:192](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/umatypes-custom.d.ts#L192)
 
 ###### Type Declaration
 
@@ -31,7 +31,7 @@ Defined in:
 > **Index** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:187](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L187)
+[src/umatypes-custom.d.ts:187](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/umatypes-custom.d.ts#L187)
 
 ---
 
@@ -40,4 +40,4 @@ Defined in:
 > **OpponentList** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:189](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L189)
+[src/umatypes-custom.d.ts:189](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/umatypes-custom.d.ts#L189)

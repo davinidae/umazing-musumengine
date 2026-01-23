@@ -7,7 +7,7 @@
 > **HttpEvent**\<`T`\> = `Omit`\<`APIGatewayProxyEventV2`, `"body"`\> & `object`
 
 Defined in:
-[src/api/models/api.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L7)
+[src/api/models/api.model.ts:7](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L7)
 
 #### Type Declaration
 
@@ -29,7 +29,7 @@ Defined in:
 > `object`
 
 Defined in:
-[src/api/models/api.model.ts:25](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L25)
+[src/api/models/api.model.ts:25](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L25)
 
 A `UserSession` where `client` is guaranteed to be initialized.
 
@@ -46,7 +46,7 @@ A `UserSession` where `client` is guaranteed to be initialized.
 > **UmaData** = `object`
 
 Defined in:
-[src/api/models/api.model.ts:11](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L11)
+[src/api/models/api.model.ts:11](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L11)
 
 #### Properties
 
@@ -56,7 +56,7 @@ Defined in:
 > [`Blob1Json`](../../lib/decrypt/utils/request-context.util.md#blob1json)\[`"auth_key"`\]
 
 Defined in:
-[src/api/models/api.model.ts:13](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L13)
+[src/api/models/api.model.ts:13](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L13)
 
 ##### udidRaw
 
@@ -64,14 +64,14 @@ Defined in:
 > [`Blob1Json`](../../lib/decrypt/utils/request-context.util.md#blob1json)\[`"udid_raw"`\]
 
 Defined in:
-[src/api/models/api.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L14)
+[src/api/models/api.model.ts:14](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L14)
 
 ##### useSteam
 
 > **useSteam**: `boolean`
 
 Defined in:
-[src/api/models/api.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L15)
+[src/api/models/api.model.ts:15](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L15)
 
 ##### viewerId
 
@@ -79,7 +79,7 @@ Defined in:
 > [`Blob1Json`](../../lib/decrypt/utils/request-context.util.md#blob1json)\[`"viewer_id"`\]
 
 Defined in:
-[src/api/models/api.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L12)
+[src/api/models/api.model.ts:12](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L12)
 
 ---
 
@@ -88,7 +88,7 @@ Defined in:
 > **UserData** = `object`
 
 Defined in:
-[src/api/models/api.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L18)
+[src/api/models/api.model.ts:18](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L18)
 
 #### Properties
 
@@ -97,4 +97,4 @@ Defined in:
 > **userId**: `UUID`
 
 Defined in:
-[src/api/models/api.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/models/api.model.ts#L19)
+[src/api/models/api.model.ts:19](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/models/api.model.ts#L19)

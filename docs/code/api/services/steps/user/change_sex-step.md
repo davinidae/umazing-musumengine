@@ -5,7 +5,7 @@
 ### UserChangeSexStep
 
 Defined in:
-[src/api/services/steps/user/change_sex.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/user/change_sex.step.ts#L7)
+[src/api/services/steps/user/change_sex.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/user/change_sex.step.ts#L7)
 
 UserChangeSexStep.
 
@@ -26,7 +26,7 @@ Extends/implements:
 > **new UserChangeSexStep**(`umaClient`, ...`_extra`): [`UserChangeSexStep`](#userchangesexstep)
 
 Defined in:
-[src/api/services/steps/core.step.ts:88](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L88)
+[src/api/services/steps/core.step.ts:88](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L88)
 
 constructor.
 
@@ -61,7 +61,7 @@ Type: `CoreStep<TReq, TRes>`.
 > **endpoint**: `string` = `'user/change_sex'`
 
 Defined in:
-[src/api/services/steps/user/change_sex.step.ts:16](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/user/change_sex.step.ts#L16)
+[src/api/services/steps/user/change_sex.step.ts:16](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/user/change_sex.step.ts#L16)
 
 endpoint.
 
@@ -82,7 +82,7 @@ Type: `string`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/steps/core.step.ts:89](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L89)
+[src/api/services/steps/core.step.ts:89](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L89)
 
 Type: `UmaClient`.
 
@@ -97,7 +97,7 @@ Type: `UmaClient`.
 > `protected` **afterExecute**(`_result`): `void` \| `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:282](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L282)
+[src/api/services/steps/core.step.ts:282](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L282)
 
 afterExecute.
 
@@ -125,7 +125,7 @@ Type: `void | Promise<void>`.
 > `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<`unknown`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:291](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L291)
+[src/api/services/steps/core.step.ts:291](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L291)
 
 execute (async).
 
@@ -145,7 +145,7 @@ Type: `Promise<RequestResult<TRes>>`.
 > [`ChangeSex`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/User.md#changesex)
 
 Defined in:
-[src/api/services/steps/core.step.ts:122](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L122)
+[src/api/services/steps/core.step.ts:122](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L122)
 
 getBody.
 
@@ -167,7 +167,7 @@ Type: `Record<string, unknown>`.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:102](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L102)
+[src/api/services/steps/core.step.ts:102](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L102)
 
 getHeaders.
 
@@ -189,7 +189,7 @@ Type: `Record<string, string>`.
 > [`ChangeSex`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/User.md#changesex)
 
 Defined in:
-[src/api/services/steps/user/change_sex.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/user/change_sex.step.ts#L22)
+[src/api/services/steps/user/change_sex.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/user/change_sex.step.ts#L22)
 
 getRequestBody.
 
@@ -210,7 +210,7 @@ Type: `UserChangeSex`.
 > `"endpoint"` \| `"name"`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:230](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L230)
+[src/api/services/steps/core.step.ts:230](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/api/services/steps/core.step.ts#L230)
 
 request (async).
 

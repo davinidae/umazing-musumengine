@@ -7,7 +7,7 @@
 > **ChangeName** = `unknown`
 
 Defined in:
-[src/umatypes-custom.d.ts:575](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L575)
+[src/umatypes-custom.d.ts:575](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/umatypes-custom.d.ts#L575)
 
 ---
 
@@ -16,4 +16,4 @@ Defined in:
 > **ChangeSex** = `unknown`
 
 Defined in:
-[src/umatypes-custom.d.ts:573](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L573)
+[src/umatypes-custom.d.ts:573](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/umatypes-custom.d.ts#L573)
