@@ -5,7 +5,7 @@
 ### UmaClient
 
 Defined in:
-[src/api/services/uma-client.service.ts:86](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L86)
+[src/api/services/uma-client.service.ts:41](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L41)
 
 UmaClient.
 
@@ -13,30 +13,14 @@ UmaClient.
 
 ##### Constructor
 
-> **new UmaClient**(`auth`, `data`, `umaData`, `userSession`): [`UmaClient`](#umaclient)
+> **new UmaClient**(`userSession`): [`UmaClient`](#umaclient)
 
 Defined in:
-[src/api/services/uma-client.service.ts:93](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L93)
+[src/api/services/uma-client.service.ts:50](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L50)
 
 constructor.
 
 ###### Parameters
-
-###### auth
-
-[`AuthMode`](../models/uma-client.model.md#authmode)
-
-Type: `AuthMode`.
-
-###### data
-
-[`UmaClientData`](../models/uma-client.model.md#umaclientdata)
-
-Type: `UmaClientData`.
-
-###### umaData
-
-[`UmaData`](../models/api.model.md#umadata)
 
 ###### userSession
 
@@ -50,30 +34,26 @@ Type: `UmaClient`.
 
 #### Properties
 
-##### auth
+##### attestationType
 
-> `readonly` **auth**: [`AuthMode`](../models/uma-client.model.md#authmode)
-
-Defined in:
-[src/api/services/uma-client.service.ts:94](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L94)
-
-Type: `AuthMode`.
-
-##### data
-
-> `readonly` **data**: [`UmaClientData`](../models/uma-client.model.md#umaclientdata)
+> **attestationType**: `number`
 
 Defined in:
-[src/api/services/uma-client.service.ts:95](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L95)
+[src/api/services/uma-client.service.ts:43](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L43)
 
-Type: `UmaClientData`.
+##### header
+
+> **header**: [`UmaReqHeader`](../../lib/utils/protocol.util.md#umareqheader)
+
+Defined in:
+[src/api/services/uma-client.service.ts:42](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L42)
 
 ##### results
 
 > `readonly` **results**: [`RequestResult`](../models/uma-client.model.md#requestresult)[] = `[]`
 
 Defined in:
-[src/api/services/uma-client.service.ts:119](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L119)
+[src/api/services/uma-client.service.ts:74](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L74)
 
 results.
 
@@ -85,19 +65,12 @@ Type: `RequestResult[]`.
 
 `[]`
 
-##### umaData
-
-> `readonly` **umaData**: [`UmaData`](../models/api.model.md#umadata)
-
-Defined in:
-[src/api/services/uma-client.service.ts:96](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L96)
-
 ##### userSession
 
 > `readonly` **userSession**: [`UserSession`](user-session.service.md#usersession)
 
 Defined in:
-[src/api/services/uma-client.service.ts:97](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L97)
+[src/api/services/uma-client.service.ts:50](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L50)
 
 #### Methods
 
@@ -106,7 +79,7 @@ Defined in:
 > **collectPresents**(): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/uma-client.service.ts:312](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L312)
+[src/api/services/uma-client.service.ts:260](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L260)
 
 ###### Returns
 
@@ -117,7 +90,7 @@ Defined in:
 > **executeFlow**(`steps`): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/uma-client.service.ts:221](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L221)
+[src/api/services/uma-client.service.ts:168](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L168)
 
 executeFlow (async).
 
@@ -140,7 +113,7 @@ Type: `Promise<void>`.
 > **executeStep**(`step`, ...`extra`): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/uma-client.service.ts:187](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L187)
+[src/api/services/uma-client.service.ts:134](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L134)
 
 executeStep (async).
 
@@ -169,7 +142,7 @@ Type: `Promise<void>`.
 > **executeStepGroup**(`stepGroup`, ...`extra`): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/uma-client.service.ts:212](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L212)
+[src/api/services/uma-client.service.ts:159](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L159)
 
 executeStepGroup (async).
 
@@ -193,27 +166,12 @@ Type: `any`.
 
 Type: `Promise<void>`.
 
-##### getAttestationType()
-
-> `private` **getAttestationType**(): `number`
-
-Defined in:
-[src/api/services/uma-client.service.ts:172](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L172)
-
-getAttestationType.
-
-###### Returns
-
-`number`
-
-Type: `number`.
-
 ##### getResponseCodeName()
 
 > **getResponseCodeName**(`code`): `string`
 
 Defined in:
-[src/api/services/uma-client.service.ts:176](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L176)
+[src/api/services/uma-client.service.ts:123](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L123)
 
 ###### Parameters
 
@@ -230,7 +188,7 @@ Defined in:
 > **getUmaData**(): [`UmaData`](../models/api.model.md#umadata)
 
 Defined in:
-[src/api/services/uma-client.service.ts:102](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L102)
+[src/api/services/uma-client.service.ts:59](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L59)
 
 ###### Returns
 
@@ -241,7 +199,7 @@ Defined in:
 > **hasActiveSession**(): `boolean`
 
 Defined in:
-[src/api/services/uma-client.service.ts:164](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L164)
+[src/api/services/uma-client.service.ts:119](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L119)
 
 hasActiveSession.
 
@@ -256,7 +214,7 @@ Type: `boolean`.
 > **logIn**(): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/uma-client.service.ts:255](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L255)
+[src/api/services/uma-client.service.ts:203](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L203)
 
 logIn (async).
 
@@ -271,7 +229,7 @@ Type: `Promise<void>`.
 > **playTeamTrials**(): `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/uma-client.service.ts:329](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L329)
+[src/api/services/uma-client.service.ts:277](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L277)
 
 ###### Returns
 
@@ -282,7 +240,7 @@ Defined in:
 > **regenSessionId**(): `void`
 
 Defined in:
-[src/api/services/uma-client.service.ts:124](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L124)
+[src/api/services/uma-client.service.ts:79](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L79)
 
 regenSessionId.
 
@@ -295,7 +253,7 @@ regenSessionId.
 > **updateAuthKey**(`authKey`): `void`
 
 Defined in:
-[src/api/services/uma-client.service.ts:156](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L156)
+[src/api/services/uma-client.service.ts:111](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L111)
 
 updateAuthKey.
 
@@ -316,7 +274,7 @@ Type: `AuthKey | undefined`.
 > **updateResVer**(`resVer`): `void`
 
 Defined in:
-[src/api/services/uma-client.service.ts:140](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L140)
+[src/api/services/uma-client.service.ts:95](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L95)
 
 updateResVer.
 
@@ -337,7 +295,7 @@ Type: `string`.
 > **updateSessionId**(`sessionId`): `void`
 
 Defined in:
-[src/api/services/uma-client.service.ts:132](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L132)
+[src/api/services/uma-client.service.ts:87](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L87)
 
 updateSessionId.
 
@@ -358,7 +316,7 @@ Type: `SessionId`.
 > **updateViewerId**(`viewerId`): `void`
 
 Defined in:
-[src/api/services/uma-client.service.ts:148](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L148)
+[src/api/services/uma-client.service.ts:103](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/uma-client.service.ts#L103)
 
 updateViewerId.
 
@@ -373,67 +331,3 @@ Type: `number`.
 ###### Returns
 
 `void`
-
-## Functions
-
-### createUmaClient()
-
-> **createUmaClient**(`auth`, `udid`, `authKey`, `base`, `resVer`, `baseUrl`, `umaData`,
-> `userSession`): [`UmaClient`](#umaclient)
-
-Defined in:
-[src/api/services/uma-client.service.ts:48](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/uma-client.service.ts#L48)
-
-createUmaClient.
-
-#### Parameters
-
-##### auth
-
-[`AuthMode`](../models/uma-client.model.md#authmode)
-
-Type: `AuthMode`.
-
-##### udid
-
-[`Udid`](../../lib/utils/protocol.util.md#udid)
-
-Type: `Udid`.
-
-##### authKey
-
-Type: `AuthKey | undefined`.
-
-[`AuthKey`](../../lib/utils/protocol.util.md#authkey) | `undefined`
-
-##### base
-
-[`RequestBase`](../models/uma-client.model.md#requestbase)
-
-Type: `RequestBase`.
-
-##### resVer
-
-`string`
-
-Type: `string`.
-
-##### baseUrl
-
-`string`
-
-Type: `string`.
-
-##### umaData
-
-[`UmaData`](../models/api.model.md#umadata)
-
-##### userSession
-
-[`UserSession`](user-session.service.md#usersession)
-
-#### Returns
-
-[`UmaClient`](#umaclient)
-
-Type: `UmaClient`.

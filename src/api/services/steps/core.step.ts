@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { RequestResult, UmaResponse } from '../../models';
+import type { RequestBase, RequestResult, UmaResponse } from '../../models';
 import {
   decompressResponse,
   encodeUmaRequestB64,
@@ -101,12 +101,12 @@ export abstract class CoreStep<TReq extends object, TRes> {
    */
   protected getHeaders(): Record<string, string> {
     return {
-      SID: this.umaClient.data.header.sessionId.asHex(),
-      Device: String(this.umaClient.data.base.device),
-      ViewerID: String(this.umaClient.data.base.viewer_id),
+      SID: this.umaClient.header.sessionId.asHex(),
+      Device: String(this.umaClient.userSession.device),
+      ViewerID: String(this.umaClient.userSession.viewer_id),
       'X-Unity-Version': X_UNITY_VERSION,
       'APP-VER': APP_VERSION,
-      'RES-VER': this.umaClient.data.resVer,
+      'RES-VER': this.umaClient.userSession.resVer,
       Accept: '*/*',
       'Content-Type': 'application/x-msgpack',
     };
@@ -119,10 +119,23 @@ export abstract class CoreStep<TReq extends object, TRes> {
    *
    * @returns Type: `Record<string, unknown>`.
    */
-  protected getBody(): Record<string, unknown> {
+  protected getBody(): RequestBase & TReq {
     return {
       ...this.getRequestBody(),
-      ...this.umaClient.data.base,
+      viewer_id: this.umaClient.userSession.viewer_id,
+      carrier: this.umaClient.userSession.carrier,
+      device: this.umaClient.userSession.device,
+      device_id: this.umaClient.userSession.device_id,
+      keychain: this.umaClient.userSession.keychain,
+      locale: this.umaClient.userSession.locale,
+      dmm_onetime_token: this.umaClient.userSession.dmm_onetime_token,
+      dmm_viewer_id: this.umaClient.userSession.dmm_viewer_id,
+      device_name: this.umaClient.userSession.device_name,
+      graphics_device_name: this.umaClient.userSession.graphics_device_name,
+      ip_address: this.umaClient.userSession.ip_address,
+      platform_os_version: this.umaClient.userSession.platform_os_version,
+      steam_id: this.umaClient.userSession.steam_id,
+      steam_session_ticket: this.umaClient.userSession.steam_session_ticket,
     };
   }
 
@@ -131,7 +144,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
    * @returns Type: `string`.
    */
   private buildUpstreamUrl(): string {
-    return `${this.umaClient.data.baseUrl}${this.endpoint}`;
+    return `${this.umaClient.userSession.baseUrl}${this.endpoint}`;
   }
 
   /**
@@ -140,7 +153,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
    * @returns Type: `string`.
    */
   private encodeRequestB64(body: Record<string, unknown>): string {
-    return encodeUmaRequestB64(this.umaClient.data.header, body);
+    return encodeUmaRequestB64(this.umaClient.header, body);
   }
 
   /**
@@ -186,9 +199,9 @@ export abstract class CoreStep<TReq extends object, TRes> {
     /**
      * decrypted.
      * @remarks Type: `Uint8Array<ArrayBufferLike>`.
-     * @defaultValue `decompressResponse(bodyB64, this.umaClient.data.header.udid)`
+     * @defaultValue `decompressResponse(bodyB64, this.umaClient.header.udid)`
      */
-    const decrypted = decompressResponse(bodyB64, this.umaClient.data.header.udid);
+    const decrypted = decompressResponse(bodyB64, this.umaClient.header.udid);
     return decodeUmaResponsePayload<UmaResponse<TRes>>(decrypted);
   }
 
@@ -252,7 +265,7 @@ export abstract class CoreStep<TReq extends object, TRes> {
      */
     const decoded = this.decodeResponseBody(bodyB64);
     this.maybeUpdateSessionId(decoded);
-    this.umaClient.data.header.rerandomize();
+    this.umaClient.header.rerandomize();
     return {
       decoded,
       body,

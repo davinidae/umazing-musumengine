@@ -5,7 +5,7 @@
 ### UserChangeNameStep
 
 Defined in:
-[src/api/services/steps/user/change_name.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/user/change_name.step.ts#L7)
+[src/api/services/steps/user/change_name.step.ts:7](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/user/change_name.step.ts#L7)
 
 UserChangeNameStep.
 
@@ -26,7 +26,7 @@ Extends/implements:
 > **new UserChangeNameStep**(`umaClient`, ...`_extra`): [`UserChangeNameStep`](#userchangenamestep)
 
 Defined in:
-[src/api/services/steps/core.step.ts:88](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L88)
+[src/api/services/steps/core.step.ts:88](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L88)
 
 constructor.
 
@@ -61,7 +61,7 @@ Type: `CoreStep<TReq, TRes>`.
 > **endpoint**: `string` = `'user/change_name'`
 
 Defined in:
-[src/api/services/steps/user/change_name.step.ts:16](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/user/change_name.step.ts#L16)
+[src/api/services/steps/user/change_name.step.ts:16](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/user/change_name.step.ts#L16)
 
 endpoint.
 
@@ -82,7 +82,7 @@ Type: `string`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/steps/core.step.ts:89](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L89)
+[src/api/services/steps/core.step.ts:89](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L89)
 
 Type: `UmaClient`.
 
@@ -97,7 +97,7 @@ Type: `UmaClient`.
 > `protected` **afterExecute**(`_result`): `void` \| `Promise`\<`void`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:269](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L269)
+[src/api/services/steps/core.step.ts:282](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L282)
 
 afterExecute.
 
@@ -125,7 +125,7 @@ Type: `void | Promise<void>`.
 > `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<`unknown`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:278](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L278)
+[src/api/services/steps/core.step.ts:291](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L291)
 
 execute (async).
 
@@ -141,10 +141,11 @@ Type: `Promise<RequestResult<TRes>>`.
 
 ##### getBody()
 
-> `protected` **getBody**(): `Record`\<`string`, `unknown`\>
+> `protected` **getBody**(): [`RequestBase`](../../../models/uma-client.model.md#requestbase) &
+> [`ChangeName`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/User.md#changename)
 
 Defined in:
-[src/api/services/steps/core.step.ts:122](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L122)
+[src/api/services/steps/core.step.ts:122](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L122)
 
 getBody.
 
@@ -152,7 +153,8 @@ Combine the step-specific body with common request fields from StepData.
 
 ###### Returns
 
-`Record`\<`string`, `unknown`\>
+[`RequestBase`](../../../models/uma-client.model.md#requestbase) &
+[`ChangeName`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/User.md#changename)
 
 Type: `Record<string, unknown>`.
 
@@ -165,7 +167,7 @@ Type: `Record<string, unknown>`.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:102](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L102)
+[src/api/services/steps/core.step.ts:102](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L102)
 
 getHeaders.
 
@@ -187,7 +189,7 @@ Type: `Record<string, string>`.
 > [`ChangeName`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/User.md#changename)
 
 Defined in:
-[src/api/services/steps/user/change_name.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/user/change_name.step.ts#L22)
+[src/api/services/steps/user/change_name.step.ts:22](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/user/change_name.step.ts#L22)
 
 getRequestBody.
 
@@ -208,7 +210,7 @@ Type: `UserChangeName`.
 > `"endpoint"` \| `"name"`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:217](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L217)
+[src/api/services/steps/core.step.ts:230](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L230)
 
 request (async).
 

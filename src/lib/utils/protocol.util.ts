@@ -6,6 +6,7 @@ import { pkcs7Pad } from './decrypt.util';
 import { encryptAes256Cbc } from './encrypt.util';
 import { decryptBlob2 } from '../decrypt/utils/blob.util';
 import { randomBytes, createHash } from 'crypto';
+import { UserSession } from '../../api/services/user-session.service';
 
 /**
  * Uma request/response wire-format helpers.
@@ -488,6 +489,10 @@ export class UmaReqHeader {
    * @remarks Type: `Uint8Array<ArrayBufferLike>`.
    */
   public randomBytes: Uint8Array;
+  public sessionId: SessionId;
+  public viewer_id: number;
+  public udid: Udid;
+  public authKey: AuthKey | undefined;
 
   /**
    * constructor.
@@ -496,11 +501,11 @@ export class UmaReqHeader {
    * @param authKey - Type: `AuthKey | undefined`.
    * @returns Type: `UmaReqHeader`.
    */
-  public constructor(
-    public sessionId: SessionId,
-    public udid: Udid,
-    public authKey?: AuthKey,
-  ) {
+  public constructor(public userSession: UserSession) {
+    this.viewer_id = userSession.viewer_id;
+    this.udid = userSession.udid;
+    this.authKey = userSession.authKey;
+    this.sessionId = newSessionId(this.udid, this.viewer_id);
     this.randomBytes = randomBytes(32);
   }
 

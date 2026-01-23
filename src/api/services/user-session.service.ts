@@ -1,6 +1,11 @@
-import type { AuthMode, UmaData, RequestBase, InitializedUserSession } from '../models';
+import type {
+  AuthMode,
+  UmaData,
+  InitializedUserSession,
+  RequestResult,
+  RequestBase,
+} from '../models';
 import { randomUUID, UUID } from 'crypto';
-import { createUmaClient } from './uma-client.service';
 import { AuthKey, Udid } from '../../lib';
 import { UmaClient } from './uma-client.service';
 import { RES_VERSION } from '../../constants';
@@ -28,8 +33,20 @@ export class UserSession {
 
   public userId = randomUUID();
 
-  public steamId: bigint | null = null;
-  public steamSessionTicket: string | null = null;
+  public carrier: RequestBase['carrier'];
+  public device: RequestBase['device'];
+  public device_id: RequestBase['device_id'];
+  public keychain: RequestBase['keychain'];
+  public locale: RequestBase['locale'];
+  public viewer_id: RequestBase['viewer_id'];
+  public dmm_onetime_token: RequestBase['dmm_onetime_token'];
+  public dmm_viewer_id: RequestBase['dmm_viewer_id'];
+  public device_name: RequestBase['device_name'];
+  public graphics_device_name: RequestBase['graphics_device_name'];
+  public ip_address: RequestBase['ip_address'];
+  public platform_os_version: RequestBase['platform_os_version'];
+  public steam_id: RequestBase['steam_id'];
+  public steam_session_ticket: RequestBase['steam_session_ticket'];
 
   /**
    * constructor.
@@ -42,47 +59,27 @@ export class UserSession {
     public readonly auth: AuthMode,
     public readonly steamClient: Client,
     public readonly userIdOverride?: UUID,
+    public readonly lastResult?: RequestResult,
   ) {
-    this.userId = this.userIdOverride ?? randomUUID();
+    this.carrier = '';
+    this.device = auth.deviceType;
+    this.device_id = randomUUID().replace(/-/g, '');
+    this.keychain = 0;
+    this.locale = 'JPN';
+    this.viewer_id = umaData.viewerId ?? 0;
+    this.dmm_onetime_token = null;
+    this.dmm_viewer_id = null;
+    this.device_name = 'System Product Name (ASUS)';
+    this.graphics_device_name = 'NVIDIA GeForce RTX 3080';
+    this.ip_address = '192.168.1.42';
+    this.platform_os_version = 'Windows 11  (10.0.26200) 64bit';
+    this.steam_id = null;
+    this.steam_session_ticket = null;
+    this.userId = userIdOverride ?? randomUUID();
     this.udid = new Udid(umaData.udidRaw ?? randomUUID());
     if (this.umaData.authKey != null) {
       this.authKey = new AuthKey(Buffer.from(this.umaData.authKey, 'hex'));
     }
-  }
-
-  /**
-   * getBase.
-   * @param deviceType - Type: `number`.
-   * @returns Type: `RequestBase`.
-   */
-  getBase(): RequestBase {
-    const common: Omit<
-      RequestBase,
-      | 'device_name'
-      | 'graphics_device_name'
-      | 'ip_address'
-      | 'platform_os_version'
-      | 'steam_id'
-      | 'steam_session_ticket'
-    > = {
-      carrier: '',
-      device: this.auth.deviceType,
-      device_id: randomUUID().replace(/-/g, ''),
-      keychain: 0,
-      locale: 'JPN',
-      viewer_id: this.umaData.viewerId ?? 0,
-      dmm_onetime_token: null,
-      dmm_viewer_id: null,
-    };
-    return {
-      ...common,
-      device_name: 'System Product Name (ASUS)',
-      graphics_device_name: 'NVIDIA GeForce RTX 3080',
-      ip_address: '192.168.1.42',
-      platform_os_version: 'Windows 11  (10.0.26200) 64bit',
-      steam_id: this.steamId != null ? this.steamId.toString() : null,
-      steam_session_ticket: this.steamSessionTicket,
-    };
   }
 
   async resolveSteamSessionTicket(): Promise<void> {
@@ -93,8 +90,8 @@ export class UserSession {
     const sessionTicket = await this.steamClient.auth.getSessionTicketWithSteamId(
       steamId.steamId64,
     );
-    this.steamId = steamId.steamId64;
-    this.steamSessionTicket = sessionTicket.getBytes().toString('hex');
+    this.steam_id = steamId.steamId64.toString();
+    this.steam_session_ticket = sessionTicket.getBytes().toString('hex');
   }
 
   public client: UmaClient | undefined;
@@ -112,16 +109,7 @@ export class UserSession {
    */
   async initialize(): Promise<UmaClient> {
     await this.resolveSteamSessionTicket();
-    this.client = createUmaClient(
-      this.auth,
-      this.udid,
-      this.authKey,
-      this.getBase(),
-      this.resVer,
-      this.baseUrl,
-      this.umaData,
-      this,
-    );
+    this.client = new UmaClient(this);
     return this.client;
   }
 }

@@ -49,15 +49,15 @@ export class ToolSignupStep extends CoreStep<
     /**
      * viewer_id.
      * @remarks Type: `number`.
-     * @defaultValue `this.umaClient.data.base.viewer_id`
+     * @defaultValue `this.umaClient.userSession.viewer_id`
      */
-    let viewer_id = this.umaClient.data.base.viewer_id;
+    let viewer_id = this.umaClient.userSession.viewer_id;
     /**
      * authKey.
      * @remarks Type: `AuthKey | undefined`.
-     * @defaultValue `this.umaClient.data.header.authKey`
+     * @defaultValue `this.umaClient.header.authKey`
      */
-    let authKey = this.umaClient.data.header.authKey;
+    let authKey = this.umaClient.header.authKey;
     if (result.decoded.data) {
       viewer_id = result.decoded.data.viewer_id;
       authKey = new AuthKey(Uint8Array.from(Buffer.from(result.decoded.data.auth_key, 'base64')));

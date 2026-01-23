@@ -7,7 +7,7 @@
 > **Index** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:206](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L206)
+[src/umatypes-custom.d.ts:206](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L206)
 
 #### Properties
 
@@ -16,35 +16,35 @@ Defined in:
 > **category_filter_type**: `number`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:208](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L208)
+[src/umatypes-custom.d.ts:208](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L208)
 
 ##### is_asc
 
 > **is_asc**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:211](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L211)
+[src/umatypes-custom.d.ts:211](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L211)
 
 ##### limit
 
 > **limit**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:210](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L210)
+[src/umatypes-custom.d.ts:210](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L210)
 
 ##### offset
 
 > **offset**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:209](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L209)
+[src/umatypes-custom.d.ts:209](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L209)
 
 ##### time_filter_type
 
 > **time_filter_type**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:207](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L207)
+[src/umatypes-custom.d.ts:207](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L207)
 
 ---
 
@@ -53,7 +53,7 @@ Defined in:
 > **ReceiveAll** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:199](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L199)
+[src/umatypes-custom.d.ts:199](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L199)
 
 #### Properties
 
@@ -62,25 +62,25 @@ Defined in:
 > **category_filter_type**: `number`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:201](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L201)
+[src/umatypes-custom.d.ts:201](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L201)
 
 ##### current_rest_present_num
 
 > **current_rest_present_num**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:203](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L203)
+[src/umatypes-custom.d.ts:203](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L203)
 
 ##### is_asc
 
 > **is_asc**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:202](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L202)
+[src/umatypes-custom.d.ts:202](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L202)
 
 ##### time_filter_type
 
 > **time_filter_type**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:200](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L200)
+[src/umatypes-custom.d.ts:200](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L200)

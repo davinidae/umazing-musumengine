@@ -5,7 +5,7 @@
 ### StartSessionStep
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L9)
+[src/api/services/steps/tool/start_session.step.ts:9](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L9)
 
 StartSessionStep.
 
@@ -26,7 +26,7 @@ Extends/implements:
 > **new StartSessionStep**(`umaClient`, `attestationType`): [`StartSessionStep`](#startsessionstep)
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:38](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L38)
+[src/api/services/steps/tool/start_session.step.ts:38](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L38)
 
 constructor.
 
@@ -62,7 +62,7 @@ Type: `StartSessionStep`.
 > [`AttestationType`](../../../models/umamusume-api/enums.model.md#attestationtype)
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:40](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L40)
+[src/api/services/steps/tool/start_session.step.ts:40](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L40)
 
 Type: `number`.
 
@@ -71,7 +71,7 @@ Type: `number`.
 > **endpoint**: `string` = `'tool/start_session'`
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L18)
+[src/api/services/steps/tool/start_session.step.ts:18](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L18)
 
 endpoint.
 
@@ -92,7 +92,7 @@ Type: `string`.
 > `protected` `readonly` **umaClient**: [`UmaClient`](../../uma-client.service.md#umaclient)
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:39](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L39)
+[src/api/services/steps/tool/start_session.step.ts:39](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L39)
 
 Type: `UmaClient`.
 
@@ -107,7 +107,7 @@ Type: `UmaClient`.
 > `protected` **afterExecute**(`result`): `void`
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:49](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L49)
+[src/api/services/steps/tool/start_session.step.ts:49](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L49)
 
 afterExecute.
 
@@ -133,7 +133,7 @@ Type: `RequestResult<ToolStartSession>`.
 > `Promise`\<[`RequestResult`](../../../models/uma-client.model.md#requestresult)\<[`StartSession`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Response/namespaces/Tool.md#startsession)\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:278](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L278)
+[src/api/services/steps/core.step.ts:291](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L291)
 
 execute (async).
 
@@ -149,10 +149,11 @@ Type: `Promise<RequestResult<TRes>>`.
 
 ##### getBody()
 
-> `protected` **getBody**(): `Record`\<`string`, `unknown`\>
+> `protected` **getBody**(): [`RequestBase`](../../../models/uma-client.model.md#requestbase) &
+> [`StartSession`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/Tool.md#startsession)
 
 Defined in:
-[src/api/services/steps/core.step.ts:122](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L122)
+[src/api/services/steps/core.step.ts:122](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L122)
 
 getBody.
 
@@ -160,7 +161,8 @@ Combine the step-specific body with common request fields from StepData.
 
 ###### Returns
 
-`Record`\<`string`, `unknown`\>
+[`RequestBase`](../../../models/uma-client.model.md#requestbase) &
+[`StartSession`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/Tool.md#startsession)
 
 Type: `Record<string, unknown>`.
 
@@ -173,7 +175,7 @@ Type: `Record<string, unknown>`.
 > `protected` **getHeaders**(): `Record`\<`string`, `string`\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:102](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L102)
+[src/api/services/steps/core.step.ts:102](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L102)
 
 getHeaders.
 
@@ -195,7 +197,7 @@ Type: `Record<string, string>`.
 > [`StartSession`](../../../../umatypes-custom/namespaces/Umatypes/namespaces/Request/namespaces/Tool.md#startsession)
 
 Defined in:
-[src/api/services/steps/tool/start_session.step.ts:24](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/tool/start_session.step.ts#L24)
+[src/api/services/steps/tool/start_session.step.ts:24](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/tool/start_session.step.ts#L24)
 
 getRequestBody.
 
@@ -216,7 +218,7 @@ Type: `ToolStartSession`.
 > `"endpoint"` \| `"name"`\>\>
 
 Defined in:
-[src/api/services/steps/core.step.ts:217](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/services/steps/core.step.ts#L217)
+[src/api/services/steps/core.step.ts:230](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/services/steps/core.step.ts#L230)
 
 request (async).
 

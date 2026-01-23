@@ -1,8 +1,8 @@
 import { AuthModeKind, GallopResultCode } from '../models';
-import type { AuthMode, RequestBase, RequestResult, UmaClientData, UmaData } from '../models';
+import type { RequestResult, UmaData } from '../models';
 import { LoadIndexStep } from './steps/load/index.step';
 import { StartSessionStep } from './steps/tool/start_session.step';
-import { AuthKey, newSessionId, SessionId, Udid, UmaReqHeader } from '../../lib';
+import { AuthKey, newSessionId, SessionId, UmaReqHeader } from '../../lib';
 import { CoreStep } from './steps/core.step';
 import { TutorialStepGroup } from './step-groups/tutorial.step-group';
 import { CoreStepGroup } from './step-groups/core.step-group';
@@ -36,78 +36,33 @@ type Flow = (
   }>;
 
 /**
- * createUmaClient.
- * @param auth - Type: `AuthMode`.
- * @param udid - Type: `Udid`.
- * @param authKey - Type: `AuthKey | undefined`.
- * @param base - Type: `RequestBase`.
- * @param resVer - Type: `string`.
- * @param baseUrl - Type: `string`.
- * @returns Type: `UmaClient`.
- */
-export function createUmaClient(
-  auth: AuthMode,
-  udid: Udid,
-  authKey: AuthKey | undefined,
-  base: RequestBase,
-  resVer: string,
-  baseUrl: string,
-  umaData: UmaData,
-  userSession: UserSession,
-): UmaClient {
-  /**
-   * sessionId.
-   * @remarks Type: `SessionId`.
-   * @defaultValue `newSessionId(udid, base.viewer_id)`
-   */
-  const sessionId = newSessionId(udid, base.viewer_id);
-  /**
-   * header.
-   * @remarks Type: `UmaReqHeader`.
-   * @defaultValue `new UmaReqHeader(sessionId, udid, authKey)`
-   */
-  const header = new UmaReqHeader(sessionId, udid, authKey);
-  return new UmaClient(
-    auth,
-    {
-      header,
-      base,
-      resVer,
-      baseUrl,
-    },
-    umaData,
-    userSession,
-  );
-}
-
-/**
  * UmaClient.
  */
 export class UmaClient {
+  header: UmaReqHeader;
+  attestationType: number;
   /**
    * constructor.
    * @param auth - Type: `AuthMode`.
    * @param data - Type: `UmaClientData`.
    * @returns Type: `UmaClient`.
    */
-  constructor(
-    public readonly auth: AuthMode,
-    public readonly data: UmaClientData,
-    public readonly umaData: UmaData,
-    public readonly userSession: UserSession,
-  ) {
-    //
+  constructor(public readonly userSession: UserSession) {
+    this.header = new UmaReqHeader(userSession);
+    if (this.userSession.lastResult != null) {
+      this.results.push(this.userSession.lastResult);
+    }
+    this.attestationType =
+      this.userSession.auth.kind === AuthModeKind.STEAM ? 0 : this.userSession.auth.attestationType;
   }
 
   public getUmaData(): UmaData {
     return {
-      viewerId: this.data.base.viewer_id,
-      udidRaw: this.data.header.udid.uuid,
+      viewerId: this.userSession.viewer_id,
+      udidRaw: this.header.udid.uuid,
       authKey:
-        this.data.header.authKey != null
-          ? Buffer.from(this.data.header.authKey.bytes).toString('hex')
-          : '',
-      useSteam: this.umaData.useSteam,
+        this.header.authKey != null ? Buffer.from(this.header.authKey.bytes).toString('hex') : '',
+      useSteam: this.userSession.umaData.useSteam,
     };
   }
 
@@ -122,7 +77,7 @@ export class UmaClient {
    * regenSessionId.
    */
   public regenSessionId(): void {
-    this.data.header.sessionId = newSessionId(this.data.header.udid, this.data.base.viewer_id);
+    this.header.sessionId = newSessionId(this.header.udid, this.userSession.viewer_id);
   }
 
   /**
@@ -130,7 +85,7 @@ export class UmaClient {
    * @param sessionId - Type: `SessionId`.
    */
   public updateSessionId(sessionId: SessionId): void {
-    this.data.header.sessionId = sessionId;
+    this.header.sessionId = sessionId;
   }
 
   /**
@@ -138,7 +93,7 @@ export class UmaClient {
    * @param resVer - Type: `string`.
    */
   public updateResVer(resVer: string): void {
-    this.data.resVer = resVer;
+    this.userSession.resVer = resVer;
   }
 
   /**
@@ -146,7 +101,7 @@ export class UmaClient {
    * @param viewerId - Type: `number`.
    */
   public updateViewerId(viewerId: number): void {
-    this.data.base.viewer_id = viewerId;
+    this.userSession.viewer_id = viewerId;
   }
 
   /**
@@ -154,7 +109,7 @@ export class UmaClient {
    * @param authKey - Type: `AuthKey | undefined`.
    */
   public updateAuthKey(authKey: AuthKey | undefined): void {
-    this.data.header.authKey = authKey;
+    this.header.authKey = authKey;
   }
 
   /**
@@ -162,15 +117,7 @@ export class UmaClient {
    * @returns Type: `boolean`.
    */
   public hasActiveSession(): boolean {
-    return this.data.base.viewer_id !== 0 && Boolean(this.data.header.authKey);
-  }
-
-  /**
-   * getAttestationType.
-   * @returns Type: `number`.
-   */
-  private getAttestationType(): number {
-    return this.auth.kind === AuthModeKind.STEAM ? 0 : this.auth.attestationType;
+    return this.userSession.viewer_id !== 0 && Boolean(this.header.authKey);
   }
 
   public getResponseCodeName(code: number): string {
@@ -239,6 +186,7 @@ export class UmaClient {
           }
         }
       }
+      await sessionManager.saveLastResult(this.userSession);
     } catch (err) {
       /**
        * catch (err).
@@ -258,13 +206,12 @@ export class UmaClient {
      * @remarks Type: `number`.
      * @defaultValue `this.getAttestationType()`
      */
-    const attestationType = this.getAttestationType();
-    if (this.data.base.viewer_id !== 0) {
+    if (this.userSession.viewer_id !== 0) {
       await this.executeFlow([
         {
           type: FlowType.STEP,
           service: StartSessionStep,
-          extra: [attestationType],
+          extra: [this.attestationType],
         },
         {
           type: FlowType.STEP,
@@ -285,12 +232,12 @@ export class UmaClient {
       {
         type: FlowType.GROUP,
         services: SignupStepGroup,
-        extra: [attestationType],
+        extra: [this.attestationType],
       },
       {
         type: FlowType.STEP,
         service: StartSessionStep,
-        extra: [attestationType],
+        extra: [this.attestationType],
       },
       {
         type: FlowType.STEP,
@@ -307,6 +254,7 @@ export class UmaClient {
       },
     ]);
     await sessionManager.addSession(this.userSession);
+    await sessionManager.saveLastResult(this.userSession);
   }
 
   async collectPresents(): Promise<void> {

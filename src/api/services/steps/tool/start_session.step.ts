@@ -52,9 +52,9 @@ export class StartSessionStep extends CoreStep<
     /**
      * resVer.
      * @remarks Type: `string`.
-     * @defaultValue `this.umaClient.data.resVer`
+     * @defaultValue `this.umaClient.userSession.resVer`
      */
-    let resVer = this.umaClient.data.resVer;
+    let resVer = this.umaClient.userSession.resVer;
     if (result.decoded.data?.resource_version) {
       resVer = result.decoded.data.resource_version;
     }

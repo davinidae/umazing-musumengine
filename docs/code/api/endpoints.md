@@ -7,7 +7,7 @@
 > `const` **routes**: `object`[]
 
 Defined in:
-[src/api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/api/endpoints/index.ts#L14)
+[src/api/endpoints/index.ts:14](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/api/endpoints/index.ts#L14)
 
 routes.
 

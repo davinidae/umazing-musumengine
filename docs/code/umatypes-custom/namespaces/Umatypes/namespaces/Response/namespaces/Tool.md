@@ -7,7 +7,7 @@
 > **PreSignup** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:544](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L544)
+[src/umatypes-custom.d.ts:544](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L544)
 
 #### Properties
 
@@ -16,14 +16,14 @@ Defined in:
 > **attest**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:545](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L545)
+[src/umatypes-custom.d.ts:545](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L545)
 
 ##### country_list
 
 > **country_list**: `object`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:547](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L547)
+[src/umatypes-custom.d.ts:547](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L547)
 
 ###### country
 
@@ -38,14 +38,14 @@ Defined in:
 > **enable_steam_account**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:551](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L551)
+[src/umatypes-custom.d.ts:551](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L551)
 
 ##### nonce
 
 > **nonce**: `string`
 
 Defined in:
-[src/umatypes-custom.d.ts:546](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L546)
+[src/umatypes-custom.d.ts:546](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L546)
 
 ---
 
@@ -54,7 +54,7 @@ Defined in:
 > **Signup** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:554](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L554)
+[src/umatypes-custom.d.ts:554](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L554)
 
 #### Properties
 
@@ -63,14 +63,14 @@ Defined in:
 > **auth_key**: `string`
 
 Defined in:
-[src/umatypes-custom.d.ts:556](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L556)
+[src/umatypes-custom.d.ts:556](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L556)
 
 ##### viewer_id
 
 > **viewer_id**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:555](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L555)
+[src/umatypes-custom.d.ts:555](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L555)
 
 ---
 
@@ -79,7 +79,7 @@ Defined in:
 > **StartSession** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:559](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L559)
+[src/umatypes-custom.d.ts:559](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L559)
 
 #### Properties
 
@@ -88,32 +88,32 @@ Defined in:
 > **attest**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:560](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L560)
+[src/umatypes-custom.d.ts:560](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L560)
 
 ##### is_tutorial
 
 > **is_tutorial**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:561](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L561)
+[src/umatypes-custom.d.ts:561](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L561)
 
 ##### nonce
 
 > **nonce**: `string`
 
 Defined in:
-[src/umatypes-custom.d.ts:562](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L562)
+[src/umatypes-custom.d.ts:562](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L562)
 
 ##### resource_version
 
 > **resource_version**: `string`
 
 Defined in:
-[src/umatypes-custom.d.ts:563](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L563)
+[src/umatypes-custom.d.ts:563](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L563)
 
 ##### terms_updated
 
 > **terms_updated**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:564](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L564)
+[src/umatypes-custom.d.ts:564](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L564)

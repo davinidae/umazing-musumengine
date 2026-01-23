@@ -7,7 +7,7 @@
 > **Index** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:346](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L346)
+[src/umatypes-custom.d.ts:346](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L346)
 
 #### Properties
 
@@ -16,7 +16,7 @@ Defined in:
 > **no_receive_present_num**: `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:363](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L363)
+[src/umatypes-custom.d.ts:363](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L363)
 
 ###### no_time_limit_present_num
 
@@ -31,7 +31,7 @@ Defined in:
 > **present_array**: `object`[]
 
 Defined in:
-[src/umatypes-custom.d.ts:347](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L347)
+[src/umatypes-custom.d.ts:347](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L347)
 
 ###### create_time
 
@@ -96,7 +96,7 @@ Defined in:
 > **ReceiveAll** = `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:318](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L318)
+[src/umatypes-custom.d.ts:318](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L318)
 
 #### Properties
 
@@ -105,35 +105,35 @@ Defined in:
 > **no_receive_item_flg**: `boolean`
 
 Defined in:
-[src/umatypes-custom.d.ts:343](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L343)
+[src/umatypes-custom.d.ts:343](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L343)
 
 ##### no_receive_support_card_count
 
 > **no_receive_support_card_count**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:342](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L342)
+[src/umatypes-custom.d.ts:342](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L342)
 
 ##### receive_present_num
 
 > **receive_present_num**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:340](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L340)
+[src/umatypes-custom.d.ts:340](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L340)
 
 ##### rest_present_num
 
 > **rest_present_num**: `number`
 
 Defined in:
-[src/umatypes-custom.d.ts:341](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L341)
+[src/umatypes-custom.d.ts:341](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L341)
 
 ##### reward_summary_info
 
 > **reward_summary_info**: `object`
 
 Defined in:
-[src/umatypes-custom.d.ts:319](https://github.com/davinidae/umazing-musumengine/blob/e6f583dfe0091ce918b2c2e16354b5b128f202d9/src/umatypes-custom.d.ts#L319)
+[src/umatypes-custom.d.ts:319](https://github.com/davinidae/umazing-musumengine/blob/76582159e9b470b4b8fcb28abde476e42b4e7b89/src/umatypes-custom.d.ts#L319)
 
 ###### add_card_bonus_info
 
