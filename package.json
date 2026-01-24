@@ -1,6 +1,6 @@
 {
   "name": "umazing-musumengine",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "description": "Umamusume tools rewritten in TypeScript: decrypt/encrypt (AES-256-CBC, msgpack)",
   "engines": {
@@ -31,12 +31,14 @@
     "README.md",
     "LICENSE"
   ],
-  "main": "./dist/index.js",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
     }
   },
   "scripts": {

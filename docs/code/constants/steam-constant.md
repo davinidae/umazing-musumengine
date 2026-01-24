@@ -7,4 +7,4 @@
 > `const` **STEAM_APP_ID**: `3224770` = `3224770`
 
 Defined in:
-[constants/steam.constant.ts:1](https://github.com/davinidae/umazing-musumengine/blob/62e93127c8277dfc186acca29ebea14c0c2775e4/src/constants/steam.constant.ts#L1)
+[constants/steam.constant.ts:1](https://github.com/davinidae/umazing-musumengine/blob/df5a110e6c3a9bccb597476078ba8ed2b6d43fdf/src/constants/steam.constant.ts#L1)

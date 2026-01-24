@@ -19,7 +19,6 @@ const external = [
 const shared = {
   bundle: true,
   platform: 'node',
-  format: 'esm',
   target: 'node18',
   sourcemap: true,
   logLevel: 'info',
@@ -29,12 +28,21 @@ const shared = {
 
 await build({
   ...shared,
+  format: 'esm',
   entryPoints: ['src/index.ts'],
-  outfile: 'dist/index.js',
+  outfile: 'dist/esm/index.js',
 });
 
 await build({
   ...shared,
+  format: 'cjs',
+  entryPoints: ['src/index.ts'],
+  outfile: 'dist/cjs/index.cjs',
+});
+
+await build({
+  ...shared,
+  format: 'esm',
   entryPoints: ['src/cli/index.ts'],
   outfile: 'dist/cli.js',
   banner: {

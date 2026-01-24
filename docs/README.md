@@ -1,8 +1,8 @@
 # Umazing Musumengine
 
-Version 2.0.0
+Version 2.0.1
 
-Generated: 2026-01-24 15:41:16
+Generated: 2026-01-24 16:33:22
 
 This wiki contains project documentation and generated API references.
 
