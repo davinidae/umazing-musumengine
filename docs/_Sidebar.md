@@ -9017,6 +9017,10 @@
 
 - [[_Footer.md|_Footer.md]]
 
+- [[publishing.md|publishing.md]]
+
 - [[README.md|README.md]]
+
+- [[usage.md|usage.md]]
 
 </ul>

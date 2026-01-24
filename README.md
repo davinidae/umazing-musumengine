@@ -3,6 +3,12 @@
 [![CI](https://github.com/davinidae/umazing-musumengine/actions/workflows/ci.yml/badge.svg)](https://github.com/davinidae/umazing-musumengine/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/davinidae/umazing-musumengine/branch/main/graph/badge.svg)](https://app.codecov.io/gh/davinidae/umazing-musumengine)
 
+Docs:
+
+- [Usage (CLI + library)](./docs/usage.md)
+- [Publishing (npm + GitHub Actions)](./docs/publishing.md)
+- [API reference (generated)](./docs/code/)
+
 ## :warning::warning: Before you continue :warning::warning:
 
 This repository was not made to cause harm to [Cygames](https://www.cygames.co.jp/en/), their
@@ -102,404 +108,26 @@ npm run seed:example
 npm run test:integration
 ```
 
-## Install dependencies (Windows PowerShell)
+## Documentation
 
-TypeScript CLI:
+- Usage (CLI + library): see `docs/usage.md`
+- Publishing (manual + GitHub Actions): see `docs/publishing.md`
+- API reference (generated): see `docs/code/`
 
-```powershell
-npm install
-```
-
-## Usage – Decrypt (packs, batch)
-
-- TypeScript CLI (recommended):
+## CLI (installed)
 
 ```powershell
-# Create subfolders (packs)
-under decrypt/input with request.txt and/or response.txt
-# Example: decrypt/input/example/request.txt and decrypt/input/example/response.txt
-
-# Decrypt requests of all packs
-npm run cli -- decrypt request
-
-# Decrypt responses of all packs (requires a request.txt in the same folder)
-npm run cli -- decrypt response
-
-# Or do both in one step
-npm run cli -- decrypt all
-```
-
-The decrypt commands automatically produce the following files under `decrypt/output/<rel>/<file>/`:
-
-- `decoded.bin` (raw decrypted bytes)
-- `decoded.json` (combined JSON with `blob1` and `blob2`)
-
-Where `<rel>` mirrors the pack's subfolder path under `decrypt/input`, and `<file>` is the input
-filename stem (`request` or `response`). For example, for `decrypt/input/example/request.txt`,
-outputs go to `decrypt/output/example/request/`.
-
-Notes:
-
-- `request.txt`/`response.txt` should contain the raw Base64 string. Whitespace and missing padding
-  are normalized automatically.
-- `response` decryption derives the IV from the UDID present in the sibling `request.txt`.
-
-## Usage – Build requests (encrypt batch)
-
-Place one or more `decoded.json` files under `encrypt/input` (you can copy them from
-`decrypt/output/<pack>/<file>/decoded.json` and edit `blob2`). Build will process them recursively
-and mirror the structure under `encrypt/output`.
-
-```powershell
-npm run cli -- encrypt build
-```
-
-Encryption key note:
-
-- The `encrypt build` command uses a deterministic AES-256 encryption key derived from the ASCII
-  string `co!=Y;(UQCGxJ_n82` (via SHA-256). This value is appended to blob2 and shown in logs,
-  ensuring reproducible builds.
-- The secret is defined in `src/constants/salt.constant.ts` as `DETERMINISTIC_ENC_SECRET`. There are
-  no CLI flags to override this.
-
-Required fields inside `blob1` (used to derive IV and rebuild blob1):
-
-- `prefix`
-- `udid` (or `udid_raw`)
-- `auth_key`
-- `session_id` (16 bytes hex)
-- `response_key` (32 bytes hex)
-
-The `decrypt` step already produces `blob1` with all these fields.
-
-Framing selection:
-
-- By default, requests are built as a single length-prefixed msgpack document.
-- To build special key/value streams used by some endpoints (like tool/pre_signup and tool/signup),
-  set `blob1.framing` to `"kv-stream"` inside your `decoded.json`. The builder only honors this
-  explicit hint; there is no path-based auto-detection.
-
-Skip behavior: the builder scans `encrypt/input/**/decoded.json` and will skip a file (logging the
-reason) if any required field is missing/invalid (e.g., `session_id` not 16 bytes, `response_key`
-not 32 bytes, missing `prefix`, UDID not present, etc.).
-
-## Common usage (end-to-end)
-
-1. Capture request/response Base64 bodies from the game API (e.g., with Fiddler or a proxy) and save
-   them as packs under `decrypt/input/<pack>/request.txt` and `decrypt/input/<pack>/response.txt`.
-
-1. Decrypt them (batch):
-
-```powershell
-npm run cli -- decrypt all
-```
-
-This writes `decrypt/output/<pack>/<file>/{decoded.bin, decoded.json}`. The `decoded.json` contains
-both `blob1` and the JSON-friendly payload as `blob2`.
-
-1. Edit `decrypt/output/<pack>/<file>/decoded.json` (only `blob2` typically) to make your changes.
-
-1. Copy edited `decoded.json` files to `encrypt/input/<pack>/` (keep any subfolder layout you
-   prefer) and rebuild:
-
-```powershell
-npm run cli -- encrypt build
-```
-
-Now you can send the Base64 from `encrypt/output/**/built.b64` to the API.
-
-Compatibility Python files have been removed. Use the TypeScript CLI and modules instead.
-
-## Notes
-
-- Decrypted binaries include a 4-byte little-endian length prefix for msgpack. The CLIs handle
-  packing/unpacking automatically.
-- IV derivation: computed from the canonical UDID string (hex with dashes) via
-  `deriveIvFromUdidString`.
-- Request format on disk: `[4-byte LE blob1_len][blob1][blob2_encrypted || 32B-enc-key]` where
-  `blob2_encrypted` is PKCS#7 padded and AES-256-CBC encrypted; the 32-byte key (SHA-256 of the
-  deterministic secret) is appended to blob2.
-- `blob1` layout: `prefix | session_id(16B) | udid_raw(16B) | response_key(32B) | auth_key(48B)`.
-- JSON roundtripping: binary fields in payloads can be represented as strings with `base64:<...>`
-  and are preserved by the builder (`fromJsonFriendly`/`toJsonCompatible`).
-- If you need extensions or automation, import `decrypt/common` and `encrypt/build` directly in your
-  own script.
-
-## Testing and coverage
-
-Tests are split for clarity:
-
-- Unit tests: `tests/unit-tests/**`
-- Integration tests: `tests/integration-tests/**`
-
-Run tests:
-
-```powershell
-# Unit only
-npm run test:unit
-
-# Integration only
-npm run test:integration
-
-# All tests
-npm run test
-```
-
-Coverage (v8) with text and lcov reports:
-
-```powershell
-# All tests with coverage
-npm run test:coverage
-```
-
-LCOV output is written to `coverage/lcov.info`.
-
-What’s covered today:
-
-- Unit: protocol helpers, crypto helpers, msgpack packing/unpacking
-- Integration: decrypt example pack, decrypt run() end-to-end (request + response), builder e2e (can
-  decrypt back), builder skip cases, roundtrip from a previously decrypted `decoded.json`
-
-Unit coverage thresholds are enforced via `vite.config.unit.ts`.
-
-## Lint, format, build
-
-```powershell
-# Lint
-npm run lint
-
-# Format
-npm run format
-
-# Typecheck
-npm run typecheck
-
-# Generate docs (TypeDoc + wiki sidebar)
-npm run docs
-
-```
-
-## Contributing and style
-
-- Please read `CONTRIBUTING.md` for coding style and project conventions.
-  - Highlights: avoid one-liners, keep comments concise, add rationale to heuristic catches, and
-    prefer small named helpers.
-
-## CLI reference
-
-```powershell
-umazing [command]
-
-Commands:
-  decrypt request   Decrypt all packs' request.txt under decrypt/input (recursive)
-  decrypt response  Decrypt all packs' response.txt under decrypt/input (recursive)
-  decrypt all       Decrypt packs (request + response)
-under decrypt/input (recursive)
-  encrypt build     Build Base64 requests from all decoded.json under encrypt/input (recursive).
-                    Uses session_id and response_key from blob1; encryption key is deterministic.
-  runtime encode-request  Read JSON from stdin { blob1, payload } and write { requestB64 } to stdout
-  runtime decode-response Read JSON from stdin { requestB64, responseB64 } and write { payload } to stdout
-```
-
-Flags like `--enc-key-hex`, `--sid`, `--session-id-hex`, and `--response-key-hex` are intentionally
-not supported; the builder reads required values from `blob1` in each `decoded.json`.
-
-```powershell
-# Development (TS sources)
-npm run cli -- decrypt all
-
-# Local build output
-node dist/cli.js decrypt all
-
-# Installed CLI
-umazing decrypt all
-
-# Encode a request via stdin/stdout
-{"blob1": {"prefix":"...", "udid":"...", "auth_key":"...", "session_id":"...", "response_key":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
-| npm run cli -- runtime encode-request
-| Set-Content -Path request.b64
-
-# Decode a response via stdin/stdout
-#{"requestB64": "<base64>", "responseB64": "<base64>"} | npm run cli -- runtime decode-response
-```
-
-## Runtime API (programmatic and piping)
-
-When integrating with live API calls, you can either pipe JSON through the CLI or use the
-RuntimeClient in-process.
-
-- CLI piping (stdin → stdout):
-  - `runtime encode-request` expects on stdin:
-    - `{ blob1, payload }` where `blob1` includes required hex fields and optional `framing`
-      (`"kv-stream"` or omitted for default).
-    - Writes `{ requestB64 }` to stdout.
-  - `runtime decode-response` expects on stdin:
-    - `{ requestB64, responseB64 }` where `responseB64` is the Base64 body returned by the server.
-    - Writes `{ payload }` to stdout (auto-unpacked and normalized).
-
-- Programmatic API:
-  - `encodeRequest({ blob1, payload }): { requestB64: string }` → builds request Base64.
-  - `decodeResponse({ requestB64, responseB64 }): { payload: any }` → returns decoded payload (auto
-    framing detection and normalization for responses).
-
-### RuntimeClient wrapper
-
-For a small OO wrapper, use `RuntimeClient`:
-
-```ts
-// If consuming as a package:
-// import { RuntimeClient } from 'umazing-musumengine';
-
-// If running from this repo (tsx/ts-node):
-import { RuntimeClient } from './src/index.ts';
-
-export const client = new RuntimeClient();
-
-// Encode a request
-export const { requestB64 } = client.encodeRequest({
-  blob1: {
-    prefix: 'aabbcc',
-    udid: '00'.repeat(16),
-    session_id: '11'.repeat(16),
-    response_key: '22'.repeat(32),
-    auth_key: '33'.repeat(48),
-  },
-  payload: { x: 1 },
-});
-
-// Later, decode a response (Base64 of blob2)
-export const { payload } = client.decodeResponse({
-  requestB64,
-  responseB64: '<blob2 base64>',
-});
-```
-
-Response normalization note: For certain responses that arrive as key/value streams, the decoder
-reconstructs `{ data_headers, data }` where both are message-packed maps.
-
-## Minimal API example
-
-This repo focuses on the crypto/protocol library + CLI. If you want to build an API/server around
-it, use the programmatic API (`RuntimeClient`, decrypt/encrypt services) and expose only the
-operations you need.
-
-# Publishing
-
-This repository is set up to publish to npm.
-
-## Manual publish
-
-One-time login:
-
-```bash
-npm login
-```
-
-Preview the tarball contents (recommended):
-
-```bash
-npm pack --dry-run
-```
-
-Publish:
-
-```bash
-npm publish
-```
-
-Notes:
-
-- npm requires a new version for every publish. Use `npm version patch|minor|major`.
-- `prepack` runs `npm run build`, so the published tarball contains `dist/`.
-- If the package name is scoped (`@scope/name`), you may need `npm publish --access public`.
-
-## GitHub Actions publish
-
-There is a workflow that publishes on version tags:
-
-- Tag format: `vX.Y.Z` (example: `v2.0.1`)
-- Secret required: `NPM_TOKEN` (an npm “Automation” access token)
-
-Typical release flow:
-
-```bash
-npm version patch
-git push --follow-tags
-```
-
-The workflow runs `npm ci`, `npm test`, then `npm publish`.
-
-# Usage
-
-This project is both:
-
-- an npm library (`umazing-musumengine`)
-- a CLI (`umazing`) shipped via the package `bin`
-
-## Install
-
-As a project dependency:
-
-```bash
-npm i umazing-musumengine
-```
-
-Or run the CLI without installing:
-
-```bash
-npx umazing-musumengine --help
-```
-
-If you want the `umazing` command available globally:
-
-```bash
-npm i -g umazing-musumengine
 umazing --help
-```
-
-## CLI
-
-The CLI reads inputs from these folders:
-
-- `decrypt/input/**/{request.txt,response.txt}`
-- `encrypt/input/**/decoded.json`
-
-And writes outputs to:
-
-- `decrypt/output/**/decoded.{bin,json}`
-- `encrypt/output/**/built.b64`
-
-Common commands:
-
-```bash
-# decrypt all packs
 umazing decrypt all
-
-# decrypt only requests
-umazing decrypt request
-
-# decrypt only responses (requires a sibling request.txt)
-umazing decrypt response
-
-# build requests from encrypt/input/**/decoded.json
 umazing encrypt build
 ```
 
-You can also use `npm exec` if installed locally:
-
-```bash
-npm exec -- umazing decrypt all
-```
-
-## Library
-
-Import from the package entrypoint:
+## Library (example)
 
 ```ts
 import { RuntimeClient } from 'umazing-musumengine';
 
 const client = new RuntimeClient();
-
 const { requestB64 } = client.encodeRequest({
   blob1: {
     prefix: 'aabbcc',
@@ -511,11 +139,20 @@ const { requestB64 } = client.encodeRequest({
   payload: { x: 1 },
 });
 
-const { payload } = client.decodeResponse({
-  requestB64,
-  responseB64: '<base64 response blob>',
-});
+client.decodeResponse({ requestB64, responseB64: '<base64 response blob>' });
 ```
 
-For lower-level primitives (protocol helpers, encrypt/decrypt utilities, etc.), see the generated
-API docs under `docs/code/`.
+## Development
+
+```powershell
+npm install
+npm run build
+npm test
+npm run lint
+npm run format
+npm run docs
+```
+
+## Contributing
+
+Please read `CONTRIBUTING.md` for coding style and project conventions.
