@@ -43,3 +43,7 @@ git push --follow-tags
 ```
 
 The workflow runs `npm ci`, `npm test`, then `npm publish`.
+
+If the workflow fails with `need auth`, it usually means the `NPM_TOKEN` secret is missing/empty or
+the token is not an npm “Automation” token. The workflow runs `npm whoami` as an auth preflight to
+fail early with a clearer error.

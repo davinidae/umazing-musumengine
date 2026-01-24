@@ -33,6 +33,18 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Auth preflight
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [[ -z "$NODE_AUTH_TOKEN" ]]; then
+            echo "NPM_TOKEN secret is missing or empty" >&2
+            exit 1
+          fi
+          npm config set registry https://registry.npmjs.org/
+          npm config set //registry.npmjs.org/:_authToken "$NODE_AUTH_TOKEN"
+          npm whoami
+
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
