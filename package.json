@@ -1,20 +1,20 @@
 {
   "name": "umazing-musumengine",
   "version": "2.0.0",
-  "private": true,
   "type": "module",
   "description": "Umamusume tools rewritten in TypeScript: decrypt/encrypt (AES-256-CBC, msgpack)",
   "engines": {
     "node": ">=18"
   },
   "bin": {
-    "umazing": "dist/cli.bundle.js"
+    "umazing": "dist/cli.js"
   },
   "homepage": "https://github.com/davinidae/umazing-musumengine#readme",
   "bugs": {
     "url": "https://github.com/davinidae/umazing-musumengine/issues"
   },
   "repository": {
+    "type": "git",
     "url": "https://github.com/davinidae/umazing-musumengine"
   },
   "keywords": [
@@ -28,10 +28,21 @@
   "funding": "https://github.com/davinidae/umazing-musumengine",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
-  "main": "src/cli.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
+    "build:js": "node scripts/build.mjs",
+    "build:types": "tsc -p tsconfig.build.types.json",
+    "build": "npm run build:js && npm run build:types",
     "typecheck": "tsc -p tsconfig.cli.json --noEmit && tsc -p tsconfig.json --noEmit",
     "cli": "tsx src/cli/index.ts",
     "seed:example": "tsx scripts/seed-example.ts",
@@ -42,9 +53,10 @@
     "test:watch": "vitest",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
-    "prepare": "husky install",
+    "prepare": "node -e \"if (require('fs').existsSync('.git')) require('child_process').execSync('husky install',{stdio:'inherit'})\"",
     "check": "npm run lint && npm run format && npm run typecheck",
     "precommit": "npm run lint && npm run format && npm run typecheck",
+    "prepack": "npm run build",
     "docs:code": "typedoc --options typedoc.code.json",
     "docs:scripts": "typedoc --options typedoc.scripts.json",
     "docs:normalize": "tsx scripts/normalize-docs.ts",

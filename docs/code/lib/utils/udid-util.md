@@ -7,7 +7,7 @@
 > **deriveIvFromUdidString**(`udidString`): `Buffer`
 
 Defined in:
-[lib/utils/udid.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/udid.util.ts#L9)
+[lib/utils/udid.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/d3e15f25b7d8fa68ec86ebb62ab4f46188974cb8/src/lib/utils/udid.util.ts#L9)
 
 #### Parameters
 
@@ -26,7 +26,7 @@ Defined in:
 > **udidRawToCanonicalString**(`udidRaw`): `string`
 
 Defined in:
-[lib/utils/udid.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/udid.util.ts#L1)
+[lib/utils/udid.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/d3e15f25b7d8fa68ec86ebb62ab4f46188974cb8/src/lib/utils/udid.util.ts#L1)
 
 #### Parameters
 
