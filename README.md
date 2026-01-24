@@ -19,7 +19,7 @@ which this tool started. Their original post is copied at
 ## What this repository is about
 
 Tools to decrypt and build game requests/responses (AES-256-CBC, msgpack) with a modular structure.
-This repository is now fully TypeScript-based and ships a bundled CLI.
+This repository is now fully TypeScript-based and ships as both an npm library and a CLI.
 
 See CONTRIBUTING.md for style guidelines (multi-line control flow, concise comments) and project
 conventions.
@@ -36,23 +36,19 @@ conventions.
 ## Structure
 
 - `src/`
+  - `index.ts`: library entrypoint exports
   - `lib/`: core crypto, encoding/decoding, and shared utilities
     - `runtime-client.ts`: programmatic API to encode requests and decode responses in-process
     - `decrypt/`, `encrypt/`, `models/`, `utils/`: internal helpers and types
-  - `cli/`
-    - `index.ts`: unified CLI with `decrypt`, `encrypt`, and `runtime` subcommands
-  - `api/`
-    - `endpoints/`: route definitions (Lambda-ish handlers)
-    - `services/`: upstream client orchestration and step runner
-    - `models/`: API-level types
-    - `index.ts`: local Express adapter/server entrypoint
+  - `cli/index.ts`: CLI entrypoint (`umazing`)
   - `constants/`: shared constants, including `DETERMINISTIC_ENC_SECRET`
 - `tests/`
   - `unit-tests/**`: focused unit specs for helpers
   - `integration-tests/**`: end-to-end flows: decrypt run(), encrypt build, skip cases, roundtrip
 - Config
   - `vite.config.unit.ts` and `vite.config.integration.ts`: split configs/coverage
-  - `tsconfig.base.json`, `tsconfig.build.json`, `tsconfig.json`: base, build, repo configs
+  - `tsconfig.base.json`, `tsconfig.build.types.json`, `tsconfig.json`: base, build-types, repo
+    configs
   - `eslint.config.js`, `prettier` config via package.json
 
 ## Requirements
@@ -61,7 +57,26 @@ Node.js 18+ and npm.
 
 ## Quick start
 
-Run the CLI directly via npm scripts (development, TypeScript sources):
+Install and use as a library:
+
+```powershell
+npm install umazing-musumengine
+```
+
+Run the CLI without installing:
+
+```powershell
+npx umazing-musumengine --help
+```
+
+Or install globally to get the `umazing` command:
+
+```powershell
+npm install -g umazing-musumengine
+umazing --help
+```
+
+Development (run TypeScript sources in this repo):
 
 ```powershell
 npm run cli -- --help
@@ -71,11 +86,10 @@ npm run cli -- encrypt build
 
 The double dash `--` ensures npm forwards arguments to the CLI script.
 
-Bundled CLI (after build):
+Built CLI (after `npm run build`):
 
 ```powershell
-# If you have a release artifact / built dist/ folder available:
-node dist/cli.bundle.js --help
+node dist/cli.js --help
 ```
 
 Seed example fixtures (optional):
@@ -234,12 +248,6 @@ npm run test
 Coverage (v8) with text and lcov reports:
 
 ```powershell
-# Unit coverage with targeted thresholds (via vite.config.unit.ts)
-npm run test:unit:coverage
-
-# Integration coverage (via vite.config.integration.ts)
-npm run test:integration:coverage
-
 # All tests with coverage
 npm run test:coverage
 ```
@@ -300,8 +308,11 @@ not supported; the builder reads required values from `blob1` in each `decoded.j
 # Development (TS sources)
 npm run cli -- decrypt all
 
-# Distribution (bundled, if available)
-node dist/cli.bundle.js decrypt all
+# Local build output
+node dist/cli.js decrypt all
+
+# Installed CLI
+umazing decrypt all
 
 # Encode a request via stdin/stdout
 {"blob1": {"prefix":"...", "udid":"...", "auth_key":"...", "session_id":"...", "response_key":"...", "framing":"kv-stream"}, "payload": {"k1":"v1"}}
@@ -368,26 +379,143 @@ reconstructs `{ data_headers, data }` where both are message-packed maps.
 
 ## Minimal API example
 
-The API exposes a `POST /login` endpoint that orchestrates the bootstrap pipeline and creates a
-server-owned session:
+This repo focuses on the crypto/protocol library + CLI. If you want to build an API/server around
+it, use the programmatic API (`RuntimeClient`, decrypt/encrypt services) and expose only the
+operations you need.
 
-```http
-POST /login
-Content-Type: application/json
+# Publishing
 
-{ "steam_id": "...", "steam_session_ticket": "..." }
+This repository is set up to publish to npm.
+
+## Manual publish
+
+One-time login:
+
+```bash
+npm login
 ```
 
-Response:
+Preview the tarball contents (recommended):
 
-```json
-{
-  "session_id": "<uuid>",
-  "ok": true,
-  "error": null,
-  "created_at": "2025-01-01T00:00:00.000Z"
-}
+```bash
+npm pack --dry-run
 ```
 
-Subsequent endpoints can accept `session_id` to continue pipelines using the server-stored context
-and last step.
+Publish:
+
+```bash
+npm publish
+```
+
+Notes:
+
+- npm requires a new version for every publish. Use `npm version patch|minor|major`.
+- `prepack` runs `npm run build`, so the published tarball contains `dist/`.
+- If the package name is scoped (`@scope/name`), you may need `npm publish --access public`.
+
+## GitHub Actions publish
+
+There is a workflow that publishes on version tags:
+
+- Tag format: `vX.Y.Z` (example: `v2.0.1`)
+- Secret required: `NPM_TOKEN` (an npm “Automation” access token)
+
+Typical release flow:
+
+```bash
+npm version patch
+git push --follow-tags
+```
+
+The workflow runs `npm ci`, `npm test`, then `npm publish`.
+
+# Usage
+
+This project is both:
+
+- an npm library (`umazing-musumengine`)
+- a CLI (`umazing`) shipped via the package `bin`
+
+## Install
+
+As a project dependency:
+
+```bash
+npm i umazing-musumengine
+```
+
+Or run the CLI without installing:
+
+```bash
+npx umazing-musumengine --help
+```
+
+If you want the `umazing` command available globally:
+
+```bash
+npm i -g umazing-musumengine
+umazing --help
+```
+
+## CLI
+
+The CLI reads inputs from these folders:
+
+- `decrypt/input/**/{request.txt,response.txt}`
+- `encrypt/input/**/decoded.json`
+
+And writes outputs to:
+
+- `decrypt/output/**/decoded.{bin,json}`
+- `encrypt/output/**/built.b64`
+
+Common commands:
+
+```bash
+# decrypt all packs
+umazing decrypt all
+
+# decrypt only requests
+umazing decrypt request
+
+# decrypt only responses (requires a sibling request.txt)
+umazing decrypt response
+
+# build requests from encrypt/input/**/decoded.json
+umazing encrypt build
+```
+
+You can also use `npm exec` if installed locally:
+
+```bash
+npm exec -- umazing decrypt all
+```
+
+## Library
+
+Import from the package entrypoint:
+
+```ts
+import { RuntimeClient } from 'umazing-musumengine';
+
+const client = new RuntimeClient();
+
+const { requestB64 } = client.encodeRequest({
+  blob1: {
+    prefix: 'aabbcc',
+    udid: '00'.repeat(16),
+    session_id: '11'.repeat(16),
+    response_key: '22'.repeat(32),
+    auth_key: '33'.repeat(48),
+  },
+  payload: { x: 1 },
+});
+
+const { payload } = client.decodeResponse({
+  requestB64,
+  responseB64: '<base64 response blob>',
+});
+```
+
+For lower-level primitives (protocol helpers, encrypt/decrypt utilities, etc.), see the generated
+API docs under `docs/code/`.

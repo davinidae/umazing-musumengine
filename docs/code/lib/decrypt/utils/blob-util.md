@@ -7,7 +7,7 @@
 > **decryptBlob2**(`blob2`, `iv`): `object`
 
 Defined in:
-[lib/decrypt/utils/blob.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/d3e15f25b7d8fa68ec86ebb62ab4f46188974cb8/src/lib/decrypt/utils/blob.util.ts#L3)
+[lib/decrypt/utils/blob.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/6fb3f73446cda6ddc1de53326482ad75533747b1/src/lib/decrypt/utils/blob.util.ts#L3)
 
 #### Parameters
 
