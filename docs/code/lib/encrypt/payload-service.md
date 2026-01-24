@@ -5,9 +5,7 @@
 ### EncryptPayloadService
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:27](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L27)
-
-EncryptPayloadService.
+[lib/encrypt/payload.service.ts:15](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L15)
 
 #### Constructors
 
@@ -26,9 +24,7 @@ EncryptPayloadService.
 > **build**(`input`): `object`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:460](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L460)
-
-build.
+[lib/encrypt/payload.service.ts:187](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L187)
 
 ###### Parameters
 
@@ -37,15 +33,9 @@ build.
 `object` & `Partial`\<\{ `framing`: [`FramingMode`](../models/runtime.model.md#framingmode); \}\> &
 `object`
 
-Type:
-`{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; } & Partial<{ framing: FramingMode; }> & { DETERMINISTIC_ENC_SECRET: string; }`.
-
 ###### Returns
 
 `object`
-
-Type:
-`{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
 
 ###### blob1
 
@@ -94,16 +84,11 @@ Prefix (hex); echoed back by the server.
 > `private` **buildKvStreamRequest**(`input`): `object`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:301](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L301)
-
-buildKvStreamRequest.
+[lib/encrypt/payload.service.ts:129](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L129)
 
 ###### Parameters
 
 ###### input
-
-Type:
-`{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
 
 ###### blob1
 
@@ -120,9 +105,6 @@ Type:
 ###### Returns
 
 `object`
-
-Type:
-`{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
 
 ###### blob1
 
@@ -171,16 +153,11 @@ Prefix (hex); echoed back by the server.
 > `private` **buildLengthPrefixedRequest**(`input`): `object`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:180](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L180)
-
-buildLengthPrefixedRequest.
+[lib/encrypt/payload.service.ts:88](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L88)
 
 ###### Parameters
 
 ###### input
-
-Type:
-`{ blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; DETERMINISTIC_ENC_SECRET: string; }`.
 
 ###### blob1
 
@@ -197,9 +174,6 @@ Type:
 ###### Returns
 
 `object`
-
-Type:
-`{ requestB64: string; blob1: { viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>; blob2: unknown; }`.
 
 ###### blob1
 
@@ -248,9 +222,7 @@ Prefix (hex); echoed back by the server.
 > `private` **requireResponseKeyHex**(`blob1`): `string`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:120](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L120)
-
-requireResponseKeyHex.
+[lib/encrypt/payload.service.ts:63](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L63)
 
 ###### Parameters
 
@@ -258,23 +230,16 @@ requireResponseKeyHex.
 
 `object` & `Partial`\<\{ `udid`: `string`; `udid_raw`: `string`; \}\>
 
-Type:
-`{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
-
 ###### Returns
 
 `string`
-
-Type: `string`.
 
 ##### resolveAuthKey()
 
 > `private` **resolveAuthKey**(`blob1`): `Buffer`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:162](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L162)
-
-resolveAuthKey.
+[lib/encrypt/payload.service.ts:80](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L80)
 
 ###### Parameters
 
@@ -282,23 +247,16 @@ resolveAuthKey.
 
 `object` & `Partial`\<\{ `udid`: `string`; `udid_raw`: `string`; \}\>
 
-Type:
-`{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
-
 ###### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.
 
 ##### resolveResponseKey()
 
 > `private` **resolveResponseKey**(`blob1`): `Buffer`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:138](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L138)
-
-resolveResponseKey.
+[lib/encrypt/payload.service.ts:71](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L71)
 
 ###### Parameters
 
@@ -306,29 +264,20 @@ resolveResponseKey.
 
 `object` & `Partial`\<\{ `udid`: `string`; `udid_raw`: `string`; \}\>
 
-Type:
-`{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
-
 ###### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.
 
 ##### resolveSessionId()
 
 > `private` **resolveSessionId**(`sessionIdHex`): `Buffer`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:99](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L99)
-
-resolveSessionId.
+[lib/encrypt/payload.service.ts:52](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L52)
 
 ###### Parameters
 
 ###### sessionIdHex
-
-Type: `string | undefined`.
 
 `string` | `undefined`
 
@@ -336,16 +285,12 @@ Type: `string | undefined`.
 
 `Buffer`
 
-Type: `Buffer<ArrayBufferLike>`.
-
 ##### resolveUdid()
 
 > `private` **resolveUdid**(`blob1`): `object`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:33](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L33)
-
-resolveUdid.
+[lib/encrypt/payload.service.ts:16](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L16)
 
 ###### Parameters
 
@@ -353,14 +298,9 @@ resolveUdid.
 
 `object` & `Partial`\<\{ `udid`: `string`; `udid_raw`: `string`; \}\>
 
-Type:
-`{ viewer_id: number; prefix: string; session_id: string; response_key: string; auth_key: string | null; } & Partial<{ udid: string; udid_raw: string; }>`.
-
 ###### Returns
 
 `object`
-
-Type: `{ udidString: string; udidRawHex: string; }`.
 
 ###### udidRawHex
 
@@ -375,9 +315,7 @@ Type: `{ udidString: string; udidRawHex: string; }`.
 > `private` **sha256Key**(`secret`): `Buffer`
 
 Defined in:
-[src/lib/encrypt/payload.service.ts:83](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/encrypt/payload.service.ts#L83)
-
-sha256Key.
+[lib/encrypt/payload.service.ts:46](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/encrypt/payload.service.ts#L46)
 
 ###### Parameters
 
@@ -385,10 +323,6 @@ sha256Key.
 
 `string`
 
-Type: `string`.
-
 ###### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.

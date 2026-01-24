@@ -8,6 +8,25 @@ Re-exports [AnchorDataHeadersStrategy](decrypt/utils/unpacker.util.md#anchordata
 
 ---
 
+### Blob1Json
+
+Re-exports [Blob1Json](decrypt/utils/request-context.util.md#blob1json)
+
+---
+
+### blob1ToJson
+
+Re-exports [blob1ToJson](decrypt/utils/request-context.util.md#blob1tojson)
+
+---
+
+### decodeRequestContextFromBase64
+
+Re-exports
+[decodeRequestContextFromBase64](decrypt/utils/request-context.util.md#decoderequestcontextfrombase64)
+
+---
+
 ### decryptBlob2
 
 Re-exports [decryptBlob2](decrypt/utils/blob.util.md#decryptblob2)
@@ -60,6 +79,12 @@ Re-exports [MultiArrayStrategy](decrypt/utils/unpacker.util.md#multiarraystrateg
 ### RawMsgpackStrategy
 
 Re-exports [RawMsgpackStrategy](decrypt/utils/unpacker.util.md#rawmsgpackstrategy)
+
+---
+
+### RequestContext
+
+Re-exports [RequestContext](decrypt/utils/request-context.util.md#requestcontext)
 
 ---
 

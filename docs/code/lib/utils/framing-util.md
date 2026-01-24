@@ -7,9 +7,7 @@
 > **buildLengthPrefixedPayload**(`payload`): `Buffer`
 
 Defined in:
-[src/lib/utils/framing.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/framing.util.ts#L7)
-
-buildLengthPrefixedPayload.
+[lib/utils/framing.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/framing.util.ts#L1)
 
 #### Parameters
 
@@ -17,10 +15,6 @@ buildLengthPrefixedPayload.
 
 `Uint8Array`
 
-Type: `Uint8Array<ArrayBufferLike>`.
-
 #### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.

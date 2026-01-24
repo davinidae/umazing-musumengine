@@ -5,9 +5,7 @@
 ### DecryptResponseService
 
 Defined in:
-[src/lib/decrypt/response.service.ts:14](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/response.service.ts#L14)
-
-DecryptResponseService.
+[lib/decrypt/response.service.ts:5](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/response.service.ts#L5)
 
 #### Constructors
 
@@ -26,9 +24,7 @@ DecryptResponseService.
 > **decodeFromBase64**(`requestB64`, `responseB64`): `object`
 
 Defined in:
-[src/lib/decrypt/response.service.ts:28](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/response.service.ts#L28)
-
-decodeFromBase64.
+[lib/decrypt/response.service.ts:6](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/response.service.ts#L6)
 
 ###### Parameters
 
@@ -36,19 +32,13 @@ decodeFromBase64.
 
 `string`
 
-Type: `string`.
-
 ###### responseB64
 
 `string`
 
-Type: `string`.
-
 ###### Returns
 
 `object`
-
-Type: `{ blob1: Blob1Json; blob2: unknown; plaintext: Buffer<ArrayBufferLike>; }`.
 
 ###### blob1
 

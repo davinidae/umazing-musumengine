@@ -8,7 +8,7 @@
 > [`EncodeRequestInput`](../../models/runtime.model.md#encoderequestinput)\[`"blob1"`\] & `object`
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L13)
+[lib/decrypt/utils/request-context.util.ts:16](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L16)
 
 #### Type Declaration
 
@@ -27,23 +27,23 @@ Defined in:
 > **RequestContext** = `object`
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:6](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L6)
+[lib/decrypt/utils/request-context.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L9)
 
 #### Properties
 
 ##### header
 
-> **header**: `Blob1Header`
+> **header**: [`Blob1Header`](../../utils/protocol.util.md#blob1header)
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:8](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L8)
+[lib/decrypt/utils/request-context.util.ts:11](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L11)
 
 ##### iv
 
 > **iv**: `Buffer`
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:10](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L10)
+[lib/decrypt/utils/request-context.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L13)
 
 ##### request
 
@@ -51,14 +51,14 @@ Defined in:
 > [`parseParsedRequest`](../../utils/protocol.util.md#parseparsedrequest)\>
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:7](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L7)
+[lib/decrypt/utils/request-context.util.ts:10](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L10)
 
 ##### udidRaw
 
 > **udidRaw**: `string`
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L9)
+[lib/decrypt/utils/request-context.util.ts:12](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L12)
 
 ## Functions
 
@@ -67,35 +67,25 @@ Defined in:
 > **blob1ToJson**(`header`, `udidRaw`, `keyUsed`): [`Blob1Json`](#blob1json)
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:72](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L72)
-
-blob1ToJson.
+[lib/decrypt/utils/request-context.util.ts:38](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L38)
 
 #### Parameters
 
 ##### header
 
-`Blob1Header`
-
-Type: `Blob1Header`.
+[`Blob1Header`](../../utils/protocol.util.md#blob1header)
 
 ##### udidRaw
 
 `string`
 
-Type: `string`.
-
 ##### keyUsed
 
 `Buffer`
 
-Type: `Buffer<ArrayBufferLike>`.
-
 #### Returns
 
 [`Blob1Json`](#blob1json)
-
-Type: `Blob1Json`.
 
 ---
 
@@ -104,9 +94,7 @@ Type: `Blob1Json`.
 > **decodeRequestContextFromBase64**(`requestB64`): [`RequestContext`](#requestcontext)
 
 Defined in:
-[src/lib/decrypt/utils/request-context.util.ts:23](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/decrypt/utils/request-context.util.ts#L23)
-
-decodeRequestContextFromBase64.
+[lib/decrypt/utils/request-context.util.ts:21](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/decrypt/utils/request-context.util.ts#L21)
 
 #### Parameters
 
@@ -114,10 +102,6 @@ decodeRequestContextFromBase64.
 
 `string`
 
-Type: `string`.
-
 #### Returns
 
 [`RequestContext`](#requestcontext)
-
-Type: `RequestContext`.

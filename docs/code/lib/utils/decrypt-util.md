@@ -5,9 +5,7 @@
 ### `abstract` UnpackStrategy
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:29](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/decrypt.util.ts#L29)
-
-UnpackStrategy.
+[lib/utils/decrypt.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/decrypt.util.ts#L9)
 
 #### Extended by
 
@@ -36,9 +34,7 @@ UnpackStrategy.
 > `abstract` **execute**(`buf`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:36](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/decrypt.util.ts#L36)
-
-execute.
+[lib/utils/decrypt.util.ts:10](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/decrypt.util.ts#L10)
 
 ###### Parameters
 
@@ -46,26 +42,16 @@ execute.
 
 `Buffer`
 
-Type: `Buffer<ArrayBufferLike>`.
-
 ###### Returns
 
 `unknown`
-
-Type: `unknown`.
-
-###### Remarks
-
-Source: `abstract execute(buf: Buffer): unknown | undefined;`.
 
 ##### normalizeResponseShape()
 
 > **normalizeResponseShape**(`v`): `unknown`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:47](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/decrypt.util.ts#L47)
-
-normalizeResponseShape.
+[lib/utils/decrypt.util.ts:12](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/decrypt.util.ts#L12)
 
 ###### Parameters
 
@@ -73,13 +59,9 @@ normalizeResponseShape.
 
 `unknown`
 
-Type: `unknown`.
-
 ###### Returns
 
 `unknown`
-
-Type: `unknown`.
 
 ## Functions
 
@@ -88,9 +70,7 @@ Type: `unknown`.
 > **pkcs7Pad**(`data`, `blockSize`): `Buffer`
 
 Defined in:
-[src/lib/utils/decrypt.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/decrypt.util.ts#L13)
-
-pkcs7Pad.
+[lib/utils/decrypt.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/decrypt.util.ts#L1)
 
 #### Parameters
 
@@ -98,16 +78,10 @@ pkcs7Pad.
 
 `Buffer`
 
-Type: `Buffer<ArrayBufferLike>`.
-
 ##### blockSize
 
 `number`
 
-Type: `number`.
-
 #### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.

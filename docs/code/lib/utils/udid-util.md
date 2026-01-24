@@ -7,9 +7,7 @@
 > **deriveIvFromUdidString**(`udidString`): `Buffer`
 
 Defined in:
-[src/lib/utils/udid.util.ts:34](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/udid.util.ts#L34)
-
-deriveIvFromUdidString.
+[lib/utils/udid.util.ts:9](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/udid.util.ts#L9)
 
 #### Parameters
 
@@ -17,13 +15,9 @@ deriveIvFromUdidString.
 
 `string`
 
-Type: `string`.
-
 #### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.
 
 ---
 
@@ -32,9 +26,7 @@ Type: `Buffer<ArrayBufferLike>`.
 > **udidRawToCanonicalString**(`udidRaw`): `string`
 
 Defined in:
-[src/lib/utils/udid.util.ts:13](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/udid.util.ts#L13)
-
-udidRawToCanonicalString.
+[lib/utils/udid.util.ts:1](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/udid.util.ts#L1)
 
 #### Parameters
 
@@ -42,10 +34,6 @@ udidRawToCanonicalString.
 
 `Uint8Array`
 
-Type: `Uint8Array<ArrayBufferLike>`.
-
 #### Returns
 
 `string`
-
-Type: `string`.

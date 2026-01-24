@@ -156,8 +156,5 @@ encrypt/input/**
 encrypt/output/**
 !encrypt/output/**/
 !encrypt/output/**/README.md
-api/**/request.txt
-api/**/response.txt
-.esbuild
 
-src/database/user-sessions.json
+.esbuild

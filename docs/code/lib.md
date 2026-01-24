@@ -8,9 +8,33 @@ Re-exports [AnchorDataHeadersStrategy](lib/decrypt/utils/unpacker.util.md#anchor
 
 ---
 
+### AUTH_KEY_BYTES
+
+Re-exports [AUTH_KEY_BYTES](lib/utils/protocol.util.md#auth_key_bytes)
+
+---
+
 ### AuthKey
 
 Re-exports [AuthKey](lib/utils/protocol.util.md#authkey)
+
+---
+
+### Blob1Header
+
+Re-exports [Blob1Header](lib/utils/protocol.util.md#blob1header)
+
+---
+
+### Blob1Json
+
+Re-exports [Blob1Json](lib/decrypt/utils/request-context.util.md#blob1json)
+
+---
+
+### blob1ToJson
+
+Re-exports [blob1ToJson](lib/decrypt/utils/request-context.util.md#blob1tojson)
 
 ---
 
@@ -20,9 +44,23 @@ Re-exports [buildBlob1Buffer](lib/utils/protocol.util.md#buildblob1buffer)
 
 ---
 
+### buildEncryptedBlob2LengthPrefixed
+
+Re-exports
+[buildEncryptedBlob2LengthPrefixed](lib/utils/protocol.util.md#buildencryptedblob2lengthprefixed)
+
+---
+
 ### buildLengthPrefixedPayload
 
 Re-exports [buildLengthPrefixedPayload](lib/utils/framing.util.md#buildlengthprefixedpayload)
+
+---
+
+### decodeRequestContextFromBase64
+
+Re-exports
+[decodeRequestContextFromBase64](lib/decrypt/utils/request-context.util.md#decoderequestcontextfrombase64)
 
 ---
 
@@ -80,12 +118,6 @@ Re-exports [EncodeRequestOutput](lib/models/runtime.model.md#encoderequestoutput
 
 ---
 
-### encodeUmaRequestB64
-
-Re-exports [encodeUmaRequestB64](lib/utils/protocol.util.md#encodeumarequestb64)
-
----
-
 ### encryptAes256Cbc
 
 Re-exports [encryptAes256Cbc](lib/utils/encrypt.util.md#encryptaes256cbc)
@@ -98,6 +130,12 @@ Re-exports [EncryptPayloadService](lib/encrypt/payload.service.md#encryptpayload
 
 ---
 
+### extractLengthPrefixedPayload
+
+Re-exports [extractLengthPrefixedPayload](lib/utils/protocol.util.md#extractlengthprefixedpayload)
+
+---
+
 ### FramingMode
 
 Re-exports [FramingMode](lib/models/runtime.model.md#framingmode)
@@ -107,6 +145,12 @@ Re-exports [FramingMode](lib/models/runtime.model.md#framingmode)
 ### fromJsonFriendly
 
 Re-exports [fromJsonFriendly](lib/utils/json.util.md#fromjsonfriendly)
+
+---
+
+### genUmaRequestKey
+
+Re-exports [genUmaRequestKey](lib/utils/protocol.util.md#genumarequestkey)
 
 ---
 
@@ -147,6 +191,12 @@ Re-exports [newSessionId](lib/utils/protocol.util.md#newsessionid)
 
 ---
 
+### ParsedRequest
+
+Re-exports [ParsedRequest](lib/utils/protocol.util.md#parsedrequest)
+
+---
+
 ### parseHeaderBlob1
 
 Re-exports [parseHeaderBlob1](lib/utils/protocol.util.md#parseheaderblob1)
@@ -177,6 +227,24 @@ Re-exports [RawMsgpackStrategy](lib/decrypt/utils/unpacker.util.md#rawmsgpackstr
 
 ---
 
+### readBlob1LengthPrefix
+
+Re-exports [readBlob1LengthPrefix](lib/utils/protocol.util.md#readblob1lengthprefix)
+
+---
+
+### RequestContext
+
+Re-exports [RequestContext](lib/decrypt/utils/request-context.util.md#requestcontext)
+
+---
+
+### RESPONSE_KEY_BYTES
+
+Re-exports [RESPONSE_KEY_BYTES](lib/utils/protocol.util.md#response_key_bytes)
+
+---
+
 ### RuntimeClient
 
 Re-exports [RuntimeClient](lib/runtime-client.md#runtimeclient)
@@ -195,9 +263,21 @@ Re-exports [saltedMd5](lib/utils/protocol.util.md#saltedmd5)
 
 ---
 
+### SESSION_ID_BYTES
+
+Re-exports [SESSION_ID_BYTES](lib/utils/protocol.util.md#session_id_bytes)
+
+---
+
 ### SessionId
 
 Re-exports [SessionId](lib/utils/protocol.util.md#sessionid)
+
+---
+
+### splitBlob1PrefixAndTail
+
+Re-exports [splitBlob1PrefixAndTail](lib/utils/protocol.util.md#splitblob1prefixandtail)
 
 ---
 
@@ -213,15 +293,15 @@ Re-exports [Udid](lib/utils/protocol.util.md#udid)
 
 ---
 
-### udidRawToCanonicalString
+### UDID_RAW_BYTES
 
-Re-exports [udidRawToCanonicalString](lib/utils/udid.util.md#udidrawtocanonicalstring)
+Re-exports [UDID_RAW_BYTES](lib/utils/protocol.util.md#udid_raw_bytes)
 
 ---
 
-### UmaReqHeader
+### udidRawToCanonicalString
 
-Re-exports [UmaReqHeader](lib/utils/protocol.util.md#umareqheader)
+Re-exports [udidRawToCanonicalString](lib/utils/udid.util.md#udidrawtocanonicalstring)
 
 ---
 

@@ -7,9 +7,7 @@
 > **encryptAes256Cbc**(`dataPadded`, `key`, `iv`): `Buffer`
 
 Defined in:
-[src/lib/utils/encrypt.util.ts:20](https://github.com/davinidae/umazing-musumengine/blob/aeab44e843910aee776ca8e80ac77feaac919c49/src/lib/utils/encrypt.util.ts#L20)
-
-encryptAes256Cbc.
+[lib/utils/encrypt.util.ts:3](https://github.com/davinidae/umazing-musumengine/blob/7806b7e4bb02dbafeebca9a5d829610c2bce50e3/src/lib/utils/encrypt.util.ts#L3)
 
 #### Parameters
 
@@ -17,22 +15,14 @@ encryptAes256Cbc.
 
 `Buffer`
 
-Type: `Buffer<ArrayBufferLike>`.
-
 ##### key
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.
 
 ##### iv
 
 `Buffer`
 
-Type: `Buffer<ArrayBufferLike>`.
-
 #### Returns
 
 `Buffer`
-
-Type: `Buffer<ArrayBufferLike>`.

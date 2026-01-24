@@ -32,7 +32,7 @@
   ],
   "main": "src/cli.ts",
   "scripts": {
-    "typecheck": "tsc -p tsconfig.cli.json --noEmit && tsc -p tsconfig.api.json --noEmit && tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.cli.json --noEmit && tsc -p tsconfig.json --noEmit",
     "cli": "tsx src/cli/index.ts",
     "seed:example": "tsx scripts/seed-example.ts",
     "test": "vitest run",
@@ -43,13 +43,13 @@
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
     "prepare": "husky install",
+    "check": "npm run lint && npm run format && npm run typecheck",
     "precommit": "npm run lint && npm run format && npm run typecheck",
     "docs:code": "typedoc --options typedoc.code.json",
     "docs:scripts": "typedoc --options typedoc.scripts.json",
     "docs:normalize": "tsx scripts/normalize-docs.ts",
     "docs": "npm run docs:code && npm run docs:scripts && npm run docs:normalize && tsx scripts/generate-docs.ts",
-    "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format",
-    "api": "nodemon ."
+    "generate:umatypes": "tsx scripts/generate-umatypes.ts && npm run format"
   },
   "dependencies": {
     "@msgpack/msgpack": "^3.0.0",

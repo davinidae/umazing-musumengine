@@ -5,6 +5,5 @@
     "outDir": "dist/cli",
     "types": ["node"]
   },
-  "include": ["src"],
-  "exclude": ["src/api"]
+  "include": ["src"]
 }
